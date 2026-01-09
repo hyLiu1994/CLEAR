@@ -16,9 +16,8 @@ from fastapi import APIRouter, HTTPException, BackgroundTasks
 from pydantic import BaseModel, Field
 from pathlib import Path
 
-# 获取当前文件的目录路径
+
 current_dir = Path(__file__).parent
-# 获取项目根目录（根据你的文件结构，向上4级到clear-backend）
 project_root = current_dir.parent.parent.parent
 
 router = APIRouter(prefix="/update", tags=["update"])
@@ -27,7 +26,7 @@ end_point = 4
 seed=42
 exp_name = "Default"
 
-# ============ 本地JSON文件存储 ============
+# ============ Local JSON File Storage ============
 class UpdateTaskStorage:
     def __init__(self, storage_dir: str = "./update_task_storage"):
         self.storage_dir = Path(storage_dir)
@@ -68,11 +67,11 @@ class UpdateTaskStorage:
         tasks.sort(key=lambda x: x.get("created_at", ""), reverse=True)
         return tasks[:limit]
 
-# 初始化任务存储和线程池
+# Initialize task storage and thread pool
 task_storage = UpdateTaskStorage(storage_dir="/mnt/aisdata/Haoyu/CLEAR/update_task_storage")
 executor = ThreadPoolExecutor(max_workers=4)
 
-# ============ 请求/响应模型 ============
+# ============ Request/Response Model ============
 class UpdateRequest(BaseModel):
     dataset: str = "demo-dk"
     sdkg_task_id: Optional[str] = None
@@ -93,7 +92,7 @@ class TaskStatusResponse(BaseModel):
     created_at: str
     updated_at: str
 
-# ============ 任务管理函数 ============
+# ============ Task Management Function ============
 def _save_task(task_id: str, task_data: Dict):
     task_storage.save_task(task_id, task_data)
 
@@ -103,13 +102,12 @@ def _get_task(task_id: str) -> Optional[Dict]:
 def _update_task_progress(task_id: str, progress: float, status: str = "running", message: str = None):
     task_storage.update_task_progress(task_id, progress, status, message)
 
-# ============ 第一步：CSV转JSON轨迹数据 ============
+# ============ Step 1: Convert CSV to JSON Trajectory Data ============
 def _convert_csv_to_segments(task_id: str, request_data: Dict):
-    """将CSV数据转换为前端地图JSON格式"""
+    """Convert CSV data into frontend map JSON format"""
     try:
-        _update_task_progress(task_id, 5, "running", "开始转换CSV数据")
+        _update_task_progress(task_id, 5, "running", "Start converting CSV data")
         
-        # 根据数据集选择路径
         dataset = request_data.get("dataset", "demo-dk")
         trajectorylen = request_data.get("trajectoryLen", 200)
         trajectorynum = request_data.get("trajectoryNum", 10000)
@@ -126,17 +124,17 @@ def _convert_csv_to_segments(task_id: str, request_data: Dict):
             csv_path = f"{project_root}/vista/data/ProcessedData/AIS_2024_04_01@15_filtered360_1000000000_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
             ku_path = f"{project_root}/vista/results/{exp_name}/KU/knowledge_units_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}.json"
         else:
-            raise ValueError(f"未知的数据集: {dataset}")
+            raise ValueError(f"Unknown dataset: {dataset}")
         
         output_path = f"{project_root}/data/segments.json"
         
-        # 读取CSV文件
-        _update_task_progress(task_id, 10, "running", "读取CSV文件")
+        # Read CSV file
+        _update_task_progress(task_id, 10, "running", "Read CSV file")
         df = pd.read_csv(csv_path)
         
-        # 如果提供了KU文件，基于KU文件内容筛选数据
+        # If a KU file is provided, filter the data based on the contents of the KU file
         if ku_path and os.path.exists(ku_path):
-            _update_task_progress(task_id, 15, "running", "读取KU文件并筛选数据")
+            _update_task_progress(task_id, 15, "running", "Read KU file and filter data")
             with open(ku_path, 'r') as f:
                 ku_data = json.load(f)
             
@@ -158,8 +156,8 @@ def _convert_csv_to_segments(task_id: str, request_data: Dict):
                 mask = df.apply(lambda row: (row['mmsi'], row['sequence_id']) in ku_trajectories, axis=1)
                 df = df[mask]
         
-        _update_task_progress(task_id, 20, "running", "处理轨迹分段")
-        # 按sequence_id和segment_id分组
+        _update_task_progress(task_id, 20, "running", "Processing trajectory segments")
+        # Group by sequence_id and segment_id
         segments_data = []
         grouped = df.groupby(['sequence_id', 'segment_id'])
         
@@ -194,22 +192,22 @@ def _convert_csv_to_segments(task_id: str, request_data: Dict):
             }
             segments_data.append(segment)
         
-        # 保存JSON文件
+        # save json profile
         output_dir = Path(output_path).parent
         output_dir.mkdir(parents=True, exist_ok=True)
         
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(segments_data, f, indent=2, ensure_ascii=False)
         
-        _update_task_progress(task_id, 30, "running", "CSV转换完成")
-        return True, f"转换完成: {len(segments_data)}个分段"
+        _update_task_progress(task_id, 30, "running", "CSV conversion completed")
+        return True, f"Conversion Complete: {len(segments_data)} segmengts"
         
     except Exception as e:
-        return False, f"CSV转换失败: {str(e)}"
+        return False, f"CSV conversion failed: {str(e)}"
 
-# ============ 第二步：构建子图 ============
+# ============ Second Step: Build Subgraphs ============
 def _build_multi_level_graph(center_node_id: str, index_data: Dict, max_level: int = 3) -> Dict[str, Any]:
-    """构建多级关系子图"""
+    """Build a multi-level relational subgraph"""
     visited_nodes = set([center_node_id])
     visited_links = set()
     nodes = []
@@ -258,9 +256,9 @@ def _build_multi_level_graph(center_node_id: str, index_data: Dict, max_level: i
     }
 
 def _generate_subgraphs(task_id: str, request_data: Dict):
-    """为所有节点生成子图"""
+    """Generate subgraphs for all nodes"""
     try:
-        _update_task_progress(task_id, 75, "running", "开始生成子图")
+        _update_task_progress(task_id, 75, "running", "Start generating subgraph")
         
         dataset = request_data.get("dataset", "demo-dk")
         
@@ -274,21 +272,21 @@ def _generate_subgraphs(task_id: str, request_data: Dict):
         output_base_dir = f"{project_root}/data"
         max_level = 1
         
-        # 读取索引文件
+        # read index file
         if not os.path.exists(input_file):
-            return False, f"SDKG索引文件不存在: {input_file}"
+            return False, f"SDKG index file does not exist: {input_file}"
         
         with open(input_file, 'r', encoding='utf-8') as f:
             index_data = json.load(f)
         
-        # 创建子图目录
+        # Create subgraph directory
         subgraph_dir = os.path.join(output_base_dir, "subgraph")
         os.makedirs(subgraph_dir, exist_ok=True)
         
-        # 检查点文件
+        # Checkpoint file
         checkpoint_file = os.path.join(output_base_dir, "subgraph_checkpoint.json")
         
-        # 加载检查点
+        # # Load checkpoint
         processed_nodes = set()
         if os.path.exists(checkpoint_file):
             try:
@@ -298,13 +296,13 @@ def _generate_subgraphs(task_id: str, request_data: Dict):
             except:
                 pass
         
-        # 获取所有节点
+        # Load checkpoint & Get all nodes
         all_nodes = index_data["nodes"]
         remaining_nodes = [node for node in all_nodes if node["id"] not in processed_nodes]
         
-        _update_task_progress(task_id, 80, "running", f"处理{len(remaining_nodes)}个节点")
+        _update_task_progress(task_id, 80, "running", f"Handle {len(remaining_nodes)} nodes")
         
-        # 处理节点
+        # handle nodes
         successful_nodes = []
         failed_nodes = []
         total_remaining = len(remaining_nodes)
@@ -323,13 +321,13 @@ def _generate_subgraphs(task_id: str, request_data: Dict):
             except Exception as e:
                 failed_nodes.append((node_id, str(e)))
             
-            # 更新进度
+            # update progress
             if total_remaining > 0:
-                progress = 40 + (i / total_remaining * 20)  # 占20%的进度
+                progress = 40 + (i / total_remaining * 20)  
                 _update_task_progress(task_id, min(60, progress), "running", 
-                                     f"生成子图: {i}/{total_remaining}")
+                                     f"generate subgraph: {i}/{total_remaining}")
         
-        # 保存检查点
+        # save checkpoints
         all_processed = list(processed_nodes) + successful_nodes
         checkpoint_data = {
             "timestamp": datetime.now().isoformat(),
@@ -341,8 +339,8 @@ def _generate_subgraphs(task_id: str, request_data: Dict):
         with open(checkpoint_file, 'w', encoding='utf-8') as f:
             json.dump(checkpoint_data, f, ensure_ascii=False, indent=2)
         
-        # 生成子图索引
-        _update_task_progress(task_id,85, "running", "生成子图索引")
+        # generate subgraph index
+        _update_task_progress(task_id,85, "running", "generate subgraph index")
         subgraph_index_data = {
             "generatedAt": datetime.now().isoformat(),
             "totalNodes": len(all_nodes),
@@ -366,15 +364,16 @@ def _generate_subgraphs(task_id: str, request_data: Dict):
         with open(index_file, 'w', encoding='utf-8') as f:
             json.dump(subgraph_index_data, f, ensure_ascii=False, indent=2)
         
-        _update_task_progress(task_id, 100, "done", "子图生成完成")
-        return True, f"子图生成完成: {len(successful_nodes)}成功, {len(failed_nodes)}失败"
+        _update_task_progress(task_id, 100, "done", "Subgraph generation completed")
+        return True, f"Subgraph generation completed: {len(successful_nodes)} successful, {len(failed_nodes)} failed"
         
     except Exception as e:
-        return False, f"子图生成失败: {str(e)}"
-
-# ============ 第三步：转换SDKG为知识图谱 ============
+        return False, f"Subgraph generation failed: {str(e)}"
+    
+    
+# ============ Step 3: Convert SDKG into a knowledge graph ============
 def _extract_main_description(text):
-    """从文本中提取括号前的主要内容"""
+    """Extract the main content before the parentheses from the text"""
     if not isinstance(text, str):
         return str(text)
     bracket_pos = text.find('(')
@@ -383,9 +382,9 @@ def _extract_main_description(text):
     return text.strip()
 
 def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
-    """转换SDKG文件为知识图谱"""
+    """Convert SDKG files to a knowledge graph"""
     try:
-        _update_task_progress(task_id, 35, "running", "开始转换SDKG为知识图谱")
+        _update_task_progress(task_id, 35, "running", "Start converting SDKG to knowledge graph")
         
         dataset = request_data.get("dataset", "demo-dk")
         trajectorylen = request_data.get("trajectoryLen", 200)
@@ -414,12 +413,12 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
             imputation_path = f"{project_root}/vista/results/{exp_name}/ImputationResults/imputation_results_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}_{process_length}.json"
             csv_path = f"{project_root}/vista/data/ProcessedData/AIS_2024_04_01@15_filtered360_1000000000_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
         else:
-            raise ValueError(f"未知的数据集: {dataset}")
+            raise ValueError(f"unknown dataset: {dataset}")
         
         output_dir = "/mnt/aisdata/Haoyu/CLEAR/clear-backend/data"
         
-        # 加载文件
-        _update_task_progress(task_id,40, "running", "加载SDKG文件")
+        # load file
+        _update_task_progress(task_id,40, "running", "Loading SDKG files")
         print(f"Loading VB graph from: {vb_graph_path}")
         with open(vb_graph_path, 'r') as f:
             vb_graph = json.load(f)["SDK_graph_vb"]
@@ -444,8 +443,8 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
         with open(imputation_path, 'r') as f:
             imputation_data = json.load(f)
         
-        # 创建imputation数据映射
-        _update_task_progress(task_id, 42, "running", "创建数据映射")
+        # create imputation data map
+        _update_task_progress(task_id, 42, "running", "Creating data mapping")
         imputation_data_map = {}
         for imputation_item in imputation_data:
             if not imputation_item:
@@ -459,7 +458,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
         
         print(f"Found {len(imputation_data_map)} imputation records")
         
-        # 从KU文件中提取轨迹和段信息
+        # extract trajectory and segment info from KU file
         print("Extracting trajectory and segment information from KU file...")
         ku_trajectory_segments = set()
         ku_mmsi_set = set()
@@ -488,12 +487,12 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
         
         print(f"Found {len(ku_trajectory_segments)} unique (MMSI, sequence_id, segment_id) combinations in KU file")
         
-        # 读取CSV文件
-        _update_task_progress(task_id,45, "running", "读取CSV数据")
+        # read csv file
+        _update_task_progress(task_id,45, "running", "Reading CSV data")
         print(f"Reading CSV file: {csv_path}")
         df = pd.read_csv(csv_path)
         
-        # 根据KU文件中的信息筛选CSV数据
+        # filter CSV data based on KU file information
         filtered_dfs = []
         for mmsi, seq_id in ku_trajectories:
             mask = (df['mmsi'] == mmsi) & (df['sequence_id'] == seq_id)
@@ -507,13 +506,13 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
         else:
             raise ValueError("No matching data found in CSV for the KU file entries")
         
-        # 创建输出目录
+        # create output directories
         output_path = Path(output_dir)
         nodes_dir = output_path / "nodes"
         nodes_dir.mkdir(parents=True, exist_ok=True)
         
-        # 开始构建知识图谱
-        _update_task_progress(task_id, 47, "running", "构建知识图谱节点")
+        # start building knowledge graph
+        _update_task_progress(task_id, 47, "running", "start building knowledge graph")
         print("Building knowledge graph...")
         
         # Store all nodes and relationships
@@ -524,11 +523,11 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
         traj_to_node = {}
         seg_to_node = {}
         
-        # 创建 Behavior 模式到节点ID的映射
+        # create behavior pattern map to avoid duplicates
         behavior_pattern_map = {}
         
         # 1. Create Behavior nodes (vb)
-        _update_task_progress(task_id, 48, "running", "创建Behavior节点")
+        _update_task_progress(task_id, 48, "running", "Create Behavior nodes")
         for vb_id, vb_info in vb_nodes.items():
             node_id = f"B_{vb_id}"
             
@@ -564,7 +563,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
             }
         
         # 2. Create Function nodes (vf)
-        _update_task_progress(task_id, 49, "running", "创建Function节点")
+        _update_task_progress(task_id, 49, "running", "Create Function nodes")
         function_code_map = {}
         for vf_id, vf_info in vf_nodes.items():
             node_id = f"F_{vf_id}"
@@ -590,7 +589,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
             }
         
         # 3. Create Attribute nodes (vs)
-        _update_task_progress(task_id, 50, "running", "创建Attribute节点")
+        _update_task_progress(task_id, 50, "running", "Create Attribute nodes")
         attribute_count = 0
         attribute_mapping = {}
         
@@ -616,7 +615,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                 }
         
         # 4. Create Trajectory and Segment nodes
-        _update_task_progress(task_id, 51, "running", "创建Trajectory和Segment节点")
+        _update_task_progress(task_id, 51, "running", "Create Trajectory and Segment nodes")
         traj_groups = df.groupby('sequence_id')
         print(f"Processing {len(traj_groups)} trajectory groups...")
         
@@ -649,19 +648,19 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                 seg_node_id = f"TRJ_{seq_id}_SEG_{seg_id}"
                 ship_type = seg_group['ship_type'].iloc[0] if 'ship_type' in seg_group.columns else 'Unknown'
                 
-                # 获取当前segment的KU数据
+                # get KU data for this segment
                 current_ku = ku_data_map.get((mmsi, seq_id, seg_id), {})
                 v_s = current_ku.get('v_s', {})
                 v_b = current_ku.get('v_b', {})
                 
-                # 构建Static Attributes
+                # create Static Attributes
                 static_attributes = []
                 for key, value in v_s.items():
                     if key not in ['MMSI', 'seq', 'block'] and value:
                         friendly_key = key.replace('_', ' ').title()
                         static_attributes.append(f"{friendly_key}: {value}")
                 
-                # 构建Context
+                # create Context
                 context = {}
                 
                 # Current Behavior
@@ -694,10 +693,10 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                             next_behavior[key] = value
                 context['next_behavior'] = next_behavior
                 
-                # 获取imputation数据
+                #get imputation date for this segment
                 imputation_item = imputation_data_map.get((mmsi, seq_id, seg_id), {})
                 
-                # 构建behavior_estimator
+                # create behavior_estimator
                 behavior_estimator = {}
                 if imputation_item.get('behavior_estimator'):
                     behavior_estimator_data = imputation_item['behavior_estimator']
@@ -706,7 +705,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                         "contextual_justification": behavior_estimator_data.get('contextual_justification', '')
                     }
                 
-                # 构建method_selector
+                # create method_selector
                 method_selector = {}
                 if imputation_item.get('method_selector'):
                     method_selector_data = imputation_item['method_selector']
@@ -714,7 +713,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                         "statistical_support": method_selector_data.get('statistical_support', '')
                     }
                 
-                # 构建explanation_composer
+                # create explanation_composer
                 explanation_composer = {}
                 if imputation_item.get('explanation_composer'):
                     explanation_composer_data = imputation_item['explanation_composer']
@@ -760,7 +759,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                 })
         
         # 5. Build relationships from KU data
-        _update_task_progress(task_id, 53, "running", "建立节点关系")
+        _update_task_progress(task_id, 53, "running", "create relationships from KU data")
         segments_with_behavior = set()
         segments_with_attribute = set()
         segments_with_function = set()
@@ -781,7 +780,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                 seg_node_id = seg_to_node.get(seg_key)
                 
                 if seg_node_id:
-                    # 建立 Segment 与 Behavior 的直接链接
+                    # create segment to behavior relationships
                     if v_b:
                         seg_pattern_key = (
                             _extract_main_description(v_b.get('speed_profile', '')),
@@ -814,7 +813,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                                 })
                                 segments_with_attribute.add(seg_key)
                     
-                    # 建立 Segment 与 Function 的链接
+                    # create segment to function relationships
                     if v_f and 'spatial_function' in v_f:
                         spatial_function_code = v_f.get('spatial_function', '')
                         if spatial_function_code:
@@ -854,7 +853,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                         })
         
         # 8. Save node files
-        _update_task_progress(task_id, 55, "running", "保存节点文件")
+        _update_task_progress(task_id, 55, "running", "saving node files")
         print("Saving node files...")
         for node_id, node_info in all_nodes.items():
             node_file = nodes_dir / f"{node_id}.json"
@@ -862,7 +861,7 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
                 json.dump(node_info, f, indent=2, ensure_ascii=False)
         
         # 9. Create index file
-        _update_task_progress(task_id, 57, "running", "创建索引文件")
+        _update_task_progress(task_id, 57, "running", "create index file")
         print("Creating index file...")
         index_data = {
             "nodes": [
@@ -899,45 +898,45 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
         print(f"Total relationships: {len(all_links)}")
         print(f"Index file: {index_file}")
         
-        _update_task_progress(task_id, 75, "running", "知识图谱转换完成")
-        return True, f"SDKG转换完成: {len(all_nodes)}节点, {len(all_links)}关系"
+        _update_task_progress(task_id, 75, "running", "conversion completed")
+        return True, f"conversion completed: {len(all_nodes)}nodes, {len(all_links)}relationships"
         
     except Exception as e:
         import traceback
         print(f"Error in SDKG conversion: {str(e)}")
         traceback.print_exc()
-        return False, f"SDKG转换失败: {str(e)}"
+        return False, f"SDKG conversion failed: {str(e)}"
 
-# ============ 主任务执行函数 ============
+# ============ main task execution function ============
 def _run_update_task(task_id: str, request_data: Dict):
-    """执行更新任务（三合一流水线）"""
+    """execute the update task"""
     try:
-        _update_task_progress(task_id, 0, "running", "开始更新CLEAR内容")
+        _update_task_progress(task_id, 0, "running", "start CLEAR content update")
         
-        # 步骤1: CSV转JSON
+        # steps 1: CSV turn segments
         success1, message1 = _convert_csv_to_segments(task_id, request_data)
         if not success1:
             _update_task_progress(task_id, 0, "error", message1)
             return
         
-        # 步骤3: SDKG转知识图谱（先执行这个！）
+        # steps 2: SDKG turn knowledge graph
         success3, message3 = _convert_sdkg_to_kg(task_id, request_data)
         if not success3:
             _update_task_progress(task_id, 0, "error", message3)
             return
         
-        # 步骤2: 生成子图（需要sdkg_index.json，所以放最后）
+        # steps 3: generate subgraphs
         success2, message2 = _generate_subgraphs(task_id, request_data)
         if not success2:
             _update_task_progress(task_id, 0, "error", message2)
             return
         
-        # 保存任务结果
+        # save tasks result
         task = _get_task(task_id)
         if task:
             task["result"] = {
                 "status": "success",
-                "message": "CLEAR内容更新完成",
+                "message": "CLEAR content update completed",
                 "output_files": [
                     f"{project_root}/data/segments.json",
                     f"{project_root}/data/subgraph/",
@@ -948,13 +947,13 @@ def _run_update_task(task_id: str, request_data: Dict):
             _save_task(task_id, task)
             
     except Exception as e:
-        logging.error(f"CLEAR内容更新失败: {str(e)}")
-        _update_task_progress(task_id, 0, "error", f"更新失败: {str(e)}")
+        logging.error(f"CLEAR content update failed: {str(e)}")
+        _update_task_progress(task_id, 0, "error", f"update failed: {str(e)}")
 
-# ============ API路由 ============
+# ============ API ============
 @router.post("", response_model=TaskResponse)
 async def start_update_task(request: UpdateRequest, background_tasks: BackgroundTasks):
-    """启动CLEAR内容更新任务"""
+    """start a new CLEAR content update task"""
     task_id = str(uuid.uuid4())
     
     task_data = {
@@ -965,7 +964,7 @@ async def start_update_task(request: UpdateRequest, background_tasks: Background
         "request": request.dict(),
         "created_at": datetime.now().isoformat(),
         "updated_at": datetime.now().isoformat(),
-        "message": "CLEAR内容更新任务已创建"
+        "message": "content update task created",
     }
     
     _save_task(task_id, task_data)
@@ -974,40 +973,39 @@ async def start_update_task(request: UpdateRequest, background_tasks: Background
     return TaskResponse(
         task_id=task_id,
         status="pending",
-        message="CLEAR内容更新任务已启动",
+        message="submission successful",
         created_at=task_data["created_at"]
     )
 
 @router.get("/task/{task_id}", response_model=TaskStatusResponse)
 async def get_update_task_status(task_id: str):
-    """获取更新任务状态"""
+    """get the status of an update task"""
     task = _get_task(task_id)
     if not task:
-        raise HTTPException(status_code=404, detail="任务不存在")
+        raise HTTPException(status_code=404, detail="task not found")
     return TaskStatusResponse(**task)
 
 @router.get("/tasks")
 async def list_update_tasks(status: Optional[str] = None, limit: int = 50):
-    """列出所有更新任务"""
+    """list update tasks"""
     tasks = task_storage.list_tasks(status, limit)
     return {"total": len(tasks), "tasks": tasks}
 
 @router.delete("/task/{task_id}")
 async def cancel_update_task(task_id: str):
-    """取消更新任务"""
+    """delete/cancel an update task"""
     task = _get_task(task_id)
     if not task:
-        raise HTTPException(status_code=404, detail="任务不存在")
-    
+        raise HTTPException(status_code=404, detail="task not found")
+
     if task["status"] in ["pending", "running"]:
         task["status"] = "cancelled"
-        task["message"] = "任务已取消"
+        task["message"] = "task cancelled"
         task["updated_at"] = datetime.now().isoformat()
         _save_task(task_id, task)
-    
-    return {"message": "任务已标记为取消", "task_id": task_id}
 
+    return {"message": "task marked as cancelled", "task_id": task_id}
 @router.get("/health")
 async def update_health_check():
-    """健康检查"""
+    """health check"""
     return {"status": "healthy", "service": "update", "timestamp": datetime.now().isoformat()}
