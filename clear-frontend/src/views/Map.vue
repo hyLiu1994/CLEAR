@@ -581,17 +581,17 @@ async function loadInitialData() {
     const data = await res.json()
     trajectories.value = data || []
     
-    // === 最简单修改：只有这5行 ===
+    // ===Modification start: Automatically set map center and zoom level===
     if (trajectories.value.length > 0 && mapRef.value) {
-      // 直接使用第一条轨迹的第一个点作为中心（最简单的实现）
+      // Directly use the first point of the first trajectory as the center
       const firstTraj = trajectories.value[0]
       if (firstTraj.segments?.[0]?.coordinates?.[0]) {
         const firstPoint = firstTraj.segments[0].coordinates[0]
         mapRef.value.setCenter(firstPoint)
-        mapRef.value.setZoom(5) // 设置一个合适的缩放级别
+        mapRef.value.setZoom(5) // Set an appropriate zoom level
       }
     }
-    // === 结束修改 ===
+    // ==
 
     // Build segment features for map display
     buildSegmentFeatures()
