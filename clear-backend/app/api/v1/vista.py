@@ -10,7 +10,7 @@ from datetime import datetime
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
-# ============ 导入VISTA模块 ============
+# ============ load VISTA modules ============
 from vista.src.utils.HyperParameters import configure_parser
 from vista.src.utils.Evaluation import evaluate_imputed_result
 from vista.src.utils.utils import setup_logging, get_root_path
@@ -19,7 +19,7 @@ from vista.src.pipeline.pipeline import SDKG_Construction_Multithreading, Trajec
 from vista.src.modules.M0_SDKG import SDKG
 from vista.src.modules.M7_Scheduler import KnowledgeUnitManager, ImputationResultsManager
 
-# 获取根路径
+
 root_path = get_root_path()
 
 from fastapi import APIRouter, HTTPException, BackgroundTasks
@@ -27,7 +27,7 @@ from pydantic import BaseModel, Field
 
 router = APIRouter(prefix="/vista", tags=["vista"])
 
-# ============ 本地JSON文件存储 ============
+# ============ JSON Task Storage ============
 
 class JSONTaskStorage:
     def __init__(self, storage_dir: str = "./task_storage"):
@@ -69,14 +69,14 @@ class JSONTaskStorage:
         tasks.sort(key=lambda x: x.get("created_at", ""), reverse=True)
         return tasks[:limit]
 
-# 初始化任务存储和线程池
+# Initialize task storage and thread pool
 task_storage = JSONTaskStorage(storage_dir="/mnt/aisdata/Haoyu/CLEAR/task_storage")
 executor = ThreadPoolExecutor(max_workers=4)
 
-# ============ VISTARequest模型 ============
+# ============ VISTARequest Model ============
 
 class VISTARequest(BaseModel):
-    # 前端字段（前端form中的v-model）
+ 
     dataset: Optional[str] = None
     apikey: Optional[str] = None
     platform: Optional[str] = None
@@ -84,7 +84,7 @@ class VISTARequest(BaseModel):
     codingModel: Optional[str] = None
     imputationModel: Optional[str] = None
     
-    # 前端数值参数
+
     topK: Optional[int] = None
     trajectoryNum: Optional[int] = None
     trajectoryLen: Optional[int] = None
@@ -96,12 +96,10 @@ class VISTARequest(BaseModel):
     concurrentNum: Optional[int] = None
     maxRetries: Optional[int] = None
     retryTimes: Optional[int] = None
-    
-    # 后端默认值（前端不提供时使用）
+
     llm_api_key: str = Field(default="")
     base_url: str = Field(default="https://dashscope.aliyuncs.com/compatible-mode/v1")
-    
-    # 种子、实验名称等固定参数（前端不需要设置）
+
     seed: int = Field(default=40)
     exp_name: str = Field(default="Default_1")
     end_point_sdkg: int = Field(default=800)
@@ -110,7 +108,7 @@ class VISTARequest(BaseModel):
     end_point: int = Field(default=200)
     pre_load: bool = Field(default=False)
 
-# ============ 响应模型 ============
+# ============ response models ============
 
 class TaskResponse(BaseModel):
     task_id: str
@@ -127,7 +125,7 @@ class TaskStatusResponse(BaseModel):
     created_at: str
     updated_at: str
 
-# ============ 任务管理函数 ============
+# ============ Task Management Functions ============
 
 def _save_task(task_id: str, task_data: Dict):
     task_storage.save_task(task_id, task_data)
@@ -138,19 +136,19 @@ def _get_task(task_id: str) -> Optional[Dict]:
 def _update_task_progress(task_id: str, progress: float, status: str = "running", message: str = None):
     task_storage.update_task_progress(task_id, progress, status, message)
 
-# ============ 参数映射函数 ============
+# ============ Parameter Mapping Function ============
 
 def _create_args_namespace_from_request(request: Dict) -> argparse.Namespace:
-    """从前端请求创建argparse.Namespace对象"""
+    """Create an argparse.Namespace object from a front-end request"""
     
-    # 获取parser的默认值
+    # Get the default value of the parser
     parser = configure_parser()
     defaults = {}
     for action in parser._actions:
         if action.dest != 'help':
             defaults[action.dest] = action.default
     
-    # 参数映射
+    # Parameter Mapping
     mapping = {
         'apikey': 'llm_api_key',
         'miningModel': 'mining_llm',
@@ -169,27 +167,26 @@ def _create_args_namespace_from_request(request: Dict) -> argparse.Namespace:
         'maxTimeInterval': 'max_time_interval',
     }
     
-    # 更新映射的参数
+    # Update mapping parameters
     for frontend, backend in mapping.items():
         if frontend in request and request[frontend] is not None:
             defaults[backend] = request[frontend]
     
-    # 直接参数
+    # Direct parameter
     if 'dataset' in request:
         defaults['dataset'] = request['dataset']
     
-    # 处理platform和base_url
+    # Handle platform and base_url
     platform = request.get('platform', 'alibaba').lower()
     if platform == 'openai':
         defaults['base_url'] = 'https://api.openai.com/v1'
-    else:  # alibaba或其他
+    else:  
         defaults['base_url'] = 'https://dashscope.aliyuncs.com/compatible-mode/v1'
     
-    # 前端可覆盖base_url
     if 'base_url' in request and request['base_url']:
         defaults['base_url'] = request['base_url']
     
-    # 设置数据文件路径
+    # Set data file path
     dataset = defaults.get('dataset', 'demo-dk')
     if dataset == "demo-dk":
         defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/aisdk-2024-03-01@31_filtered10_1000000000.csv"
@@ -202,35 +199,35 @@ def _create_args_namespace_from_request(request: Dict) -> argparse.Namespace:
         defaults['exp_name'] = "Default"
     elif dataset == "demo-us":
         defaults['exp_name'] = "Default_us"
-    # 创建Namespace
+   
     args = argparse.Namespace()
     for key, value in defaults.items():
         setattr(args, key, value)
     
     return args
 
-# ============ VISTA任务执行函数 ============
+# ============ VISTA task execution functions ============
 
 def _run_sdkg_build_task(task_id: str, request_data: Dict):
-    """执行SD-KG构建任务"""
+    """Execute SD-KG construction task"""
     try:
-        _update_task_progress(task_id, 10, "running", "开始创建参数")
+        _update_task_progress(task_id, 10, "running", "starting parameter creation")
         
         # 创建参数
         args = _create_args_namespace_from_request(request_data)
         
-        _update_task_progress(task_id, 20, "running", "设置日志")
+        _update_task_progress(task_id, 20, "running", "set logging")
         setup_logging(args)
         
-        _update_task_progress(task_id, 30, "running", "获取训练和测试数据")
+        _update_task_progress(task_id, 30, "running", "get training and testing data")
         _, (test_df, mark_missing_test) = get_training_test_data(args)
         
-        _update_task_progress(task_id, 40, "running", "初始化SDKG和知识单元管理器")
+        _update_task_progress(task_id, 40, "running", "initialize SDKG and knowledge unit manager")
         sdkg = SDKG(args)
         ku_manager = KnowledgeUnitManager(args)
         sdkg.load_SDKG(args.end_point_sdkg)
         ku_manager.load_knowledge_unit_list(args.end_point_sdkg)
-        _update_task_progress(task_id, 50, "running", "开始SD-KG构建")
+        _update_task_progress(task_id, 50, "running", "start SD-KG construction")
         if((not sdkg.SDK_graph_vs) or (not ku_manager.knowledge_unit_list)):
             logging.info("Starting SD-KG Construction...")
             sdkg, ku_manager = SDKG_Construction_Multithreading(
@@ -240,10 +237,10 @@ def _run_sdkg_build_task(task_id: str, request_data: Dict):
                 SDKG=sdkg,
             )
         
-        _update_task_progress(task_id, 90, "running", "保存构建结果")
-        _update_task_progress(task_id, 100, "done", "SD-KG构建完成")
+        _update_task_progress(task_id, 90, "running", "saving SD-KG and knowledge units")
+        _update_task_progress(task_id, 100, "done", "construction completed")
         
-        # 保存任务结果
+        # save task result
         task = _get_task(task_id)
         if task:
             task["result"] = {
@@ -254,30 +251,30 @@ def _run_sdkg_build_task(task_id: str, request_data: Dict):
             _save_task(task_id, task)
             
     except Exception as e:
-        logging.error(f"SD-KG构建任务失败: {str(e)}")
-        _update_task_progress(task_id, 0, "error", f"构建失败: {str(e)}")
+        logging.error(f"failed to construction SDKG: {str(e)}")
+        _update_task_progress(task_id, 0, "error", f"construction failed: {str(e)}")
 
 def _run_imputation_task(task_id: str, request_data: Dict):
-    """执行轨迹填补任务"""
+    """Execute trajectory imputation task"""
     try:
-        _update_task_progress(task_id, 10, "running", "开始创建参数")
+        _update_task_progress(task_id, 10, "running", "starting parameter creation")
         
         # 创建参数
         args = _create_args_namespace_from_request(request_data)
         
-        _update_task_progress(task_id, 20, "running", "设置日志")
+        _update_task_progress(task_id, 20, "running", "set logging")
         setup_logging(args)
         
-        _update_task_progress(task_id, 30, "running", "获取训练和测试数据")
+        _update_task_progress(task_id, 30, "running", "get training and testing data")
         _, (test_df, mark_missing_test) = get_training_test_data(args)
         
-        _update_task_progress(task_id, 40, "running", "初始化管理器和SDKG")
+        _update_task_progress(task_id, 40, "running", "initialize managers and SDKG")
         sdkg = SDKG(args)
         ku_manager = KnowledgeUnitManager(args)
         result_manager = ImputationResultsManager(args)
         sdkg.load_SDKG(args.end_point_sdkg)
         ku_manager.load_knowledge_unit_list(args.end_point_sdkg)
-        _update_task_progress(task_id, 60, "running", "开始轨迹填补")
+        _update_task_progress(task_id, 60, "running", "start trajectory imputation")
         result_manager.load_results_list(args.end_point_sdkg,args)
         if(not result_manager.results_list):
             result_manager = Trajectory_Imputation_Multithreading(
@@ -287,13 +284,13 @@ def _run_imputation_task(task_id: str, request_data: Dict):
                 SDKG=sdkg,
                 result_manager=result_manager
             )
-        
-        _update_task_progress(task_id, 80, "running", "评估填补结果")
+
+        _update_task_progress(task_id, 80, "running", "evaluate imputation results")
         evaluate_imputed_result(args, result_manager, test_df, mark_missing_test, sdkg)
-        
-        _update_task_progress(task_id, 100, "done", "轨迹填补完成")
-        
-        # 保存任务结果
+
+        _update_task_progress(task_id, 100, "done", "trajectory imputation completed")
+
+        # save task result
         task = _get_task(task_id)
         if task:
             task["result"] = {
@@ -303,14 +300,14 @@ def _run_imputation_task(task_id: str, request_data: Dict):
             _save_task(task_id, task)
             
     except Exception as e:
-        logging.error(f"轨迹填补任务失败: {str(e)}")
-        _update_task_progress(task_id, 0, "error", f"填补失败: {str(e)}")
+        logging.error(f"failed to impute trajectories: {str(e)}")
+        _update_task_progress(task_id, 0, "error", f"imputation failed: {str(e)}")
 
-# ============ API路由 ============
+# ============ API ============
 
 @router.post("/build", response_model=TaskResponse)
 async def start_sdkg_build(request: VISTARequest, background_tasks: BackgroundTasks):
-    """启动SD-KG构建任务"""
+    """start SD-KG construction task"""
     task_id = str(uuid.uuid4())
     
     task_data = {
@@ -321,7 +318,7 @@ async def start_sdkg_build(request: VISTARequest, background_tasks: BackgroundTa
         "request": request.dict(),
         "created_at": datetime.now().isoformat(),
         "updated_at": datetime.now().isoformat(),
-        "message": "SD-KG构建任务已创建"
+        "message": "SD-KG CONSTRUCTION task created"
     }
     
     _save_task(task_id, task_data)
@@ -330,13 +327,13 @@ async def start_sdkg_build(request: VISTARequest, background_tasks: BackgroundTa
     return TaskResponse(
         task_id=task_id,
         status="pending",
-        message="SD-KG构建任务已启动",
+        message="SD-KG CONSTRUCTION task created",
         created_at=task_data["created_at"]
     )
 
 @router.post("/impute", response_model=TaskResponse)
 async def start_imputation(request: VISTARequest, background_tasks: BackgroundTasks):
-    """启动轨迹填补任务"""
+    """Start trajectory imputation task"""
     task_id = str(uuid.uuid4())
     
     task_data = {
@@ -347,7 +344,7 @@ async def start_imputation(request: VISTARequest, background_tasks: BackgroundTa
         "request": request.dict(),
         "created_at": datetime.now().isoformat(),
         "updated_at": datetime.now().isoformat(),
-        "message": "轨迹填补任务已创建"
+        "message": "trajectory imputation task started"
     }
     
     _save_task(task_id, task_data)
@@ -356,40 +353,40 @@ async def start_imputation(request: VISTARequest, background_tasks: BackgroundTa
     return TaskResponse(
         task_id=task_id,
         status="pending",
-        message="轨迹填补任务已启动",
+        message="trajectory imputation task started",
         created_at=task_data["created_at"]
     )
 
 @router.get("/task/{task_id}", response_model=TaskStatusResponse)
 async def get_task_status(task_id: str):
-    """获取任务状态"""
+    """get task status"""
     task = _get_task(task_id)
     if not task:
-        raise HTTPException(status_code=404, detail="任务不存在")
+        raise HTTPException(status_code=404, detail="task not found")
     return TaskStatusResponse(**task)
 
 @router.get("/tasks")
 async def list_tasks(status: Optional[str] = None, limit: int = 50):
-    """列出所有任务"""
+    """list all the tasks"""
     tasks = task_storage.list_tasks(status, limit)
     return {"total": len(tasks), "tasks": tasks}
 
 @router.get("/health")
 async def health_check():
-    """健康检查"""
+    """health check"""
     return {"status": "healthy", "timestamp": datetime.now().isoformat()}
 
 @router.delete("/task/{task_id}")
 async def cancel_task(task_id: str):
-    """取消任务"""
+    """cancel task"""
     task = _get_task(task_id)
     if not task:
-        raise HTTPException(status_code=404, detail="任务不存在")
-    
+        raise HTTPException(status_code=404, detail="task not found")
+
     if task["status"] in ["pending", "running"]:
         task["status"] = "cancelled"
-        task["message"] = "任务已取消"
+        task["message"] = "task cancelled"
         task["updated_at"] = datetime.now().isoformat()
         _save_task(task_id, task)
-    
-    return {"message": "任务已标记为取消", "task_id": task_id}
+
+    return {"message": "task cancelled", "task_id": task_id}
