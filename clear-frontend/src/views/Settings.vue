@@ -485,7 +485,7 @@
 import { ref, onBeforeUnmount } from 'vue'
 import AppPageLayout from '../components/AppPageLayout.vue'
 
-//新增taskid用来沟通后端////////////////////////////////////////////////////////////////////
+//new taskid to contact with the backend
 const sdkgTaskId = ref(null)
 const imputeTaskId = ref(null)
 const updateTaskId = ref(null)
@@ -498,7 +498,7 @@ const setMode = m => {
 const form = ref({
   dataset: 'demo-dk',
 
-  apikey: 'sk-9e7e3e34a14040cda60571ff6ed5d8fc',
+  apikey: 'sk-xxx',
   platform: 'alibaba',
 
   trajectoryNum: 10000,
@@ -527,27 +527,23 @@ const imputeStatus = ref('idle')
 const imputeProgress = ref(0)
 let imputeTimer = null
 
-// 在现有状态变量后面添加
 const updateStatus = ref('idle')
 const updateProgress = ref(0)
 let updateTimer = null
 
-//沟通SDKG构建后端
+//SDKG
 const startSdkgBuild = async () => {
   sdkgStatus.value = 'running'
   sdkgProgress.value = 0
 
-  // 构建完整的参数对象
   const requestData = {
-    // 前端form中的所有参数
     dataset: form.value.dataset,
     apikey: form.value.apikey,
     platform: form.value.platform,
     miningModel: form.value.miningModel,
     codingModel: form.value.codingModel,
     imputationModel: form.value.imputationModel,
-    
-    // 数值参数
+
     topK: form.value.topK,
     trajectoryNum: form.value.trajectoryNum,
     trajectoryLen: form.value.trajectoryLen,
@@ -573,7 +569,7 @@ const startSdkgBuild = async () => {
   pollSdkgProgress()
 }
 
-//获得SDKG构建进度（不需要修改）
+//SDKG progress polling
 const pollSdkgProgress = () => {
   if (sdkgTimer) clearInterval(sdkgTimer)
 
@@ -590,22 +586,19 @@ const pollSdkgProgress = () => {
   }, 1000)
 }
 
-//沟通后端填补逻辑
+//Imputation
 const startImputation = async () => {
   if (sdkgStatus.value !== 'done') return
 
   imputeStatus.value = 'running'
   imputeProgress.value = 0
 
-  // 构建完整的参数对象
   const requestData = {
-    // 填补需要的参数
     dataset: form.value.dataset,
     apikey: form.value.apikey,
     platform: form.value.platform,
     imputationModel: form.value.imputationModel,
-    
-    // 数值参数
+
     topK: form.value.topK,
     trajectoryNum: form.value.trajectoryNum,
     trajectoryLen: form.value.trajectoryLen,
@@ -617,9 +610,6 @@ const startImputation = async () => {
     concurrentNum: form.value.concurrentNum,
     maxRetries: form.value.maxRetries,
     retryTimes: form.value.retryTimes,
-    
-    // 可以添加SDKG构建阶段的一些结果参数
-    // sdkgCheckpoint: sdkgTaskId.value // 如果需要关联之前的构建结果
   }
 
   const res = await fetch('http://localhost:8000/api/v1/vista/impute', {
@@ -634,7 +624,7 @@ const startImputation = async () => {
   pollImputeProgress()
 }
 
-//获取填补进度（不需要修改）
+//imputation progress polling
 const pollImputeProgress = () => {
   if (imputeTimer) clearInterval(imputeTimer)
 
@@ -652,20 +642,17 @@ const pollImputeProgress = () => {
 }
 
 
-// 在现有方法后面添加updateCLEARContent方法
+// update CLEAR content
 const updateCLEARContent = async () => {
   if (sdkgStatus.value !== 'done' || imputeStatus.value !== 'done') return
 
   updateStatus.value = 'running'
   updateProgress.value = 0
 
-  // 构建请求数据
   const requestData = {
     dataset: form.value.dataset,
-    // 可以传递之前任务的ID用于关联
     sdkgTaskId: sdkgTaskId.value,
     imputeTaskId: imputeTaskId.value,
-    // 其他必要参数
     apikey: form.value.apikey,
     platform: form.value.platform,
     trajectoryNum: form.value.trajectoryNum,
@@ -673,7 +660,6 @@ const updateCLEARContent = async () => {
   }
 
   try {
-    // 调用后端的update接口（需要你后端先实现这个接口）
     const res = await fetch('http://localhost:8000/api/v1/update', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -687,17 +673,15 @@ const updateCLEARContent = async () => {
     const data = await res.json()
     updateTaskId.value = data.task_id
 
-    // 开始轮询进度
     pollUpdateProgress()
   } catch (error) {
-    console.error('更新CLEAR内容失败:', error)
+    console.error('fail to update the content of CLEAR:', error)
     updateStatus.value = 'error'
     updateProgress.value = 0
   }
 }
 
-// 轮询更新进度
-// 轮询更新进度 - 修复版本
+// update progress polling
 const pollUpdateProgress = () => {
   if (updateTimer) clearInterval(updateTimer)
 
@@ -707,21 +691,19 @@ const pollUpdateProgress = () => {
       const data = await res.json()
 
       updateProgress.value = data.progress
-      updateStatus.value = data.status // 更新状态
+      updateStatus.value = data.status 
 
       if (data.status === 'done' || data.status === 'error' || data.status === 'cancelled') {
         clearInterval(updateTimer)
-        
-        // 确保最终状态正确
+
         if (data.status === 'done') {
           updateStatus.value = 'done'
           updateProgress.value = 100
         }
       }
     } catch (error) {
-      console.error('轮询更新进度失败:', error)
+      console.error('fail to update:', error)
       clearInterval(updateTimer)
-      // 可以添加错误状态处理
       updateStatus.value = 'error'
     }
   }, 1000)
@@ -900,20 +882,20 @@ onBeforeUnmount(() => {
 
 /* Expert groups */
 .expert-group {
-  margin-top: -2px;  /* 减少上边距 */
-  padding: 4px 4px;  /* 减少内边距 */
-  border-radius: 6px;  /* 减小圆角 */
+  margin-top: -2px;  
+  padding: 4px 4px;  
+  border-radius: 6px; 
   border: 1px solid #e0e0e0;
   background: #ffffff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);  /* 减小阴影 */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);  
 }
 
 .expert-group-title {
   font-size: 11px;
   font-weight: 600;
   color: #374151;
-  margin-bottom: -2px;  /* 减少下边距 */
-  padding-bottom: 0px;  /* 减少内边距 */
+  margin-bottom: -2px;  
+  padding-bottom: 0px; 
   border-bottom: 1px solid #f0f0f0;
 }
 
