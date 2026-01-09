@@ -17,7 +17,7 @@
             :key="'p-' + idx"
             class="description-item"
           >
-            <!-- 主描述内容 -->
+            <!-- main description content -->
             <div class="main-description">
               <template v-if="para.includes(':')">
                 <strong>{{ getSimpleTitle(para) }}:</strong>
@@ -28,7 +28,7 @@
               </template>
             </div>
             
-            <!-- 详细描述（括号内内容） -->
+            <!-- Detailed description (content in parentheses) -->
             <template v-if="getBracketContent(para)">
               <div class="detailed-description">
                 <span class="detailed-marker">·</span>
@@ -193,35 +193,35 @@ let expandedHighlightNodes = new Set()
 let expandedHighlightLinks = new Set()
 let expandedDraggedNode = null
 
-// 获取主标题（移除括号内容，但保留嵌套括号的处理）
+// Get the main title (remove the content in parentheses, but handle nested parentheses)
 const getSimpleTitle = (text) => {
   const colonIndex = text.indexOf(':')
   if (colonIndex === -1) return text.trim()
   
   const titlePart = text.substring(0, colonIndex).trim()
-  // 移除完整的括号内容（包括嵌套）
+  // Remove the entire content within parentheses (including nested ones)
   return titlePart.replace(/\([^()]*(?:\([^()]*\)[^()]*)*\)/g, '').trim()
 }
 
-// 获取主内容（移除括号内容，但保留嵌套括号的处理）
+// Extract the main content (remove the content in parentheses, but handle nested parentheses)
 const getSimpleContent = (text) => {
   const colonIndex = text.indexOf(':')
   if (colonIndex === -1) {
-    // 对于没有冒号的文本，也需要移除括号内容
+    // For text without a colon, the content in parentheses also needs to be removed.
     return text.replace(/\([^()]*(?:\([^()]*\)[^()]*)*\)/g, '').trim()
   }
   
   const contentPart = text.substring(colonIndex + 1).trim()
-  // 移除完整的括号内容（包括嵌套）
+  // Remove the entire content within parentheses (including nested ones)
   return contentPart.replace(/\([^()]*(?:\([^()]*\)[^()]*)*\)/g, '').trim()
 }
 
-// 提取括号内的详细描述
+// Extract the detailed description within the parentheses
 const getBracketContent = (text) => {
   const startBracket = text.indexOf('(')
   if (startBracket === -1) return null
   
-  // 使用栈来处理嵌套括号
+  // Using a stack to handle nested parentheses
   let stack = 1
   let endBracket = -1
   
@@ -1149,7 +1149,7 @@ watch(() => isGraphExpanded.value, (newVal) => {
   list-style-type: disc;
 }
 
-/* 主描述内容 */
+/* main description */
 .main-description {
   margin-bottom: 4px;
   line-height: 1.5;
@@ -1160,20 +1160,20 @@ watch(() => isGraphExpanded.value, (newVal) => {
   color: #111827;
 }
 
-/* 详细描述样式 */
+/* detailed description */
 .detailed-description {
   display: flex;
-  margin-left: 20px; /* 缩进显示 */
+  margin-left: 20px; 
   margin-top: 4px;
   margin-bottom: 6px;
   padding: 4px 0;
-  color: #6b7280; /* 浅色文本 */
+  color: #6b7280; 
   font-size: 0.95em;
   line-height: 1.4;
 }
 
 .detailed-marker {
-  color: #9ca3af; /* 更浅的标记颜色 */
+  color: #9ca3af; 
   margin-right: 8px;
   font-weight: bold;
   font-size: 1.1em;
@@ -1181,7 +1181,7 @@ watch(() => isGraphExpanded.value, (newVal) => {
 
 .detailed-text {
   flex: 1;
-  font-style: normal; /* 保持正常字体，不使用斜体 */
+  font-style: normal; 
 }
 
 .bullet-list {
@@ -1558,19 +1558,19 @@ watch(() => isGraphExpanded.value, (newVal) => {
 }
 
 
-/* 放大整个页面的字体 */
+/* Increase the font size of the entire page */
 
 .section-title {
-  font-size: 34px; /* 小标题放大到22px */
+  font-size: 34px; /* Enlarge the subtitle to 22px */
 }
 
 .description-list li,
 .bullet-list li {
-  font-size: 34px; /* 正文内容放大到16px */
+  font-size: 34px; /* Enlarge the main text to 16px */
   line-height: 1.7;
 }
 
-/* 详细描述也放大 */
+/* detailed description also enlarged */
 .detailed-text {
   font-size: 34px;
 }

@@ -1733,13 +1733,13 @@ watch(() => isGraphExpanded.value, (newVal) => {
   }
 }
 
-/* 放大Static Attributes和Behavior Pattern的标题 */
+/* Enlarge the titles of Static Attributes and Behavior Pattern */
 .section-title {
   font-size: 30px !important;
   font-weight: 700 !important;
 }
 
-/* 放大这两个部分的正文 */
+/* Enlarge the text of these two sections */
 .bullet-list li,
 .bullet-list .bullet-list li {
   font-size: 30px !important;
