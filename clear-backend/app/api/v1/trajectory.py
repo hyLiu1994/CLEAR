@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 from datetime import datetime
-from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -94,7 +93,7 @@ def _load_raw_segments() -> List[Dict[str, Any]]:
     return data
 
 
-@lru_cache
+
 def _get_all_segments() -> List[Segment]:
     """
     JSON -> Segment (internal model)
@@ -116,7 +115,8 @@ def _get_all_segments() -> List[Segment]:
     return segments
 
 
-@lru_cache
+
+
 def _build_trajectories() -> List[Trajectory]:
     """
     Aggregate Segment -> Trajectory (internal structure) based on trajectory_id

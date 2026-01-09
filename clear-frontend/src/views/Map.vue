@@ -200,7 +200,7 @@ const mapRef = ref(null)
 const showFilter = ref(false)
 const loading = ref(false)
 const simplifyData = ref(true) // Whether to simplify trajectory data
-const viewBasedLoading = ref(false) // Whether to load only visible area
+const viewBasedLoading = ref(true) // Whether to load only visible area
 
 // Filter criteria
 const filters = reactive({
