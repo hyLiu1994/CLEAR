@@ -41,4 +41,6 @@ clear-backend/data
 task_storage
 update_task_storage
 clear-backend/data copy
-clear-backend/vista/results/Default_us
+clear-backend/vista/results
+clear-backend/vista/results_s
+clear-backend/vista/results_2
