@@ -1,0 +1,134 @@
+{
+  "SDK_graph_vs": {
+    "navigation_status": {
+      "Under way using engine": {
+        "vb_-2330088865958832235": 1,
+        "vb_-8959083088434348085": 1,
+        "vb_-2993020367777183505": 1,
+        "vb_-3236203174790080673": 1,
+        "vb_7764898114279390190": 2,
+        "vb_6032136057691195652": 1
+      },
+      "Moored": {
+        "vb_4625891805522270163": 1,
+        "vb_-514486934006855872": 1,
+        "vb_5588114342349034441": 1,
+        "vb_6290647294859735118": 1,
+        "vb_-4737676050672604761": 1
+      }
+    },
+    "hazardous_cargo": {
+      "no": {
+        "vb_-2330088865958832235": 1,
+        "vb_-8959083088434348085": 1,
+        "vb_-2993020367777183505": 1,
+        "vb_-3236203174790080673": 1,
+        "vb_4625891805522270163": 1,
+        "vb_-514486934006855872": 1,
+        "vb_7764898114279390190": 2,
+        "vb_6032136057691195652": 1,
+        "vb_5588114342349034441": 1,
+        "vb_6290647294859735118": 1,
+        "vb_-4737676050672604761": 1
+      }
+    },
+    "vessel_type": {
+      "Cargo Reserved": {
+        "vb_-2330088865958832235": 1,
+        "vb_-8959083088434348085": 1,
+        "vb_-2993020367777183505": 1,
+        "vb_-3236203174790080673": 1,
+        "vb_4625891805522270163": 1,
+        "vb_-514486934006855872": 1,
+        "vb_7764898114279390190": 2,
+        "vb_6032136057691195652": 1
+      },
+      "Tanker No additional information": {
+        "vb_5588114342349034441": 1,
+        "vb_6290647294859735118": 1,
+        "vb_-4737676050672604761": 1
+      }
+    },
+    "spatial_context": {
+      "location: Juan de Fuca Electoral Area, Capital Regional District, British Columbia, Canada; nearby_shipping_lanes: Query failed with status 504": {
+        "vb_-2330088865958832235": 1
+      },
+      "location: Canada; nearby_shipping_lanes: Query failed with status 504": {
+        "vb_-8959083088434348085": 1
+      },
+      "nearby_shipping_lanes: Unnamed traffic separation scheme": {
+        "vb_-2993020367777183505": 1
+      },
+      "nearby_shipping_lanes: Query failed with status 504": {
+        "vb_-3236203174790080673": 1
+      },
+      "location: Vancouver, Metro Vancouver Regional District, British Columbia, Canada; nearby_shipping_lanes: Query failed with status 504": {
+        "vb_4625891805522270163": 1,
+        "vb_-514486934006855872": 1
+      },
+      "location: Metro Vancouver Regional District, British Columbia, Canada; nearby_shipping_lanes: Query failed with status 504": {
+        "vb_7764898114279390190": 1
+      },
+      "location: Whatcom County, Washington, United States; nearby_shipping_lanes: Vancouver, Unnamed lane": {
+        "vb_7764898114279390190": 1
+      },
+      "location: Southern Gulf Islands Electoral Area, Capital Regional District, British Columbia, Canada; nearby_shipping_lanes: Query failed with status 504": {
+        "vb_6032136057691195652": 1
+      },
+      "location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": {
+        "vb_5588114342349034441": 1,
+        "vb_6290647294859735118": 1,
+        "vb_-4737676050672604761": 1
+      }
+    },
+    "draught": {
+      "[8, 10) m": {
+        "vb_-2330088865958832235": 1,
+        "vb_-8959083088434348085": 1,
+        "vb_-2993020367777183505": 1,
+        "vb_-3236203174790080673": 1,
+        "vb_4625891805522270163": 1,
+        "vb_-514486934006855872": 1,
+        "vb_7764898114279390190": 2,
+        "vb_6032136057691195652": 1
+      },
+      "[6, 8) m": {
+        "vb_5588114342349034441": 1,
+        "vb_6290647294859735118": 1,
+        "vb_-4737676050672604761": 1
+      }
+    },
+    "length": {
+      "[200, 250) m": {
+        "vb_-2330088865958832235": 1,
+        "vb_-8959083088434348085": 1,
+        "vb_-2993020367777183505": 1,
+        "vb_-3236203174790080673": 1,
+        "vb_4625891805522270163": 1,
+        "vb_-514486934006855872": 1,
+        "vb_7764898114279390190": 2,
+        "vb_6032136057691195652": 1
+      },
+      "[150, 200) m": {
+        "vb_5588114342349034441": 1,
+        "vb_6290647294859735118": 1,
+        "vb_-4737676050672604761": 1
+      }
+    },
+    "width": {
+      "[30, +\u221e) m": {
+        "vb_-2330088865958832235": 1,
+        "vb_-8959083088434348085": 1,
+        "vb_-2993020367777183505": 1,
+        "vb_-3236203174790080673": 1,
+        "vb_4625891805522270163": 1,
+        "vb_-514486934006855872": 1,
+        "vb_7764898114279390190": 2,
+        "vb_6032136057691195652": 1,
+        "vb_5588114342349034441": 1,
+        "vb_6290647294859735118": 1,
+        "vb_-4737676050672604761": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+################## Seed ###########################################################
+seed: 42
+
+################## exp_name ###########################################################
+#Test_US_10_0.2
+exp_name: Default_DK_qp_qp_qp
+check_point: 0
+process_length: 2
+end_point: 200
+end_point_sdkg: 800
+pre_load: True
+
+################## Dataset ###########################################################
+#./data/CleanedFilteredData/AIS_2024_04_01@15_filtered360_1000000000.csv
+#./data/CleanedFilteredData/aisdk-2024-03-01@31_filtered10_1000000000.csv
+raw_data_file: ./data/CleanedFilteredData/aisdk-2024-03-01@31_filtered10_1000000000.csv
+trajectory_num: 10000
+trajectory_len: 200
+mini_segment_len: 20
+missing_ratio: 0.2
+training_test: 0.8
+
+################## VISTA Configuration ###############################################
+retry_times: 3           
+e_f: 3e-3        
+top_k: 5
+max_concurrent : 16
+max_retries : 3
+
+################## LLM Configuration #################################################
+#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
+#sk-9e7e3e34a14040cda60571ff6ed5d8fc
+#https://api.openai.com/v1
+#https://dashscope.aliyuncs.com/compatible-mode/v1
+base_url: 'https://api.openai.com/v1'
+llm_api_key: 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
+mining_llm: gpt-4.1-nano
+coding_llm: gpt-4.1-nano
+analysis_llm: gpt-4.1-nano
+#gpt-4o
+#gpt-3.5-turbo gpt-4.1-nano
+#qwen-flash
+#qwen-plus

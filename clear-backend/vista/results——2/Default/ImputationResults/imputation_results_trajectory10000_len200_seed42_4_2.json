@@ -1,0 +1,47 @@
+[
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {
+    "sequence_id": 35,
+    "segment_id": 6,
+    "mmsi": 209207000,
+    "behavior_estimator": null,
+    "method_selector": null,
+    "explanation_composer": null
+  },
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
+  {
+    "sequence_id": 29,
+    "segment_id": 6,
+    "mmsi": 209207000,
+    "behavior_estimator": null,
+    "method_selector": null,
+    "explanation_composer": null
+  },
+  {
+    "sequence_id": 29,
+    "segment_id": 5,
+    "mmsi": 209207000,
+    "behavior_estimator": null,
+    "method_selector": null,
+    "explanation_composer": null
+  },
+  {},
+  {},
+  {}
+]

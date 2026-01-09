@@ -1,0 +1,106 @@
+{
+  "SDK_graph_vb": {
+    "vb_4943603741192977323": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: DanTysk, Atlantic Crossing 1 (AC1) Seg.A, DanTysk OAP, Danger Area Nordsee, Unnamed lane, DanTysk OSS": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_7300892871073606864": 1
+    },
+    "vb_7552497324408604182": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Atlantic Crossing 1 (AC1) Seg.A, Danger Area Nordsee, DanTysk, Unnamed lane": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_7300892871073606864": 1
+    },
+    "vb_8533740795926517167": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Danger Area Nordsee, DanTysk, Unnamed lane": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_7300892871073606864": 1
+    },
+    "vb_2406049836065130604": {
+      "vs_navigation_status_Under way using engine": 2,
+      "vs_hazardous_cargo_no": 2,
+      "vs_vessel_type_Cargo": 2,
+      "vs_spatial_context_nearby_shipping_lanes: Danger Area Nordsee, Pangea North UK/Denmark, Unnamed lane": 1,
+      "vs_draught_[6, 8) m": 2,
+      "vs_length_[100, 150) m": 2,
+      "vs_width_[15, 20) m": 2,
+      "vf_-4299736627238634525": 2,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 1
+    },
+    "vb_4070099339598888285": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: ODIN 1, Atlantic Crossing 1 (AC1) Seg.A, Danger Area Nordsee, SylWin1, Unnamed lane, COBRA cable": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_7300892871073606864": 1
+    },
+    "vb_7638275640431072430": {
+      "vs_navigation_status_Under way using engine": 2,
+      "vs_hazardous_cargo_no": 2,
+      "vs_vessel_type_Cargo": 2,
+      "vs_spatial_context_nearby_shipping_lanes: DanTysk, ODIN 1, Atlantic Crossing 1 (AC1) Seg.A, Danger Area Nordsee, SylWin1, Unnamed lane, COBRA cable": 2,
+      "vs_draught_[6, 8) m": 2,
+      "vs_length_[100, 150) m": 2,
+      "vs_width_[15, 20) m": 2,
+      "vf_7019932154253854297": 1,
+      "vf_8520070981880644409": 1
+    },
+    "vb_-4719000971968241924": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: DanTysk, Atlantic Crossing 1 (AC1) Seg.A, Danger Area Nordsee, SylWin1, Unnamed lane": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_545811567782420792": 1
+    },
+    "vb_4687583344153039962": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: DanTysk, Atlantic Crossing 1 (AC1) Seg.A, DanTysk OAP, Danger Area Nordsee, SylWin1, Unnamed lane, DanTysk OSS": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_1938255083607052397": 1
+    },
+    "vb_486838627007273267": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Unnamed traffic separation scheme": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_7300892871073606864": 1
+    },
+    "vb_-3162317572829176146": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Unnamed traffic separation scheme": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_545811567782420792": 1
+    }
+  }
+}

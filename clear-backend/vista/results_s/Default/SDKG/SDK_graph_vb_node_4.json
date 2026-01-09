@@ -1,0 +1,204 @@
+{
+  "SDK_graph_vb_node": {
+    "vb_4943603741192977323": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed around 10.1 knots with minimal variation)",
+      "course_change": "oscillating slightly around north (the course over ground fluctuates narrowly within a small angular range centered on true north, indicating minor corrections)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains almost unchanged, varying by only 1\u20132 degrees, suggesting steady rudder control)",
+      "intent": "proceeding along a meridian (the vessel is moving in a nearly straight northbound path with negligible east-west deviation, consistent with longitudinal navigation close to a fixed meridian)",
+      "duration": "500~550",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a nearly constant speed around 10.1 knots with minimal variation)\n- **course_pattern**: oscillating slightly around north (the course over ground fluctuates narrowly within a small angular range centered on true north, indicating minor corrections)\n- **heading_pattern**: stable with minor fluctuations (the heading remains almost unchanged, varying by only 1\u20132 degrees, suggesting steady rudder control)\n- **intent**: proceeding along a meridian (the vessel is moving in a nearly straight northbound path with negligible east-west deviation, consistent with longitudinal navigation close to a fixed meridian)\n'''"
+    },
+    "vb_7552497324408604182": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 10.2 and 10.5 knots with minimal variation)",
+      "course_change": "oscillating slightly around north",
+      "heading_fluctuation": "stable (the heading remains consistently close to 0\u20132 degrees with negligible deviation, suggesting precise orientation control)",
+      "intent": "proceeding along a fixed maritime route (the vessel is following a straight northbound trajectory typical of a designated shipping lane)",
+      "duration": "450~500",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a nearly constant speed between 10.2 and 10.5 knots with minimal variation)\n- **course_pattern**: slight oscillation around north (the course over ground fluctuates narrowly between 353 and 359 degrees, indicating minor directional adjustments near true north)\n- **heading_pattern**: stable (the heading remains consistently close to 0\u20132 degrees with negligible deviation, suggesting precise orientation control)\n- **intent**: proceeding along a fixed maritime route (the vessel is following a straight northbound trajectory typical of a designated shipping lane)\n'''"
+    },
+    "vb_8533740795926517167": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed with minor fluctuations around 10.3\u201310.5 knots, indicating steady propulsion)",
+      "course_change": "oscillating slightly around north",
+      "heading_fluctuation": "minimal fluctuation (the heading remains consistently between 0\u00b0 and 2\u00b0, indicating the vessel is pointing almost due north with very small rudder corrections)",
+      "intent": "navigating a straight northbound trajectory (the vessel is progressing steadily north with negligible lateral deviation, likely following a predefined route or traffic lane)",
+      "duration": "500~550",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a nearly constant speed with minor fluctuations around 10.3\u201310.5 knots, indicating steady propulsion)\n- **course_pattern**: slight oscillation around north (the course over ground varies narrowly between 354.7\u00b0 and 359.8\u00b0, showing small left-right adjustments while generally heading northward)\n- **heading_pattern**: minimal fluctuation (the heading remains consistently between 0\u00b0 and 2\u00b0, indicating the vessel is pointing almost due north with very small rudder corrections)\n- **intent**: navigating a straight northbound trajectory (the vessel is progressing steadily north with negligible lateral deviation, likely following a predefined route or traffic lane)\n'''"
+    },
+    "vb_2406049836065130604": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 10.0 and 10.5 knots with minimal variation)",
+      "course_change": "oscillating slightly around north",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains close to 0\u20132 degrees with negligible changes, indicating steady alignment)",
+      "intent": "proceeding along a fixed route (the vessel is following a linear trajectory with slight curvature due to navigational adjustments)",
+      "duration": "500~550",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a nearly constant speed between 10.0 and 10.5 knots with minimal variation)\n- **course_pattern**: gradually changing with minor oscillations (the course over ground fluctuates slightly around a northward direction, showing small deviations but overall maintaining a consistent bearing)\n- **heading_pattern**: stable with minor fluctuations (the heading remains close to 0\u20132 degrees with negligible changes, indicating steady alignment)\n- **intent**: proceeding along a fixed route (the vessel is following a linear trajectory with slight curvature due to navigational adjustments)\n'''"
+    },
+    "vb_4070099339598888285": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 10.2 and 10.9 knots with minimal variation)",
+      "course_change": "oscillating slightly around north (the course over ground fluctuates narrowly between 351.7\u00b0 and 359.0\u00b0, consistently pointing in a northward direction with minor deviations)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains almost fixed at 2\u00b0 to 4\u00b0, indicating steady alignment with minimal yawing)",
+      "intent": "navigating a straight northbound trajectory (the vessel is progressing steadily northward along a meridional path, likely following a defined maritime route or traffic separation scheme)",
+      "duration": "300~350",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a nearly constant speed between 10.2 and 10.9 knots with minimal variation)\n- **course_pattern**: oscillating slightly around north (the course over ground fluctuates narrowly between 351.7\u00b0 and 359.0\u00b0, consistently pointing in a northward direction with minor deviations)\n- **heading_pattern**: stable with minor fluctuations (the heading remains almost fixed at 2\u00b0 to 4\u00b0, indicating steady alignment with minimal yawing)\n- **intent**: navigating a straight northbound trajectory (the vessel is progressing steadily northward along a meridional path, likely following a defined maritime route or traffic separation scheme)\n'''"
+    },
+    "vb_7638275640431072430": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed, with sog values fluctuating only slightly around 10.4\u201310.5 knots, indicating steady propulsion)",
+      "course_change": "slight oscillation around north (the cog values vary minimally between 353.8\u00b0 and 358.4\u00b0, showing small deviations from true north, typical of course corrections in open-sea northbound transit)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains almost constant at 2.0\u00b0 to 3.0\u00b0, indicating the vessel\u2019s autopilot or helmsman is maintaining directional stability)",
+      "intent": "navigating a straight northbound trajectory (the combination of stable speed, near-constant northerly course, and minimal heading deviation indicates the vessel is following a meridional path; mathematically, this approximates a linear trajectory along a meridian: \u0394lat \u2248 k\u00b7\u0394t, \u0394lon \u2248 0, where latitude increases steadily while longitude remains nearly unchanged)",
+      "duration": "350~400",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed, with sog values fluctuating only slightly around 10.4\u201310.5 knots, indicating steady propulsion)\n- **course_pattern**: slight oscillation around north (the cog values vary minimally between 353.8\u00b0 and 358.4\u00b0, showing small deviations from true north, typical of course corrections in open-sea northbound transit)\n- **heading_pattern**: stable with minor fluctuations (the heading remains almost constant at 2.0\u00b0 to 3.0\u00b0, indicating the vessel\u2019s autopilot or helmsman is maintaining directional stability)\n- **intent**: navigating a straight northbound trajectory (the combination of stable speed, near-constant northerly course, and minimal heading deviation indicates the vessel is following a meridional path; mathematically, this approximates a linear trajectory along a meridian: \u0394lat \u2248 k\u00b7\u0394t, \u0394lon \u2248 0, where latitude increases steadily while longitude remains nearly unchanged)\n'''"
+    },
+    "vb_-4719000971968241924": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed, with minor variations around 10 knots, indicating steady propulsion)",
+      "course_change": "slight oscillation around north (the course over ground fluctuates minimally between 354 and 360 degrees, remaining predominantly aligned with true north)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains nearly constant between 2 and 4 degrees, showing only small adjustments)",
+      "intent": "navigating a straight northbound trajectory (the vessel is moving steadily toward the north along a narrow longitudinal band, suggesting travel along a meridian)",
+      "duration": "600~650",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed, with minor variations around 10 knots, indicating steady propulsion)\n- **course_pattern**: slight oscillation around north (the course over ground fluctuates minimally between 354 and 360 degrees, remaining predominantly aligned with true north)\n- **heading_pattern**: stable with minor fluctuations (the heading remains nearly constant between 2 and 4 degrees, showing only small adjustments)\n- **intent**: navigating a straight northbound trajectory (the vessel is moving steadily toward the north along a narrow longitudinal band, suggesting travel along a meridian)\n'''"
+    },
+    "vb_4687583344153039962": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed between 9.7 and 10.2 knots with minimal variation over time)",
+      "course_change": "slight oscillation around north (the course over ground fluctuates narrowly between 353 and 360 degrees, indicating a path closely aligned with true north with minor corrections)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains consistently near 3\u20134 degrees with very small deviations, suggesting steady rudder control)",
+      "intent": "navigating a straight northbound trajectory (the vessel is progressing along a nearly meridional path with little lateral deviation, likely following a designated shipping lane or direct route)",
+      "duration": "450~500",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed between 9.7 and 10.2 knots with minimal variation over time)\n- **course_pattern**: slight oscillation around north (the course over ground fluctuates narrowly between 353 and 360 degrees, indicating a path closely aligned with true north with minor corrections)\n- **heading_pattern**: stable with minor fluctuations (the heading remains consistently near 3\u20134 degrees with very small deviations, suggesting steady rudder control)\n- **intent**: navigating a straight northbound trajectory (the vessel is progressing along a nearly meridional path with little lateral deviation, likely following a designated shipping lane or direct route)\n'''"
+    },
+    "vb_486838627007273267": {
+      "speed_profile": "stable (the vessel maintains a consistent speed with minor variations, indicating steady propulsion)",
+      "course_change": "oscillating slightly around north (the course over ground fluctuates within a narrow range, suggesting small corrective turns but overall directional consistency)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely consistent, deviating only slightly, which indicates autopilot-assisted straight-line navigation)",
+      "intent": "proceeding along a fixed maritime route (the combination of stable speed, consistent heading, and minimal course variation suggests the vessel is following a predefined shipping lane or traffic separation scheme)",
+      "duration": "400~450",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a consistent speed with minor variations, indicating steady propulsion)\n- **course_pattern**: oscillating slightly around north (the course over ground fluctuates within a narrow range, suggesting small corrective turns but overall directional consistency)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely consistent, deviating only slightly, which indicates autopilot-assisted straight-line navigation)\n- **intent**: proceeding along a fixed maritime route (the combination of stable speed, consistent heading, and minimal course variation suggests the vessel is following a predefined shipping lane or traffic separation scheme)\n'''"
+    },
+    "vb_-3162317572829176146": {
+      "speed_profile": "stable (the vessel maintains a consistent speed with minor variations, indicating steady propulsion without significant acceleration or deceleration)",
+      "course_change": "oscillating slightly around north (the course over ground fluctuates within a narrow range, primarily between northeast and east-northeast, showing small corrective adjustments while maintaining overall directional consistency)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading varies slightly but remains within a small angular band, suggesting autopilot-assisted navigation with routine corrections)",
+      "intent": "proceeding along a fixed route (the vessel follows a smooth, continuous trajectory with coordinated changes in position aligned to a predefined path, likely a maritime traffic lane or shipping route)",
+      "duration": "450~500",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a consistent speed with minor variations, indicating steady propulsion without significant acceleration or deceleration)\n- **course_pattern**: oscillating slightly around north (the course over ground fluctuates within a narrow range, primarily between northeast and east-northeast, showing small corrective adjustments while maintaining overall directional consistency)\n- **heading_pattern**: stable with minor fluctuations (the heading varies slightly but remains within a small angular band, suggesting autopilot-assisted navigation with routine corrections)\n- **intent**: proceeding along a fixed route (the vessel follows a smooth, continuous trajectory with coordinated changes in position aligned to a predefined path, likely a maritime traffic lane or shipping route)\n'''"
+    },
+    "vb_2433322269289016977": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed with minor variations, indicating steady propulsion)",
+      "course_change": "slight oscillation around north (the course over ground fluctuates narrowly in the northern range, showing small corrective adjustments)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains nearly constant with minimal deviation, suggesting autopilot or stable steering control)",
+      "intent": "proceeding along a fixed maritime route (the vessel follows a consistent northerly trajectory with small corrections, typical of open-sea transit along a predefined lane)",
+      "duration": "500~550",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed with minor variations, indicating steady propulsion)\n- **course_pattern**: slight oscillation around north (the course over ground fluctuates narrowly in the northern range, showing small corrective adjustments)\n- **heading_pattern**: stable with minor fluctuations (the heading remains nearly constant with minimal deviation, suggesting autopilot or stable steering control)\n- **intent**: proceeding along a fixed maritime route (the vessel follows a consistent northerly trajectory with small corrections, typical of open-sea transit along a predefined lane)\n'''"
+    },
+    "vb_-4193129983009954372": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed with minor variations around a constant value)",
+      "course_change": "slight oscillation around north (the course over ground fluctuates narrowly within a small angular range, generally aligned northeastward)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains nearly constant, deviating only slightly over time)",
+      "intent": "proceeding along a fixed route (the vessel follows a smooth, predictable trajectory suggesting adherence to a predefined navigational path)",
+      "duration": "450~500",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed with minor variations around a constant value)\n- **course_pattern**: slight oscillation around north (the course over ground fluctuates narrowly within a small angular range, generally aligned northeastward)\n- **heading_pattern**: stable with minor fluctuations (the heading remains nearly constant, deviating only slightly over time)\n- **intent**: proceeding along a fixed route (the vessel follows a smooth, predictable trajectory suggesting adherence to a predefined navigational path)\n'''"
+    },
+    "vb_-4447150363411132852": {
+      "speed_profile": "stable (the vessel maintains a consistent speed with minor variations around a constant value, indicating steady propulsion)",
+      "course_change": "slight oscillation around north (the course over ground fluctuates narrowly in the northern range, primarily between northeast and east-northeast directions)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely consistent, varying only slightly due to environmental factors or course corrections)",
+      "intent": "proceeding along a fixed route (the vessel follows a predictable trajectory with minimal deviation, suggesting it is on a designated maritime path)",
+      "duration": "550~600",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a consistent speed with minor variations around a constant value, indicating steady propulsion)\n- **course_pattern**: slight oscillation around north (the course over ground fluctuates narrowly in the northern range, primarily between northeast and east-northeast directions)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely consistent, varying only slightly due to environmental factors or course corrections)\n- **intent**: proceeding along a fixed route (the vessel follows a predictable trajectory with minimal deviation, suggesting it is on a designated maritime path)\n'''"
+    },
+    "vb_530737638243321593": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed with minor variations, indicating steady propulsion)",
+      "course_change": "slight oscillation around north (the course over ground fluctuates narrowly within a small angular range, primarily oriented in a northeasterly direction)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely constant, deviating only slightly, suggesting autopilot or stabilized steering)",
+      "intent": "proceeding along a fixed maritime route (the vessel follows a consistent trajectory with minimal deviation, typical of vessels on a designated shipping lane or route)",
+      "duration": "400~450",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed with minor variations, indicating steady propulsion)\n- **course_pattern**: slight oscillation around north (the course over ground fluctuates narrowly within a small angular range, primarily oriented in a northeasterly direction)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely constant, deviating only slightly, suggesting autopilot or stabilized steering)\n- **intent**: proceeding along a fixed maritime route (the vessel follows a consistent trajectory with minimal deviation, typical of vessels on a designated shipping lane or route)\n'''"
+    },
+    "vb_6684264623692230723": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed with minimal variation, indicating steady propulsion)",
+      "course_change": "oscillating slightly around south-southwest (the course over ground fluctuates narrowly within a southern directional band, suggesting minor corrective adjustments)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely constant, deviating only slightly, which indicates autopilot-assisted straight-line navigation)",
+      "intent": "proceeding along a fixed maritime route (the combination of stable speed, consistent southerly course, and minimal heading deviation suggests the vessel is following a predefined shipping lane or traffic separation scheme)",
+      "duration": "400~450",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed with minimal variation, indicating steady propulsion)\n- **course_pattern**: oscillating slightly around south-southwest (the course over ground fluctuates narrowly within a southern directional band, suggesting minor corrective adjustments)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely constant, deviating only slightly, which indicates autopilot-assisted straight-line navigation)\n- **intent**: proceeding along a fixed maritime route (the combination of stable speed, consistent southerly course, and minimal heading deviation suggests the vessel is following a predefined shipping lane or traffic separation scheme)\n'''"
+    },
+    "vb_425376477985963882": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed, with sog values fluctuating only slightly around 10.7\u201310.9 knots, indicating steady propulsion)",
+      "course_change": "oscillating slightly around south-southwest (the cog values vary narrowly between 189.7\u00b0 and 196.9\u00b0, showing minor directional adjustments but overall sustained movement in a southern direction)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely constant near 195\u00b0\u2013199\u00b0, with small deviations likely due to environmental factors or autopilot corrections)",
+      "intent": "proceeding along a fixed maritime route (the combination of stable speed, consistent southerly course, and minimal heading variation suggests the vessel is following a predefined shipping lane or traffic separation scheme in a straight-line trajectory)",
+      "duration": "1400~1450",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed, with sog values fluctuating only slightly around 10.7\u201310.9 knots, indicating steady propulsion)\n- **course_pattern**: oscillating slightly around south-southwest (the cog values vary narrowly between 189.7\u00b0 and 196.9\u00b0, showing minor directional adjustments but overall sustained movement in a southern direction)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely constant near 195\u00b0\u2013199\u00b0, with small deviations likely due to environmental factors or autopilot corrections)\n- **intent**: proceeding along a fixed maritime route (the combination of stable speed, consistent southerly course, and minimal heading variation suggests the vessel is following a predefined shipping lane or traffic separation scheme in a straight-line trajectory)\n'''"
+    },
+    "vb_-667444892742026869": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed around 10.7\u201310.8 knots with minimal variation)",
+      "course_change": "oscillating slightly around north (the course over ground varies narrowly between approximately 192 and 196 degrees, indicating a slight but consistent westerly deviation from due south)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains close to 198 degrees with only small deviations, typically within \u00b12 degrees)",
+      "intent": "proceeding along a fixed route (the vessel is following a consistent south-southwesterly trajectory, likely on a predefined maritime passage or traffic lane)",
+      "duration": "250~300",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a nearly constant speed around 10.7\u201310.8 knots with minimal variation)\n- **course_pattern**: oscillating slightly around north (the course over ground varies narrowly between approximately 192 and 196 degrees, indicating a slight but consistent westerly deviation from due south)\n- **heading_pattern**: stable with minor fluctuations (the heading remains close to 198 degrees with only small deviations, typically within \u00b12 degrees)\n- **intent**: proceeding along a fixed route (the vessel is following a consistent south-southwesterly trajectory, likely on a predefined maritime passage or traffic lane)\n'''"
+    },
+    "vb_6804487216832192520": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed, not accelerating or decelerating)",
+      "course_change": "oscillating slightly around south-southwest (the course over ground fluctuates within a narrow angular range centered near 220 degrees)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely consistent with small variations, indicating steady rudder control)",
+      "intent": "proceeding along a fixed maritime route (the vessel is following a defined shipping lane or traffic separation scheme in a south-southwesterly direction)",
+      "duration": "143150~143200",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed, not accelerating or decelerating)\n- **course_pattern**: oscillating slightly around south-southwest (the course over ground fluctuates within a narrow angular range centered near 220 degrees)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely consistent with small variations, indicating steady rudder control)\n- **intent**: proceeding along a fixed maritime route (the vessel is following a defined shipping lane or traffic separation scheme in a south-southwesterly direction)\n'''"
+    },
+    "vb_6250756469076962099": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 7.7 and 8.5 knots with minimal variation over time)",
+      "course_change": "oscillating slightly around south-southwest (the course over ground varies narrowly between approximately 207 and 216 degrees, indicating a slight but consistent southwestward deviation)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely consistent around 213\u2013215 degrees, with small adjustments not exceeding a few degrees)",
+      "intent": "proceeding along a fixed route (the vessel follows a smooth, nearly linear trajectory southwestward, suggesting it is following a predefined navigational path or traffic separation scheme)",
+      "duration": "40600~40650",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a nearly constant speed between 7.7 and 8.5 knots with minimal variation over time)\n- **course_pattern**: oscillating slightly around south-southwest (the course over ground varies narrowly between approximately 207 and 216 degrees, indicating a slight but consistent southwestward deviation)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely consistent around 213\u2013215 degrees, with small adjustments not exceeding a few degrees)\n- **intent**: proceeding along a fixed route (the vessel follows a smooth, nearly linear trajectory southwestward, suggesting it is following a predefined navigational path or traffic separation scheme)\n'''"
+    },
+    "vb_-984552132657264061": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 10.3 and 10.7 knots with minimal variation over time)",
+      "course_change": "oscillating slightly around south-southwest (the course over ground fluctuates narrowly between 189 and 192 degrees, indicating a consistent south-southwesterly direction with minor corrections)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains close to 194\u2013195 degrees for most of the trajectory, with small deviations likely due to environmental factors or autopilot adjustments)",
+      "intent": "proceeding along a fixed maritime route (the vessel is following a sustained, linear trajectory in a south-southwesterly direction, typical of vessels transiting along established shipping lanes)",
+      "duration": "1300~1350",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a nearly constant speed between 10.3 and 10.7 knots with minimal variation over time)\n- **course_pattern**: oscillating slightly around south-southwest (the course over ground fluctuates narrowly between 189 and 192 degrees, indicating a consistent south-southwesterly direction with minor corrections)\n- **heading_pattern**: stable with minor fluctuations (the heading remains close to 194\u2013195 degrees for most of the trajectory, with small deviations likely due to environmental factors or autopilot adjustments)\n- **intent**: proceeding along a fixed maritime route (the vessel is following a sustained, linear trajectory in a south-southwesterly direction, typical of vessels transiting along established shipping lanes)\n'''"
+    },
+    "vb_3600198989798220040": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 10.5 and 10.8 knots with minimal variation)",
+      "course_change": "oscillating slightly around south-southwest (the course over ground consistently points in a south-southwesterly direction, varying narrowly around 190\u2013192 degrees)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains close to 194\u2013195 degrees, deviating only slightly during the trajectory)",
+      "intent": "proceeding along a fixed maritime route (the vessel follows a consistent, almost straight southward path along a defined shipping lane or traffic separation scheme, likely en route between major ports)",
+      "duration": "1200~1250",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel maintains a nearly constant speed between 10.5 and 10.8 knots with minimal variation)\n- **course_pattern**: oscillating slightly around south-southwest (the course over ground consistently points in a south-southwesterly direction, varying narrowly around 190\u2013192 degrees)\n- **heading_pattern**: stable with minor fluctuations (the heading remains close to 194\u2013195 degrees, deviating only slightly during the trajectory)\n- **intent**: proceeding along a fixed maritime route (the vessel follows a consistent, almost straight southward path along a defined shipping lane or traffic separation scheme, likely en route between major ports)\n'''"
+    },
+    "vb_-3894124770400869617": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed, with sog values remaining nearly constant across timestamps)",
+      "course_change": "oscillating slightly around south-southwest (the cog values show minor variations within a narrow range, indicating a generally steady direction toward the south-southwest)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely consistent, varying only slightly around a central value, suggesting stable rudder control)",
+      "intent": "proceeding along a fixed route (the combination of stable speed, consistent course over ground, and minimal heading deviation indicates the vessel is following a predefined navigational path)",
+      "duration": "300~350",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed, with sog values remaining nearly constant across timestamps)\n- **course_pattern**: oscillating slightly around south-southwest (the cog values show minor variations within a narrow range, indicating a generally steady direction toward the south-southwest)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely consistent, varying only slightly around a central value, suggesting stable rudder control)\n- **intent**: proceeding along a fixed route (the combination of stable speed, consistent course over ground, and minimal heading deviation indicates the vessel is following a predefined navigational path)\n'''"
+    },
+    "vb_-2611320954329394471": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed, with sog values remaining nearly constant across timestamps)",
+      "course_change": "oscillating slightly around south-southwest (the course over ground shows minor variations within a narrow angular range, indicating small adjustments in direction while generally progressing along a fixed bearing)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely consistent, deviating only slightly between readings, suggesting steady helm control)",
+      "intent": "proceeding along a fixed route (the combination of stable speed, consistent heading, and minimal course variation indicates the vessel is following a predefined navigational path or traffic separation scheme)",
+      "duration": "250~300",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed, with sog values remaining nearly constant across timestamps)\n- **course_pattern**: oscillating slightly around south-southwest (the course over ground shows minor variations within a narrow angular range, indicating small adjustments in direction while generally progressing along a fixed bearing)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely consistent, deviating only slightly between readings, suggesting steady helm control)\n- **intent**: proceeding along a fixed route (the combination of stable speed, consistent heading, and minimal course variation indicates the vessel is following a predefined navigational path or traffic separation scheme)\n'''"
+    },
+    "vb_7381173911203463207": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed with minimal variation, indicating steady propulsion)",
+      "course_change": "oscillating slightly around south-southwest (the course over ground shows minor fluctuations within a narrow angular range, suggesting small corrective adjustments)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely constant, deviating only slightly, indicating autopilot or stabilized steering)",
+      "intent": "proceeding along a fixed maritime route (the combination of stable speed, consistent course, and minimal heading deviation suggests the vessel is following a predefined navigational path)",
+      "duration": "250~300",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed with minimal variation, indicating steady propulsion)\n- **course_pattern**: oscillating slightly around south-southwest (the course over ground shows minor fluctuations within a narrow angular range, suggesting small corrective adjustments)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely constant, deviating only slightly, indicating autopilot or stabilized steering)\n- **intent**: proceeding along a fixed maritime route (the combination of stable speed, consistent course, and minimal heading deviation suggests the vessel is following a predefined navigational path)\n'''"
+    },
+    "vb_1671458116290284052": {
+      "speed_profile": "stable (the vessel is maintaining a consistent speed, with sog values remaining nearly constant across timestamps)",
+      "course_change": "oscillating slightly around northeast (the cog values show minor variations but remain within a narrow range centered on a northeast direction)",
+      "heading_fluctuation": "stable with minor fluctuations (the heading remains largely consistent, deviating only slightly between readings, indicating steady orientation)",
+      "intent": "proceeding along a fixed route (the combination of stable speed, consistent course over ground, and minimal heading changes suggests the vessel is following a predefined navigational path)",
+      "duration": "200~250",
+      "llm_output": "'''\nPattern:\n- **speed_pattern**: stable (the vessel is maintaining a consistent speed, with sog values remaining nearly constant across timestamps)\n- **course_pattern**: oscillating slightly around northeast (the cog values show minor variations but remain within a narrow range centered on a northeast direction)\n- **heading_pattern**: stable with minor fluctuations (the heading remains largely consistent, deviating only slightly between readings, indicating steady orientation)\n- **intent**: proceeding along a fixed route (the combination of stable speed, consistent course over ground, and minimal heading changes suggests the vessel is following a predefined navigational path)\n'''"
+    }
+  }
+}

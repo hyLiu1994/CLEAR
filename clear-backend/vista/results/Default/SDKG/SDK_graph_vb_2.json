@@ -1,0 +1,106 @@
+{
+  "SDK_graph_vb": {
+    "vb_4934341199566212978": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_-3130087452792645394": 1
+    },
+    "vb_1032570387544111837": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: DanTysk, Unnamed lane, Atlantic Crossing 1 (AC1) Seg.A, Danger Area Nordsee": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_-3130087452792645394": 1
+    },
+    "vb_8019250861398499446": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_-2116487659008371225": 1
+    },
+    "vb_5811690192957402961": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_-3130087452792645394": 1
+    },
+    "vb_3598715552751238572": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: COBRA cable, ODIN 1, Atlantic Crossing 1 (AC1) Seg.A, SylWin1, Danger Area Nordsee, Unnamed lane": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_-3130087452792645394": 1
+    },
+    "vb_534972499413495393": {
+      "vs_navigation_status_Under way using engine": 2,
+      "vs_hazardous_cargo_no": 2,
+      "vs_vessel_type_Cargo": 2,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 2,
+      "vs_draught_[6, 8) m": 2,
+      "vs_length_[100, 150) m": 2,
+      "vs_width_[15, 20) m": 2,
+      "vf_-3130087452792645394": 2
+    },
+    "vb_-1944846205623277350": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_-3130087452792645394": 1
+    },
+    "vb_-5122576417879634864": {
+      "vs_navigation_status_Under way using engine": 2,
+      "vs_hazardous_cargo_no": 2,
+      "vs_vessel_type_Cargo": 2,
+      "vs_spatial_context_nearby_shipping_lanes: Atlantic Crossing 1 (AC1) Seg.A, SylWin1, Danger Area Nordsee, DanTysk OAP, DanTysk, Unnamed lane, DanTysk OSS": 1,
+      "vs_draught_[6, 8) m": 2,
+      "vs_length_[100, 150) m": 2,
+      "vs_width_[15, 20) m": 2,
+      "vf_-3130087452792645394": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 1,
+      "vf_-2116487659008371225": 1
+    },
+    "vb_-7534325834090139703": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_-3130087452792645394": 1
+    },
+    "vb_-7329803408797695636": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Unnamed traffic separation scheme": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[100, 150) m": 1,
+      "vs_width_[15, 20) m": 1,
+      "vf_-3130087452792645394": 1
+    }
+  }
+}

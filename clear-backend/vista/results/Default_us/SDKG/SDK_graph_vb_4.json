@@ -1,0 +1,285 @@
+{
+  "SDK_graph_vb": {
+    "vb_-2330088865958832235": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo Reserved": 1,
+      "vs_spatial_context_location: Juan de Fuca Electoral Area, Capital Regional District, British Columbia, Canada; nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[8, 10) m": 1,
+      "vs_length_[200, 250) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_-8959083088434348085": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo Reserved": 1,
+      "vs_spatial_context_location: Canada; nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[8, 10) m": 1,
+      "vs_length_[200, 250) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_-2993020367777183505": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo Reserved": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Unnamed traffic separation scheme": 1,
+      "vs_draught_[8, 10) m": 1,
+      "vs_length_[200, 250) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_-3236203174790080673": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo Reserved": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[8, 10) m": 1,
+      "vs_length_[200, 250) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_4625891805522270163": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo Reserved": 1,
+      "vs_spatial_context_location: Vancouver, Metro Vancouver Regional District, British Columbia, Canada; nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[8, 10) m": 1,
+      "vs_length_[200, 250) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_-514486934006855872": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo Reserved": 1,
+      "vs_spatial_context_location: Vancouver, Metro Vancouver Regional District, British Columbia, Canada; nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[8, 10) m": 1,
+      "vs_length_[200, 250) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-2279960127073175033": 1
+    },
+    "vb_7764898114279390190": {
+      "vs_navigation_status_Under way using engine": 2,
+      "vs_hazardous_cargo_no": 2,
+      "vs_vessel_type_Cargo Reserved": 2,
+      "vs_spatial_context_location: Metro Vancouver Regional District, British Columbia, Canada; nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[8, 10) m": 2,
+      "vs_length_[200, 250) m": 2,
+      "vs_width_[30, +\u221e) m": 2,
+      "vs_spatial_context_location: Whatcom County, Washington, United States; nearby_shipping_lanes: Vancouver, Unnamed lane": 1,
+      "vf_-2279960127073175033": 2
+    },
+    "vb_6032136057691195652": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Cargo Reserved": 1,
+      "vs_spatial_context_location: Southern Gulf Islands Electoral Area, Capital Regional District, British Columbia, Canada; nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[8, 10) m": 1,
+      "vs_length_[200, 250) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-2279960127073175033": 1
+    },
+    "vb_5588114342349034441": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-2279960127073175033": 1
+    },
+    "vb_6290647294859735118": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-2279960127073175033": 1
+    },
+    "vb_-4737676050672604761": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_1455615544508248984": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_-6617832480205146245": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-8482029440109420349": 1
+    },
+    "vb_485187898588483945": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-2279960127073175033": 1
+    },
+    "vb_8747468058910805657": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_-580624177768209712": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-8482029440109420349": 1
+    },
+    "vb_-145736583218954799": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_6537148309364937044": 1
+    },
+    "vb_-1200041531904305347": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_762051958206341158": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-5274696640364622098": 1
+    },
+    "vb_-3005549029783733778": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-8482029440109420349": 1
+    },
+    "vb_-736822488103358847": {
+      "vs_navigation_status_At anchor": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_8899081520044992948": 1
+    },
+    "vb_9020019479701394295": {
+      "vs_navigation_status_At anchor": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_8899081520044992948": 1
+    },
+    "vb_-7892597765495175224": {
+      "vs_navigation_status_At anchor": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Query failed with status 429": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_-1674108645292586519": 1
+    },
+    "vb_5233131386434752996": {
+      "vs_navigation_status_Under way using engine": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_Tanker No additional information": 1,
+      "vs_spatial_context_location: Brazoria County, Texas, United States; nearby_shipping_lanes: Unnamed lane, Coast Guard Basin, U.S. Coast Guard - Station Freeport": 1,
+      "vs_draught_[6, 8) m": 1,
+      "vs_length_[150, 200) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_1914341961555031797": 1
+    },
+    "vb_1138746614051891770": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_unknown": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Unnamed lane": 1,
+      "vs_draught_[12, +\u221e) m": 1,
+      "vs_length_[50, 100) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_8899081520044992948": 1
+    },
+    "vb_3812804604072188345": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_unknown": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Unnamed lane": 1,
+      "vs_draught_[12, +\u221e) m": 1,
+      "vs_length_[50, 100) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_8899081520044992948": 1
+    },
+    "vb_-4093957998444702139": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_unknown": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Query failed with status 504": 1,
+      "vs_draught_[12, +\u221e) m": 1,
+      "vs_length_[50, 100) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_4442479904956391995": 1
+    },
+    "vb_-3576811420042949606": {
+      "vs_navigation_status_Moored": 1,
+      "vs_hazardous_cargo_no": 1,
+      "vs_vessel_type_unknown": 1,
+      "vs_spatial_context_nearby_shipping_lanes: Unnamed lane": 1,
+      "vs_draught_[12, +\u221e) m": 1,
+      "vs_length_[50, 100) m": 1,
+      "vs_width_[30, +\u221e) m": 1,
+      "vf_8899081520044992948": 1
+    }
+  }
+}

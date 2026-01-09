@@ -1,0 +1,18 @@
+{
+  "speed_dict": {
+    "stable": true,
+    "stable with intermittent low-speed pulses": true,
+    "stable with intermittent low-speed bursts": true
+  },
+  "course_dict": {
+    "linear trajectory with slight clockwise curvature": true,
+    "circular trajectory with consistent clockwise rotation": true
+  },
+  "heading_dict": {
+    "stable with minor fluctuations": true
+  },
+  "intent_dict": {
+    "turning maneuver": true,
+    "navigating": true
+  }
+}

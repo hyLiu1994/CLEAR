@@ -1,0 +1,28 @@
+{
+  "name": "CLEAR",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "3d-force-graph": "^1.79.0",
+    "cytoscape": "^3.33.1",
+    "d3": "^7.9.0",
+    "force-graph": "^1.51.0",
+    "maplibre-gl": "^5.13.0",
+    "three": "^0.181.2",
+    "vue": "^3.5.24",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "npm:rolldown-vite@7.2.2"
+  },
+  "overrides": {
+    "vite": "npm:rolldown-vite@7.2.2"
+  }
+}

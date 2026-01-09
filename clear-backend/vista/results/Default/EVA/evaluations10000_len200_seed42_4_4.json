@@ -1,0 +1,23 @@
+{
+  "evaluation_metadata": {
+    "exp_name": "Default",
+    "trajectory_num": 10000,
+    "trajectory_len": 200,
+    "seed": 42,
+    "end_point_sdkg": 4,
+    "end_point": 4,
+    "timestamp": "2026-01-09T13:11:48.681335"
+  },
+  "metrics": {
+    "processed_segments": 2,
+    "processed_points": 40,
+    "latitude_mae": 0.00020723468202401562,
+    "longitude_mae": 0.0003859125431489252,
+    "latitude_rmse": 0.00022768073453267304,
+    "longitude_rmse": 0.0004290320186088464,
+    "mean_spherical_distance_km": 0.0330800521748077,
+    "max_spherical_distance_km": 0.056297393763607075,
+    "min_spherical_distance_km": 0.0023342691438735883,
+    "comparison_file": "/mnt/aisdata/Haoyu/CLEAR/clear-backend/vista/results/Default/COMPARISON/comparison10000_len200_seed42_4_4.csv"
+  }
+}
