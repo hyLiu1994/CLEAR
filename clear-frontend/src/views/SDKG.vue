@@ -114,12 +114,12 @@ let draggedNode = null
 
 // Colors for different node types
 const TYPE_COLORS = {
-  behavior: '#3b82f6',      // 主蓝色 - 与连边同色系
-  attribute: '#0ea5e9',     // 浅蓝色
-  function: '#06b6d4',      // 青色
-  segment: '#6366f1',       // 靛蓝色
-  trajectory: '#8b5cf6',    // 蓝紫色
-  default: '#64748b'        // 中性灰色
+  behavior: '#3b82f6',        
+  attribute: '#0ea5e9',     
+  function: '#06b6d4',      
+  segment: '#6366f1',       
+  trajectory: '#8b5cf6',    
+  default: '#64748b'        
 }
 const LINK_COLORS = {
   default: 'rgba(59, 130, 246, 0.1)',
