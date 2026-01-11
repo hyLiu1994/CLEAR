@@ -1,0 +1,3 @@
+[submodule "clear-backend/vista"]
+	path = clear-backend/vista
+	url = git@github.com:hyLiu1994/VISTA.git
