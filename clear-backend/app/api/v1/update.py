@@ -21,8 +21,8 @@ current_dir = Path(__file__).parent
 project_root = current_dir.parent.parent.parent
 
 router = APIRouter(prefix="/update", tags=["update"])
-process_length = 4
-end_point = 4
+process_length = 2
+end_point = 2
 seed=42
 exp_name = "Default"
 
@@ -44,8 +44,27 @@ class UpdateTaskStorage:
         filepath = self._get_task_filepath(task_id)
         if not filepath.exists():
             return None
-        with open(filepath, 'r', encoding='utf-8') as f:
-            return json.load(f)
+        
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
+                if not content.strip():
+                    print(f"WARNING: Task file {filepath} is empty")
+                    return None
+                return json.loads(content)
+        except json.JSONDecodeError as e:
+            print(f"ERROR: Invalid JSON in task file {filepath}: {e}")
+            return {
+                "task_id": task_id,
+                "status": "error",
+                "progress": 0,
+                "message": f"Task file corrupted: {str(e)}",
+                "created_at": datetime.now().isoformat(),
+                "updated_at": datetime.now().isoformat()
+            }
+        except Exception as e:
+            print(f"ERROR: Failed to read task file {filepath}: {e}")
+            return None
     
     def update_task_progress(self, task_id: str, progress: float, status: str = "running", message: str = None):
         task = self.get_task(task_id)
@@ -77,6 +96,19 @@ class UpdateRequest(BaseModel):
     sdkg_task_id: Optional[str] = None
     impute_task_id: Optional[str] = None
 
+    startDate: Optional[str] = None
+    endDate: Optional[str] = None
+
+    trajectoryNum: Optional[int] = None
+    trajectoryLen: Optional[int] = None
+    minTimeInterval: Optional[int] = None
+    maxTimeInterval: Optional[int] = None
+    apikey: Optional[str] = None
+    platform: Optional[str] = None
+
+    dataset: str = "demo-dk"
+    sdkg_task_id: Optional[str] = None
+    impute_task_id: Optional[str] = None
 class TaskResponse(BaseModel):
     task_id: str
     status: str
@@ -112,17 +144,66 @@ def _convert_csv_to_segments(task_id: str, request_data: Dict):
         trajectorylen = request_data.get("trajectoryLen", 200)
         trajectorynum = request_data.get("trajectoryNum", 10000)
 
+
+        min_time_interval = request_data.get('minTimeInterval', 10)
+        max_time_interval = request_data.get('maxTimeInterval', 1000000000)
+        
+        start_date_str = request_data.get('startDate', '')
+        end_date_str = request_data.get('endDate', '')
+        
         if dataset == "demo-dk":
             exp_name = "Default"
-        elif dataset == "demo-us":
-            exp_name = "Default_us"
-            
-        if dataset == "demo-dk":
             csv_path = f"{project_root}/vista/data/ProcessedData/aisdk-2024-03-01@31_filtered10_1000000000_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
             ku_path = f"{project_root}/vista/results/{exp_name}/KU/knowledge_units_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}.json"
+            
         elif dataset == "demo-us":
+            exp_name = "Default_us"
             csv_path = f"{project_root}/vista/data/ProcessedData/AIS_2024_04_01@15_filtered360_1000000000_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
             ku_path = f"{project_root}/vista/results/{exp_name}/KU/knowledge_units_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}.json"
+            
+        elif dataset == "custom-dk":
+            if start_date_str and end_date_str:
+                try:
+                    from datetime import datetime
+                    start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+                    end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+                    start_day = start_date.day
+                    end_day = end_date.day
+                    month_str = start_date.strftime("%Y-%m")
+                    dataset_identifier = f"aisdk-{month_str}-{start_day:02d}@{end_day}"
+                    # default_dk_2024_03_01_2024_03_31
+                    exp_name = f"default_dk_{start_date_str.replace('-', '_')}_{end_date_str.replace('-', '_')}"
+                    csv_path = f"{project_root}/vista/data/ProcessedData/{dataset_identifier}_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+                except Exception as e:
+                    logging.warning(f"Failed to parse custom DK dates, using default: {e}")
+                    exp_name = "Default"
+                    csv_path = f"{project_root}/vista/data/ProcessedData/aisdk-2024-03-01@31_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+            else:
+                exp_name = "Default"
+                csv_path = f"{project_root}/vista/data/ProcessedData/aisdk-2024-03-01@31_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+            ku_path = f"{project_root}/vista/results/{exp_name}/KU/knowledge_units_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}.json"
+            
+        elif dataset == "custom-us":
+            if start_date_str and end_date_str:
+                try:
+                    from datetime import datetime
+                    start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+                    end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+                    duration_days = (end_date - start_date).days + 1
+                    date_str = start_date.strftime("%Y_%m_%d")
+                    dataset_identifier = f"AIS_{date_str}@{duration_days}"
+                    #default_us_2024_04_01_2024_04_15
+                    exp_name = f"default_us_{start_date_str.replace('-', '_')}_{end_date_str.replace('-', '_')}"
+                    csv_path = f"{project_root}/vista/data/ProcessedData/{dataset_identifier}_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+                except Exception as e:
+                    logging.warning(f"Failed to parse custom US dates, using default: {e}")
+                    exp_name = "Default_us"
+                    csv_path = f"{project_root}/vista/data/ProcessedData/AIS_2024_04_01@15_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+            else:
+                exp_name = "Default_us"
+                csv_path = f"{project_root}/vista/data/ProcessedData/AIS_2024_04_01@15_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+            ku_path = f"{project_root}/vista/results/{exp_name}/KU/knowledge_units_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}.json"
+            
         else:
             raise ValueError(f"Unknown dataset: {dataset}")
         
@@ -262,10 +343,10 @@ def _generate_subgraphs(task_id: str, request_data: Dict):
         
         dataset = request_data.get("dataset", "demo-dk")
         
-        if dataset == "demo-dk":
+        if dataset == "demo-dk" or dataset == "custom-dk":
             input_file = f"{project_root}/data/sdkg_index.json"
-        elif dataset == "demo-us":
-            input_file = f"{project_root}/data/sdkg_index_us.json"
+        elif dataset == "demo-us" or dataset == "custom-us":
+            input_file = f"{project_root}/data/sdkg_index.json"
         else:
             input_file = f"{project_root}/data/sdkg_index.json"
 
@@ -389,31 +470,74 @@ def _convert_sdkg_to_kg(task_id: str, request_data: Dict):
         dataset = request_data.get("dataset", "demo-dk")
         trajectorylen = request_data.get("trajectoryLen", 200)
         trajectorynum = request_data.get("trajectoryNum", 10000)
+
+        min_time_interval = request_data.get('minTimeInterval', 10)
+        max_time_interval = request_data.get('maxTimeInterval', 1000000000)
+
+        start_date_str = request_data.get('startDate', '')
+        end_date_str = request_data.get('endDate', '')
+        
         if dataset == "demo-dk":
             exp_name = "Default"
+            csv_path = f"{project_root}/vista/data/ProcessedData/aisdk-2024-03-01@31_filtered10_1000000000_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+            
         elif dataset == "demo-us":
             exp_name = "Default_us"
-            
-        if dataset == "demo-dk":
-            vb_graph_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vb_{process_length}.json"
-            vb_node_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vb_node_{process_length}.json"
-            vf_graph_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vf_{process_length}.json"
-            vf_node_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vf_node_{process_length}.json"
-            vs_graph_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vs_{process_length}.json"
-            ku_path = f"{project_root}/vista/results/{exp_name}/KU/knowledge_units_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}.json"
-            imputation_path = f"{project_root}/vista/results/{exp_name}/ImputationResults/imputation_results_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}_{process_length}.json"
-            csv_path = f"{project_root}/vista/data/ProcessedData/aisdk-2024-03-01@31_filtered10_1000000000_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
-        elif dataset == "demo-us":
-            vb_graph_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vb_{process_length}.json"
-            vb_node_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vb_node_{process_length}.json"
-            vf_graph_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vf_{process_length}.json"
-            vf_node_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vf_node_{process_length}.json"
-            vs_graph_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vs_{process_length}.json"
-            ku_path = f"{project_root}/vista/results/{exp_name}/KU/knowledge_units_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}.json"
-            imputation_path = f"{project_root}/vista/results/{exp_name}/ImputationResults/imputation_results_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}_{process_length}.json"
             csv_path = f"{project_root}/vista/data/ProcessedData/AIS_2024_04_01@15_filtered360_1000000000_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+            
+        elif dataset == "custom-dk":
+
+            if start_date_str and end_date_str:
+                try:
+                    from datetime import datetime
+                    start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+                    end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+                    start_day = start_date.day
+                    end_day = end_date.day
+                    month_str = start_date.strftime("%Y-%m")
+                    dataset_identifier = f"aisdk-{month_str}-{start_day:02d}@{end_day}"
+                    #default_dk_2024_03_01_2024_03_31
+                    exp_name = f"default_dk_{start_date_str.replace('-', '_')}_{end_date_str.replace('-', '_')}"
+                    csv_path = f"{project_root}/vista/data/ProcessedData/{dataset_identifier}_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+                except Exception as e:
+                    logging.warning(f"Failed to parse custom DK dates, using default: {e}")
+                    exp_name = "Default"
+                    csv_path = f"{project_root}/vista/data/ProcessedData/aisdk-2024-03-01@31_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+            else:
+                exp_name = "Default"
+                csv_path = f"{project_root}/vista/data/ProcessedData/aisdk-2024-03-01@31_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+                
+        elif dataset == "custom-us":
+            if start_date_str and end_date_str:
+                try:
+                    from datetime import datetime
+                    start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+                    end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+                    duration_days = (end_date - start_date).days + 1
+                    date_str = start_date.strftime("%Y_%m_%d")
+                    dataset_identifier = f"AIS_{date_str}@{duration_days}"
+                    #  default_us_2024_04_01_2024_04_15
+                    exp_name = f"default_us_{start_date_str.replace('-', '_')}_{end_date_str.replace('-', '_')}"
+                    csv_path = f"{project_root}/vista/data/ProcessedData/{dataset_identifier}_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+                except Exception as e:
+                    logging.warning(f"Failed to parse custom US dates, using default: {e}")
+                    exp_name = "Default_us"
+                    csv_path = f"{project_root}/vista/data/ProcessedData/AIS_2024_04_01@15_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+            else:
+                exp_name = "Default_us"
+                csv_path = f"{project_root}/vista/data/ProcessedData/AIS_2024_04_01@15_filtered{min_time_interval}_{max_time_interval}_standardized_with_SequenceId_SegementId_PointInfo_{trajectorylen}_{trajectorynum}.csv"
+                
         else:
             raise ValueError(f"unknown dataset: {dataset}")
+        
+    
+        vb_graph_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vb_{process_length}.json"
+        vb_node_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vb_node_{process_length}.json"
+        vf_graph_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vf_{process_length}.json"
+        vf_node_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vf_node_{process_length}.json"
+        vs_graph_path = f"{project_root}/vista/results/{exp_name}/SDKG/SDK_graph_vs_{process_length}.json"
+        ku_path = f"{project_root}/vista/results/{exp_name}/KU/knowledge_units_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}.json"
+        imputation_path = f"{project_root}/vista/results/{exp_name}/ImputationResults/imputation_results_trajectory{trajectorynum}_len{trajectorylen}_seed{seed}_{process_length}_{process_length}.json"
         
         output_dir = "/mnt/aisdata/Haoyu/CLEAR/clear-backend/data"
         
@@ -930,7 +1054,7 @@ def _run_update_task(task_id: str, request_data: Dict):
         if not success2:
             _update_task_progress(task_id, 0, "error", message2)
             return
-        
+        _update_task_progress(task_id, 100, "done", "CLEAR content update completed")
         # save tasks result
         task = _get_task(task_id)
         if task:
@@ -968,7 +1092,8 @@ async def start_update_task(request: UpdateRequest, background_tasks: Background
     }
     
     _save_task(task_id, task_data)
-    background_tasks.add_task(_run_update_task, task_id, request.dict())
+
+    background_tasks.add_task(_safe_run_update_task, task_id, request.dict())
     
     return TaskResponse(
         task_id=task_id,
@@ -976,6 +1101,13 @@ async def start_update_task(request: UpdateRequest, background_tasks: Background
         message="submission successful",
         created_at=task_data["created_at"]
     )
+
+def _safe_run_update_task(task_id: str, request_data: Dict):
+    try:
+        _run_update_task(task_id, request_data)
+    except Exception as e:
+        print(f"Task {task_id} failed: {e}")
+        task_storage.update_task_progress(task_id, 0, "error", f"Task failed: {str(e)}")
 
 @router.get("/task/{task_id}", response_model=TaskStatusResponse)
 async def get_update_task_status(task_id: str):

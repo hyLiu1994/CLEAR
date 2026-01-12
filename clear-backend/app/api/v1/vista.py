@@ -18,7 +18,7 @@ from vista.src.data.AISDataProcess import get_training_test_data
 from vista.src.pipeline.pipeline import SDKG_Construction_Multithreading, Trajectory_Imputation_Multithreading
 from vista.src.modules.M0_SDKG import SDKG
 from vista.src.modules.M7_Scheduler import KnowledgeUnitManager, ImputationResultsManager
-
+from vista.src.data.AISDataset import AISDataset
 
 root_path = get_root_path()
 
@@ -83,7 +83,8 @@ class VISTARequest(BaseModel):
     miningModel: Optional[str] = None
     codingModel: Optional[str] = None
     imputationModel: Optional[str] = None
-    
+    startDate: Optional[str] = None
+    endDate: Optional[str] = None
 
     topK: Optional[int] = None
     trajectoryNum: Optional[int] = None
@@ -186,19 +187,82 @@ def _create_args_namespace_from_request(request: Dict) -> argparse.Namespace:
     if 'base_url' in request and request['base_url']:
         defaults['base_url'] = request['base_url']
     
-    # Set data file path
+    # Set data file path and experiment name
     dataset = defaults.get('dataset', 'demo-dk')
-    if dataset == "demo-dk":
-        defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/aisdk-2024-03-01@31_filtered10_1000000000.csv"
-    elif dataset == "demo-us":
-        defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/AIS_2024_04_01@15_filtered360_1000000000.csv"
-    else:
-        defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/aisdk-2024-03-01@31_filtered10_1000000000.csv"
     
+    # Get time interval parameters from request (default values if not provided)
+    min_time_interval = request.get('minTimeInterval', 10)
+    max_time_interval = request.get('maxTimeInterval', 3600)
+    
+    # For demo datasets, use fixed paths and experiment names
     if dataset == "demo-dk":
+        defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/aisdk-2024-03-01@31_filtered10_1000000000.csv"
         defaults['exp_name'] = "Default"
     elif dataset == "demo-us":
+        defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/AIS_2024_04_01@15_filtered360_1000000000.csv"
         defaults['exp_name'] = "Default_us"
+    # For custom datasets, construct expected file pattern based on parameters
+    elif dataset == "custom-dk":
+        # Get date parameters
+        start_date_str = request.get('startDate')
+        end_date_str = request.get('endDate')
+        
+        if start_date_str and end_date_str:
+            # Parse dates
+            from datetime import datetime
+            try:
+                start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+                end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+                
+                # Danish format: aisdk-2024-03-01@31
+                start_day = start_date.day
+                end_day = end_date.day
+                month_str = start_date.strftime("%Y-%m")
+                dataset_id = f"aisdk-{month_str}-{start_day:02d}@{end_day}"
+                
+                defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/{dataset_id}_filtered{min_time_interval}_{max_time_interval}.csv"
+                defaults['exp_name'] = f"default_dk_{start_date_str.replace('-', '_')}_{end_date_str.replace('-', '_')}"
+            except:
+                # If date parsing fails, use placeholder
+                defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/aisdk-custom_filtered{min_time_interval}_{max_time_interval}.csv"
+                defaults['exp_name'] = f"default_dk_custom"
+        else:
+            # No date provided, use placeholder
+            defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/aisdk-custom_filtered{min_time_interval}_{max_time_interval}.csv"
+            defaults['exp_name'] = f"default_dk_custom"
+            
+    elif dataset == "custom-us":
+        # Get date parameters
+        start_date_str = request.get('startDate')
+        end_date_str = request.get('endDate')
+        
+        if start_date_str and end_date_str:
+            # Parse dates
+            from datetime import datetime
+            try:
+                start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+                end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+                
+                # US format: AIS_2024_04_01@15
+                # Calculate duration in days
+                duration_days = (end_date - start_date).days + 1
+                date_str = start_date.strftime("%Y_%m_%d")
+                dataset_id = f"AIS_{date_str}@{duration_days}"
+                
+                defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/{dataset_id}_filtered{min_time_interval}_{max_time_interval}.csv"
+                defaults['exp_name'] = f"default_us_{start_date_str.replace('-', '_')}_{end_date_str.replace('-', '_')}"
+            except:
+                # If date parsing fails, use placeholder
+                defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/AIS_custom_filtered{min_time_interval}_{max_time_interval}.csv"
+                defaults['exp_name'] = f"default_us_custom"
+        else:
+            # No date provided, use placeholder
+            defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/AIS_custom_filtered{min_time_interval}_{max_time_interval}.csv"
+            defaults['exp_name'] = f"default_us_custom"
+    else:
+        # Fallback for any other dataset
+        defaults['raw_data_file'] = f"{root_path}/data/CleanedFilteredData/aisdk-2024-03-01@31_filtered10_1000000000.csv"
+        defaults['exp_name'] = "Default"
    
     args = argparse.Namespace()
     for key, value in defaults.items():
@@ -211,23 +275,112 @@ def _create_args_namespace_from_request(request: Dict) -> argparse.Namespace:
 def _run_sdkg_build_task(task_id: str, request_data: Dict):
     """Execute SD-KG construction task"""
     try:
-        _update_task_progress(task_id, 10, "running", "starting parameter creation")
+        _update_task_progress(task_id, 10, "running", "Starting parameter creation")
         
-        # 创建参数
+        # Create parameter namespace
         args = _create_args_namespace_from_request(request_data)
         
-        _update_task_progress(task_id, 20, "running", "set logging")
+        # ============ ADD: Custom dataset processing ============
+        dataset_name = request_data.get('dataset', 'demo-dk')
+        
+        if dataset_name in ["custom-dk", "custom-us"]:
+            _update_task_progress(task_id, 15, "running", f"Processing custom dataset: {dataset_name}")
+            
+            # Get date parameters from frontend
+            start_date_str = request_data.get('startDate')
+            end_date_str = request_data.get('endDate')
+            print(f"Custom dataset date range: {start_date_str} to {end_date_str}")
+            if not start_date_str or not end_date_str:
+                _update_task_progress(task_id, 20, "error", "Custom dataset requires start_date and end_date parameters")
+                raise ValueError("Custom dataset requires start_date and end_date parameters")
+            
+            # Parse dates
+            from datetime import datetime
+            try:
+                start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+                end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+            except ValueError as e:
+                _update_task_progress(task_id, 20, "error", f"Invalid date format: {str(e)}")
+                raise ValueError(f"Invalid date format: {str(e)}")
+            
+            # Prepare AISDataset arguments
+            from argparse import Namespace
+            ais_args = Namespace()
+            
+            # Build dataset identifier based on dataset type
+            if dataset_name == "custom-dk":
+                # Danish format: aisdk-2024-03-01@31
+                # Get day numbers (start day and end day of month)
+                start_day = start_date.day
+                end_day = end_date.day
+                
+                # Build dataset name: aisdk-YYYY-MM-startDay@endDay
+                month_str = start_date.strftime("%Y-%m")
+                dataset_format = f"aisdk-{month_str}-{start_day:02d}@{end_day}"
+                ais_args.datasets = [dataset_format]
+                
+                logging.info(f"DK dataset format created: {dataset_format}")
+                
+            elif dataset_name == "custom-us":
+                # US format: AIS_2024_04_01@15
+                # Calculate duration in days (end day - start day + 1)
+                duration_days = (end_date - start_date).days + 1
+                
+                # Build dataset name: AIS_YYYY_MM_DD@duration
+                date_str = start_date.strftime("%Y_%m_%d")
+                dataset_format = f"AIS_{date_str}@{duration_days}"
+                ais_args.datasets = [dataset_format]
+                
+                logging.info(f"US dataset format created: {dataset_format}")
+            
+            # Use time interval parameters from request
+            ais_args.min_time_interval = request_data.get('minTimeInterval', 10)
+            ais_args.max_time_interval = request_data.get('maxTimeInterval', 3600)
+            
+            try:
+                # Initialize AISDataset (automatically checks and processes data)
+                logging.info(f"Initializing AISDataset with parameters: "
+                           f"datasets={ais_args.datasets}, "
+                           f"min_time_interval={ais_args.min_time_interval}, "
+                           f"max_time_interval={ais_args.max_time_interval}")
+                
+                ais_dataset = AISDataset(ais_args)
+                
+                # Get processed data file path
+                dataset_identifier = ais_dataset.get_dataset_identifier(ais_args)
+                filtered_data_file = ais_dataset.filtered_data_file
+                
+                # Update raw_data_file path in args
+                args.raw_data_file = filtered_data_file
+                logging.info(f"Custom dataset processing completed. Using data file: {filtered_data_file}")
+                
+                _update_task_progress(task_id, 25, "running", f"Custom dataset '{dataset_identifier}' processed successfully")
+                
+            except Exception as e:
+                logging.error(f"Failed to process custom dataset: {str(e)}")
+                _update_task_progress(task_id, 25, "running", f"Using default dataset due to processing error: {str(e)}")
+                # Fallback to default dataset if processing fails
+                if dataset_name == "custom-dk":
+                    args.raw_data_file = f"{root_path}/data/CleanedFilteredData/aisdk-2024-03-01@31_filtered10_1000000000.csv"
+                else:
+                    args.raw_data_file = f"{root_path}/data/CleanedFilteredData/AIS_2024_04_01@15_filtered360_1000000000.csv"
+        # ============ Custom dataset processing END ============
+        
+        _update_task_progress(task_id, 30, "running", "Setting up logging configuration")
         setup_logging(args)
         
-        _update_task_progress(task_id, 30, "running", "get training and testing data")
+        _update_task_progress(task_id, 40, "running", "Loading training and testing data")
         _, (test_df, mark_missing_test) = get_training_test_data(args)
         
-        _update_task_progress(task_id, 40, "running", "initialize SDKG and knowledge unit manager")
+        _update_task_progress(task_id, 50, "running", "Initializing SDKG and knowledge unit manager")
         sdkg = SDKG(args)
         ku_manager = KnowledgeUnitManager(args)
         sdkg.load_SDKG(args.end_point_sdkg)
         ku_manager.load_knowledge_unit_list(args.end_point_sdkg)
-        _update_task_progress(task_id, 50, "running", "start SD-KG construction")
+        
+        _update_task_progress(task_id, 60, "running", "Starting SD-KG construction process")
+        
+        # Check if SDKG needs to be constructed (if not already loaded)
         if((not sdkg.SDK_graph_vs) or (not ku_manager.knowledge_unit_list)):
             logging.info("Starting SD-KG Construction...")
             sdkg, ku_manager = SDKG_Construction_Multithreading(
@@ -237,22 +390,23 @@ def _run_sdkg_build_task(task_id: str, request_data: Dict):
                 SDKG=sdkg,
             )
         
-        _update_task_progress(task_id, 90, "running", "saving SD-KG and knowledge units")
-        _update_task_progress(task_id, 100, "done", "construction completed")
+        _update_task_progress(task_id, 90, "running", "Saving SD-KG and knowledge units")
+        _update_task_progress(task_id, 100, "done", "SD-KG construction completed successfully")
         
-        # save task result
+        # Save task result with metadata
         task = _get_task(task_id)
         if task:
             task["result"] = {
                 "status": "success",
                 "sdkg_nodes": len(sdkg.SDK_graph_vs) if hasattr(sdkg, 'SDK_graph_vs') else 0,
-                "knowledge_units": len(ku_manager.knowledge_unit_list) if ku_manager.knowledge_unit_list else 0
+                "knowledge_units": len(ku_manager.knowledge_unit_list) if ku_manager.knowledge_unit_list else 0,
+                "data_file": args.raw_data_file if hasattr(args, 'raw_data_file') else "unknown"
             }
             _save_task(task_id, task)
             
     except Exception as e:
-        logging.error(f"failed to construction SDKG: {str(e)}")
-        _update_task_progress(task_id, 0, "error", f"construction failed: {str(e)}")
+        logging.error(f"SD-KG construction failed: {str(e)}")
+        _update_task_progress(task_id, 0, "error", f"Construction failed: {str(e)}")
 
 def _run_imputation_task(task_id: str, request_data: Dict):
     """Execute trajectory imputation task"""
