@@ -70,7 +70,7 @@ class JSONTaskStorage:
         return tasks[:limit]
 
 # Initialize task storage and thread pool
-task_storage = JSONTaskStorage(storage_dir="/mnt/aisdata/Haoyu/CLEAR/task_storage")
+task_storage = JSONTaskStorage(storage_dir="./task_storage")
 executor = ThreadPoolExecutor(max_workers=4)
 
 # ============ VISTARequest Model ============
