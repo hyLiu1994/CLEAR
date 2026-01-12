@@ -45,9 +45,11 @@
               <select v-model="form.dataset" class="field-input">
                 <option value="demo-dk">Demo · AIS-DK (subset)</option>
                 <option value="demo-us">Demo · AIS-US (subset)</option>
-                <option value="custom">Custom · Uploaded dataset</option>
+                <option value="custom-dk">Custom · AIS-DK dataset</option>
+                <option value="custom-us">Custom · AIS-US dataset</option>
               </select>
             </div>
+            
           </section>
 
           <!-- Tutorial Mode -->
@@ -352,7 +354,35 @@
             <p class="section-hint">
               Execute the SD-KG construction and trajectory imputation steps with the current configuration.
             </p>
-
+            <!-- Information card -->
+            <div v-if="isCustomDataset" class="custom-dataset-card">
+              <div class="custom-dataset-header">
+                <div class="custom-dataset-title">Custom Dataset Settings</div>
+                <p class="custom-dataset-text">
+                  {{ dateRangeHint }}
+                </p>
+              </div>
+              <div class="field-row">
+                <label class="field-label">Start Date</label>
+                <input
+                  v-model="form.startDate"
+                  type="date"
+                  :min="dateRange.min"
+                  :max="dateRange.max"
+                  class="field-input"
+                />
+              </div>
+              <div class="field-row">
+                <label class="field-label">End Date</label>
+                <input
+                  v-model="form.endDate"
+                  type="date"
+                  :min="dateRange.min"
+                  :max="dateRange.max"
+                  class="field-input"
+                />
+              </div>
+            </div>
             <!-- Build SD-KG -->
             <div class="pipeline-card">
               <div class="pipeline-header">
@@ -482,7 +512,7 @@
 </template>
 
 <script setup>
-import { ref, onBeforeUnmount } from 'vue'
+import { ref, onBeforeUnmount, computed } from 'vue'
 import AppPageLayout from '../components/AppPageLayout.vue'
 
 //new taskid to contact with the backend
@@ -497,7 +527,8 @@ const setMode = m => {
 
 const form = ref({
   dataset: 'demo-dk',
-
+  startDate: '',
+  endDate: '',
   apikey: 'sk-xxx',
   platform: 'alibaba',
 
@@ -507,7 +538,7 @@ const form = ref({
   missingRatio: 0.2,
   minTimeInterval: 60,
   maxTimeInterval: 1e9,
-  concurrentNum: 5,
+  concurrentNum: 16,
   maxRetries: 3,
 
   miningModel:'qwen-flash',
@@ -518,6 +549,41 @@ const form = ref({
   imputationModel: 'qwen-flash',
   topK: 5,
 })
+
+const isCustomDataset = computed(() => {
+  return form.value.dataset.includes('custom')
+})
+
+
+const dateRange = computed(() => {
+  if (form.value.dataset === 'custom-dk') {
+    return {
+      min: '2024-03-01',
+      max: '2024-03-31'
+    }
+  } else if (form.value.dataset === 'custom-us') {
+    return {
+      min: '2024-04-01',
+      max: '2024-04-30'
+    }
+  }
+  return {
+    min: '',
+    max: ''
+  }
+})
+
+// date range hint
+const dateRangeHint = computed(() => {
+  if (form.value.dataset === 'custom-dk') {
+    return 'DK dataset only supports data from March 2024.'
+  } else if (form.value.dataset === 'custom-us') {
+    return 'US dataset only supports data from April 2024.'
+  }
+  return 'Define the time range for your custom dataset.'
+})
+
+
 
 const sdkgStatus = ref('idle')
 const sdkgProgress = ref(0)
@@ -537,6 +603,10 @@ const startSdkgBuild = async () => {
   sdkgProgress.value = 0
 
   const requestData = {
+    //
+    startDate: form.value.startDate,
+    endDate: form.value.endDate,
+
     dataset: form.value.dataset,
     apikey: form.value.apikey,
     platform: form.value.platform,
@@ -695,11 +765,6 @@ const pollUpdateProgress = () => {
 
       if (data.status === 'done' || data.status === 'error' || data.status === 'cancelled') {
         clearInterval(updateTimer)
-
-        if (data.status === 'done') {
-          updateStatus.value = 'done'
-          updateProgress.value = 100
-        }
       }
     } catch (error) {
       console.error('fail to update:', error)
@@ -988,4 +1053,32 @@ onBeforeUnmount(() => {
     grid-template-columns: 1fr;
   }
 }
+
+.custom-dataset-card {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  padding: 10px 11px;
+  border-radius: 9px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-left: 4px solid #2563eb;
+}
+
+.custom-dataset-header {
+  margin-bottom: 8px;
+}
+
+.custom-dataset-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.custom-dataset-text {
+  font-size: 11px;
+  color: #6b7280;
+  margin: 0;
+}
+
 </style>

@@ -31,7 +31,7 @@
           
           <!-- Combine Show levels and Node Types -->
           <div class="graph-controls" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-            <!-- Show levels -->
+            <!-- Show levels 
             <div class="control-group">
               <span class="control-label">Show levels:</span>
               <div class="level-buttons">
@@ -48,7 +48,7 @@
                   <span v-if="level > currentLevel" class="level-badge">View</span>
                 </button>
               </div>
-            </div>
+            </div>-->
           </div>
         </div>
         
@@ -110,8 +110,13 @@
       <h2 class="section-title">Static Attributes</h2>
       <ul class="bullet-list">
         <li v-for="(item, idx) in filteredStaticAttributes" :key="'attr-' + idx">
-          <!-- 使用 v-html 渲染加粗部分 -->
+
           <span v-html="formatStaticAttribute(item)"></span>
+          <template v-if="getStaticAttributeLabel(item) === 'Spatial context' && getStaticAttributeDetails(item)">
+            <div class="attribute-details" style="margin-left: 20px; margin-top: 4px; font-size: 0.9em; color: #666;">
+              {{ getStaticAttributeDetails(item) }}
+            </div>
+          </template>
         </li>
       </ul>
       <div style="height: 1px; background: #e5e7eb; margin: 20px 0;"></div>
@@ -128,21 +133,48 @@
             <!-- Current Behavior -->
             <template v-if="node.context?.current_behavior">
               <li>
-                <strong>Current Behavior:</strong> {{ currentBehaviorIntent }}
+                <strong>Current Behavior:</strong> {{ currentBehaviorTitle }}
               </li>
             </template>
 
             <!-- Previous Behavior -->
             <template v-if="node.context?.previous_behavior && Object.keys(node.context.previous_behavior).length > 0">
               <li>
-                <strong>Previous Behavior:</strong> {{ previousBehaviorIntent }}
+                <strong>Previous Behavior:</strong> {{ previousBehaviorTitle }}
               </li>
             </template>
 
             <!-- Next Behavior -->
             <template v-if="node.context?.next_behavior && Object.keys(node.context.next_behavior).length > 0">
               <li>
-                <strong>Next Behavior:</strong> {{ nextBehaviorIntent }}
+                <strong>Next Behavior:</strong> {{ nextBehaviorTitle }}
+              </li>
+            </template>
+          </ul>
+        </template>
+
+        <!-- Detailed Description Section -->
+        <template v-if="hasBehaviorDetails">
+          <li><strong>Detailed Description:</strong></li>
+          <ul class="bullet-list" style="margin-left: 20px;">
+            <!-- Current Behavior Details -->
+            <template v-if="currentBehaviorDescription">
+              <li>
+                <strong>Current Behavior:</strong> {{ currentBehaviorDescription }}
+              </li>
+            </template>
+
+            <!-- Previous Behavior Details -->
+            <template v-if="previousBehaviorDescription">
+              <li>
+                <strong>Previous Behavior:</strong> {{ previousBehaviorDescription }}
+              </li>
+            </template>
+
+            <!-- Next Behavior Details -->
+            <template v-if="nextBehaviorDescription">
+              <li>
+                <strong>Next Behavior:</strong> {{ nextBehaviorDescription }}
               </li>
             </template>
           </ul>
@@ -274,15 +306,49 @@ const hasSdkgSupport = computed(() => {
   return props.node?.behavior_estimator?.graph_support && 
          props.node.behavior_estimator.graph_support.trim().length > 0
 })
+
 const formatStaticAttribute = (item) => {
   const colonIndex = item.indexOf(':')
   if (colonIndex !== -1) {
     const label = item.substring(0, colonIndex)
     const value = item.substring(colonIndex + 1)
+
+    if (label.toLowerCase().includes('spatial context')) {
+      const firstCommaIndex = value.indexOf(',')
+      if (firstCommaIndex !== -1) {
+        const firstPart = value.substring(0, firstCommaIndex)
+        return `<strong>${label}:</strong>${firstPart}`
+      }
+    }
     return `<strong>${label}:</strong>${value}`
   }
   return item
 }
+
+const getStaticAttributeLabel = (item) => {
+  const colonIndex = item.indexOf(':')
+  if (colonIndex !== -1) {
+    return item.substring(0, colonIndex).trim()
+  }
+  return item
+}
+
+const getStaticAttributeDetails = (item) => {
+  const colonIndex = item.indexOf(':')
+  if (colonIndex !== -1) {
+    const label = item.substring(0, colonIndex)
+    const value = item.substring(colonIndex + 1)
+
+    if (label.toLowerCase().includes('spatial context')) {
+      const firstCommaIndex = value.indexOf(',')
+      if (firstCommaIndex !== -1) {
+        return value.substring(firstCommaIndex + 1).trim()
+      }
+    }
+  }
+  return null
+}
+
 // Underlying Cause related
 const hasUnderlyingCauseData = computed(() => {
   return true // Always display the Underlying Cause section
@@ -342,8 +408,6 @@ const props = defineProps({
 
 const filteredStaticAttributes = computed(() => {
   if (!props.node?.static_attributes) return []
-  
-  // 修改这里：移除筛选条件，直接返回所有静态属性
   return props.node.static_attributes
 })
 
@@ -351,21 +415,64 @@ const formatKey = (key) => {
   return key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
 }
 
-const currentBehaviorIntent = computed(() => {
-  return props.node?.context?.current_behavior?.intent || "No intent data available"
+const currentBehaviorTitle = computed(() => {
+  const intent = props.node?.context?.current_behavior?.intent || "No intent data available"
+  const bracketIndex = intent.indexOf('(')
+  return bracketIndex !== -1 ? intent.substring(0, bracketIndex).trim() : intent
 })
 
-const previousBehaviorIntent = computed(() => {
-  return props.node?.context?.previous_behavior?.intent || "No intent data available"
+const currentBehaviorDescription = computed(() => {
+  const intent = props.node?.context?.current_behavior?.intent || ""
+  const bracketIndex = intent.indexOf('(')
+  if (bracketIndex !== -1) {
+    const afterBracket = intent.substring(bracketIndex)
+    const description = afterBracket.replace(/^\(|\)$/g, '').trim()
+    return description.startsWith(';') ? description.substring(1).trim() : description
+  }
+  return ""
 })
 
-const nextBehaviorIntent = computed(() => {
-  return props.node?.context?.next_behavior?.intent || "No intent data available"
+const previousBehaviorTitle = computed(() => {
+  const intent = props.node?.context?.previous_behavior?.intent || "No intent data available"
+  const bracketIndex = intent.indexOf('(')
+  return bracketIndex !== -1 ? intent.substring(0, bracketIndex).trim() : intent
+})
+
+const previousBehaviorDescription = computed(() => {
+  const intent = props.node?.context?.previous_behavior?.intent || ""
+  const bracketIndex = intent.indexOf('(')
+  if (bracketIndex !== -1) {
+    const afterBracket = intent.substring(bracketIndex)
+    const description = afterBracket.replace(/^\(|\)$/g, '').trim()
+    return description.startsWith(';') ? description.substring(1).trim() : description
+  }
+  return ""
+})
+
+const nextBehaviorTitle = computed(() => {
+  const intent = props.node?.context?.next_behavior?.intent || "No intent data available"
+  const bracketIndex = intent.indexOf('(')
+  return bracketIndex !== -1 ? intent.substring(0, bracketIndex).trim() : intent
+})
+
+const nextBehaviorDescription = computed(() => {
+  const intent = props.node?.context?.next_behavior?.intent || ""
+  const bracketIndex = intent.indexOf('(')
+  if (bracketIndex !== -1) {
+    const afterBracket = intent.substring(bracketIndex)
+    const description = afterBracket.replace(/^\(|\)$/g, '').trim()
+    return description.startsWith(';') ? description.substring(1).trim() : description
+  }
+  return ""
+})
+
+const hasBehaviorDetails = computed(() => {
+  return currentBehaviorDescription.value || previousBehaviorDescription.value || nextBehaviorDescription.value
 })
 
 // Computed properties
 const hasBehaviorData = computed(() => {
-  return hasContextData.value || hasExplanationData.value
+  return hasContextData.value || hasExplanationData.value || hasBehaviorDetails.value
 })
 
 const hasContextData = computed(() => {
@@ -1743,5 +1850,13 @@ watch(() => isGraphExpanded.value, (newVal) => {
 .bullet-list li,
 .bullet-list .bullet-list li {
   font-size: 30px !important;
+}
+
+/* Style for attribute details */
+.attribute-details {
+  font-size: 0.9em;
+  color: #666;
+  margin-left: 20px;
+  margin-top: 4px;
 }
 </style>

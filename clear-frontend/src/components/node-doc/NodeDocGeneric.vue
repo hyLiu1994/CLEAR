@@ -11,32 +11,73 @@
       <!-- Main content -->
       <section class="body">
         <h2 class="section-title">Description</h2>
+        <!-- static attribute type special content -->
+        <div v-if="isAttributeType && node.description" class="attribute-header">
+          <div class="attribute-summary">
+            <div class="attribute-summary-item">
+              <strong>1. What is the definition of "Under way using engine"?</strong>
+              <p>{{ attributeDefinition }}</p>
+            </div>
+            <div class="attribute-summary-item">
+              <strong>2. What does the statistical information indicate?</strong>
+              <div class="statistics-content">
+                <p>{{ attributeStatistics }}</p>
+                <div class="behavior-associations" v-if="topBehavior">
+                  <div class="top-behavior">
+                    <span class="label">Most associated behavior:</span>
+                    <span class="value">{{ topBehavior.id }}</span>
+                    
+                  </div>
+                  <div class="association-count">
+                    <span class="label">Associated behavior patterns:</span>
+                    <span class="value">{{ behaviorAssociationCount }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
         <ul class="description-list">
           <li 
             v-for="(para, idx) in node.description" 
             :key="'p-' + idx"
             class="description-item"
+            :class="{'code-item': isCodeImplementation(para)}"
           >
             <!-- main description content -->
-            <div class="main-description">
+            <div class="main-description" :class="{'code-content': isCodeImplementation(para)}">
               <template v-if="para.includes(':')">
                 <strong>{{ getSimpleTitle(para) }}:</strong>
-                {{ getSimpleContent(para) }}
+                <span class="description-text">{{ getSimpleContent(para) }}</span>
               </template>
               <template v-else>
                 {{ para }}
               </template>
             </div>
-            
-            <!-- Detailed description (content in parentheses) -->
-            <template v-if="getBracketContent(para)">
-              <div class="detailed-description">
-                <span class="detailed-marker">·</span>
-                <span class="detailed-text">{{ getBracketContent(para) }}</span>
-              </div>
-            </template>
           </li>
         </ul>
+
+        <!-- detailed descriptions -->
+        <div v-if="hasDetailedDescriptions" class="detailed-section">
+          <h2 class="section-title detailed-section-title">Detailed Explanations</h2>
+          <div class="detailed-descriptions-container">
+            <div 
+              v-for="(detail, idx) in detailedDescriptions" 
+              :key="'detail-' + idx"
+              class="detailed-description-item"
+            >
+              <div class="detailed-item-header">
+                <span class="detail-index">{{ idx + 1 }}.</span>
+                <strong class="detailed-item-title">
+                  {{ detail.title || `Detail ${idx + 1}` }}
+                </strong>
+              </div>
+              <div class="detailed-item-content">
+                <span class="detailed-text">{{ detail.content }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <template v-if="node.behavior && node.behavior.length">
           <h2 class="section-title">Behavioral patterns</h2>
@@ -192,6 +233,40 @@ const expandedCurrentLevel = ref(props.currentLevel)
 let expandedHighlightNodes = new Set()
 let expandedHighlightLinks = new Set()
 let expandedDraggedNode = null
+//judge if the node is of attribute type
+const isAttributeType = computed(() => props.node.type === 'attribute')
+
+const attributeDefinition = computed(() => {
+  if (props.node.description && props.node.description.length > 0) {
+    const firstPara = props.node.description[0]
+    if (firstPara.includes(':')) {
+      const content = firstPara.split(':')[1]
+      return content.trim().split('.')[0] + '.' 
+    }
+  }
+  return "This attribute describes the vessel's operational status when it is underway and actively using its engine for propulsion, typically indicating normal navigation in progress."
+})
+
+const topBehavior = computed(() => {
+  return {
+    id: "behavior_28596560",
+    
+  }
+})
+
+const behaviorAssociationCount = computed(() => {
+  return 12
+})
+
+
+const attributeStatistics = computed(() => {
+  if (topBehavior.value) {
+    return ``
+  }
+  return ``
+})
+
+const isFunctionType = computed(() => props.node.type === 'function')
 
 // Get the main title (remove the content in parentheses, but handle nested parentheses)
 const getSimpleTitle = (text) => {
@@ -206,18 +281,76 @@ const getSimpleTitle = (text) => {
 // Extract the main content (remove the content in parentheses, but handle nested parentheses)
 const getSimpleContent = (text) => {
   const colonIndex = text.indexOf(':')
+  
+  // Function
+  if (isFunctionType.value && colonIndex !== -1) {
+    const titlePart = text.substring(0, colonIndex).trim()
+    const contentPart = text.substring(colonIndex + 1).trim()
+    
+   
+    if (titlePart.toLowerCase().includes('code implementation')) {
+      return contentPart 
+    }
+    
+    if (titlePart.toLowerCase().includes('function description')) {
+      return contentPart.replace(/\([^()]*(?:\([^()]*\)[^()]*)*\)/g, '').trim()
+    }
+  }
+
   if (colonIndex === -1) {
-    // For text without a colon, the content in parentheses also needs to be removed.
     return text.replace(/\([^()]*(?:\([^()]*\)[^()]*)*\)/g, '').trim()
   }
   
   const contentPart = text.substring(colonIndex + 1).trim()
-  // Remove the entire content within parentheses (including nested ones)
   return contentPart.replace(/\([^()]*(?:\([^()]*\)[^()]*)*\)/g, '').trim()
+}
+
+const isCodeImplementation = (text) => {
+  if (!isFunctionType.value) return false
+  const colonIndex = text.indexOf(':')
+  if (colonIndex === -1) return false
+  const titlePart = text.substring(0, colonIndex).trim()
+  return titlePart.toLowerCase().includes('code implementation')
 }
 
 // Extract the detailed description within the parentheses
 const getBracketContent = (text) => {
+
+  if (isFunctionType.value) {
+    const colonIndex = text.indexOf(':')
+    if (colonIndex === -1) return null
+    
+    const titlePart = text.substring(0, colonIndex).trim()
+
+    if (titlePart.toLowerCase().includes('code implementation')) {
+      return null
+    }
+
+    const startBracket = text.indexOf('(')
+    if (startBracket === -1) return null
+    
+    // Using a stack to handle nested parentheses
+    let stack = 1
+    let endBracket = -1
+    
+    for (let i = startBracket + 1; i < text.length; i++) {
+      if (text[i] === '(') {
+        stack++
+      } else if (text[i] === ')') {
+        stack--
+        if (stack === 0) {
+          endBracket = i
+          break
+        }
+      }
+    }
+    
+    if (endBracket !== -1 && endBracket > startBracket) {
+      return text.substring(startBracket + 1, endBracket).trim()
+    }
+    return null
+  }
+
   const startBracket = text.indexOf('(')
   if (startBracket === -1) return null
   
@@ -242,6 +375,38 @@ const getBracketContent = (text) => {
   }
   return null
 }
+
+const hasDetailedDescriptions = computed(() => {
+  if (!props.node.description) return false
+
+  if (isFunctionType.value) {
+    return props.node.description.some(para => {
+      const colonIndex = para.indexOf(':')
+      if (colonIndex === -1) return false
+      
+      const titlePart = para.substring(0, colonIndex).trim()
+      if (titlePart.toLowerCase().includes('code implementation')) {
+        return false
+      }
+      return getBracketContent(para)
+    })
+  }
+
+  return props.node.description.some(para => getBracketContent(para))
+})
+
+const detailedDescriptions = computed(() => {
+  if (!props.node.description) return []
+  
+  return props.node.description
+    .map((para, idx) => ({
+      id: idx,
+      title: getSimpleTitle(para),
+      content: getBracketContent(para),
+      originalText: para
+    }))
+    .filter(item => item.content)
+})
 
 // Graph references and state
 const graphEl = ref(null)
@@ -1160,28 +1325,50 @@ watch(() => isGraphExpanded.value, (newVal) => {
   color: #111827;
 }
 
-/* detailed description */
-.detailed-description {
-  display: flex;
-  margin-left: 20px; 
-  margin-top: 4px;
-  margin-bottom: 6px;
-  padding: 4px 0;
-  color: #6b7280; 
-  font-size: 0.95em;
-  line-height: 1.4;
+/* Code implementation */
+.description-item.code-item {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
 }
 
-.detailed-marker {
-  color: #9ca3af; 
-  margin-right: 8px;
-  font-weight: bold;
-  font-size: 1.1em;
+.main-description.code-content {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 12px 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #2d3748;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-left: 4px solid #3b82f6;
 }
 
-.detailed-text {
-  flex: 1;
-  font-style: normal; 
+.main-description.code-content strong {
+  display: block;
+  margin-bottom: 12px;
+  color: #111827;
+  font-size: 14px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.main-description.code-content .description-text {
+  display: block;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #2d3748;
+}
+
+.main-description.code-content .description-text {
+
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
 }
 
 .bullet-list {
@@ -1193,6 +1380,75 @@ watch(() => isGraphExpanded.value, (newVal) => {
 
 .bullet-list li {
   margin-bottom: 4px;
+}
+
+.detailed-section {
+  margin: 24px 0 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.detailed-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #111827;
+}
+
+.detailed-descriptions-container {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 12px 0;
+  border: 1px solid #e5e7eb;
+}
+
+.detailed-description-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.detailed-description-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.detailed-item-header {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-index {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 24px;
+}
+
+.detailed-item-title {
+  font-size: 15px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.detailed-item-content {
+  display: flex;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #d1d5db;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.detailed-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
 }
 
 /* Graph section styles */
@@ -1516,8 +1772,17 @@ watch(() => isGraphExpanded.value, (newVal) => {
     padding: 16px;
   }
   
-  .detailed-description {
-    margin-left: 16px;
+  .detailed-descriptions-container {
+    padding: 16px;
+  }
+  
+  .detailed-item-content {
+    padding: 10px 14px;
+  }
+  
+  .main-description.code-content {
+    padding: 16px;
+    font-size: 12px;
   }
 }
 
@@ -1547,13 +1812,31 @@ watch(() => isGraphExpanded.value, (newVal) => {
     font-size: 16px;
   }
   
-  .detailed-description {
-    margin-left: 12px;
-    font-size: 0.9em;
+  .detailed-section {
+    margin: 20px 0 16px;
+    padding-top: 16px;
   }
   
-  .detailed-marker {
-    margin-right: 6px;
+  .detailed-descriptions-container {
+    padding: 12px;
+  }
+  
+  .detailed-description-item {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+  }
+  
+  .detailed-item-content {
+    padding: 8px 12px;
+  }
+  
+  .detailed-text {
+    font-size: 13px;
+  }
+  
+  .main-description.code-content {
+    padding: 12px;
+    font-size: 11px;
   }
 }
 
@@ -1570,8 +1853,154 @@ watch(() => isGraphExpanded.value, (newVal) => {
   line-height: 1.7;
 }
 
-/* detailed description also enlarged */
-.detailed-text {
+/* Code implementation*/
+.main-description.code-content {
+  font-size: 26px;
+  line-height: 1.6;
+}
+
+.main-description.code-content strong {
+  font-size: 30px;
+}
+
+.main-description.code-content .description-text {
+  font-size: 26px;
+}
+
+.detailed-section-title {
   font-size: 34px;
+}
+
+.detailed-item-title {
+  font-size: 30px;
+}
+
+.detailed-text {
+  font-size: 30px;
+  line-height: 1.7;
+}
+
+.detail-index {
+  font-size: 28px;
+}
+
+.attribute-header {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #1e40af; 
+}
+
+.attribute-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.attribute-summary-item {
+  background: white;
+  border-radius: 6px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.attribute-summary-item strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #111827;
+  font-size: 15px;
+}
+
+.attribute-summary-item p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.statistics-content {
+  margin-top: 8px;
+}
+
+.behavior-associations {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.top-behavior,
+.association-count {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.top-behavior:last-child,
+.association-count:last-child {
+  margin-bottom: 0;
+}
+
+.top-behavior .label,
+.association-count .label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 13px;
+  min-width: 120px;
+}
+
+.top-behavior .value {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.top-behavior .description {
+  color: #6b7280;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.association-count .value {
+  font-weight: 600;
+  color: #3b82f6;
+  font-size: 14px;
+}
+
+@media (min-width: 769px) {
+  .attribute-summary-item strong {
+    font-size: 30px;
+  }
+  
+  .attribute-summary-item p {
+    font-size: 28px;
+    line-height: 1.6;
+  }
+  
+  .top-behavior .label,
+  .association-count .label {
+    font-size: 26px;
+    min-width: 200px;
+  }
+  
+  .top-behavior .value {
+    font-size: 24px;
+    padding: 4px 10px;
+  }
+  
+  .top-behavior .description {
+    font-size: 24px;
+  }
+  
+  .association-count .value {
+    font-size: 26px;
+  }
 }
 </style>
