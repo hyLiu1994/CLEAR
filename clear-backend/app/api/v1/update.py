@@ -68,7 +68,7 @@ class UpdateTaskStorage:
         return tasks[:limit]
 
 # Initialize task storage and thread pool
-task_storage = UpdateTaskStorage(storage_dir="/mnt/aisdata/Haoyu/CLEAR/update_task_storage")
+task_storage = UpdateTaskStorage(storage_dir="./update_task_storage")
 executor = ThreadPoolExecutor(max_workers=4)
 
 # ============ Request/Response Model ============
