@@ -28,28 +28,7 @@
               </svg>
             </button>
           </div>
-          
-          <!-- Combine Show levels and Node Types -->
-          <div class="graph-controls" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-            <!-- Show levels 
-            <div class="control-group">
-              <span class="control-label">Show levels:</span>
-              <div class="level-buttons">
-                <button
-                  v-for="level in availableLevels"
-                  :key="level"
-                  class="level-btn"
-                  :class="{
-                    active: currentLevel === level
-                  }"
-                  @click="handleLevelClick(level)"
-                >
-                  Level {{ level }}
-                  <span v-if="level > currentLevel" class="level-badge">View</span>
-                </button>
-              </div>
-            </div>-->
-          </div>
+        
         </div>
         
         <div class="graph-container">
@@ -82,12 +61,7 @@
         </div>
         
         <div class="graph-modal-body">
-          <div class="graph-modal-controls">
-            <div class="control-group">
 
-            </div>
-          </div>
-          
           <div class="graph-modal-canvas-wrapper">
             <div ref="expandedGraphEl" class="graph-modal-canvas"></div>
           </div>
@@ -110,8 +84,7 @@
       <h2 class="section-title">Static Attributes</h2>
       <ul class="bullet-list">
         <li v-for="(item, idx) in filteredStaticAttributes" :key="'attr-' + idx">
-
-          <span v-html="formatStaticAttribute(item)"></span>
+          <span v-html="formatStaticAttributeForDisplay(item)"></span>
           <template v-if="getStaticAttributeLabel(item) === 'Spatial context' && getStaticAttributeDetails(item)">
             <div class="attribute-details" style="margin-left: 20px; margin-top: 4px; font-size: 0.9em; color: #666;">
               {{ getStaticAttributeDetails(item) }}
@@ -133,7 +106,14 @@
             <!-- Current Behavior -->
             <template v-if="node.context?.current_behavior">
               <li>
-                <strong>Current Behavior:</strong> {{ currentBehaviorTitle }}
+                <strong>Current Behavior:</strong> 
+                <span 
+                  class="clickable-behavior" 
+                  @click="highlightCurrentBehavior"
+                  :title="currentBehaviorTitle"
+                >
+                  {{ currentBehaviorTitle }}
+                </span>
               </li>
             </template>
 
@@ -228,7 +208,14 @@
       <ul class="bullet-list">
         <!-- Function Name -->
         <li>
-          <strong>Function Name:</strong> {{ functionNameText }}
+          <strong>Function Name:</strong> 
+          <span 
+            class="clickable-function" 
+            @click="highlightImputationFunction"
+            :title="functionNameText"
+          >
+            {{ functionNameText }}
+          </span>
         </li>
 
         <!-- SD-KG Support - Display based on method_selector.statistical_support -->
@@ -278,6 +265,9 @@ let expandedHighlightNodes = new Set()
 let expandedHighlightLinks = new Set()
 let expandedDraggedNode = null
 
+// Track current highlighted node for clearing
+const currentHighlightedNodeId = ref(null)
+
 // Imputation Function related
 const hasImputationFunctionData = computed(() => {
   return true // Function Name is always displayed, so this section is always shown
@@ -307,6 +297,26 @@ const hasSdkgSupport = computed(() => {
          props.node.behavior_estimator.graph_support.trim().length > 0
 })
 
+// Format static attribute for display with clickable values
+const formatStaticAttributeForDisplay = (item) => {
+  const colonIndex = item.indexOf(':')
+  if (colonIndex !== -1) {
+    const label = item.substring(0, colonIndex)
+    const value = item.substring(colonIndex + 1)
+
+    if (label.toLowerCase().includes('spatial context')) {
+      const firstCommaIndex = value.indexOf(',')
+      if (firstCommaIndex !== -1) {
+        const firstPart = value.substring(0, firstCommaIndex)
+        return `<strong>${label}:</strong> <span class="clickable-attr" data-attr="${label.trim()}" data-value="${firstPart.trim()}">${firstPart}</span>`
+      }
+    }
+    return `<strong>${label}:</strong> <span class="clickable-attr" data-attr="${label.trim()}" data-value="${value.trim()}">${value}</span>`
+  }
+  return `<span class="clickable-attr" data-attr="${item}" data-value="${item}">${item}</span>`
+}
+
+// Original format function for other uses
 const formatStaticAttribute = (item) => {
   const colonIndex = item.indexOf(':')
   if (colonIndex !== -1) {
@@ -709,6 +719,7 @@ function highlightConnectedNodes(node) {
     highlightNodes = new Set()
     highlightLinks = new Set()
     draggedNode = null
+    currentHighlightedNodeId.value = null
     return
   }
 
@@ -721,6 +732,10 @@ function highlightConnectedNodes(node) {
   highlightNodes = newNodes
   highlightLinks = newLinks
   draggedNode = node
+  currentHighlightedNodeId.value = node.id
+  
+  // Add pulse animation
+  startPulseAnimation()
 }
 
 // Highlight connected nodes for expanded graph
@@ -729,6 +744,7 @@ function highlightExpandedConnectedNodes(node) {
     expandedHighlightNodes = new Set()
     expandedHighlightLinks = new Set()
     expandedDraggedNode = null
+    currentHighlightedNodeId.value = null
     return
   }
 
@@ -741,6 +757,10 @@ function highlightExpandedConnectedNodes(node) {
   expandedHighlightNodes = newNodes
   expandedHighlightLinks = newLinks
   expandedDraggedNode = node
+  currentHighlightedNodeId.value = node.id
+  
+  // Add pulse animation
+  startPulseAnimation()
 }
 
 // Reset highlight for main graph
@@ -748,6 +768,7 @@ function clearHighlight() {
   highlightNodes = new Set()
   highlightLinks = new Set()
   draggedNode = null
+  currentHighlightedNodeId.value = null
 }
 
 // Reset highlight for expanded graph
@@ -755,6 +776,262 @@ function clearExpandedHighlight() {
   expandedHighlightNodes = new Set()
   expandedHighlightLinks = new Set()
   expandedDraggedNode = null
+  currentHighlightedNodeId.value = null
+}
+
+// Clear all highlights in both graphs
+const clearAllHighlights = () => {
+  clearHighlight()
+  if (isGraphExpanded.value) {
+    clearExpandedHighlight()
+  }
+  stopPulseAnimation()
+}
+
+// ============================
+// Text-to-Graph Highlight Functions
+// ============================
+
+// Highlight current behavior node when clicking on behavior text
+const highlightCurrentBehavior = () => {
+  const behaviorTitle = currentBehaviorTitle.value
+  
+  if (!behaviorTitle) return
+  
+  // Find behavior node
+  const node = findNodeByTitle(behaviorTitle, 'behavior')
+  if (node) {
+    highlightSpecificNode(node)
+    
+    // Also highlight in expanded graph if it's open
+    if (isGraphExpanded.value && expandedFg) {
+      highlightSpecificNode(node, true)
+    }
+  } else {
+    console.warn(`Behavior node not found: ${behaviorTitle}`)
+    // Try to find any behavior node if exact match fails
+    const anyBehaviorNode = findAnyBehaviorNode()
+    if (anyBehaviorNode) {
+      highlightSpecificNode(anyBehaviorNode)
+      
+      if (isGraphExpanded.value && expandedFg) {
+        highlightSpecificNode(anyBehaviorNode, true)
+      }
+    }
+  }
+}
+
+// Highlight attribute node when clicking on attribute text
+const highlightAttribute = (item) => {
+  // Parse attribute text
+  const colonIndex = item.indexOf(':')
+  if (colonIndex === -1) return
+  
+  const label = item.substring(0, colonIndex).trim()
+  const value = item.substring(colonIndex + 1).trim()
+  
+  // Clean value (remove brackets and range markers)
+  let cleanValue = value.replace(/\[.*?\)/g, '').trim() // Remove range markers like [8, 10)
+  cleanValue = cleanValue.replace(/^location:\s*/i, '').trim() // Remove location prefix
+  cleanValue = cleanValue.split(',')[0].trim() // Take only the first part (for Spatial Context)
+  
+  // Determine node type and search strategy based on attribute type
+  let nodeType = 'attribute'
+  let searchTerms = []
+  
+  // Build search terms for different attribute types
+  switch(label.toLowerCase()) {
+    case 'navigation status':
+      searchTerms = [cleanValue, 'navigation', 'status', 'underway', 'engine']
+      nodeType = 'attribute'
+      break
+    case 'hazardous cargo':
+      searchTerms = [cleanValue === 'yes' ? 'hazardous' : 'non-hazardous', 'cargo', 'hazardous']
+      nodeType = 'attribute'
+      break
+    case 'vessel type':
+      searchTerms = [cleanValue, 'vessel', 'type', cleanValue.toLowerCase()]
+      nodeType = 'trajectory' // Vessel type might be related to trajectory node
+      break
+    case 'spatial context':
+      searchTerms = [cleanValue, 'location', 'spatial', 'context']
+      nodeType = 'attribute'
+      break
+    case 'draught':
+    case 'length':
+    case 'width':
+      searchTerms = [label.toLowerCase(), cleanValue, 'dimension', 'measurement']
+      nodeType = 'attribute'
+      break
+    default:
+      searchTerms = [cleanValue, label.toLowerCase()]
+  }
+  
+  // Try to find the node using multiple search strategies
+  const node = findNodeBySearchTerms(searchTerms, nodeType, label, cleanValue)
+  if (node) {
+    highlightSpecificNode(node)
+    
+    if (isGraphExpanded.value && expandedFg) {
+      highlightSpecificNode(node, true)
+    }
+  } else {
+    console.warn(`Attribute node not found for: ${label}: ${cleanValue}`)
+  }
+}
+
+// Highlight imputation function node
+const highlightImputationFunction = () => {
+  const functionName = functionNameText.value
+  if (!functionName) return
+  
+  // Search for function node
+  const node = findNodeByTitle(functionName, 'function')
+  if (node) {
+    highlightSpecificNode(node)
+    
+    if (isGraphExpanded.value && expandedFg) {
+      highlightSpecificNode(node, true)
+    }
+  } else {
+    // Try alternative search terms for interpolation
+    const searchTerms = ['linear interpolation', 'interpolation', 'imputation', 'function']
+    const altNode = findNodeBySearchTerms(searchTerms, 'function', 'Imputation Function', functionName)
+    if (altNode) {
+      highlightSpecificNode(altNode)
+      
+      if (isGraphExpanded.value && expandedFg) {
+        highlightSpecificNode(altNode, true)
+      }
+    } else {
+      console.warn(`Imputation function node not found: ${functionName}`)
+    }
+  }
+}
+
+// Find any behavior node in the graph
+const findAnyBehaviorNode = () => {
+  if (!hasGraphData.value) return null
+  
+  const allNodes = props.node.graph.nodes
+  return allNodes.find(node => node.type === 'behavior')
+}
+
+// Find node by title with type filter
+const findNodeByTitle = (title, typeFilter = null) => {
+  if (!hasGraphData.value) return null
+  
+  const allNodes = props.node.graph.nodes
+  const cleanTitle = title.trim().toLowerCase()
+  
+  return allNodes.find(node => {
+    // Filter by type if specified
+    if (typeFilter && node.type !== typeFilter) return false
+    
+    // Try to match node's title or label
+    const nodeTitle = node.title || node.label || ''
+    const cleanNodeTitle = nodeTitle.trim().toLowerCase()
+    
+    // Exact match or contains match
+    return cleanNodeTitle === cleanTitle || 
+           cleanNodeTitle.includes(cleanTitle) || 
+           cleanTitle.includes(cleanNodeTitle)
+  })
+}
+
+// Find node by multiple search terms
+const findNodeBySearchTerms = (searchTerms, expectedType, attributeLabel, attributeValue) => {
+  if (!hasGraphData.value) return null
+  
+  const allNodes = props.node.graph.nodes
+  
+  // Score each node based on match quality
+  const scoredNodes = allNodes.map(node => {
+    const nodeTitle = (node.title || node.label || '').toLowerCase()
+    const nodeType = node.type || ''
+    
+    let score = 0
+    
+    // Check type match
+    if (expectedType && nodeType === expectedType) {
+      score += 10
+    }
+    
+    // Check each search term
+    searchTerms.forEach(term => {
+      if (nodeTitle.includes(term.toLowerCase())) {
+        score += 5
+      }
+      if (nodeTitle === term.toLowerCase()) {
+        score += 10 // Exact match bonus
+      }
+    })
+    
+    // Special handling for specific attributes
+    if (attributeLabel.toLowerCase().includes('spatial') && nodeTitle.includes('location')) {
+      score += 15
+    }
+    if (attributeLabel.toLowerCase().includes('vessel type') && nodeType === 'trajectory') {
+      score += 20
+    }
+    
+    return { node, score }
+  })
+  
+  // Sort by score and return the best match
+  scoredNodes.sort((a, b) => b.score - a.score)
+  
+  // Return the best match if it has a reasonable score
+  if (scoredNodes.length > 0 && scoredNodes[0].score > 5) {
+    return scoredNodes[0].node
+  }
+  
+  return null
+}
+
+// Highlight specific node in graph
+const highlightSpecificNode = (nodeData, isExpanded = false) => {
+  if (isExpanded) {
+    // Handle expanded graph
+    const graph = expandedFg
+    if (!graph || !nodeData) return
+    
+    // Get actual node object in the graph
+    const graphNodes = graph.graphData().nodes
+    const targetNode = graphNodes.find(n => n.id === nodeData.id)
+    
+    if (targetNode) {
+      // Highlight the node and its connections
+      highlightExpandedConnectedNodes(targetNode)
+      
+      // Optional: auto-center on the node
+      setTimeout(() => {
+        if (expandedFg) {
+          expandedFg.centerAt(targetNode.x, targetNode.y, 1000)
+          expandedFg.zoom(1.5, 1000)
+        }
+      }, 100)
+    }
+  } else {
+    // Handle main graph
+    const graph = fg
+    if (!graph || !nodeData) return
+    
+    const graphNodes = graph.graphData().nodes
+    const targetNode = graphNodes.find(n => n.id === nodeData.id)
+    
+    if (targetNode) {
+      highlightConnectedNodes(targetNode)
+      
+      // Auto-center on the node
+      setTimeout(() => {
+        if (fg) {
+          fg.centerAt(targetNode.x, targetNode.y, 1000)
+          fg.zoom(1.5, 1000)
+        }
+      }, 100)
+    }
+  }
 }
 
 // Initialize force graph with dynamic effects
@@ -939,11 +1216,33 @@ function initForceGraph() {
 
     startPulseAnimation()
     
+    // Add click event listeners for static attributes
+    nextTick(() => {
+      setupAttributeClickListeners()
+    })
+    
     console.log('✅ ForceGraph initialized for segment detail view')
     
   } catch (error) {
     console.error('❌ Failed to initialize ForceGraph:', error)
   }
+}
+
+// Setup click listeners for static attributes
+const setupAttributeClickListeners = () => {
+  const attrElements = document.querySelectorAll('.clickable-attr')
+  attrElements.forEach(el => {
+    el.addEventListener('click', (e) => {
+      const attrLabel = e.target.getAttribute('data-attr')
+      const attrValue = e.target.getAttribute('data-value')
+      
+      // Find and highlight the corresponding node
+      if (attrLabel && attrValue) {
+        const item = `${attrLabel}: ${attrValue}`
+        highlightAttribute(item)
+      }
+    })
+  })
 }
 
 // Initialize expanded force graph
@@ -1545,6 +1844,23 @@ watch(() => isGraphExpanded.value, (newVal) => {
   border-color: #9ca3af;
 }
 
+.clear-highlight-btn {
+  padding: 6px 12px;
+  background: #f8fafc;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  color: #6b7280;
+}
+
+.clear-highlight-btn:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+  color: #111827;
+}
+
 .level-info {
   color: #6b7280;
   font-size: 13px;
@@ -1737,6 +2053,38 @@ watch(() => isGraphExpanded.value, (newVal) => {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 16px;
+}
+
+/* Clickable element styles */
+.clickable-behavior {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #3b82f6 !important; 
+}
+
+.clickable-behavior:hover {
+  text-decoration: underline; 
+}
+
+.clickable-function {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #3b82f6 !important; 
+}
+
+.clickable-function:hover {
+  text-decoration: underline;
+}
+
+/* CSS for clickable attributes (applied globally) */
+:global(.clickable-attr) {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #3b82f6 !important; 
+}
+
+:global(.clickable-attr:hover) {
+  text-decoration: underline; 
 }
 
 /* Responsive design */

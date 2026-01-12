@@ -6,35 +6,13 @@
         <h1 class="title">Settings & Pipeline Control</h1>
         <p class="subtitle">
           Configure CLEAR's behavior for SD-KG construction and trajectory imputation.
-          Choose a guided tutorial or an expert mode, then launch the pipeline stages below.
         </p>
       </header>
 
       <div class="panel-body">
         <!-- Left: Mode + Hyperparameters -->
         <div class="left">
-          <!-- Mode Toggle -->
-          <div class="mode-toggle">
-            <div class="mode-label">Configuration mode</div>
-            <div class="mode-buttons">
-              <button
-                class="mode-btn"
-                :class="{ active: mode === 'tutorial' }"
-                @click="setMode('tutorial')"
-              >
-                Tutorial · Step-by-step
-              </button>
-              <button
-                class="mode-btn"
-                :class="{ active: mode === 'expert' }"
-                @click="setMode('expert')"
-              >
-                Expert · Direct parameters
-              </button>
-            </div>
-          </div>
-
-          <!-- Dataset Selection (Shared by Both Modes) -->
+          <!-- Dataset Selection -->
           <section class="section">
             <h2 class="section-title">Dataset</h2>
             <p class="section-hint">
@@ -49,51 +27,34 @@
                 <option value="custom-us">Custom · AIS-US dataset</option>
               </select>
             </div>
-            
-          </section>
-
-          <!-- Tutorial Mode -->
-          <section class="section" v-if="mode === 'tutorial'">
-            <h2 class="section-title">Tutorial: Pipeline walkthrough</h2>
-            <p class="section-hint">
-              Follow the steps below to understand how CLEAR constructs the SD-KG and imputes missing segments.
-            </p>
-            <!-- Step 1 -->
-            <div class="step-card">
-              <div class="step-header">
-                <div class="step-index">1</div>
-                <div class="step-title">Select platform & API Key</div>
+            <!-- Information card -->
+            <div v-if="isCustomDataset" class="custom-dataset-card">
+              <div class="custom-dataset-header">
+                <div class="custom-dataset-title">Custom Dataset Settings</div>
+                <p class="custom-dataset-text">
+                  {{ dateRangeHint }}
+                </p>
               </div>
-              <p class="step-text">
-                First, you need to select the platform you are using and enter the API KEY you obtained from the corresponding platform.
-              </p>
               <div class="field-row">
-                <label class="field-label">API KEY</label>
+                <label class="field-label">Start Date</label>
                 <input
-                  v-model="form.apikey"  
-                  type="text"               
+                  v-model="form.startDate"
+                  type="date"
+                  :min="dateRange.min"
+                  :max="dateRange.max"
                   class="field-input"
                 />
               </div>
               <div class="field-row">
-                <label class="field-label">Platform</label>
-                <select v-model="form.platform" class="field-input">
-                  <option value="openai">OpenAI</option>
-                  <option value="alibaba">Alibaba</option>
-                </select>
+                <label class="field-label">End Date</label>
+                <input
+                  v-model="form.endDate"
+                  type="date"
+                  :min="dateRange.min"
+                  :max="dateRange.max"
+                  class="field-input"
+                />
               </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="step-card">
-              <div class="step-header">
-                <div class="step-index">2</div>
-                <div class="step-title">Prepare segments & descriptors</div>
-              </div>
-              <p class="step-text">
-                CLEAR first segments vessel tracks and extracts kinematic and spatial descriptors
-                for each complete segment.
-              </p>
               <div class="field-row">
                 <label class="field-label">Minimal time interval</label>
                 <input
@@ -111,97 +72,19 @@
                   min="1"
                   class="field-input"
                 />
-              </div>
-              <div class="field-row">
-                <label class="field-label">Trajectory number</label>
-                <input
-                  v-model.number="form.trajectoryNum"
-                  type="number"
-                  min="1"
-                  class="field-input"
-                />
-              </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-card">
-              <div class="step-header">
-                <div class="step-index">3</div>
-                <div class="step-title">Build SD-KG</div>
-              </div>
-              <p class="step-text">
-                This step uses an LLM to extract behavior patterns and imputation functions from the data, then links them with static attributes to build the SD-KG.
-              </p>
-              <div class="field-row">
-                <label class="field-label">Extract behavior model</label>
-                <select v-model="form.miningModel" class="field-input">
-                  <option value="qwen-plus">Qwen Plus</option>
-                  <option value="qwen-turbo">Qwen Turbo</option>
-                  <option value="qwen-max">Qwen Max</option>
-                  <option value="qwen-flash">Qwen Flash</option>
-                </select>
-              </div>
-              <div class="field-row">
-                <label class="field-label">Generate function model</label>
-                <select v-model="form.codingModel" class="field-input">
-                  <option value="qwen-plus">Qwen Plus</option>
-                  <option value="qwen-turbo">Qwen Turbo</option>
-                  <option value="qwen-max">Qwen Max</option>
-                  <option value="qwen-flash">Qwen Flash</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="step-card">
-              <div class="step-header">
-                <div class="step-index">4</div>
-                <div class="step-title">Select imputation strategy</div>
-              </div>
-              <p class="step-text">
-                For each gap, CLEAR chooses an imputation function based on SD-KG evidence and
-                reconstructs the missing trajectory segment.
-              </p>
-              <div class="field-row">
-                <label class="field-label">Imputation model</label>
-                <select v-model="form.imputationModel" class="field-input">
-                  <option value="qwen-plus">Qwen Plus</option>
-                  <option value="qwen-turbo">Qwen Turbo</option>
-                  <option value="qwen-max">Qwen Max</option>
-                  <option value="qwen-flash">Qwen Flash</option>
-                </select>
               </div>
             </div>
           </section>
 
           <!-- Expert Mode -->
-          <section class="section" v-else>
-            <h2 class="section-title">Expert configuration</h2>
+          <section class="section">
+            <h2 class="section-title">VISTA configuration</h2>
             <p class="section-hint">
               Configure construction and imputation hyperparameters directly.
-              Detailed explanations are omitted for a more compact view.
             </p>
 
             <div class="expert-group">
               <div class="expert-group-title">Dataset config</div>
-              <div class="field-row">
-                <label class="field-label">Minimal time interval</label>
-                <input
-                  v-model.number="form.minTimeInterval"
-                  type="number"
-                  min="1"
-                  class="field-input"
-                />
-              </div>
-              <div class="field-row">
-                <label class="field-label">Maximal time interval</label>
-                <input
-                  v-model.number="form.maxTimeInterval"
-                  type="number"
-                  min="1"
-                  class="field-input"
-                />
-              </div>
               <div class="field-row">
                 <label class="field-label">Trajectory number</label>
                 <input
@@ -239,7 +122,6 @@
                 />
               </div>
             </div>
-
 
             <div class="expert-group">
               <div class="expert-group-title">LLM config</div>
@@ -354,35 +236,7 @@
             <p class="section-hint">
               Execute the SD-KG construction and trajectory imputation steps with the current configuration.
             </p>
-            <!-- Information card -->
-            <div v-if="isCustomDataset" class="custom-dataset-card">
-              <div class="custom-dataset-header">
-                <div class="custom-dataset-title">Custom Dataset Settings</div>
-                <p class="custom-dataset-text">
-                  {{ dateRangeHint }}
-                </p>
-              </div>
-              <div class="field-row">
-                <label class="field-label">Start Date</label>
-                <input
-                  v-model="form.startDate"
-                  type="date"
-                  :min="dateRange.min"
-                  :max="dateRange.max"
-                  class="field-input"
-                />
-              </div>
-              <div class="field-row">
-                <label class="field-label">End Date</label>
-                <input
-                  v-model="form.endDate"
-                  type="date"
-                  :min="dateRange.min"
-                  :max="dateRange.max"
-                  class="field-input"
-                />
-              </div>
-            </div>
+            
             <!-- Build SD-KG -->
             <div class="pipeline-card">
               <div class="pipeline-header">
@@ -520,11 +374,6 @@ const sdkgTaskId = ref(null)
 const imputeTaskId = ref(null)
 const updateTaskId = ref(null)
 
-const mode = ref('tutorial')
-const setMode = m => {
-  mode.value = m
-}
-
 const form = ref({
   dataset: 'demo-dk',
   startDate: '',
@@ -536,7 +385,7 @@ const form = ref({
   trajectoryLen: 200,
   miniSegmentLen: 20,
   missingRatio: 0.2,
-  minTimeInterval: 60,
+  minTimeInterval: 10,
   maxTimeInterval: 1e9,
   concurrentNum: 16,
   maxRetries: 3,
@@ -664,6 +513,8 @@ const startImputation = async () => {
   imputeProgress.value = 0
 
   const requestData = {
+      startDate: form.value.startDate,
+    endDate: form.value.endDate,
     dataset: form.value.dataset,
     apikey: form.value.apikey,
     platform: form.value.platform,
@@ -720,6 +571,10 @@ const updateCLEARContent = async () => {
   updateProgress.value = 0
 
   const requestData = {
+    minTimeInterval: form.value.minTimeInterval,
+    maxTimeInterval: form.value.maxTimeInterval,
+    startDate: form.value.startDate,
+    endDate: form.value.endDate,
     dataset: form.value.dataset,
     sdkgTaskId: sdkgTaskId.value,
     imputeTaskId: imputeTaskId.value,
@@ -829,40 +684,6 @@ onBeforeUnmount(() => {
   overflow: auto;
 }
 
-.mode-toggle {
-  margin-bottom: 12px;
-}
-
-.mode-label {
-  font-size: 11px;
-  font-weight: 600;
-  color: #6b7280;
-  margin-bottom: 4px;
-}
-
-.mode-buttons {
-  display: inline-flex;
-  padding: 2px;
-  border-radius: 999px;
-  background: #f3f4f6;
-}
-
-.mode-btn {
-  border: none;
-  border-radius: 999px;
-  padding: 4px 10px;
-  font-size: 11px;
-  cursor: pointer;
-  background: transparent;
-  color: #4b5563;
-}
-
-.mode-btn.active {
-  background: #ffffff;
-  box-shadow: 0 0 0 1px #d1d5db;
-  color: #111827;
-}
-
 .section {
   margin-bottom: 14px;
   padding: 10px 12px;
@@ -904,45 +725,6 @@ onBeforeUnmount(() => {
   border-radius: 6px;
   border: 1px solid #d1d5db;
   background: #ffffff;
-}
-
-.step-card {
-  margin-top: 8px;
-  padding: 10px 11px;
-  border-radius: 9px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-}
-
-.step-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-
-.step-index {
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  background: #2563eb;
-  color: #ffffff;
-  font-size: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: #111827;
-}
-
-.step-text {
-  font-size: 11px;
-  color: #6b7280;
-  margin: 2px 0 6px 0;
 }
 
 /* Expert groups */
@@ -1080,5 +862,4 @@ onBeforeUnmount(() => {
   color: #6b7280;
   margin: 0;
 }
-
 </style>
