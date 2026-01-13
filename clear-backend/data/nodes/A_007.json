@@ -1,0 +1,15 @@
+{
+  "id": "A_007",
+  "type": "attribute",
+  "label": "vessel_type: Passenger",
+  "summary": "vessel_type attribute: Passenger",
+  "description": [
+    "This attribute is associated with 31 behavior patterns"
+  ],
+  "metadata": {
+    "category": "vessel_type",
+    "attribute_name": "Passenger",
+    "support": 31
+  },
+  "related": []
+}

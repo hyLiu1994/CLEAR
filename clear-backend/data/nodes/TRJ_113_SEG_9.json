@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_113_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_113_SEG_9",
+  "summary": "Segment 9 of trajectory 113",
+  "description": [
+    "MMSI: 209276000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 13:41:59",
+    "End time: 2024-03-11 13:46:28"
+  ],
+  "metadata": {
+    "trajectory_id": "113",
+    "vessel_id": "209276000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 13:41:59",
+    "end_time": "2024-03-11 13:46:28"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 504",
+    "Draught: [8, 10) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 13.0 knots with minimal variation)",
+      "course_change": "gradual and consistent (COG changes slowly and consistently between 244° and 248°, indicating a smooth evolution in direction)",
+      "heading_fluctuation": "stable (heading remains tightly clustered around 243°–244°, with only minor fluctuations of ±1°)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "250~300"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

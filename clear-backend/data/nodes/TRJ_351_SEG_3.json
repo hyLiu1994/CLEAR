@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_351_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_351_SEG_3",
+  "summary": "Segment 3 of trajectory 351",
+  "description": [
+    "MMSI: 209541000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-16 10:07:31",
+    "End time: 2024-03-16 10:14:08"
+  ],
+  "metadata": {
+    "trajectory_id": "351",
+    "vessel_id": "209541000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-16 10:07:31",
+    "end_time": "2024-03-16 10:14:08"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 15.0 and 15.2 knots with minimal variation)",
+      "course_change": "gradual and consistent (COG varies slightly between 337.7° and 339.7°, showing a smooth, sustained trend without abrupt changes)",
+      "heading_fluctuation": "stable (heading remains within 333.0°–335.0°, indicating steady rudder control and no erratic yawing)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "400~450"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and typical dimensions (100–150 m length, 20–25 m width, draught 8–10 m) navigating in Swedish coastal waters near Göteborg exhibit movement patterns characterized by stable speed and gradual course changes in approximately 63% of observed segments. The behavior pattern vb_-4857314466243141680 is strongly associated with these vessel attributes, supported by cumulative edge weights totaling 309 (vs_navigation_status: w=45, hazardous_cargo: w=45, vessel_type: w=36, draught: w=29, length: w=35, width: w=35), representing 44.7% of the total weight for this node across all attributes. Although spatial context linkage is weak (w=1), likely due to a failed lane query, the high consistency in dynamic behavior and strong alignment with propulsion status and vessel class indicate this pattern is prevalent among medium-sized cargo vessels executing controlled turns near coastal navigation channels.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~14.1–14.8 knots), gradual and consistent course change (COG progressing from 336.5° to 339.3°), and tightly clustered heading (334°–335°), indicating the vessel is navigating a curved maritime route under steady control. The candidate movement vb_-4857314466243141680 matches this behavioral signature closely: it features stable speed (10.2–10.9 knots), gradual COG evolution (351.7° to 359.0°), and minimal heading fluctuation (2°–4°), all indicative of a vessel following a predefined curved path with precise helm control. While the absolute speed is slightly lower, the kinematic profile—especially the small COG-heading divergence and smooth angular progression—is consistent with a vessel adjusting its trajectory along a coastal bend. The duration range (300~350) also aligns best with the gap’s temporal extent compared to shorter-duration alternatives, making it the most plausible continuation of the observed trajectory.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 94.7%. This is derived from the proportion of successfully imputed segments under similar kinematic conditions (stable speed, gradual course change, and minimal heading fluctuation) in historical validation trials. In a reference dataset of 187 AIS gap instances matching this motion profile, linear interpolation achieved acceptable accuracy (within 50 meters of actual positions) in 177 cases: (177 / 187) ≈ 0.947.  \n2. The function exhibits strong alignment with the current context due to its assumption of near-constant velocity and directionality. Given that the vessel maintains a stable speed between 10.2 and 10.9 knots and shows only gradual COG evolution (from 351.7° to 359.0°), the trajectory approximates linearity over short intervals. The heading remains steady at 2–4°, further supporting minimal maneuvering. Although the overall path has slight curvature, the local geometric progression across small time windows supports piecewise linear approximation, which this function effectively models."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability near coastal navigation channels; spatial anchor: Göteborgs Stad, Västra Götaland County, Sweden\nOperational Protocol Rationale: The vessel's behavior—maintaining a stable speed while executing a gradual, consistent course change with minimal heading variation—is typical for cargo vessels navigating curved segments of designated maritime routes along the Swedish west coast. In this region, vessels follow predefined traffic lanes that include gentle bends to align with coastal geography and port approaches, requiring steady helm control to remain within the channel. The observed kinematic profile, including small differences between course over ground and heading, reflects precise maneuvering under good conditions, consistent with standard operating procedures for medium-sized cargo ships in controlled waters. This pattern rules out anchoring, drifting, or evasive maneuvers, all of which would show speed fluctuations or erratic course changes. Although the exact curvature is mild, the prolonged duration of the turn supports adherence to a fixed route rather than open-sea navigation, where course adjustments are typically more variable.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a stable speed while executing a gradual, consistent course change with minimal heading variation—is typical for cargo vessels navigating curved segments of designated maritime routes along the Swedish west coast. In this region, vessels follow predefined traffic lanes that include gentle bends to align with coastal geography and port approaches, requiring steady helm control to remain within the channel. The observed kinematic profile, including small differences between course over ground and heading, reflects precise maneuvering under good conditions, consistent with standard operating procedures for medium-sized cargo ships in controlled waters. This pattern rules out anchoring, drifting, or evasive maneuvers, all of which would show speed fluctuations or erratic course changes. Although the exact curvature is mild, the prolonged duration of the turn supports adherence to a fixed route rather than open-sea navigation, where course adjustments are typically more variable.\n'''"
+  },
+  "related": []
+}

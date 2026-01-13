@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_146_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_146_SEG_9",
+  "summary": "Segment 9 of trajectory 146",
+  "description": [
+    "MMSI: 209276000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-16 13:46:21",
+    "End time: 2024-03-16 13:54:55"
+  ],
+  "metadata": {
+    "trajectory_id": "146",
+    "vessel_id": "209276000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-16 13:46:21",
+    "end_time": "2024-03-16 13:54:55"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Kiel, Schleswig-Holstein, Germany; nearby_shipping_lanes: Sporthafen Düsternbrook, Olympiahafen Schilksee, Nord-Ostsee-Kanal, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Sporthafen Blücherbrücke, Sporthafen Seefischmarkt, Hafenmeister, Panzerkreuzer Admiral Scheer, Yachthafen \"Baltic Bay\", Yachthafen Mönkeberg, Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Yacht-Liegestelle Holtenau, Marine-Ehrenmal Laboe, Kanalfähre Kiel-Holtenau, Sporthafen Seeburg, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fördelinie, Fischschonbezirk Hagener Au, U-995, WC Sporthafen, Museumshafen, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Schwentine, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Sporthafen Reventlou, Schwentinetalfahrt, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sporthafen Dietrichsdorf, Sporthafen Wellingdorf, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Sporthafen Wik",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 9.5 and 10.0 knots across the sequence, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG decreases steadily from ~105° to ~35° over time, reflecting a smooth, continuous turn to the right)",
+      "heading_fluctuation": "stable (heading remains within ±3° of COG throughout, with minor oscillations around 35°–50°, suggesting controlled steering without erratic behavior)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: longitude ≈ a·latitude² + b·latitude + c, where coefficients are fitted to the observed lat-lon pairs)",
+      "duration": "500~550"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 6.2 and 7.0 knots across multiple observations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly and monotonically over time, e.g., from 7.8° to 49.0° then to 118.9°, reflecting a smooth turn rather than abrupt maneuvers)",
+      "heading_fluctuation": "stable (heading values remain closely aligned with COG, with small deviations under 3°, suggesting no erratic rudder movements)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: latitude ≈ 54.31 + 0.00012 × t + 0.000003 × t², longitude ≈ 9.71 + 0.00018 × t + 0.000006 × t², where t is sequential time index)",
+      "duration": "11950~12000"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

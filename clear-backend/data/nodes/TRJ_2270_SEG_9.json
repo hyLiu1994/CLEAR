@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2270_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_2270_SEG_9",
+  "summary": "Segment 9 of trajectory 2270",
+  "description": [
+    "MMSI: 215909000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 00:02:54",
+    "End time: 2024-03-07 00:06:44"
+  ],
+  "metadata": {
+    "trajectory_id": "2270",
+    "vessel_id": "215909000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-07 00:02:54",
+    "end_time": "2024-03-07 00:06:44"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: København (DK) – Oslo (N), Unnamed lane",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 57.6952 - 0.0086 × t, lon(t) ≈ 11.3293 + 0.0044 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 57.70915 - 0.0042 × t, lon(t) ≈ 11.321417 + 0.0018 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

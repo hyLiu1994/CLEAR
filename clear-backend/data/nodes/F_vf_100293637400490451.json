@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_100293637400490451",
+  "type": "function",
+  "label": "Function 00490451",
+  "summary": "This function models the vessel's position during a missing data block by simulating a small circula...",
+  "description": [
+    "Function description: This function models the vessel's position during a missing data block by simulating a small circular oscillation pattern around a central anchored location, consistent with the observed stationary behavior (zero speed, stable COG and heading). It uses the temporal span from `Time_interval` to distribute intermediate positions evenly over a periodic cycle. The latitude and longitude are computed using sine and cosine functions to approximate the observed ~20-meter radius positional drift. The center of the circle is set at (55.71133, 12.60230), based on the clustering of real data, and the output ensures smooth, physically plausible reconstructions that match the vessel’s moored state. The inclusion of `math` inside the function ensures numerical stability and avoids undefined name errors.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import math\n    N = len(Time_interval)\n    t_min, t_max = Time_interval[0], Time_interval[-1]\n    points = []\n    center_lat, center_lon = 55.71133, 12.60230\n    radius_lat = 2e-5\n    radius_lon = 2e-5\n    for t in Time_interval:\n        normalized_t = (t - t_min) / (t_max - t_min) if t_max != t_min else 0\n        lat = center_lat + radius_lat * math.sin(2 * math.pi * normalized_t)\n        lon = center_lon + radius_lon * math.cos(2 * math.pi * normalized_t)\n        points.append((lat, lon))\n    return points"
+  ],
+  "metadata": {
+    "original_id": "vf_100293637400490451",
+    "code": "def spatial_function(start, end, Time_interval): \n    import math\n    N = len(Time_interval)\n    t_min, t_max = Time_interval[0], Time_interval[-1]\n    points = []\n    center_lat, center_lon = 55.71133, 12.60230\n    radius_lat = 2e-5\n    radius_lon = 2e-5\n    for t in Time_interval:\n        normalized_t = (t - t_min) / (t_max - t_min) if t_max != t_min else 0\n        lat = center_lat + radius_lat * math.sin(2 * math.pi * normalized_t)\n        lon = center_lon + radius_lon * math.cos(2 * math.pi * normalized_t)\n        points.append((lat, lon))\n    return points"
+  },
+  "related": []
+}

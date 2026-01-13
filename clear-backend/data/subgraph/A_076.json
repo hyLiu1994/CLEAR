@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_076",
+      "type": "attribute",
+      "label": "spatial_context: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: København (DK) – Oslo (N)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_351_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_351_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_516_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_516_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3813060913303659004",
+      "type": "behavior",
+      "label": "Behavior 03659004",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_351_SEG_6",
+      "target": "A_076",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_516_SEG_4",
+      "target": "A_076",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_076",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3813060913303659004",
+      "target": "A_076",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_351_SEG_6",
+    "A_076",
+    "B_vb_-3813060913303659004",
+    "TRJ_516_SEG_4",
+    "B_vb_-4857314466243141680"
+  ],
+  "centerNodeId": "A_076",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

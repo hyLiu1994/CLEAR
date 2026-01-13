@@ -1,0 +1,49 @@
+{
+  "id": "TRJ_575_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_575_SEG_5",
+  "summary": "Segment 5 of trajectory 575",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 17:36:10",
+    "End time: 2024-03-07 17:42:17"
+  ],
+  "metadata": {
+    "trajectory_id": "575",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-07 17:36:10",
+    "end_time": "2024-03-07 17:42:17"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with SOG varying only slightly from 17.6 to 17.1 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases steadily from 19.7° to 32.8° over the sequence, showing a smooth, continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 22.0° to 36.0°, changing incrementally in sync with COG, suggesting controlled steering without oscillation)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation:",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with SOG increasing only slightly from 9.8 to 14.2 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly and monotonically from 90.6° to 88.0°, reflecting a smooth westward turn over time)",
+      "heading_fluctuation": "stable (heading remains close to 96° before decreasing gradually to 87°, with minimal short-term variation, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation:",
+      "duration": "350~400"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions in the [100, 150) m length and [20, 25) m width range are strongly associated with behavior pattern vb_82841811344196675, which describes a stable-speed, gradual-turn maneuver along a curved maritime route. This pattern is particularly prevalent—accounting for approximately 22% (96 out of 437 total weighted occurrences) of all observed patterns under identical static conditions (navigation status, vessel type, draught, length, width). The spatial context near key Danish shipping lanes such as Odden - Aarhus and EK R 12 Gniben further supports this selection, as these routes involve frequent gentle curvature navigation. Among all candidate patterns, vb_82841811344196675 ranks highest in combined attribute alignment, especially given its strong linkage to both operational state (\"Under way using engine\") and vessel class (Cargo), with minimal deviation in heading and consistent COG progression typical of autopilot-assisted transit in confined waters.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~17.5–17.6 knots), gradual left turn (COG decreasing from 20.6° to 19.5°), and fixed heading near 21.0°–22.0°, indicating controlled navigation along a predefined curved route. While the exact speed in vb_82841811344196675 (~10.1–10.2 knots) is lower, the core behavioral signature—stable speed profile, gradual and consistent course change, and stable heading fluctuation—aligns precisely with the expected continuity across the gap. The intent \"following a curved maritime route\" matches both the polynomial trajectory model in the boundary segment and the parametric arc-based modeling in vb_82841811344196675. Given that the incomplete AIS samples show progressive northeasterly movement with smooth positional increments, the selected pattern provides the most kinematically and operationally coherent interpolation, preserving continuity in both motion dynamics and navigational intent.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) compliance in Danish coastal waters; applicable to cargo vessels navigating near designated shipping lanes including Odden - Aarhus and EK R 12 Gniben; spatial anchor confirmed by proximity to multiple named routes.\nOperational Protocol Rationale: The observed behavior—maintaining a stable speed while executing a gradual, consistent course change with minimal heading variation—is typical for cargo vessels transiting curved segments of established maritime routes under autopilot control. This pattern aligns with standard navigation practices in confined or regulated waters where vessels follow predefined channels to ensure safe separation from traffic and hazards. The consistent alignment between course over ground and heading, combined with steady propulsion, indicates deliberate tracking along a known bend rather than random maneuvering. Alternative behaviors such as anchoring, erratic turning, or speed fluctuations are ruled out by the continuous engine use, absence of stops, and smooth trajectory progression. The vessel’s dimensions and lack of hazardous cargo further support routine transit operations within these well-monitored corridors.\n'''",
+    "operational_protocol_rationale": "The observed behavior—maintaining a stable speed while executing a gradual, consistent course change with minimal heading variation—is typical for cargo vessels transiting curved segments of established maritime routes under autopilot control. This pattern aligns with standard navigation practices in confined or regulated waters where vessels follow predefined channels to ensure safe separation from traffic and hazards. The consistent alignment between course over ground and heading, combined with steady propulsion, indicates deliberate tracking along a known bend rather than random maneuvering. Alternative behaviors such as anchoring, erratic turning, or speed fluctuations are ruled out by the continuous engine use, absence of stops, and smooth trajectory progression. The vessel’s dimensions and lack of hazardous cargo further support routine transit operations within these well-monitored corridors.\n'''"
+  },
+  "related": []
+}

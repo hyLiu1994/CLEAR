@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2290_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_2290_SEG_0",
+  "summary": "Segment 0 of trajectory 2290",
+  "description": [
+    "MMSI: 215909000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 15:04:34",
+    "End time: 2024-03-07 15:08:24"
+  ],
+  "metadata": {
+    "trajectory_id": "2290",
+    "vessel_id": "215909000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-07 15:04:34",
+    "end_time": "2024-03-07 15:08:24"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Mellembassinet, Skovshoved Havn, Langelinie Lystbådehavn, HDMS Peder Skram, Nyhavn - Flakfortet, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Svanemøllehavnen A/S, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Tuborg Havn, Øresund, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 55.76325 - 0.0081 × t, lon(t) ≈ 12.680433 - 0.0003 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

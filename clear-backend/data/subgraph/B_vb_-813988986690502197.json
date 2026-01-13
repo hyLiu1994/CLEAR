@@ -1,0 +1,538 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_-813988986690502197",
+      "type": "behavior",
+      "label": "Behavior 90502197",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-7663396197665720575",
+      "type": "function",
+      "label": "Function 65720575",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_023",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_024",
+      "type": "attribute",
+      "label": "spatial_context: location: Karlskrona kommun, Blekinge County, Sweden; nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_025",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC SwePol, Travemünde (D) – Helsinki (FIN), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_011",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_036",
+      "type": "attribute",
+      "label": "spatial_context: location: Karlskrona kommun, Blekinge County, Sweden; nearby_shipping_lanes: Aurora, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Liepāja (LV), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_040",
+      "type": "attribute",
+      "label": "spatial_context: location: Karlskrona kommun, Blekinge County, Sweden; nearby_shipping_lanes: Aurora, Travemünde (D) – Helsinki (FIN), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_043",
+      "type": "attribute",
+      "label": "spatial_context: location: Karlskrona kommun, Blekinge County, Sweden; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_045",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_047",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed lane, Tornen, Mejlø Vildtreservat, Storebælt",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_046",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_050",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Slæbested, Tranekær Fyr, Langelandsbælt, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_051",
+      "type": "attribute",
+      "label": "spatial_context: location: Schülp bei Rendsburg, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24813, Germany; nearby_shipping_lanes: Büdelsdorfer Yachtclub, Kanalfähre Breiholz, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Lotsenstation Rüsterbergen",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_053",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_052",
+      "type": "attribute",
+      "label": "spatial_context: location: Schülp bei Rendsburg, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24813, Germany; nearby_shipping_lanes: Büdelsdorfer Yachtclub, Kanalfähre Breiholz, Yachthafen Rendsburg, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Lotsenstation Rüsterbergen",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_009",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_412",
+      "type": "attribute",
+      "label": "length: [50, 100) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_416",
+      "type": "attribute",
+      "label": "width: [10, 15) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_017",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, Danger Area Nordsee, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_054",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, DanTysk OAP, DanTysk OSS, Unnamed lane, Danger Area Nordsee",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_056",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Omøfærgen, Storebælt, Slæbested, Omø Lystbådehavn, Langelandsbælt, Agersø Havn, Unnamed lane, Agersøfærgen, Agersø Havbrug",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_063",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Odden - Aarhus, Odden - Ebeltoft, Aarhus-Kalundborg, EK R 11 Sjællands Odde W., Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_077",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Thor Offshore Substation",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_131",
+      "type": "attribute",
+      "label": "spatial_context: location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_141",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Slæbested, Tranekær Fyr, Langelandsbælt, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "F_vf_5240413252068673064",
+      "target": "B_vb_-813988986690502197",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-7663396197665720575",
+      "target": "B_vb_-813988986690502197",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_023",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_024",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_025",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_011",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_036",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_040",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_043",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_045",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_047",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_046",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_050",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_051",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_053",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_009",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_412",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_416",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_017",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_054",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_056",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_063",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_131",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_047",
+    "A_141",
+    "A_021",
+    "A_009",
+    "B_vb_-813988986690502197",
+    "F_vf_-7663396197665720575",
+    "A_046",
+    "A_004",
+    "A_053",
+    "A_406",
+    "A_006",
+    "A_023",
+    "A_045",
+    "A_063",
+    "A_043",
+    "A_131",
+    "F_vf_5240413252068673064",
+    "A_011",
+    "A_054",
+    "A_416",
+    "A_410",
+    "A_001",
+    "A_412",
+    "A_056",
+    "A_036",
+    "A_052",
+    "A_050",
+    "A_405",
+    "A_051",
+    "A_411",
+    "A_077",
+    "A_040",
+    "A_005",
+    "A_404",
+    "A_415",
+    "A_025",
+    "A_017",
+    "A_024"
+  ],
+  "centerNodeId": "B_vb_-813988986690502197",
+  "maxLevel": 1,
+  "totalNodes": 38,
+  "totalLinks": 37
+}

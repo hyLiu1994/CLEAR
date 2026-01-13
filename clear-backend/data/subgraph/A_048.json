@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_048",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Storebælt",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_199_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_199_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6263404563480204038",
+      "type": "behavior",
+      "label": "Behavior 80204038",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_199_SEG_4",
+      "target": "A_048",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6263404563480204038",
+      "target": "A_048",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_199_SEG_4",
+    "A_048",
+    "B_vb_6263404563480204038"
+  ],
+  "centerNodeId": "A_048",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

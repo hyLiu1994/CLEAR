@@ -1,0 +1,15 @@
+{
+  "id": "A_004",
+  "type": "attribute",
+  "label": "hazardous_cargo: no",
+  "summary": "hazardous_cargo attribute: no",
+  "description": [
+    "This attribute is associated with 213 behavior patterns"
+  ],
+  "metadata": {
+    "category": "hazardous_cargo",
+    "attribute_name": "no",
+    "support": 213
+  },
+  "related": []
+}

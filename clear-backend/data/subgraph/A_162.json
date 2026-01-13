@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_162",
+      "type": "attribute",
+      "label": "spatial_context: location: Schacht-Audorf, Eiderkanal, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24790, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Büdelsdorfer Yachtclub, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Unnamed lane, Lotsenstation Rüsterbergen",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_729_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_729_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4486640174056869161",
+      "type": "behavior",
+      "label": "Behavior 56869161",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_729_SEG_8",
+      "target": "A_162",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4486640174056869161",
+      "target": "A_162",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_729_SEG_8",
+    "A_162",
+    "B_vb_-4486640174056869161"
+  ],
+  "centerNodeId": "A_162",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

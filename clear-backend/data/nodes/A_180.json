@@ -1,0 +1,15 @@
+{
+  "id": "A_180",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Kanalfähre Brunsbüttel, Kanalfähre Kudensee, Nord-Ostsee-Kanal, Kanalfähre Ostermoor, Unnamed lane, Lotsenhaus, helgoline",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Die Seenotretter DGzRS, Kanalfähre Brunsbüttel, Kanalfähre Kudensee, Nord-Ostsee-Kanal, Kanalfähre Ostermoor, Unnamed lane, Lotsenhaus, helgoline",
+  "description": [
+    "This attribute is associated with 8 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Die Seenotretter DGzRS, Kanalfähre Brunsbüttel, Kanalfähre Kudensee, Nord-Ostsee-Kanal, Kanalfähre Ostermoor, Unnamed lane, Lotsenhaus, helgoline",
+    "support": 8
+  },
+  "related": []
+}

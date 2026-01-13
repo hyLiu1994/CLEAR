@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_144",
+      "type": "attribute",
+      "label": "spatial_context: location: Breiholz, Hohner Harde, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24797, Germany; nearby_shipping_lanes: Query failed with status 504",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_674_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_674_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6098075840337851105",
+      "type": "behavior",
+      "label": "Behavior 37851105",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_674_SEG_8",
+      "target": "A_144",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6098075840337851105",
+      "target": "A_144",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_6098075840337851105",
+    "TRJ_674_SEG_8",
+    "A_144"
+  ],
+  "centerNodeId": "A_144",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

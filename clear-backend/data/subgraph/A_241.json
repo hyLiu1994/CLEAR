@@ -1,0 +1,104 @@
+{
+  "nodes": [
+    {
+      "id": "A_241",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Ystad - Rønne, Travemünde (D) – Liepāja (LV), Baltic Pipe, Baltica, Køge - Rønne, Bornholmsgat, C-Lion 1, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1427_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_1427_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1427_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_1427_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2134_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2134_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4927443205807001530",
+      "type": "behavior",
+      "label": "Behavior 07001530",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1427_SEG_0",
+      "target": "A_241",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1427_SEG_1",
+      "target": "A_241",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2134_SEG_0",
+      "target": "A_241",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_241",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_241",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4927443205807001530",
+      "target": "A_241",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8377157303611993086",
+    "TRJ_1427_SEG_0",
+    "TRJ_1427_SEG_1",
+    "A_241",
+    "TRJ_2134_SEG_0",
+    "B_vb_3366872286460794881",
+    "B_vb_-4927443205807001530"
+  ],
+  "centerNodeId": "A_241",
+  "maxLevel": 1,
+  "totalNodes": 7,
+  "totalLinks": 6
+}

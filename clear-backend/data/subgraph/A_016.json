@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_016",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, Atlantic Crossing 1 (AC1) Seg.A, Danger Area Nordsee, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_35_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_35_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2518_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2518_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5494319611255614765",
+      "type": "behavior",
+      "label": "Behavior 55614765",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3256118230624125506",
+      "type": "behavior",
+      "label": "Behavior 24125506",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_35_SEG_7",
+      "target": "A_016",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2518_SEG_7",
+      "target": "A_016",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_016",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3256118230624125506",
+      "target": "A_016",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_5494319611255614765",
+    "A_016",
+    "B_vb_-3256118230624125506",
+    "TRJ_2518_SEG_7",
+    "TRJ_35_SEG_7"
+  ],
+  "centerNodeId": "A_016",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

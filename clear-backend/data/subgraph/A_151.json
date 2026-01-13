@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "A_151",
+      "type": "attribute",
+      "label": "spatial_context: location: Copenhagen, Copenhagen Municipality, Capital Region of Denmark, 1357, Denmark; nearby_shipping_lanes: Mellembassinet, Bådklubben Sjællandsbroen, Skovshoved Havn, Fiskerhavnen, Kastrup Lystbådehavn - Gamle Havn, Langelinie Lystbådehavn, Teglværkshavnen, HDMS Peder Skram, Nyhavn - Flakfortet, Drogden, Kastrup Broforenings Bådehavn, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kastrup Lystbådehavn - Saltholm (Barakkebroen), Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Scanport Havn, Svanemøllehavnen A/S, Bådelaug Havnestad, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Bådteatret, Tuborg Havn, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_705_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_705_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_705_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_705_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_705_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_705_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_705_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_705_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_705_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_705_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_705_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_705_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6143820571047436494",
+      "type": "behavior",
+      "label": "Behavior 47436494",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4582028780789393008",
+      "type": "behavior",
+      "label": "Behavior 89393008",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3819614077672144976",
+      "type": "behavior",
+      "label": "Behavior 72144976",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4836753878735238572",
+      "type": "behavior",
+      "label": "Behavior 35238572",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_705_SEG_0",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_705_SEG_7",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_705_SEG_5",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_705_SEG_9",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_705_SEG_6",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_705_SEG_8",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6143820571047436494",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4582028780789393008",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3819614077672144976",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4836753878735238572",
+      "target": "A_151",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_4582028780789393008",
+    "TRJ_705_SEG_7",
+    "B_vb_6143820571047436494",
+    "TRJ_705_SEG_5",
+    "TRJ_705_SEG_6",
+    "B_vb_-4836753878735238572",
+    "TRJ_705_SEG_9",
+    "A_151",
+    "TRJ_705_SEG_0",
+    "TRJ_705_SEG_8",
+    "B_vb_-3819614077672144976"
+  ],
+  "centerNodeId": "A_151",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

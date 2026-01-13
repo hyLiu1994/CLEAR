@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-2047195025297448064",
+  "type": "behavior",
+  "label": "Behavior 97448064",
+  "summary": "Vessel behavior pattern: anchored or moored in a confined area (the repeated position fixes around latitude 55.7113° N and longitude 12.6023° E, combined with zero speed and stable COG/heading, indicate the vessel is not underway but maintaining position; the small positional variations (< 0.0001° in both coordinates) form a tight cluster approximating a stationary point with minor GPS noise or swinging at anchor, modeled as a static location: lat ≈ 55.71131, lon ≈ 12.60230 ± 0.00005)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a speed of 0.0 knots across all observations, indicating no movement)",
+    "Course change: stable (COG remains constant at approximately 297.7°, showing no change in direction despite lack of motion)",
+    "Heading fluctuation: stable (heading fluctuates slightly between 109.0° and 110.0°, remaining nearly constant, consistent with a moored vessel affected by wind or current)",
+    "Behavior intent: anchored or moored in a confined area (the repeated position fixes around latitude 55.7113° N and longitude 12.6023° E, combined with zero speed and stable COG/heading, indicate the vessel is not underway but maintaining position; the small positional variations (< 0.0001° in both coordinates) form a tight cluster approximating a stationary point with minor GPS noise or swinging at anchor, modeled as a static location: lat ≈ 55.71131, lon ≈ 12.60230 ± 0.00005)",
+    "Duration: 950~1000"
+  ],
+  "metadata": {
+    "original_id": "vb_-2047195025297448064",
+    "duration": "950~1000",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "stable",
+      "stable",
+      "anchored or moored in a confined area",
+      "950~1000"
+    ]
+  },
+  "related": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-8066767268348626115",
+  "type": "function",
+  "label": "Function 48626115",
+  "summary": "This function estimates missing vessel positions by modeling the trajectory as a second-order polyno...",
+  "description": [
+    "Function description: This function estimates missing vessel positions by modeling the trajectory as a second-order polynomial curve, reflecting the observed gradual course change and stable speed. It uses the start and end coordinates to define the base linear displacement, then applies quadratic corrections derived from the historical motion pattern—specifically the slight northeasterly curvature indicated by increasing COG. The time intervals are normalized by the maximum duration to scale the polynomial fit appropriately across the missing segment, ensuring smooth and realistic interpolation consistent with a vessel navigating a curved maritime route.",
+    "Code implementation: def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / max(Time_interval)) + 0.0002 * (t / max(Time_interval))**2, start[1] + (end[1] - start[1]) * (t / max(Time_interval)) + 0.0009 * (t / max(Time_interval))**2) for t in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_-8066767268348626115",
+    "code": "def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / max(Time_interval)) + 0.0002 * (t / max(Time_interval))**2, start[1] + (end[1] - start[1]) * (t / max(Time_interval)) + 0.0009 * (t / max(Time_interval))**2) for t in Time_interval]"
+  },
+  "related": []
+}

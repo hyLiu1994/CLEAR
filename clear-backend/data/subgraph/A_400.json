@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_400",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Nord Stream 1, Nord Stream 2, Unnamed lane, C-Lion 1",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2644_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2644_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2644_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2644_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6950949156948289588",
+      "type": "behavior",
+      "label": "Behavior 48289588",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1450693701513248396",
+      "type": "behavior",
+      "label": "Behavior 13248396",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2644_SEG_7",
+      "target": "A_400",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2644_SEG_9",
+      "target": "A_400",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6950949156948289588",
+      "target": "A_400",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1450693701513248396",
+      "target": "A_400",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2644_SEG_7",
+    "TRJ_2644_SEG_9",
+    "B_vb_-6950949156948289588",
+    "B_vb_1450693701513248396",
+    "A_400"
+  ],
+  "centerNodeId": "A_400",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

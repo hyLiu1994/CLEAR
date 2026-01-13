@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_566_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_566_SEG_7",
+  "summary": "Segment 7 of trajectory 566",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 11:29:40",
+    "End time: 2024-03-07 11:33:40"
+  ],
+  "metadata": {
+    "trajectory_id": "566",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-07 11:29:40",
+    "end_time": "2024-03-07 11:33:40"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Schießgebiet Todendorf, Kolberger Heide, Fischschonbezirk Schönberger Au, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Nördlicher Gefahrenbereich, Kalifornien, Unnamed lane, Lotsenstation",
+    "Draught: [6, 8) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 15.6 and 16.6 knots with minimal variation)",
+      "course_change": "gradual and consistent (COG decreases slowly from 66.4° to 65.8° over the sequence, then increases back to 66.4°, indicating a smooth, controlled adjustment in direction)",
+      "heading_fluctuation": "stable (heading remains constant at 67.0° for most of the segment, with only a minor shift to 68.0° near the end, showing tight rudder control)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation:",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 16.3 and 17.5 knots, with minor gradual decrease over time)",
+      "course_change": "gradual and consistent (COG increases slightly from 62.8° to 66.6°, then stabilizes around 66.4°, indicating a smooth turn followed by straight-line travel)",
+      "heading_fluctuation": "stable (heading remains constant at 67.0° throughout the trajectory, with only one reading at 66.0°, suggesting minimal rudder activity and course stabilization)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.5002 + 0.0035 × t + 0.0002 × t², lon(t) ≈ 10.3463 + 0.0051 × t + 0.0009 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with SOG varying only between 16.7 and 18.0 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG decreases slightly from 66.9° to 65.4° over the sequence, showing a smooth, continuous adjustment in direction rather than abrupt turns)",
+      "heading_fluctuation": "stable (heading remains fixed at 68.0° throughout the entire trajectory, indicating autopilot or precise course control despite minor COG changes)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

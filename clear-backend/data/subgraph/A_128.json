@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_128",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed lane, Storebælt",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_626_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_626_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_996_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_996_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7159632626075648758",
+      "type": "behavior",
+      "label": "Behavior 75648758",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_626_SEG_2",
+      "target": "A_128",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_996_SEG_9",
+      "target": "A_128",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_128",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7159632626075648758",
+      "target": "A_128",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_128",
+    "B_vb_8377157303611993086",
+    "TRJ_996_SEG_9",
+    "TRJ_626_SEG_2",
+    "B_vb_7159632626075648758"
+  ],
+  "centerNodeId": "A_128",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

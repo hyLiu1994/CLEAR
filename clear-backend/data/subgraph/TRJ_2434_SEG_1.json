@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_2434_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2434_SEG_1",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_2434",
+      "type": "trajectory",
+      "label": "Trajectory 218057000",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2434_SEG_1",
+      "target": "T_2434",
+      "relation": "part_of",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2434_SEG_1",
+    "T_2434"
+  ],
+  "centerNodeId": "TRJ_2434_SEG_1",
+  "maxLevel": 1,
+  "totalNodes": 2,
+  "totalLinks": 1
+}

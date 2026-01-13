@@ -1,0 +1,104 @@
+{
+  "nodes": [
+    {
+      "id": "A_117",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Schießgebiet Todendorf, Kolberger Heide, Fischschonbezirk Schönberger Au, Klaipėda (LT) – Kiel (D), Nördlicher Gefahrenbereich, Kalifornien, Unnamed lane, Lotsenstation",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_566_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_566_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1464_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_1464_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1464_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_1464_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3813060913303659004",
+      "type": "behavior",
+      "label": "Behavior 03659004",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1642282579770665695",
+      "type": "behavior",
+      "label": "Behavior 70665695",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_566_SEG_8",
+      "target": "A_117",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1464_SEG_5",
+      "target": "A_117",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1464_SEG_6",
+      "target": "A_117",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3813060913303659004",
+      "target": "A_117",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_117",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1642282579770665695",
+      "target": "A_117",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_566_SEG_8",
+    "TRJ_1464_SEG_6",
+    "A_117",
+    "B_vb_82841811344196675",
+    "B_vb_1642282579770665695",
+    "B_vb_-3813060913303659004",
+    "TRJ_1464_SEG_5"
+  ],
+  "centerNodeId": "A_117",
+  "maxLevel": 1,
+  "totalNodes": 7,
+  "totalLinks": 6
+}

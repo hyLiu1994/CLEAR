@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "A_391",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Pangea North UK/Denmark",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2566_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-2909736847591390058",
+      "type": "behavior",
+      "label": "Behavior 91390058",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2566_SEG_3",
+      "target": "A_391",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_2",
+      "target": "A_391",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_391",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2566_SEG_3",
+    "A_391",
+    "B_vb_-2909736847591390058",
+    "TRJ_2566_SEG_2"
+  ],
+  "centerNodeId": "A_391",
+  "maxLevel": 1,
+  "totalNodes": 4,
+  "totalLinks": 3
+}

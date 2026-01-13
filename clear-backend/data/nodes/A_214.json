@@ -1,0 +1,15 @@
+{
+  "id": "A_214",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Klaipėda (LT) – Kiel (D), Naturschutzgebiet Grüner Brink, Marienleuchte, Unnamed lane, Sperrgebiet Marienleuchte, Fehmarn Belt, Leuchtturm Westermarkelsdorf",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Die Seenotretter DGzRS, Klaipėda (LT) – Kiel (D), Naturschutzgebiet Grüner Brink, Marienleuchte, Unnamed lane, Sperrgebiet Marienleuchte, Fehmarn Belt, Leuchtturm Westermarkelsdorf",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Die Seenotretter DGzRS, Klaipėda (LT) – Kiel (D), Naturschutzgebiet Grüner Brink, Marienleuchte, Unnamed lane, Sperrgebiet Marienleuchte, Fehmarn Belt, Leuchtturm Westermarkelsdorf",
+    "support": 1
+  },
+  "related": []
+}

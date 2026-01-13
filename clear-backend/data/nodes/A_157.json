@@ -1,0 +1,15 @@
+{
+  "id": "A_157",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Storebælt, Ballen-Røsnæs, Unnamed lane, Samsø Bælt",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Storebælt, Ballen-Røsnæs, Unnamed lane, Samsø Bælt",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Storebælt, Ballen-Røsnæs, Unnamed lane, Samsø Bælt",
+    "support": 2
+  },
+  "related": []
+}

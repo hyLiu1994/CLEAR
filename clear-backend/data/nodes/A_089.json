@@ -1,0 +1,15 @@
+{
+  "id": "A_089",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Skagen Fiber West",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Skagen Fiber West",
+  "description": [
+    "This attribute is associated with 3 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Skagen Fiber West",
+    "support": 3
+  },
+  "related": []
+}

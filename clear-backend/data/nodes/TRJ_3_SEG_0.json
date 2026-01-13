@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_3_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_3_SEG_0",
+  "summary": "Segment 0 of trajectory 3",
+  "description": [
+    "MMSI: 209066000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 22:57:54",
+    "End time: 2024-03-17 23:03:05"
+  ],
+  "metadata": {
+    "trajectory_id": "3",
+    "vessel_id": "209066000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-17 22:57:54",
+    "end_time": "2024-03-17 23:03:05"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 504",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 9.8–9.9 knots across the trajectory)",
+      "course_change": "gradual and consistent (the COG varies slowly between 47.6° and 50.3°, indicating a smooth, continuous turn or alignment with a curved route)",
+      "heading_fluctuation": "stable (the heading remains close to 56°, with only minor variations of ±1°, suggesting steady rudder control)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading oscillations, and slowly changing COG suggests navigation along a gently curving channel or coastal route; the position progression follows an approximate arc defined by Δlat ≈ k·Δlong with local curvature, modeled as a circular segment: (lat - lat₀)² + (long - long₀)² ≈ R² where R ~ 25–30 km based on turning rate and SOG)",
+      "duration": "300~350"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "A_258",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: HVDC NordBalt, Aurora, Travemünde (D) – Helsinki (FIN)",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: HVDC NordBalt, Aurora, Travemünde (D) – Helsinki (FIN)",
+  "description": [
+    "This attribute is associated with 8 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: HVDC NordBalt, Aurora, Travemünde (D) – Helsinki (FIN)",
+    "support": 8
+  },
+  "related": []
+}

@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "A_186",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Baltic 2, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), Unnamed lane, Travemünde (D) – Helsinki (FIN)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_962_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_962_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1139_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_1139_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_962_SEG_4",
+      "target": "A_186",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1139_SEG_9",
+      "target": "A_186",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_186",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8377157303611993086",
+    "TRJ_1139_SEG_9",
+    "TRJ_962_SEG_4",
+    "A_186"
+  ],
+  "centerNodeId": "A_186",
+  "maxLevel": 1,
+  "totalNodes": 4,
+  "totalLinks": 3
+}

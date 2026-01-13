@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "A_382",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Danger Area Nordsee, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2518_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2518_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2518_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2518_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2559_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2559_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2559_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2559_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-7299443710176764989",
+      "type": "behavior",
+      "label": "Behavior 76764989",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2100548169559808147",
+      "type": "behavior",
+      "label": "Behavior 59808147",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6950949156948289588",
+      "type": "behavior",
+      "label": "Behavior 48289588",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2518_SEG_0",
+      "target": "A_382",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2518_SEG_1",
+      "target": "A_382",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2559_SEG_7",
+      "target": "A_382",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2559_SEG_8",
+      "target": "A_382",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-7299443710176764989",
+      "target": "A_382",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_382",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6950949156948289588",
+      "target": "A_382",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_382",
+    "TRJ_2518_SEG_1",
+    "TRJ_2518_SEG_0",
+    "TRJ_2559_SEG_7",
+    "B_vb_-7299443710176764989",
+    "TRJ_2559_SEG_8",
+    "B_vb_-6950949156948289588",
+    "B_vb_2100548169559808147"
+  ],
+  "centerNodeId": "A_382",
+  "maxLevel": 1,
+  "totalNodes": 8,
+  "totalLinks": 7
+}

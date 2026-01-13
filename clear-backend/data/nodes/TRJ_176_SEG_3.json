@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_176_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_176_SEG_3",
+  "summary": "Segment 3 of trajectory 176",
+  "description": [
+    "MMSI: 209276000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-22 13:05:42",
+    "End time: 2024-03-22 13:09:42"
+  ],
+  "metadata": {
+    "trajectory_id": "176",
+    "vessel_id": "209276000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-22 13:05:42",
+    "end_time": "2024-03-22 13:09:42"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Skurups kommun, Skåne County, Sweden; nearby_shipping_lanes: Køge - Rønne, Trelleborg (SE) - Klaipėda (LT)",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.2 and 15.4 knots, indicating steady propulsion and no acceleration or deceleration)",
+      "course_change": "gradual and consistent (COG varies slightly between 273.1° and 273.8°, showing a very stable progression with minimal deviation, consistent with navigation along a fixed maritime corridor)",
+      "heading_fluctuation": "stable (heading remains constant at 272.0° across all observations, indicating precise rudder control and absence of yawing or oscillatory behavior)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: longitude(t) ≈ a·t² + b·t + c, latitude(t) ≈ d·t + e, where t is time, and coefficients are fitted to observed displacement; this reflects constrained navigation in a dredged channel or traffic separation scheme)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 15.2–15.3 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG decreases slowly from 274.8° to 273.4°, indicating a smooth, continuous turn to the right over time)",
+      "heading_fluctuation": "stable (heading remains fixed at 273.0° or 272.0°, with minimal variation, suggesting autopilot or stabilized steering)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: latitude ≈ 55.246 + a·t, longitude ≈ 13.681 + b·t - c·t², where t is normalized time index and c > 0 captures the westward-curving path as the vessel progresses south-southeast along a fixed waterway)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 15.4–15.5 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 273.1° and 273.8°, indicating a very smooth and sustained course direction with minimal deviation)",
+      "heading_fluctuation": "stable (heading remains fixed at 272.0° across all observations, showing precise steering control)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: longitude ≈ a·latitude² + b·latitude + c, where coefficients are fitted to observed lat-lon pairs)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

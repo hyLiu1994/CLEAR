@@ -1,0 +1,15 @@
+{
+  "id": "A_272",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Sporthafen Düsternbrook, Sporthafen Seeburg, Sporthafen Stickenhörn, Sporthafen Reventlou, Nord-Ostsee-Kanal, Klaipėda (LT) – Kiel (D), Fördelinie, Sporthafen Blücherbrücke, Sporthafen Wik, Hafenmeister, Kiel Holtenau, Kanalfähre Landwehr, Unnamed lane, Yacht-Liegestelle Holtenau, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Museumshafen, Kanalfähre Kiel-Holtenau, Yachthafen Mönkeberg",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Sporthafen Düsternbrook, Sporthafen Seeburg, Sporthafen Stickenhörn, Sporthafen Reventlou, Nord-Ostsee-Kanal, Klaipėda (LT) – Kiel (D), Fördelinie, Sporthafen Blücherbrücke, Sporthafen Wik, Hafenmeister, Kiel Holtenau, Kanalfähre Landwehr, Unnamed lane, Yacht-Liegestelle Holtenau, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Museumshafen, Kanalfähre Kiel-Holtenau, Yachthafen Mönkeberg",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Sporthafen Düsternbrook, Sporthafen Seeburg, Sporthafen Stickenhörn, Sporthafen Reventlou, Nord-Ostsee-Kanal, Klaipėda (LT) – Kiel (D), Fördelinie, Sporthafen Blücherbrücke, Sporthafen Wik, Hafenmeister, Kiel Holtenau, Kanalfähre Landwehr, Unnamed lane, Yacht-Liegestelle Holtenau, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Museumshafen, Kanalfähre Kiel-Holtenau, Yachthafen Mönkeberg",
+    "support": 1
+  },
+  "related": []
+}

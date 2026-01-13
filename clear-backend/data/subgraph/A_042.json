@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_042",
+      "type": "attribute",
+      "label": "spatial_context: location: Skurups kommun, Skåne County, Sweden; nearby_shipping_lanes: Køge - Rønne, Kabusa skjutfält, Trelleborg (SE) - Klaipėda (LT), Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_176_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_176_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_176_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_176_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_176_SEG_2",
+      "target": "A_042",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_176_SEG_0",
+      "target": "A_042",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_042",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_042",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8377157303611993086",
+    "A_042",
+    "TRJ_176_SEG_2",
+    "B_vb_3366872286460794881",
+    "TRJ_176_SEG_0"
+  ],
+  "centerNodeId": "A_042",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

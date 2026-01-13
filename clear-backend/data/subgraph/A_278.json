@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_278",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), Schießgebiet Arkona, C-Lion 1, Świnoujście (PL) - Trelleborg (SE), Travemünde (D) – Helsinki (FIN)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1598_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_1598_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3081913737957353482",
+      "type": "behavior",
+      "label": "Behavior 57353482",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1598_SEG_8",
+      "target": "A_278",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3081913737957353482",
+      "target": "A_278",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_278",
+    "TRJ_1598_SEG_8",
+    "B_vb_3081913737957353482"
+  ],
+  "centerNodeId": "A_278",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

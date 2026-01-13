@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_2319_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2319_SEG_3",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_2319",
+      "type": "trajectory",
+      "label": "Trajectory 215909000",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2319_SEG_3",
+      "target": "T_2319",
+      "relation": "part_of",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "T_2319",
+    "TRJ_2319_SEG_3"
+  ],
+  "centerNodeId": "TRJ_2319_SEG_3",
+  "maxLevel": 1,
+  "totalNodes": 2,
+  "totalLinks": 1
+}

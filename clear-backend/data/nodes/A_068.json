@@ -1,0 +1,15 @@
+{
+  "id": "A_068",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Pangea North UK/Denmark, Unnamed lane",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Pangea North UK/Denmark, Unnamed lane",
+  "description": [
+    "This attribute is associated with 7 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Pangea North UK/Denmark, Unnamed lane",
+    "support": 7
+  },
+  "related": []
+}

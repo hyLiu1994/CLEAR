@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1572_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_1572_SEG_6",
+  "summary": "Segment 6 of trajectory 1572",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-25 07:00:24",
+    "End time: 2024-03-25 07:04:24"
+  ],
+  "metadata": {
+    "trajectory_id": "1572",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-25 07:00:24",
+    "end_time": "2024-03-25 07:04:24"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving westward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.44377 + 0.00001 × t, lon(t) ≈ 11.83969 − 0.0121 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 14.7–14.9 knots across the trajectory segment)",
+      "course_change": "gradual and consistent (COG changes slowly and monotonically from ~270° to ~300°, indicating a smooth turn over time)",
+      "heading_fluctuation": "stable (heading remains relatively steady with only minor adjustments, varying between 268° and 298°, suggesting controlled rudder input)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.4438 + 0.0012 × t + 0.0004 × t², lon(t) ≈ 11.7757 - 0.0048 × t - 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with a length between 150–200 meters and draught of 8–10 meters navigating in proximity to major Baltic Sea shipping lanes (including the TSS South of Gedser and routes connecting Travemünde to Malmö, Helsinki, and Trelleborg) most frequently exhibit straight-line transit behavior at stable speeds. This specific pattern—characterized by a near-constant speed of ~15.2–15.3 knots, minimal course deviation (COG 274.1°–274.8°), and fixed heading (273.0°)—is strongly associated with vessels following designated maritime routes. Although the spatial context edge weight is low (w=1), the high combined support from vessel type (w=52), navigation status (w=62), and dimensions (length w=41, width w=31) indicates this movement is statistically prevalent among similar cargo vessels in open-water transit segments, accounting for approximately 62% of observed behaviors in comparable scenarios.",
+    "contextual_justification": "The boundary movement pattern shows a vessel maintaining a stable speed (~14.7–14.9 knots), consistent westward course (COG ~270.0°–270.8°), and fixed heading (268.0°), indicating uninterrupted linear progression along a predefined route. The candidate movement vb_3366872286460794881 aligns perfectly with this behavioral continuity: it reflects a nearly identical intent (\"navigating along a fixed route\"), stable speed profile, and minimal course change, now slightly adjusted to a COG of 274.1°–274.8° and heading of 273.0°, which may reflect a minor correction due to current or routing. The parametric trajectory model (lat(t), lon(t)) also projects a smooth westward progression with slight northerly drift, consistent with the boundary segment’s linear trend. Given the absence of abrupt maneuvers or speed fluctuations in the incomplete AIS data, this movement best preserves kinematic and navigational coherence across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_5240413252068673064` correctly addresses the missing value problem is 98.4%, calculated as 61 / (61 + 1) = 61 / 62 ≈ 0.984. This indicates that, among the two candidate functions associated with the observed behavior pattern—characterized by stable speed, consistent COG, and fixed heading—this function was selected in 98.4% of relevant historical cases based on performance metrics derived from kinematic consistency and positional accuracy.  \n2. This function exhibits high alignment with the current context due to its reliance on time-proportional linear interpolation under assumptions of constant velocity and direction. The vessel’s trajectory shows negligible variation in heading (fixed at 273.0°), minimal COG drift (274.1°–274.8°), and stable SOG (~15.2–15.3 knots), all supporting a uniform motion model. The function's design matches these characteristics precisely, ensuring smooth, temporally consistent imputation without introducing artificial oscillations or deviations."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) compliance required; applicable to cargo vessels navigating in proximity to the TSS South of Gedser and associated Baltic Sea routes; spatial anchor includes designated lanes between Travemünde, Malmö, Helsinki, and Trelleborg.\nOperational Protocol Rationale: The vessel is maintaining a stable speed of approximately 15.2–15.3 knots with minimal course variation (COG between 274.1° and 274.8°) and a fixed heading of 273.0°, indicating autopilot-assisted, straight-line progression along a predefined maritime route. This behavior is typical in regulated shipping corridors where vessels follow strict traffic lanes to ensure separation and navigational safety. The nearly perfect alignment between course over ground and heading, combined with consistent speed, rules out anchoring, maneuvering, or port approach behaviors. Given the vessel’s location near major Baltic Sea shipping lanes and its dimensions (150–200 m length, 8–10 m draught), it is operating in open-water transit under standard routing protocols. The slight northerly drift in the projected path reflects minor environmental corrections while remaining within the intended lane, consistent with best practices for linear navigation in controlled waters.\n'''",
+    "operational_protocol_rationale": "The vessel is maintaining a stable speed of approximately 15.2–15.3 knots with minimal course variation (COG between 274.1° and 274.8°) and a fixed heading of 273.0°, indicating autopilot-assisted, straight-line progression along a predefined maritime route. This behavior is typical in regulated shipping corridors where vessels follow strict traffic lanes to ensure separation and navigational safety. The nearly perfect alignment between course over ground and heading, combined with consistent speed, rules out anchoring, maneuvering, or port approach behaviors. Given the vessel’s location near major Baltic Sea shipping lanes and its dimensions (150–200 m length, 8–10 m draught), it is operating in open-water transit under standard routing protocols. The slight northerly drift in the projected path reflects minor environmental corrections while remaining within the intended lane, consistent with best practices for linear navigation in controlled waters.\n'''"
+  },
+  "related": []
+}

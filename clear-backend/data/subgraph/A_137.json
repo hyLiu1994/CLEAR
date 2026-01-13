@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_137",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Kanalfähre Breiholz, Kanalfähre Oldenbüttel, Gieselaukanal, Unnamed lane, Lotsenstation Rüsterbergen",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_674_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_674_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_674_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_674_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8369218991226673352",
+      "type": "behavior",
+      "label": "Behavior 26673352",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5941906554066646579",
+      "type": "behavior",
+      "label": "Behavior 66646579",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_674_SEG_5",
+      "target": "A_137",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_674_SEG_4",
+      "target": "A_137",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8369218991226673352",
+      "target": "A_137",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5941906554066646579",
+      "target": "A_137",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_137",
+    "B_vb_5941906554066646579",
+    "B_vb_8369218991226673352",
+    "TRJ_674_SEG_4",
+    "TRJ_674_SEG_5"
+  ],
+  "centerNodeId": "A_137",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

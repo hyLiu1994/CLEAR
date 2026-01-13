@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-4014051667411630102",
+  "type": "behavior",
+  "label": "Behavior 11630102",
+  "summary": "Vessel behavior pattern: anchored or moored in a confined area",
+  "description": [
+    "Speed profile: stable (the vessel maintains a constant speed of 0.0 knots across all observations)",
+    "Course change: stable (the COG remains consistently at 111.6 degrees with no variation)",
+    "Heading fluctuation: stable (the heading is fixed at 60.0 degrees throughout the sequence, showing no oscillation or adjustment)",
+    "Behavior intent: anchored or moored in a confined area",
+    "Duration: 600~650"
+  ],
+  "metadata": {
+    "original_id": "vb_-4014051667411630102",
+    "duration": "600~650",
+    "support": 13,
+    "pattern_key": [
+      "stable",
+      "stable",
+      "stable",
+      "anchored or moored in a confined area",
+      "600~650"
+    ]
+  },
+  "related": []
+}

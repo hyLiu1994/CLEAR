@@ -1,0 +1,15 @@
+{
+  "id": "A_251",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Schießgebiet Todendorf, Leuchtturm Bülk, Kolberger Heide, Yachthafen Marina Wendtorf, Fischschonbezirk Schönberger Au, Fischschonbezirk Barsbeker Au, Fischschonbezirk Hagener Au, Klaipėda (LT) – Kiel (D), Kalifornien, Museumshafen Probstei, Unnamed lane, Naturschutzgebiet Bottsand, Lotsenstation",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Schießgebiet Todendorf, Leuchtturm Bülk, Kolberger Heide, Yachthafen Marina Wendtorf, Fischschonbezirk Schönberger Au, Fischschonbezirk Barsbeker Au, Fischschonbezirk Hagener Au, Klaipėda (LT) – Kiel (D), Kalifornien, Museumshafen Probstei, Unnamed lane, Naturschutzgebiet Bottsand, Lotsenstation",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Schießgebiet Todendorf, Leuchtturm Bülk, Kolberger Heide, Yachthafen Marina Wendtorf, Fischschonbezirk Schönberger Au, Fischschonbezirk Barsbeker Au, Fischschonbezirk Hagener Au, Klaipėda (LT) – Kiel (D), Kalifornien, Museumshafen Probstei, Unnamed lane, Naturschutzgebiet Bottsand, Lotsenstation",
+    "support": 1
+  },
+  "related": []
+}

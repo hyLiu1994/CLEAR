@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_367",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Aabenraa Lystbådehavn, Sejlerstue, Hardeshøj Færgebro, Nordalsfærgen Bitten, Varnæs Vig Bro, Ballebro Jollehavn, Kalvø Havn, Mjelsvig Bådehavn, Unnamed lane, Dyvig Bådelaug Lystbådehavn, Barsøfærgen, Dyvig Bro",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2403_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2403_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3081913737957353482",
+      "type": "behavior",
+      "label": "Behavior 57353482",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2403_SEG_9",
+      "target": "A_367",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3081913737957353482",
+      "target": "A_367",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_3081913737957353482",
+    "A_367",
+    "TRJ_2403_SEG_9"
+  ],
+  "centerNodeId": "A_367",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

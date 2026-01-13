@@ -1,0 +1,15 @@
+{
+  "id": "A_013",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: DanTysk, SylWin1, COBRA cable, Atlantic Crossing 1 (AC1) Seg.A, Unnamed lane, ODIN 1, Danger Area Nordsee",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: DanTysk, SylWin1, COBRA cable, Atlantic Crossing 1 (AC1) Seg.A, Unnamed lane, ODIN 1, Danger Area Nordsee",
+  "description": [
+    "This attribute is associated with 3 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: DanTysk, SylWin1, COBRA cable, Atlantic Crossing 1 (AC1) Seg.A, Unnamed lane, ODIN 1, Danger Area Nordsee",
+    "support": 3
+  },
+  "related": []
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_375",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Aabenraa Lystbådehavn, Sejlerstue, Varnæs Vig Bro, Unnamed lane, Barsøfærgen",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2408_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2408_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3081913737957353482",
+      "type": "behavior",
+      "label": "Behavior 57353482",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2408_SEG_5",
+      "target": "A_375",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3081913737957353482",
+      "target": "A_375",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2408_SEG_5",
+    "A_375",
+    "B_vb_3081913737957353482"
+  ],
+  "centerNodeId": "A_375",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

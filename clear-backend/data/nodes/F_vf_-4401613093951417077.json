@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-4401613093951417077",
+  "type": "function",
+  "label": "Function 51417077",
+  "summary": "This function models the vessel's trajectory as a small elliptical loop, consistent with the observe...",
+  "description": [
+    "Function description: This function models the vessel's trajectory as a small elliptical loop, consistent with the observed pattern of stable heading (~354°), fluctuating COG, and near-zero speed, indicating the vessel is maneuvering in a confined area—likely during docking or anchoring. The path is parameterized using a normalized time variable `t` from the `Time_interval`, mapping it to a full cycle (0 to 1) over the missing data period. The resulting positions follow an elliptical path centered at (54.1508, 12.1015) with latitudinal amplitude of ~0.0001° (~11 meters) and longitudinal amplitude of ~5e-5° (~5 meters), reflecting a tight circular swing. This approach captures the cyclic nature of the vessel’s motion better than linear interpolation and aligns with the physical behavior of anchored or moored vessels adjusting position due to wind or current. The output is a list of `[lat, lon]` pairs with length equal to `len(Time_interval)`, ensuring correct alignment with timestamps.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import math; N = len(Time_interval); t_norm = [t / (Time_interval[-1]) for t in Time_interval]; center_lat, center_lon = 54.1508, 12.1015; radius_lat, radius_lon = 0.0001, 5e-5; return [[center_lat + radius_lat * math.sin(2 * math.pi * t), center_lon + radius_lon * math.cos(2 * math.pi * t)] for t in t_norm]"
+  ],
+  "metadata": {
+    "original_id": "vf_-4401613093951417077",
+    "code": "def spatial_function(start, end, Time_interval): \n    import math; N = len(Time_interval); t_norm = [t / (Time_interval[-1]) for t in Time_interval]; center_lat, center_lon = 54.1508, 12.1015; radius_lat, radius_lon = 0.0001, 5e-5; return [[center_lat + radius_lat * math.sin(2 * math.pi * t), center_lon + radius_lon * math.cos(2 * math.pi * t)] for t in t_norm]"
+  },
+  "related": []
+}

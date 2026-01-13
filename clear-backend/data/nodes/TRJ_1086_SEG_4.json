@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_1086_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_1086_SEG_4",
+  "summary": "Segment 4 of trajectory 1086",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-19 01:46:42",
+    "End time: 2024-03-19 01:50:53"
+  ],
+  "metadata": {
+    "trajectory_id": "1086",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-19 01:46:42",
+    "end_time": "2024-03-19 01:50:53"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Baltic 2, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Unnamed lane, Travemünde (D) – Helsinki (FIN)",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [25, 30) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 16.2 and 16.4 knots throughout the observed segment)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 60.5° to 66.2°, indicating a smooth turn to starboard over time)",
+      "heading_fluctuation": "stable (heading remains close to 65°, with only minor adjustments, mostly between 64° and 69°, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.742553 + 0.0012 × t + 0.00015 × t², lon(t) ≈ 12.713247 + 0.0048 × t + 0.00028 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 16.3–16.4 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG increases slowly from 52.0° to 58.9° over time, indicating a smooth, continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 56.0°–64.0°, with minimal short-term variation, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.7308 + 0.0015 × t + 0.0002 × t², lon(t) ≈ 12.6854 + 0.0032 × t + 0.0004 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.7517 + 0.0003 × t + 0.00002 × t², lon(t) ≈ 12.7436 + 0.0018 × t + 0.00009 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

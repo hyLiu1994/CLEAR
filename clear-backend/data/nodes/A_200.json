@@ -1,0 +1,15 @@
+{
+  "id": "A_200",
+  "type": "attribute",
+  "label": "spatial_context: location: Aarhus, Aarhus Municipality, Central Denmark Region, 8000, Denmark; nearby_shipping_lanes: Skødshoved Bro og Jollehavn, Odden - Aarhus, Træskibshavnen, Aarhus Havsvømmebane, Aarhus Lystbådehavn, Aarhus Vandflyveplads, Aarhus-Kalundborg, Marselisborg Lystbådehavn, Unnamed lane, Egå Marina",
+  "summary": "spatial_context attribute: location: Aarhus, Aarhus Municipality, Central Denmark Region, 8000, Denmark; nearby_shipping_lanes: Skødshoved Bro og Jollehavn, Odden - Aarhus, Træskibshavnen, Aarhus Havsvømmebane, Aarhus Lystbådehavn, Aarhus Vandflyveplads, Aarhus-Kalundborg, Marselisborg Lystbådehavn, Unnamed lane, Egå Marina",
+  "description": [
+    "This attribute is associated with 4 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Aarhus, Aarhus Municipality, Central Denmark Region, 8000, Denmark; nearby_shipping_lanes: Skødshoved Bro og Jollehavn, Odden - Aarhus, Træskibshavnen, Aarhus Havsvømmebane, Aarhus Lystbådehavn, Aarhus Vandflyveplads, Aarhus-Kalundborg, Marselisborg Lystbådehavn, Unnamed lane, Egå Marina",
+    "support": 4
+  },
+  "related": []
+}

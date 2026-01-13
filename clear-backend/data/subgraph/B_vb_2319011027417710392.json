@@ -1,0 +1,146 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_2319011027417710392",
+      "type": "behavior",
+      "label": "Behavior 17710392",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2638_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2638_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-2730999286239322083",
+      "type": "function",
+      "label": "Function 39322083",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_002",
+      "type": "attribute",
+      "label": "navigation_status: Moored",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_007",
+      "type": "attribute",
+      "label": "vessel_type: Passenger",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_398",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC SwePol, Ortholmen, Carl Gustafs kyrka, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2638_SEG_5",
+      "target": "B_vb_2319011027417710392",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-2730999286239322083",
+      "target": "B_vb_2319011027417710392",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2319011027417710392",
+      "target": "A_002",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2319011027417710392",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2319011027417710392",
+      "target": "A_007",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2319011027417710392",
+      "target": "A_398",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2319011027417710392",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2319011027417710392",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2319011027417710392",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_411",
+    "A_002",
+    "F_vf_-2730999286239322083",
+    "TRJ_2638_SEG_5",
+    "A_007",
+    "B_vb_2319011027417710392",
+    "A_405",
+    "A_398",
+    "A_415",
+    "A_004"
+  ],
+  "centerNodeId": "B_vb_2319011027417710392",
+  "maxLevel": 1,
+  "totalNodes": 10,
+  "totalLinks": 9
+}

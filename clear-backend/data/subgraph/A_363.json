@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_363",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Aurora, HVDC NordBalt",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2319_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2319_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2319_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2319_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6968704479486317731",
+      "type": "behavior",
+      "label": "Behavior 86317731",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1573339375762116078",
+      "type": "behavior",
+      "label": "Behavior 62116078",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2319_SEG_2",
+      "target": "A_363",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2319_SEG_1",
+      "target": "A_363",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6968704479486317731",
+      "target": "A_363",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1573339375762116078",
+      "target": "A_363",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2319_SEG_2",
+    "TRJ_2319_SEG_1",
+    "A_363",
+    "B_vb_-1573339375762116078",
+    "B_vb_6968704479486317731"
+  ],
+  "centerNodeId": "A_363",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

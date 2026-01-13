@@ -1,0 +1,15 @@
+{
+  "id": "A_352",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Rødsand II Havmøllepark, Klaipėda (LT) – Kiel (D), Femern Fixed Link Holding Area North, Unnamed lane",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Rødsand II Havmøllepark, Klaipėda (LT) – Kiel (D), Femern Fixed Link Holding Area North, Unnamed lane",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Rødsand II Havmøllepark, Klaipėda (LT) – Kiel (D), Femern Fixed Link Holding Area North, Unnamed lane",
+    "support": 1
+  },
+  "related": []
+}

@@ -1,0 +1,314 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_5494319611255614765",
+      "type": "behavior",
+      "label": "Behavior 55614765",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "F_vf_-2730999286239322083",
+      "type": "function",
+      "label": "Function 39322083",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_016",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, Atlantic Crossing 1 (AC1) Seg.A, Danger Area Nordsee, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_414",
+      "type": "attribute",
+      "label": "width: [15, 20) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_019",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC Skagerak 2, HVDC Skagerrak 4, HVDC Skagerak 1, Unnamed lane, HAVSIL Fiber Cable System",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_009",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_037",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Aurora, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Liepāja (LV), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_412",
+      "type": "attribute",
+      "label": "length: [50, 100) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_416",
+      "type": "attribute",
+      "label": "width: [10, 15) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_046",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_084",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Grønlandshavnen, Unnamed lane, Sejlklubben Mou Bro, Hals Jollehavn, Mou Bro",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "F_vf_-2730999286239322083",
+      "target": "B_vb_5494319611255614765",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_016",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_414",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_019",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_009",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_037",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_412",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_416",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_046",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_084",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_414",
+    "A_084",
+    "A_021",
+    "A_009",
+    "A_046",
+    "A_004",
+    "A_006",
+    "A_406",
+    "A_037",
+    "A_416",
+    "A_019",
+    "A_410",
+    "A_001",
+    "A_412",
+    "B_vb_5494319611255614765",
+    "A_405",
+    "A_411",
+    "F_vf_-2730999286239322083",
+    "A_016",
+    "A_005",
+    "A_404",
+    "A_415"
+  ],
+  "centerNodeId": "B_vb_5494319611255614765",
+  "maxLevel": 1,
+  "totalNodes": 22,
+  "totalLinks": 21
+}

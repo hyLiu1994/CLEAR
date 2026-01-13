@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_132",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Storebælt, Unnamed lane, Samsø Bælt",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_626_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_626_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4317838218391453589",
+      "type": "behavior",
+      "label": "Behavior 91453589",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_626_SEG_5",
+      "target": "A_132",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4317838218391453589",
+      "target": "A_132",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_132",
+    "TRJ_626_SEG_5",
+    "B_vb_4317838218391453589"
+  ],
+  "centerNodeId": "A_132",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

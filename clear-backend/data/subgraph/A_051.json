@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_051",
+      "type": "attribute",
+      "label": "spatial_context: location: Schülp bei Rendsburg, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24813, Germany; nearby_shipping_lanes: Büdelsdorfer Yachtclub, Kanalfähre Breiholz, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Lotsenstation Rüsterbergen",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_217_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_217_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-813988986690502197",
+      "type": "behavior",
+      "label": "Behavior 90502197",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_217_SEG_9",
+      "target": "A_051",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_051",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-813988986690502197",
+    "TRJ_217_SEG_9",
+    "A_051"
+  ],
+  "centerNodeId": "A_051",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

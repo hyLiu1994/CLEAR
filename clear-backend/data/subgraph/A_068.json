@@ -1,0 +1,216 @@
+{
+  "nodes": [
+    {
+      "id": "A_068",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Pangea North UK/Denmark, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_335_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_335_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_335_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_335_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2559_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2559_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2559_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2559_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2559_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2559_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2559_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2559_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-603126515245468748",
+      "type": "behavior",
+      "label": "Behavior 45468748",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8800036436165913349",
+      "type": "behavior",
+      "label": "Behavior 65913349",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6255190157237282313",
+      "type": "behavior",
+      "label": "Behavior 37282313",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2100548169559808147",
+      "type": "behavior",
+      "label": "Behavior 59808147",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4804797531558133848",
+      "type": "behavior",
+      "label": "Behavior 58133848",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-2909736847591390058",
+      "type": "behavior",
+      "label": "Behavior 91390058",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1450693701513248396",
+      "type": "behavior",
+      "label": "Behavior 13248396",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_335_SEG_1",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_335_SEG_2",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2559_SEG_0",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2559_SEG_2",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2559_SEG_4",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2559_SEG_3",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_0",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-603126515245468748",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8800036436165913349",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4804797531558133848",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1450693701513248396",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-603126515245468748",
+    "TRJ_2559_SEG_4",
+    "B_vb_1450693701513248396",
+    "TRJ_2559_SEG_3",
+    "TRJ_2566_SEG_0",
+    "TRJ_335_SEG_2",
+    "TRJ_2559_SEG_2",
+    "B_vb_-8800036436165913349",
+    "B_vb_-6255190157237282313",
+    "B_vb_4804797531558133848",
+    "B_vb_2100548169559808147",
+    "TRJ_2559_SEG_0",
+    "B_vb_-2909736847591390058",
+    "A_068",
+    "TRJ_335_SEG_1"
+  ],
+  "centerNodeId": "A_068",
+  "maxLevel": 1,
+  "totalNodes": 15,
+  "totalLinks": 14
+}

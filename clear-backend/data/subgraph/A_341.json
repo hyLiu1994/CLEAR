@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_341",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Binz - Sassnitz, Sassnitz - Rønne, Sassnitz - Kreideküste, Sellin - Göhren, BEI-Interkonnektor Bornholm-Deutschland, Aurora, Ostwind 3, Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Sassnitz - Binz, Sassnitz - Sellin, Ostwind 2, Sellin - Binz",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2111_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2111_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2111_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2111_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-9056521737806081172",
+      "type": "behavior",
+      "label": "Behavior 06081172",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3904615949280961952",
+      "type": "behavior",
+      "label": "Behavior 80961952",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2111_SEG_1",
+      "target": "A_341",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2111_SEG_2",
+      "target": "A_341",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-9056521737806081172",
+      "target": "A_341",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3904615949280961952",
+      "target": "A_341",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2111_SEG_2",
+    "B_vb_3904615949280961952",
+    "B_vb_-9056521737806081172",
+    "A_341",
+    "TRJ_2111_SEG_1"
+  ],
+  "centerNodeId": "A_341",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

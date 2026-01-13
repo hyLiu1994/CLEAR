@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_6559958167308806454",
+  "type": "behavior",
+  "label": "Behavior 08806454",
+  "summary": "Vessel behavior pattern: following a curved maritime route (the vessel is navigating along a geographically constrained path, likely a designated shipping lane or coastal route with a gentle curvature; the simultaneous southward and eastward progression with gradual COG shift suggests movement along a known arc-shaped trajectory approximated by a second-order polynomial in latitude-longitude space: Δlat ≈ a·Δlon² + b·Δlon + c)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a consistent speed between 7.9 and 8.5 knots with minimal variation)",
+    "Course change: gradual and consistent (COG changes slowly from ~214° to ~207°, then back to ~216°, indicating a smooth, controlled adjustment in direction over time)",
+    "Heading fluctuation: stable (heading remains within a narrow range of 212°–215°, with only minor adjustments, suggesting steady helm control)",
+    "Behavior intent: following a curved maritime route (the vessel is navigating along a geographically constrained path, likely a designated shipping lane or coastal route with a gentle curvature; the simultaneous southward and eastward progression with gradual COG shift suggests movement along a known arc-shaped trajectory approximated by a second-order polynomial in latitude-longitude space: Δlat ≈ a·Δlon² + b·Δlon + c)",
+    "Duration: 40600~40650"
+  ],
+  "metadata": {
+    "original_id": "vb_6559958167308806454",
+    "duration": "40600~40650",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "gradual and consistent",
+      "stable",
+      "following a curved maritime route",
+      "40600~40650"
+    ]
+  },
+  "related": []
+}

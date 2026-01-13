@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-1323341873447631877",
+  "type": "behavior",
+  "label": "Behavior 47631877",
+  "summary": "Vessel behavior pattern: following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: latitude ≈ 54.31 + 0.00012 × t + 0.000003 × t², longitude ≈ 9.71 + 0.00018 × t + 0.000006 × t², where t is sequential time index)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a consistent speed between 6.2 and 7.0 knots across multiple observations, indicating steady propulsion)",
+    "Course change: gradual and consistent (COG changes slowly and monotonically over time, e.g., from 7.8° to 49.0° then to 118.9°, reflecting a smooth turn rather than abrupt maneuvers)",
+    "Heading fluctuation: stable (heading values remain closely aligned with COG, with small deviations under 3°, suggesting no erratic rudder movements)",
+    "Behavior intent: following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: latitude ≈ 54.31 + 0.00012 × t + 0.000003 × t², longitude ≈ 9.71 + 0.00018 × t + 0.000006 × t², where t is sequential time index)",
+    "Duration: 11950~12000"
+  ],
+  "metadata": {
+    "original_id": "vb_-1323341873447631877",
+    "duration": "11950~12000",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "gradual and consistent",
+      "stable",
+      "following a curved maritime route",
+      "11950~12000"
+    ]
+  },
+  "related": []
+}

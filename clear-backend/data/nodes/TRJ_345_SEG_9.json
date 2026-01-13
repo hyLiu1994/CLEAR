@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_345_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_345_SEG_9",
+  "summary": "Segment 9 of trajectory 345",
+  "description": [
+    "MMSI: 209541000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-15 00:47:02",
+    "End time: 2024-03-15 00:52:20"
+  ],
+  "metadata": {
+    "trajectory_id": "345",
+    "vessel_id": "209541000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-15 00:47:02",
+    "end_time": "2024-03-15 00:52:20"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Denmark; nearby_shipping_lanes: Hirtshals - Larvik, Denmark-Northway 5, Skagen Fiber West, Unnamed lane, Hirtshals - Langesund",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with SOG increasing only slightly from 14.3 to 15.3 knots over the sequence, indicating steady cruising)",
+      "course_change": "gradual and consistent (COG varies between 57.3° and 58.3° with small, oscillating changes around 57.6°–58.0°, showing a smooth, controlled evolution in direction)",
+      "heading_fluctuation": "stable (heading remains fixed at 57.0° throughout the entire sequence, indicating no rudder adjustments or yawing)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "300~350"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

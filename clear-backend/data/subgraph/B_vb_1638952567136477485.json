@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_1638952567136477485",
+      "type": "behavior",
+      "label": "Behavior 36477485",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1065_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_1065_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1065_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_1065_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1065_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_1065_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-2145520015292500943",
+      "type": "function",
+      "label": "Function 92500943",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_8293544977180086560",
+      "type": "function",
+      "label": "Function 80086560",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_201",
+      "type": "attribute",
+      "label": "spatial_context: location: Aarhus, Aarhus Municipality, Central Denmark Region, 8000, Denmark; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_417",
+      "type": "attribute",
+      "label": "width: [25, 30) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_200",
+      "type": "attribute",
+      "label": "spatial_context: location: Aarhus, Aarhus Municipality, Central Denmark Region, 8000, Denmark; nearby_shipping_lanes: Skødshoved Bro og Jollehavn, Odden - Aarhus, Træskibshavnen, Aarhus Havsvømmebane, Aarhus Lystbådehavn, Aarhus Vandflyveplads, Aarhus-Kalundborg, Marselisborg Lystbådehavn, Unnamed lane, Egå Marina",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1065_SEG_9",
+      "target": "B_vb_1638952567136477485",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1065_SEG_8",
+      "target": "B_vb_1638952567136477485",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1065_SEG_6",
+      "target": "B_vb_1638952567136477485",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-2145520015292500943",
+      "target": "B_vb_1638952567136477485",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_8293544977180086560",
+      "target": "B_vb_1638952567136477485",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1638952567136477485",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1638952567136477485",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1638952567136477485",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1638952567136477485",
+      "target": "A_201",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1638952567136477485",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1638952567136477485",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1638952567136477485",
+      "target": "A_417",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1638952567136477485",
+      "target": "A_200",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_411",
+    "A_417",
+    "A_001",
+    "F_vf_8293544977180086560",
+    "TRJ_1065_SEG_6",
+    "F_vf_-2145520015292500943",
+    "B_vb_1638952567136477485",
+    "A_200",
+    "TRJ_1065_SEG_8",
+    "A_404",
+    "A_201",
+    "A_004",
+    "TRJ_1065_SEG_9",
+    "A_006"
+  ],
+  "centerNodeId": "B_vb_1638952567136477485",
+  "maxLevel": 1,
+  "totalNodes": 14,
+  "totalLinks": 13
+}

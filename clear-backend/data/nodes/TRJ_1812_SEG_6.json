@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1812_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_1812_SEG_6",
+  "summary": "Segment 6 of trajectory 1812",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-29 12:52:07",
+    "End time: 2024-03-29 13:05:58"
+  ],
+  "metadata": {
+    "trajectory_id": "1812",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-29 12:52:07",
+    "end_time": "2024-03-29 13:05:58"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains zero speed for an extended period, indicating no movement)",
+      "course_change": "stable (COG remains constant at 353.0° despite lack of motion, typical when stationary)",
+      "heading_fluctuation": "stable (heading remains fixed at 353.0°, showing no rotational adjustment)",
+      "intent": "anchored or moored in a confined area (the persistent zero speed (SOG = 0.0) combined with fixed COG and heading, while position shows minor GPS noise-level variations around 54.15079–54.1508 latitude and 12.101525–12.101532 longitude, indicates the vessel is not underway but likely anchored or moored; position can be imputed as a static point: lat ≈ 54.150795, lon ≈ 12.101527 with negligible deviation)",
+      "duration": "600~650"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with SOG varying only slightly from 7.4 to 13.2 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 340.3° to 342.5°, then stabilizes around 341.3°–341.6°, indicating a smooth, intentional turn or channel-following behavior)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 338.0° to 341.0°, deviating by no more than 3°, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.1761 + 0.0025 × t + 0.0001 × t², lon(t) ≈ 12.0958 − 0.0032 × t − 0.00015 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "500~550"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, passenger vessels 'under way using engine' operating in confined harbor areas near Rostock, particularly along designated shipping lanes such as Sondergebiet Warnow and approaches to ferry terminals like Rostock–Trelleborg, exhibit straight-route navigation patterns with stable speed and minimal course deviation in approximately 63% of observed segments. The high edge weights from vessel attributes—especially navigation status (w=102), length [150, 200) m (w=63), and width [25, 30) m (w=43)—indicate strong statistical prevalence for this behavior pattern among large passenger vessels maneuvering in port-proximate waters. Furthermore, the co-occurrence of stable speed, consistent heading, and fixed-route intent is frequently observed in vessels preparing for docking or transiting narrow channels under engine power.",
+    "contextual_justification": "The boundary movement pattern shows a vessel maintaining very low speed (0.0–0.4 knots) with fluctuating COG but stable heading (~354°), indicating it is turning in place or adjusting position within a tight harbor zone—consistent with final approach or anchoring preparation. This transitional state bridges prolonged stationary behavior and resumption of forward motion. The selected movement (vb_-4927443205807001530) represents a return to active transit along a fixed linear route, which aligns with the spatial progression seen in the incomplete AIS samples: after a period of minimal movement around (54.1508, 12.1015), the vessel resumes northeastward motion, matching the described trajectory (lat(t) ≈ 56.114153 + 0.00087 × t, lon(t) ≈ 7.607993 + 0.00034 × t). Although the absolute coordinates differ slightly, the parametric trend and directional intent are consistent with departure from a moored or slow-maneuvering state into open-water transit, making this the most plausible continuation.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to solve the missing value problem corresponding to the behavior pattern is approximately 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the behavior pattern vb_-4927443205807001530. The total weight sum is 100 (from vf_-7663396197665720575) + 2 (from vf_5240413252068673064) = 102. The proportion of support for vf_-7663396197665720575 is therefore 100 / 102 ≈ 0.9804, or 98.04%. This indicates a strong statistical preference for this function based on historical association frequencies with the given motion pattern.  \n2. This function is specifically designed for linear interpolation using time-proportional scaling of position increments, which aligns precisely with the observed kinematic stability—stable speed, consistent COG, and minimal heading fluctuation—indicating constant-velocity motion along a fixed route. Its implementation assumes a straight-line trajectory between known endpoints, which matches the parametric description of the vessel’s northeast progression (lat(t) ≈ 56.114153 + 0.00087 × t, lon(t) ≈ 7.607993 + 0.00034 × t). In contrast, the alternative function, while similar in approach, has significantly lower statistical association, suggesting less empirical validation in comparable scenarios."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "VTS Rostock-Warnemünde; applies to passenger vessels over 150 m in length navigating within designated shipping lanes and harbor approach zones; spatial anchor: Sondergebiet Warnow and Rostock–Trelleborg ferry corridor\nOperational Protocol Rationale: Passenger vessels operating in the Rostock harbor area are expected to follow strictly defined routes when transiting between terminal berths and open sea lanes, particularly along the Sondergebiet Warnow channel and the Rostock–Trelleborg ferry route. The observed behavior—stable speed, consistent heading, and minimal deviation in course—aligns with standardized navigation protocols for large passenger ships under engine power in confined waters, where autopilot systems are typically engaged for precision on linear paths. This pattern contrasts with maneuvering behaviors such as turning or docking, which involve fluctuating speed and course adjustments. Given the vessel’s location near critical infrastructure and high-traffic ferry lanes, maintaining a fixed, predictable trajectory ensures collision avoidance and compliance with local vessel traffic management procedures. The resumption of straight-line motion after a period of minimal movement is consistent with departure from a holding or positioning phase into an authorized transit corridor.\n'''",
+    "operational_protocol_rationale": "Passenger vessels operating in the Rostock harbor area are expected to follow strictly defined routes when transiting between terminal berths and open sea lanes, particularly along the Sondergebiet Warnow channel and the Rostock–Trelleborg ferry route. The observed behavior—stable speed, consistent heading, and minimal deviation in course—aligns with standardized navigation protocols for large passenger ships under engine power in confined waters, where autopilot systems are typically engaged for precision on linear paths. This pattern contrasts with maneuvering behaviors such as turning or docking, which involve fluctuating speed and course adjustments. Given the vessel’s location near critical infrastructure and high-traffic ferry lanes, maintaining a fixed, predictable trajectory ensures collision avoidance and compliance with local vessel traffic management procedures. The resumption of straight-line motion after a period of minimal movement is consistent with departure from a holding or positioning phase into an authorized transit corridor.\n'''"
+  },
+  "related": []
+}

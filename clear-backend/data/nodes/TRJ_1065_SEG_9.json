@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1065_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1065_SEG_9",
+  "summary": "Segment 9 of trajectory 1065",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 10:59:52",
+    "End time: 2024-03-18 11:03:44"
+  ],
+  "metadata": {
+    "trajectory_id": "1065",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-18 10:59:52",
+    "end_time": "2024-03-18 11:03:44"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Aarhus, Aarhus Municipality, Central Denmark Region, 8000, Denmark; nearby_shipping_lanes: Query failed with status 429",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [25, 30) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'fluctuating'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "'anchored or moored in a confined area'",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'fluctuating'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "'anchored or moored in a confined area'",
+      "duration": "200~250"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

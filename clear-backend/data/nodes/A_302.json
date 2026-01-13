@@ -1,0 +1,15 @@
+{
+  "id": "A_302",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Travemünde (D) – Malmö (SE), Klaipėda (LT) – Kiel (D), Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, C-Lion 1, Unnamed lane, Travemünde (D) – Trelleborg (SE)",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Travemünde (D) – Malmö (SE), Klaipėda (LT) – Kiel (D), Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, C-Lion 1, Unnamed lane, Travemünde (D) – Trelleborg (SE)",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Travemünde (D) – Malmö (SE), Klaipėda (LT) – Kiel (D), Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, C-Lion 1, Unnamed lane, Travemünde (D) – Trelleborg (SE)",
+    "support": 2
+  },
+  "related": []
+}

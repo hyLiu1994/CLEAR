@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1396_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_1396_SEG_7",
+  "summary": "Segment 7 of trajectory 1396",
+  "description": [
+    "MMSI: 210336000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-23 05:04:41",
+    "End time: 2024-03-23 05:09:27"
+  ],
+  "metadata": {
+    "trajectory_id": "1396",
+    "vessel_id": "210336000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-23 05:04:41",
+    "end_time": "2024-03-23 05:09:27"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Unnamed lane",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [10, 15) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 9.3 and 9.8 knots with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly from 237.5° to 236.1° over the sequence, showing a smooth, deliberate turn rather than erratic movement)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 236°–238°, suggesting the vessel is not making abrupt rudder adjustments)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 57.5573 - 0.0024 × t + 0.0001 × t², lon(t) ≈ 9.4199 - 0.0062 × t - 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route",
+      "duration": "400~450"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

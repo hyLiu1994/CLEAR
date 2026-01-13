@@ -1,0 +1,15 @@
+{
+  "id": "A_087",
+  "type": "attribute",
+  "label": "spatial_context: location: Aalborg, Aalborg Municipality, North Denmark Region, 9000, Denmark; nearby_shipping_lanes: Vestre Bådehavn, Vendsysselbanen, Sildekajen, Tunnelhavnen, Nørresundby Kirke, Limfjordsbroen, Aalborg Skudehavn, Nørresundby Lystbådehavn, Aalborgtårnet, Grønlandshavnen, Nørre Uttrup Lystbådehavn, Tunnelbassinet, Unnamed lane, Nybrogade, Østre Havnebasin, Sankt Mariæ Kirke, Vor Frelsers Kirke",
+  "summary": "spatial_context attribute: location: Aalborg, Aalborg Municipality, North Denmark Region, 9000, Denmark; nearby_shipping_lanes: Vestre Bådehavn, Vendsysselbanen, Sildekajen, Tunnelhavnen, Nørresundby Kirke, Limfjordsbroen, Aalborg Skudehavn, Nørresundby Lystbådehavn, Aalborgtårnet, Grønlandshavnen, Nørre Uttrup Lystbådehavn, Tunnelbassinet, Unnamed lane, Nybrogade, Østre Havnebasin, Sankt Mariæ Kirke, Vor Frelsers Kirke",
+  "description": [
+    "This attribute is associated with 6 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Aalborg, Aalborg Municipality, North Denmark Region, 9000, Denmark; nearby_shipping_lanes: Vestre Bådehavn, Vendsysselbanen, Sildekajen, Tunnelhavnen, Nørresundby Kirke, Limfjordsbroen, Aalborg Skudehavn, Nørresundby Lystbådehavn, Aalborgtårnet, Grønlandshavnen, Nørre Uttrup Lystbådehavn, Tunnelbassinet, Unnamed lane, Nybrogade, Østre Havnebasin, Sankt Mariæ Kirke, Vor Frelsers Kirke",
+    "support": 6
+  },
+  "related": []
+}

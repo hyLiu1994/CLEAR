@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_362",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Køge - Rønne, Trelleborg (SE) - Klaipėda (LT)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2298_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2298_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2298_SEG_8",
+      "target": "A_362",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_362",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8377157303611993086",
+    "A_362",
+    "TRJ_2298_SEG_8"
+  ],
+  "centerNodeId": "A_362",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

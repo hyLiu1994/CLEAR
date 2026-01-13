@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_566_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_566_SEG_1",
+  "summary": "Segment 1 of trajectory 566",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 11:00:26",
+    "End time: 2024-03-07 11:05:36"
+  ],
+  "metadata": {
+    "trajectory_id": "566",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-07 11:00:26",
+    "end_time": "2024-03-07 11:05:36"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Leuchtturm Bülk, Kolberger Heide, Olympiahafen Schilksee, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fischschonbezirk Schönberger Au, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, Fischerei- und Yachthafen Möltenort / Heikendorf, U-995, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Yachthafen Marina Wendtorf, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Lotsenstation",
+    "Draught: [6, 8) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with only minor reductions over time, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly and monotonically from ~34.2° to ~20.5°, suggesting a smooth turn rather than erratic movement)",
+      "heading_fluctuation": "stable (heading remains close to 35.0° initially and decreases gradually to 21.0°, closely following COG trends with small, consistent differences)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation:",
+      "duration": "300~350"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "{'gradual and consistent': True}",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "'following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.438655 + 0.0011 × t + 0.00003 × t², lon(t) ≈ 10.236577 + 0.0013 × t + 0.00008 × t², where t is normalized time index from 0 to 1 over the observed segment)': True",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 6.9 and 7.6 knots with minimal variation)",
+      "course_change": "gradual and consistent (COG increases slowly and monotonically from 18.3° to 28.3°, then stabilizes around 27–28°, indicating a smooth turn)",
+      "heading_fluctuation": "stable (heading varies slightly between 21° and 31°, remaining closely aligned with COG, suggesting controlled steering without oscillation)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 54.4607 + 0.0055 × t + 0.0008 × t², lon(t) ≈ 10.2590 + 0.0027 × t + 0.0003 × t², where t ∈ [0,1] is normalized time over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

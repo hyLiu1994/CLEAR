@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "A_408",
+      "type": "attribute",
+      "label": "draught: [12, +∞) m",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2085_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5034770572000743103",
+      "type": "behavior",
+      "label": "Behavior 00743103",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5117658009441012102",
+      "type": "behavior",
+      "label": "Behavior 41012102",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1573339375762116078",
+      "type": "behavior",
+      "label": "Behavior 62116078",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3533100115001479279",
+      "type": "behavior",
+      "label": "Behavior 01479279",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8419500658044176436",
+      "type": "behavior",
+      "label": "Behavior 44176436",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2085_SEG_5",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_3",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_4",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_2",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_7",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_6",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_8",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5034770572000743103",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5117658009441012102",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1573339375762116078",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3533100115001479279",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8419500658044176436",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-5034770572000743103",
+    "TRJ_2085_SEG_7",
+    "A_408",
+    "B_vb_5117658009441012102",
+    "TRJ_2085_SEG_5",
+    "TRJ_2085_SEG_2",
+    "TRJ_2085_SEG_4",
+    "TRJ_2085_SEG_6",
+    "TRJ_2085_SEG_8",
+    "B_vb_8419500658044176436",
+    "TRJ_2085_SEG_0",
+    "B_vb_-1573339375762116078",
+    "B_vb_3533100115001479279",
+    "TRJ_2085_SEG_3"
+  ],
+  "centerNodeId": "A_408",
+  "maxLevel": 1,
+  "totalNodes": 14,
+  "totalLinks": 13
+}

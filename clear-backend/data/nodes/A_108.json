@@ -1,0 +1,15 @@
+{
+  "id": "A_108",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: København (DK) – Oslo (N)",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: København (DK) – Oslo (N)",
+  "description": [
+    "This attribute is associated with 7 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: København (DK) – Oslo (N)",
+    "support": 7
+  },
+  "related": []
+}

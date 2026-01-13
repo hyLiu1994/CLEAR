@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_197",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Langelandsbælt, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_993_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_993_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4927443205807001530",
+      "type": "behavior",
+      "label": "Behavior 07001530",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_993_SEG_6",
+      "target": "A_197",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4927443205807001530",
+      "target": "A_197",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-4927443205807001530",
+    "TRJ_993_SEG_6",
+    "A_197"
+  ],
+  "centerNodeId": "A_197",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

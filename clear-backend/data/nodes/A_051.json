@@ -1,0 +1,15 @@
+{
+  "id": "A_051",
+  "type": "attribute",
+  "label": "spatial_context: location: Schülp bei Rendsburg, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24813, Germany; nearby_shipping_lanes: Büdelsdorfer Yachtclub, Kanalfähre Breiholz, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Lotsenstation Rüsterbergen",
+  "summary": "spatial_context attribute: location: Schülp bei Rendsburg, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24813, Germany; nearby_shipping_lanes: Büdelsdorfer Yachtclub, Kanalfähre Breiholz, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Lotsenstation Rüsterbergen",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Schülp bei Rendsburg, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24813, Germany; nearby_shipping_lanes: Büdelsdorfer Yachtclub, Kanalfähre Breiholz, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Lotsenstation Rüsterbergen",
+    "support": 1
+  },
+  "related": []
+}

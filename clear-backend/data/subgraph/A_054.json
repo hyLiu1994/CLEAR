@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_054",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, DanTysk OAP, DanTysk OSS, Unnamed lane, Danger Area Nordsee",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_257_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_257_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-813988986690502197",
+      "type": "behavior",
+      "label": "Behavior 90502197",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "A_054",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_054",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-813988986690502197",
+    "A_054",
+    "TRJ_257_SEG_6"
+  ],
+  "centerNodeId": "A_054",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

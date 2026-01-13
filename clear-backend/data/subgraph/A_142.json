@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_142",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Schießgebiet Todendorf, Leuchtturm Bülk, Kolberger Heide, Yachthafen Marina Wendtorf, Fischschonbezirk Schönberger Au, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Kalifornien, Museumshafen Probstei, Unnamed lane, Naturschutzgebiet Bottsand, Lotsenstation",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_677_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_677_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4679738668569014458",
+      "type": "behavior",
+      "label": "Behavior 69014458",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_677_SEG_1",
+      "target": "A_142",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4679738668569014458",
+      "target": "A_142",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_142",
+    "TRJ_677_SEG_1",
+    "B_vb_-4679738668569014458"
+  ],
+  "centerNodeId": "A_142",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

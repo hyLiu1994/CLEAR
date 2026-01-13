@@ -1,0 +1,804 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-7663396197665720575",
+      "type": "function",
+      "label": "Function 65720575",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_042",
+      "type": "attribute",
+      "label": "spatial_context: location: Skurups kommun, Skåne County, Sweden; nearby_shipping_lanes: Køge - Rønne, Kabusa skjutfält, Trelleborg (SE) - Klaipėda (LT), Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_044",
+      "type": "attribute",
+      "label": "spatial_context: location: Trelleborgs kommun, Skåne County, Sweden; nearby_shipping_lanes: Køge - Rønne, Trelleborg (SE) - Klaipėda (LT)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_108",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: København (DK) – Oslo (N)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_110",
+      "type": "attribute",
+      "label": "spatial_context: location: Kungälvs kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_072",
+      "type": "attribute",
+      "label": "spatial_context: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: København (DK) – Oslo (N), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_113",
+      "type": "attribute",
+      "label": "spatial_context: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_122",
+      "type": "attribute",
+      "label": "spatial_context: location: Kungsbacka kommun, Halland County, Sweden; nearby_shipping_lanes: København (DK) – Oslo (N), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_123",
+      "type": "attribute",
+      "label": "spatial_context: location: Kungsbacka kommun, Halland County, Sweden; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_053",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_124",
+      "type": "attribute",
+      "label": "spatial_context: location: Göteborgs Stad, Västra Götaland County, Sweden; nearby_shipping_lanes: København (DK) – Oslo (N), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_045",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_126",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed lane, Romsø Fyr, Storebælt, Great Belt 2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_129",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Storebælt, Ballen-Røsnæs, Unnamed lane, Samsø Bælt, Slip",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_136",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Storebælt, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_158",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Storebælt, Ballen-Røsnæs, Unnamed lane, Samsø Bælt",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_179",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Schießgebiet Todendorf, Klaipėda (LT) – Kiel (D), Nördlicher Gefahrenbereich, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_189",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Baltic 2, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Unnamed lane, Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_417",
+      "type": "attribute",
+      "label": "width: [25, 30) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_195",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Romsø Fyr, Storebælt, Great Belt 2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_194",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed lane, Romsø Fyr, Storebælt, Great Belt 2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_046",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_205",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Travemünde (D) – Liepāja (LV), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_206",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Travemünde (D) – Liepāja (LV), Unnamed lane, Trelleborg (SE) - Klaipėda (LT)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_011",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_209",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Baltic Pipe, Bornholmsgat, Unnamed lane, Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S), Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_211",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Bornholmsgat, Aurora, C-Lion 1, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_204",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Bornholmsgat, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_241",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Ystad - Rønne, Travemünde (D) – Liepāja (LV), Baltic Pipe, Baltica, Køge - Rønne, Bornholmsgat, C-Lion 1, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_208",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Bornholm Cable, Bornholmsgat, Aurora, C-Lion 1, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_242",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Baltica, Bornholm Cable, Bornholmsgat, Aurora, C-Lion 1, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_246",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Ystad - Rønne, Travemünde (D) – Liepāja (LV), Baltica, Bornholm Cable, Køge - Rønne, Bornholmsgat, C-Lion 1, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_231",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Baltic Pipe, Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S), Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_237",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TSS South of Gedser, Travemünde (D) – Malmö (SE), Kontek, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Unnamed lane, Kadetrinne, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Trelleborg (SE)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_102",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TSS South of Gedser, Travemünde (D) – Malmö (SE), Kontek, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Unnamed lane, Kadetrinne, Travemünde (D) – Helsinki (FIN), Rostock (D) – Gedser (S), Travemünde (D) – Trelleborg (SE)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_275",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TSS South of Gedser, Travemünde (D) – Malmö (SE), Kontek, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), Unnamed lane, Kadetrinne, Travemünde (D) – Helsinki (FIN), Rostock (D) – Gedser (S), Travemünde (D) – Trelleborg (SE)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_007",
+      "type": "attribute",
+      "label": "vessel_type: Passenger",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_280",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Malmö (SE), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Unnamed lane, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Trelleborg (SE)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_281",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Bornholm Cable, Bornholmsgat, Aurora, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_292",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Travemünde (D) – Malmö (SE), HVDC Baltic Cable, Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, C-Lion 1, Travemünde (D) – Trelleborg (SE)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_232",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Malmö (SE), Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), Unnamed lane, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Trelleborg (SE)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_301",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Kriegers Flak A, Travemünde (D) – Malmö (SE), HVDC Baltic Cable, Klintholm Havn, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), Travemünde (D) – Trelleborg (SE)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_327",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Baltic Pipe, Nord Stream 1, Nord Stream 2, Nord Stream",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_412",
+      "type": "attribute",
+      "label": "length: [50, 100) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_416",
+      "type": "attribute",
+      "label": "width: [10, 15) m",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "F_vf_5240413252068673064",
+      "target": "B_vb_3366872286460794881",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-7663396197665720575",
+      "target": "B_vb_3366872286460794881",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_042",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_044",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_108",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_110",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_072",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_113",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_122",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_123",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_053",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_124",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_045",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_126",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_129",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_136",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_158",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_179",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_189",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_417",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_195",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_194",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_046",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_205",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_206",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_011",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_209",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_211",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_204",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_241",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_208",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_242",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_246",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_231",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_237",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_102",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_275",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_007",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_280",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_281",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_292",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_232",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_301",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_327",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_412",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_416",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_126",
+    "A_206",
+    "A_194",
+    "A_237",
+    "A_102",
+    "A_280",
+    "A_136",
+    "A_021",
+    "A_275",
+    "A_208",
+    "A_327",
+    "A_242",
+    "F_vf_-7663396197665720575",
+    "A_046",
+    "A_292",
+    "B_vb_3366872286460794881",
+    "A_124",
+    "A_053",
+    "A_004",
+    "A_072",
+    "A_006",
+    "A_406",
+    "A_129",
+    "A_113",
+    "A_045",
+    "A_211",
+    "A_189",
+    "A_301",
+    "A_042",
+    "A_158",
+    "F_vf_5240413252068673064",
+    "A_011",
+    "A_416",
+    "A_209",
+    "A_108",
+    "A_001",
+    "A_410",
+    "A_412",
+    "A_007",
+    "A_204",
+    "A_405",
+    "A_281",
+    "A_179",
+    "A_110",
+    "A_195",
+    "A_411",
+    "A_417",
+    "A_246",
+    "A_232",
+    "A_044",
+    "A_404",
+    "A_205",
+    "A_415",
+    "A_241",
+    "A_122",
+    "A_231",
+    "A_123"
+  ],
+  "centerNodeId": "B_vb_3366872286460794881",
+  "maxLevel": 1,
+  "totalNodes": 57,
+  "totalLinks": 56
+}

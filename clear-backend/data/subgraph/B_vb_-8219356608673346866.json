@@ -1,0 +1,538 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_-8219356608673346866",
+      "type": "behavior",
+      "label": "Behavior 73346866",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-7663396197665720575",
+      "type": "function",
+      "label": "Function 65720575",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_013",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, SylWin1, COBRA cable, Atlantic Crossing 1 (AC1) Seg.A, Unnamed lane, ODIN 1, Danger Area Nordsee",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_414",
+      "type": "attribute",
+      "label": "width: [15, 20) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_020",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC Skagerak 2, HVDC Skagerak 3, HVDC Skagerrak 4, HVDC Skagerak 1, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_009",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_037",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Aurora, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Liepāja (LV), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_052",
+      "type": "attribute",
+      "label": "spatial_context: location: Schülp bei Rendsburg, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24813, Germany; nearby_shipping_lanes: Büdelsdorfer Yachtclub, Kanalfähre Breiholz, Yachthafen Rendsburg, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Lotsenstation Rüsterbergen",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_011",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_412",
+      "type": "attribute",
+      "label": "length: [50, 100) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_416",
+      "type": "attribute",
+      "label": "width: [10, 15) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_045",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_057",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Havnekontor, Langelandsbælt, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_067",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Tórshavn, Unnamed lane, Kristiansand - Hirtshals, Hirtshals - Kristiansand, Hirtshals - Stavanger",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_046",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_073",
+      "type": "attribute",
+      "label": "spatial_context: location: Göteborgs Stad, Västra Götaland County, Sweden; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_074",
+      "type": "attribute",
+      "label": "spatial_context: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Marstrandsfjorden, København (DK) – Oslo (N)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_081",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Nordmands Hage, Hals Jollehavn, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_082",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed lane, Sejlklubben Mou Bro, Nordmands Hage, Hals Jollehavn, Mou Bro",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_088",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Kristiansand - Hirtshals, Hirtshals - Kristiansand",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_092",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_093",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Leuchtturm Bülk, Kolberger Heide, Olympiahafen Schilksee, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fischschonbezirk Schönberger Au, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Yachthafen Marina Wendtorf, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Lotsenstation",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_094",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Tórshavn, Hirtshals - Stavanger, HVDC Skagerak 3, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_097",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Langelandsbælt, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_034",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Leuchtturm Bülk, Olympiahafen Schilksee, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fischschonbezirk Schönberger Au, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Lotsenstation, Hafen Strande, Yachthafen Marina Wendtorf, Fischschonbezirk Strander Au, Kolberger Heide",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_103",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TSS South of Gedser, Travemünde (D) – Malmö (SE), Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Unnamed lane, Kadetrinne, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Trelleborg (SE)",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "F_vf_5240413252068673064",
+      "target": "B_vb_-8219356608673346866",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-7663396197665720575",
+      "target": "B_vb_-8219356608673346866",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_013",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_414",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_020",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_009",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_037",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_011",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_412",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_416",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_045",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_057",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_067",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_046",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_073",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_074",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_081",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_082",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_088",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_092",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_093",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_094",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_097",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_034",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_103",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_073",
+    "A_414",
+    "A_021",
+    "A_009",
+    "A_092",
+    "F_vf_-7663396197665720575",
+    "A_046",
+    "A_004",
+    "A_074",
+    "A_006",
+    "A_406",
+    "A_045",
+    "A_037",
+    "A_093",
+    "A_057",
+    "A_034",
+    "A_082",
+    "F_vf_5240413252068673064",
+    "A_011",
+    "A_416",
+    "A_094",
+    "A_410",
+    "A_001",
+    "A_412",
+    "A_052",
+    "A_405",
+    "A_020",
+    "A_088",
+    "A_411",
+    "A_067",
+    "A_103",
+    "A_005",
+    "A_097",
+    "A_404",
+    "A_013",
+    "A_415",
+    "B_vb_-8219356608673346866",
+    "A_081"
+  ],
+  "centerNodeId": "B_vb_-8219356608673346866",
+  "maxLevel": 1,
+  "totalNodes": 38,
+  "totalLinks": 37
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_996_SEG_2",
+  "type": "segment",
+  "label": "Segment TRJ_996_SEG_2",
+  "summary": "Segment 2 of trajectory 996",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 09:16:00",
+    "End time: 2024-03-11 09:20:07"
+  ],
+  "metadata": {
+    "trajectory_id": "996",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 09:16:00",
+    "end_time": "2024-03-11 09:20:07"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.5 and 15.8 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 326.0° and 327.1°, showing a smooth, sustained course direction)",
+      "heading_fluctuation": "stable (heading oscillates minimally around 326–327°, with deviations of ±0.5°, indicating precise rudder control)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.4850 + 0.00127 × t, lon(t) ≈ 10.9087 − 0.00183 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions typical of medium-sized freighters (150–200 m length, 25–30 m width) are observed to follow straight, predefined maritime routes near shipping lanes in approximately 62% of comparable movement gaps. This pattern is strongly associated with vessels transiting open waters or designated channels, where stable speed and heading alignment indicate automated steering along fixed corridors. The behavior pattern vb_-4927443205807001530 has the highest cumulative edge weight from key static attributes—especially navigation status (w=102), vessel type (w=73), and length (w=63)—and ranks second in overall attribute support among candidates, indicating it is a statistically prevalent trajectory mode for this class of vessel under these operational conditions.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating along a fixed route with stable speed, consistent course progression, and minimal heading fluctuation, moving in a linear trajectory toward the northeast. The selected movement vb_-4927443205807001530 precisely matches these characteristics: it exhibits stable speed, gradual and consistent course change, and tightly aligned COG-heading dynamics, all indicative of straight-line transit. Furthermore, the parametric model of position change (lat(t), lon(t)) aligns directionally and temporally with the adjacent segment’s west-southwest linear trend when considering potential regional routing adjustments. Given the continuity in intent, kinematic stability, and duration (200~250 seconds), this movement provides the most plausible interpolation across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 can correctly impute missing latitude and longitude values under the given behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the observed behavior pattern. The total weight sum is 100 + 2 = 102. The proportion of support for vf_-7663396197665720575 is therefore 100 / 102 ≈ 0.9804, or 98.04%. This indicates a strong statistical preference based on historical alignment with similar kinematic patterns.  \n2. This function exhibits high motion consistency with the current context, as it assumes linear spatial progression proportional to time—directly matching the described trajectory where lat(t) and lon(t) evolve via linear parametric equations. Its implementation reflects constant velocity and unchanging heading, which aligns precisely with the stable speed_profile, gradual course_change, and stable heading_fluctuation characteristics."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is operating under typical transit conditions for a cargo ship in open or channelized waters, where stable speed and minimal course adjustments are standard practice. Its consistent heading and course over ground, combined with steady propulsion, indicate it is following a predefined route—common in structured maritime corridors such as shipping lanes. This behavior aligns with automated navigation systems (autopilot) used to maintain efficiency and safety during uneventful legs of a voyage. The linear trajectory and lack of erratic maneuvers rule out anchoring, maneuvering in port, or evasive actions. Despite incomplete spatial context due to a query failure, the kinematic profile strongly supports routine transit behavior typical of regulated or guided waterways.\n'''",
+    "operational_protocol_rationale": "The vessel is operating under typical transit conditions for a cargo ship in open or channelized waters, where stable speed and minimal course adjustments are standard practice. Its consistent heading and course over ground, combined with steady propulsion, indicate it is following a predefined route—common in structured maritime corridors such as shipping lanes. This behavior aligns with automated navigation systems (autopilot) used to maintain efficiency and safety during uneventful legs of a voyage. The linear trajectory and lack of erratic maneuvers rule out anchoring, maneuvering in port, or evasive actions. Despite incomplete spatial context due to a query failure, the kinematic profile strongly supports routine transit behavior typical of regulated or guided waterways.\n'''"
+  },
+  "related": []
+}

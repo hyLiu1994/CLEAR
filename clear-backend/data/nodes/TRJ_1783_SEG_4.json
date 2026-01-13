@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_1783_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_1783_SEG_4",
+  "summary": "Segment 4 of trajectory 1783",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 22:56:28",
+    "End time: 2024-03-27 23:00:19"
+  ],
+  "metadata": {
+    "trajectory_id": "1783",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-27 22:56:28",
+    "end_time": "2024-03-27 23:00:19"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Passenger",
+    "Spatial Context: nearby_shipping_lanes: Kriegers Flak A, Travemünde (D) – Malmö (SE), HVDC Baltic Cable, Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, Unnamed lane, Travemünde (D) – Trelleborg (SE)",
+    "Draught: [4, 6) m",
+    "Length: [150, 200) m",
+    "Width: [25, 30) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.9712 + 0.0013 × t + 0.00004 × t², lon(t) ≈ 12.6773 + 0.0011 × t + 0.00007 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.95515 + 0.00076 × t + 0.00002 × t², lon(t) ≈ 12.663273 + 0.00068 × t + 0.00003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 54.9873 + 0.0011 × t + 0.00004 × t², lon(t) ≈ 12.6908 + 0.0018 × t + 0.00007 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

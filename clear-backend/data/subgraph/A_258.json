@@ -1,0 +1,258 @@
+{
+  "nodes": [
+    {
+      "id": "A_258",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC NordBalt, Aurora, Travemünde (D) – Helsinki (FIN)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1488_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_1488_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1488_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_1488_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1488_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_1488_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1488_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1488_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2319_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2319_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2319_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2319_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2319_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2319_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2319_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2319_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2319_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2319_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5034770572000743103",
+      "type": "behavior",
+      "label": "Behavior 00743103",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8369218991226673352",
+      "type": "behavior",
+      "label": "Behavior 26673352",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1609043449289077721",
+      "type": "behavior",
+      "label": "Behavior 89077721",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5117658009441012102",
+      "type": "behavior",
+      "label": "Behavior 41012102",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7240731711147206649",
+      "type": "behavior",
+      "label": "Behavior 47206649",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-2911696870294548556",
+      "type": "behavior",
+      "label": "Behavior 94548556",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5940360220764620572",
+      "type": "behavior",
+      "label": "Behavior 64620572",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2433946065361577245",
+      "type": "behavior",
+      "label": "Behavior 61577245",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1488_SEG_2",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1488_SEG_0",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1488_SEG_1",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1488_SEG_3",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2319_SEG_4",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2319_SEG_5",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2319_SEG_7",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2319_SEG_6",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2319_SEG_8",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5034770572000743103",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8369218991226673352",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1609043449289077721",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5117658009441012102",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7240731711147206649",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2911696870294548556",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5940360220764620572",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2433946065361577245",
+      "target": "A_258",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-5034770572000743103",
+    "B_vb_-2911696870294548556",
+    "B_vb_8369218991226673352",
+    "TRJ_1488_SEG_2",
+    "TRJ_2319_SEG_6",
+    "B_vb_-1609043449289077721",
+    "TRJ_1488_SEG_3",
+    "TRJ_2319_SEG_7",
+    "TRJ_1488_SEG_0",
+    "B_vb_5117658009441012102",
+    "B_vb_7240731711147206649",
+    "TRJ_2319_SEG_4",
+    "B_vb_2433946065361577245",
+    "TRJ_2319_SEG_8",
+    "B_vb_5940360220764620572",
+    "TRJ_1488_SEG_1",
+    "A_258",
+    "TRJ_2319_SEG_5"
+  ],
+  "centerNodeId": "A_258",
+  "maxLevel": 1,
+  "totalNodes": 18,
+  "totalLinks": 17
+}

@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-7898886219190480771",
+  "type": "function",
+  "label": "Function 90480771",
+  "summary": "This function reconstructs missing vessel positions along a curved trajectory using a second-order p...",
+  "description": [
+    "Function description: This function reconstructs missing vessel positions along a curved trajectory using a second-order polynomial model derived from observed motion patterns. It assumes the vessel maintains a stable speed and follows a smooth, gradual turn consistent with navigation in confined waters. The latitude and longitude are interpolated based on normalized time progression across the interval, with quadratic corrections applied to reflect the slight curvature in the path—specifically, a small northeasterly bend as indicated by historical COG and heading trends. The coefficients (0.00008 for lat, -0.00006 for lon) approximate the curvature observed in the reference data, enabling more accurate estimation than linear interpolation alone.",
+    "Code implementation: def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / Time_interval[-1]) + 0.00008 * (t / Time_interval[-1])**2, start[1] + (end[1] - start[1]) * (t / Time_interval[-1]) - 0.00006 * (t / Time_interval[-1])**2) for t in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_-7898886219190480771",
+    "code": "def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / Time_interval[-1]) + 0.00008 * (t / Time_interval[-1])**2, start[1] + (end[1] - start[1]) * (t / Time_interval[-1]) - 0.00006 * (t / Time_interval[-1])**2) for t in Time_interval]"
+  },
+  "related": []
+}

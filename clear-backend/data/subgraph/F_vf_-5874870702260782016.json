@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "F_vf_-5874870702260782016",
+      "type": "function",
+      "label": "Function 60782016",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_146_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_146_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_409_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_409_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6796904264114403148",
+      "type": "behavior",
+      "label": "Behavior 14403148",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_146_SEG_2",
+      "target": "F_vf_-5874870702260782016",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_409_SEG_0",
+      "target": "F_vf_-5874870702260782016",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-5874870702260782016",
+      "target": "B_vb_-6796904264114403148",
+      "relation": "implements",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_146_SEG_2",
+    "F_vf_-5874870702260782016",
+    "B_vb_-6796904264114403148",
+    "TRJ_409_SEG_0"
+  ],
+  "centerNodeId": "F_vf_-5874870702260782016",
+  "maxLevel": 1,
+  "totalNodes": 4,
+  "totalLinks": 3
+}

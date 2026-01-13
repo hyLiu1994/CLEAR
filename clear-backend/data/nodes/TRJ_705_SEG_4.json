@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_705_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_705_SEG_4",
+  "summary": "Segment 4 of trajectory 705",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-23 13:40:31",
+    "End time: 2024-03-23 13:45:22"
+  ],
+  "metadata": {
+    "trajectory_id": "705",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-23 13:40:31",
+    "end_time": "2024-03-23 13:45:22"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "stable",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "{'stable': True}",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "'anchored or moored in a confined area'",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating through dense maritime traffic near major shipping lanes and port approaches—such as those near Copenhagen, including Drogden, Nyhavn - Flakfortet, and København (DK) – Oslo (N)—most frequently exhibit straight-line transit behavior with stable speed and minimal course deviation. This pattern is strongly associated with vessels of length [100, 150) m and draught [8, 10) m, like the subject vessel, which must maintain predictable trajectories in regulated waterways. The graph edges show that this movement (vb_-4927443205807001530) has the highest combined support from key attributes: navigation_status (w=102), hazardous_cargo_no (w=102), and vessel_type_Cargo (w=73), accounting for approximately 62% of the total weight among all candidate patterns for these defining attributes. Additionally, its alignment with spatial_context and moderate physical dimensions further reinforces its prevalence in constrained coastal corridors.",
+    "contextual_justification": "The boundary movement pattern indicates a prolonged stationary phase (anchored or moored) near latitude 55.7113° N and longitude 12.6023° E, consistent with a vessel preparing to depart or having just arrived at a berth in the Copenhagen harbor area. The selected movement—navigating along a fixed straight route with stable speed and heading—represents the most plausible resumption of motion immediately after anchoring, particularly when exiting a congested port environment into a defined traffic lane. Given the vessel’s location amid structured shipping routes and its cargo type, transitioning from a moored state to a steady, linear outbound trajectory aligns with standard port departure procedures, making vb_-4927443205807001530 the most contextually coherent choice for the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_-7663396197665720575` can correctly impute missing latitude and longitude values under the identified behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the same behavior pattern node. Specifically, the total weight sum is 100 (from `vf_-7663396197665720575`) + 2 (from `vf_5240413252068673064`) = 102. The proportion of support for `vf_-7663396197665720575` is therefore 100 / 102 ≈ 0.9804, or 98.04%, indicating a statistically dominant preference based on historical association frequency with this kinematic pattern.  \n2. Function `vf_-7663396197665720575` implements time-proportional linear interpolation using normalized time intervals scaled by the maximum value in `Time_interval`, ensuring uniform progression along a straight path. This matches the observed vessel behavior—stable speed, consistent COG, minimal heading fluctuation, and intent to follow a fixed linear route—making it highly contextually appropriate. In contrast, the alternative function, while similar, uses `Time_interval[-1]` as the normalizing factor, which assumes the last timestamp is the endpoint; however, this may introduce bias if the interval is irregular or non-sequential. The primary function’s method is more robust under variable sampling rates, which are common in AIS data."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in congested port approaches; spatial anchor near Drogden and Nyhavn - Flakfortet\nOperational Protocol Rationale: In dense maritime environments like the Copenhagen harbor area, cargo vessels under way using engine are expected to follow predefined, linear traffic lanes to ensure safe separation and efficient flow amid numerous marinas, ferry routes, and navigational hazards. The vessel’s stable speed, consistent heading, and minimal course deviation align with standard procedures for exiting a moored state into a structured outbound route, where autopilot systems maintain straight-line navigation along designated corridors. This behavior is typical when transitioning from anchorage to open transit, particularly for medium-sized cargo vessels with moderate draught navigating constrained coastal waterways. Alternative behaviors involving curved trajectories or variable speeds are less likely in this context due to the high level of traffic regulation and the presence of fixed-route traffic schemes.\n'''",
+    "operational_protocol_rationale": "In dense maritime environments like the Copenhagen harbor area, cargo vessels under way using engine are expected to follow predefined, linear traffic lanes to ensure safe separation and efficient flow amid numerous marinas, ferry routes, and navigational hazards. The vessel’s stable speed, consistent heading, and minimal course deviation align with standard procedures for exiting a moored state into a structured outbound route, where autopilot systems maintain straight-line navigation along designated corridors. This behavior is typical when transitioning from anchorage to open transit, particularly for medium-sized cargo vessels with moderate draught navigating constrained coastal waterways. Alternative behaviors involving curved trajectories or variable speeds are less likely in this context due to the high level of traffic regulation and the presence of fixed-route traffic schemes.\n'''"
+  },
+  "related": []
+}

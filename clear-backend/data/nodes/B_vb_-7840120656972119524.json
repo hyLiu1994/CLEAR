@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-7840120656972119524",
+  "type": "behavior",
+  "label": "Behavior 72119524",
+  "summary": "Vessel behavior pattern: anchored or moored in a confined area (the combination of near-zero speed, large COG fluctuations relative to stable heading, and repeated position readings at identical coordinates indicates the vessel is not under way but drifting slightly at anchor or moored; position oscillates within a small radius ~20 meters around latitude: 54.4220–54.4228, longitude: 13.6762–13.6767, forming an irregular elliptical cluster, approximated by a bounded parametric equation: lat(t) ≈ 54.4224 + 0.0002 × sin(2πt), lon(t) ≈ 13.6764 + 0.00015 × cos(2πt), where t ∈ [0,1] represents normalized time over the observation window)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a low and nearly constant speed, with SOG values between 0.0 and 0.7 knots, indicating minimal propulsion)",
+    "Course change: fluctuating (COG varies significantly between 14.4° and 356.5°, including abrupt shifts, suggesting inconsistent directional movement)",
+    "Heading fluctuation: stable (despite COG changes, heading remains within a narrow range of 48.0° to 87.0°, indicating the vessel’s bow orientation is relatively fixed while drift or current affects actual movement)",
+    "Behavior intent: anchored or moored in a confined area (the combination of near-zero speed, large COG fluctuations relative to stable heading, and repeated position readings at identical coordinates indicates the vessel is not under way but drifting slightly at anchor or moored; position oscillates within a small radius ~20 meters around latitude: 54.4220–54.4228, longitude: 13.6762–13.6767, forming an irregular elliptical cluster, approximated by a bounded parametric equation: lat(t) ≈ 54.4224 + 0.0002 × sin(2πt), lon(t) ≈ 13.6764 + 0.00015 × cos(2πt), where t ∈ [0,1] represents normalized time over the observation window)",
+    "Duration: 391100~391150"
+  ],
+  "metadata": {
+    "original_id": "vb_-7840120656972119524",
+    "duration": "391100~391150",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "fluctuating",
+      "stable",
+      "anchored or moored in a confined area",
+      "391100~391150"
+    ]
+  },
+  "related": []
+}

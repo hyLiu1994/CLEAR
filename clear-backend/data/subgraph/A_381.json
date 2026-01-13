@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_381",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TSS Skagen East, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2495_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2495_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6950949156948289588",
+      "type": "behavior",
+      "label": "Behavior 48289588",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2495_SEG_8",
+      "target": "A_381",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6950949156948289588",
+      "target": "A_381",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2495_SEG_8",
+    "B_vb_-6950949156948289588",
+    "A_381"
+  ],
+  "centerNodeId": "A_381",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

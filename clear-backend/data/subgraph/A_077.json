@@ -1,0 +1,314 @@
+{
+  "nodes": [
+    {
+      "id": "A_077",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Thor Offshore Substation",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_360_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_360_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_360_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_360_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_360_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_360_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_610_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_610_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_610_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_610_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_610_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_610_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_610_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_610_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_610_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_610_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2554_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2554_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2554_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2554_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2616_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2616_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2616_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2616_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5034770572000743103",
+      "type": "behavior",
+      "label": "Behavior 00743103",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-813988986690502197",
+      "type": "behavior",
+      "label": "Behavior 90502197",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1299125068444794049",
+      "type": "behavior",
+      "label": "Behavior 44794049",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8013014216991191074",
+      "type": "behavior",
+      "label": "Behavior 91191074",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6255190157237282313",
+      "type": "behavior",
+      "label": "Behavior 37282313",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-2909736847591390058",
+      "type": "behavior",
+      "label": "Behavior 91390058",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1450693701513248396",
+      "type": "behavior",
+      "label": "Behavior 13248396",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_360_SEG_0",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_360_SEG_4",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_360_SEG_1",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_610_SEG_2",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_610_SEG_7",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_610_SEG_4",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_610_SEG_9",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_610_SEG_8",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2554_SEG_0",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2554_SEG_1",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2616_SEG_8",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2616_SEG_7",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5034770572000743103",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1299125068444794049",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8013014216991191074",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1450693701513248396",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_610_SEG_4",
+    "B_vb_-813988986690502197",
+    "TRJ_610_SEG_8",
+    "TRJ_610_SEG_9",
+    "B_vb_8013014216991191074",
+    "TRJ_610_SEG_7",
+    "B_vb_-2909736847591390058",
+    "B_vb_-5034770572000743103",
+    "TRJ_2554_SEG_0",
+    "TRJ_2616_SEG_7",
+    "B_vb_-6255190157237282313",
+    "B_vb_-24485554849544898",
+    "TRJ_360_SEG_0",
+    "TRJ_610_SEG_2",
+    "TRJ_360_SEG_1",
+    "B_vb_-4857314466243141680",
+    "B_vb_-1299125068444794049",
+    "A_077",
+    "TRJ_2554_SEG_1",
+    "TRJ_2616_SEG_8",
+    "B_vb_1450693701513248396",
+    "TRJ_360_SEG_4"
+  ],
+  "centerNodeId": "A_077",
+  "maxLevel": 1,
+  "totalNodes": 22,
+  "totalLinks": 21
+}

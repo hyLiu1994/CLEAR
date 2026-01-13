@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_133",
+      "type": "attribute",
+      "label": "spatial_context: location: Landskrona kommun, Skåne County, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Øresund, RHSS, TSS In the Sound, Råå - Bäckviken, Unnamed lane, København (DK) - Hven (SE), København (DK) – Oslo (N), Helsingør (DK) - Helsingborg (SE), Landskrona - Bäckviken",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_644_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_644_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_42457608061686723",
+      "type": "behavior",
+      "label": "Behavior 61686723",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_644_SEG_3",
+      "target": "A_133",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_42457608061686723",
+      "target": "A_133",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_644_SEG_3",
+    "B_vb_42457608061686723",
+    "A_133"
+  ],
+  "centerNodeId": "A_133",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

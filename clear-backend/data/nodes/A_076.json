@@ -1,0 +1,15 @@
+{
+  "id": "A_076",
+  "type": "attribute",
+  "label": "spatial_context: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: København (DK) – Oslo (N)",
+  "summary": "spatial_context attribute: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: København (DK) – Oslo (N)",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: København (DK) – Oslo (N)",
+    "support": 2
+  },
+  "related": []
+}

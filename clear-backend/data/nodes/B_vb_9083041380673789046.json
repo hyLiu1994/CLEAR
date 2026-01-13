@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_9083041380673789046",
+  "type": "behavior",
+  "label": "Behavior 73789046",
+  "summary": "Vessel behavior pattern: following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 54.3245 + 0.0002 × t - 0.0001 × t², lon(t) ≈ 9.7162 + 0.0003 × t - 0.0002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a low but consistent speed between 0.1 and 0.7 knots, indicating controlled movement rather than drifting or anchoring)",
+    "Course change: gradual and consistent (COG evolves smoothly from ~180° to ~240° over time, showing a continuous turn to the south-southeast)",
+    "Heading fluctuation: stable (heading remains within a narrow range of 207°–219°, suggesting minimal rudder activity and stable orientation control)",
+    "Behavior intent: following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 54.3245 + 0.0002 × t - 0.0001 × t², lon(t) ≈ 9.7162 + 0.0003 × t - 0.0002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+    "Duration: 750~800"
+  ],
+  "metadata": {
+    "original_id": "vb_9083041380673789046",
+    "duration": "750~800",
+    "support": 12,
+    "pattern_key": [
+      "stable",
+      "gradual and consistent",
+      "stable",
+      "following a curved maritime route",
+      "750~800"
+    ]
+  },
+  "related": []
+}

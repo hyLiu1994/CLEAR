@@ -1,0 +1,15 @@
+{
+  "id": "A_059",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Odden - Aarhus, EK R 12 Gniben, Odden - Ebeltoft, EK R 11 Sjællands Odde W., Unnamed lane, EK R 19 MULTEX",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Odden - Aarhus, EK R 12 Gniben, Odden - Ebeltoft, EK R 11 Sjællands Odde W., Unnamed lane, EK R 19 MULTEX",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Odden - Aarhus, EK R 12 Gniben, Odden - Ebeltoft, EK R 11 Sjællands Odde W., Unnamed lane, EK R 19 MULTEX",
+    "support": 2
+  },
+  "related": []
+}

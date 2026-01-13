@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_388",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Meerwind Süd | Ost, Amrumbank West, Sylt A, Nordsee Ost, Unnamed lane, Kaskasi",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2561_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2561_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7135364367656623574",
+      "type": "behavior",
+      "label": "Behavior 56623574",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2561_SEG_7",
+      "target": "A_388",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7135364367656623574",
+      "target": "A_388",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_7135364367656623574",
+    "TRJ_2561_SEG_7",
+    "A_388"
+  ],
+  "centerNodeId": "A_388",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

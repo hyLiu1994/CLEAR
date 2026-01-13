@@ -1,0 +1,15 @@
+{
+  "id": "A_264",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Sporthafen Düsternbrook, Leuchtturm Bülk, Kolberger Heide, Olympiahafen Schilksee, Nord-Ostsee-Kanal, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Yachthafen Mönkeberg, Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Yacht-Liegestelle Holtenau, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Kanalfähre Kiel-Holtenau, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Yachthafen Marina Wendtorf, Seglerverein Passee, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Sporthafen Wik, Lotsenstation",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Sporthafen Düsternbrook, Leuchtturm Bülk, Kolberger Heide, Olympiahafen Schilksee, Nord-Ostsee-Kanal, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Yachthafen Mönkeberg, Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Yacht-Liegestelle Holtenau, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Kanalfähre Kiel-Holtenau, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Yachthafen Marina Wendtorf, Seglerverein Passee, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Sporthafen Wik, Lotsenstation",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Sporthafen Düsternbrook, Leuchtturm Bülk, Kolberger Heide, Olympiahafen Schilksee, Nord-Ostsee-Kanal, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Yachthafen Mönkeberg, Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Yacht-Liegestelle Holtenau, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Kanalfähre Kiel-Holtenau, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Yachthafen Marina Wendtorf, Seglerverein Passee, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Sporthafen Wik, Lotsenstation",
+    "support": 1
+  },
+  "related": []
+}

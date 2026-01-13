@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_124",
+      "type": "attribute",
+      "label": "spatial_context: location: Göteborgs Stad, Västra Götaland County, Sweden; nearby_shipping_lanes: København (DK) – Oslo (N), Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_592_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_592_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_592_SEG_9",
+      "target": "A_124",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_124",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_124",
+    "B_vb_3366872286460794881",
+    "TRJ_592_SEG_9"
+  ],
+  "centerNodeId": "A_124",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

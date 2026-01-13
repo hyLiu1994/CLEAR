@@ -1,0 +1,244 @@
+{
+  "nodes": [
+    {
+      "id": "A_160",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Sporthafen Düsternbrook, Olympiahafen Schilksee, Nord-Ostsee-Kanal, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Sporthafen Blücherbrücke, Sporthafen Seefischmarkt, Hafenmeister, Panzerkreuzer Admiral Scheer, Yachthafen \"Baltic Bay\", Yachthafen Mönkeberg, Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Yacht-Liegestelle Holtenau, Marine-Ehrenmal Laboe, Kanalfähre Kiel-Holtenau, Sporthafen Seeburg, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fördelinie, Fischschonbezirk Hagener Au, U-995, WC Sporthafen, Museumshafen, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Schwentine, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Sporthafen Reventlou, Schwentinetalfahrt, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sporthafen Dietrichsdorf, Sporthafen Wellingdorf, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Sporthafen Wik",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_729_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_729_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1412_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_1412_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1412_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_1412_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1412_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_1412_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1412_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_1412_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1412_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_1412_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1412_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_1412_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1527_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_1527_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1527_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_1527_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1534_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_1534_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8369218991226673352",
+      "type": "behavior",
+      "label": "Behavior 26673352",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3995266364876884402",
+      "type": "behavior",
+      "label": "Behavior 76884402",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_552281159892354284",
+      "type": "behavior",
+      "label": "Behavior 92354284",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1019951467784234109",
+      "type": "behavior",
+      "label": "Behavior 84234109",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7238182578370822580",
+      "type": "behavior",
+      "label": "Behavior 70822580",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_729_SEG_0",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1412_SEG_4",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1412_SEG_2",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1412_SEG_5",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1412_SEG_0",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1412_SEG_1",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1412_SEG_6",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1527_SEG_5",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1527_SEG_7",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1534_SEG_5",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8369218991226673352",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3995266364876884402",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_552281159892354284",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1019951467784234109",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7238182578370822580",
+      "target": "A_160",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1412_SEG_1",
+    "B_vb_-3995266364876884402",
+    "TRJ_1412_SEG_6",
+    "TRJ_729_SEG_0",
+    "B_vb_8369218991226673352",
+    "TRJ_1527_SEG_7",
+    "B_vb_552281159892354284",
+    "TRJ_1412_SEG_4",
+    "TRJ_1534_SEG_5",
+    "TRJ_1412_SEG_5",
+    "TRJ_1412_SEG_0",
+    "B_vb_-24485554849544898",
+    "B_vb_1019951467784234109",
+    "TRJ_1412_SEG_2",
+    "A_160",
+    "B_vb_7238182578370822580",
+    "TRJ_1527_SEG_5"
+  ],
+  "centerNodeId": "A_160",
+  "maxLevel": 1,
+  "totalNodes": 17,
+  "totalLinks": 16
+}

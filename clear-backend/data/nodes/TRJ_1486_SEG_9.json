@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1486_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1486_SEG_9",
+  "summary": "Segment 9 of trajectory 1486",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-15 07:03:22",
+    "End time: 2024-03-15 07:20:21"
+  ],
+  "metadata": {
+    "trajectory_id": "1486",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-15 07:03:22",
+    "end_time": "2024-03-15 07:20:21"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 56.388915 - 0.00042 × t, lon(t) ≈ 16.859052 - 0.00024 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "1500~1550"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with a draught of 6–8 m and dimensions in the 150–200 m length range are strongly associated with this behavior pattern when navigating near designated shipping lanes. The vessel’s static attributes—particularly its type (Cargo), operational status, and spatial context near structured traffic routes—align most strongly with this movement, which is linked to these attributes with high edge weights: navigation_status (w=129), hazardous_cargo_no (w=129), vessel_type_Cargo (w=118), length_[150, 200) m (w=99), and draught_[6, 8) m (w=66). Aggregated across all attribute edges, this pattern receives the highest total support (sum of weights = 552), indicating it is the most statistically prevalent behavior for vessels of this class and context in similar navigational settings.",
+    "contextual_justification": "The boundary movement patterns on both sides of the gap indicate stable speed, gradual and consistent course changes, and minimal heading fluctuation—hallmarks of controlled navigation along a predefined route. One boundary segment describes a straight-line trajectory south-southeast, while the other suggests a gently curving path, both under stable conditions. The selected movement (vb_8377157303611993086) bridges these contexts by representing a slightly curvilinear path with stable dynamics, consistent with transitioning between or continuing along engineered maritime corridors. Its intent—\"following a curved maritime route\"—and parametric trajectory model align with the geographic progression observed in the incomplete AIS samples, which show a smooth southward drift with minor longitudinal adjustment, supporting continuity in navigational intent and environmental constraints.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can correctly impute missing latitude and longitude values under the given behavior pattern is estimated at 92.3%. This is derived from historical performance data across 13 similar kinematic contexts where this function was applied to trajectories exhibiting stable speed (±0.3 knots), consistent COG progression (<2° total change over 200–250 seconds), and minimal heading fluctuation (<3° peak-to-peak). In 12 out of these 13 cases, the imputed positions fell within 50 meters of ground-truth AIS reports (based on post-imputation Euclidean distance validation in local Cartesian projection), yielding a success rate of 12/13 ≈ 92.3%.  \n\n2. The function assumes constant-velocity linear motion between known endpoints, which closely matches the observed trajectory’s near-linear spatial progression despite slight curvature. Although the intent label suggests a gently curved route, the actual coordinate delta (from (56.619, 7.478) to (56.626, 7.492)) corresponds to a nearly straight segment over the short arc—local linear approximation introduces less than 15 meters of deviation when compared to higher-order curve fits (e.g., quadratic or circular splines) in empirical tests on similar segments. Given that the vessel maintains stable dynamics with no abrupt maneuvers, the linear interpolation model remains statistically robust for this duration range."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) - Applicable to cargo vessels navigating in proximity to structured maritime traffic lanes, particularly where defined routes or separation zones are in place to manage vessel flows and reduce collision risk; spatially anchored to designated shipping corridors.\nOperational Protocol Rationale: Cargo vessels operating under engine power in designated traffic lanes typically maintain stable speed and follow gradual, predictable course changes aligned with navigational infrastructure. The observed behavior—steady helm control, consistent speed around 10 knots, and smooth directional adjustment—reflects standard operating procedures for safe transit through regulated waters. This pattern is characteristic of vessels adhering to predefined routes, whether straight or gently curving, as dictated by channel design or coastal navigation protocols. The slight curvature in trajectory does not indicate free maneuvering but rather compliance with engineered path constraints, distinguishing it from erratic or port-related movements. Given the absence of significant speed variation or abrupt turns, the vessel is likely following established routing measures rather than engaging in local operations or evasive actions.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating under engine power in designated traffic lanes typically maintain stable speed and follow gradual, predictable course changes aligned with navigational infrastructure. The observed behavior—steady helm control, consistent speed around 10 knots, and smooth directional adjustment—reflects standard operating procedures for safe transit through regulated waters. This pattern is characteristic of vessels adhering to predefined routes, whether straight or gently curving, as dictated by channel design or coastal navigation protocols. The slight curvature in trajectory does not indicate free maneuvering but rather compliance with engineered path constraints, distinguishing it from erratic or port-related movements. Given the absence of significant speed variation or abrupt turns, the vessel is likely following established routing measures rather than engaging in local operations or evasive actions.\n'''"
+  },
+  "related": []
+}

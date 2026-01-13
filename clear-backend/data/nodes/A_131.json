@@ -1,0 +1,15 @@
+{
+  "id": "A_131",
+  "type": "attribute",
+  "label": "spatial_context: location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Query failed with status 429",
+  "summary": "spatial_context attribute: location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Query failed with status 429",
+  "description": [
+    "This attribute is associated with 4 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Query failed with status 429",
+    "support": 4
+  },
+  "related": []
+}

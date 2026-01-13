@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_171",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), C-Lion 1, Unnamed lane, Travemünde (D) – Helsinki (FIN)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_812_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_812_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1962_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_1962_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3081913737957353482",
+      "type": "behavior",
+      "label": "Behavior 57353482",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_812_SEG_0",
+      "target": "A_171",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1962_SEG_5",
+      "target": "A_171",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_171",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3081913737957353482",
+      "target": "A_171",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1962_SEG_5",
+    "B_vb_82841811344196675",
+    "B_vb_3081913737957353482",
+    "A_171",
+    "TRJ_812_SEG_0"
+  ],
+  "centerNodeId": "A_171",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

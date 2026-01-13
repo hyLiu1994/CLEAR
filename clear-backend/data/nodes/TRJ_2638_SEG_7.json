@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2638_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_2638_SEG_7",
+  "summary": "Segment 7 of trajectory 2638",
+  "description": [
+    "MMSI: 219000776",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 17:06:33",
+    "End time: 2024-03-07 18:06:02"
+  ],
+  "metadata": {
+    "trajectory_id": "2638",
+    "vessel_id": "219000776",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-07 17:06:33",
+    "end_time": "2024-03-07 18:06:02"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Passenger",
+    "Spatial Context: nearby_shipping_lanes: HVDC SwePol, Ortholmen, Carl Gustafs kyrka, Unnamed lane",
+    "Draught: [4, 6) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains zero speed across multiple observations, indicating no movement)",
+      "course_change": "fluctuating (COG remains nearly constant at ~9.9° despite positional noise, but this is likely due to reporting artifacts when speed is zero)",
+      "heading_fluctuation": "gradual and consistent (heading varies slightly between 193° and 194°, typical of a stationary vessel responding to wind or current without propulsion)",
+      "intent": "anchored or moored in a confined area (the combination of zero speed (SOG = 0.0), repeated small oscillations in position around latitude ~56.1586 and longitude ~14.8162, and stable heading/COD suggests the vessel is not underway; the position dispersion forms a tight cluster <20 meters in diameter, consistent with GPS noise or minor swinging at anchor; this pattern is used to impute position as the centroid: lat ≈ 56.15863, lon ≈ 14.81625 when SOG = 0 and COG/heading remain stable)",
+      "duration": "3550~3600"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a constant speed of 0.0 knots across all observations, indicating no movement)",
+      "course_change": "stable (COG remains constant at 9.9°, showing no change in direction over ground)",
+      "heading_fluctuation": "gradual and consistent (heading fluctuates slightly between 192.0° and 193.0°, within a 1° range, suggesting minor adjustments while maintaining overall orientation)",
+      "intent": "anchored or moored in a confined area (the combination of zero speed, stable COG, and minimal heading variation around 192°–193° indicates the vessel is not underway but maintaining position; the small scatter in latitude [56.158607–56.158667] and longitude [14.816168–14.816268] forms a tight cluster ~20 meters in diameter, consistent with GPS noise or minor swinging at anchor, modeled as a stationary point with negligible drift: lat(t) ≈ 56.158638, lon(t) ≈ 14.816240, where t ∈ [0,1] represents time index over the segment)",
+      "duration": "4100~4150"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_029",
+      "type": "attribute",
+      "label": "spatial_context: location: Schülp bei Rendsburg, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24813, Germany; nearby_shipping_lanes: Query failed with status 429",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_146_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_146_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_409_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_409_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_116709280156390668",
+      "type": "behavior",
+      "label": "Behavior 56390668",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6796904264114403148",
+      "type": "behavior",
+      "label": "Behavior 14403148",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_146_SEG_7",
+      "target": "A_029",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_409_SEG_0",
+      "target": "A_029",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_116709280156390668",
+      "target": "A_029",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6796904264114403148",
+      "target": "A_029",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_029",
+    "B_vb_-6796904264114403148",
+    "TRJ_409_SEG_0",
+    "B_vb_116709280156390668",
+    "TRJ_146_SEG_7"
+  ],
+  "centerNodeId": "A_029",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2267_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_2267_SEG_0",
+  "summary": "Segment 0 of trajectory 2267",
+  "description": [
+    "MMSI: 215909000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-06 20:41:14",
+    "End time: 2024-03-06 20:45:23"
+  ],
+  "metadata": {
+    "trajectory_id": "2267",
+    "vessel_id": "215909000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-06 20:41:14",
+    "end_time": "2024-03-06 20:45:23"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: København (DK) – Oslo (N), Unnamed lane",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 58.18275 - 0.0055 × t, lon(t) ≈ 11.061683 + 0.0045 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

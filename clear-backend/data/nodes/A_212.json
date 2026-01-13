@@ -1,0 +1,15 @@
+{
+  "id": "A_212",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Cuxhaven-Helgoland, Die Seenotretter DGzRS, Jachthafen, Alter Fischereihafen, Ritzebüttler Schleusenpriel, Amerikahafen, Stickersgatt, Unnamed lane, helgoline",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Cuxhaven-Helgoland, Die Seenotretter DGzRS, Jachthafen, Alter Fischereihafen, Ritzebüttler Schleusenpriel, Amerikahafen, Stickersgatt, Unnamed lane, helgoline",
+  "description": [
+    "This attribute is associated with 3 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Cuxhaven-Helgoland, Die Seenotretter DGzRS, Jachthafen, Alter Fischereihafen, Ritzebüttler Schleusenpriel, Amerikahafen, Stickersgatt, Unnamed lane, helgoline",
+    "support": 3
+  },
+  "related": []
+}

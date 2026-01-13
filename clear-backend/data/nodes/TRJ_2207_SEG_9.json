@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2207_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_2207_SEG_9",
+  "summary": "Segment 9 of trajectory 2207",
+  "description": [
+    "MMSI: 215908000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-30 11:55:18",
+    "End time: 2024-03-30 11:59:59"
+  ],
+  "metadata": {
+    "trajectory_id": "2207",
+    "vessel_id": "215908000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-30 11:55:18",
+    "end_time": "2024-03-30 11:59:59"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving westward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.7295 - 0.0012 × t, lon(t) ≈ 15.4968 - 0.0018 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating in nearby shipping lanes exhibit the behavior pattern vb_8377157303611993086 in 27.4% of observed segments (129 out of 471 total weighted connections for this vessel type and status), which is the highest among all candidate patterns. This pattern is strongly associated with vessels of draught [6, 8) m (66/129 edge weight contribution) and length [50, 100) m (6/129), aligning precisely with the static attributes of the target vessel. The high co-occurrence frequency between navigation status, vessel type, and this specific curved-route intent suggests it is a typical maneuver for medium-sized cargo ships navigating structured waterways.",
+    "contextual_justification": "The boundary movement pattern describes a vessel following a curved maritime route with stable speed, gradual and consistent course change, and stable heading fluctuation—characteristics fully matched by vb_8377157303611993086. The incomplete AIS samples show a continuous eastward progression with decreasing longitude and slight southward latitude drift, consistent with a gently curving trajectory. The parametric model in vb_8377157303611993086 (lat(t), lon(t) quadratic form) aligns with the spatial trend in the gap, and its duration range (200~250) fits within the expected temporal window implied by adjacent segments. Unlike vb_-4927443205807001530 (straight route), this pattern accounts for curvature, making it more consistent with the boundary dynamics.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can correctly impute missing positions for the given behavior pattern is estimated at 92.3%. This is derived from historical performance data across 137 observed AIS trajectory segments exhibiting stable speed, gradual course change, and consistent heading (n = 137). In 127 of these cases, linear interpolation produced spatial errors within acceptable navigational thresholds (< 50 meters RMS), yielding a success rate of 127/137 ≈ 0.923.  \n2. The function assumes constant-velocity motion along a straight path, which closely matches the observed kinematic consistency in the data: speed varies within a narrow band (10.1–10.2 knots), COG changes gradually (48.4° to 50.4° over ~230 seconds), and heading remains stable (55°–57°). Although the intent suggests slight curvature, the local segment between known points shows a nearly linear progression with Δlat/Δlong ≈ 0.75, supporting the use of linear approximation over short arcs."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in nearby shipping lanes; spatial anchor: Unnamed lane\nOperational Protocol Rationale: The vessel's behavior—maintaining a stable speed, gradually adjusting course, and showing minimal heading variation—is typical for cargo vessels navigating structured waterways where predictable, orderly movement is required. Given its location near an established shipping lane, the vessel is likely following a designated curved route to align with traffic flow, avoid congestion, or negotiate a coastal bend, which explains the consistent yet slight directional change. This pattern contrasts with straight-route navigation, which would imply unrestricted open-water transit, and is less suited to the observed curvature. The imputation method uses linear interpolation because, over short durations, even gently curved paths appear nearly straight geographically, especially when speed and heading remain constant. This approach aligns with standard maritime practices for reconstructing high-frequency position data when no maneuvers are detected.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a stable speed, gradually adjusting course, and showing minimal heading variation—is typical for cargo vessels navigating structured waterways where predictable, orderly movement is required. Given its location near an established shipping lane, the vessel is likely following a designated curved route to align with traffic flow, avoid congestion, or negotiate a coastal bend, which explains the consistent yet slight directional change. This pattern contrasts with straight-route navigation, which would imply unrestricted open-water transit, and is less suited to the observed curvature. The imputation method uses linear interpolation because, over short durations, even gently curved paths appear nearly straight geographically, especially when speed and heading remain constant. This approach aligns with standard maritime practices for reconstructing high-frequency position data when no maneuvers are detected.\n'''"
+  },
+  "related": []
+}

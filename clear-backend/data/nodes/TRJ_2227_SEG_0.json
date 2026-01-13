@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2227_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_2227_SEG_0",
+  "summary": "Segment 0 of trajectory 2227",
+  "description": [
+    "MMSI: 215908000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-31 03:37:18",
+    "End time: 2024-03-31 03:42:48"
+  ],
+  "metadata": {
+    "trajectory_id": "2227",
+    "vessel_id": "215908000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-31 03:37:18",
+    "end_time": "2024-03-31 03:42:48"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 429",
+    "Draught: [6, 8) m",
+    "Length: [50, 100) m",
+    "Width: [10, 15) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 54.604053 - 0.000123 × t, lon(t) ≈ 11.076062 - 0.00845 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.60215 - 0.0007 × t + 0.00005 × t², lon(t) ≈ 11.048645 - 0.0030 × t - 0.00015 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_4257088010237233994",
+  "type": "behavior",
+  "label": "Behavior 37233994",
+  "summary": "Vessel behavior pattern: following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: lat(t) ≈ 55.0415 + 0.0001 × sin(2πt), lon(t) ≈ 9.4292 + 0.00007 × cos(2πt), where t ∈ [0,1] represents normalized time over the loop; this reflects the vessel turning in place or adjusting position within a confined harbor area, likely during docking preparation or anchoring",
+  "description": [
+    "Speed profile: stable (the vessel maintains a low and consistent speed between 0.2 and 0.8 knots, indicating controlled maneuvering)",
+    "Course change: fluctuating (the COG changes significantly from 32° to 330°, then back to 50°, showing a pronounced U-turn pattern)",
+    "Heading fluctuation: gradual and consistent (the heading steadily increases from 82° to 115°, then decreases slightly, reflecting smooth rudder adjustments during the turn)",
+    "Behavior intent: following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: lat(t) ≈ 55.0415 + 0.0001 × sin(2πt), lon(t) ≈ 9.4292 + 0.00007 × cos(2πt), where t ∈ [0,1] represents normalized time over the loop; this reflects the vessel turning in place or adjusting position within a confined harbor area, likely during docking preparation or anchoring",
+    "Duration: 250~300"
+  ],
+  "metadata": {
+    "original_id": "vb_4257088010237233994",
+    "duration": "250~300",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "fluctuating",
+      "gradual and consistent",
+      "following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: lat",
+      "250~300"
+    ]
+  },
+  "related": []
+}

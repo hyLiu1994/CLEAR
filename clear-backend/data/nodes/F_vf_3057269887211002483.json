@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_3057269887211002483",
+  "type": "function",
+  "label": "Function 11002483",
+  "summary": "This function estimates missing vessel positions along a gently curving maritime route by modeling t...",
+  "description": [
+    "Function description: This function estimates missing vessel positions along a gently curving maritime route by modeling the trajectory as a parametric quadratic curve in normalized time. It uses the start and end coordinates to define the base linear interpolation, then adds quadratic correction terms derived from the observed curvature pattern (approximating a circular arc with radius ~2.5 km). The coefficients 0.00004 and 0.00011 scale the squared time-normalized intervals to reflect gradual latitude and longitude changes consistent with stable speed and slowly varying COG and heading. The function outputs a list of (lat, lon) tuples for each time step in `Time_interval`, including the start and end points.",
+    "Code implementation: def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / max(Time_interval)) + 0.00004 * (t / max(Time_interval))**2, start[1] + (end[1] - start[1]) * (t / max(Time_interval)) + 0.00011 * (t / max(Time_interval))**2) for t in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_3057269887211002483",
+    "code": "def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / max(Time_interval)) + 0.00004 * (t / max(Time_interval))**2, start[1] + (end[1] - start[1]) * (t / max(Time_interval)) + 0.00011 * (t / max(Time_interval))**2) for t in Time_interval]"
+  },
+  "related": []
+}

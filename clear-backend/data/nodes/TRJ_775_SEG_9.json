@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_775_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_775_SEG_9",
+  "summary": "Segment 9 of trajectory 775",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-30 22:04:24",
+    "End time: 2024-03-30 22:08:14"
+  ],
+  "metadata": {
+    "trajectory_id": "775",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-30 22:04:24",
+    "end_time": "2024-03-30 22:08:14"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 56.4606 + 0.0048 × t, lon(t) ≈ 11.7067 - 0.0223 × t, where t is a normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating near major shipping lanes (such as København – Oslo and Grenå - Halmstad) most frequently exhibit straight-route navigation patterns when traversing open coastal segments. This specific pattern (vb_-4927443205807001530) is strongly associated with vessels of length [100, 150) m and draught [8, 10) m, appearing in approximately 62% of similar contextual configurations based on normalized edge weights. Among all candidate movements, it ranks highest in cumulative support from static attributes—particularly navigation status (weight 102), vessel type (73), and spatial context alignment—with a total incoming edge weight sum of 395, the highest among candidates emphasizing fixed-route behavior.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating along a fixed, linear route with stable speed, consistent heading, and negligible course deviation, moving west-southwest. The selected movement vb_-4927443205807001530 reflects a nearly identical behavioral signature—stable speed, gradual and consistent course change, and stable heading—intended for navigating a straight predefined maritime route, here modeled as a linear trajectory moving northeast. Although the absolute direction differs, the kinematic consistency (COG-heading alignment, minimal fluctuation) and intent (route adherence) match the boundary context’s core dynamics. Given that the gap occurs within a known shipping corridor and both adjacent segments show linear progression under stable control, this fixed-route pattern provides the most plausible continuity, especially considering the vessel's persistent static attributes and the absence of maneuvers suggesting turning or port approach.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions in the graph, where the total weight sum is 100 + 2 = 102. The proportion of support for vf_-7663396197665720575 is therefore 100 / 102 ≈ 0.9804, or 98.04%. This high proportion indicates strong statistical preference for this function over the alternative when applied to trajectories exhibiting stable speed, consistent course, and minimal heading fluctuation.  \n2. This function exhibits characteristics aligned with constant-velocity linear motion modeling, using time-proportional scaling based on normalized time intervals. It matches the current context precisely, as the vessel demonstrates a stable speed profile, gradual and consistent course change, and negligible heading fluctuation—indicating a straight-line trajectory under autopilot. The observed parametric progression (lat(t), lon(t)) further validates the assumption of linearity, which this function explicitly models through uniform interpolation along both latitude and longitude dimensions."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Route Adherence in Designated Shipping Lanes (applicable to cargo vessels navigating near major maritime corridors; spatial anchor: København – Oslo, Grenå - Halmstad)\nOperational Protocol Rationale: Cargo vessels operating without hazardous cargo and within established shipping lanes typically maintain stable speed and heading while following predefined linear routes, consistent with standard navigation practices in regulated waters. The observed behavior—steady motion, minimal course deviation, and alignment between direction of travel and vessel heading—reflects routine autopilot use on open-sea segments where traffic separation schemes apply. This pattern is especially common in coastal transit zones where predictable trajectories enhance collision avoidance. Alternative behaviors such as sharp turns or variable speed profiles are unlikely, as they would suggest port approach or maneuvering, neither of which is indicated by the vessel’s static attributes or surrounding context.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating without hazardous cargo and within established shipping lanes typically maintain stable speed and heading while following predefined linear routes, consistent with standard navigation practices in regulated waters. The observed behavior—steady motion, minimal course deviation, and alignment between direction of travel and vessel heading—reflects routine autopilot use on open-sea segments where traffic separation schemes apply. This pattern is especially common in coastal transit zones where predictable trajectories enhance collision avoidance. Alternative behaviors such as sharp turns or variable speed profiles are unlikely, as they would suggest port approach or maneuvering, neither of which is indicated by the vessel’s static attributes or surrounding context.\n'''"
+  },
+  "related": []
+}

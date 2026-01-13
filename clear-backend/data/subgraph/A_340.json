@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_340",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Binz - Sassnitz, Sassnitz - Rønne, Schießgebiet Arkona, BEI-Interkonnektor Bornholm-Deutschland, Aurora, Ostwind 3, Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Sassnitz - Binz, Sassnitz - Sellin, Ostwind 2, Sassnitz - Kreideküste",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2112_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2112_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_74903498958876941",
+      "type": "behavior",
+      "label": "Behavior 58876941",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2112_SEG_1",
+      "target": "A_340",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_74903498958876941",
+      "target": "A_340",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2112_SEG_1",
+    "A_340",
+    "B_vb_74903498958876941"
+  ],
+  "centerNodeId": "A_340",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

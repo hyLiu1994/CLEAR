@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_061",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Sporthafen Düsternbrook, Leuchtturm Bülk, Olympiahafen Schilksee, Nord-Ostsee-Kanal, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Sporthafen Blücherbrücke, Sporthafen Seefischmarkt, Hafenmeister, Panzerkreuzer Admiral Scheer, Yachthafen \"Baltic Bay\", Yachthafen Mönkeberg, Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Yacht-Liegestelle Holtenau, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Kanalfähre Kiel-Holtenau, Sporthafen Seeburg, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fördelinie, Fischschonbezirk Hagener Au, Museumshafen Probstei, U-995, WC Sporthafen, Museumshafen, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Schwentine, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Sporthafen Reventlou, Schwentinetalfahrt, Yachthafen Marina Wendtorf, Seglerverein Passee, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sporthafen Dietrichsdorf, Sporthafen Wellingdorf, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Sporthafen Wik",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_334_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_334_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_409_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_409_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3238714866316055517",
+      "type": "behavior",
+      "label": "Behavior 16055517",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3089272667968675778",
+      "type": "behavior",
+      "label": "Behavior 68675778",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_334_SEG_3",
+      "target": "A_061",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_409_SEG_4",
+      "target": "A_061",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3238714866316055517",
+      "target": "A_061",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3089272667968675778",
+      "target": "A_061",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_061",
+    "B_vb_-3089272667968675778",
+    "TRJ_334_SEG_3",
+    "B_vb_-3238714866316055517",
+    "TRJ_409_SEG_4"
+  ],
+  "centerNodeId": "A_061",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

@@ -1,0 +1,49 @@
+{
+  "id": "TRJ_1959_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_1959_SEG_1",
+  "summary": "Segment 1 of trajectory 1959",
+  "description": [
+    "MMSI: 210731000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-19 05:57:43",
+    "End time: 2024-03-19 06:03:03"
+  ],
+  "metadata": {
+    "trajectory_id": "1959",
+    "vessel_id": "210731000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-19 05:57:43",
+    "end_time": "2024-03-19 06:03:03"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 12.9 and 13.0 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG increases slowly from 54.4° to 56.1°, then decreases slightly to 54.6°, indicating a smooth evolution in direction over time)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 56.0° to 58.0°, with minimal variation around 57°)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.58487 + 0.00032 × t + 0.00004 × t², lon(t) ≈ 12.327083 + 0.00142 × t + 0.00011 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 12.9–13.0 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 54.0° to 57.1°, indicating a smooth turn to the right over time)",
+      "heading_fluctuation": "stable (heading remains steady at 56° or 57°, with only minor adjustments, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.6070 + 0.0045 × t + 0.0002 × t², lon(t) ≈ 12.3804 + 0.0058 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with a draught between 8–10 m and dimensions in the [100, 150) m length and [20, 25) m width range are strongly associated with curved maritime route behaviors when navigating near major Baltic Sea shipping lanes such as Travemünde–Malmö, Klaipėda–Kiel, and Rostock–Trelleborg. This specific behavior pattern (vb_82841811344196675) is supported by high cumulative edge weights from key static attributes: navigation status (w=96), vessel type (w=83), width (w=54), and draught (w=25), indicating it occurs in approximately 78% of similar navigational contexts. The spatial context, while shared across multiple patterns, shows that curved routing is predominant in this region, especially where TSS zones and coastal bends require gradual course adjustments.",
+    "contextual_justification": "The boundary movement patterns both describe stable speed (~12.9–13.0 knots), gradual and consistent course changes (COG evolving from ~54° to ~57°), and stable heading (around 56°–58°), indicating the vessel is following a gently curving trajectory. The candidate movement vb_82841811344196675 matches this intent—“following a curved maritime route”—with a parametrically modeled circular arc consistent with the observed geographic progression. Its duration (200~250) aligns closely with the gap length implied by the incomplete samples, and its kinematic profile (stable speed, steady heading, smooth COG evolution) bridges the pre- and post-gap segments without introducing discontinuities in direction or velocity. Thus, it provides the most kinematically and contextually coherent interpolation.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability near major Baltic Sea shipping lanes, including routes south of Gedser and between Travemünde, Malmö, Kiel, Rostock, and Trelleborg; applies to cargo vessels navigating under engine power in designated traffic zones.\nOperational Protocol Rationale: The selected behavior reflects a typical navigation pattern for cargo vessels transiting curved segments of established maritime routes in the Baltic Sea, where gradual course adjustments are required to follow designated traffic lanes safely. Given the vessel’s static characteristics—operating under engine, carrying no hazardous cargo, with typical cargo vessel dimensions—and its location near key shipping corridors, maintaining a stable speed while executing a smooth, predictable turn aligns with standard seafaring practices in constrained waters. This behavior ensures compliance with collision avoidance guidelines and adherence to TSS routing measures, which often involve curved trajectories around headlands or through narrow channels. Alternative behaviors such as sharp maneuvers or straight-line routing are less plausible, as they would deviate from the expected flow of traffic and introduce navigational risk in densely used, regulated waters.\n'''",
+    "operational_protocol_rationale": "The selected behavior reflects a typical navigation pattern for cargo vessels transiting curved segments of established maritime routes in the Baltic Sea, where gradual course adjustments are required to follow designated traffic lanes safely. Given the vessel’s static characteristics—operating under engine, carrying no hazardous cargo, with typical cargo vessel dimensions—and its location near key shipping corridors, maintaining a stable speed while executing a smooth, predictable turn aligns with standard seafaring practices in constrained waters. This behavior ensures compliance with collision avoidance guidelines and adherence to TSS routing measures, which often involve curved trajectories around headlands or through narrow channels. Alternative behaviors such as sharp maneuvers or straight-line routing are less plausible, as they would deviate from the expected flow of traffic and introduce navigational risk in densely used, regulated waters.\n'''"
+  },
+  "related": []
+}

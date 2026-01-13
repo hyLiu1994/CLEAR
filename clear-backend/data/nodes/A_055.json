@@ -1,0 +1,15 @@
+{
+  "id": "A_055",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Omøfærgen, Storebælt, Slæbested, Omø Lystbådehavn, Agersø Havn, Unnamed lane, Agersøfærgen, Agersø Havbrug",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Omøfærgen, Storebælt, Slæbested, Omø Lystbådehavn, Agersø Havn, Unnamed lane, Agersøfærgen, Agersø Havbrug",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Omøfærgen, Storebælt, Slæbested, Omø Lystbådehavn, Agersø Havn, Unnamed lane, Agersøfærgen, Agersø Havbrug",
+    "support": 1
+  },
+  "related": []
+}

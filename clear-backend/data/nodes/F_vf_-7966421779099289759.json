@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-7966421779099289759",
+  "type": "function",
+  "label": "Function 99289759",
+  "summary": "This function estimates missing vessel positions by modeling the trajectory as a second-order polyno...",
+  "description": [
+    "Function description: This function estimates missing vessel positions by modeling the trajectory as a second-order polynomial curve, reflecting the observed gradual curvature in the vessel's path. It uses normalized time progression from the `Time_interval` to interpolate latitude and longitude with quadratic terms that capture the slight northeasterly curvature seen in the pattern. The coefficients (0.0001 for latitude and 0.00005 for longitude) are derived from the observed polynomial trend in the provided data, ensuring smooth and realistic position estimates consistent with stable speed and gradual course changes.",
+    "Code implementation: def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / Time_interval[-1]) + 0.0001 * (t / Time_interval[-1]) ** 2, start[1] + (end[1] - start[1]) * (t / Time_interval[-1]) + 0.00005 * (t / Time_interval[-1]) ** 2) for t in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_-7966421779099289759",
+    "code": "def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / Time_interval[-1]) + 0.0001 * (t / Time_interval[-1]) ** 2, start[1] + (end[1] - start[1]) * (t / Time_interval[-1]) + 0.00005 * (t / Time_interval[-1]) ** 2) for t in Time_interval]"
+  },
+  "related": []
+}

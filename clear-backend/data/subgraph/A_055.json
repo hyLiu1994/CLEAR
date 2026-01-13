@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_055",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Omøfærgen, Storebælt, Slæbested, Omø Lystbådehavn, Agersø Havn, Unnamed lane, Agersøfærgen, Agersø Havbrug",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_284_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_284_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_284_SEG_4",
+      "target": "A_055",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_055",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_055",
+    "B_vb_-4857314466243141680",
+    "TRJ_284_SEG_4"
+  ],
+  "centerNodeId": "A_055",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

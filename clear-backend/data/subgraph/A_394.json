@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_394",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Stavanger, HVDC Skagerak 3, HVDC Skagerak 1",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2587_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2587_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7135364367656623574",
+      "type": "behavior",
+      "label": "Behavior 56623574",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2587_SEG_1",
+      "target": "A_394",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7135364367656623574",
+      "target": "A_394",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_7135364367656623574",
+    "TRJ_2587_SEG_1",
+    "A_394"
+  ],
+  "centerNodeId": "A_394",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

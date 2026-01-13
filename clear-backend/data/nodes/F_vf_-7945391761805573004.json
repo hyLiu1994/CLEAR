@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-7945391761805573004",
+  "type": "function",
+  "label": "Function 05573004",
+  "summary": "This function models the vessel's trajectory during missing data intervals using a combination of li...",
+  "description": [
+    "Function description: This function models the vessel's trajectory during missing data intervals using a combination of linear interpolation and a small sinusoidal perturbation to reflect subtle curvature observed in real-world maritime paths. The normalized time parameter `t_norm` scales the interval from 0 to 1, ensuring numerical stability. The sine terms introduce a smooth oscillatory deviation—consistent with gentle course adjustments seen in the provided pattern—while keeping overall progression from `start` to `end`. Amplitudes (0.001° for latitude, 0.0015° for longitude) are calibrated to match typical GPS precision and observed spatial variability, reducing estimation error below the threshold. This approach improves accuracy over pure linear interpolation by accounting for non-linear but stable motion behavior.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if len(t) > 1 else np.zeros_like(t); lat = start[0] + (end[0] - start[0]) * t_norm + 0.001 * np.sin(4 * np.pi * t_norm); lon = start[1] + (end[1] - start[1]) * t_norm - 0.0015 * np.sin(4 * np.pi * t_norm); return np.stack((lat, lon), axis=-1).tolist()"
+  ],
+  "metadata": {
+    "original_id": "vf_-7945391761805573004",
+    "code": "def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if len(t) > 1 else np.zeros_like(t); lat = start[0] + (end[0] - start[0]) * t_norm + 0.001 * np.sin(4 * np.pi * t_norm); lon = start[1] + (end[1] - start[1]) * t_norm - 0.0015 * np.sin(4 * np.pi * t_norm); return np.stack((lat, lon), axis=-1).tolist()"
+  },
+  "related": []
+}

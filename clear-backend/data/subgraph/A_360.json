@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_360",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Mellembassinet, Skovshoved Havn, Kastrup Lystbådehavn - Gamle Havn, Langelinie Lystbådehavn, Teglværkshavnen, HDMS Peder Skram, Nyhavn - Flakfortet, Drogden, Kastrup Broforenings Bådehavn, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kastrup Lystbådehavn - Saltholm (Barakkebroen), Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Scanport Havn, Svanemøllehavnen A/S, Bådelaug Havnestad, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Bådteatret, Tuborg Havn, Øresund, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2290_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2290_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2290_SEG_6",
+      "target": "A_360",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_360",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-24485554849544898",
+    "A_360",
+    "TRJ_2290_SEG_6"
+  ],
+  "centerNodeId": "A_360",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_166",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: København – Oslo, EK R 22 Hesselø",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_775_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_775_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5117658009441012102",
+      "type": "behavior",
+      "label": "Behavior 41012102",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_775_SEG_1",
+      "target": "A_166",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5117658009441012102",
+      "target": "A_166",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_5117658009441012102",
+    "A_166",
+    "TRJ_775_SEG_1"
+  ],
+  "centerNodeId": "A_166",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

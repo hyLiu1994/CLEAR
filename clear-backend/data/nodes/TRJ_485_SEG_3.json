@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_485_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_485_SEG_3",
+  "summary": "Segment 3 of trajectory 485",
+  "description": [
+    "MMSI: 209672000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-08 08:15:52",
+    "End time: 2024-03-08 08:22:12"
+  ],
+  "metadata": {
+    "trajectory_id": "485",
+    "vessel_id": "209672000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-08 08:15:52",
+    "end_time": "2024-03-08 08:22:12"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+    "Draught: [4, 6) m",
+    "Length: [50, 100) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed around 10.7–10.8 knots with minimal variation)",
+      "course_change": "gradual and consistent (COG changes slowly from ~30.2° to ~28.0°, then increases back to ~30.1°, indicating a smooth evolution in direction over time)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 26.0°–28.0°, showing no abrupt yawing or instability)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation:",
+      "duration": "350~400"
+    },
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 10.8 knots throughout the observed segment)",
+      "course_change": "gradual and consistent (COG varies slowly between 26.7° and 29.5°, indicating a smooth, continuous change in direction over time)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 27.0° to 29.0°, with minimal short-term variation)",
+      "intent": "following a curved maritime route",
+      "duration": "350~400"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

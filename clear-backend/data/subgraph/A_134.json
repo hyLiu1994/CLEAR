@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_134",
+      "type": "attribute",
+      "label": "spatial_context: location: Landskrona kommun, Skåne County, Sweden; nearby_shipping_lanes: Query failed with status 429",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_644_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_644_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_644_SEG_1",
+      "target": "A_134",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_134",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-24485554849544898",
+    "A_134",
+    "TRJ_644_SEG_1"
+  ],
+  "centerNodeId": "A_134",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

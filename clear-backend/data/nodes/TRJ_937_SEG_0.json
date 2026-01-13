@@ -1,0 +1,39 @@
+{
+  "id": "TRJ_937_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_937_SEG_0",
+  "summary": "Segment 0 of trajectory 937",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 17:30:10",
+    "End time: 2024-03-27 17:34:09"
+  ],
+  "metadata": {
+    "trajectory_id": "937",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-27 17:30:10",
+    "end_time": "2024-03-27 17:34:09"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating through major Baltic shipping lanes such as Femern Fixed Link Holding Area North and Fehmarn Belt exhibit the \"navigating along a fixed route\" behavior in approximately 72% of observed segments (based on weighted edge frequency). This pattern is strongly associated with vessels of length [150, 200) m and draught [8, 10) m, which collectively account for over 60% of all movements in this corridor. The high edge weights from static attributes—particularly navigation_status (w=102), vessel_type_Cargo (w=73), and length_[150, 200) m (w=63)—indicate that straight-line, stable-heading transit is the dominant behavioral mode for standard-sized cargo ships in this region, especially near critical infrastructure like offshore wind farms (e.g., Rødsand II Havmøllepark) where traffic separation schemes enforce predictable routing.",
+    "contextual_justification": "The boundary movement patterns show a transition from a gently curving trajectory (COG 111.1° → 119.1°) to a nearly straight path (COG 119.6° → 120.3°), indicating the vessel is completing a turn and settling into a steady course. The selected movement vb_-4927443205807001530—characterized by stable speed (~15.8–16.0 knots), fixed heading (119.0°), and linear northeastward progression—perfectly bridges this transition, representing the logical continuation of the vessel’s alignment after completing its maneuver. Its intent to follow a fixed, straight route matches the increasing COG stability observed in the downstream segment, while its parametric trajectory model aligns spatially with the extension of the upstream curved path into a linear corridor consistent with the Fehmarn Belt traffic lane.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to impute missing latitude and longitude for the given behavior pattern is 98.04%. This is derived from the relative weight distribution in the association structure, where the total weight linking the behavior pattern vb_-4927443205807001530 to candidate functions is 100 + 2 = 102. The weight assigned to vf_-7663396197665720575 is 100, yielding a proportion of 100 / 102 ≈ 0.9804 or 98.04%. This high proportion indicates strong empirical alignment between this function and the observed kinematic pattern under real-world usage conditions.  \n2. The function vf_-7663396197665720575 explicitly models linear motion with time-proportional interpolation using max(Time_interval) as the normalizing factor, which matches the parametric trajectory model described in the intent (lat(t) ≈ 56.114153 + 0.00087 × t, lon(t) ≈ 7.607993 + 0.00034 × t). In contrast, vf_5240413252068673064, while similar, uses Time_interval[-1] for normalization—functionally equivalent only if Time_interval is uniformly spaced and starts at zero. The former provides more robust handling of arbitrary time indexing, making it better suited to variable sampling rates often found in AIS data."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) in the Fehmarn Belt – Applicable to cargo vessels navigating through designated Baltic Sea shipping lanes, particularly near critical infrastructure such as offshore wind farms and holding areas.\nOperational Protocol Rationale: The vessel’s behavior—maintaining a stable speed of approximately 15.8–16.0 knots, nearly fixed heading at 119.0°, and minimal course deviation—is typical for cargo ships transitioning from a curved approach path into a straight, regulated corridor. This pattern aligns with standardized routing measures designed to ensure safe passage through high-traffic or environmentally sensitive zones like the Fehmarn Belt and Femern Fixed Link Holding Area North. The shift from a gradually turning trajectory to a linear path indicates the vessel has completed its maneuver and is now following a predefined route, consistent with traffic separation protocols. Alternative behaviors such as frequent course corrections or speed fluctuations are unlikely here due to strict navigational controls, autopilot use, and the need for predictable movement among dense maritime traffic.\n'''",
+    "operational_protocol_rationale": "The vessel’s behavior—maintaining a stable speed of approximately 15.8–16.0 knots, nearly fixed heading at 119.0°, and minimal course deviation—is typical for cargo ships transitioning from a curved approach path into a straight, regulated corridor. This pattern aligns with standardized routing measures designed to ensure safe passage through high-traffic or environmentally sensitive zones like the Fehmarn Belt and Femern Fixed Link Holding Area North. The shift from a gradually turning trajectory to a linear path indicates the vessel has completed its maneuver and is now following a predefined route, consistent with traffic separation protocols. Alternative behaviors such as frequent course corrections or speed fluctuations are unlikely here due to strict navigational controls, autopilot use, and the need for predictable movement among dense maritime traffic.\n'''"
+  },
+  "related": []
+}

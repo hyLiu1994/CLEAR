@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_1133_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_1133_SEG_0",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_1133",
+      "type": "trajectory",
+      "label": "Trajectory 210028000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4425165584585195162",
+      "type": "behavior",
+      "label": "Behavior 85195162",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_214",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Klaipėda (LT) – Kiel (D), Naturschutzgebiet Grüner Brink, Marienleuchte, Unnamed lane, Sperrgebiet Marienleuchte, Fehmarn Belt, Leuchtturm Westermarkelsdorf",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_417",
+      "type": "attribute",
+      "label": "width: [25, 30) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "T_1133",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "B_vb_4425165584585195162",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "A_214",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "A_417",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_0",
+      "target": "F_vf_5240413252068673064",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_411",
+    "A_417",
+    "T_1133",
+    "A_001",
+    "A_214",
+    "A_404",
+    "TRJ_1133_SEG_0",
+    "A_004",
+    "F_vf_5240413252068673064",
+    "A_006",
+    "B_vb_4425165584585195162"
+  ],
+  "centerNodeId": "TRJ_1133_SEG_0",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

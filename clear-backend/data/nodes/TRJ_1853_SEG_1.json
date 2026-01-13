@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1853_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_1853_SEG_1",
+  "summary": "Segment 1 of trajectory 1853",
+  "description": [
+    "MMSI: 210529000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-30 15:20:38",
+    "End time: 2024-03-30 15:27:39"
+  ],
+  "metadata": {
+    "trajectory_id": "1853",
+    "vessel_id": "210529000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-30 15:20:38",
+    "end_time": "2024-03-30 15:27:39"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Trelleborgs kommun, Skåne County, Sweden; nearby_shipping_lanes: Query failed with status 504",
+    "Draught: [4, 6) m",
+    "Length: [50, 100) m",
+    "Width: [10, 15) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving westward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.237697 + 0.000012 × t, lon(t) ≈ 13.278535 - 0.001836 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "400~450"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving westward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.237147 + 0.000003 × t, lon(t) ≈ 13.306022 - 0.001845 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

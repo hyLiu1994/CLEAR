@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_2534_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_2534_SEG_3",
+  "summary": "Segment 3 of trajectory 2534",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-14 18:34:57",
+    "End time: 2024-03-14 18:38:46"
+  ],
+  "metadata": {
+    "trajectory_id": "2534",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-14 18:34:57",
+    "end_time": "2024-03-14 18:38:46"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 504",
+    "Draught: [6, 8) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 16.7 and 17.0 knots with minimal variation)",
+      "course_change": "gradual and consistent (COG varies slightly between 26.6° and 31.1°, showing a smooth progression without abrupt changes)",
+      "heading_fluctuation": "gradual and consistent (heading remains nearly constant at 30.0°, with only one observation at 31.0°, indicating stable directional control)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving east-northeast, approximated by the parametric equations: lat(t) ≈ 57.1548 + 0.0067 × t, lon(t) ≈ 8.4188 + 0.0084 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 16.5 and 16.9 knots with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 27.0° and 29.9°, showing a slow, smooth evolution in direction rather than abrupt changes)",
+      "heading_fluctuation": "gradual and consistent (heading remains constant at 30.0° throughout the trajectory, indicating stable rudder control and no erratic yawing)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 57.1385 + 0.0012 × t + 0.00003 × t², lon(t) ≈ 8.4027 + 0.0014 × t + 0.00006 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 16.4 and 17.0 knots, with minimal variation)",
+      "course_change": "gradual and consistent (COG fluctuates slightly between 26.6° and 30.8°, but overall follows a smooth progression around 28–30°, indicating a slow, controlled turn)",
+      "heading_fluctuation": "gradual and consistent (heading remains fixed at 30.0° across all observations, showing the vessel is not making abrupt rudder adjustments)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 57.1712 + 0.0008 × t + 0.00003 × t², lon(t) ≈ 8.4353 + 0.0008 × t + 0.00004 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

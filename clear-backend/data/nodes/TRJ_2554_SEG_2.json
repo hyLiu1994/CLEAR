@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2554_SEG_2",
+  "type": "segment",
+  "label": "Segment TRJ_2554_SEG_2",
+  "summary": "Segment 2 of trajectory 2554",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 07:16:05",
+    "End time: 2024-03-18 07:19:52"
+  ],
+  "metadata": {
+    "trajectory_id": "2554",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-18 07:16:05",
+    "end_time": "2024-03-18 07:19:52"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 14.6–14.7 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 197.4° and 199.6°, showing a slow, smooth evolution over time)",
+      "heading_fluctuation": "gradual and consistent (heading remains fixed at 196.0° throughout, indicating stable rudder control despite minor COG shifts)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 56.3307 - 0.0012 × t, lon(t) ≈ 7.7037 - 0.0008 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating near major offshore infrastructure such as the Thor Offshore Substation exhibit the \"navigating along a fixed route\" behavior in approximately 67% of observed segments when draught is between 8–10 m. This pattern is strongly associated with vessels of length [100, 150) m and width [20, 25) m, where the combined edge weight from key static attributes (navigation_status, vessel_type, hazardous_cargo) to this behavior totals 277 out of 404 possible connections, indicating high prevalence. Notably, this movement has the strongest alignment with vessels following linear trajectories in open waters near designated shipping lanes, consistent with transit through structured maritime corridors.",
+    "contextual_justification": "The boundary movement pattern explicitly describes a linear west-southwest trajectory with stable speed, gradual course change, and persistent COG-heading alignment—hallmarks of a fixed-route navigation. The candidate movement vb_-4927443205807001530 matches this intent precisely, modeling a straight northeast-bound linear path with parametric consistency, stable speed, and minimal heading fluctuation. Although the direction differs, the kinematic signature—stable speed, consistent course evolution, and tight COG-heading alignment—is structurally identical to the boundary segment, supporting continuity across the gap. Furthermore, both the preceding and induced patterns reflect long-duration (200~250 s), steady-state transit behavior, reinforcing that the vessel is not maneuvering but progressing along a predefined route.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to solve the missing value problem given the observed behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the behavior pattern vb_-4927443205807001530. Specifically, the total weight sum is 100 (from vf_-7663396197665720575) + 2 (from vf_5240413252068673064) = 102. The proportion of support for vf_-7663396197665720575 is therefore 100 / 102 ≈ 0.9804, or 98.04%. This indicates a strong statistical preference for this function based on historical alignment with similar kinematic patterns.  \n2. The function vf_-7663396197665720575 uses time-proportional linear interpolation with normalization by the maximum time interval, ensuring uniform spacing of imputed points along a straight path. It explicitly accounts for temporal progression and aligns with vessels under autopilot maintaining stable speed and course—exactly matching the context of negligible heading fluctuation, consistent COG, and linear trajectory. In contrast, vf_5240413252068673064, while functionally similar, lacks explicit mention of directional motion (e.g., \"south-southwesterly\") and relies solely on uniform distribution without contextual behavioral modeling, making it less tailored to this specific navigational intent."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Route Adherence in Designated Shipping Lanes near Offshore Infrastructure (applicable to cargo vessels navigating near the Thor Offshore Substation)\nOperational Protocol Rationale: Cargo vessels operating without hazardous cargo and within typical size and draught ranges for standard freighters are expected to follow structured, linear paths through designated maritime corridors in proximity to critical offshore installations. This behavior ensures predictable traffic flow, reduces collision risk, and supports automated navigation systems commonly used in routine transits. The observed stable speed, consistent course over ground, and tight alignment between heading and direction of travel confirm the vessel is not maneuvering but progressing along a predefined route. Alternative behaviors such as curvilinear navigation or port approach maneuvers are inconsistent with the minimal course deviation and steady kinematic profile. The linear interpolation method selected aligns with standard autopilot operation under these conditions, where constant velocity and directional stability are maintained across data gaps.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating without hazardous cargo and within typical size and draught ranges for standard freighters are expected to follow structured, linear paths through designated maritime corridors in proximity to critical offshore installations. This behavior ensures predictable traffic flow, reduces collision risk, and supports automated navigation systems commonly used in routine transits. The observed stable speed, consistent course over ground, and tight alignment between heading and direction of travel confirm the vessel is not maneuvering but progressing along a predefined route. Alternative behaviors such as curvilinear navigation or port approach maneuvers are inconsistent with the minimal course deviation and steady kinematic profile. The linear interpolation method selected aligns with standard autopilot operation under these conditions, where constant velocity and directional stability are maintained across data gaps.\n'''"
+  },
+  "related": []
+}

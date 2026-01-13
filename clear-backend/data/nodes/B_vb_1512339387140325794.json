@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_1512339387140325794",
+  "type": "behavior",
+  "label": "Behavior 40325794",
+  "summary": "Vessel behavior pattern: anchored or moored in a confined area (the combination of zero speed, stable COG, and minimal heading variation around 192°–193° indicates the vessel is not underway but maintaining position; the small scatter in latitude [56.158607–56.158667] and longitude [14.816168–14.816268] forms a tight cluster ~20 meters in diameter, consistent with GPS noise or minor swinging at anchor, modeled as a stationary point with negligible drift: lat(t) ≈ 56.158638, lon(t) ≈ 14.816240, where t ∈ [0,1] represents time index over the segment)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a constant speed of 0.0 knots across all observations, indicating no movement)",
+    "Course change: stable (COG remains constant at 9.9°, showing no change in direction over ground)",
+    "Heading fluctuation: gradual and consistent (heading fluctuates slightly between 192.0° and 193.0°, within a 1° range, suggesting minor adjustments while maintaining overall orientation)",
+    "Behavior intent: anchored or moored in a confined area (the combination of zero speed, stable COG, and minimal heading variation around 192°–193° indicates the vessel is not underway but maintaining position; the small scatter in latitude [56.158607–56.158667] and longitude [14.816168–14.816268] forms a tight cluster ~20 meters in diameter, consistent with GPS noise or minor swinging at anchor, modeled as a stationary point with negligible drift: lat(t) ≈ 56.158638, lon(t) ≈ 14.816240, where t ∈ [0,1] represents time index over the segment)",
+    "Duration: 4100~4150"
+  ],
+  "metadata": {
+    "original_id": "vb_1512339387140325794",
+    "duration": "4100~4150",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "stable",
+      "gradual and consistent",
+      "anchored or moored in a confined area",
+      "4100~4150"
+    ]
+  },
+  "related": []
+}

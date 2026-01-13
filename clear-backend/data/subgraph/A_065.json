@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_065",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, Pangea North UK/Denmark, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_335_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_335_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-603126515245468748",
+      "type": "behavior",
+      "label": "Behavior 45468748",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_335_SEG_0",
+      "target": "A_065",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-603126515245468748",
+      "target": "A_065",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-603126515245468748",
+    "A_065",
+    "TRJ_335_SEG_0"
+  ],
+  "centerNodeId": "A_065",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

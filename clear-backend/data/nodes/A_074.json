@@ -1,0 +1,15 @@
+{
+  "id": "A_074",
+  "type": "attribute",
+  "label": "spatial_context: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Marstrandsfjorden, København (DK) – Oslo (N)",
+  "summary": "spatial_context attribute: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Marstrandsfjorden, København (DK) – Oslo (N)",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Marstrandsfjorden, København (DK) – Oslo (N)",
+    "support": 1
+  },
+  "related": []
+}

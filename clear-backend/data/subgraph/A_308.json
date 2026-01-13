@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_308",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Travemünde (D) – Malmö (SE), HVDC Baltic Cable, Klintholm Havn, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Travemünde (D) – Trelleborg (SE)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1791_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_1791_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6613672576054589086",
+      "type": "behavior",
+      "label": "Behavior 54589086",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1791_SEG_1",
+      "target": "A_308",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6613672576054589086",
+      "target": "A_308",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1791_SEG_1",
+    "A_308",
+    "B_vb_6613672576054589086"
+  ],
+  "centerNodeId": "A_308",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

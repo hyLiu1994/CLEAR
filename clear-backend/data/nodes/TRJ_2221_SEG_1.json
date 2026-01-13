@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_2221_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_2221_SEG_1",
+  "summary": "Segment 1 of trajectory 2221",
+  "description": [
+    "MMSI: 215908000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-30 22:51:59",
+    "End time: 2024-03-30 22:56:38"
+  ],
+  "metadata": {
+    "trajectory_id": "2221",
+    "vessel_id": "215908000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-30 22:51:59",
+    "end_time": "2024-03-30 22:56:38"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Travemünde (D) – Malmö (SE), Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Unnamed lane, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Trelleborg (SE)",
+    "Draught: [6, 8) m",
+    "Length: [50, 100) m",
+    "Width: [10, 15) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 9.8 and 10.0 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG decreases slowly and consistently from 208.4° to 200.9°, indicating a smooth, continuous turn to the right)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 199.0° to 205.0°, showing minimal oscillation around a steady value)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.6128 - 0.0032 × t + 0.00015 × t², lon(t) ≈ 12.2475 - 0.0042 × t + 0.00021 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 10.3–10.4 knots across the trajectory segment)",
+      "course_change": "gradual and consistent (COG changes slowly from 237.3° to 238.0°, then drops to 210.6° later, indicating two distinct but internally consistent phases: first a stable southwestward movement, then a turn toward the south-southeast)",
+      "heading_fluctuation": "stable (heading remains fixed at 235° for most of the first segment, with only minor variation to 236° and 234°, indicating steady rudder control)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 54.6225 − 0.0032 × t, lon(t) ≈ 12.2692 − 0.0068 × t, where t is normalized time index from 0 to 1 over the first segment (first 18 points); this reflects steady transit along a traffic separation scheme or coastal shipping lane in the Baltic Sea region)",
+      "duration": "300~350"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 54.600418 - 0.0042 × t, lon(t) ≈ 12.238527 - 0.0031 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

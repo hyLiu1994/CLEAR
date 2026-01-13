@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1624_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_1624_SEG_5",
+  "summary": "Segment 5 of trajectory 1624",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-06 05:07:20",
+    "End time: 2024-03-06 05:12:31"
+  ],
+  "metadata": {
+    "trajectory_id": "1624",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-06 05:07:20",
+    "end_time": "2024-03-06 05:12:31"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.259773 + 0.000185 × t, lon(t) ≈ 11.690447 + 0.000583 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.282475 + 0.0015 × t + 0.00005 × t², lon(t) ≈ 11.76477 + 0.0042 × t + 0.00015 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, passenger vessels 'under way using engine' with draughts in the [4, 6) m range and dimensions typical of medium-sized ferries (150–200 m length, 25–30 m width) most frequently exhibit straight-route navigation patterns when traversing open Baltic Sea corridors. This behavior is especially prevalent—accounting for approximately 63% of all observed movement instances among comparable vessel profiles—when operating within established shipping lanes near Travemünde, such as routes to Malmö or Helsinki. The high edge weights from static attributes like length (w=63) and navigation status (w=102) strongly reinforce that this vessel class routinely maintains stable speed and course during transit. Furthermore, the co-occurrence of \"navigating along a fixed route\" with passenger vessels under way is statistically dominant across the induced subgraph, indicating it is the most typical operational mode for this vessel type in open-water segments.",
+    "contextual_justification": "The boundary movement pattern shows a vessel maintaining a stable speed (~17.4 knots), consistent COG (~63–64°), and steady heading (64.0°), clearly following a linear east-northeast trajectory. This indicates uninterrupted transit along a predefined maritime route. Among the candidate movements, vb_-4927443205807001530 best matches this behavioral signature, describing a \"navigating along a fixed route\" intent with stable speed, gradual and consistent course, and stable heading—all aligned with the continuity of straight-line transit. While other candidates describe curved routing or differing speed regimes, this pattern preserves both kinematic stability and directional persistence, making it the most plausible continuation through the data gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to impute missing latitude and longitude for the identified behavior pattern is approximately 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the behavior pattern vb_-4927443205807001530. Specifically, the total weight sum is 100 (from vf_-7663396197665720575) + 2 (from vf_5240413252068673064) = 102. The proportion of support for vf_-7663396197665720575 is therefore 100 / 102 ≈ 0.9804, or 98.04%. This high proportion indicates strong statistical alignment between this function and the observed kinematic pattern.  \n2. The function vf_-7663396197665720575 implements time-proportional linear interpolation using max(Time_interval) as the normalizing factor, which ensures consistent scaling across irregularly sampled temporal intervals. In contrast, vf_5240413252068673064 uses Time_interval[-1], which assumes regular sampling or monotonic progression. Given that real-world AIS data often contains irregular timestamps due to transmission delays or sensor limitations, the use of max(Time_interval) provides greater robustness. Furthermore, the description emphasizes alignment with autopilot-driven, straight-line navigation—precisely matching the stable speed, consistent COG, and minimal heading fluctuation observed in the vessel’s trajectory."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Baltic Sea near Travemünde; established shipping lanes indicate regulated navigation zones\nOperational Protocol Rationale: Passenger vessels of this size and draught typically maintain straight, steady courses when traveling through open waters along designated maritime corridors, as seen in routes connecting Travemünde to Malmö or Helsinki. The consistent speed, minimal heading variation, and alignment between course over ground and heading reflect autopilot-assisted transit along fixed routes—standard practice for ferry operations in regulated traffic lanes. This behavior prioritizes navigational predictability and collision avoidance in busy sea areas. Curved trajectory patterns are less likely here, as they are usually associated with coastal maneuvering or approach phases, not open-sea transit within clearly defined linear shipping lanes.\n'''",
+    "operational_protocol_rationale": "Passenger vessels of this size and draught typically maintain straight, steady courses when traveling through open waters along designated maritime corridors, as seen in routes connecting Travemünde to Malmö or Helsinki. The consistent speed, minimal heading variation, and alignment between course over ground and heading reflect autopilot-assisted transit along fixed routes—standard practice for ferry operations in regulated traffic lanes. This behavior prioritizes navigational predictability and collision avoidance in busy sea areas. Curved trajectory patterns are less likely here, as they are usually associated with coastal maneuvering or approach phases, not open-sea transit within clearly defined linear shipping lanes.\n'''"
+  },
+  "related": []
+}

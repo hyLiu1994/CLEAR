@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_-1815710865747844675",
+      "type": "behavior",
+      "label": "Behavior 47844675",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_146_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_146_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_644_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_644_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_930_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_930_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_928_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_181",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Kanalfähre Kudensee, Kanalfähre Ostermoor, Kanalfähre Hochdonn, Kanalfähre Burg (Dithmarschen), Unnamed lane, helgoline",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_180",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Kanalfähre Brunsbüttel, Kanalfähre Kudensee, Nord-Ostsee-Kanal, Kanalfähre Ostermoor, Unnamed lane, Lotsenhaus, helgoline",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_146_SEG_6",
+      "target": "B_vb_-1815710865747844675",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_644_SEG_3",
+      "target": "B_vb_-1815710865747844675",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_930_SEG_0",
+      "target": "B_vb_-1815710865747844675",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_928_SEG_5",
+      "target": "B_vb_-1815710865747844675",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "F_vf_5240413252068673064",
+      "target": "B_vb_-1815710865747844675",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1815710865747844675",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1815710865747844675",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1815710865747844675",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1815710865747844675",
+      "target": "A_181",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1815710865747844675",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1815710865747844675",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1815710865747844675",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1815710865747844675",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_411",
+    "TRJ_644_SEG_3",
+    "A_181",
+    "A_001",
+    "TRJ_928_SEG_5",
+    "TRJ_930_SEG_0",
+    "B_vb_-1815710865747844675",
+    "TRJ_146_SEG_6",
+    "A_415",
+    "A_406",
+    "A_180",
+    "A_004",
+    "F_vf_5240413252068673064",
+    "A_006"
+  ],
+  "centerNodeId": "B_vb_-1815710865747844675",
+  "maxLevel": 1,
+  "totalNodes": 14,
+  "totalLinks": 13
+}

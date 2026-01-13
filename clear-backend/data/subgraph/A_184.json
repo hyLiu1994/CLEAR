@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_184",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hafenmeisterbüro, Unnamed lane, helgoline",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_928_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1121_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_1121_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2817442014367810817",
+      "type": "behavior",
+      "label": "Behavior 67810817",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-7703309058056513089",
+      "type": "behavior",
+      "label": "Behavior 56513089",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_928_SEG_1",
+      "target": "A_184",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1121_SEG_9",
+      "target": "A_184",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2817442014367810817",
+      "target": "A_184",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-7703309058056513089",
+      "target": "A_184",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-7703309058056513089",
+    "B_vb_2817442014367810817",
+    "A_184",
+    "TRJ_928_SEG_1",
+    "TRJ_1121_SEG_9"
+  ],
+  "centerNodeId": "A_184",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

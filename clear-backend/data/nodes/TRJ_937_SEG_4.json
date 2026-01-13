@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_937_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_937_SEG_4",
+  "summary": "Segment 4 of trajectory 937",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 17:46:57",
+    "End time: 2024-03-27 17:50:45"
+  ],
+  "metadata": {
+    "trajectory_id": "937",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-27 17:46:57",
+    "end_time": "2024-03-27 17:50:45"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 15.3–15.5 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG changes slowly from ~111.1° to ~119.1°, indicating a smooth, continuous turn over time)",
+      "heading_fluctuation": "stable (heading remains close to 111° initially, then gradually adjusts from 111° to 119°, with minimal short-term variation, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.5345 - 0.0018 × t + 0.0004 × t², lon(t) ≈ 11.2997 + 0.0052 × t + 0.0006 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.8 and 16.0 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG increases slightly from 119.6° to 120.3°, showing a smooth, steady change within a narrow range)",
+      "heading_fluctuation": "stable (heading remains fixed at 119.0° throughout, indicating no yawing or steering adjustments)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastsoutheast, approximated by the parametric equations:",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and typical dimensions ([150, 200) m length, [20, 25) m width, [8, 10) m draught) navigating through structured maritime corridors such as the Femern Fixed Link Holding Area North and nearby shipping lanes exhibit the \"navigating along a fixed route\" behavior in approximately 62% of observed segments (edge weight sum = 102 out of 164 total for vessel attributes). This pattern is strongly associated with straight-line trajectories in constrained waterways, particularly near major Baltic transit zones like the Fehmarn Belt. The co-occurrence frequency between vessel type, navigation status, and this movement pattern is significantly higher than alternative behaviors, reinforcing its prevalence for standard cargo transits in this region.",
+    "contextual_justification": "The boundary movement patterns show a transition from a gentle turn (COG 111.1° → 119.1°) to a nearly straight trajectory (COG 119.6° → 120.3°), indicating the vessel is completing a curve and aligning with a fixed heading. The selected movement (vb_-4927443205807001530) reflects a stable, linear northeast-bound course with consistent COG-heading alignment and steady speed—perfectly bridging the post-turn continuation. Its intent (\"navigating along a fixed route\") and parametric trajectory model match the downstream segment’s dynamics, while the upstream curvature naturally leads into this stabilized path, ensuring smooth kinematic continuity across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 can correctly impute missing latitude and longitude values under the given behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the observed behavior pattern. The total weight sum is 100 (from vf_-7663396197665720575) + 2 (from vf_5240413252068673064) = 102. Therefore, the proportion of support for vf_-7663396197665720575 is 100 / 102 ≈ 0.9804, or 98.04%. This high proportion indicates strong empirical alignment between this function and the kinematic pattern of steady, linear navigation.  \n2. The function vf_-7663396197665720575 uses time-proportional linear interpolation with normalization by the maximum time interval, ensuring uniform scaling across the trajectory segment. It explicitly accounts for temporal progression and aligns with constant-velocity assumptions, which matches the observed stable speed and consistent COG. In contrast, vf_5240413252068673064, while functionally similar, lacks explicit mention of max normalization in its label description (though present in code), reducing its interpretability and contextual precision. The higher statistical preference reflects better documented adaptability to time-scaled spatial imputation under stable motion."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Fehmarn Belt – This area is governed by structured routing measures for vessels transiting between the North Sea and Baltic Sea, particularly near the Femern Fixed Link Holding Area North, where linear navigation is mandated to avoid conflicts in high-density maritime corridors.\nOperational Protocol Rationale: Cargo vessels of standard dimensions operating without hazardous cargo typically follow fixed, straight routes in this region after completing navigational turns, as seen when transitioning from a curved approach into a stabilized east-southeast heading. The consistent speed, minimal heading variation, and alignment between course over ground and heading indicate autopilot-assisted, rule-compliant passage through a designated shipping lane. This behavior is favored over more dynamic maneuvers—such as anchoring, drifting, or sharp turning—due to the constraints imposed by nearby protected areas, wind farms, and regulated holding zones, all of which necessitate predictable, linear motion once alignment with the transit corridor is achieved.\n'''",
+    "operational_protocol_rationale": "Cargo vessels of standard dimensions operating without hazardous cargo typically follow fixed, straight routes in this region after completing navigational turns, as seen when transitioning from a curved approach into a stabilized east-southeast heading. The consistent speed, minimal heading variation, and alignment between course over ground and heading indicate autopilot-assisted, rule-compliant passage through a designated shipping lane. This behavior is favored over more dynamic maneuvers—such as anchoring, drifting, or sharp turning—due to the constraints imposed by nearby protected areas, wind farms, and regulated holding zones, all of which necessitate predictable, linear motion once alignment with the transit corridor is achieved.\n'''"
+  },
+  "related": []
+}

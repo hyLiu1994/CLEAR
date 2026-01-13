@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1812_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_1812_SEG_3",
+  "summary": "Segment 3 of trajectory 1812",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-29 12:03:07",
+    "End time: 2024-03-29 12:19:17"
+  ],
+  "metadata": {
+    "trajectory_id": "1812",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-29 12:03:07",
+    "end_time": "2024-03-29 12:19:17"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Passenger",
+    "Spatial Context: location: Rostock, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Sondergebiet Warnow, Kontek, Rostock - Trelleborg, Petribrücke, Rostock (D) - Trelleborg (SE), Hafenmeister, C-Lion 1, Unnamed lane, Hotel Neptun, Rostock (D) – Gedser (S), Leuchtturm Warnemünde, Pagenwerder",
+    "Draught: [4, 6) m",
+    "Length: [150, 200) m",
+    "Width: [25, 30) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 6.7 and 6.8 knots over the initial segment, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly from 161.1° to 164.0°, then more significantly to 196.9°–201.4°, showing a continuous turn to the south)",
+      "heading_fluctuation": "stable (despite course changes, heading remains closely aligned with COG, varying only slightly around 162°–358°, suggesting controlled rudder input without oscillation)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 54.1658 - 0.0085 × t, lon(t) ≈ 12.1014 + 0.0009 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "950~1000"
+    },
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a low and nearly constant speed, typically between 0.0 and 0.4 knots, indicating minimal movement)",
+      "course_change": "fluctuating (the COG changes significantly, from approximately 238° to 354°, then shifting to 174°, and back to 354°, indicating repeated small adjustments in direction)",
+      "heading_fluctuation": "stable (the heading remains almost constant at 354°–355°, with only minor deviations, suggesting the vessel’s bow is aligned in a fixed direction despite COG changes)",
+      "intent": "following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters",
+      "duration": "1150~1200"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

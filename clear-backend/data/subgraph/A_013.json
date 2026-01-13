@@ -1,0 +1,104 @@
+{
+  "nodes": [
+    {
+      "id": "A_013",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, SylWin1, COBRA cable, Atlantic Crossing 1 (AC1) Seg.A, Unnamed lane, ODIN 1, Danger Area Nordsee",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_35_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_35_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_35_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_35_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2518_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2518_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8369218991226673352",
+      "type": "behavior",
+      "label": "Behavior 26673352",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8219356608673346866",
+      "type": "behavior",
+      "label": "Behavior 73346866",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4804797531558133848",
+      "type": "behavior",
+      "label": "Behavior 58133848",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_35_SEG_2",
+      "target": "A_013",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_35_SEG_1",
+      "target": "A_013",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2518_SEG_9",
+      "target": "A_013",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8369218991226673352",
+      "target": "A_013",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_013",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4804797531558133848",
+      "target": "A_013",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_35_SEG_1",
+    "B_vb_8369218991226673352",
+    "TRJ_2518_SEG_9",
+    "A_013",
+    "B_vb_-8219356608673346866",
+    "TRJ_35_SEG_2",
+    "B_vb_4804797531558133848"
+  ],
+  "centerNodeId": "A_013",
+  "maxLevel": 1,
+  "totalNodes": 7,
+  "totalLinks": 6
+}

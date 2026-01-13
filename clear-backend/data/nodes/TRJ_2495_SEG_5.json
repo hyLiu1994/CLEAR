@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2495_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_2495_SEG_5",
+  "summary": "Segment 5 of trajectory 2495",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-12 02:50:25",
+    "End time: 2024-03-12 02:54:55"
+  ],
+  "metadata": {
+    "trajectory_id": "2495",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-12 02:50:25",
+    "end_time": "2024-03-12 02:54:55"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 57.7187 + 0.00034 × t, lon(t) ≈ 11.1977 - 0.0020 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' without hazardous cargo and operating in major shipping lanes such as the København–Oslo corridor exhibit a straight-line fixed-route navigation pattern in approximately 68% of observed segments when draught is between 8–10 meters and vessel dimensions are within [100, 150) m length and [20, 25) m width. This behavior is strongly associated with open-water transit along designated maritime routes, where minimal course deviation and stable speed are maintained for fuel efficiency and traffic compliance. The high edge weights from static attributes—especially navigation_status (w=102), vessel_type (w=73), and hazardous_cargo (w=102)—collectively indicate that this movement pattern is the most statistically prevalent for this class of vessel under these operational conditions.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating along a fixed, linear route with stable speed, gradual and consistent course change, and tight alignment between COG and heading—indicative of straight-line transit moving west-southwest. The candidate movement vb_-4927443205807001530 matches this intent precisely, exhibiting a nearly identical profile: stable speed, consistent course progression, and a clear linear trajectory (here moving northeast). Although the direction differs, the kinematic consistency—stable speed, negligible heading fluctuation, and smooth course evolution—aligns perfectly with the behavioral template of uninterrupted transit along a predefined route. Given that the gap occurs within a known shipping lane context and the adjacent segments show no signs of maneuvering or port approach, this straight-path navigation is the most plausible continuation.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is approximately 98.04%, calculated as 100 / (100 + 2) = 100 / 102 ≈ 0.9804. This proportion reflects the relative confidence in this function over the alternative based on historical performance weights associated with similar kinematic contexts.  \n2. This function exhibits strong alignment with stable, linear motion patterns characterized by constant speed and consistent heading. Its interpolation model assumes uniform progression along a straight path, which matches the observed vessel behavior—stable speed profile, minimal heading fluctuation, and gradual, consistent course change. In contrast, the alternative function has been less frequently validated under these precise conditions, indicating lower empirical reliability for this specific motion regime."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Øresund Strait region; spatial anchor near København–Oslo shipping corridor\nOperational Protocol Rationale: Cargo vessels of this size and draught, operating without hazardous cargo and under way using engine, are expected to follow designated maritime routes for safe and efficient transit. The observed stable speed, minimal heading variation, and consistent course indicate autopilot-assisted navigation along a straight, predefined path—typical behavior within regulated shipping lanes where vessels maintain constant velocity and alignment to avoid congestion and comply with collision avoidance protocols. This pattern rules out maneuvering, anchoring, or port approach behaviors, which would show variable speed, erratic heading, or significant course changes. Given the vessel’s position within a known traffic corridor and the absence of navigational anomalies in adjacent segments, linear interpolation between known points best reflects the likely motion, assuming uniform progress consistent with open-water transit norms.\n'''",
+    "operational_protocol_rationale": "Cargo vessels of this size and draught, operating without hazardous cargo and under way using engine, are expected to follow designated maritime routes for safe and efficient transit. The observed stable speed, minimal heading variation, and consistent course indicate autopilot-assisted navigation along a straight, predefined path—typical behavior within regulated shipping lanes where vessels maintain constant velocity and alignment to avoid congestion and comply with collision avoidance protocols. This pattern rules out maneuvering, anchoring, or port approach behaviors, which would show variable speed, erratic heading, or significant course changes. Given the vessel’s position within a known traffic corridor and the absence of navigational anomalies in adjacent segments, linear interpolation between known points best reflects the likely motion, assuming uniform progress consistent with open-water transit norms.\n'''"
+  },
+  "related": []
+}

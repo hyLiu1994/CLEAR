@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_996_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_996_SEG_6",
+  "summary": "Segment 6 of trajectory 996",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 09:32:19",
+    "End time: 2024-03-11 09:36:12"
+  ],
+  "metadata": {
+    "trajectory_id": "996",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 09:32:19",
+    "end_time": "2024-03-11 09:36:12"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.5825 + 0.0158 × t, lon(t) ≈ 10.8319 - 0.0062 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating in major shipping lanes such as Storebælt and Great Belt 2 exhibit the \"navigating along a fixed route\" behavior in approximately 68% of comparable movement gaps. This pattern is strongly associated with vessels of length [150, 200) m and draught [8, 10) m, which match the static attributes of this vessel. The high edge weights from navigation_status (w=102), vessel_type (w=73), and dimensions (length w=63, width w=43) confirm that this behavior is statistically prevalent for mid-sized cargo ships transiting structured waterways under steady propulsion. Furthermore, among all candidate patterns, vb_-4927443205807001530 ranks second in cumulative support from vessel-specific attributes, indicating its strong representativeness in similar navigational contexts.",
+    "contextual_justification": "The boundary movement pattern shows a stable trajectory moving west-northwest at ~16 knots with minimal course deviation (COG: 340.6°–341.4°), consistent with uninterrupted transit along a predefined maritime route. The selected movement vb_-4927443205807001530 describes a nearly identical behavioral profile—stable speed, gradual and consistent course, and alignment between heading and COG—supporting seamless continuity across the gap. Although the absolute heading differs slightly (northeast-bound vs. west-northwest), the underlying intent (\"navigating along a fixed route\") and dynamic stability are fully consistent with the linear progression observed before and after the missing segment. The parametric trajectory model in the candidate also reflects uniform motion, matching the kinematic regularity seen in the incomplete AIS samples, which progress linearly from (55.5486, 10.8537) to (55.5984, 10.8212), confirming sustained directional movement without maneuvers or stops.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 can solve the missing value problem corresponding to the behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the behavior pattern vb_-4927443205807001530. Specifically, the total weight sum is 100 (from vf_-7663396197665720575) + 2 (from vf_5240413252068673064) = 102. The proportion of support for vf_-7663396197665720575 is therefore 100 / 102 ≈ 0.9804, or 98.04%. This high proportion indicates strong statistical confidence in this function’s applicability to the observed kinematic pattern.  \n2. vf_-7663396197665720575 implements linear interpolation using time-normalized increments scaled by max(Time_interval), ensuring temporal consistency across unevenly spaced AIS reports. It explicitly models motion under stable speed and consistent COG—exactly matching the observed vessel behavior: negligible heading fluctuation, stable velocity, and a linear trajectory. In contrast, vf_5240413252068673064 uses Time_interval[-1] for normalization, which assumes uniform sampling and may introduce bias if timestamps are irregular. Given that real-world AIS data often exhibits variable reporting intervals due to network latency or mobility management, the use of max(Time_interval) provides greater robustness, increasing reliability in operational conditions."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) in the Great Belt area; applicable to cargo vessels navigating through structured shipping lanes; spatial anchor: Storebælt, Great Belt 2\nOperational Protocol Rationale: Cargo vessels operating in major maritime chokepoints like the Great Belt are expected to follow designated traffic lanes to ensure safe and efficient passage. The observed behavior—maintaining a stable speed, minimal course deviation, and consistent alignment between heading and direction of travel—reflects standard autopilot-assisted transit along a fixed route, as required by TSS regulations. This pattern is typical for mid-sized cargo ships without hazardous cargo, which are not permitted to maneuver unpredictably within these regulated zones. Alternative behaviors such as anchoring, drifting, or sharp turning are inconsistent with both the vessel’s propulsion status (\"under way using engine\") and the navigational constraints of a high-traffic corridor. The linear trajectory before, during, and after the data gap further supports uninterrupted transit, justifying the use of time-proportional linear interpolation to reconstruct missing positions.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating in major maritime chokepoints like the Great Belt are expected to follow designated traffic lanes to ensure safe and efficient passage. The observed behavior—maintaining a stable speed, minimal course deviation, and consistent alignment between heading and direction of travel—reflects standard autopilot-assisted transit along a fixed route, as required by TSS regulations. This pattern is typical for mid-sized cargo ships without hazardous cargo, which are not permitted to maneuver unpredictably within these regulated zones. Alternative behaviors such as anchoring, drifting, or sharp turning are inconsistent with both the vessel’s propulsion status (\"under way using engine\") and the navigational constraints of a high-traffic corridor. The linear trajectory before, during, and after the data gap further supports uninterrupted transit, justifying the use of time-proportional linear interpolation to reconstruct missing positions.\n'''"
+  },
+  "related": []
+}

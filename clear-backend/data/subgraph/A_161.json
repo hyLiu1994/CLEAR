@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_161",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Storebælt, Ballen-Røsnæs, Unnamed lane, Samsø Bælt, Slip",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_718_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_718_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1991_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1991_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4472932814398791925",
+      "type": "behavior",
+      "label": "Behavior 98791925",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3436945641389082127",
+      "type": "behavior",
+      "label": "Behavior 89082127",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_718_SEG_6",
+      "target": "A_161",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_3",
+      "target": "A_161",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4472932814398791925",
+      "target": "A_161",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3436945641389082127",
+      "target": "A_161",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1991_SEG_3",
+    "TRJ_718_SEG_6",
+    "B_vb_3436945641389082127",
+    "A_161",
+    "B_vb_4472932814398791925"
+  ],
+  "centerNodeId": "A_161",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-6581038560160811336",
+  "type": "function",
+  "label": "Function 60811336",
+  "summary": "This function performs linear interpolation between the `start` and `end` geographic coordinates bas...",
+  "description": [
+    "Function description: This function performs linear interpolation between the `start` and `end` geographic coordinates based on proportional time intervals. It assumes constant speed and straight-line motion over the missing segment, distributing intermediate positions uniformly according to elapsed time. The output is a list of (latitude, longitude) tuples with length equal to `len(Time_interval)`, including the start and end points. Despite the vessel's overall curved trajectory, this linear approximation provides numerical stability and low error when the missing segment is short relative to the curvature scale.\n\nNote: Given the high accuracy requirement (e < 0.003°) and previous failure due to large MAE, a more sophisticated curve-based model was considered. However, without knowing the exact number or duration of missing points, and to ensure compatibility and stability across arbitrary gaps, linear interpolation is selected as it minimizes risk of overfitting or divergence. If the gap spans a known turning segment, a circular arc model would be preferable — but such parametric fitting requires additional constraints not provided in the interface. Thus, this solution prioritizes robustness and compliance over complex modeling.",
+    "Code implementation: def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * t / (Time_interval[-1]), start[1] + (end[1] - start[1]) * t / (Time_interval[-1])) for t in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_-6581038560160811336",
+    "code": "def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * t / (Time_interval[-1]), start[1] + (end[1] - start[1]) * t / (Time_interval[-1])) for t in Time_interval]"
+  },
+  "related": []
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "F_vf_-3532178402678649056",
+      "type": "function",
+      "label": "Function 78649056",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_826_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_826_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3081913737957353482",
+      "type": "behavior",
+      "label": "Behavior 57353482",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_826_SEG_3",
+      "target": "F_vf_-3532178402678649056",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-3532178402678649056",
+      "target": "B_vb_3081913737957353482",
+      "relation": "implements",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "F_vf_-3532178402678649056",
+    "TRJ_826_SEG_3",
+    "B_vb_3081913737957353482"
+  ],
+  "centerNodeId": "F_vf_-3532178402678649056",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

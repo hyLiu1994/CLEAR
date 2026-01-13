@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_403",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Utklippans naturreservat, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2641_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2100548169559808147",
+      "type": "behavior",
+      "label": "Behavior 59808147",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2641_SEG_8",
+      "target": "A_403",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_403",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_403",
+    "B_vb_2100548169559808147",
+    "TRJ_2641_SEG_8"
+  ],
+  "centerNodeId": "A_403",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

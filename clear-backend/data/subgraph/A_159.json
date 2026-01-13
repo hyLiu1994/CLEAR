@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_159",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Kanalfähre Sehestedt, Kanalfähre Landwehr, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_729_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_729_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1534_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1534_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1328417816599802803",
+      "type": "behavior",
+      "label": "Behavior 99802803",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5408161180000147391",
+      "type": "behavior",
+      "label": "Behavior 00147391",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_729_SEG_2",
+      "target": "A_159",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1534_SEG_3",
+      "target": "A_159",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1328417816599802803",
+      "target": "A_159",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5408161180000147391",
+      "target": "A_159",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_159",
+    "TRJ_729_SEG_2",
+    "B_vb_-1328417816599802803",
+    "B_vb_-5408161180000147391",
+    "TRJ_1534_SEG_3"
+  ],
+  "centerNodeId": "A_159",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

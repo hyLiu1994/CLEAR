@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-885100184754895613",
+  "type": "function",
+  "label": "Function 54895613",
+  "summary": "This function estimates missing vessel positions by modeling the trajectory as a parametric quadrati...",
+  "description": [
+    "Function description: This function estimates missing vessel positions by modeling the trajectory as a parametric quadratic curve in normalized time space, reflecting the observed gradual and consistent course change along a curved maritime route. It uses the start and end coordinates to define the overall displacement, then applies curvature coefficients derived from the known pattern (lat(t) ≈ 54.9450 + 0.0065×t + 0.0001×t², lon(t) ≈ 10.9491 + 0.0108×t + 0.0007×t²) scaled relative to the actual latitude and longitude deltas. The Time_interval is normalized to [0,1] to enable smooth interpolation and curvature application over the actual time span, ensuring physically plausible motion with stable speed and slowly varying COG. The output is a list of (latitude, longitude) tuples matching the length of Time_interval.",
+    "Code implementation: def spatial_function(start, end, Time_interval):\n    import math; t_min, t_max = min(Time_interval), max(Time_interval); t_norm = [(t - t_min) / (t_max - t_min + 1e-9) for t in Time_interval]; lat_curve = [start[0] + (end[0] - start[0]) * t + 0.0001 * (end[0] - start[0]) * (t**2) for t in t_norm]; lon_curve = [start[1] + (end[1] - start[1]) * t + 0.0007 * (end[1] - start[1]) * (t**2) for t in t_norm]; return list(zip(lat_curve, lon_curve))"
+  ],
+  "metadata": {
+    "original_id": "vf_-885100184754895613",
+    "code": "def spatial_function(start, end, Time_interval):\n    import math; t_min, t_max = min(Time_interval), max(Time_interval); t_norm = [(t - t_min) / (t_max - t_min + 1e-9) for t in Time_interval]; lat_curve = [start[0] + (end[0] - start[0]) * t + 0.0001 * (end[0] - start[0]) * (t**2) for t in t_norm]; lon_curve = [start[1] + (end[1] - start[1]) * t + 0.0007 * (end[1] - start[1]) * (t**2) for t in t_norm]; return list(zip(lat_curve, lon_curve))"
+  },
+  "related": []
+}

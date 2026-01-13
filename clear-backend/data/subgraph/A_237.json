@@ -1,0 +1,104 @@
+{
+  "nodes": [
+    {
+      "id": "A_237",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TSS South of Gedser, Travemünde (D) – Malmö (SE), Kontek, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Unnamed lane, Kadetrinne, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Trelleborg (SE)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1357_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1357_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2222_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2222_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4679738668569014458",
+      "type": "behavior",
+      "label": "Behavior 69014458",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7691133592386755059",
+      "type": "behavior",
+      "label": "Behavior 86755059",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1357_SEG_3",
+      "target": "A_237",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_5",
+      "target": "A_237",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2222_SEG_3",
+      "target": "A_237",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_237",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4679738668569014458",
+      "target": "A_237",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7691133592386755059",
+      "target": "A_237",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1357_SEG_3",
+    "A_237",
+    "B_vb_7691133592386755059",
+    "TRJ_2222_SEG_3",
+    "TRJ_1448_SEG_5",
+    "B_vb_3366872286460794881",
+    "B_vb_-4679738668569014458"
+  ],
+  "centerNodeId": "A_237",
+  "maxLevel": 1,
+  "totalNodes": 7,
+  "totalLinks": 6
+}

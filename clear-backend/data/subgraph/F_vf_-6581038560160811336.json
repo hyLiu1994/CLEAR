@@ -1,0 +1,188 @@
+{
+  "nodes": [
+    {
+      "id": "F_vf_-6581038560160811336",
+      "type": "function",
+      "label": "Function 60811336",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_334_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_334_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_334_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_334_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_360_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_360_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_399_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_399_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_398_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_398_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2561_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2561_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2579_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2579_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-7501506743914594244",
+      "type": "behavior",
+      "label": "Behavior 14594244",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_647334317556727340",
+      "type": "behavior",
+      "label": "Behavior 56727340",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1299125068444794049",
+      "type": "behavior",
+      "label": "Behavior 44794049",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1724885279462674721",
+      "type": "behavior",
+      "label": "Behavior 62674721",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6066825576909275633",
+      "type": "behavior",
+      "label": "Behavior 09275633",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_334_SEG_7",
+      "target": "F_vf_-6581038560160811336",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_8",
+      "target": "F_vf_-6581038560160811336",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_360_SEG_1",
+      "target": "F_vf_-6581038560160811336",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_399_SEG_3",
+      "target": "F_vf_-6581038560160811336",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_398_SEG_9",
+      "target": "F_vf_-6581038560160811336",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2561_SEG_2",
+      "target": "F_vf_-6581038560160811336",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2579_SEG_1",
+      "target": "F_vf_-6581038560160811336",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-6581038560160811336",
+      "target": "B_vb_-7501506743914594244",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-6581038560160811336",
+      "target": "B_vb_647334317556727340",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-6581038560160811336",
+      "target": "B_vb_-1299125068444794049",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-6581038560160811336",
+      "target": "B_vb_1724885279462674721",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-6581038560160811336",
+      "target": "B_vb_6066825576909275633",
+      "relation": "implements",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-1299125068444794049",
+    "B_vb_647334317556727340",
+    "TRJ_2561_SEG_2",
+    "B_vb_1724885279462674721",
+    "TRJ_334_SEG_7",
+    "TRJ_2579_SEG_1",
+    "B_vb_6066825576909275633",
+    "F_vf_-6581038560160811336",
+    "TRJ_398_SEG_9",
+    "TRJ_360_SEG_1",
+    "B_vb_-7501506743914594244",
+    "TRJ_399_SEG_3",
+    "TRJ_334_SEG_8"
+  ],
+  "centerNodeId": "F_vf_-6581038560160811336",
+  "maxLevel": 1,
+  "totalNodes": 13,
+  "totalLinks": 12
+}

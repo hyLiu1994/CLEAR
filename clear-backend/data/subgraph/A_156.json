@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_156",
+      "type": "attribute",
+      "label": "spatial_context: location: Büdelsdorf, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24782, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Büdelsdorfer Yachtclub, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_729_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_729_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_729_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_729_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_9083041380673789046",
+      "type": "behavior",
+      "label": "Behavior 73789046",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1340666149102795026",
+      "type": "behavior",
+      "label": "Behavior 02795026",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_729_SEG_6",
+      "target": "A_156",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_729_SEG_7",
+      "target": "A_156",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_9083041380673789046",
+      "target": "A_156",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1340666149102795026",
+      "target": "A_156",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_729_SEG_7",
+    "TRJ_729_SEG_6",
+    "B_vb_9083041380673789046",
+    "B_vb_1340666149102795026",
+    "A_156"
+  ],
+  "centerNodeId": "A_156",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

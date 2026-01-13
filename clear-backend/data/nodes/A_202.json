@@ -1,0 +1,15 @@
+{
+  "id": "A_202",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Skødshoved Bro og Jollehavn, Odden - Aarhus, Træskibshavnen, Aarhus Havsvømmebane, Aarhus Lystbådehavn, Aarhus Vandflyveplads, Aarhus-Kalundborg, Marselisborg Lystbådehavn, Unnamed lane, Egå Marina",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Skødshoved Bro og Jollehavn, Odden - Aarhus, Træskibshavnen, Aarhus Havsvømmebane, Aarhus Lystbådehavn, Aarhus Vandflyveplads, Aarhus-Kalundborg, Marselisborg Lystbådehavn, Unnamed lane, Egå Marina",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Skødshoved Bro og Jollehavn, Odden - Aarhus, Træskibshavnen, Aarhus Havsvømmebane, Aarhus Lystbådehavn, Aarhus Vandflyveplads, Aarhus-Kalundborg, Marselisborg Lystbådehavn, Unnamed lane, Egå Marina",
+    "support": 1
+  },
+  "related": []
+}

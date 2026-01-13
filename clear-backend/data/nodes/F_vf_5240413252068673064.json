@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_5240413252068673064",
+  "type": "function",
+  "label": "Function 68673064",
+  "summary": "This function performs linear interpolation between the `start` and `end` geographic coordinates bas...",
+  "description": [
+    "Function description: This function performs linear interpolation between the `start` and `end` geographic coordinates based on proportional time intervals. Given the vessel's stable speed, consistent course over ground (COG), and minimal heading variation—indicating a near-linear trajectory along a fixed route—it is reasonable to model the missing segment as a straight-line path. The function distributes intermediate latitude and longitude points uniformly according to the relative time progression in `Time_interval`, assuming constant velocity motion. This approach aligns with observed vessel behavior: steady navigation with no significant turns or speed changes.",
+    "Code implementation: def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / Time_interval[-1]), start[1] + (end[1] - start[1]) * (t / Time_interval[-1])) for t in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_5240413252068673064",
+    "code": "def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / Time_interval[-1]), start[1] + (end[1] - start[1]) * (t / Time_interval[-1])) for t in Time_interval]"
+  },
+  "related": []
+}

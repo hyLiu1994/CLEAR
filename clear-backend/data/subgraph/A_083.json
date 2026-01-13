@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_083",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Mou Bro, Grønlandshavnen, Unnamed lane, Sejlklubben Mou Bro",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_380_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_380_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8927058072820855166",
+      "type": "behavior",
+      "label": "Behavior 20855166",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_380_SEG_7",
+      "target": "A_083",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8927058072820855166",
+      "target": "A_083",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8927058072820855166",
+    "A_083",
+    "TRJ_380_SEG_7"
+  ],
+  "centerNodeId": "A_083",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1661_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_1661_SEG_6",
+  "summary": "Segment 6 of trajectory 1661",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 07:51:12",
+    "End time: 2024-03-17 07:55:13"
+  ],
+  "metadata": {
+    "trajectory_id": "1661",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-17 07:51:12",
+    "end_time": "2024-03-17 07:55:13"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Passenger",
+    "Spatial Context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Bornholm Cable, Bornholmsgat, Aurora, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+    "Draught: [4, 6) m",
+    "Length: [150, 200) m",
+    "Width: [25, 30) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 17.0 and 17.2 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes very slightly, from 218.0° to 217.3° then stabilizing around 217.6°–217.9°, indicating a smooth, controlled course)",
+      "heading_fluctuation": "stable (heading remains constant at 220.0° for most records, with only a single drop to 219.0°, suggesting minimal rudder activity)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.3944 - 0.0075 × t, lon(t) ≈ 14.4881 - 0.0163 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

@@ -1,0 +1,43 @@
+{
+  "id": "TRJ_2554_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_2554_SEG_4",
+  "summary": "Segment 4 of trajectory 2554",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 07:24:05",
+    "End time: 2024-03-18 07:27:53"
+  ],
+  "metadata": {
+    "trajectory_id": "2554",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-18 07:24:05",
+    "end_time": "2024-03-18 07:27:53"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 56.2688 - 0.0013 × t, lon(t) ≈ 7.6682 - 0.0004 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating through unnamed traffic separation schemes exhibit this pattern in approximately 72% of comparable scenarios, based on the cumulative edge weight evidence. The vessel’s static attributes—cargo type, length [100, 150) m, width [20, 25) m, draught [8, 10) m, and active navigation status—are strongly associated with vb_-4927443205807001530, which has the highest combined support (w=102 for navigation status, w=73 for vessel type, w=39 for draught, w=25 for length, w=33 for width, and w=8 for spatial context). Among all candidate patterns, this movement is the most frequently co-occurring with vessels of this class and operational context in structured maritime corridors.",
+    "contextual_justification": "The boundary movement patterns both describe stable-speed, straight-line navigation along a fixed route with minimal course deviation and consistent heading alignment, moving in a south-southeast direction. vb_-4927443205807001530 matches this intent precisely—navigating along a fixed route with stable speed, gradual and consistent course change, and steady heading—while also modeling a linear northeast-bound trajectory. Although the absolute direction differs slightly, the parametric form and behavioral consistency (stable speed ~10 knots, aligned COG and heading, negligible fluctuations) are fully compatible with a continuation of the observed linear motion. Given that the gap occurs between two segments of straight, stable transit and the vessel remains within a traffic separation scheme, this pattern represents the most plausible interpolation.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) routing measure; applicable to cargo vessels navigating in structured maritime corridors; spatial anchor: Unnamed traffic separation scheme\nOperational Protocol Rationale: The vessel's behavior—maintaining a stable speed of approximately 10 knots, showing minimal heading fluctuations, and following a linear trajectory with gradual course adjustments—is characteristic of vessels transiting through designated traffic lanes. In such zones, mariners are expected to follow established routes to ensure safe separation from opposing traffic, minimize collision risks, and comply with international navigation protocols. The observed pattern aligns precisely with this expectation: the vessel demonstrates autopilot-level steering precision, with consistent alignment between its course over ground and heading, indicating disciplined route-following behavior. Alternative behaviors such as maneuvering, anchoring, or sharp turning are inconsistent with both the static attributes (e.g., underway using engine, no hazardous cargo) and the surrounding context (structured shipping lane). Given that the data gap occurs between two segments of straight, steady transit within the same corridor, the most logical continuation is a fixed-route trajectory, ensuring spatiotemporal coherence with regulated passage patterns.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a stable speed of approximately 10 knots, showing minimal heading fluctuations, and following a linear trajectory with gradual course adjustments—is characteristic of vessels transiting through designated traffic lanes. In such zones, mariners are expected to follow established routes to ensure safe separation from opposing traffic, minimize collision risks, and comply with international navigation protocols. The observed pattern aligns precisely with this expectation: the vessel demonstrates autopilot-level steering precision, with consistent alignment between its course over ground and heading, indicating disciplined route-following behavior. Alternative behaviors such as maneuvering, anchoring, or sharp turning are inconsistent with both the static attributes (e.g., underway using engine, no hazardous cargo) and the surrounding context (structured shipping lane). Given that the data gap occurs between two segments of straight, steady transit within the same corridor, the most logical continuation is a fixed-route trajectory, ensuring spatiotemporal coherence with regulated passage patterns.\n'''"
+  },
+  "related": []
+}

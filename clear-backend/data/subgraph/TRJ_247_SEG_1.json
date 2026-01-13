@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_247_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_247_SEG_1",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_247",
+      "type": "trajectory",
+      "label": "Trajectory 209391000",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_247_SEG_1",
+      "target": "T_247",
+      "relation": "part_of",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_247_SEG_1",
+    "T_247"
+  ],
+  "centerNodeId": "TRJ_247_SEG_1",
+  "maxLevel": 1,
+  "totalNodes": 2,
+  "totalLinks": 1
+}

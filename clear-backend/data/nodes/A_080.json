@@ -1,0 +1,15 @@
+{
+  "id": "A_080",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Hou Lystbådehavn, Unnamed lane, Sejlklubben Mou Bro, Hou Bådelau, Nordmands Hage, Hals Jollehavn, Mou Bro",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Hou Lystbådehavn, Unnamed lane, Sejlklubben Mou Bro, Hou Bådelau, Nordmands Hage, Hals Jollehavn, Mou Bro",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Hou Lystbådehavn, Unnamed lane, Sejlklubben Mou Bro, Hou Bådelau, Nordmands Hage, Hals Jollehavn, Mou Bro",
+    "support": 2
+  },
+  "related": []
+}

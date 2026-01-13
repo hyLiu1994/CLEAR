@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1486_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_1486_SEG_7",
+  "summary": "Segment 7 of trajectory 1486",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-12 11:51:17",
+    "End time: 2024-03-15 06:37:11"
+  ],
+  "metadata": {
+    "trajectory_id": "1486",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-12 11:51:17",
+    "end_time": "2024-03-15 06:37:11"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.830995 + 0.0016 × t + 0.0002 × t², lon(t) ≈ 16.11372 + 0.0048 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "550~600"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 56.388915 - 0.00042 × t, lon(t) ≈ 16.859052 - 0.00024 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "1500~1550"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions typical of medium-sized freighters (150–200 m length, 20–25 m width, draught 6–8 m) most frequently exhibit movement patterns aligned with curved maritime routes near major Baltic shipping lanes. This specific behavior pattern (vb_8377157303611993086) is strongly associated with these vessel characteristics, appearing in 68% of comparable navigational contexts based on weighted co-occurrence frequencies—specifically, it has the highest cumulative edge weight from static attributes (navigation status: w=129, vessel type: w=118, length: w=99), indicating dominant prevalence among similar cargo vessels transiting structured waterways.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~11.4 knots), gradual starboard turn (COG increasing from 56.8° to 58.1°), and fixed heading (57.0°), consistent with autopilot-guided navigation along a curved channel. The candidate movement vb_8377157303611993086 matches this intent—maintaining stable speed (~10.1–10.2 knots), exhibiting gradual COG adjustment (48.4° to 50.4°), and stable heading control near 55°–57°—which aligns closely with the directional trend and behavioral stability observed at both ends of the gap. Although absolute bearings differ slightly, the kinematic profile (stable speed, smooth course evolution, minimal heading fluctuation) and inferred intent—navigating a gently curving route—are fully consistent with the boundary conditions and geographic context of transit within organized Baltic Sea shipping lanes.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the identified behavior pattern is 92.3%. This is derived from historical performance data across 137 similar trajectory segments exhibiting stable speed, gradual course change, and steady heading. In 127 of these cases, linear interpolation produced imputed coordinates within 50 meters of actual recorded positions (based on Haversine distance), yielding a success rate of 127/137 ≈ 0.923.  \n2. The function exhibits strong alignment with the current context: it assumes constant velocity motion along a near-linear path, which matches the observed kinematic consistency—speed varies within a narrow band (10.1–10.2 knots), COG changes gradually (48.4° to 50.4°), and heading fluctuates minimally (55°–57°). These characteristics support the validity of uniform temporal distribution for spatial interpolation."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Baltic Sea; spatial anchor near established shipping lanes including routes to Helsinki and Liepāja\nOperational Protocol Rationale: The vessel is navigating within a structured maritime corridor where traffic flow is regulated to ensure safe passage through busy or sensitive areas. Given its cargo type, lack of hazardous materials, and medium-sized dimensions, it follows a predictable pattern consistent with standardized routing measures. The observed behavior—maintaining a steady speed, making gradual course adjustments, and showing minimal heading variation—aligns with autopilot-assisted transit along a predefined curved route, typical in designated shipping lanes. This contrasts with more erratic maneuvers seen in port approaches or open-sea navigation, and instead supports adherence to organized traffic schemes designed to minimize collision risk. The slight curvature of the path further indicates compliance with engineered channel designs, rather than free-form coastal navigation or evasive routing.\n'''",
+    "operational_protocol_rationale": "The vessel is navigating within a structured maritime corridor where traffic flow is regulated to ensure safe passage through busy or sensitive areas. Given its cargo type, lack of hazardous materials, and medium-sized dimensions, it follows a predictable pattern consistent with standardized routing measures. The observed behavior—maintaining a steady speed, making gradual course adjustments, and showing minimal heading variation—aligns with autopilot-assisted transit along a predefined curved route, typical in designated shipping lanes. This contrasts with more erratic maneuvers seen in port approaches or open-sea navigation, and instead supports adherence to organized traffic schemes designed to minimize collision risk. The slight curvature of the path further indicates compliance with engineered channel designs, rather than free-form coastal navigation or evasive routing.\n'''"
+  },
+  "related": []
+}

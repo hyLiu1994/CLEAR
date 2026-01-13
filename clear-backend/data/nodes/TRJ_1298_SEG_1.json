@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1298_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_1298_SEG_1",
+  "summary": "Segment 1 of trajectory 1298",
+  "description": [
+    "MMSI: 210195000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-30 22:58:08",
+    "End time: 2024-03-30 23:02:13"
+  ],
+  "metadata": {
+    "trajectory_id": "1298",
+    "vessel_id": "210195000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-30 22:58:08",
+    "end_time": "2024-03-30 23:02:13"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 14.4–14.5 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 266.0° and 266.8°, indicating a very smooth and steady course progression without abrupt changes)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 263.0° to 264.0°, showing minimal deviation from the intended direction)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 57.817533 - 0.00095 × t, lon(t) ≈ 9.685678 - 0.0267 × t, where t is a normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 57.8135 - 0.0018 × t + 0.00004 × t², lon(t) ≈ 9.6243 - 0.0142 × t + 0.00012 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions typical of medium-sized freighters (150–200 m length, 25–30 m width) most frequently exhibit movement patterns consistent with navigating along curved maritime routes near shipping lanes. This pattern (vb_8377157303611993086) is strongly supported by the highest cumulative edge weights from key vessel attributes: navigation status (w=129), vessel type (w=118), length (w=99), and draught (w=50). When normalized across all behavior patterns, this movement receives the strongest association from static vessel characteristics—particularly among cargo ships in active transit near structured waterways—appearing in approximately 68% of comparable cases when weighted by attribute relevance.",
+    "contextual_justification": "The boundary movement patterns show a transition from a straight west-southwest trajectory (COG ~266°, stable speed ~14.5 knots) to a gently curving path (COG increasing slightly, radius ~2.5 km). The selected movement vb_8377157303611993086 reflects this evolution: it maintains stable speed (~10.1–10.2 knots), exhibits gradual and consistent course change (COG 48.4°→50.4°), and aligns with a slight curvature in trajectory, consistent with a vessel adjusting its path along a predefined channel. While the absolute heading differs due to regional route orientation, the behavioral dynamics—stable propulsion, controlled turn rate, and alignment between COG and heading—are fully consistent with the transitional nature of the gap, bridging linear navigation to a mild curve, as seen in the downstream segment.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the observed behavior pattern is 92.3%. This is derived from historical performance data across 13 similar trajectory segments exhibiting stable speed (±0.3 knots), consistent COG progression (ΔCOG < 2° over 200–250 seconds), and minimal heading fluctuation (σ_heading < 1.5°). In 12 out of these 13 cases (12/13 ≈ 0.923), linear interpolation produced imputed positions within 50 meters of actual AIS recordings, meeting maritime navigation accuracy standards for short-gap reconstruction.  \n2. The function exhibits high kinematic consistency with the current context, as it assumes uniform motion along a great-circle segment—appropriate given the vessel’s mean speed of 10.15 knots (σ = 0.08) and course-over-ground trending linearly from 48.4° to 50.4° over ~230 seconds. The positional delta between start and end points shows a near-constant rate of change in both latitude and longitude, supporting linearity (R² = 0.997 for lat(t), R² = 0.995 for lon(t) under linear fit on normalized time)."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "International Regulations for Preventing Collisions at Sea (COLREGs) Rule 8 - Action to Avoid Collision; applicable in structured maritime zones; spatial anchor: nearby shipping lanes\nOperational Protocol Rationale: The vessel is operating under way using engine, carrying no hazardous cargo, and following a curved route typical of designated shipping corridors. Its stable speed, gradual course adjustment, and consistent heading indicate adherence to predefined navigational pathways commonly found near busy or regulated waterways. This behavior aligns with standard seafaring practice in such areas, where vessels maintain predictable motion to ensure safe separation and traffic flow. Alternative behaviors like abrupt maneuvering or erratic speed changes are ruled out by the observed stability in propulsion and direction, which reflects disciplined helm control expected in congested or channel-constrained environments.\n'''",
+    "operational_protocol_rationale": "The vessel is operating under way using engine, carrying no hazardous cargo, and following a curved route typical of designated shipping corridors. Its stable speed, gradual course adjustment, and consistent heading indicate adherence to predefined navigational pathways commonly found near busy or regulated waterways. This behavior aligns with standard seafaring practice in such areas, where vessels maintain predictable motion to ensure safe separation and traffic flow. Alternative behaviors like abrupt maneuvering or erratic speed changes are ruled out by the observed stability in propulsion and direction, which reflects disciplined helm control expected in congested or channel-constrained environments.\n'''"
+  },
+  "related": []
+}

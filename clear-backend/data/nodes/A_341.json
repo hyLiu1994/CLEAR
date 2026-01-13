@@ -1,0 +1,15 @@
+{
+  "id": "A_341",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Binz - Sassnitz, Sassnitz - Rønne, Sassnitz - Kreideküste, Sellin - Göhren, BEI-Interkonnektor Bornholm-Deutschland, Aurora, Ostwind 3, Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Sassnitz - Binz, Sassnitz - Sellin, Ostwind 2, Sellin - Binz",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Die Seenotretter DGzRS, Binz - Sassnitz, Sassnitz - Rønne, Sassnitz - Kreideküste, Sellin - Göhren, BEI-Interkonnektor Bornholm-Deutschland, Aurora, Ostwind 3, Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Sassnitz - Binz, Sassnitz - Sellin, Ostwind 2, Sellin - Binz",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Die Seenotretter DGzRS, Binz - Sassnitz, Sassnitz - Rønne, Sassnitz - Kreideküste, Sellin - Göhren, BEI-Interkonnektor Bornholm-Deutschland, Aurora, Ostwind 3, Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Sassnitz - Binz, Sassnitz - Sellin, Ostwind 2, Sellin - Binz",
+    "support": 2
+  },
+  "related": []
+}

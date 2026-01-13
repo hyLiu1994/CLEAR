@@ -1,0 +1,15 @@
+{
+  "id": "A_092",
+  "type": "attribute",
+  "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Query failed with status 504",
+  "summary": "spatial_context attribute: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Query failed with status 504",
+  "description": [
+    "This attribute is associated with 3 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Query failed with status 504",
+    "support": 3
+  },
+  "related": []
+}

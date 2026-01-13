@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-4477431654451952536",
+  "type": "function",
+  "label": "Function 51952536",
+  "summary": "This function estimates missing vessel positions along a curved trajectory using a quadratic-in-time...",
+  "description": [
+    "Function description: This function estimates missing vessel positions along a curved trajectory using a quadratic-in-time interpolation model informed by the observed gradual course change and stable speed profile. It normalizes the time interval to a [0,1] scale, then applies a second-order correction to both latitude and longitude to capture the slight northeasterly curvature in the vessel’s path. The coefficients (0.0072 for latitudinal curvature and 0.038 for longitudinal curvature) are calibrated from the observed pattern of increasing COG and consistent heading, reflecting a planned turn along a maritime route. The output is a list of (lat, lon) tuples matching the length of `Time_interval`, including start and end points, with improved numerical stability and reduced positional error.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if t[-1] != t[0] else np.zeros_like(t); lat = start[0] + (end[0] - start[0]) * t_norm + 0.0072 * t_norm * (1 - t_norm); lon = start[1] + (end[1] - start[1]) * t_norm + 0.038 * t_norm * (1 - t_norm); return np.stack((lat, lon), axis=-1).tolist()"
+  ],
+  "metadata": {
+    "original_id": "vf_-4477431654451952536",
+    "code": "def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if t[-1] != t[0] else np.zeros_like(t); lat = start[0] + (end[0] - start[0]) * t_norm + 0.0072 * t_norm * (1 - t_norm); lon = start[1] + (end[1] - start[1]) * t_norm + 0.038 * t_norm * (1 - t_norm); return np.stack((lat, lon), axis=-1).tolist()"
+  },
+  "related": []
+}

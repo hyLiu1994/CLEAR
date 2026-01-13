@@ -1,0 +1,15 @@
+{
+  "id": "A_067",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Tórshavn, Unnamed lane, Kristiansand - Hirtshals, Hirtshals - Kristiansand, Hirtshals - Stavanger",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Hirtshals - Tórshavn, Unnamed lane, Kristiansand - Hirtshals, Hirtshals - Kristiansand, Hirtshals - Stavanger",
+  "description": [
+    "This attribute is associated with 6 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Hirtshals - Tórshavn, Unnamed lane, Kristiansand - Hirtshals, Hirtshals - Kristiansand, Hirtshals - Stavanger",
+    "support": 6
+  },
+  "related": []
+}

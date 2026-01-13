@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_039",
+      "type": "attribute",
+      "label": "spatial_context: location: Schacht-Audorf, Eiderkanal, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24790, Germany; nearby_shipping_lanes: Query failed with status 504",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_146_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_146_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1323341873447631877",
+      "type": "behavior",
+      "label": "Behavior 47631877",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_146_SEG_8",
+      "target": "A_039",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1323341873447631877",
+      "target": "A_039",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-1323341873447631877",
+    "TRJ_146_SEG_8",
+    "A_039"
+  ],
+  "centerNodeId": "A_039",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

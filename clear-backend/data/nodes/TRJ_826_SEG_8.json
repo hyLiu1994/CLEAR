@@ -1,0 +1,49 @@
+{
+  "id": "TRJ_826_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_826_SEG_8",
+  "summary": "Segment 8 of trajectory 826",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-09 19:15:37",
+    "End time: 2024-03-09 19:20:17"
+  ],
+  "metadata": {
+    "trajectory_id": "826",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-09 19:15:37",
+    "end_time": "2024-03-09 19:20:17"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.6705 - 0.0033 × t + 0.0001 × t², lon(t) ≈ 15.3208 - 0.0142 × t + 0.0005 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of 13.6–13.7 knots across all observations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly from 243.4° to 244.9° over the sequence, showing a smooth, continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading remains fixed at 243.0° or changes minimally to 244.0°, suggesting autopilot mode with small rudder adjustments)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 55.6542 − 0.0018 × t + 0.00005 × t², lon(t) ≈ 15.2644 − 0.0062 × t + 0.0002 × t², where t ∈ [0,1] is normalized time index over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with lengths between 150–200 meters and draughts in the [8, 10) meter range are strongly associated with curved route navigation patterns when operating near established shipping lanes. This pattern (vb_82841811344196675) is observed in 96% of comparable cases based on cumulative edge weights from vessel static attributes—particularly high support from navigation status (w=96), vessel type (w=83), length (w=56), and width (w=54). The spatial context, though partially degraded due to a query failure, aligns with known Baltic Sea routes where gentle curvature in trajectory is common. Among all candidate behaviors, this movement has the highest combined weight for stable speed, gradual course change, and curved intent under these operational conditions.",
+    "contextual_justification": "The boundary movement patterns both describe \"gradual and consistent\" course changes with stable speed and heading, indicating the vessel is navigating along a gently curving maritime path. The left boundary segment models a circular arc with radius ~2.5 km in the Øresund region, while the right boundary continues this trend with minimal heading fluctuation. vb_82841811344196675 matches this intent precisely, modeling a similar circular arc (radius ~2.5 km) with parametric latitude and longitude equations showing quadratic curvature over time. Its duration (200~250) fits within the expected gap span, and its kinematic profile—stable SOG, slowly evolving COG, and aligned heading—is fully consistent with the transitional dynamics implied by the adjacent segments.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is navigating a gently curving maritime route, which is typical in coastal or constrained waters where shipping lanes follow predefined curved paths to align with geographical features or traffic separation schemes. Given that the vessel is a cargo ship under way using engine, with a length between 150 and 200 meters and moderate draught, it is expected to maintain stable speed and heading while following such routes for fuel efficiency and navigational safety. The observed behavior—stable speed, minimal heading fluctuation, and gradual, consistent course change—aligns precisely with autopilot-assisted transit along a fixed curved channel. This pattern is further supported by the vessel’s proximity to known Baltic Sea shipping corridors, where curvature in trajectory is common due to island clusters and regulated traffic flows. Alternative behaviors such as sharp maneuvering, loitering, or course instability are ruled out by the consistency of kinematic parameters across adjacent segments. The selected movement reflects a natural continuation of this steady, predictable navigation style over a time gap of approximately 200–250 seconds.\n'''",
+    "operational_protocol_rationale": "The vessel is navigating a gently curving maritime route, which is typical in coastal or constrained waters where shipping lanes follow predefined curved paths to align with geographical features or traffic separation schemes. Given that the vessel is a cargo ship under way using engine, with a length between 150 and 200 meters and moderate draught, it is expected to maintain stable speed and heading while following such routes for fuel efficiency and navigational safety. The observed behavior—stable speed, minimal heading fluctuation, and gradual, consistent course change—aligns precisely with autopilot-assisted transit along a fixed curved channel. This pattern is further supported by the vessel’s proximity to known Baltic Sea shipping corridors, where curvature in trajectory is common due to island clusters and regulated traffic flows. Alternative behaviors such as sharp maneuvering, loitering, or course instability are ruled out by the consistency of kinematic parameters across adjacent segments. The selected movement reflects a natural continuation of this steady, predictable navigation style over a time gap of approximately 200–250 seconds.\n'''"
+  },
+  "related": []
+}

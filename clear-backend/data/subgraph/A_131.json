@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "id": "A_131",
+      "type": "attribute",
+      "label": "spatial_context: location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Query failed with status 429",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_644_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_644_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_644_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_644_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_644_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_644_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_697_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_697_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-813988986690502197",
+      "type": "behavior",
+      "label": "Behavior 90502197",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_644_SEG_5",
+      "target": "A_131",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_644_SEG_8",
+      "target": "A_131",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_644_SEG_9",
+      "target": "A_131",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_697_SEG_9",
+      "target": "A_131",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_131",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_131",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_131",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_131",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_644_SEG_9",
+    "TRJ_644_SEG_8",
+    "B_vb_8377157303611993086",
+    "B_vb_-813988986690502197",
+    "TRJ_644_SEG_5",
+    "TRJ_697_SEG_9",
+    "A_131",
+    "B_vb_-24485554849544898",
+    "B_vb_-4857314466243141680"
+  ],
+  "centerNodeId": "A_131",
+  "maxLevel": 1,
+  "totalNodes": 9,
+  "totalLinks": 8
+}

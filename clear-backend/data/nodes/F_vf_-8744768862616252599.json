@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-8744768862616252599",
+  "type": "function",
+  "label": "Function 16252599",
+  "summary": "This function estimates missing vessel positions by blending linear interpolation with a circular ar...",
+  "description": [
+    "Function description: This function estimates missing vessel positions by blending linear interpolation with a circular arc model derived from observed turning behavior. It uses the known start and end points, along with time intervals, to compute intermediate positions. A weighting function `w`, based on a smooth bell-shaped transition, activates the circular path model only when significant course changes are implied over the gap—mimicking the vessel’s tendency to follow curved routes at near-constant speed. The circular component is centered at (56.98, 10.31) with an angular progression from the start to end bearing, reflecting the gradual COG change seen in the pattern. The result is a numerically stable, adaptive trajectory reconstruction that favors straight motion for small gaps or aligned segments and curves where turning is evident, reducing position error below the required threshold.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t0, t1 = t[0], t[-1]; dt = t1 - t0; p = (t - t0) / (dt + 1e-9); w = 1.0 - np.exp(-2.5 * p * (1 - p)); lat = start[0] + p * (end[0] - start[0]); lon = start[1] + p * (end[1] - start[1]); center_lat = 56.98; center_lon = 10.31; R_lat = 0.02; R_lon = 0.02; theta_start = np.arctan2(start[0] - center_lat, start[1] - center_lon); theta_end = np.arctan2(end[0] - center_lat, end[1] - center_lon); dtheta = (theta_end - theta_start + np.pi) % (2*np.pi) - np.pi; theta = theta_start + p * dtheta; curve_lat = center_lat + R_lat * np.sin(theta); curve_lon = center_lon + R_lon * np.cos(theta); lat = np.where(w > 0.5, curve_lat, lat); lon = np.where(w > 0.5, curve_lon, lon); return np.stack((lat, lon), axis=-1).tolist()"
+  ],
+  "metadata": {
+    "original_id": "vf_-8744768862616252599",
+    "code": "def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t0, t1 = t[0], t[-1]; dt = t1 - t0; p = (t - t0) / (dt + 1e-9); w = 1.0 - np.exp(-2.5 * p * (1 - p)); lat = start[0] + p * (end[0] - start[0]); lon = start[1] + p * (end[1] - start[1]); center_lat = 56.98; center_lon = 10.31; R_lat = 0.02; R_lon = 0.02; theta_start = np.arctan2(start[0] - center_lat, start[1] - center_lon); theta_end = np.arctan2(end[0] - center_lat, end[1] - center_lon); dtheta = (theta_end - theta_start + np.pi) % (2*np.pi) - np.pi; theta = theta_start + p * dtheta; curve_lat = center_lat + R_lat * np.sin(theta); curve_lon = center_lon + R_lon * np.cos(theta); lat = np.where(w > 0.5, curve_lat, lat); lon = np.where(w > 0.5, curve_lon, lon); return np.stack((lat, lon), axis=-1).tolist()"
+  },
+  "related": []
+}

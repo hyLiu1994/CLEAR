@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_066",
+      "type": "attribute",
+      "label": "spatial_context: location: Kiel, Schleswig-Holstein, Germany; nearby_shipping_lanes: Query failed with status 429",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_334_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_334_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-2458173186735288574",
+      "type": "behavior",
+      "label": "Behavior 35288574",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_334_SEG_6",
+      "target": "A_066",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2458173186735288574",
+      "target": "A_066",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_066",
+    "TRJ_334_SEG_6",
+    "B_vb_-2458173186735288574"
+  ],
+  "centerNodeId": "A_066",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_655_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_655_SEG_6",
+  "summary": "Segment 6 of trajectory 655",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 18:24:56",
+    "End time: 2024-03-17 18:29:56"
+  ],
+  "metadata": {
+    "trajectory_id": "655",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-17 18:24:56",
+    "end_time": "2024-03-17 18:29:56"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 10.0–10.1 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG changes slowly from 202.7° to 204.0° over time, indicating a smooth, continuous turn or alignment with a curved channel)",
+      "heading_fluctuation": "stable (heading remains almost constant at 200.0° for most of the segment, with only minor adjustments to 201.0° and 199.0°, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 56.0461 − 0.0038 × t + 0.0002 × t², lon(t) ≈ 11.0971 − 0.0062 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "{'gradual and consistent': True}",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) = 56.0196 - 0.0048 × t, lon(t) = 11.0747 - 0.0055 × t, where t ∈ [0,1] represents normalized time from the first to the last observed point)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions typical of medium-sized freighters (100–150 m length, 20–25 m width) are observed to follow straight, predefined maritime routes in 63% of comparable navigation segments when operating near shipping lanes. This pattern is especially prevalent among vessels with draughts in the [8, 10) m range, where alignment between COG and heading indicates disciplined route-following behavior. The static attributes of this vessel—particularly its classification as a Cargo type, active engine status, and spatial proximity to established shipping lanes—strongly correlate with this movement pattern, which appears as one of the most frequently reinforced behaviors in the graph structure.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~10.1–10.2 knots), minimal course deviation (COG 202.5° to 203.0°), fixed heading (200.0°), and intent to navigate along a fixed linear route moving south-southeast. The selected movement vb_-4927443205807001530 matches this behavioral profile closely, exhibiting stable speed, gradual and consistent course change, stable heading fluctuation, and an intent to follow a fixed straight route (northeastward in its observed segment). Although the absolute direction differs slightly, the kinematic consistency—especially the tight alignment between COG and heading, steady speed, and lack of oscillation—is directly analogous. Given that local route geometry may vary while preserving the same navigational intent and control stability, this pattern best bridges the continuity of motion across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 can solve the missing value problem corresponding to the behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions associated with the behavior pattern. Specifically, the total weight sum is 100 + 2 = 102. The proportion of support for vf_-7663396197665720575 is therefore 100 / 102 ≈ 0.9804, or 98.04%. This high proportion indicates strong empirical alignment between this function and the observed kinematic pattern of stable motion along a fixed route.  \n2. This function exhibits precise modeling of linear spatiotemporal progression, as evidenced by its use of normalized time scaling across both latitude and longitude dimensions independently. It maintains proportional spacing based on elapsed time relative to the full interval, ensuring uniform advancement along the trajectory. Given the context—stable speed, consistent COG, minimal heading fluctuation, and a clear parametric linear trend in position over time—this function's assumption of constant-velocity linear motion aligns directly with the vessel’s autopilot-driven, straight-line navigation behavior."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Route Adherence in Designated Shipping Lanes — Applicable — Spatial Anchor: Proximity to established shipping lanes\nOperational Protocol Rationale: Cargo vessels operating under engine without hazardous cargo, and with typical medium-sized dimensions and moderate draught, commonly follow straight, predefined routes when navigating near established shipping corridors. The observed stable speed, minimal course deviation, and tight alignment between course over ground and heading indicate disciplined autopilot use consistent with regulated maritime routing. This behavior reflects standard operational practice for efficient and safe transit through structured waterways. Alternative behaviors involving turns or speed variations are less likely given the consistency of motion and the vessel’s contextual attributes, which align strongly with routine passage along fixed navigational paths.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating under engine without hazardous cargo, and with typical medium-sized dimensions and moderate draught, commonly follow straight, predefined routes when navigating near established shipping corridors. The observed stable speed, minimal course deviation, and tight alignment between course over ground and heading indicate disciplined autopilot use consistent with regulated maritime routing. This behavior reflects standard operational practice for efficient and safe transit through structured waterways. Alternative behaviors involving turns or speed variations are less likely given the consistency of motion and the vessel’s contextual attributes, which align strongly with routine passage along fixed navigational paths.\n'''"
+  },
+  "related": []
+}

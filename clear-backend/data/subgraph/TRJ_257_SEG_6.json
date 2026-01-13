@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_257_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_257_SEG_6",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_257",
+      "type": "trajectory",
+      "label": "Trajectory 209391000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_054",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, DanTysk OAP, DanTysk OSS, Unnamed lane, Danger Area Nordsee",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_412",
+      "type": "attribute",
+      "label": "length: [50, 100) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_416",
+      "type": "attribute",
+      "label": "width: [10, 15) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-7663396197665720575",
+      "type": "function",
+      "label": "Function 65720575",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "T_257",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "B_vb_-24485554849544898",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "A_054",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "A_412",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "A_416",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_6",
+      "target": "F_vf_-7663396197665720575",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_416",
+    "A_001",
+    "A_412",
+    "T_257",
+    "A_004",
+    "A_005",
+    "A_405",
+    "F_vf_-7663396197665720575",
+    "B_vb_-24485554849544898",
+    "TRJ_257_SEG_6",
+    "A_054"
+  ],
+  "centerNodeId": "TRJ_257_SEG_6",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

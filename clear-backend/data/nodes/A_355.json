@@ -1,0 +1,15 @@
+{
+  "id": "A_355",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), Køge - Rønne, Świnoujście (PL) - Trelleborg (SE)",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), Køge - Rønne, Świnoujście (PL) - Trelleborg (SE)",
+  "description": [
+    "This attribute is associated with 3 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), Køge - Rønne, Świnoujście (PL) - Trelleborg (SE)",
+    "support": 3
+  },
+  "related": []
+}

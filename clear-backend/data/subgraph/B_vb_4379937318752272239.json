@@ -1,0 +1,300 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_4379937318752272239",
+      "type": "behavior",
+      "label": "Behavior 52272239",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2111_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2111_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2222_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2222_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2434_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2434_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-7663396197665720575",
+      "type": "function",
+      "label": "Function 65720575",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_338",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Binz - Sassnitz, Sassnitz - Rønne, BEI-Interkonnektor Bornholm-Deutschland, Aurora, Ostwind 3, Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Sassnitz - Binz, Sassnitz - Sellin, Ostwind 2, Sassnitz - Kreideküste",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_414",
+      "type": "attribute",
+      "label": "width: [15, 20) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_235",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TSS South of Gedser, Travemünde (D) – Malmö (SE), Kontek, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Unnamed lane, Kadetrinne, Travemünde (D) – Helsinki (FIN), Rostock (D) – Gedser (S), Travemünde (D) – Trelleborg (SE)",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_412",
+      "type": "attribute",
+      "label": "length: [50, 100) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_416",
+      "type": "attribute",
+      "label": "width: [10, 15) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_176",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: NordLink",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_409",
+      "type": "attribute",
+      "label": "draught: [10, 12) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_418",
+      "type": "attribute",
+      "label": "width: [30, +∞) m",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2111_SEG_5",
+      "target": "B_vb_4379937318752272239",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2222_SEG_4",
+      "target": "B_vb_4379937318752272239",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2434_SEG_4",
+      "target": "B_vb_4379937318752272239",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-7663396197665720575",
+      "target": "B_vb_4379937318752272239",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_338",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_414",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_235",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_412",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_416",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_176",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_409",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4379937318752272239",
+      "target": "A_418",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2434_SEG_4",
+    "A_414",
+    "F_vf_-7663396197665720575",
+    "A_004",
+    "A_006",
+    "TRJ_2222_SEG_4",
+    "A_176",
+    "A_416",
+    "A_410",
+    "A_001",
+    "A_412",
+    "A_405",
+    "B_vb_4379937318752272239",
+    "A_411",
+    "A_235",
+    "TRJ_2111_SEG_5",
+    "A_418",
+    "A_005",
+    "A_404",
+    "A_338",
+    "A_409"
+  ],
+  "centerNodeId": "B_vb_4379937318752272239",
+  "maxLevel": 1,
+  "totalNodes": 21,
+  "totalLinks": 20
+}

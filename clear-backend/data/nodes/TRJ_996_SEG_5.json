@@ -1,0 +1,43 @@
+{
+  "id": "TRJ_996_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_996_SEG_5",
+  "summary": "Segment 5 of trajectory 996",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 09:28:19",
+    "End time: 2024-03-11 09:32:07"
+  ],
+  "metadata": {
+    "trajectory_id": "996",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 09:28:19",
+    "end_time": "2024-03-11 09:32:07"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.8 and 16.0 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 340.6° and 341.4°, showing a smooth, sustained direction with minimal deviation)",
+      "heading_fluctuation": "stable (heading remains around 340–341°, with only minor oscillations, suggesting precise rudder control)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-northwest, approximated by the parametric equations: lat(t) ≈ 55.531962 + 0.00083 × t, lon(t) ≈ 10.86384 - 0.00055 × t, where t is a normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with draughts between 8–10 m navigating within major Danish shipping corridors such as Storebælt (Great Belt) exhibit westward linear motion patterns in approximately 78% of observed segments. This specific behavior—characterized by stable speed (~15.2 knots), fixed heading (273.0°), and minimal course deviation—is strongly associated with vessels transiting the Great Belt region, where structured traffic lanes enforce straight routing. The graph weights indicate high confidence in vessel-type and operational-state consistency: navigation status (w=62), cargo type (w=52), and dimensions (length w=41, width w=28) all align closely with known transit profiles in this waterway. Although spatial context linkage is weak (w=1), it is consistent with generalized lane usage rather than a specific sub-lane, which is typical for broad corridor classifications.",
+    "contextual_justification": "The boundary movement patterns show a transition from a west-northwest trajectory (COG ~341°) to a west-southwest direction (COG ~326°), indicating a gradual left turn across the gap. The selected movement vb_3366872286460794881 maintains a near-constant westward course (COG 274.1°–274.8°), which plausibly bridges these orientations as part of a larger, smoothed turning arc through a constrained maritime channel. Its stable speed (15.2–15.3 knots) aligns with both adjacent segments (15.5–16.0 knots), and the persistent heading-COG alignment reflects precise rudder control consistent with autopilot-assisted navigation in dense traffic zones. Given that the incomplete AIS samples continue a clear westward progression from the first boundary segment toward the second, this movement best preserves kinematic continuity while respecting the structural constraints of the Great Belt shipping lanes.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) in the Great Belt region — applies to cargo vessels navigating westward through structured shipping lanes; spatial anchor confirmed via proximity to Romsø Fyr and Storebælt corridors.\nOperational Protocol Rationale: The vessel’s behavior—maintaining a stable speed of approximately 15.2–15.3 knots and a fixed heading of 273.0° with minimal course deviation—is consistent with adherence to a defined traffic lane in a regulated waterway. In the Great Belt, where maritime traffic is dense and routing is strictly controlled, vessels typically follow straight, prescribed paths to ensure separation and safety. This pattern reflects autopilot-assisted navigation under standard operating procedures for cargo vessels transiting the area. The near-constant course over ground (274.1°–274.8°) aligns with the expected westward flow of traffic, bridging a gradual directional shift from west-northwest to west-southwest as part of a smoothed, large-radius turn within the channel constraints. Alternative behaviors involving sharp maneuvers or speed fluctuations are unlikely given the vessel's steady propulsion and rudder control, which are characteristic of routine transit rather than docking, evasive action, or free navigation.\n'''",
+    "operational_protocol_rationale": "The vessel’s behavior—maintaining a stable speed of approximately 15.2–15.3 knots and a fixed heading of 273.0° with minimal course deviation—is consistent with adherence to a defined traffic lane in a regulated waterway. In the Great Belt, where maritime traffic is dense and routing is strictly controlled, vessels typically follow straight, prescribed paths to ensure separation and safety. This pattern reflects autopilot-assisted navigation under standard operating procedures for cargo vessels transiting the area. The near-constant course over ground (274.1°–274.8°) aligns with the expected westward flow of traffic, bridging a gradual directional shift from west-northwest to west-southwest as part of a smoothed, large-radius turn within the channel constraints. Alternative behaviors involving sharp maneuvers or speed fluctuations are unlikely given the vessel's steady propulsion and rudder control, which are characteristic of routine transit rather than docking, evasive action, or free navigation.\n'''"
+  },
+  "related": []
+}

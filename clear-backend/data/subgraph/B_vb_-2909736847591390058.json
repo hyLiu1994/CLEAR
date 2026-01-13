@@ -1,0 +1,370 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_-2909736847591390058",
+      "type": "behavior",
+      "label": "Behavior 91390058",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2499_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2499_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2554_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2554_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2554_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2554_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2561_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2561_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2561_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2561_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2564_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2564_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_380",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Larvik, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_011",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_009",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_077",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Thor Offshore Substation",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_391",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Pangea North UK/Denmark",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_068",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Pangea North UK/Denmark, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2499_SEG_0",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_3",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2554_SEG_7",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2554_SEG_1",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2561_SEG_6",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2561_SEG_9",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2564_SEG_6",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_3",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_2",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_0",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "F_vf_5240413252068673064",
+      "target": "B_vb_-2909736847591390058",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_380",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_011",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_009",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_391",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2909736847591390058",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_380",
+    "A_021",
+    "A_009",
+    "A_391",
+    "A_004",
+    "B_vb_-2909736847591390058",
+    "A_406",
+    "A_006",
+    "TRJ_2499_SEG_0",
+    "TRJ_2534_SEG_3",
+    "TRJ_2564_SEG_6",
+    "TRJ_2566_SEG_3",
+    "TRJ_2554_SEG_7",
+    "F_vf_5240413252068673064",
+    "A_011",
+    "A_410",
+    "A_001",
+    "TRJ_2561_SEG_6",
+    "TRJ_2561_SEG_9",
+    "A_077",
+    "TRJ_2566_SEG_0",
+    "TRJ_2566_SEG_2",
+    "A_404",
+    "TRJ_2554_SEG_1",
+    "A_415",
+    "A_068"
+  ],
+  "centerNodeId": "B_vb_-2909736847591390058",
+  "maxLevel": 1,
+  "totalNodes": 26,
+  "totalLinks": 25
+}

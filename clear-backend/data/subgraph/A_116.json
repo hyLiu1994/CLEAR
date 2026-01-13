@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_116",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Odden - Aarhus, EK R 12 Gniben, Odden - Ebeltoft, Aarhus-Kalundborg, EK R 11 Sjællands Odde W., Unnamed lane, EK R 19 MULTEX",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_575_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_575_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3813060913303659004",
+      "type": "behavior",
+      "label": "Behavior 03659004",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_575_SEG_1",
+      "target": "A_116",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3813060913303659004",
+      "target": "A_116",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_575_SEG_1",
+    "A_116",
+    "B_vb_-3813060913303659004"
+  ],
+  "centerNodeId": "A_116",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

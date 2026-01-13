@@ -1,0 +1,15 @@
+{
+  "id": "A_083",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Mou Bro, Grønlandshavnen, Unnamed lane, Sejlklubben Mou Bro",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Mou Bro, Grønlandshavnen, Unnamed lane, Sejlklubben Mou Bro",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Mou Bro, Grønlandshavnen, Unnamed lane, Sejlklubben Mou Bro",
+    "support": 1
+  },
+  "related": []
+}

@@ -1,0 +1,43 @@
+{
+  "id": "TRJ_1362_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_1362_SEG_8",
+  "summary": "Segment 8 of trajectory 1362",
+  "description": [
+    "MMSI: 210336000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 23:35:41",
+    "End time: 2024-03-17 23:43:02"
+  ],
+  "metadata": {
+    "trajectory_id": "1362",
+    "vessel_id": "210336000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-17 23:35:41",
+    "end_time": "2024-03-17 23:43:02"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 9.4–9.5 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG decreases slowly and consistently from 71.1° to 70.1° over time, indicating a smooth, continuous turn or alignment with a curved waterway)",
+      "heading_fluctuation": "stable (heading remains tightly clustered around 70°–71°, with only minor fluctuations of ±1°, suggesting stable rudder control and no erratic maneuvers)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.841655 + 0.000385 × t + 0.000015 × t², lon(t) ≈ 13.226743 + 0.00452 × t - 0.00002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, tanker vessels 'under way using engine' with draughts in the [4, 6) m range are observed to follow curved maritime routes near major Baltic shipping lanes—such as the Klaipėda–Kiel and Travemünde–Helsinki corridors—in approximately 79% of comparable movement gaps. This specific behavior pattern (vb_3081913737957353482) is strongly associated with vessels of length [100, 150) m and width [10, 15) m navigating under no hazardous cargo declaration, with cumulative edge weights indicating high behavioral prevalence. The spatial context further reinforces this selection, as gentle curvature in trajectory aligns with known channel geometries in the region, despite the low direct weight from spatial_context due to broad lane coverage.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~9.5–9.6 knots), gradual and consistent course change (COG shifting from 71.9° to 70.9°), and minimal heading fluctuation (70.0°–71.0°), all indicative of controlled navigation along a gently curving route. The candidate movement vb_3081913737957353482 matches this intent precisely, describing a \"following a curved maritime route\" with stable speed, consistent COG evolution, and a parametrically modeled circular arc trajectory (radius ~2.5 km), closely mirroring the kinematic profile and navigational intent observed at the gap boundaries. Additionally, the duration (250~300) aligns well with the temporal span implied by the incomplete segment.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Baltic Sea shipping corridors; applies to tankers navigating near designated lanes including Klaipėda–Kiel and Travemünde–Helsinki routes\nOperational Protocol Rationale: The vessel's behavior—maintaining a stable speed, gradual course adjustment, and minimal heading deviation—is consistent with navigation along a predefined curved channel within a structured maritime traffic system. This pattern aligns with standard operating procedures for tankers transiting busy Baltic Sea routes, where vessels follow established curvilinear paths to safely converge into or diverge from major shipping lanes. The observed trajectory's curvature matches known channel geometries in the region, such as those approaching port areas or绕ing restricted zones like Schießgebiet Arkona. A straight-line route would be inconsistent with the required turning maneuvers in these zones, ruling out fixed-route navigation despite similar kinematic stability. The absence of hazardous cargo does not alter routing requirements, as traffic separation rules apply uniformly to all commercial vessels in these waters.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a stable speed, gradual course adjustment, and minimal heading deviation—is consistent with navigation along a predefined curved channel within a structured maritime traffic system. This pattern aligns with standard operating procedures for tankers transiting busy Baltic Sea routes, where vessels follow established curvilinear paths to safely converge into or diverge from major shipping lanes. The observed trajectory's curvature matches known channel geometries in the region, such as those approaching port areas or绕ing restricted zones like Schießgebiet Arkona. A straight-line route would be inconsistent with the required turning maneuvers in these zones, ruling out fixed-route navigation despite similar kinematic stability. The absence of hazardous cargo does not alter routing requirements, as traffic separation rules apply uniformly to all commercial vessels in these waters.\n'''"
+  },
+  "related": []
+}

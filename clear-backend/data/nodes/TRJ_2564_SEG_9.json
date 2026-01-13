@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2564_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_2564_SEG_9",
+  "summary": "Segment 9 of trajectory 2564",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-21 11:59:25",
+    "End time: 2024-03-21 12:03:19"
+  ],
+  "metadata": {
+    "trajectory_id": "2564",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-21 11:59:25",
+    "end_time": "2024-03-21 12:03:19"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-northwest, approximated by the parametric equations: lat(t) ≈ 55.113773 + 0.00086 × t, lon(t) ≈ 7.427357 - 0.00018 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with draughts in the [6, 8) m range and dimensions typical of medium-sized freighters (100–150 m length, 20–25 m width) are observed to follow straight-line navigation patterns along fixed maritime routes in 84% of cases when transiting open waters near structured shipping lanes. This behavior is especially prevalent—accounting for over 90% of all movement patterns—in vessels without hazardous cargo operating under steady propulsion, where alignment between COG and heading indicates precise rudder control. The pattern vb_-4927443205807001530 is strongly supported by high-weight edges from key static attributes: navigation_status (w=102), vessel_type (w=73), and hazardous_cargo (w=102), indicating its frequent co-occurrence in similar operational contexts.",
+    "contextual_justification": "The boundary movement patterns on both sides of the gap show stable speed profiles, gradual and consistent course changes, and intent descriptions centered on navigating a fixed route with linear trajectory progression. The left-side segment moves west-northwest and the right-side segment shifts north-northwest, suggesting a smooth directional transition consistent with a predefined corridor. The selected movement vb_-4927443205807001530 describes a straight northeast-bound trajectory with stable dynamics and persistent COG-heading alignment, which plausibly bridges the angular shift between the two boundary segments while maintaining continuity in speed and course evolution. Its duration range (200~250) matches the adjacent segments, further supporting temporal coherence.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 98.04%, calculated as 100 / (100 + 2) = 0.9804. This proportion reflects the relative confidence in this function over the alternative based on historical performance weights associated with the same behavioral context—specifically, stable speed, consistent course, and linear trajectory intent. In prior applications under similar kinematic conditions, this function has been selected 100 times compared to only 2 for the other, indicating a strong empirical preference.\n\n2. This function exhibits characteristics highly aligned with the current vessel motion context: it assumes constant-velocity linear interpolation between start and end points, which matches the observed stable speed profile, minimal heading fluctuation, and gradual, consistent course change. The vessel’s intent—navigating along a fixed route with a near-linear northeastward progression—is accurately modeled by straight-line spatial imputation proportional to time. The parametric trajectory approximation (lat(t), lon(t)) further validates the use of uniform temporal scaling, which this function implements through normalized time intervals (t / max(Time_interval)), ensuring smooth and temporally consistent position estimates."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) - Applicable in structured shipping lanes such as Atlantic Crossing 1 (AC1) Seg.A and adjacent controlled zones; vessels are expected to follow designated routes to avoid collisions.\nOperational Protocol Rationale: Cargo vessels operating without hazardous cargo and under steady propulsion typically maintain straight, predictable paths along predefined maritime corridors, especially in regulated waters with established traffic patterns. The observed stable speed, consistent course over ground, and tight alignment between heading and motion direction indicate autopilot-assisted navigation on a fixed route—consistent with standard seafaring practice in open waters near busy shipping lanes. This behavior minimizes navigational risk and ensures compliance with international collision avoidance guidelines. Alternative behaviors involving sharp turns or variable speeds are unlikely given the vessel’s operational state and absence of maneuvering indicators.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating without hazardous cargo and under steady propulsion typically maintain straight, predictable paths along predefined maritime corridors, especially in regulated waters with established traffic patterns. The observed stable speed, consistent course over ground, and tight alignment between heading and motion direction indicate autopilot-assisted navigation on a fixed route—consistent with standard seafaring practice in open waters near busy shipping lanes. This behavior minimizes navigational risk and ensures compliance with international collision avoidance guidelines. Alternative behaviors involving sharp turns or variable speeds are unlikely given the vessel’s operational state and absence of maneuvering indicators.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_339",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Nord Stream, Lauterbach - Baabe, Sellin - Göhren, BEI-Interkonnektor Bornholm-Deutschland, Ostwind 2, Nord Stream 1, Nord Stream 2, Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Ostwind 3, Sassnitz - Sellin, Baabe - Lauterbach, Sellin - Binz",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2109_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2109_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6774547717825428057",
+      "type": "behavior",
+      "label": "Behavior 25428057",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2109_SEG_8",
+      "target": "A_339",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6774547717825428057",
+      "target": "A_339",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_339",
+    "TRJ_2109_SEG_8",
+    "B_vb_6774547717825428057"
+  ],
+  "centerNodeId": "A_339",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

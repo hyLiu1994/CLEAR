@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_146",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Slæbested, Langelandsbælt, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_681_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_681_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5778476742998890982",
+      "type": "behavior",
+      "label": "Behavior 98890982",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_681_SEG_1",
+      "target": "A_146",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5778476742998890982",
+      "target": "A_146",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-5778476742998890982",
+    "A_146",
+    "TRJ_681_SEG_1"
+  ],
+  "centerNodeId": "A_146",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

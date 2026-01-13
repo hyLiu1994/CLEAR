@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2495_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_2495_SEG_6",
+  "summary": "Segment 6 of trajectory 2495",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-12 02:55:15",
+    "End time: 2024-03-12 03:00:25"
+  ],
+  "metadata": {
+    "trajectory_id": "2495",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-12 02:55:15",
+    "end_time": "2024-03-12 03:00:25"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 57.7471 + 0.0008 × t, lon(t) ≈ 11.1094 - 0.0021 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating in major shipping lanes such as the København–Oslo corridor exhibit straight-route navigation behavior in approximately 62% of observed segments when draught is between 8–10 m and vessel dimensions fall within 100–150 m length and 20–25 m width. This pattern is strongly associated with vessels maintaining stable speed and heading alignment, particularly along linear northeast-bound trajectories in open coastal waters. The high edge weights from navigation status (w=102), vessel type (w=73), and cargo type (w=102) indicate that this movement is one of the most frequently co-occurring patterns for standard cargo traffic in this region.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating along a fixed, linear route with stable speed, gradual and consistent course change, and minimal heading fluctuation—precisely matching the attributes of vb_-4927443205807001530, which also reflects a straight-line trajectory moving northeast. The parametric progression (lat(t), lon(t)) aligns directionally with the west-southwest motion in the boundary segment, suggesting continuity in maritime routing logic. Given the gap occurs within a structured shipping corridor and the adjacent segments show no indication of maneuvering or curvature, the most plausible interpolation is a stable, linear transit consistent with predefined route following.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 98.04%, calculated as 100 / (100 + 2) = 100 / 102 ≈ 0.9804 or 98.04%. This proportion reflects the relative confidence in this function over the alternative based on historical performance weights associated with each function for similar kinematic patterns.  \n2. This function exhibits strong alignment with the current context, characterized by stable speed, consistent course over ground (COG), and minimal heading fluctuations. It assumes constant-velocity linear motion between known start and end points, which matches the observed trajectory's parametric linearity (lat(t) ≈ 56.114153 + 0.00087 × t, lon(t) ≈ 7.607993 + 0.00034 × t). Its model structure directly supports interpolation under conditions of navigational stability, making it highly suitable for vessels on fixed routes with predictable spatiotemporal progression."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Øresund Strait region; spatial anchor near København–Oslo shipping corridor\nOperational Protocol Rationale: The vessel is operating under standard maritime routing practices typical for cargo traffic in busy, regulated waterways. Given its status as a non-hazardous cargo vessel under way using engine, with dimensions and draught consistent with common freighters, it is expected to follow established linear routes to maintain navigational safety and traffic efficiency. The observed stable speed, minimal heading variation, and consistent course over ground indicate autopilot-assisted transit along a fixed path—characteristic of vessels navigating within designated shipping lanes. This behavior aligns with collision avoidance protocols and route adherence requirements in high-traffic areas, where deviations or maneuvers are avoided unless necessary. Alternative behaviors such as curvilinear navigation or variable speed patterns are less likely here, as they typically occur near port approaches, coastal bends, or restricted zones—not applicable given the open coastal segment and lack of maneuvering cues.\n'''",
+    "operational_protocol_rationale": "The vessel is operating under standard maritime routing practices typical for cargo traffic in busy, regulated waterways. Given its status as a non-hazardous cargo vessel under way using engine, with dimensions and draught consistent with common freighters, it is expected to follow established linear routes to maintain navigational safety and traffic efficiency. The observed stable speed, minimal heading variation, and consistent course over ground indicate autopilot-assisted transit along a fixed path—characteristic of vessels navigating within designated shipping lanes. This behavior aligns with collision avoidance protocols and route adherence requirements in high-traffic areas, where deviations or maneuvers are avoided unless necessary. Alternative behaviors such as curvilinear navigation or variable speed patterns are less likely here, as they typically occur near port approaches, coastal bends, or restricted zones—not applicable given the open coastal segment and lack of maneuvering cues.\n'''"
+  },
+  "related": []
+}

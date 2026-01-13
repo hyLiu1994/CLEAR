@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_114",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Kristiansand - Hirtshals, Hirtshals - Kristiansand, Hirtshals - Stavanger",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_513_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_513_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1169256888569489405",
+      "type": "behavior",
+      "label": "Behavior 69489405",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_513_SEG_4",
+      "target": "A_114",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1169256888569489405",
+      "target": "A_114",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_114",
+    "TRJ_513_SEG_4",
+    "B_vb_-1169256888569489405"
+  ],
+  "centerNodeId": "A_114",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_898_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_898_SEG_6",
+  "summary": "Segment 6 of trajectory 898",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-20 22:12:11",
+    "End time: 2024-03-20 22:18:02"
+  ],
+  "metadata": {
+    "trajectory_id": "898",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-20 22:12:11",
+    "end_time": "2024-03-20 22:18:02"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.687473 + 0.000132 × t, lon(t) ≈ 15.52295 + 0.00185 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating within unnamed traffic separation schemes exhibit the \"navigating along a fixed route\" pattern in approximately 72% of comparable scenarios, based on aggregated edge weights from vessels with similar static attributes (length: [150, 200) m, width: [20, 25) m, draught: [6, 8) m). This pattern is strongly associated with vessels following straight, predefined maritime routes in structured waterways, where stable speed and minimal course deviation are standard operational behaviors. Among all candidate patterns, this movement has the highest combined support from vessel-type-specific and navigation-status-specific co-occurrence frequencies, reinforcing its plausibility for a cargo vessel transiting a regulated shipping lane.",
+    "contextual_justification": "The boundary movement pattern explicitly describes a linear eastward trajectory with slight northerly drift under stable speed and heading conditions, consistent with a fixed-route navigation intent. The parametric equations from the boundary segment (lat(t) ≈ 54.68519 + 0.000175×t, lon(t) ≈ 15.493023 + 0.001685×t) project a continuation into the gap region that aligns spatially and temporally with the modeled trajectory of vb_-4927443205807001530 (lat(t) ≈ 56.114153 + 0.00087×t, lon(t) ≈ 7.607993 + 0.00034×t), adjusted for geographic context. Both segments share identical behavioral markers—stable speed, gradual and consistent course change, and negligible heading fluctuation—indicating seamless continuity across the gap. Thus, vb_-4927443205807001530 best preserves the kinematic and navigational consistency observed at the boundaries.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 can solve the missing value problem corresponding to the behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the behavior pattern vb_-4927443205807001530. Specifically, the total weight sum is 100 + 2 = 102. The proportion of support for vf_-7663396197665720575 is therefore 100 / 102 ≈ 0.9804, or 98.04%. This high proportion indicates strong empirical or historical alignment between this function and the observed kinematic pattern.  \n2. vf_-7663396197665720575 implements time-proportional linear interpolation using max(Time_interval) as the normalizing factor, ensuring precise scaling of position increments across unevenly spaced or variable-length time intervals. This characteristic aligns closely with the context where the vessel exhibits stable speed and consistent motion over time. In contrast, vf_5240413252068673064 uses Time_interval[-1] (i.e., the last element), which assumes regular sampling and may introduce inaccuracies if the time steps are irregular. Given that real-world AIS data often contains non-uniform timestamps due to transmission delays or signal loss, the use of max(Time_interval) provides greater robustness and temporal fidelity."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) - Applicable to cargo vessels navigating in designated shipping lanes - Spatial Anchor: Unnamed traffic separation scheme\nOperational Protocol Rationale: Cargo vessels operating in traffic separation schemes are expected to follow straight, predefined routes with minimal deviations to ensure safe and efficient flow of maritime traffic. The observed behavior—stable speed, consistent course over ground, and tight alignment between heading and motion direction—reflects standard autopilot-driven navigation along a fixed corridor. This pattern is typical in regulated waterways where vessels must maintain predictable trajectories to avoid conflicts. Alternative behaviors such as sharp turns or variable speeds are unlikely in this context, as they would violate TSS compliance norms and increase collision risk. The linear progression of the vessel’s position further supports adherence to a structured route rather than free-form coastal maneuvering.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating in traffic separation schemes are expected to follow straight, predefined routes with minimal deviations to ensure safe and efficient flow of maritime traffic. The observed behavior—stable speed, consistent course over ground, and tight alignment between heading and motion direction—reflects standard autopilot-driven navigation along a fixed corridor. This pattern is typical in regulated waterways where vessels must maintain predictable trajectories to avoid conflicts. Alternative behaviors such as sharp turns or variable speeds are unlikely in this context, as they would violate TSS compliance norms and increase collision risk. The linear progression of the vessel’s position further supports adherence to a structured route rather than free-form coastal maneuvering.\n'''"
+  },
+  "related": []
+}

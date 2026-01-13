@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-4679060532804755653",
+  "type": "function",
+  "label": "Function 04755653",
+  "summary": "This function performs linear interpolation between the known start and end positions, using normali...",
+  "description": [
+    "Function description: This function performs linear interpolation between the known start and end positions, using normalized time intervals to distribute intermediate points proportionally along the trajectory segment. It assumes constant velocity motion over short gaps, which is consistent with the observed stable speed profiles in the vessel's behavior. The time-normalized approach ensures numerical stability even for large or unevenly spaced time intervals, and the output matches the required shape (N+2, 2), including both endpoints. Despite the presence of curvature in longer segments, over small angular distances (<0.5°), the great-circle path is well approximated by linear interpolation in geographic coordinates, minimizing position error within tolerance.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if t[-1] != t[0] else np.zeros_like(t); lat_start, lon_start = start; lat_end, lon_end = end; return [(lat_start + dt * (lat_end - lat_start), lon_start + dt * (lon_end - lon_start)) for dt in t_norm]"
+  ],
+  "metadata": {
+    "original_id": "vf_-4679060532804755653",
+    "code": "def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if t[-1] != t[0] else np.zeros_like(t); lat_start, lon_start = start; lat_end, lon_end = end; return [(lat_start + dt * (lat_end - lat_start), lon_start + dt * (lon_end - lon_start)) for dt in t_norm]"
+  },
+  "related": []
+}

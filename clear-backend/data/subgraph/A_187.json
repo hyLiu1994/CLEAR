@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_187",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Klaipėda (LT) – Kiel (D), Femern Fixed Link Holding Area North, Rødsand II Havmøllepark, Marienleuchte, Unnamed lane, Sperrgebiet Marienleuchte",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_937_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_937_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5727262996856560043",
+      "type": "behavior",
+      "label": "Behavior 56560043",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_937_SEG_6",
+      "target": "A_187",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5727262996856560043",
+      "target": "A_187",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-5727262996856560043",
+    "A_187",
+    "TRJ_937_SEG_6"
+  ],
+  "centerNodeId": "A_187",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

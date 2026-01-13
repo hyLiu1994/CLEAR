@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_071",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Hirtshals - Larvik, Denmark-Northway 5, Skagen Fiber West, Unnamed lane, Hirtshals - Langesund",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_345_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_345_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_345_SEG_9",
+      "target": "A_071",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_071",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_345_SEG_9",
+    "A_071",
+    "B_vb_-4857314466243141680"
+  ],
+  "centerNodeId": "A_071",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

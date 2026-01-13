@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_1427_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_1427_SEG_1",
+  "summary": "Segment 1 of trajectory 1427",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-03 04:31:41",
+    "End time: 2024-03-03 04:35:28"
+  ],
+  "metadata": {
+    "trajectory_id": "1427",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-03 04:31:41",
+    "end_time": "2024-03-03 04:35:28"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Ystad - Rønne, Travemünde (D) – Liepāja (LV), Baltic Pipe, Baltica, Køge - Rønne, Bornholmsgat, C-Lion 1, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of 16.6–16.7 knots across all observations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 38.7° and 39.2°, showing a smooth, almost linear progression in direction over time)",
+      "heading_fluctuation": "stable (heading remains fixed at 38.0° throughout the sequence, indicating no active yawing or steering adjustments)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.1823 + 0.0007 × t, lon(t) ≈ 14.3888 + 0.0009 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 16.3 and 16.6 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly from 38.6° to 39.0° over time, showing a smooth, continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading remains fixed at 38.0° throughout the observation, suggesting autopilot or stabilized course control despite minor COG drift)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 55.1680 + 0.0075 × t + 0.0001 × t², lon(t) ≈ 14.3688 + 0.0102 × t + 0.00015 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed around 16.7 knots, with only minor decreases toward 16.4, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 38.5° and 39.2°, showing a smooth, sustained direction with minimal oscillation, typical of open-water transit along a planned route)",
+      "heading_fluctuation": "stable (heading remains fixed at 38.0° across all observations, indicating the autopilot or steering system is holding course without corrective yawing)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving east-northeast, approximated by the parametric equations: lat(t) ≈ 55.1966 + 0.000108 × t, lon(t) ≈ 14.4090 + 0.00152 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

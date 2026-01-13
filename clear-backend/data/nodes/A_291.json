@@ -1,0 +1,15 @@
+{
+  "id": "A_291",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Kriegers Flak B, Kriegers Flak A, HVDC Baltic Cable, Baltic Pipe, Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, Unnamed lane, Travemünde (D) – Trelleborg (SE)",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Kriegers Flak B, Kriegers Flak A, HVDC Baltic Cable, Baltic Pipe, Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, Unnamed lane, Travemünde (D) – Trelleborg (SE)",
+  "description": [
+    "This attribute is associated with 3 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Kriegers Flak B, Kriegers Flak A, HVDC Baltic Cable, Baltic Pipe, Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, Unnamed lane, Travemünde (D) – Trelleborg (SE)",
+    "support": 3
+  },
+  "related": []
+}

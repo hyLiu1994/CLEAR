@@ -30,7 +30,6 @@ clear-backend/app/api/v1/__pycache__
 clear-backend/app/api/__pycache__
 clear-backend/app/core/__pycache__
 data_s/
-data/
 output/
 segments.json
 data/segments.json

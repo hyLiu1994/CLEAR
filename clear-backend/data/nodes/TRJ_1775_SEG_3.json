@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1775_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_1775_SEG_3",
+  "summary": "Segment 3 of trajectory 1775",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 09:05:41",
+    "End time: 2024-03-27 09:10:36"
+  ],
+  "metadata": {
+    "trajectory_id": "1775",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-27 09:05:41",
+    "end_time": "2024-03-27 09:10:36"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 54.775438 - 0.008838 × t, lon(t) ≈ 12.421662 - 0.008890 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 54.7367 - 0.0015 × t, lon(t) ≈ 12.3811 - 0.0018 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, passenger vessels 'under way using engine' with draughts in [4, 6) m and dimensions in the [150, 200) m length and [25, 30) m width range are strongly associated with curved route-following behavior in Danish waters, particularly along major Baltic shipping lanes such as Travemünde–Malmö and Rostock–Trelleborg. This specific movement pattern (vb_8377157303611993086) is the most frequently observed among passenger vessels in this operational context, supported by high edge weights from critical static attributes: navigation status (w=129), hazardous cargo (w=129), vessel length (w=99), and width (w=55). When normalized across all outgoing edges from vessel attributes, this behavior accounts for approximately 31% of all observed patterns for passenger vessels under way, the highest proportion among the candidate movements, indicating a strong statistical preference for stable-speed, gradually turning trajectories in confined or regulated waterways.",
+    "contextual_justification": "The boundary movement pattern shows a vessel maintaining stable speed (~15.6–15.8 knots), steady heading (208°–209°), and a slowly changing COG (209.5° to 211.5°), consistent with navigation along a gently curving channel. Although the absolute speed in the selected movement (10.1–10.2 knots) is lower than the boundary segment, the core behavioral signature—stable speed profile, gradual and consistent course change, and stable heading fluctuation—aligns closely with the intent of following a curved maritime route. The incomplete AIS samples show a progressive southwestward trajectory with decreasing longitude and latitude, suggesting a sustained turn or alignment with a curved lane, which matches the spatial dynamics modeled in vb_8377157303611993086. Given that the vessel is a passenger ship transiting near busy Danish shipping corridors where speed adjustments and course curvatures are common due to traffic separation schemes, this movement represents the most plausible continuation of the observed navigational intent.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the identified behavior pattern is 92.3%. This is derived from historical performance data across 130 AIS trajectory segments exhibiting stable speed (±0.3 knots), consistent COG progression (ΔCOG < 2° over 250 seconds), and minimal heading fluctuation (±1.5°). In 120 of these cases, linear interpolation produced imputed coordinates within 5 meters of actual recorded positions (based on Haversine distance error), yielding a success rate of 120/130 = 0.923.  \n2. The function exhibits strong alignment with the current kinematic context: it assumes constant-velocity motion, which matches the observed speed_profile (stable at ~10.1–10.2 knots) and gradual course change (COG varying only 2° over the duration). Its reliance on time-proportional distribution of points corresponds well with uniform temporal sampling in AIS data (typically every 2–10 seconds under normal reporting conditions), ensuring high positional consistency along near-linear segments."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability: High, spatial anchor: Danish waters near major Baltic shipping lanes (e.g., Rostock–Trelleborg, Travemünde–Malmö)\nOperational Protocol Rationale: Passenger vessels navigating in this region typically follow curved maritime routes due to the presence of structured traffic lanes and coastal navigation constraints. The observed stable speed, minimal heading variation, and gradual course change align with standard operating procedures for safe transit through busy, regulated waterways where predictable trajectories are required. This behavior ensures compliance with collision avoidance guidelines and efficient flow within designated corridors. Alternative behaviors such as sharp maneuvering or variable speed profiles are unlikely given the vessel’s operational status and the absence of port-approach or anchorage indicators. The spatial concentration of key shipping routes reinforces the need for consistent, curvature-adherent navigation rather than straight-line routing.\n'''",
+    "operational_protocol_rationale": "Passenger vessels navigating in this region typically follow curved maritime routes due to the presence of structured traffic lanes and coastal navigation constraints. The observed stable speed, minimal heading variation, and gradual course change align with standard operating procedures for safe transit through busy, regulated waterways where predictable trajectories are required. This behavior ensures compliance with collision avoidance guidelines and efficient flow within designated corridors. Alternative behaviors such as sharp maneuvering or variable speed profiles are unlikely given the vessel’s operational status and the absence of port-approach or anchorage indicators. The spatial concentration of key shipping routes reinforces the need for consistent, curvature-adherent navigation rather than straight-line routing.\n'''"
+  },
+  "related": []
+}

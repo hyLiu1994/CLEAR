@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-2730999286239322083",
+  "type": "function",
+  "label": "Function 39322083",
+  "summary": "This function performs linear interpolation between the known start and end positions to estimate mi...",
+  "description": [
+    "Function description: This function performs linear interpolation between the known start and end positions to estimate missing latitude and longitude points along the vessel's trajectory. Given the observed stable speed profile, gradual course change, and minimal heading fluctuation, a linear progression in geographic coordinates provides a reasonable approximation over short gaps. The function distributes intermediate positions uniformly based on normalized time intervals, scaling the latitude and longitude deltas proportionally to elapsed time relative to the total duration. While the vessel follows a slightly curved path overall, linear interpolation ensures computational efficiency and accuracy for small missing segments where the curvature effect is negligible.",
+    "Code implementation: def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / max(Time_interval)), start[1] + (end[1] - start[1]) * (t / max(Time_interval))) for t in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_-2730999286239322083",
+    "code": "def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / max(Time_interval)), start[1] + (end[1] - start[1]) * (t / max(Time_interval))) for t in Time_interval]"
+  },
+  "related": []
+}

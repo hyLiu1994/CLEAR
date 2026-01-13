@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2109_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_2109_SEG_0",
+  "summary": "Segment 0 of trajectory 2109",
+  "description": [
+    "MMSI: 215903000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-09 12:57:27",
+    "End time: 2024-03-09 14:54:27"
+  ],
+  "metadata": {
+    "trajectory_id": "2109",
+    "vessel_id": "215903000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-09 12:57:27",
+    "end_time": "2024-03-09 14:54:27"
+  },
+  "static_attributes": [
+    "Navigation Status: At anchor",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Die Seenotretter DGzRS, Binz - Sassnitz, Sassnitz - Rønne, Lauterbach - Baabe, Sassnitz - Kreideküste, Sellin - Göhren, Aurora, Unnamed lane, Sassnitz - Binz, Sassnitz - Sellin, Baabe - Lauterbach, Sellin - Binz",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a low and consistent speed between 0.1 and 0.6 knots, indicating minimal propulsion changes)",
+      "course_change": "fluctuating (COG varies significantly from 1.4° to 348.2°, including sharp shifts near 90° and 209.2°, indicating frequent small adjustments in direction)",
+      "heading_fluctuation": "stable (despite COG changes, heading remains within a narrow range of 52.0° to 91.0°, suggesting the vessel’s bow orientation is relatively steady)",
+      "intent": "following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: lat(t) ≈ 54.4227 + 0.0001 × sin(2πt), lon(t) ≈ 13.6763 + 0.00008 × cos(2πt), where t ∈ [0,1] represents normalized time over the loop; this reflects the vessel turning in place or adjusting position within a confined harbor area, likely during docking preparation or anchoring (the persistent low speed, combined with oscillating COG and stable heading, suggests the vessel is maneuvering in a tight space, possibly awaiting berth assignment or maintaining station despite current/wind effects)",
+      "duration": "7000~7050"
+    },
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a low and nearly constant speed, with SOG values between 0.0 and 0.7 knots, indicating minimal propulsion)",
+      "course_change": "fluctuating (COG varies significantly between 14.4° and 356.5°, including abrupt shifts, suggesting inconsistent directional movement)",
+      "heading_fluctuation": "stable (despite COG changes, heading remains within a narrow range of 48.0° to 87.0°, indicating the vessel’s bow orientation is relatively fixed while drift or current affects actual movement)",
+      "intent": "anchored or moored in a confined area (the combination of near-zero speed, large COG fluctuations relative to stable heading, and repeated position readings at identical coordinates indicates the vessel is not under way but drifting slightly at anchor or moored; position oscillates within a small radius ~20 meters around latitude: 54.4220–54.4228, longitude: 13.6762–13.6767, forming an irregular elliptical cluster, approximated by a bounded parametric equation: lat(t) ≈ 54.4224 + 0.0002 × sin(2πt), lon(t) ≈ 13.6764 + 0.00015 × cos(2πt), where t ∈ [0,1] represents normalized time over the observation window)",
+      "duration": "391100~391150"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "A_156",
+  "type": "attribute",
+  "label": "spatial_context: location: Büdelsdorf, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24782, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Büdelsdorfer Yachtclub, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Unnamed lane",
+  "summary": "spatial_context attribute: location: Büdelsdorf, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24782, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Büdelsdorfer Yachtclub, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Unnamed lane",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Büdelsdorf, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24782, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Büdelsdorfer Yachtclub, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Unnamed lane",
+    "support": 2
+  },
+  "related": []
+}

@@ -1,0 +1,188 @@
+{
+  "nodes": [
+    {
+      "id": "A_049",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Aurora, Travemünde (D) – Helsinki (FIN), Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_167_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_167_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1488_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_1488_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1488_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_1488_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1488_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_1488_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1488_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_1488_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1488_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_1488_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6715482940052673078",
+      "type": "behavior",
+      "label": "Behavior 52673078",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6475968947126913119",
+      "type": "behavior",
+      "label": "Behavior 26913119",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4679738668569014458",
+      "type": "behavior",
+      "label": "Behavior 69014458",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7691133592386755059",
+      "type": "behavior",
+      "label": "Behavior 86755059",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-7206524669081143511",
+      "type": "behavior",
+      "label": "Behavior 81143511",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_167_SEG_8",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1488_SEG_7",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1488_SEG_8",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1488_SEG_6",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1488_SEG_5",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1488_SEG_9",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6715482940052673078",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6475968947126913119",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4679738668569014458",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7691133592386755059",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-7206524669081143511",
+      "target": "A_049",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1488_SEG_9",
+    "TRJ_1488_SEG_6",
+    "B_vb_-7206524669081143511",
+    "TRJ_1488_SEG_7",
+    "B_vb_7691133592386755059",
+    "TRJ_167_SEG_8",
+    "TRJ_1488_SEG_5",
+    "A_049",
+    "TRJ_1488_SEG_8",
+    "B_vb_-24485554849544898",
+    "B_vb_6475968947126913119",
+    "B_vb_-4679738668569014458",
+    "B_vb_-6715482940052673078"
+  ],
+  "centerNodeId": "A_049",
+  "maxLevel": 1,
+  "totalNodes": 13,
+  "totalLinks": 12
+}

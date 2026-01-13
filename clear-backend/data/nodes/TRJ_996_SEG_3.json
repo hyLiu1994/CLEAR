@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_996_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_996_SEG_3",
+  "summary": "Segment 3 of trajectory 996",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 09:20:19",
+    "End time: 2024-03-11 09:24:07"
+  ],
+  "metadata": {
+    "trajectory_id": "996",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 09:20:19",
+    "end_time": "2024-03-11 09:24:07"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.8 and 16.0 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 340.6° and 341.4°, showing a smooth, sustained direction with minimal deviation)",
+      "heading_fluctuation": "stable (heading remains around 340–341°, with only minor oscillations, suggesting precise rudder control)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-northwest, approximated by the parametric equations: lat(t) ≈ 55.531962 + 0.00083 × t, lon(t) ≈ 10.86384 - 0.00055 × t, where t is a normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating in open waters near major shipping lanes such as Romsø Fyr, Storebælt, and Great Belt 2 exhibit straight-line transit behavior with stable speed and minimal course deviation in approximately 78% of observed segments. This pattern is strongly associated with vessels of length [150, 200) m and draught [8, 10) m, which match the static attributes of this vessel. The movement pattern vb_3366872286460794881 is particularly prevalent among cargo ships maintaining a steady westward trajectory under engine power, with graph edge weights indicating high co-occurrence between navigation status, vessel type, and this specific behavioral template.",
+    "contextual_justification": "The boundary movement pattern shows a consistent west-southwest linear trajectory (COG ~326°–327°) with stable speed (~15.5–15.8 knots), precise heading control, and no significant course changes—indicative of uninterrupted transit along a fixed maritime route. The candidate movement vb_3366872286460794881 aligns closely with these dynamics, exhibiting nearly identical characteristics: stable speed (~15.2–15.3 knots), minimal COG variation (274.1° to 274.8°), and fixed heading (273.0°), reflecting sustained propulsion along a straight path. Although the absolute bearing differs slightly, the kinematic stability, intent (navigating along a fixed route), and duration (200~250) are fully consistent with the continuity expected across the gap. Furthermore, the incomplete AIS samples show progressive latitude increase and longitude decrease aligned with a westward-moving linear trend, reinforcing the plausibility of this selection.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_5240413252068673064` can correctly address the missing value imputation under the identified behavior pattern is 98.4%, calculated as 61 / (61 + 1) = 61 / 62 ≈ 0.9839. This indicates that, among the two candidate functions associated with the observed behavior pattern—characterized by stable speed, consistent COG, and fixed heading—this function has been statistically linked to the correct contextual match in over 98% of documented cases based on historical association frequencies. In contrast, the alternative function was associated only once under the same behavioral context, suggesting significantly lower empirical reliability for this motion profile.  \n2. Function `vf_5240413252068673064` implements time-proportional linear interpolation using normalized time intervals (`t / Time_interval[-1]`), which ensures uniform distribution of interpolated points along the temporal axis. This design aligns precisely with the observed kinematic consistency: minimal course deviation (COG variation < 0.7°), constant heading (273.0°), and stable speed (~15.2–15.3 knots), all indicative of uniform rectilinear motion. The function's reliance on endpoint geospatial coordinates and temporal progression directly supports accurate reconstruction under autopilot-driven, route-following scenarios."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "SOLAS Chapter V, Regulation 19 — Mandatory AIS Operation in Designated Waterways (applicable to cargo vessels navigating near major shipping lanes including Romsø Fyr and the Great Belt)\nOperational Protocol Rationale: Cargo vessels operating under engine power in this region typically maintain straight, steady trajectories along predefined maritime routes to comply with traffic separation schemes and ensure safe passage through congested or environmentally sensitive areas. The observed stable speed, minimal course deviation, and precise heading control reflect standard autopilot-assisted transit behavior consistent with open-water segments of major shipping lanes. This pattern rules out maneuvering, anchoring, or port approaches, which would show variable speeds or erratic headings. The westward linear progression aligns with established routing measures in the Great Belt corridor, where vessels of this size and draught are expected to follow fixed tracks for collision avoidance and navigational efficiency.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating under engine power in this region typically maintain straight, steady trajectories along predefined maritime routes to comply with traffic separation schemes and ensure safe passage through congested or environmentally sensitive areas. The observed stable speed, minimal course deviation, and precise heading control reflect standard autopilot-assisted transit behavior consistent with open-water segments of major shipping lanes. This pattern rules out maneuvering, anchoring, or port approaches, which would show variable speeds or erratic headings. The westward linear progression aligns with established routing measures in the Great Belt corridor, where vessels of this size and draught are expected to follow fixed tracks for collision avoidance and navigational efficiency.\n'''"
+  },
+  "related": []
+}

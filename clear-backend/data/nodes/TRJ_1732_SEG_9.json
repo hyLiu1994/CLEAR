@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1732_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1732_SEG_9",
+  "summary": "Segment 9 of trajectory 1732",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-24 17:40:05",
+    "End time: 2024-03-24 17:45:00"
+  ],
+  "metadata": {
+    "trajectory_id": "1732",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-24 17:40:05",
+    "end_time": "2024-03-24 17:45:00"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Passenger",
+    "Spatial Context: nearby_shipping_lanes: Travemünde (D) – Malmö (SE), Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, C-Lion 1, Travemünde (D) – Trelleborg (SE)",
+    "Draught: [4, 6) m",
+    "Length: [150, 200) m",
+    "Width: [25, 30) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 54.841013 - 0.000112 × t, lon(t) ≈ 12.499473 - 0.001268 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.8 and 16.0 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 211.7° and 212.7°, indicating a smooth, sustained turn or alignment with a curved channel)",
+      "heading_fluctuation": "stable (heading remains fixed at either 211.0° or 212.0°, showing minimal oscillation and controlled steering)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 54.8585 - 0.0074 × t, lon(t) ≈ 12.5186 - 0.0149 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

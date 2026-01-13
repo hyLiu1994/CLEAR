@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "A_072",
+      "type": "attribute",
+      "label": "spatial_context: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: København (DK) – Oslo (N), Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_351_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_351_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_351_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_351_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_516_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_516_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_516_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_516_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-603126515245468748",
+      "type": "behavior",
+      "label": "Behavior 45468748",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3813060913303659004",
+      "type": "behavior",
+      "label": "Behavior 03659004",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_351_SEG_4",
+      "target": "A_072",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_351_SEG_5",
+      "target": "A_072",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_516_SEG_2",
+      "target": "A_072",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_516_SEG_1",
+      "target": "A_072",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-603126515245468748",
+      "target": "A_072",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3813060913303659004",
+      "target": "A_072",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_072",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-603126515245468748",
+    "B_vb_3366872286460794881",
+    "TRJ_351_SEG_5",
+    "TRJ_351_SEG_4",
+    "TRJ_516_SEG_1",
+    "TRJ_516_SEG_2",
+    "B_vb_-3813060913303659004",
+    "A_072"
+  ],
+  "centerNodeId": "A_072",
+  "maxLevel": 1,
+  "totalNodes": 8,
+  "totalLinks": 7
+}

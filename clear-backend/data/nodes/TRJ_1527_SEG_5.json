@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1527_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_1527_SEG_5",
+  "summary": "Segment 5 of trajectory 1527",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-16 18:10:19",
+    "End time: 2024-03-16 18:14:39"
+  ],
+  "metadata": {
+    "trajectory_id": "1527",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-16 18:10:19",
+    "end_time": "2024-03-16 18:14:39"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Sporthafen Düsternbrook, Olympiahafen Schilksee, Nord-Ostsee-Kanal, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Sporthafen Blücherbrücke, Sporthafen Seefischmarkt, Hafenmeister, Panzerkreuzer Admiral Scheer, Yachthafen \"Baltic Bay\", Yachthafen Mönkeberg, Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Yacht-Liegestelle Holtenau, Marine-Ehrenmal Laboe, Kanalfähre Kiel-Holtenau, Sporthafen Seeburg, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fördelinie, Fischschonbezirk Hagener Au, U-995, WC Sporthafen, Museumshafen, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Schwentine, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Sporthafen Reventlou, Schwentinetalfahrt, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sporthafen Dietrichsdorf, Sporthafen Wellingdorf, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Sporthafen Wik",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 2.0 and 3.0 knots, with only gradual reduction over time)",
+      "course_change": "gradual and consistent (COG changes steadily from ~278° to ~283°, indicating a smooth turn to the right over time)",
+      "heading_fluctuation": "stable (heading remains close to 282°–284°, with minor fluctuations of ±2°, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.36479 + 0.00015 × t + 0.00004 × t², lon(t) ≈ 10.151775 - 0.0032 × t + 0.00018 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 0.6 and 2.0 knots, indicating steady movement without acceleration or stopping)",
+      "course_change": "gradual and consistent (COG changes slowly from ~284.7° to ~278.6° over time, showing a smooth, continuous turn to the left, with no abrupt jumps)",
+      "heading_fluctuation": "stable (heading remains fixed at 283.0° for most of the segment, with only one change to 284.0°, indicating minimal rudder input and good directional control)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.365462 + 0.00012 × t + 0.00004 × t², lon(t) ≈ 10.146702 - 0.0018 × t - 0.0001 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "550~600"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

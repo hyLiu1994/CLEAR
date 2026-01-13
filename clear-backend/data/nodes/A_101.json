@@ -1,0 +1,15 @@
+{
+  "id": "A_101",
+  "type": "attribute",
+  "label": "spatial_context: location: Rendsburg, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24768, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Büdelsdorfer Yachtclub, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Unnamed lane, Lotsenstation Rüsterbergen",
+  "summary": "spatial_context attribute: location: Rendsburg, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24768, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Büdelsdorfer Yachtclub, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Unnamed lane, Lotsenstation Rüsterbergen",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Rendsburg, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24768, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Büdelsdorfer Yachtclub, Yachthafen Rendsburg, Borgstedter Yachtclub, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Unnamed lane, Lotsenstation Rüsterbergen",
+    "support": 1
+  },
+  "related": []
+}

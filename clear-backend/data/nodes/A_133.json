@@ -1,0 +1,15 @@
+{
+  "id": "A_133",
+  "type": "attribute",
+  "label": "spatial_context: location: Landskrona kommun, Skåne County, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Øresund, RHSS, TSS In the Sound, Råå - Bäckviken, Unnamed lane, København (DK) - Hven (SE), København (DK) – Oslo (N), Helsingør (DK) - Helsingborg (SE), Landskrona - Bäckviken",
+  "summary": "spatial_context attribute: location: Landskrona kommun, Skåne County, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Øresund, RHSS, TSS In the Sound, Råå - Bäckviken, Unnamed lane, København (DK) - Hven (SE), København (DK) – Oslo (N), Helsingør (DK) - Helsingborg (SE), Landskrona - Bäckviken",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Landskrona kommun, Skåne County, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Øresund, RHSS, TSS In the Sound, Råå - Bäckviken, Unnamed lane, København (DK) - Hven (SE), København (DK) – Oslo (N), Helsingør (DK) - Helsingborg (SE), Landskrona - Bäckviken",
+    "support": 1
+  },
+  "related": []
+}

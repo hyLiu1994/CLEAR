@@ -1,0 +1,15 @@
+{
+  "id": "A_417",
+  "type": "attribute",
+  "label": "width: [25, 30) m",
+  "summary": "width attribute: [25, 30) m",
+  "description": [
+    "This attribute is associated with 44 behavior patterns"
+  ],
+  "metadata": {
+    "category": "width",
+    "attribute_name": "[25, 30) m",
+    "support": 44
+  },
+  "related": []
+}

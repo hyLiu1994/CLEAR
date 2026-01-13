@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_4932960208002659111",
+  "type": "behavior",
+  "label": "Behavior 02659111",
+  "summary": "Vessel behavior pattern: following a curved maritime route (the vessel is likely navigating along a predefined traffic lane or coastal path with gentle curvature)",
+  "description": [
+    "Speed profile: stable (the vessel is maintaining a consistent speed, approximately 10.1–10.2 knots, with minimal variation)",
+    "Course change: stable",
+    "Heading fluctuation: stable (heading remains within a narrow range of 55°–57°, suggesting steady rudder control without abrupt turns)",
+    "Behavior intent: following a curved maritime route (the vessel is likely navigating along a predefined traffic lane or coastal path with gentle curvature)",
+    "Duration: 300~350"
+  ],
+  "metadata": {
+    "original_id": "vb_4932960208002659111",
+    "duration": "300~350",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "stable",
+      "stable",
+      "following a curved maritime route",
+      "300~350"
+    ]
+  },
+  "related": []
+}

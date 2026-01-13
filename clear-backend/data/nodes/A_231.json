@@ -1,0 +1,15 @@
+{
+  "id": "A_231",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Baltic Pipe, Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S), Travemünde (D) – Helsinki (FIN)",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Baltic Pipe, Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S), Travemünde (D) – Helsinki (FIN)",
+  "description": [
+    "This attribute is associated with 4 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Baltic Pipe, Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S), Travemünde (D) – Helsinki (FIN)",
+    "support": 4
+  },
+  "related": []
+}

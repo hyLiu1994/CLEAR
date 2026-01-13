@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "id": "A_347",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TSS South of Gedser, Travemünde (D) – Malmö (SE), Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Unnamed lane, Kadetrinne, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Trelleborg (SE)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2221_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2221_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2221_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2221_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2221_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2221_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5117658009441012102",
+      "type": "behavior",
+      "label": "Behavior 41012102",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4927443205807001530",
+      "type": "behavior",
+      "label": "Behavior 07001530",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2221_SEG_5",
+      "target": "A_347",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2221_SEG_3",
+      "target": "A_347",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2221_SEG_7",
+      "target": "A_347",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5117658009441012102",
+      "target": "A_347",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4927443205807001530",
+      "target": "A_347",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2221_SEG_7",
+    "TRJ_2221_SEG_5",
+    "B_vb_5117658009441012102",
+    "A_347",
+    "TRJ_2221_SEG_3",
+    "B_vb_-4927443205807001530"
+  ],
+  "centerNodeId": "A_347",
+  "maxLevel": 1,
+  "totalNodes": 6,
+  "totalLinks": 5
+}

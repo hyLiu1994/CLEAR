@@ -1,0 +1,188 @@
+{
+  "nodes": [
+    {
+      "id": "A_365",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Langø Havn, Langelandsbælt, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2361_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2361_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2361_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2361_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2361_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2361_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2361_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2361_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2361_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2361_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2361_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2361_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5117658009441012102",
+      "type": "behavior",
+      "label": "Behavior 41012102",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1573339375762116078",
+      "type": "behavior",
+      "label": "Behavior 62116078",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3081913737957353482",
+      "type": "behavior",
+      "label": "Behavior 57353482",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3436945641389082127",
+      "type": "behavior",
+      "label": "Behavior 89082127",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4935381518192321264",
+      "type": "behavior",
+      "label": "Behavior 92321264",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2361_SEG_5",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2361_SEG_7",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2361_SEG_6",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2361_SEG_8",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2361_SEG_3",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2361_SEG_4",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5117658009441012102",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1573339375762116078",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3081913737957353482",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3436945641389082127",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4935381518192321264",
+      "target": "A_365",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2361_SEG_7",
+    "TRJ_2361_SEG_3",
+    "TRJ_2361_SEG_6",
+    "B_vb_-4935381518192321264",
+    "B_vb_5117658009441012102",
+    "B_vb_3436945641389082127",
+    "TRJ_2361_SEG_5",
+    "B_vb_3081913737957353482",
+    "B_vb_-1573339375762116078",
+    "B_vb_-24485554849544898",
+    "A_365",
+    "TRJ_2361_SEG_8",
+    "TRJ_2361_SEG_4"
+  ],
+  "centerNodeId": "A_365",
+  "maxLevel": 1,
+  "totalNodes": 13,
+  "totalLinks": 12
+}

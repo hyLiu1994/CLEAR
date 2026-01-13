@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1412_SEG_2",
+  "type": "segment",
+  "label": "Segment TRJ_1412_SEG_2",
+  "summary": "Segment 2 of trajectory 1412",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-02 17:15:16",
+    "End time: 2024-03-02 17:20:27"
+  ],
+  "metadata": {
+    "trajectory_id": "1412",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-02 17:15:16",
+    "end_time": "2024-03-02 17:20:27"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Sporthafen Düsternbrook, Olympiahafen Schilksee, Nord-Ostsee-Kanal, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Sporthafen Blücherbrücke, Sporthafen Seefischmarkt, Hafenmeister, Panzerkreuzer Admiral Scheer, Yachthafen \"Baltic Bay\", Yachthafen Mönkeberg, Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Yacht-Liegestelle Holtenau, Marine-Ehrenmal Laboe, Kanalfähre Kiel-Holtenau, Sporthafen Seeburg, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fördelinie, Fischschonbezirk Hagener Au, U-995, WC Sporthafen, Museumshafen, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Schwentine, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Sporthafen Reventlou, Schwentinetalfahrt, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sporthafen Dietrichsdorf, Sporthafen Wellingdorf, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Sporthafen Wik",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a speed of 0.0 knots across all observations, indicating no movement)",
+      "course_change": "fluctuating (the COG varies significantly between 1.6° and 354.4°, showing rapid changes in direction despite zero speed)",
+      "heading_fluctuation": "stable (the heading remains constant at 102.0° throughout the sequence, even as COG fluctuates)",
+      "intent": "anchored or moored in a confined area (the vessel shows zero speed but inconsistent COG values, which is typical of a stationary vessel affected by environmental forces like wind or current while maintaining fixed heading; position remains tightly clustered around latitude ≈ 54.36619°, longitude ≈ 10.14087°, forming a near-point trajectory with negligible spatial spread, consistent with anchoring or mooring)",
+      "duration": "300~350"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains zero speed across all observations, indicating no forward motion)",
+      "course_change": "fluctuating (the COG varies significantly between 277° and 356°, reflecting frequent changes in directional orientation despite no movement)",
+      "heading_fluctuation": "stable (the heading remains constant at 101° or 102°, suggesting the vessel’s bow is fixed in direction while its reported COG adjusts due to environmental forces or sensor updates)",
+      "intent": "anchored or moored in a confined area (the persistent zero speed (SOG = 0.0) combined with large fluctuations in COG while heading remains nearly unchanged indicates the vessel is not under way but may be swinging slightly at anchor or moored; position remains tightly clustered around latitude ≈54.3662, longitude ≈10.1409, within a radius of approximately 20 meters, consistent with anchorage behavior in a harbor or waiting area)",
+      "duration": "300~350"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

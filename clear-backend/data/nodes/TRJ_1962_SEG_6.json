@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1962_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_1962_SEG_6",
+  "summary": "Segment 6 of trajectory 1962",
+  "description": [
+    "MMSI: 210731000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-19 09:56:30",
+    "End time: 2024-03-19 10:00:39"
+  ],
+  "metadata": {
+    "trajectory_id": "1962",
+    "vessel_id": "210731000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-19 09:56:30",
+    "end_time": "2024-03-19 10:00:39"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.931453 + 0.00038 × t + 0.00002 × t², lon(t) ≈ 13.696127 + 0.00214 × t + 0.00011 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.94156 + 0.00032 × t + 0.00004 × t², lon(t) ≈ 13.749937 + 0.00185 × t + 0.00012 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and typical dimensions ([100, 150) m length, [20, 25) m width, [8, 10) m draught) are most frequently associated with curved route navigation patterns when operating near shipping lanes. Among the candidate behaviors, vb_3081913737957353482 is strongly supported by vessel-type and operational-status consistency, with a combined edge weight of 89 from navigation_status and hazardous_cargo (accounting for ~24% of total weight across all candidates), and it ranks third in overall graph support. Notably, this pattern reflects vessels maintaining stable speed (~10 knots), gradual course changes, and steady heading—characteristics prevalent in 78% of observed cargo vessel movements along curved maritime corridors under similar static conditions.",
+    "contextual_justification": "The boundary movement pattern explicitly describes a \"curved maritime route\" with stable speed, gradual and consistent course change, and stable heading fluctuation—features fully aligned with vb_3081913737957353482. The parametric trajectory model (lat(t) ≈ 54.949173 + 0.0006 × t + 0.00005 × t², lon(t) ≈ 13.67999 + 0.0028 × t + 0.00012 × t²) closely matches the spatial progression seen in the incomplete AIS samples, which show a smooth northeastward curve from approximately (54.931, 13.696) to (54.946, 13.776). Additionally, the duration range (250~300) overlaps with the expected gap span, and the intent—\"following a curved maritime route\"—is directly consistent with both adjacent segments’ inferred behavior.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is approximately 98.88%, calculated as 1 / (1 + 88/1) ≈ 1 / 89 ≈ 0.0112 for the alternative (linear), meaning the quadratic model has a 1 - 0.0112 = 98.88% relative likelihood based on the proportional support from the behavioral association strength. This reflects strong statistical preference for the nonlinear interpolation method given the observed navigational intent.\n\n2. This function models trajectory using a parametric quadratic form, which aligns with the vessel’s kinematic signature: stable speed, consistent gradual course change, and minimal heading fluctuation. The inclusion of second-order time terms allows it to reproduce curved motion with radius ~2.5 km, matching the inferred circular arc structure in the data. In contrast, linear methods assume zero curvature and cannot replicate the slowly varying COG dynamics described in the behavior pattern."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is navigating a gently curving maritime route, which is typical for cargo vessels operating near established shipping corridors where channel geometry or coastal features require smooth directional adjustments. The observed behavior—maintaining a stable speed, minimal heading variation, and gradual course change—aligns with standard seafaring practices for safe and efficient passage along predefined curved paths. This pattern ensures predictable motion in potentially congested waters and reflects adherence to navigational protocols that prioritize course stability during turns. A straight-line trajectory would be inconsistent with the observed curvature in position data and would fail to capture the vessel’s turning dynamics, while abrupt maneuvers are ruled out by the consistent speed and heading. Therefore, modeling the movement as a smooth curve accurately reflects operational norms for cargo vessels under these conditions.\n'''",
+    "operational_protocol_rationale": "The vessel is navigating a gently curving maritime route, which is typical for cargo vessels operating near established shipping corridors where channel geometry or coastal features require smooth directional adjustments. The observed behavior—maintaining a stable speed, minimal heading variation, and gradual course change—aligns with standard seafaring practices for safe and efficient passage along predefined curved paths. This pattern ensures predictable motion in potentially congested waters and reflects adherence to navigational protocols that prioritize course stability during turns. A straight-line trajectory would be inconsistent with the observed curvature in position data and would fail to capture the vessel’s turning dynamics, while abrupt maneuvers are ruled out by the consistent speed and heading. Therefore, modeling the movement as a smooth curve accurately reflects operational norms for cargo vessels under these conditions.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,622 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_2100548169559808147",
+      "type": "behavior",
+      "label": "Behavior 59808147",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2483_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2483_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2499_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2499_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2495_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2495_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2499_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2499_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2518_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2518_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2508_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2508_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2549_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2549_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2559_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2559_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2564_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2564_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2626_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2626_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-9020316996194250187",
+      "type": "function",
+      "label": "Function 94250187",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_378",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Skagen Fiber West, Hirtshals - Langesund",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_225",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Larvik, Skagen Fiber West, Unnamed lane, Hirtshals - Langesund",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_353",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: København (DK) – Oslo (N), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_382",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Danger Area Nordsee, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_009",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_011",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 504",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_376",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HAVSIL Fiber Cable System, Denmark-Norway 6, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_068",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Pangea North UK/Denmark, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_176",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: NordLink",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_007",
+      "type": "attribute",
+      "label": "vessel_type: Passenger",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_399",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Utklippans naturreservat, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_403",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Utklippans naturreservat, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2483_SEG_3",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2495_SEG_1",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_7",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2518_SEG_0",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2508_SEG_1",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_2",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_0",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_4",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_5",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_6",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2549_SEG_7",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2559_SEG_3",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2564_SEG_5",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_6",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2626_SEG_9",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_4",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_5",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_8",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "F_vf_5240413252068673064",
+      "target": "B_vb_2100548169559808147",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-9020316996194250187",
+      "target": "B_vb_2100548169559808147",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_378",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_225",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_353",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_382",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_009",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_011",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_176",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_007",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_403",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_382",
+    "TRJ_2518_SEG_0",
+    "TRJ_2495_SEG_1",
+    "TRJ_2559_SEG_3",
+    "TRJ_2641_SEG_8",
+    "A_021",
+    "A_009",
+    "A_004",
+    "A_006",
+    "A_406",
+    "F_vf_-9020316996194250187",
+    "A_353",
+    "A_376",
+    "TRJ_2534_SEG_6",
+    "B_vb_2100548169559808147",
+    "TRJ_2534_SEG_5",
+    "TRJ_2564_SEG_5",
+    "A_176",
+    "A_225",
+    "F_vf_5240413252068673064",
+    "A_011",
+    "TRJ_2534_SEG_0",
+    "TRJ_2641_SEG_4",
+    "A_001",
+    "A_410",
+    "TRJ_2626_SEG_9",
+    "A_399",
+    "TRJ_2508_SEG_1",
+    "A_007",
+    "A_405",
+    "TRJ_2499_SEG_2",
+    "TRJ_2534_SEG_4",
+    "TRJ_2534_SEG_2",
+    "TRJ_2566_SEG_6",
+    "A_411",
+    "A_403",
+    "A_378",
+    "TRJ_2483_SEG_3",
+    "TRJ_2499_SEG_7",
+    "A_404",
+    "A_415",
+    "TRJ_2641_SEG_5",
+    "TRJ_2549_SEG_7",
+    "A_068"
+  ],
+  "centerNodeId": "B_vb_2100548169559808147",
+  "maxLevel": 1,
+  "totalNodes": 44,
+  "totalLinks": 43
+}

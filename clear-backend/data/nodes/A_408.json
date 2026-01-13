@@ -1,0 +1,15 @@
+{
+  "id": "A_408",
+  "type": "attribute",
+  "label": "draught: [12, +∞) m",
+  "summary": "draught attribute: [12, +∞) m",
+  "description": [
+    "This attribute is associated with 5 behavior patterns"
+  ],
+  "metadata": {
+    "category": "draught",
+    "attribute_name": "[12, +∞) m",
+    "support": 5
+  },
+  "related": []
+}

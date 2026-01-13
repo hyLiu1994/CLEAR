@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_115",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Leuchtturm Bülk, Kolberger Heide, Olympiahafen Schilksee, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fischschonbezirk Schönberger Au, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, Fischerei- und Yachthafen Möltenort / Heikendorf, U-995, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Yachthafen Marina Wendtorf, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Lotsenstation",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_566_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_566_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4672870121823182234",
+      "type": "behavior",
+      "label": "Behavior 23182234",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_566_SEG_1",
+      "target": "A_115",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4672870121823182234",
+      "target": "A_115",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_566_SEG_1",
+    "B_vb_4672870121823182234",
+    "A_115"
+  ],
+  "centerNodeId": "A_115",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

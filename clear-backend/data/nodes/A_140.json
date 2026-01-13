@@ -1,0 +1,15 @@
+{
+  "id": "A_140",
+  "type": "attribute",
+  "label": "spatial_context: location: Oldenbüttel; nearby_shipping_lanes: Kanalfähre Breiholz",
+  "summary": "spatial_context attribute: location: Oldenbüttel; nearby_shipping_lanes: Kanalfähre Breiholz",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Oldenbüttel; nearby_shipping_lanes: Kanalfähre Breiholz",
+    "support": 2
+  },
+  "related": []
+}

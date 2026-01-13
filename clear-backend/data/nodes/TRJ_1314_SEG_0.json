@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1314_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_1314_SEG_0",
+  "summary": "Segment 0 of trajectory 1314",
+  "description": [
+    "MMSI: 210332000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-04 03:18:03",
+    "End time: 2024-03-04 03:22:54"
+  ],
+  "metadata": {
+    "trajectory_id": "1314",
+    "vessel_id": "210332000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-04 03:18:03",
+    "end_time": "2024-03-04 03:22:54"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 13.3 and 13.7 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG remains stable at 247–248° across all observations, with only minor stepwise adjustments, indicating a smooth, intentional course)",
+      "heading_fluctuation": "stable (heading is consistently 249° throughout the trajectory, showing no oscillation or instability in vessel orientation)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.0338 - 0.0061 × t, lon(t) ≈ 13.9258 - 0.0170 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "650~700"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with draughts in the [8, 10) m range and dimensions typical of medium-sized freighters (150–200 m length, 25–30 m width) navigating open waters near major Baltic shipping lanes exhibit movement patterns consistent with vb_3366872286460794881 in approximately 68% of observed segments when maintaining high-speed, straight trajectories. This pattern is strongly associated with vessels following fixed maritime routes—particularly westward corridors such as those near the Baltic Pipe corridor—where precise heading control and minimal course deviation are operationally critical. Despite a moderate total edge weight sum of 340, this behavior shows the highest specificity among candidates due to its alignment with stable speed (15.2–15.3 knots), fixed heading (273.0°), and negligible COG fluctuation, which collectively reflect disciplined autopilot usage on deep-water transit routes.",
+    "contextual_justification": "The boundary movement pattern indicates a vessel moving west-southwest at a stable speed (~13.5 knots) along a linear trajectory with constant COG (~247–248°) and heading (249°), consistent with navigation along a predefined route. While the exact speed and course differ slightly from vb_3366872286460794881’s westward bearing (~274°), the core behavioral dynamics—stable speed profile, gradual and consistent course, stable heading, and intent to follow a fixed route—are fully aligned. The transition from a southwest to nearly due west heading could reflect a planned course correction after passing a navigational waypoint or adjusting for regional traffic separation schemes. Among all candidate patterns, vb_3366872286460794881 best matches the persistence of directional stability and route-following intent required by the boundary conditions, especially given the absence of erratic maneuvers or speed fluctuations in both the gap and adjacent segments.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_5240413252068673064` can correctly impute missing latitude and longitude values under the given behavior pattern is 98.4%. This is derived from the relative association frequency of this function to the observed behavior pattern compared to all functions linked to it. Specifically, the total weight (interpreted as association frequency) sum for all functions connected to the behavior pattern is 61 + 1 = 62. Of this, 61 corresponds to `vf_5240413252068673064`. Therefore, the empirical probability is calculated as 61 / 62 ≈ 0.9839, or 98.4%. This high proportion indicates a strong historical reliability of this function in handling trajectories with stable speed, consistent COG, and fixed heading—exactly matching the current context.\n\n2. Function `vf_5240413252068673064` implements time-proportional linear interpolation using normalized time intervals (`t / Time_interval[-1]`), ensuring uniform distribution of points along a straight path. It assumes constant velocity motion, which aligns precisely with the vessel’s observed kinematic consistency: nearly unchanging speed (~15.2–15.3 knots), minimal course deviation (COG: 274.1°–274.8°), and fixed heading (273.0°). In contrast, `vf_-7663396197665720575`, while conceptually similar, uses `max(Time_interval)` for normalization—an equivalent operation in most cases but described with less precision in edge-case scenarios involving non-zero-starting intervals. However, both functions are mathematically nearly identical; the overwhelming statistical preference for `vf_5240413252068673064` in past successful imputations confirms its superior execution reliability in real-world applications involving steady-state navigation."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Baltic Sea region, particularly near the Baltic Pipe corridor and associated shipping lanes; applies to cargo vessels navigating westward through designated deep-water routes.\nOperational Protocol Rationale: The vessel's behavior—maintaining a nearly constant speed of approximately 15.2–15.3 knots, a fixed heading of 273.0°, and minimal course deviation—is characteristic of autopilot-assisted transit along predefined maritime corridors. This pattern aligns with standard operating procedures for cargo vessels in open waters near major Baltic shipping routes, where adherence to fixed pathways ensures collision avoidance and regulatory compliance. The stable kinematic profile rules out maneuvering, anchoring, or port approaches, while the precise heading control reflects disciplined navigation typical of deep-water transits. Although the immediate segment shows a west-southwest trajectory, the best-matching historical pattern indicates a subsequent adjustment toward a due west course, consistent with sequential alignment to TSS waypoints rather than free routing or coastal navigation.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a nearly constant speed of approximately 15.2–15.3 knots, a fixed heading of 273.0°, and minimal course deviation—is characteristic of autopilot-assisted transit along predefined maritime corridors. This pattern aligns with standard operating procedures for cargo vessels in open waters near major Baltic shipping routes, where adherence to fixed pathways ensures collision avoidance and regulatory compliance. The stable kinematic profile rules out maneuvering, anchoring, or port approaches, while the precise heading control reflects disciplined navigation typical of deep-water transits. Although the immediate segment shows a west-southwest trajectory, the best-matching historical pattern indicates a subsequent adjustment toward a due west course, consistent with sequential alignment to TSS waypoints rather than free routing or coastal navigation.\n'''"
+  },
+  "related": []
+}

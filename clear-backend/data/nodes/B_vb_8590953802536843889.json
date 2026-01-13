@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_8590953802536843889",
+  "type": "behavior",
+  "label": "Behavior 36843889",
+  "summary": "Vessel behavior pattern: anchored or moored in a confined area (the persistent zero speed (SOG = 0.0) combined with repeated identical latitude and longitude coordinates indicates the vessel is not moving; small variations in COG are artifacts of being stationary, likely due to tidal sway or sensor drift; the position is effectively fixed at latitude ≈56.151457°, longitude ≈10.236055°, consistent with anchoring or mooring in a harbor or port area)",
+  "description": [
+    "Speed profile: stable (the vessel maintains zero speed across all observations, indicating no movement)",
+    "Course change: fluctuating (COG varies between approximately 168° and 182° despite no movement, suggesting sensor noise or minor swinging while stationary)",
+    "Heading fluctuation: stable (the heading remains constant at 41.0°, indicating the vessel’s bow is fixed in orientation despite COG fluctuations)",
+    "Behavior intent: anchored or moored in a confined area (the persistent zero speed (SOG = 0.0) combined with repeated identical latitude and longitude coordinates indicates the vessel is not moving; small variations in COG are artifacts of being stationary, likely due to tidal sway or sensor drift; the position is effectively fixed at latitude ≈56.151457°, longitude ≈10.236055°, consistent with anchoring or mooring in a harbor or port area)",
+    "Duration: 350~400"
+  ],
+  "metadata": {
+    "original_id": "vb_8590953802536843889",
+    "duration": "350~400",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "fluctuating",
+      "stable",
+      "anchored or moored in a confined area",
+      "350~400"
+    ]
+  },
+  "related": []
+}

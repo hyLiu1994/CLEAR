@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "A_188",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Rødsand II Havmøllepark, Klaipėda (LT) – Kiel (D), Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_937_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_937_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1237_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_1237_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_937_SEG_9",
+      "target": "A_188",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1237_SEG_9",
+      "target": "A_188",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_188",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8377157303611993086",
+    "A_188",
+    "TRJ_1237_SEG_9",
+    "TRJ_937_SEG_9"
+  ],
+  "centerNodeId": "A_188",
+  "maxLevel": 1,
+  "totalNodes": 4,
+  "totalLinks": 3
+}

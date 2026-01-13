@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_2499_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2499_SEG_2",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_2499",
+      "type": "trajectory",
+      "label": "Trajectory 218098000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2100548169559808147",
+      "type": "behavior",
+      "label": "Behavior 59808147",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_225",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Larvik, Skagen Fiber West, Unnamed lane, Hirtshals - Langesund",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "T_2499",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "B_vb_2100548169559808147",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "A_225",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_2",
+      "target": "F_vf_5240413252068673064",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_006",
+    "A_410",
+    "A_001",
+    "TRJ_2499_SEG_2",
+    "A_225",
+    "A_415",
+    "A_406",
+    "A_004",
+    "B_vb_2100548169559808147",
+    "F_vf_5240413252068673064",
+    "T_2499"
+  ],
+  "centerNodeId": "TRJ_2499_SEG_2",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

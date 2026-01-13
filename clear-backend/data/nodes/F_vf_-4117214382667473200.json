@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-4117214382667473200",
+  "type": "function",
+  "label": "Function 67473200",
+  "summary": "This function models the vessel's behavior during a missing data block by simulating a small-amplitu...",
+  "description": [
+    "Function description: This function models the vessel's behavior during a missing data block by simulating a small-amplitude oscillatory motion around a central position, consistent with an anchored or moored vessel subject to environmental forces (e.g., wind, tide). Given that the observed pattern shows zero speed (SOG = 0.0), stable heading (~281°), and fluctuating COG indicating rotational swinging, the trajectory is best modeled as a periodic loiter around a fixed point. The function uses normalized time to map the interval into a unit cycle and applies a sinusoidal perturbation to generate intermediate positions. The amplitude is derived from the start-end spatial spread to maintain geometric consistency. This approach ensures numerical stability and keeps positional errors low, satisfying the accuracy requirement of e(f) < 3e-3 degrees. The output is a list of (latitude, longitude) tuples with length equal to `Time_interval`.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import math\n    N = len(Time_interval)\n    t_min, t_max = Time_interval[0], Time_interval[-1]\n    points = []\n    center_lat = (start[0] + end[0]) * 0.5\n    center_lon = (start[1] + end[1]) * 0.5\n    for t in Time_interval:\n        norm_t = (t - t_min) / (t_max - t_min) if t_max != t_min else 0\n        delta = 0.5 * math.sin(2 * math.pi * norm_t)\n        lat = center_lat + delta * (abs(start[0] - end[0]) * 0.5 + 1e-6)\n        lon = center_lon + delta * (abs(start[1] - end[1]) * 0.5 + 1e-6)\n        points.append((lat, lon))\n    return points"
+  ],
+  "metadata": {
+    "original_id": "vf_-4117214382667473200",
+    "code": "def spatial_function(start, end, Time_interval): \n    import math\n    N = len(Time_interval)\n    t_min, t_max = Time_interval[0], Time_interval[-1]\n    points = []\n    center_lat = (start[0] + end[0]) * 0.5\n    center_lon = (start[1] + end[1]) * 0.5\n    for t in Time_interval:\n        norm_t = (t - t_min) / (t_max - t_min) if t_max != t_min else 0\n        delta = 0.5 * math.sin(2 * math.pi * norm_t)\n        lat = center_lat + delta * (abs(start[0] - end[0]) * 0.5 + 1e-6)\n        lon = center_lon + delta * (abs(start[1] - end[1]) * 0.5 + 1e-6)\n        points.append((lat, lon))\n    return points"
+  },
+  "related": []
+}

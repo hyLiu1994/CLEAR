@@ -1,0 +1,15 @@
+{
+  "id": "A_149",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Hornbæk Havn, København – Oslo, TSS Entrance to The Sound, Hamnkontor, Ellekilde Hage-Viken, ITZ Entrance to The Sound east, Øresund, TSS In the Sound, København (DK) – Oslo (N), Unnamed lane, Slip",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Hornbæk Havn, København – Oslo, TSS Entrance to The Sound, Hamnkontor, Ellekilde Hage-Viken, ITZ Entrance to The Sound east, Øresund, TSS In the Sound, København (DK) – Oslo (N), Unnamed lane, Slip",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Hornbæk Havn, København – Oslo, TSS Entrance to The Sound, Hamnkontor, Ellekilde Hage-Viken, ITZ Entrance to The Sound east, Øresund, TSS In the Sound, København (DK) – Oslo (N), Unnamed lane, Slip",
+    "support": 1
+  },
+  "related": []
+}

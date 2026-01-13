@@ -1,0 +1,230 @@
+{
+  "nodes": [
+    {
+      "id": "F_vf_6886488987373757893",
+      "type": "function",
+      "label": "Function 73757893",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_3_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_3_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_199_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_199_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_199_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_199_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_205_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_205_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_199_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_199_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_265_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_265_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_472_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_472_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_536_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_536_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_566_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_566_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_575_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_575_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_606_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_606_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_644_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_644_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_626_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_626_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_655_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_655_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4317838218391453589",
+      "type": "behavior",
+      "label": "Behavior 91453589",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_3_SEG_4",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_199_SEG_3",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_199_SEG_0",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_205_SEG_0",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_199_SEG_9",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_265_SEG_8",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_472_SEG_4",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_536_SEG_0",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_566_SEG_4",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_575_SEG_0",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_606_SEG_6",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_644_SEG_0",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_626_SEG_5",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "TRJ_655_SEG_9",
+      "target": "F_vf_6886488987373757893",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "F_vf_6886488987373757893",
+      "target": "B_vb_4317838218391453589",
+      "relation": "implements",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_606_SEG_6",
+    "TRJ_199_SEG_9",
+    "TRJ_655_SEG_9",
+    "TRJ_644_SEG_0",
+    "TRJ_3_SEG_4",
+    "TRJ_199_SEG_0",
+    "TRJ_566_SEG_4",
+    "B_vb_4317838218391453589",
+    "TRJ_199_SEG_3",
+    "TRJ_536_SEG_0",
+    "F_vf_6886488987373757893",
+    "TRJ_265_SEG_8",
+    "TRJ_205_SEG_0",
+    "TRJ_626_SEG_5",
+    "TRJ_575_SEG_0",
+    "TRJ_472_SEG_4"
+  ],
+  "centerNodeId": "F_vf_6886488987373757893",
+  "maxLevel": 1,
+  "totalNodes": 16,
+  "totalLinks": 15
+}

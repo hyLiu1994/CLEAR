@@ -1,0 +1,15 @@
+{
+  "id": "A_009",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Unnamed traffic separation scheme",
+  "description": [
+    "This attribute is associated with 44 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Unnamed traffic separation scheme",
+    "support": 44
+  },
+  "related": []
+}

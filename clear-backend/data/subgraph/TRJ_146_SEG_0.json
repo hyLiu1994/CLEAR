@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_146_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_146_SEG_0",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_146",
+      "type": "trajectory",
+      "label": "Trajectory 209276000",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_146_SEG_0",
+      "target": "T_146",
+      "relation": "part_of",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_146_SEG_0",
+    "T_146"
+  ],
+  "centerNodeId": "TRJ_146_SEG_0",
+  "maxLevel": 1,
+  "totalNodes": 2,
+  "totalLinks": 1
+}

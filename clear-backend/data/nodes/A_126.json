@@ -1,0 +1,15 @@
+{
+  "id": "A_126",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed lane, Romsø Fyr, Storebælt, Great Belt 2",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Unnamed lane, Romsø Fyr, Storebælt, Great Belt 2",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Unnamed lane, Romsø Fyr, Storebælt, Great Belt 2",
+    "support": 1
+  },
+  "related": []
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2227_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_2227_SEG_7",
+  "summary": "Segment 7 of trajectory 2227",
+  "description": [
+    "MMSI: 215908000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-31 04:08:18",
+    "End time: 2024-03-31 04:12:08"
+  ],
+  "metadata": {
+    "trajectory_id": "2227",
+    "vessel_id": "215908000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-31 04:08:18",
+    "end_time": "2024-03-31 04:12:08"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 429",
+    "Draught: [6, 8) m",
+    "Length: [50, 100) m",
+    "Width: [10, 15) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a constant speed of 10.6 knots throughout the observed segment)",
+      "course_change": "gradual and consistent (COG varies slightly between 264.9° and 266.0°, showing a slow, steady change indicating a smooth turn or alignment with a curved channel)",
+      "heading_fluctuation": "stable (heading remains fixed at 264.0°, suggesting the vessel’s autopilot is engaged and maintaining a steady rudder angle)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 54.5926 - 0.0003 × t + 0.00002 × t², lon(t) ≈ 10.9245 - 0.0078 × t + 0.00004 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

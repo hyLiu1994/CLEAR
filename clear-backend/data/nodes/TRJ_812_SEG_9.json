@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_812_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_812_SEG_9",
+  "summary": "Segment 9 of trajectory 812",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-04 18:42:14",
+    "End time: 2024-03-04 18:46:50"
+  ],
+  "metadata": {
+    "trajectory_id": "812",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-04 18:42:14",
+    "end_time": "2024-03-04 18:46:50"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 15.5–15.6 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 73.7° and 74.3°, indicating a smooth, continuous course adjustment over time)",
+      "heading_fluctuation": "stable (heading remains fixed at 74.0° for most of the segment, with only one observation at 75.0°, suggesting minimal yawing or rudder activity)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 54.9888 + 0.0024 × t + 0.0001 × t², lon(t) ≈ 13.8981 + 0.0148 × t + 0.0002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with draughts between 6–8 meters and lengths of 150–200 meters are observed to follow straight maritime routes in 84% of cases when traversing major Baltic shipping lanes such as Klaipėda–Kiel and Świnoujście–Ystad. This pattern is strongly associated with vessels navigating under open-water conditions where route predictability is high, and the alignment between COG and heading indicates precise helm control. The static attributes of vessel type (Cargo), navigation status, dimensions, and draught collectively support this behavior, with cumulative edge weights indicating it is the most prevalent pattern among similar vessels in this spatial context, despite a weak direct link to the specific shipping lane cluster.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating along a fixed, straight route with stable speed, consistent course, and minimal heading fluctuation—indicating sustained directional control along a predefined corridor. The selected movement (vb_-4927443205807001530) matches this intent exactly, exhibiting identical characteristics: stable speed, gradual and consistent course change, and tightly aligned COG-heading dynamics. Furthermore, the parametric trajectory model (linear northeast progression) aligns spatially with the eastward-slight-northerly trend observed in the boundary segment. Given the continuity of vessel state and environmental context across the gap, this movement provides the most coherent interpolation of behavior during the missing interval.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to impute missing latitude and longitude for this behavior pattern is approximately 98.04%, calculated as 100 / (100 + 2) = 100 / 102 ≈ 0.9804. This proportion reflects the relative strength of association between the observed behavior pattern and the two candidate functions, where a higher value indicates stronger empirical alignment with successful imputation outcomes under similar kinematic conditions.  \n2. This function exhibits precise alignment with the vessel’s motion characteristics: stable speed, consistent course over ground (COG), and minimal heading fluctuation—indicating a linear trajectory. The function assumes constant-velocity linear motion between known endpoints, which matches the parametric trajectory model provided in the intent (lat(t) ≈ 56.114153 + 0.00087 × t, lon(t) ≈ 7.607993 + 0.00034 × t). In contrast, the alternative function, while also linear, has been associated with fewer successful applications in contexts involving tightly constrained temporal progression and high positional fidelity."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "IMO Routing Measures in the Baltic Sea – Applicable to cargo vessels navigating major designated shipping lanes, including those connecting Klaipėda, Kiel, Świnoujście, and Ystad; these routes are established under international maritime safety guidelines to separate opposing traffic flows and reduce collision risk in congested waters.\nOperational Protocol Rationale: Cargo vessels of this size and draught operating without hazardous cargo typically follow straight, predictable paths along predefined maritime corridors in open-water conditions, where route adherence is optimized for fuel efficiency and navigational safety. The observed stable speed, consistent course over ground, and tight alignment between heading and direction of travel indicate autopilot-assisted navigation on a fixed route—characteristic of transit through structured traffic zones. This behavior contrasts with more dynamic maneuvers seen in port approaches or coastal turns, which would show greater course variability. Given the vessel’s position within a network of well-established Baltic shipping lanes, maintaining a linear trajectory with minimal deviation aligns with standard seafaring practice for unimpeded transit, ensuring compliance with regional routing schemes and collision avoidance protocols.\n'''",
+    "operational_protocol_rationale": "Cargo vessels of this size and draught operating without hazardous cargo typically follow straight, predictable paths along predefined maritime corridors in open-water conditions, where route adherence is optimized for fuel efficiency and navigational safety. The observed stable speed, consistent course over ground, and tight alignment between heading and direction of travel indicate autopilot-assisted navigation on a fixed route—characteristic of transit through structured traffic zones. This behavior contrasts with more dynamic maneuvers seen in port approaches or coastal turns, which would show greater course variability. Given the vessel’s position within a network of well-established Baltic shipping lanes, maintaining a linear trajectory with minimal deviation aligns with standard seafaring practice for unimpeded transit, ensuring compliance with regional routing schemes and collision avoidance protocols.\n'''"
+  },
+  "related": []
+}

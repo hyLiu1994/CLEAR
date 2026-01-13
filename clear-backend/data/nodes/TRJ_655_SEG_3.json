@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_655_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_655_SEG_3",
+  "summary": "Segment 3 of trajectory 655",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 18:10:14",
+    "End time: 2024-03-17 18:14:56"
+  ],
+  "metadata": {
+    "trajectory_id": "655",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-17 18:10:14",
+    "end_time": "2024-03-17 18:14:56"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 10.1–10.2 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 201.5° and 202.3°, indicating a smooth, sustained turn or alignment with a curved channel)",
+      "heading_fluctuation": "stable (heading remains fixed at 200.0° across all observations, showing no yawing or oscillation)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 56.0818 − 0.0054 × t + 0.0001 × t², lon(t) ≈ 11.1232 − 0.0037 × t + 0.00008 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 10.1–10.2 knots throughout the observation period)",
+      "course_change": "gradual and consistent (COG changes very slightly, ranging from 202.5° to 203.0°, indicating a smooth, continuous course adjustment over time)",
+      "heading_fluctuation": "stable (heading remains fixed at 200.0°, showing no oscillation or erratic behavior)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) = 56.0583 - 0.0011 × t, lon(t) = 11.1061 - 0.0007 × t, where t is a normalized time index from 0 to 1 across the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and typical dimensions ([100, 150) m length, [20, 25) m width, [8, 10) m draught) navigating near major Danish shipping lanes (such as EK R 12, EK R 11, and EK R 19) most frequently exhibit straight-line transit behavior when traversing open coastal segments. The pattern vb_-4927443205807001530—characterized by stable speed, consistent heading, and linear northeastward progression—is strongly associated with these vessels, supported by high edge weights from key static attributes: navigation_status (w=102), vessel_type (w=73), and hazardous_cargo (w=102). When normalized across all outgoing edges from static nodes, this behavior accounts for approximately 62% of observed movements in similar contexts, making it the statistically dominant trajectory for cargo ships on fixed routes in this region.",
+    "contextual_justification": "The boundary movement pattern shows a vessel maintaining a stable speed (~10.2 knots), nearly constant heading (200.0°), and a very slight, consistent course change (COG between 201.9° and 203.4°), progressing south-southeast along a linear path. This indicates uninterrupted transit along a predefined route. Among the candidate patterns, vb_-4927443205807001530 best matches this behavioral signature—it describes a \"navigating along a fixed route\" intent with stable speed, minimal heading fluctuation, and gradual course consistency, following a linear trajectory to the northeast. Although the direction differs, the kinematic profile (stable speed, aligned COG-heading, smooth progression) and duration (200~250) align closely with the boundary segment’s dynamics. Given that the vessel is continuing under the same operational status and environmental context, a persistent straight-route behavior is the most plausible interpolation across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_-7663396197665720575` correctly addresses the missing value problem for the identified behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions associated with the same behavior pattern. Specifically, the total weight sum is 100 (from `w=100`) + 2 (from `w=2`) = 102. The proportion of support for `vf_-7663396197665720575` is therefore 100 / 102 ≈ 0.9804, or 98.04%. This high proportion indicates strong empirical alignment between this function and the observed kinematic pattern in historical data.  \n2. This function assumes linear spatial progression based on temporal interpolation, which matches the documented intent of \"navigating along a fixed route\" with stable speed and consistent course. Its implementation uses normalized time scaling via `t / max(Time_interval)`, ensuring uniform distribution of interpolated points across the temporal span. In contrast, the alternative function, while conceptually similar, exhibits less precise normalization (using `Time_interval[-1]` instead of `max(Time_interval)`), which may introduce minor inconsistencies in non-uniform sampling scenarios—though both assume constant-velocity motion."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) compliance; applies to cargo vessels navigating near major Danish shipping lanes; spatial anchor: EK R 12, EK R 11, and EK R 19\nOperational Protocol Rationale: Cargo vessels in this region typically follow straight, predefined routes as part of established traffic separation schemes designed to streamline maritime flow and reduce collision risk. The vessel’s stable speed, minimal heading variation, and consistent course over ground align with autopilot-assisted transit along a fixed corridor. This behavior is characteristic of non-hazardous cargo ships of moderate size ([100, 150) m length, [20, 25) m width) operating under engine power in open coastal waters. Alternative behaviors involving curved trajectories or variable speeds are less likely here, as they are typically associated with maneuvering near ports or in congested zones, which is not the case in this segment. Given the proximity to structured shipping lanes and the kinematic consistency of the track, linear progression via time-proportional interpolation accurately reflects expected vessel motion.\n'''",
+    "operational_protocol_rationale": "Cargo vessels in this region typically follow straight, predefined routes as part of established traffic separation schemes designed to streamline maritime flow and reduce collision risk. The vessel’s stable speed, minimal heading variation, and consistent course over ground align with autopilot-assisted transit along a fixed corridor. This behavior is characteristic of non-hazardous cargo ships of moderate size ([100, 150) m length, [20, 25) m width) operating under engine power in open coastal waters. Alternative behaviors involving curved trajectories or variable speeds are less likely here, as they are typically associated with maneuvering near ports or in congested zones, which is not the case in this segment. Given the proximity to structured shipping lanes and the kinematic consistency of the track, linear progression via time-proportional interpolation accurately reflects expected vessel motion.\n'''"
+  },
+  "related": []
+}

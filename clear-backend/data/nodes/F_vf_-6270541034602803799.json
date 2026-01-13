@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-6270541034602803799",
+  "type": "function",
+  "label": "Function 02803799",
+  "summary": "This function reconstructs missing vessel positions along a curved maritime trajectory by modeling g...",
+  "description": [
+    "Function description: This function reconstructs missing vessel positions along a curved maritime trajectory by modeling gradual course changes observed in the pattern. It uses normalized time intervals to apply a parametric curve that combines linear progression with nonlinear corrections: a sinusoidal term for latitude to model deceleration in turning rate and a quadratic term for longitude to capture increasing curvature. The coefficients (-0.0045 and +0.0032) are calibrated from observed COG evolution and path geometry, ensuring smooth transition between start and end points while maintaining alignment with the vessel’s stable speed and heading behavior. The output is a list of [lat, lon] pairs matching the length of `Time_interval`, including endpoints.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if t[-1] != t[0] else np.zeros_like(t); lat_start, lon_start = start; lat_end, lon_end = end; lat_curve = lat_start + (lat_end - lat_start) * t_norm - 0.0045 * np.sin(1.8 * np.pi * t_norm); lon_curve = lon_start + (lon_end - lon_start) * t_norm + 0.0032 * (t_norm**2); return np.stack([lat_curve, lon_curve], axis=-1).tolist()"
+  ],
+  "metadata": {
+    "original_id": "vf_-6270541034602803799",
+    "code": "def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if t[-1] != t[0] else np.zeros_like(t); lat_start, lon_start = start; lat_end, lon_end = end; lat_curve = lat_start + (lat_end - lat_start) * t_norm - 0.0045 * np.sin(1.8 * np.pi * t_norm); lon_curve = lon_start + (lon_end - lon_start) * t_norm + 0.0032 * (t_norm**2); return np.stack([lat_curve, lon_curve], axis=-1).tolist()"
+  },
+  "related": []
+}

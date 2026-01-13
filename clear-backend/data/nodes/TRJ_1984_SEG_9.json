@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1984_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1984_SEG_9",
+  "summary": "Segment 9 of trajectory 1984",
+  "description": [
+    "MMSI: 211333700",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 00:55:46",
+    "End time: 2024-03-17 00:59:46"
+  ],
+  "metadata": {
+    "trajectory_id": "1984",
+    "vessel_id": "211333700",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-17 00:55:46",
+    "end_time": "2024-03-17 00:59:46"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.109463 + 0.00065 × t + 0.00004 × t², lon(t) ≈ 11.050962 + 0.00012 × t + 0.00001 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, tanker vessels 'under way using engine' with draughts between 2–4 meters and dimensions in the 50–100 m length and 10–15 m width range are most frequently associated with curved route navigation patterns when operating near shipping lanes. This particular behavior pattern (vb_3081913737957353482) is strongly supported by vessel-type-specific dynamics, appearing in 21% of all observed segments for tankers under similar conditions. The combined edge weight from critical static attributes—especially navigation status (w=89), vessel type (w=19), and width (w=26)—indicates a high prevalence of this movement among medium-sized tankers maintaining stable speed while executing gradual turns along predefined maritime channels. Among all candidate patterns, it ranks second in total support from engine-powered tankers, reflecting its typicality in constrained waterways.",
+    "contextual_justification": "The boundary movement pattern shows a vessel maintaining stable speed (6.1–6.6 knots), executing a gradual and consistent course change (COG decreasing from 4.1° to 3.2°), with minimal heading fluctuation—indicative of controlled navigation along a gently curving path. Pattern vb_3081913737957353482 matches this behavioral signature precisely: it describes a stable-speed trajectory with gradual and consistent course evolution along a circular arc (~2.5 km radius), closely aligned headings, and a modeled parametric path consistent with coastal or channelized navigation. Unlike straight-route patterns (vb_5117658009441012102, vb_-4927443205807001530), this pattern accounts for curvature, and unlike higher-speed options (e.g., vb_-24485554849544898 with 7.7–10.1 kt), it aligns better with the lower speed regime observed at the boundaries. Its duration (250~300) also matches the adjacent segment, ensuring temporal coherence across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is approximately 98.88%, calculated as 1 / (1 + 88) = 1/89 ≈ 0.0112 for the alternative (linear) function, implying that the quadratic model (vf_-3532178402678649056) accounts for 1 - 0.0112 = 98.88% of the weighted likelihood based on association frequency. This proportion reflects its dominant empirical alignment with the observed curved trajectory pattern in historical data.  \n2. This function incorporates a parametric quadratic model that explicitly accounts for gradual course changes and small nonlinear corrections in both latitude and longitude, matching the vessel’s intent to follow a curved maritime route. Its design aligns precisely with the kinematic signature of stable speed, consistent heading, and slowly varying COG, which are indicative of navigational behavior along a curved channel. In contrast, linear interpolation assumes no curvature and would systematically underestimate positional deviation along such arcs."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is navigating a gently curving maritime route, which is typical for medium-sized tankers operating near shipping lanes where waterway geometry or traffic separation schemes require gradual turns. The behavior—characterized by stable speed, minimal heading variation, and a slowly changing course over ground—aligns with controlled maneuvering along predefined channels, likely to maintain safe separation from other traffic and navigational hazards. This pattern is distinct from straight-line transit behaviors, which would imply open-water routing, and differs from more erratic or variable-speed profiles that might suggest anchoring, docking, or avoidance maneuvers. Given the vessel’s dimensions, draught, and engine-powered status, the observed curvature in trajectory reflects standard operating procedures for constrained coastal or channelized environments, where adherence to fixed navigational paths ensures safety and regulatory compliance.\n'''",
+    "operational_protocol_rationale": "The vessel is navigating a gently curving maritime route, which is typical for medium-sized tankers operating near shipping lanes where waterway geometry or traffic separation schemes require gradual turns. The behavior—characterized by stable speed, minimal heading variation, and a slowly changing course over ground—aligns with controlled maneuvering along predefined channels, likely to maintain safe separation from other traffic and navigational hazards. This pattern is distinct from straight-line transit behaviors, which would imply open-water routing, and differs from more erratic or variable-speed profiles that might suggest anchoring, docking, or avoidance maneuvers. Given the vessel’s dimensions, draught, and engine-powered status, the observed curvature in trajectory reflects standard operating procedures for constrained coastal or channelized environments, where adherence to fixed navigational paths ensures safety and regulatory compliance.\n'''"
+  },
+  "related": []
+}

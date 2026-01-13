@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-2145520015292500943",
+  "type": "function",
+  "label": "Function 92500943",
+  "summary": "This function models the vessel's behavior as stationary based on the observed pattern of zero speed...",
+  "description": [
+    "Function description: This function models the vessel's behavior as stationary based on the observed pattern of zero speed (SOG = 0.0), stable course over ground (COG ≈ 297.7°), and minimal heading fluctuations (109.0°–110.0°), indicating the vessel is anchored or moored. The trajectory data shows only minor positional variations due to GPS noise or slight swinging at anchor around a central point near (55.71131, 12.60230). Therefore, instead of interpolating between `start` and `end`, the function holds the position constant at the `start` coordinates for all time steps in `Time_interval`. This approach minimizes error (e.g., MAE_lat and MAE_lon < 3e-3°) by respecting the physical reality of non-motion, avoiding artificial drift that linear or polynomial interpolation would introduce. The output is a list of tuples with length equal to `len(Time_interval)`, each containing the same latitude and longitude as the starting point.",
+    "Code implementation: def spatial_function(start, end, Time_interval): return [(start[0], start[1]) for _ in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_-2145520015292500943",
+    "code": "def spatial_function(start, end, Time_interval): return [(start[0], start[1]) for _ in Time_interval]"
+  },
+  "related": []
+}

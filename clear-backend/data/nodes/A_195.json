@@ -1,0 +1,15 @@
+{
+  "id": "A_195",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Romsø Fyr, Storebælt, Great Belt 2",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Romsø Fyr, Storebælt, Great Belt 2",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Romsø Fyr, Storebælt, Great Belt 2",
+    "support": 1
+  },
+  "related": []
+}

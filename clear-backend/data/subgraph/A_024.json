@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_024",
+      "type": "attribute",
+      "label": "spatial_context: location: Karlskrona kommun, Blekinge County, Sweden; nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_113_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_113_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-813988986690502197",
+      "type": "behavior",
+      "label": "Behavior 90502197",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_113_SEG_0",
+      "target": "A_024",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_024",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_024",
+    "B_vb_-813988986690502197",
+    "TRJ_113_SEG_0"
+  ],
+  "centerNodeId": "A_024",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

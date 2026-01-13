@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_3_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_3_SEG_9",
+  "summary": "Segment 9 of trajectory 3",
+  "description": [
+    "MMSI: 209066000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 23:40:55",
+    "End time: 2024-03-17 23:44:45"
+  ],
+  "metadata": {
+    "trajectory_id": "3",
+    "vessel_id": "209066000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-17 23:40:55",
+    "end_time": "2024-03-17 23:44:45"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 10.1–10.2 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 48.4° and 50.4°, showing a slow, smooth adjustment in direction over time)",
+      "heading_fluctuation": "stable (heading remains consistently around 55°–57°, with minimal variation, indicating steady helm control)",
+      "intent": "following a curved maritime route (the combination of stable speed, small and consistent COG changes, and steady heading suggests the vessel is navigating along a gently curving channel or coastal route; the position progression follows an approximately linear-to-slightly-curvilinear path from (56.619, 7.478) to (56.626, 7.492), which can be modeled as a segment of a circular arc or polynomial curve: Δlat ≈ k·Δlong with slight curvature, where k ≈ 0.7–0.8 in local coordinates)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed over ground (SOG) of approximately 10.0–10.1 knots throughout the trajectory)",
+      "course_change": "stable (the course over ground (COG) remains within a narrow range of 48.3° to 49.8°, indicating minimal deviation in direction)",
+      "heading_fluctuation": "stable (the heading fluctuates slightly between 55.0° and 56.0°, consistent with minor rudder adjustments while maintaining a straight path)",
+      "intent": "navigating along a fixed route (the vessel is progressing in a consistent northeast direction along what appears to be a predefined maritime route, likely in open water or a traffic separation scheme)",
+      "duration": "250~300"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

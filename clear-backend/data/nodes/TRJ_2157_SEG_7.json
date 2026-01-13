@@ -1,0 +1,49 @@
+{
+  "id": "TRJ_2157_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_2157_SEG_7",
+  "summary": "Segment 7 of trajectory 2157",
+  "description": [
+    "MMSI: 215908000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 16:52:09",
+    "End time: 2024-03-11 16:57:38"
+  ],
+  "metadata": {
+    "trajectory_id": "2157",
+    "vessel_id": "215908000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 16:52:09",
+    "end_time": "2024-03-11 16:57:38"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 6.0 and 7.4 knots with minor fluctuations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies smoothly from 55.8° to 63.5° over the sequence, showing a slow, continuous adjustment in direction rather than abrupt turns)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 62.0° to 65.0°, fluctuating by only 3°, which suggests minimal rudder activity and good course control)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 56.878388 + 0.0028 × t + 0.00015 × t², lon(t) ≈ 7.581638 + 0.0042 × t + 0.00028 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 6.5 and 7.4 knots with minor fluctuations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly from 60.0° to 64.4° over the trajectory, showing a smooth evolution in direction without abrupt shifts)",
+      "heading_fluctuation": "stable (heading remains nearly constant at 64.0° or close to it, varying only slightly to 62–65°, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 56.889957 + 0.00031 × t + 0.00004 × t², lon(t) ≈ 7.617902 + 0.00115 × t + 0.00018 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating near unnamed traffic separation schemes exhibit the \"following a curved maritime route\" behavior in 83% of cases when vessel length is between 50–100 meters and width is 10–15 meters. This pattern is strongly associated with vessels of similar draught ([2,4) m), where stable speed and gradual course changes are observed in tightly controlled channel environments. The high edge weight (w=83) from vessel_type_Cargo to this movement indicates it is one of the most frequently observed behaviors for this class of vessel in constrained waterways, particularly when aligned with predefined curved routes.",
+    "contextual_justification": "The boundary movement patterns both describe a \"gradual and consistent\" course change along a curved route with stable speed (6.0–7.4 knots and 6.8–7.2 knots respectively) and minimal heading fluctuation, closely matching the characteristics of vb_82841811344196675, which also reflects a stable-speed, gradually turning vessel on a predefined arc. Although the speed in the candidate is slightly higher (implied by model trajectory), the overall intent—navigating a gentle curve with autopilot-like precision—aligns seamlessly with the transition between the pre- and post-gap segments. Additionally, the duration (200~250) fits within the expected range bridging the adjacent segments (300~350 and 350~400), making it a temporally plausible interpolation.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) - Applicable to cargo vessels navigating in proximity to designated maritime traffic lanes; spatial anchor confirmed by reference to an unnamed traffic separation scheme.\nOperational Protocol Rationale: The vessel's behavior—maintaining a stable speed while executing a gradual, consistent turn along a curved trajectory—is characteristic of navigation within regulated waterways where vessels must follow predefined routes to ensure safe separation from opposing traffic. This pattern aligns with standard operating procedures for cargo vessels transiting constrained channels or coastal bends under autopilot control, where minimal heading fluctuations and steady propulsion reflect compliance with routing measures. The observed intent to follow a curved maritime route closely matches the expected behavior in a TSS environment, as opposed to open-sea maneuvers or anchoring patterns, which would exhibit different speed and course dynamics.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a stable speed while executing a gradual, consistent turn along a curved trajectory—is characteristic of navigation within regulated waterways where vessels must follow predefined routes to ensure safe separation from opposing traffic. This pattern aligns with standard operating procedures for cargo vessels transiting constrained channels or coastal bends under autopilot control, where minimal heading fluctuations and steady propulsion reflect compliance with routing measures. The observed intent to follow a curved maritime route closely matches the expected behavior in a TSS environment, as opposed to open-sea maneuvers or anchoring patterns, which would exhibit different speed and course dynamics.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_143",
+      "type": "attribute",
+      "label": "spatial_context: location: Hörsten, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, Germany; nearby_shipping_lanes: Kanalfähre Breiholz, Lotsenstation Rüsterbergen",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_674_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_674_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_674_SEG_9",
+      "target": "A_143",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_143",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_674_SEG_9",
+    "B_vb_-24485554849544898",
+    "A_143"
+  ],
+  "centerNodeId": "A_143",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

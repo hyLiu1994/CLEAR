@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_1427_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_1427_SEG_4",
+  "summary": "Segment 4 of trajectory 1427",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-03 04:43:41",
+    "End time: 2024-03-03 04:47:28"
+  ],
+  "metadata": {
+    "trajectory_id": "1427",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-03 04:43:41",
+    "end_time": "2024-03-03 04:47:28"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Ystad - Rønne, Travemünde (D) – Liepāja (LV), Baltica, Bornholm Cable, Bornholmsgat, Aurora, C-Lion 1, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 16.6 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 39.3° and 40.0°, indicating a smooth, continuous course adjustment over time)",
+      "heading_fluctuation": "stable (heading remains constant at 38.0° across all observations, suggesting no active rudder corrections or yaw instability)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 55.2252 + 0.0063 × t + 0.0001 × t², lon(t) ≈ 14.4496 + 0.0091 × t + 0.00005 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 16.4 and 16.6 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly from 38.9° to 39.7° over time, showing a smooth, continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading remains fixed at 38.0° throughout the segment, suggesting autopilot or stabilized steering despite minor COG drift)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 55.21103 + 0.00135 × t + 0.00002 × t², lon(t) ≈ 14.429262 + 0.00192 × t + 0.00008 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 16.6–16.7 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 39.6° and 40.2°, indicating a slow, steady change in direction)",
+      "heading_fluctuation": "stable (heading remains fixed at 38.0° across all observations, suggesting minimal rudder activity or autopilot use)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.2394 + 0.00072 × t, lon(t) ≈ 14.4702 + 0.00107 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

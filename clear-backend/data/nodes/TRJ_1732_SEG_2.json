@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1732_SEG_2",
+  "type": "segment",
+  "label": "Segment TRJ_1732_SEG_2",
+  "summary": "Segment 2 of trajectory 1732",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-24 17:06:11",
+    "End time: 2024-03-24 17:10:54"
+  ],
+  "metadata": {
+    "trajectory_id": "1732",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-24 17:06:11",
+    "end_time": "2024-03-24 17:10:54"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 54.982965 - 0.0072 × t, lon(t) ≈ 12.65781 - 0.0118 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "stable",
+      "course_change": "gradual and consistent",
+      "heading_fluctuation": "stable",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 54.948022 - 0.00275 × t, lon(t) ≈ 12.618745 - 0.00355 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, passenger vessels 'under way using engine' with dimensions typical of ferries (150–200 m length, 25–30 m width) and moderate draught (4–6 m) navigating in Danish waters are strongly associated with curved route behaviors. The pattern vb_82841811344196675 is linked to these vessel characteristics with high edge weights: navigation_status (w=96), vessel_type_Passenger (w=10), length_[150,200) m (w=56), and width_[25,30) m (w=30). Aggregated across all static attributes, this behavior accounts for approximately 32% of weighted associations among candidate patterns—second only to vb_8377157303611993086 (36%), but uniquely combines strong fit with both vessel type and spatial context while modeling a curved trajectory consistent with coastal navigation near Denmark’s archipelagos.",
+    "contextual_justification": "The boundary movement pattern describes a vessel following a gently curving maritime route with stable speed, gradual course change, and minimal heading fluctuation—consistent with navigation along a circular arc (~2.5 km radius). This matches the intent and kinematic profile of vb_82841811344196675 exactly, which also models a curved trajectory using a second-order parametric equation (lat(t), lon(t)) with small quadratic terms indicating smooth curvature. The duration (200~250) aligns precisely with the gap's temporal extent inferred from adjacent segments, and the stable speed and heading behavior mirror the continuity observed before and after the missing block. While other candidates describe straight routes or different geographic contexts, vb_82841811344196675 is the only one that preserves both dynamic consistency and geometric plausibility across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_5240413252068673064` can correctly impute missing values for the given behavior pattern is 98.96%. This is derived from the relative weight distribution between the two candidate functions associated with the observed behavior pattern. Specifically, among the total association weight (95 + 1 = 96), function `vf_5240413252068673064` holds a weight of 95, yielding a confidence proportion of 95 / 96 ≈ 0.9896, or 98.96%. This indicates a strong empirical alignment between this function and the kinematic context characterized by stable speed, consistent course, and minimal heading fluctuation.  \n2. Function `vf_5240413252068673064` implements linear interpolation using normalized time intervals (`t / Time_interval[-1]`), ensuring uniform progression along the trajectory. It assumes constant velocity motion between start and end points, which closely matches the vessel’s observed steady-state dynamics. In contrast, `vf_-7663396197665720575`, while functionally similar, uses `max(Time_interval)` for normalization—equivalent in most cases but less precise when `Time_interval` is not aligned with endpoint indexing. The former demonstrates superior temporal scaling consistency under structured AIS sampling."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "SOLAS Chapter V, Regulation 19 – Mandatory use of AIS by passenger ships; applicable to all passenger vessels operating in Danish waters, which are part of the North-West European Traffic Separation Scheme area\nOperational Protocol Rationale: Passenger vessels navigating in Danish waters typically follow predefined curved routes due to the region’s complex coastline, archipelagos, and established maritime traffic lanes. The observed stable speed, consistent course progression, and minimal heading variation indicate autopilot-assisted navigation along a gently curving channel, which is characteristic of ferry operations in this area. Although the trajectory has slight curvature, the motion is sufficiently linear over short intervals to justify a proportional time-based linear interpolation method. This approach maintains temporal and spatial consistency with the vessel’s steady-state behavior, avoiding unnecessary complexity from higher-order modeling. Alternative patterns involving sharp maneuvers or variable speeds are inconsistent with both the vessel type and the surrounding navigational environment.\n'''",
+    "operational_protocol_rationale": "Passenger vessels navigating in Danish waters typically follow predefined curved routes due to the region’s complex coastline, archipelagos, and established maritime traffic lanes. The observed stable speed, consistent course progression, and minimal heading variation indicate autopilot-assisted navigation along a gently curving channel, which is characteristic of ferry operations in this area. Although the trajectory has slight curvature, the motion is sufficiently linear over short intervals to justify a proportional time-based linear interpolation method. This approach maintains temporal and spatial consistency with the vessel’s steady-state behavior, avoiding unnecessary complexity from higher-order modeling. Alternative patterns involving sharp maneuvers or variable speeds are inconsistent with both the vessel type and the surrounding navigational environment.\n'''"
+  },
+  "related": []
+}

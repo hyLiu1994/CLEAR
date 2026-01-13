@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1357_SEG_2",
+  "type": "segment",
+  "label": "Segment TRJ_1357_SEG_2",
+  "summary": "Segment 2 of trajectory 1357",
+  "description": [
+    "MMSI: 210336000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 18:31:13",
+    "End time: 2024-03-17 18:37:42"
+  ],
+  "metadata": {
+    "trajectory_id": "1357",
+    "vessel_id": "210336000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-17 18:31:13",
+    "end_time": "2024-03-17 18:37:42"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 10.1–10.3 knots across the trajectory segment)",
+      "course_change": "gradual and consistent (COG decreases slowly and consistently from 92.1° to 70.7° over time, indicating a smooth turn to the left)",
+      "heading_fluctuation": "stable (heading remains relatively steady between 65° and 90°, with minor fluctuations around 75° in the latter half, suggesting controlled rudder input)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.40058 + 0.00005 × t + 0.00012 × t², lon(t) ≈ 12.123408 + 0.0018 × t - 0.00007 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.415452 + 0.0012 × t + 0.00008 × t², lon(t) ≈ 12.177193 + 0.0016 × t + 0.00012 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "400~450"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, tanker vessels 'under way using engine' with a draught between 4–6 meters are strongly associated with straight-line navigation patterns along fixed maritime routes, particularly when transiting through busy Baltic Sea shipping corridors such as the TSS South of Gedser and Kadetrinne. This specific behavior pattern (vb_-4927443205807001530) is exhibited by 102 out of 102 instances (100% prevalence) for tankers under these static conditions, making it the most statistically dominant pattern among all candidates. Although the spatial context edge weight is low (w=1), this reflects broad lane proximity rather than exclusion—tankers in this size class routinely follow deep-water alignments within these zones. The high co-occurrence with stable speed, consistent course, and minimal heading fluctuation further reinforces its dominance in open-sea transit segments.",
+    "contextual_justification": "The boundary movement pattern indicates a vessel navigating along a fixed, straight route with stable speed, consistent course, and tight COG-heading alignment, progressing eastward with a slight northerly drift. The selected movement vb_-4927443205807001530 also describes a fixed-route trajectory with stable dynamics and linear progression—this time toward the northeast. While the absolute direction differs, the core behavioral signature (straight, steady, predictable motion along a predefined axis) matches perfectly. Given that the gap occurs in open water near structured traffic lanes and the vessel maintains constant propulsion status, a continuation of linear transit is far more plausible than an unexplained turn or maneuver. Thus, despite directional variation, the kinematic consistency and environmental context make this the most plausible interpolation.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to impute missing latitude and longitude for the given behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the observed behavior pattern. Out of the total association weight (100 + 2 = 102), vf_-7663396197665720575 holds a weight of 100, resulting in a proportion of 100 / 102 ≈ 0.9804 or 98.04%. This high proportion indicates strong empirical alignment between this function and the kinematic pattern of stable motion along a fixed route.  \n2. This function is specifically designed for linear interpolation using time-proportional scaling based on max(Time_interval), which matches the observed trajectory's parametric form (lat(t) ≈ 56.114153 + 0.00087 × t, lon(t) ≈ 7.607993 + 0.00034 × t). Its implementation assumes constant velocity and directional stability—precisely the characteristics exhibited in the AIS data sequence where latitude and longitude increase monotonically with minimal fluctuation in speed and heading. In contrast, the alternative function, while similar, uses Time_interval[-1] as the normalizer, which may introduce minor discrepancies if the interval is not uniformly sampled, reducing its robustness under variable reporting rates."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) compliance in the Baltic Sea; applies to tankers navigating near structured shipping lanes including the TSS South of Gedser and Kadetrinne; spatial anchor confirmed by proximity to multiple designated routes.\nOperational Protocol Rationale: Tankers operating under engine propulsion in open waters near busy Baltic shipping corridors typically maintain straight, steady trajectories along predefined routes to comply with collision avoidance regulations and traffic flow management. The observed vessel exhibits stable speed, consistent course over ground, and tight alignment between heading and motion direction—hallmarks of autopilot-assisted transit along fixed maritime pathways. This behavior is expected for medium-sized tankers (100–150 m length, 4–6 m draught) transiting high-density areas where predictable movement ensures navigational safety. A curved trajectory or maneuvering intent would contradict the kinematic stability and route linearity seen here. Given that the surrounding context includes major traffic lanes and the vessel shows no deviation in propulsion or heading, continuing a linear path via time-proportional interpolation is the most operationally sound assumption, ruling out abrupt turns or drift.\n'''",
+    "operational_protocol_rationale": "Tankers operating under engine propulsion in open waters near busy Baltic shipping corridors typically maintain straight, steady trajectories along predefined routes to comply with collision avoidance regulations and traffic flow management. The observed vessel exhibits stable speed, consistent course over ground, and tight alignment between heading and motion direction—hallmarks of autopilot-assisted transit along fixed maritime pathways. This behavior is expected for medium-sized tankers (100–150 m length, 4–6 m draught) transiting high-density areas where predictable movement ensures navigational safety. A curved trajectory or maneuvering intent would contradict the kinematic stability and route linearity seen here. Given that the surrounding context includes major traffic lanes and the vessel shows no deviation in propulsion or heading, continuing a linear path via time-proportional interpolation is the most operationally sound assumption, ruling out abrupt turns or drift.\n'''"
+  },
+  "related": []
+}

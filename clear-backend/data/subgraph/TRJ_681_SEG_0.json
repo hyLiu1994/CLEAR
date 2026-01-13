@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_681_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_681_SEG_0",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_681",
+      "type": "trajectory",
+      "label": "Trajectory 209715000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_046",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-7663396197665720575",
+      "type": "function",
+      "label": "Function 65720575",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "T_681",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "B_vb_-24485554849544898",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "A_046",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_0",
+      "target": "F_vf_-7663396197665720575",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "T_681",
+    "A_410",
+    "A_001",
+    "A_004",
+    "A_404",
+    "A_046",
+    "A_415",
+    "F_vf_-7663396197665720575",
+    "B_vb_-24485554849544898",
+    "A_006",
+    "TRJ_681_SEG_0"
+  ],
+  "centerNodeId": "TRJ_681_SEG_0",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

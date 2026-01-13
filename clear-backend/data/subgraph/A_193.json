@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "A_193",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Klaipėda (LT) – Kiel (D), Naturschutzgebiet Grüner Brink, Femern Fixed Link Holding Area North, Marienleuchte, Unnamed lane, Sperrgebiet Marienleuchte, Fehmarn Belt",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_937_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_937_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1133_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_1133_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1133_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_1133_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1133_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1133_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1133_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_1133_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1237_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_1237_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1237_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_1237_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_937_SEG_3",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_1",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_2",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_3",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1133_SEG_4",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1237_SEG_0",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1237_SEG_2",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_193",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1237_SEG_2",
+    "TRJ_1133_SEG_2",
+    "TRJ_937_SEG_3",
+    "A_193",
+    "TRJ_1133_SEG_1",
+    "TRJ_1237_SEG_0",
+    "TRJ_1133_SEG_3",
+    "B_vb_8377157303611993086",
+    "TRJ_1133_SEG_4",
+    "B_vb_82841811344196675",
+    "B_vb_-24485554849544898"
+  ],
+  "centerNodeId": "A_193",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

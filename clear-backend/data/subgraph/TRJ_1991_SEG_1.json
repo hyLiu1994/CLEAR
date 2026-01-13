@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_1991_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_1991_SEG_1",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_1991",
+      "type": "trajectory",
+      "label": "Trajectory 211333700",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_331",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Storebælt, Ballen-Røsnæs, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_407",
+      "type": "attribute",
+      "label": "draught: [2, 4) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_412",
+      "type": "attribute",
+      "label": "length: [50, 100) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_416",
+      "type": "attribute",
+      "label": "width: [10, 15) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-7663396197665720575",
+      "type": "function",
+      "label": "Function 65720575",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "T_1991",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "B_vb_-24485554849544898",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "A_331",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "A_407",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "A_412",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "A_416",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1991_SEG_1",
+      "target": "F_vf_-7663396197665720575",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_416",
+    "A_001",
+    "A_412",
+    "A_407",
+    "A_004",
+    "A_005",
+    "A_331",
+    "F_vf_-7663396197665720575",
+    "T_1991",
+    "TRJ_1991_SEG_1",
+    "B_vb_-24485554849544898"
+  ],
+  "centerNodeId": "TRJ_1991_SEG_1",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

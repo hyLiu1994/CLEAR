@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "id": "A_351",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Klaipėda (LT) – Kiel (D), Femern Fixed Link Holding Area North, Rødsand II Havmøllepark, Unnamed lane, Sperrgebiet Marienleuchte, Fehmarn Belt",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2225_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2225_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2225_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2225_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2225_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2225_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5117658009441012102",
+      "type": "behavior",
+      "label": "Behavior 41012102",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2225_SEG_5",
+      "target": "A_351",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2225_SEG_7",
+      "target": "A_351",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2225_SEG_6",
+      "target": "A_351",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_351",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5117658009441012102",
+      "target": "A_351",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2225_SEG_6",
+    "B_vb_5117658009441012102",
+    "A_351",
+    "TRJ_2225_SEG_7",
+    "B_vb_82841811344196675",
+    "TRJ_2225_SEG_5"
+  ],
+  "centerNodeId": "A_351",
+  "maxLevel": 1,
+  "totalNodes": 6,
+  "totalLinks": 5
+}

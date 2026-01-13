@@ -1,0 +1,15 @@
+{
+  "id": "A_175",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Aurora, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN), ESD 138",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Aurora, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN), ESD 138",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Aurora, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN), ESD 138",
+    "support": 1
+  },
+  "related": []
+}

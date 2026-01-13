@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_342",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Sassnitz - Rønne, Schießgebiet Arkona, BEI-Interkonnektor Bornholm-Deutschland, Aurora, Ostwind 3, Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Ostwind 2, Sassnitz - Kreideküste",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2112_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2112_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-9056521737806081172",
+      "type": "behavior",
+      "label": "Behavior 06081172",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2112_SEG_7",
+      "target": "A_342",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-9056521737806081172",
+      "target": "A_342",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2112_SEG_7",
+    "A_342",
+    "B_vb_-9056521737806081172"
+  ],
+  "centerNodeId": "A_342",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

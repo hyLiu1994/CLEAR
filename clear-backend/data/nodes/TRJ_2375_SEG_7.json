@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2375_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_2375_SEG_7",
+  "summary": "Segment 7 of trajectory 2375",
+  "description": [
+    "MMSI: 215909000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-16 15:04:42",
+    "End time: 2024-03-16 15:09:00"
+  ],
+  "metadata": {
+    "trajectory_id": "2375",
+    "vessel_id": "215909000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-16 15:04:42",
+    "end_time": "2024-03-16 15:09:00"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 429",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 0.1 and 0.3 knots, indicating minimal propulsion changes)",
+      "course_change": "fluctuating (the COG varies significantly from 6.0° to 212.0°, showing repeated directional changes over time)",
+      "heading_fluctuation": "stable (the heading remains within a narrow range of 273°–282°, changing gradually by 1–2° per report, suggesting controlled yaw adjustments)",
+      "intent": "following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: lat(t) ≈ 55.7118 + 0.00005 × sin(2πt), lon(t) ≈ 10.97063 + 0.00003 × cos(2πt), where t ∈ [0,1] represents normalized time over the loop; this reflects the vessel turning in place or adjusting position within a confined harbor area, likely during docking preparation or anchoring",
+      "duration": "250~300"
+    },
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a low and nearly constant speed, mostly between 0.0 and 0.3 knots, indicating minimal propulsion)",
+      "course_change": "fluctuating (COG varies significantly from 13° to 352°, showing frequent and sharp changes in direction over time)",
+      "heading_fluctuation": "stable (heading remains consistently within 265°–274°, suggesting the vessel’s bow orientation is fixed while rudder or environmental forces cause COG shifts)",
+      "intent": "following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: lat(t) ≈ 55.711983 + 0.000017 × sin(2πt), lon(t) ≈ 10.970633 + 0.000017 × cos(2πt), where t ∈ [0,1] represents normalized time over the loop; this reflects the vessel turning in place or adjusting position within a confined harbor area, likely during docking preparation or anchoring",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

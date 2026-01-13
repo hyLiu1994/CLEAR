@@ -1,0 +1,15 @@
+{
+  "id": "A_359",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Mellembassinet, Skovshoved Havn, Langelinie Lystbådehavn, HDMS Peder Skram, Nyhavn - Flakfortet, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Svanemøllehavnen A/S, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Tuborg Havn, Øresund, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Mellembassinet, Skovshoved Havn, Langelinie Lystbådehavn, HDMS Peder Skram, Nyhavn - Flakfortet, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Svanemøllehavnen A/S, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Tuborg Havn, Øresund, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Mellembassinet, Skovshoved Havn, Langelinie Lystbådehavn, HDMS Peder Skram, Nyhavn - Flakfortet, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Svanemøllehavnen A/S, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Tuborg Havn, Øresund, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+    "support": 1
+  },
+  "related": []
+}

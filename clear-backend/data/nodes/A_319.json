@@ -1,0 +1,15 @@
+{
+  "id": "A_319",
+  "type": "attribute",
+  "label": "spatial_context: location: Küstengewässer einschließlich Anteil am Festlandsockel, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Kontek, HVDC Baltic Cable, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), Hafenmeister, C-Lion 1, Unnamed lane, Hotel Neptun, Rostock (D) – Gedser (S), Leuchtturm Warnemünde, Pagenwerder",
+  "summary": "spatial_context attribute: location: Küstengewässer einschließlich Anteil am Festlandsockel, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Kontek, HVDC Baltic Cable, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), Hafenmeister, C-Lion 1, Unnamed lane, Hotel Neptun, Rostock (D) – Gedser (S), Leuchtturm Warnemünde, Pagenwerder",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Küstengewässer einschließlich Anteil am Festlandsockel, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Kontek, HVDC Baltic Cable, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), Hafenmeister, C-Lion 1, Unnamed lane, Hotel Neptun, Rostock (D) – Gedser (S), Leuchtturm Warnemünde, Pagenwerder",
+    "support": 1
+  },
+  "related": []
+}

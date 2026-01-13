@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "id": "A_123",
+      "type": "attribute",
+      "label": "spatial_context: location: Kungsbacka kommun, Halland County, Sweden; nearby_shipping_lanes: Query failed with status 429",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_592_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_592_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_592_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_592_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_592_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_592_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5727262996856560043",
+      "type": "behavior",
+      "label": "Behavior 56560043",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_592_SEG_2",
+      "target": "A_123",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_592_SEG_1",
+      "target": "A_123",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_592_SEG_6",
+      "target": "A_123",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_123",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5727262996856560043",
+      "target": "A_123",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_592_SEG_1",
+    "B_vb_-5727262996856560043",
+    "TRJ_592_SEG_6",
+    "B_vb_3366872286460794881",
+    "TRJ_592_SEG_2",
+    "A_123"
+  ],
+  "centerNodeId": "A_123",
+  "maxLevel": 1,
+  "totalNodes": 6,
+  "totalLinks": 5
+}

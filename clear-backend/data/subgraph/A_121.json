@@ -1,0 +1,104 @@
+{
+  "nodes": [
+    {
+      "id": "A_121",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: EK R 12 Gniben, Odden - Ebeltoft, EK R 11 Sjællands Odde W., EK R 19 MULTEX, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_575_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_575_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_655_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_655_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_655_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_655_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5034770572000743103",
+      "type": "behavior",
+      "label": "Behavior 00743103",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5727262996856560043",
+      "type": "behavior",
+      "label": "Behavior 56560043",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_575_SEG_4",
+      "target": "A_121",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_655_SEG_2",
+      "target": "A_121",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_655_SEG_1",
+      "target": "A_121",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5034770572000743103",
+      "target": "A_121",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_121",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5727262996856560043",
+      "target": "A_121",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-5034770572000743103",
+    "TRJ_655_SEG_2",
+    "B_vb_-5727262996856560043",
+    "B_vb_8377157303611993086",
+    "A_121",
+    "TRJ_575_SEG_4",
+    "TRJ_655_SEG_1"
+  ],
+  "centerNodeId": "A_121",
+  "maxLevel": 1,
+  "totalNodes": 7,
+  "totalLinks": 6
+}

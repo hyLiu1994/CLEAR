@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-8220431639540344599",
+  "type": "function",
+  "label": "Function 40344599",
+  "summary": "This function models the vessel's trajectory during missing data periods using a parametric elliptic...",
+  "description": [
+    "Function description: This function models the vessel's trajectory during missing data periods using a parametric elliptical path, consistent with the observed pattern of the vessel making small, controlled turns in a confined area (e.g., during docking or anchoring). It normalizes the time intervals to a [0,1] range and maps them onto a closed loop approximating an ellipse centered between the start and end points. The latitude varies sinusoidally while the longitude varies cosinusoidally, reflecting the observed circular motion with stable heading and fluctuating COG. The radii of the ellipse are derived from the latitudinal and longitudinal deltas between start and end points, preserving the spatial scale of the maneuver. This approach is more realistic than linear interpolation given the vessel's intent to follow a curved, repetitive path.",
+    "Code implementation: def spatial_function(start, end, Time_interval):\n    import math; T = Time_interval; t_min, t_max = min(T), max(T); t_norm = [(t - t_min) / (t_max - t_min + 1e-9) for t in T]; cx, cy = (start[0] + end[0]) / 2, (start[1] + end[1]) / 2; r_lat, r_lon = abs(end[0] - start[0]) * 0.5, abs(end[1] - start[1]) * 0.5; return [(cx + r_lat * math.sin(2 * math.pi * t), cy + r_lon * math.cos(2 * math.pi * t)) for t in t_norm]"
+  ],
+  "metadata": {
+    "original_id": "vf_-8220431639540344599",
+    "code": "def spatial_function(start, end, Time_interval):\n    import math; T = Time_interval; t_min, t_max = min(T), max(T); t_norm = [(t - t_min) / (t_max - t_min + 1e-9) for t in T]; cx, cy = (start[0] + end[0]) / 2, (start[1] + end[1]) / 2; r_lat, r_lon = abs(end[0] - start[0]) * 0.5, abs(end[1] - start[1]) * 0.5; return [(cx + r_lat * math.sin(2 * math.pi * t), cy + r_lon * math.cos(2 * math.pi * t)) for t in t_norm]"
+  },
+  "related": []
+}

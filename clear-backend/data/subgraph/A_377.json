@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "A_377",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: København – Oslo",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2487_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2487_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2487_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2487_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2487_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2487_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2487_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2487_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-7299443710176764989",
+      "type": "behavior",
+      "label": "Behavior 76764989",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6255190157237282313",
+      "type": "behavior",
+      "label": "Behavior 37282313",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6950949156948289588",
+      "type": "behavior",
+      "label": "Behavior 48289588",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2487_SEG_3",
+      "target": "A_377",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2487_SEG_7",
+      "target": "A_377",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2487_SEG_9",
+      "target": "A_377",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2487_SEG_8",
+      "target": "A_377",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-7299443710176764989",
+      "target": "A_377",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_377",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6950949156948289588",
+      "target": "A_377",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2487_SEG_9",
+    "B_vb_-7299443710176764989",
+    "TRJ_2487_SEG_8",
+    "A_377",
+    "TRJ_2487_SEG_7",
+    "TRJ_2487_SEG_3",
+    "B_vb_-6950949156948289588",
+    "B_vb_-6255190157237282313"
+  ],
+  "centerNodeId": "A_377",
+  "maxLevel": 1,
+  "totalNodes": 8,
+  "totalLinks": 7
+}

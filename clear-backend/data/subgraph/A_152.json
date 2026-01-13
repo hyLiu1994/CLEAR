@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_152",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Hornbæk Havn, København – Oslo, TSS Entrance to The Sound, Hamnkontor, Ellekilde Hage-Viken, ITZ Entrance to The Sound east, Øresund, TSS In the Sound, Scandinavian Ring North, København (DK) – Oslo (N), Unnamed lane, Slip",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_697_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_697_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4859037936398037325",
+      "type": "behavior",
+      "label": "Behavior 98037325",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_697_SEG_1",
+      "target": "A_152",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4859037936398037325",
+      "target": "A_152",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_152",
+    "TRJ_697_SEG_1",
+    "B_vb_-4859037936398037325"
+  ],
+  "centerNodeId": "A_152",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

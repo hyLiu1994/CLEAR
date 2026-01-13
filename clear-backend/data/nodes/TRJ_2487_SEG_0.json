@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2487_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_2487_SEG_0",
+  "summary": "Segment 0 of trajectory 2487",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 14:33:58",
+    "End time: 2024-03-11 14:38:40"
+  ],
+  "metadata": {
+    "trajectory_id": "2487",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 14:33:58",
+    "end_time": "2024-03-11 14:38:40"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 15.7–15.9 knots across the trajectory segment)",
+      "course_change": "gradual and consistent (COG varies slightly between 142.1° and 147.6°, showing a slow and smooth evolution over time, indicating a controlled turn or curved path)",
+      "heading_fluctuation": "gradual and consistent (heading remains fixed at 145.0° throughout, while COG changes around it, suggesting the vessel is compensating for environmental forces like current or wind during a curved navigation)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 58.4329 - 0.0072 × t + 0.0001 × t², lon(t) ≈ 10.4363 + 0.0135 × t + 0.0002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

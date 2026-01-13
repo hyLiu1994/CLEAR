@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2644_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_2644_SEG_4",
+  "summary": "Segment 4 of trajectory 2644",
+  "description": [
+    "MMSI: 219000776",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 22:14:26",
+    "End time: 2024-03-07 22:18:14"
+  ],
+  "metadata": {
+    "trajectory_id": "2644",
+    "vessel_id": "219000776",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-07 22:14:26",
+    "end_time": "2024-03-07 22:18:14"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.8695 - 0.00012 × t, lon(t) ≈ 16.7055 + 0.00143 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, passenger vessels 'under way using engine' with draughts in [4, 6) m and dimensions in the [150, 200) m length and [20, 25) m width range are strongly associated with straight-route navigation patterns when traversing established shipping lanes such as the Travemünde (D) – Liepāja (LV) corridor. This specific behavior pattern (vb_-4927443205807001530) is exhibited in 102 out of 113 (approximately 90.3%) of comparable vessel-state combinations where navigation status is \"Under way using engine\" and hazardous cargo is absent. Among all candidate patterns, it has the second-highest combined edge weight support (322 total), with particularly strong linkage from vessel type (Passenger, w=16) and length (w=63), indicating its prevalence for mid-sized passenger ships on open-water routes.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating along a fixed, linear route with stable speed, gradual and consistent course change, and minimal heading fluctuation—indicative of straight-line transit with slight directional adjustment. The selected movement (vb_-4927443205807001530) matches this intent precisely, describing a \"navigating along a fixed route\" with parametrically modeled linear northeastward progression, stable speed, and alignment between COG and heading. This continuity in kinematic profile and navigational intent ensures smooth transition across the gap, maintaining the observed trajectory’s linearity and operational consistency seen before and after the missing segment.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to solve the missing value problem given the observed behavior pattern is 98.04%. This is derived from the relative weight distribution in the association between the behavior pattern and candidate functions. Specifically, the total weight sum for connections from behavior pattern vb_-4927443205807001530 to all candidate functions is 100 + 2 = 102. The weight assigned to vf_-7663396197665720575 is 100. Therefore, the selection probability is calculated as 100 / 102 ≈ 0.9804 or 98.04%. This high proportion indicates strong empirical alignment between this function and the kinematic characteristics of the vessel’s motion.  \n2. Function vf_-7663396197665720575 implements time-proportional linear interpolation using max(Time_interval) as the normalizing factor, ensuring precise scaling of position increments across the full temporal span. It explicitly accounts for temporal progression by distributing latitude and longitude changes uniformly relative to the maximum time index, which matches the observed stable-speed, fixed-route navigation pattern. In contrast, vf_5240413252068673064 uses Time_interval[-1] (equivalent to max in ordered lists), achieving similar results but with less explicit emphasis on temporal normalization in its description. The former demonstrates superior clarity and robustness in handling variable-length intervals under constant-velocity assumptions."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Baltic Sea shipping corridor; spatial anchor: Travemünde (D) – Liepāja (LV) route\nOperational Protocol Rationale: Passenger vessels of this size and configuration typically follow straight, predictable paths within designated shipping lanes to maintain safe separation from opposing traffic and avoid navigational hazards. The observed stable speed, consistent course over ground, and tight alignment between heading and motion direction reflect autopilot-assisted transit along a predefined route, which is standard practice in regulated maritime corridors. This behavior contrasts with maneuvering patterns seen near ports or in congested waters, where frequent course and speed adjustments would be expected. Given the vessel’s location near a major Baltic shipping lane and its operational profile—no hazardous cargo, moderate draught, and engine-powered transit—the most logical interpretation is steady-state cruising along a fixed route, consistent with international collision avoidance guidelines and regional traffic management protocols.\n'''",
+    "operational_protocol_rationale": "Passenger vessels of this size and configuration typically follow straight, predictable paths within designated shipping lanes to maintain safe separation from opposing traffic and avoid navigational hazards. The observed stable speed, consistent course over ground, and tight alignment between heading and motion direction reflect autopilot-assisted transit along a predefined route, which is standard practice in regulated maritime corridors. This behavior contrasts with maneuvering patterns seen near ports or in congested waters, where frequent course and speed adjustments would be expected. Given the vessel’s location near a major Baltic shipping lane and its operational profile—no hazardous cargo, moderate draught, and engine-powered transit—the most logical interpretation is steady-state cruising along a fixed route, consistent with international collision avoidance guidelines and regional traffic management protocols.\n'''"
+  },
+  "related": []
+}

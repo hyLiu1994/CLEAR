@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_399_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_399_SEG_0",
+  "summary": "Segment 0 of trajectory 399",
+  "description": [
+    "MMSI: 209541000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-25 03:37:37",
+    "End time: 2024-03-25 03:44:24"
+  ],
+  "metadata": {
+    "trajectory_id": "399",
+    "vessel_id": "209541000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-25 03:37:37",
+    "end_time": "2024-03-25 03:44:24"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Kristiansand - Hirtshals, Hirtshals - Kristiansand, Hirtshals - Stavanger, Hirtshals - Tórshavn",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 14.6 and 14.8 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 216.9° and 218.3°, showing a smooth evolution with minimal oscillation)",
+      "heading_fluctuation": "stable (heading remains constant at 218.0° throughout, indicating no yawing or steering corrections)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations:",
+      "duration": "400~450"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

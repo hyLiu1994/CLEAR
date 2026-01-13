@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-5778476742998890982",
+  "type": "behavior",
+  "label": "Behavior 98890982",
+  "summary": "Vessel behavior pattern: following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 56.1051 - 0.0084 × t + 0.0002 × t², lon(t) ≈ 11.1439 - 0.0087 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+  "description": [
+    "Speed profile: {'stable': True}",
+    "Course change: {'gradual and consistent': True}",
+    "Heading fluctuation: {'stable': True}",
+    "Behavior intent: following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 56.1051 - 0.0084 × t + 0.0002 × t², lon(t) ≈ 11.1439 - 0.0087 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+    "Duration: 250~300"
+  ],
+  "metadata": {
+    "original_id": "vb_-5778476742998890982",
+    "duration": "250~300",
+    "support": 12,
+    "pattern_key": [
+      "{'stable': True}",
+      "{'gradual and consistent': True}",
+      "{'stable': True}",
+      "following a curved maritime route",
+      "250~300"
+    ]
+  },
+  "related": []
+}

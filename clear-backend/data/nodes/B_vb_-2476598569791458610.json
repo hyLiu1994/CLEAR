@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-2476598569791458610",
+  "type": "behavior",
+  "label": "Behavior 91458610",
+  "summary": "Vessel behavior pattern: following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters",
+  "description": [
+    "Speed profile: stable (the vessel maintains a low and nearly constant speed, typically between 0.0 and 0.4 knots, indicating minimal movement)",
+    "Course change: fluctuating (the COG changes significantly, from approximately 238° to 354°, then shifting to 174°, and back to 354°, indicating repeated small adjustments in direction)",
+    "Heading fluctuation: stable (the heading remains almost constant at 354°–355°, with only minor deviations, suggesting the vessel’s bow is aligned in a fixed direction despite COG changes)",
+    "Behavior intent: following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters",
+    "Duration: 1150~1200"
+  ],
+  "metadata": {
+    "original_id": "vb_-2476598569791458610",
+    "duration": "1150~1200",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "fluctuating",
+      "stable",
+      "following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters",
+      "1150~1200"
+    ]
+  },
+  "related": []
+}

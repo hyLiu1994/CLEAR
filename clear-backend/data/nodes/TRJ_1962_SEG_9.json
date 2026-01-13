@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1962_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1962_SEG_9",
+  "summary": "Segment 9 of trajectory 1962",
+  "description": [
+    "MMSI: 210731000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-19 10:10:29",
+    "End time: 2024-03-19 10:14:31"
+  ],
+  "metadata": {
+    "trajectory_id": "1962",
+    "vessel_id": "210731000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-19 10:10:29",
+    "end_time": "2024-03-19 10:14:31"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 504",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.95192 + 0.00018 × t, lon(t) ≈ 13.803963 + 0.00092 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

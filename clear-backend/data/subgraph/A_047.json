@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_047",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed lane, Tornen, Mejlø Vildtreservat, Storebælt",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_199_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_199_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-813988986690502197",
+      "type": "behavior",
+      "label": "Behavior 90502197",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_199_SEG_8",
+      "target": "A_047",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_047",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_047",
+    "TRJ_199_SEG_8",
+    "B_vb_-813988986690502197"
+  ],
+  "centerNodeId": "A_047",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_303",
+      "type": "attribute",
+      "label": "spatial_context: location: Ystads kommun, Skåne County, Sweden; nearby_shipping_lanes: Baltica, Køge - Rønne, Kabusa skjutfält, Trelleborg (SE) - Klaipėda (LT), Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1713_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_1713_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5034770572000743103",
+      "type": "behavior",
+      "label": "Behavior 00743103",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1713_SEG_8",
+      "target": "A_303",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5034770572000743103",
+      "target": "A_303",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-5034770572000743103",
+    "TRJ_1713_SEG_8",
+    "A_303"
+  ],
+  "centerNodeId": "A_303",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

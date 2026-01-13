@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_174",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Windanker, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), Aurora, C-Lion 1, Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S), Travemünde (D) – Helsinki (FIN)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_812_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_812_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_812_SEG_8",
+      "target": "A_174",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_174",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8377157303611993086",
+    "TRJ_812_SEG_8",
+    "A_174"
+  ],
+  "centerNodeId": "A_174",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

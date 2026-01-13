@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "A_015",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: DanTysk, DanTysk OAP, Atlantic Crossing 1 (AC1) Seg.A, DanTysk OSS, Unnamed lane, Danger Area Nordsee",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_35_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_35_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_257_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_257_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2518_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2518_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2518_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2518_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2518_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2518_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6098075840337851105",
+      "type": "behavior",
+      "label": "Behavior 37851105",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6950949156948289588",
+      "type": "behavior",
+      "label": "Behavior 48289588",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1450693701513248396",
+      "type": "behavior",
+      "label": "Behavior 13248396",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3256118230624125506",
+      "type": "behavior",
+      "label": "Behavior 24125506",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_35_SEG_5",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_257_SEG_8",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2518_SEG_5",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2518_SEG_3",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2518_SEG_6",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6098075840337851105",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6950949156948289588",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1450693701513248396",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3256118230624125506",
+      "target": "A_015",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_015",
+    "TRJ_35_SEG_5",
+    "TRJ_2518_SEG_6",
+    "B_vb_6098075840337851105",
+    "TRJ_2518_SEG_5",
+    "B_vb_-3256118230624125506",
+    "B_vb_-4857314466243141680",
+    "B_vb_-6950949156948289588",
+    "B_vb_1450693701513248396",
+    "TRJ_2518_SEG_3",
+    "TRJ_257_SEG_8"
+  ],
+  "centerNodeId": "A_015",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

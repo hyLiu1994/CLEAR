@@ -1,0 +1,15 @@
+{
+  "id": "A_406",
+  "type": "attribute",
+  "label": "draught: [8, 10) m",
+  "summary": "draught attribute: [8, 10) m",
+  "description": [
+    "This attribute is associated with 123 behavior patterns"
+  ],
+  "metadata": {
+    "category": "draught",
+    "attribute_name": "[8, 10) m",
+    "support": 123
+  },
+  "related": []
+}

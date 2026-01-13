@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1258_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1258_SEG_9",
+  "summary": "Segment 9 of trajectory 1258",
+  "description": [
+    "MMSI: 210195000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-29 19:47:24",
+    "End time: 2024-03-29 19:51:12"
+  ],
+  "metadata": {
+    "trajectory_id": "1258",
+    "vessel_id": "210195000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-29 19:47:24",
+    "end_time": "2024-03-29 19:51:12"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.497995 - 0.00135 × t, lon(t) ≈ 14.765962 - 0.00415 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with a draught between 8–10 m and dimensions in the 150–200 m length range navigating along major Baltic shipping lanes such as Travemünde–Helsinki or Trelleborg–Klaipėda exhibit straight-line transit behavior at stable speeds in approximately 62% of observed segments. This pattern is strongly associated with open-water en route phases, where vessels maintain fixed headings and consistent SOG near 15 knots. The high edge weights from static attributes—especially navigation_status (w=62), vessel_type (w=52), and length (w=41)—indicate that this movement is statistically prevalent among similar cargo ships in this maritime corridor. Furthermore, the co-occurrence of stable speed, minimal course change, and alignment with predefined routes appears frequently in this context, reinforcing its plausibility.",
+    "contextual_justification": "The boundary movement pattern shows a vessel moving west-southwest at a stable speed of ~15.6 knots with nearly constant COG (238.8° → 239.1°) and heading (~239.0°), indicating straight-line navigation along a fixed route. The candidate movement vb_3366872286460794881 matches this behavior closely: it describes a vessel maintaining 15.2–15.3 knots with negligible COG variation (274.1° → 274.8°) and a fixed heading of 273.0°, consistent with precise rudder control and linear progression. Although the absolute bearing differs, the kinematic profile—stable speed, minimal course deviation, and intent to follow a fixed route—is directly aligned with the boundary conditions. Given the gap occurs within a known shipping lane network and the vessel continues under way using engine status, this movement represents the most plausible continuation of the trajectory.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_5240413252068673064` correctly addresses the missing value problem is 98.4%, calculated as 61 / (61 + 1) = 61 / 62 ≈ 0.984. This proportion reflects the relative support for this function compared to the alternative, based on observed alignment with the behavior pattern characterized by stable speed, consistent COG, and fixed heading—indicative of linear motion. No other functions received comparable statistical endorsement in the pattern-function association data.  \n2. This function assumes constant velocity motion and performs time-proportional linear interpolation between start and end points. Its model aligns precisely with the observed kinematic stability: minimal course deviation (COG varies only 0.7° over the segment), constant heading (273.0° throughout), and stable speed (~15.2–15.3 knots), all confirming near-uniform rectilinear movement. In contrast, the alternative function lacks sufficient empirical support (1.6% weight share) and offers no differentiating algorithmic advantage, as both implement linear interpolation with negligible implementation differences."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "SOLAS Chapter V, Regulation 19 – Mandatory use of navigation routes; applicable to cargo vessels in designated Baltic Sea shipping lanes; spatial anchor: Travemünde (D) – Helsinki (FIN), Trelleborg (SE) – Klaipėda (LT)\nOperational Protocol Rationale: The vessel is operating under way using engine with no hazardous cargo, consistent with standard transit conditions for cargo vessels in open maritime corridors. Its stable speed of approximately 15.2–15.7 knots, minimal course deviation, and fixed heading indicate autopilot-assisted navigation along a predefined route—typical behavior within structured shipping lanes where traffic separation schemes are enforced. The nearly perfect alignment between course over ground and heading confirms precise rudder control and absence of external drift, ruling out anchoring, maneuvering, or coastal evasion patterns. Given the geographic context—proximity to major Baltic trade routes—and the uniformity of motion, linear interpolation between known positions accurately reflects the expected trajectory during data gaps, as deviations from straight-line progress would be both operationally unnecessary and contrary to good seamanship practices in these regulated waters.\n'''",
+    "operational_protocol_rationale": "The vessel is operating under way using engine with no hazardous cargo, consistent with standard transit conditions for cargo vessels in open maritime corridors. Its stable speed of approximately 15.2–15.7 knots, minimal course deviation, and fixed heading indicate autopilot-assisted navigation along a predefined route—typical behavior within structured shipping lanes where traffic separation schemes are enforced. The nearly perfect alignment between course over ground and heading confirms precise rudder control and absence of external drift, ruling out anchoring, maneuvering, or coastal evasion patterns. Given the geographic context—proximity to major Baltic trade routes—and the uniformity of motion, linear interpolation between known positions accurately reflects the expected trajectory during data gaps, as deviations from straight-line progress would be both operationally unnecessary and contrary to good seamanship practices in these regulated waters.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,146 @@
+{
+  "nodes": [
+    {
+      "id": "A_052",
+      "type": "attribute",
+      "label": "spatial_context: location: Schülp bei Rendsburg, Amt Jevenstedt, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24813, Germany; nearby_shipping_lanes: Büdelsdorfer Yachtclub, Kanalfähre Breiholz, Yachthafen Rendsburg, Freie Turnerschaft Eintracht, Kanalfähre Nobiskrug, Obereider-Yachtservice, Lotsenstation Rüsterbergen",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_217_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_217_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_217_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_217_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_217_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_217_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_217_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_217_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_217_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_217_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8219356608673346866",
+      "type": "behavior",
+      "label": "Behavior 73346866",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-813988986690502197",
+      "type": "behavior",
+      "label": "Behavior 90502197",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5727262996856560043",
+      "type": "behavior",
+      "label": "Behavior 56560043",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5735201309241879777",
+      "type": "behavior",
+      "label": "Behavior 41879777",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_217_SEG_6",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_217_SEG_3",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_217_SEG_1",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_217_SEG_4",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_217_SEG_2",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5727262996856560043",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5735201309241879777",
+      "target": "A_052",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-5727262996856560043",
+    "TRJ_217_SEG_1",
+    "B_vb_-813988986690502197",
+    "A_052",
+    "TRJ_217_SEG_2",
+    "B_vb_-5735201309241879777",
+    "TRJ_217_SEG_6",
+    "TRJ_217_SEG_4",
+    "B_vb_-8219356608673346866",
+    "TRJ_217_SEG_3"
+  ],
+  "centerNodeId": "A_052",
+  "maxLevel": 1,
+  "totalNodes": 10,
+  "totalLinks": 9
+}

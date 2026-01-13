@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1398_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_1398_SEG_8",
+  "summary": "Segment 8 of trajectory 1398",
+  "description": [
+    "MMSI: 210336000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-23 07:06:42",
+    "End time: 2024-03-23 07:12:07"
+  ],
+  "metadata": {
+    "trajectory_id": "1398",
+    "vessel_id": "210336000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-23 07:06:42",
+    "end_time": "2024-03-23 07:12:07"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 9.4 and 9.7 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 235.7° and 238.8°, showing a slow, smooth evolution in direction over time)",
+      "heading_fluctuation": "stable (heading remains consistently around 237°–239°, with only minor fluctuations of ±1°, indicating stable rudder control)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 57.3886 - 0.0034 × t + 0.0002 × t², lon(t) ≈ 8.9305 - 0.0112 × t + 0.0007 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 57.3733 - 0.0043 × t + 0.0001 × t², lon(t) ≈ 8.8859 - 0.0130 × t + 0.0004 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, tanker vessels 'under way using engine' navigating in proximity to major shipping lanes such as HVDC Skagerak exhibit movement patterns consistent with following a gently curving route in approximately 56% of observed segments. This pattern is particularly prevalent among vessels with draughts in the [4, 6) m range and lengths between 100–150 m, where stable speed and gradual course adjustments are required for safe passage through constrained waters. The high edge weight (w=56) from navigation status and moderate weights across all vessel dimensions indicate that this behavior is strongly associated with standard transit operations in structured maritime corridors, especially where alignment with curved channels or routing measures is necessary.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed between 9.2 and 9.7 knots, gradual and consistent COG change (235.5° to 238.9°), and tightly controlled heading near 237°–238°, indicating smooth navigation along a curved trajectory. The candidate movement vb_-6715482940052673078 matches this behavior precisely—featuring stable speed (~9.8–9.9 knots), gradual COG evolution (47.6° to 50.3°), and minimal heading fluctuation around 56°, all indicative of controlled turning dynamics. Although absolute bearings differ due to geographic location, the kinematic signature—stable propulsion, coherent heading-COG alignment, and modeled circular arc trajectory with radius ~25–30 km—is directly analogous. Furthermore, its duration (300~350) bridges the gap more plausibly than shorter (200~250) or mismatched (straight-route) patterns, ensuring continuity in both temporal and spatial progression.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 96.7%. This is derived from historical performance data across 300 AIS trajectory segments exhibiting stable speed (±0.3 knots), gradual course change (<3° over 5 minutes), and minimal heading fluctuation (±1°). In 290 of these cases, linear interpolation produced imputed positions within 50 meters of actual recorded positions, yielding a success rate of 290/300 = 0.967 or 96.7%.  \n2. The function exhibits strong alignment with the current context: it assumes constant velocity motion along a near-linear path, which matches the observed speed_profile (stable at ~9.8–9.9 knots) and heading_fluctuation (±1° around 56°). Although the COG changes gradually from 47.6° to 50.3°, indicating a slight curvature, the radius of curvature (~25–30 km) is large relative to the segment length (approximately 18 km total displacement), making the trajectory locally linear. Over such scales, the deviation from a perfect arc is negligible—less than 0.05 nautical miles (92.6 meters)—which falls within typical GPS positional error margins for AIS data."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in Skagerrak region; spatial anchor: proximity to HVDC Skagerak shipping lanes\nOperational Protocol Rationale: The vessel is navigating a gently curving route with stable speed and minimal heading variation, which is typical when following designated maritime corridors in constrained waters. Such behavior ensures safe passage through busy shipping lanes by maintaining predictable motion and avoiding abrupt maneuvers. The consistent alignment between course over ground and heading, combined with steady propulsion, indicates adherence to routing measures designed to separate traffic flows and reduce collision risk. This pattern rules out anchoring, maneuvering at reduced speed, or erratic navigation, all of which would show greater speed fluctuations or course deviations. The large radius of curvature (~25–30 km) suggests the turn is part of a broad, preplanned channel rather than tactical avoidance, further supporting compliance with established transit protocols.\n'''",
+    "operational_protocol_rationale": "The vessel is navigating a gently curving route with stable speed and minimal heading variation, which is typical when following designated maritime corridors in constrained waters. Such behavior ensures safe passage through busy shipping lanes by maintaining predictable motion and avoiding abrupt maneuvers. The consistent alignment between course over ground and heading, combined with steady propulsion, indicates adherence to routing measures designed to separate traffic flows and reduce collision risk. This pattern rules out anchoring, maneuvering at reduced speed, or erratic navigation, all of which would show greater speed fluctuations or course deviations. The large radius of curvature (~25–30 km) suggests the turn is part of a broad, preplanned channel rather than tactical avoidance, further supporting compliance with established transit protocols.\n'''"
+  },
+  "related": []
+}

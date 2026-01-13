@@ -1,0 +1,15 @@
+{
+  "id": "A_328",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Strefa 6b okresowo zamykana dla żeglugi i rybołówstwa",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Strefa 6b okresowo zamykana dla żeglugi i rybołówstwa",
+  "description": [
+    "This attribute is associated with 3 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Strefa 6b okresowo zamykana dla żeglugi i rybołówstwa",
+    "support": 3
+  },
+  "related": []
+}

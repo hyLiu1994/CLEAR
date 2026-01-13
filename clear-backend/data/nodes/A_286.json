@@ -1,0 +1,15 @@
+{
+  "id": "A_286",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), HVDC Baltic Cable, Rostock - Trelleborg, Køge - Rønne, Rostock (D) - Trelleborg (SE), Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Travemünde (D) – Trelleborg (SE)",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), HVDC Baltic Cable, Rostock - Trelleborg, Køge - Rønne, Rostock (D) - Trelleborg (SE), Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Travemünde (D) – Trelleborg (SE)",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), HVDC Baltic Cable, Rostock - Trelleborg, Køge - Rønne, Rostock (D) - Trelleborg (SE), Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Travemünde (D) – Trelleborg (SE)",
+    "support": 1
+  },
+  "related": []
+}

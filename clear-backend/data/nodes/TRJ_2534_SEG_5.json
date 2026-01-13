@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_2534_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_2534_SEG_5",
+  "summary": "Segment 5 of trajectory 2534",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-14 18:42:57",
+    "End time: 2024-03-14 18:46:44"
+  ],
+  "metadata": {
+    "trajectory_id": "2534",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-14 18:42:57",
+    "end_time": "2024-03-14 18:46:44"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: HAVSIL Fiber Cable System, Denmark-Norway 6, Unnamed lane",
+    "Draught: [6, 8) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 14.9 and 16.8 knots with minor fluctuations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies between 26.3° and 31.1° with small, oscillating changes around a mean course of ~28.5°, suggesting controlled navigation along a gently curving path)",
+      "heading_fluctuation": "gradual and consistent (heading remains nearly constant at 30.0° or 31.0°, with only minimal deviation, indicating stable rudder control and alignment with intended direction)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 57.1874 + 0.0088 × t + 0.0001 × t², lon(t) ≈ 8.4515 + 0.0086 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 16.4 and 17.0 knots, with minimal variation)",
+      "course_change": "gradual and consistent (COG fluctuates slightly between 26.6° and 30.8°, but overall follows a smooth progression around 28–30°, indicating a slow, controlled turn)",
+      "heading_fluctuation": "gradual and consistent (heading remains fixed at 30.0° across all observations, showing the vessel is not making abrupt rudder adjustments)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 57.1712 + 0.0008 × t + 0.00003 × t², lon(t) ≈ 8.4353 + 0.0008 × t + 0.00004 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 14.2 and 14.7 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly from 27.0° to 32.6° over the sequence, showing a smooth evolution in direction)",
+      "heading_fluctuation": "gradual and consistent (heading remains fixed at 30.0° throughout, while COG varies slightly around it, suggesting controlled yaw with rudder input)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 57.203083 + 0.0012 × t + 0.00008 × t², lon(t) ≈ 8.46726 + 0.0013 × t + 0.00006 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

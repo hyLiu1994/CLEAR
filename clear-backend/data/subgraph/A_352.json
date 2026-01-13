@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_352",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Rødsand II Havmøllepark, Klaipėda (LT) – Kiel (D), Femern Fixed Link Holding Area North, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2225_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2225_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2225_SEG_1",
+      "target": "A_352",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_352",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_352",
+    "B_vb_82841811344196675",
+    "TRJ_2225_SEG_1"
+  ],
+  "centerNodeId": "A_352",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

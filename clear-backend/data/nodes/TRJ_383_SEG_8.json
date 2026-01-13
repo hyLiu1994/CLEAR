@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_383_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_383_SEG_8",
+  "summary": "Segment 8 of trajectory 383",
+  "description": [
+    "MMSI: 209541000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-21 20:32:13",
+    "End time: 2024-03-21 20:38:02"
+  ],
+  "metadata": {
+    "trajectory_id": "383",
+    "vessel_id": "209541000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-21 20:32:13",
+    "end_time": "2024-03-21 20:38:02"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Aalborg, Aalborg Municipality, North Denmark Region, 9000, Denmark; nearby_shipping_lanes: Vestre Bådehavn, Vendsysselbanen, Sildekajen, Tunnelhavnen, Nørresundby Kirke, Limfjordsbroen, Aalborg Skudehavn, Nørresundby Lystbådehavn, Aalborgtårnet, Grønlandshavnen, Nørre Uttrup Lystbådehavn, Tunnelbassinet, Unnamed lane, Nybrogade, Østre Havnebasin, Sankt Mariæ Kirke, Vor Frelsers Kirke",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a speed of 0.0 knots, indicating it is stationary or drifting slightly)",
+      "course_change": "stable (COG remains constant at 111.6°, showing no change in direction despite lack of movement)",
+      "heading_fluctuation": "stable (heading fluctuates minimally around 60°, with only a 1° variation observed, consistent with a moored or anchored vessel swinging slightly due to wind or current)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving east-southeast, approximated by the parametric equations: latitude ≈ 57.0475 + k·sin(111.6°), longitude ≈ 10.0544 + k·cos(111.6°), where k is a small scalar representing drift magnitude due to measurement noise or environmental forces)",
+      "duration": "300~350"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a near-zero speed, with SOG consistently at 0.0 or very close to it)",
+      "course_change": "stable (COG remains constant at 111.6° across all observations, indicating no change in intended direction despite lack of movement)",
+      "heading_fluctuation": "stable (heading is fixed at 60.0° throughout the sequence, showing no yawing or rotational adjustments)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving east-southeast, approximated by the parametric equations:",
+      "duration": "350~400"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

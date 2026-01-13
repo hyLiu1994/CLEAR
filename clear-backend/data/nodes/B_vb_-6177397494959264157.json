@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-6177397494959264157",
+  "type": "behavior",
+  "label": "Behavior 59264157",
+  "summary": "Vessel behavior pattern: navigating along a fixed route",
+  "description": [
+    "Speed profile: {'stable': True}",
+    "Course change: gradual and consistent",
+    "Heading fluctuation: {'stable': True}",
+    "Behavior intent: navigating along a fixed route",
+    "Duration: 200~250"
+  ],
+  "metadata": {
+    "original_id": "vb_-6177397494959264157",
+    "duration": "200~250",
+    "support": 8,
+    "pattern_key": [
+      "{'stable': True}",
+      "gradual and consistent",
+      "{'stable': True}",
+      "navigating along a fixed route",
+      "200~250"
+    ]
+  },
+  "related": []
+}

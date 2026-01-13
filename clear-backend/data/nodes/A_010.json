@@ -1,0 +1,15 @@
+{
+  "id": "A_010",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Pangea North UK/Denmark, TAT 10B EAST SECTION, Unnamed lane",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Pangea North UK/Denmark, TAT 10B EAST SECTION, Unnamed lane",
+  "description": [
+    "This attribute is associated with 3 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Pangea North UK/Denmark, TAT 10B EAST SECTION, Unnamed lane",
+    "support": 3
+  },
+  "related": []
+}

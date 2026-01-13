@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1866_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_1866_SEG_7",
+  "summary": "Segment 7 of trajectory 1866",
+  "description": [
+    "MMSI: 210568000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 22:33:27",
+    "End time: 2024-03-18 22:37:14"
+  ],
+  "metadata": {
+    "trajectory_id": "1866",
+    "vessel_id": "210568000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-18 22:33:27",
+    "end_time": "2024-03-18 22:37:14"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable",
+      "course_change": "gradual and consistent",
+      "heading_fluctuation": "stable",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 54.65055 - 0.00112 × t, lon(t) ≈ 14.728053 - 0.00221 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 54.6464 - 0.0012 × t, lon(t) ≈ 14.6697 - 0.0023 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating in proximity to major shipping lanes such as Nord Stream and Baltic Pipe are most frequently associated with straight-line navigation patterns. This particular behavior pattern (vb_-4927443205807001530) is strongly supported by vessel attributes: 102 out of 102 connections from \"navigation_status: Under way using engine\" (100%), 102 out of 102 from \"hazardous_cargo: no\" (100%), and 73 out of 83 total possible from \"vessel_type: Cargo\" (88%) indicate high prevalence. Although the spatial context edge weight is low (w=1), it confirms alignment with vessels transiting near critical subsea infrastructure corridors where fixed routing is mandated. Among all candidate patterns, this movement has the highest combined attribute support for a cargo vessel in open-water transit.",
+    "contextual_justification": "The boundary movement pattern explicitly describes a linear west-southwest trajectory with stable speed, consistent course change, and tight COG-heading alignment—hallmarks of fixed-route navigation. The selected movement (vb_-4927443205807001530) matches these dynamics precisely, exhibiting stable speed, gradual and consistent course evolution, and minimal heading fluctuation, all indicative of straight-path progression. Furthermore, the parametric model in the candidate (northeast-moving linear trajectory) reflects the same mathematical form as the boundary segment, differing only in direction—a plausible variation due to local routing. Given the continuity in kinematic stability and intent, this pattern best preserves trajectory coherence across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_-7663396197665720575` can correctly impute missing values for the given behavior pattern is 98.04%, calculated as follows: Among the two candidate functions linked to the behavior pattern `vb_-4927443205807001530`, the total weight sum is 100 + 2 = 102. The proportion of support for `vf_-7663396197665720575` is therefore 100 / 102 ≈ 0.9804, or 98.04%. This high proportion indicates strong empirical alignment between this function and the observed kinematic pattern in historical data usage.  \n2. This function implements time-proportional linear interpolation using normalized time intervals relative to the maximum observed time index, ensuring smooth and uniformly distributed position estimates. Its model assumes constant velocity motion along a straight path, which closely matches the context of stable speed, consistent COG, minimal heading fluctuation, and intent to navigate a fixed linear route. In contrast, the alternative function uses `Time_interval[-1]` as the normalizing factor—functionally equivalent under uniform sampling—but lacks explicit normalization clarity in edge documentation, reducing its statistical preference despite similar logic."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Mandatory Routing Scheme applicable to vessels transiting near subsea pipeline corridors in the Baltic Sea\nOperational Protocol Rationale: Cargo vessels operating without hazardous materials and under engine power in this region are expected to follow designated straight-line routes to minimize navigational risk near critical infrastructure such as major gas pipelines. The observed stable speed, consistent course over ground, and tight alignment between heading and motion direction reflect autopilot-assisted transit along a fixed maritime corridor. This behavior is characteristic of compliant passage through regulated waters where deviation from established lanes is discouraged. Alternative behaviors involving curved trajectories or variable speeds are less likely, as they suggest maneuvering typically associated with port approaches or avoidance actions, which are not indicated here given the vessel’s steady-state dynamics and location within an open-water shipping lane.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating without hazardous materials and under engine power in this region are expected to follow designated straight-line routes to minimize navigational risk near critical infrastructure such as major gas pipelines. The observed stable speed, consistent course over ground, and tight alignment between heading and motion direction reflect autopilot-assisted transit along a fixed maritime corridor. This behavior is characteristic of compliant passage through regulated waters where deviation from established lanes is discouraged. Alternative behaviors involving curved trajectories or variable speeds are less likely, as they suggest maneuvering typically associated with port approaches or avoidance actions, which are not indicated here given the vessel’s steady-state dynamics and location within an open-water shipping lane.\n'''"
+  },
+  "related": []
+}

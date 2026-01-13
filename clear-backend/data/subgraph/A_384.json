@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_384",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: ODIN 1, SylWin1, COBRA cable",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2564_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2564_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2561_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2561_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6950949156948289588",
+      "type": "behavior",
+      "label": "Behavior 48289588",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1724885279462674721",
+      "type": "behavior",
+      "label": "Behavior 62674721",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2564_SEG_0",
+      "target": "A_384",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2561_SEG_2",
+      "target": "A_384",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6950949156948289588",
+      "target": "A_384",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1724885279462674721",
+      "target": "A_384",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2561_SEG_2",
+    "B_vb_1724885279462674721",
+    "A_384",
+    "B_vb_-6950949156948289588",
+    "TRJ_2564_SEG_0"
+  ],
+  "centerNodeId": "A_384",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

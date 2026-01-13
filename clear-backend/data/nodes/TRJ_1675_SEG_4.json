@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1675_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_1675_SEG_4",
+  "summary": "Segment 4 of trajectory 1675",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 01:34:44",
+    "End time: 2024-03-18 01:40:44"
+  ],
+  "metadata": {
+    "trajectory_id": "1675",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-18 01:34:44",
+    "end_time": "2024-03-18 01:40:44"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with only minor gradual decreases from 13.0 to 12.4 knots over the segment, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG remains almost unchanged at 14.1° for most of the trajectory, with only a 0.1° drop near the end, reflecting a highly stable direction)",
+      "heading_fluctuation": "stable (heading is consistently reported at 15.0° throughout the entire sequence, showing no oscillation or yawing)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.7243 + 0.0087 × t, lon(t) ≈ 12.5302 + 0.0038 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.763662 + 0.000566 × t, lon(t) ≈ 12.55024 + 0.000334 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, passenger vessels 'under way using engine' with draughts in [4, 6) m and dimensions in the [150, 200) m length and [25, 30) m width range are strongly associated with straight-line navigation patterns. This particular behavior pattern (vb_-4927443205807001530) is the most frequently observed among such vessels, supported by high edge weights: navigation_status contributes 102 out of total connections (38.5%), vessel_type adds 16 (6.1%), and static dimensions (length, width, draught) contribute 63, 43, and 27 respectively—amounting to a dominant share of contextual evidence. The spatial context includes proximity to major Baltic shipping lanes like Travemünde–Trelleborg and Rostock–Trelleborg, which are known for structured eastbound traffic, further reinforcing the prevalence of fixed-route behavior in this region.",
+    "contextual_justification": "The boundary movement pattern shows stable speed (~13 knots), minimal course deviation (COG oscillating between 14.1° and 14.5°), constant heading (15.0°), and a linear eastward trajectory consistent with a fixed maritime route. The selected movement (vb_-4927443205807001530) matches this intent precisely, describing a \"navigating along a fixed route\" behavior with stable speed, gradual and consistent course change, and a linear northeast progression. The continuity in kinematic profile (stable speed, aligned COG-heading, smooth trajectory) and spatial alignment with regional shipping lanes ensures seamless transition across the gap, making it the most plausible interpolation.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to impute missing latitude and longitude for this behavior pattern is approximately 98.04%, calculated as 100 / (100 + 2) = 100 / 102 ≈ 0.9804. This proportion reflects the relative confidence in this function over the alternative based on historical performance alignment with stable trajectory patterns. In prior applications involving vessels exhibiting stable speed, consistent COG, and minimal heading fluctuation, this function has been selected 100 times compared to 2 selections for the alternative under equivalent kinematic conditions, indicating a strong empirical preference.  \n2. This function is specifically designed for linear interpolation using time-proportional scaling of position increments between known start and end points. It assumes constant velocity motion along a straight path, which aligns perfectly with the observed behavior: stable speed profile, gradual and consistent course change, and negligible heading fluctuations—all indicative of autopilot-driven navigation along a fixed maritime route. The alternative function, while structurally similar, has shown less robustness in preserving temporal consistency across longer gaps (duration 200~250 seconds), particularly when time intervals are non-uniform or sampling is irregular."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Baltic Sea – applies to passenger vessels navigating near major shipping lanes including Rostock–Trelleborg and Travemünde–Trelleborg\nOperational Protocol Rationale: Passenger vessels operating under way with engine in this region typically follow fixed, linear routes due to established maritime traffic organization. The vessel’s stable speed, consistent course over ground, and minimal heading variation align with autopilot-assisted navigation along designated eastbound corridors. This behavior is characteristic of structured transit through busy shipping lanes, where predictable motion ensures collision avoidance and compliance with routing conventions. Alternative behaviors such as maneuvering or anchoring are inconsistent with continuous propulsion and directional stability, while curved-path navigation does not match the observed straight-line trajectory. The spatial concentration of nearby lanes reinforces the prevalence of route-following conduct, making linear interpolation the most reliable method for reconstructing missing positions.\n'''",
+    "operational_protocol_rationale": "Passenger vessels operating under way with engine in this region typically follow fixed, linear routes due to established maritime traffic organization. The vessel’s stable speed, consistent course over ground, and minimal heading variation align with autopilot-assisted navigation along designated eastbound corridors. This behavior is characteristic of structured transit through busy shipping lanes, where predictable motion ensures collision avoidance and compliance with routing conventions. Alternative behaviors such as maneuvering or anchoring are inconsistent with continuous propulsion and directional stability, while curved-path navigation does not match the observed straight-line trajectory. The spatial concentration of nearby lanes reinforces the prevalence of route-following conduct, making linear interpolation the most reliable method for reconstructing missing positions.\n'''"
+  },
+  "related": []
+}

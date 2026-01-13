@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-4859037936398037325",
+  "type": "behavior",
+  "label": "Behavior 98037325",
+  "summary": "Vessel behavior pattern: following a curved maritime route",
+  "description": [
+    "Speed profile: {'stable': True}",
+    "Course change: gradual and consistent",
+    "Heading fluctuation: {'stable': True}",
+    "Behavior intent: following a curved maritime route",
+    "Duration: 300~350"
+  ],
+  "metadata": {
+    "original_id": "vb_-4859037936398037325",
+    "duration": "300~350",
+    "support": 8,
+    "pattern_key": [
+      "{'stable': True}",
+      "gradual and consistent",
+      "{'stable': True}",
+      "following a curved maritime route",
+      "300~350"
+    ]
+  },
+  "related": []
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_386",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: ODIN 1, SylWin1, COBRA cable, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2564_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2564_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7238632368782829466",
+      "type": "behavior",
+      "label": "Behavior 82829466",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2564_SEG_1",
+      "target": "A_386",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7238632368782829466",
+      "target": "A_386",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_7238632368782829466",
+    "A_386",
+    "TRJ_2564_SEG_1"
+  ],
+  "centerNodeId": "A_386",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

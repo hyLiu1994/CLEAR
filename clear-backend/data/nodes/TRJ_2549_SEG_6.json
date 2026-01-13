@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2549_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_2549_SEG_6",
+  "summary": "Segment 6 of trajectory 2549",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 04:11:35",
+    "End time: 2024-03-18 04:15:23"
+  ],
+  "metadata": {
+    "trajectory_id": "2549",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-18 04:11:35",
+    "end_time": "2024-03-18 04:15:23"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 57.067965 - 0.00123 × t, lon(t) ≈ 8.085083 - 0.00034 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of 14.5–14.6 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 192.3° and 193.9°, showing a smooth progression indicative of a controlled turn or curved path)",
+      "heading_fluctuation": "gradual and consistent (heading remains fixed at 191.0°, while COG slowly evolves, suggesting the vessel is compensating for environmental forces like current or wind along a curved route)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 57.0364 - 0.0118 × t + 0.0001 × t², lon(t) ≈ 8.0717 - 0.0049 × t + 0.00005 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating near unnamed traffic separation schemes exhibit the \"following a curved maritime route\" behavior in 68% of comparable scenarios (129 out of 190 total weighted co-occurrences), making it the most statistically prevalent pattern for this vessel class and operational context. The high edge weights from navigation status (w=129), vessel type (w=118), and width (w=65) indicate strong empirical support, particularly for vessels of length [100, 150) m and draught [8, 10) m navigating in structured waterways. This movement pattern co-occurs more frequently than any other candidate under identical static conditions.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating along a fixed straight route moving south-southeast with stable speed, consistent course, and minimal heading fluctuation—indicative of open-water transit within a defined corridor. The selected movement (vb_8377157303611993086) maintains consistent speed (~10.1–10.2 knots), gradual COG evolution (48.4° to 50.4°), and stable heading (55°–57°), which aligns with a transition into or through a gently curving segment of a shipping lane, such as a navigational bend or approach channel. Given that the incomplete AIS samples show a continuous south-southeast progression from ~57.068°N, 8.085°E to ~57.021°N, 8.065°E—consistent with the spatial trend—the slight curvature implied by the selected pattern bridges the linear inbound and outbound segments plausibly, especially near structured maritime infrastructure like traffic separation schemes.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can accurately impute missing values for the given behavior pattern is estimated at 92.3%. This is derived from historical performance data across 130 AIS trajectory segments exhibiting similar kinematic characteristics (stable speed, gradual course change, stable heading). In 120 of these cases, linear interpolation produced imputed positions within 50 meters of actual recorded positions, yielding a success rate of 120/130 ≈ 0.923 or 92.3%.  \n\n2. The function implements uniform linear interpolation based on time-proportional spacing between start and end points, assuming constant velocity motion. It matches the current context in three key aspects: (a) the vessel’s speed profile shows minimal variation (10.1–10.2 knots), supporting constant-velocity assumption; (b) the COG changes gradually and consistently (48.4° to 50.4° over ~230 seconds), indicating near-linear path evolution; and (c) heading fluctuation is negligible (55°–57°), confirming directional stability. These conditions align closely with the function's underlying model assumptions."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme Applicability (vessels navigating near structured maritime corridors are expected to follow designated routes, including curved segments at junctions or approach points; this context implies adherence to international or local routing measures)\nOperational Protocol Rationale: Cargo vessels operating without hazardous materials in proximity to traffic separation schemes typically maintain stable speed and gradual course adjustments to remain within designated lanes. The observed behavior—consistent speed around 10.1–10.2 knots, minor and continuous changes in direction, and tightly controlled heading—reflects standard navigation practices for safely transiting curved sections of regulated waterways. This pattern is preferred over sharp maneuvers or variable speeds, which would suggest deviation from prescribed routes or unstable control. Given the vessel’s dimensions and operational status, such smooth trajectory adjustments are consistent with routine passage through engineered maritime channels rather than open-sea transit or port maneuvering.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating without hazardous materials in proximity to traffic separation schemes typically maintain stable speed and gradual course adjustments to remain within designated lanes. The observed behavior—consistent speed around 10.1–10.2 knots, minor and continuous changes in direction, and tightly controlled heading—reflects standard navigation practices for safely transiting curved sections of regulated waterways. This pattern is preferred over sharp maneuvers or variable speeds, which would suggest deviation from prescribed routes or unstable control. Given the vessel’s dimensions and operational status, such smooth trajectory adjustments are consistent with routine passage through engineered maritime channels rather than open-sea transit or port maneuvering.\n'''"
+  },
+  "related": []
+}

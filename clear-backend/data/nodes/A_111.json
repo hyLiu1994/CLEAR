@@ -1,0 +1,15 @@
+{
+  "id": "A_111",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Hou Lystbådehavn, Unnamed lane, Sejlklubben Mou Bro, Slip, Hou Bådelau, Nordmands Hage, Hals Jollehavn, Mou Bro",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Hou Lystbådehavn, Unnamed lane, Sejlklubben Mou Bro, Slip, Hou Bådelau, Nordmands Hage, Hals Jollehavn, Mou Bro",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Hou Lystbådehavn, Unnamed lane, Sejlklubben Mou Bro, Slip, Hou Bådelau, Nordmands Hage, Hals Jollehavn, Mou Bro",
+    "support": 2
+  },
+  "related": []
+}

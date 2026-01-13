@@ -1,0 +1,15 @@
+{
+  "id": "A_163",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Route T, Ballen-Røsnæs, Unnamed lane, Samsø Bælt",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Route T, Ballen-Røsnæs, Unnamed lane, Samsø Bælt",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Route T, Ballen-Røsnæs, Unnamed lane, Samsø Bælt",
+    "support": 1
+  },
+  "related": []
+}

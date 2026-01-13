@@ -1,0 +1,15 @@
+{
+  "id": "A_048",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Storebælt",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Storebælt",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Storebælt",
+    "support": 1
+  },
+  "related": []
+}

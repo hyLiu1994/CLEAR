@@ -1,0 +1,15 @@
+{
+  "id": "A_002",
+  "type": "attribute",
+  "label": "navigation_status: Moored",
+  "summary": "navigation_status attribute: Moored",
+  "description": [
+    "This attribute is associated with 4 behavior patterns"
+  ],
+  "metadata": {
+    "category": "navigation_status",
+    "attribute_name": "Moored",
+    "support": 4
+  },
+  "related": []
+}

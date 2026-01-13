@@ -1,0 +1,174 @@
+{
+  "nodes": [
+    {
+      "id": "A_392",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: CANTAT 3 F7, NordLink",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2566_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2602_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2602_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2602_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2602_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2602_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2602_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6255190157237282313",
+      "type": "behavior",
+      "label": "Behavior 37282313",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6301094688901729837",
+      "type": "behavior",
+      "label": "Behavior 01729837",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3256118230624125506",
+      "type": "behavior",
+      "label": "Behavior 24125506",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3092038888103984091",
+      "type": "behavior",
+      "label": "Behavior 03984091",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_9207710565661525159",
+      "type": "behavior",
+      "label": "Behavior 61525159",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2566_SEG_7",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_8",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_9",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2602_SEG_2",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2602_SEG_4",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2602_SEG_5",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6301094688901729837",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3256118230624125506",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3092038888103984091",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_9207710565661525159",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2602_SEG_5",
+    "TRJ_2566_SEG_9",
+    "A_392",
+    "TRJ_2602_SEG_2",
+    "TRJ_2566_SEG_7",
+    "B_vb_-3256118230624125506",
+    "TRJ_2566_SEG_8",
+    "B_vb_-6255190157237282313",
+    "B_vb_3092038888103984091",
+    "B_vb_-6301094688901729837",
+    "TRJ_2602_SEG_4",
+    "B_vb_9207710565661525159"
+  ],
+  "centerNodeId": "A_392",
+  "maxLevel": 1,
+  "totalNodes": 12,
+  "totalLinks": 11
+}

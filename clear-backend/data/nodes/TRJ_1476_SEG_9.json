@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1476_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1476_SEG_9",
+  "summary": "Segment 9 of trajectory 1476",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-12 03:28:47",
+    "End time: 2024-03-12 03:33:46"
+  ],
+  "metadata": {
+    "trajectory_id": "1476",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-12 03:28:47",
+    "end_time": "2024-03-12 03:33:46"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.949087 + 0.000116 × t, lon(t) ≈ 13.813762 + 0.001324 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with draughts between 6–8 m and dimensions in the 150–200 m length range navigating near major Baltic shipping lanes such as Świnoujście–Ystad and Travemünde–Helsinki exhibit curved route-following behavior in approximately 74% of comparable movement gaps. This pattern is strongly associated with vessels maintaining stable speed (10+ knots) and gradual course adjustments along predefined maritime corridors, particularly in areas with mild navigational curvature. The vessel’s static attributes—cargo type, no hazardous cargo, and mid-sized beam—further align with this behavioral cluster, which appears in the induced subgraph with the highest cumulative edge weight support (navigation_status: w=89, vessel_type: w=63, hazardous_cargo: w=89) among patterns consistent with curved routing.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed near 11.4 knots, a slowly increasing COG from 69.6° to 70.9°, and a fixed heading of 69.0°, indicating autopilot-guided navigation along a gently curving channel. This closely matches the intent and dynamics of vb_3081913737957353482, which describes a stable-speed, gradually turning trajectory modeled by a second-order polynomial in latitude and longitude—consistent with the northeasterly curvature observed at the gap boundaries. Additionally, the duration range (250~300) aligns better with the extended turn implied by the boundary segment than shorter-duration patterns, and the spatial context (Baltic Sea routes with moderate curvature) supports a continuation of curved-route following rather than a transition to straight-line transit.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is approximately 98.88%, calculated as 1 / (1 + 88) = 1/89 ≈ 0.0112 for the alternative (linear) function, implying that the quadratic model accounts for roughly 98.88% of the weighted evidence based on relative association strength. This proportion reflects a strong statistical preference for the nonlinear interpolation method given the observed behavioral context.  \n2. This function incorporates a parametric quadratic model that explicitly accounts for gradual course changes and trajectory curvature, which aligns with the vessel’s observed intent to follow a gently curving maritime route. In contrast, linear methods assume constant direction, which is less consistent with the documented heading dynamics and COG evolution. The inclusion of squared time terms enables modeling of smooth turns, making it significantly more appropriate under conditions of stable but non-linear motion."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "IMO Routing Measures in the Baltic Sea – Applicable to cargo vessels navigating between Świnoujście and Ystad or Travemünde and Helsinki, where designated traffic separation schemes and recommended tracks include curved segments to manage vessel flow and avoid hazards.\nOperational Protocol Rationale: Cargo vessels in this region typically follow predefined curved routes as part of established maritime corridors, which are designed to ensure safe passage through busy or environmentally sensitive areas. The vessel’s stable speed, consistent gradual turn, and alignment with known shipping lanes indicate adherence to a navigational plan under autopilot guidance, common in open-water segments with mild curvature. This behavior contrasts with abrupt maneuvering or straight-line transit, which would suggest local operations or course corrections. Given the absence of hazardous cargo and the vessel's mid-sized dimensions, compliance with standard routing protocols for non-urgent commercial transits is expected, favoring smooth, predictable motion along engineered pathways rather than direct point-to-point navigation.\n'''",
+    "operational_protocol_rationale": "Cargo vessels in this region typically follow predefined curved routes as part of established maritime corridors, which are designed to ensure safe passage through busy or environmentally sensitive areas. The vessel’s stable speed, consistent gradual turn, and alignment with known shipping lanes indicate adherence to a navigational plan under autopilot guidance, common in open-water segments with mild curvature. This behavior contrasts with abrupt maneuvering or straight-line transit, which would suggest local operations or course corrections. Given the absence of hazardous cargo and the vessel's mid-sized dimensions, compliance with standard routing protocols for non-urgent commercial transits is expected, favoring smooth, predictable motion along engineered pathways rather than direct point-to-point navigation.\n'''"
+  },
+  "related": []
+}

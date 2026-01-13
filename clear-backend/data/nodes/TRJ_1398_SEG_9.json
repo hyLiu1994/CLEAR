@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1398_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1398_SEG_9",
+  "summary": "Segment 9 of trajectory 1398",
+  "description": [
+    "MMSI: 210336000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-23 07:12:20",
+    "End time: 2024-03-23 07:18:16"
+  ],
+  "metadata": {
+    "trajectory_id": "1398",
+    "vessel_id": "210336000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-23 07:12:20",
+    "end_time": "2024-03-23 07:18:16"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: HVDC Skagerak 2, HVDC Skagerak 3, HVDC Skagerrak 4, HVDC Skagerak 1, Unnamed lane",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [10, 15) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 57.3733 - 0.0043 × t + 0.0001 × t², lon(t) ≈ 8.8859 - 0.0130 × t + 0.0004 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2554_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_2554_SEG_8",
+  "summary": "Segment 8 of trajectory 2554",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 07:40:05",
+    "End time: 2024-03-18 07:43:53"
+  ],
+  "metadata": {
+    "trajectory_id": "2554",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-18 07:40:05",
+    "end_time": "2024-03-18 07:43:53"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 14.5 and 14.9 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 192.7° and 194.2°, showing a smooth, controlled progression without abrupt changes)",
+      "heading_fluctuation": "gradual and consistent (heading remains fixed at 191.0° throughout the sequence, indicating stable rudder control and no oscillatory steering)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 56.23708 - 0.00118 × t, lon(t) ≈ 7.653938 - 0.00034 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating within traffic separation schemes exhibit the \"navigating along a fixed route\" behavior in approximately 68% of observed segments with similar static attributes. This pattern is strongly associated with vessels of length [100, 150) m and draught [8, 10) m, which match the subject vessel’s characteristics. The movement vb_-4927443205807001530 has the highest cumulative edge weight (102) from navigation_status and hazardous_cargo nodes—second only to vb_8377157303611993086—but uniquely combines this with alignment to a straight trajectory intent, which is typical for vessels transiting structured waterways. Among all candidate patterns, it ranks highest in co-occurrence frequency with both vessel_type=Cargo and spatial_context=nearby_shipping_lanes, indicating its prevalence in regulated maritime corridors.",
+    "contextual_justification": "The boundary movement patterns before and after the gap both describe stable speed (14.5–14.9 knots), gradual and consistent course change (COG between 192.7° and 194.2°), fixed heading (191.0°), and intent to navigate along a fixed, linear route moving south-southeast. These characteristics align closely with vb_-4927443205807001530, which also describes a stable-speed, straight-line trajectory with minimal heading fluctuation and persistent COG-heading alignment—albeit oriented northeast. The consistency in dynamic behavior (stable propulsion, no oscillation, smooth progression) and the vessel's continued presence in a traffic separation scheme support continuity of motion through the gap. While the direction differs slightly from the boundary segments, the core behavioral signature—steady-state transit along a predefined route—is preserved, making it the most plausible interpolation.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 98.04%. This is derived from the proportional weight distribution between the two candidate functions connected to the behavior pattern vb_-4927443205807001530, where vf_-7663396197665720575 has a weight of 100 and vf_5240413252068673064 has a weight of 2. The total weight sum is 100 + 2 = 102. Therefore, the confidence level (probability) for vf_-7663396197665720575 being the optimal choice is (100 / 102) × 100 ≈ 98.04%.  \n2. This function exhibits strong alignment with kinematic consistency in linear maritime motion, as evidenced by its explicit modeling of temporal progression along stable trajectories. It accounts for both latitude and longitude interpolation using normalized time indices, which matches the observed parametric trajectory model (lat(t), lon(t)) described in the behavior pattern. In contrast, the alternative function uses Time_interval[-1] as the normalizer, which assumes the last timestamp is the full duration—potentially introducing bias if time intervals are unevenly spaced. The primary function avoids such assumptions by scaling relative to max(Time_interval), enhancing robustness under uniform sampling conditions observed here."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) Route Adherence — Applicable to cargo vessels navigating in structured waterways — Spatial Anchor: Unnamed traffic separation scheme\nOperational Protocol Rationale: Cargo vessels operating in traffic separation schemes are expected to follow designated routes with minimal deviation to ensure safe, predictable movement among other traffic. The observed behavior—stable speed, consistent course over ground, and tight alignment between heading and motion direction—reflects standard autopilot-assisted transit along a straight, regulated path. This pattern is typical in TSS environments where vessels maintain steady-state navigation to comply with collision avoidance rules and routing protocols. Alternative behaviors involving turns or speed fluctuations are less likely, as they would indicate departure from the lane or maneuvering, which is inconsistent with the vessel’s continuous \"under way using engine\" status and lack of hazardous cargo requiring special handling.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating in traffic separation schemes are expected to follow designated routes with minimal deviation to ensure safe, predictable movement among other traffic. The observed behavior—stable speed, consistent course over ground, and tight alignment between heading and motion direction—reflects standard autopilot-assisted transit along a straight, regulated path. This pattern is typical in TSS environments where vessels maintain steady-state navigation to comply with collision avoidance rules and routing protocols. Alternative behaviors involving turns or speed fluctuations are less likely, as they would indicate departure from the lane or maneuvering, which is inconsistent with the vessel’s continuous \"under way using engine\" status and lack of hazardous cargo requiring special handling.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_962_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_962_SEG_6",
+  "summary": "Segment 6 of trajectory 962",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-05 10:18:24",
+    "End time: 2024-03-05 10:22:19"
+  ],
+  "metadata": {
+    "trajectory_id": "962",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-05 10:18:24",
+    "end_time": "2024-03-05 10:22:19"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed around 15.6–15.8 knots, indicating steady propulsion and no acceleration or deceleration)",
+      "course_change": "gradual and consistent (COG varies slightly between 70.4° and 71.1°, showing a smooth, continuous progression without abrupt changes, suggesting controlled navigation along a curved path)",
+      "heading_fluctuation": "stable (heading remains fixed at 71.0° or 70.0°, with minimal variation, indicating the autopilot is engaged and the vessel is not maneuvering erratically)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.7722 + 0.0030 × t + 0.0001 × t², lon(t) ≈ 12.8454 + 0.0042 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed around 15.7 knots with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly from 71.6° to 72.2° over the sequence, showing a smooth, progressive turn)",
+      "heading_fluctuation": "stable (heading remains consistently at 72.0° or close to it, with only minor deviations, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.7837 + 0.0028 × t + 0.00004 × t², lon(t) ≈ 12.9033 + 0.0052 × t + 0.0002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with dimensions [150, 200) m in length and [25, 30) m in width are strongly associated with curved route-following behavior near major Baltic shipping lanes. This pattern is especially prevalent—accounting for approximately 27% (96 out of 355 total weighted connections) of all observed movement patterns under identical static conditions (navigation status, vessel type, draught, and size). The spatial context further reinforces this tendency, as vessels in this category frequently navigate gently curving segments of established routes such as the Travemünde–Helsinki corridor. Notably, the combination of stable speed, gradual course change, and minimal heading fluctuation recurs across 80% of high-weight edges linked to similar vessel profiles, indicating a standardized navigation protocol in constrained waters.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~15.6 knots), gradual right turn (COG increasing from 69.5° to 70.8°), and tight heading consistency (69.0°–71.0°), all indicative of controlled navigation along a curved maritime route. While the absolute speed in vb_82841811344196675 (~10.1–10.2 knots) is lower than the boundary segment, the kinematic structure—stable profile, consistent curvature, and alignment between heading and COG—is directly compatible. Among the candidate movements, vb_82841811344196675 exhibits the closest match in intent and trajectory modeling (circular arc with ~2.5 km radius), geographic progression (northeastward curve), and duration (200~250), while being the highest-weighted behavior pattern that maintains full consistency with the vessel’s static attributes and regional routing practices.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 98.96%. This is derived from the proportional weight distribution between the two candidate functions in the context of the observed behavior pattern. Specifically, the association weights for the two functions are w=95 (for vf_5240413252068673064) and w=1 (for vf_-7663396197665720575), yielding a total weight sum of 96. The conditional probability of selecting vf_5240413252068673064 given the behavior pattern vb_82841811344196675 is therefore 95 / 96 ≈ 0.9896, or 98.96%. This indicates a strong empirical alignment between this function and the kinematic characteristics of the vessel during the data gap.  \n2. This function implements time-proportional linear interpolation assuming constant velocity motion, which matches the observed stability in speed, heading, and course over ground. Despite the trajectory being described as a gentle curve (circular arc approximation), the radius (~2.5 km) is large relative to the segment length, and the changes in COG are gradual, making a piecewise linear approximation statistically valid over short intervals. The function’s reliance on uniform temporal scaling aligns with the consistent time-indexed progression in the parametric model (lat(t), lon(t)), where quadratic terms contribute only minor curvature—supporting linearization within the 200–250-second duration."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Baltic Sea region, specifically along established shipping corridors such as the Travemünde–Helsinki route; applies to cargo vessels navigating within designated lanes to ensure safe separation of opposing traffic flows.\nOperational Protocol Rationale: The vessel's behavior—maintaining a stable speed while executing a gradual, consistent turn with minimal heading variation—is characteristic of standardized navigation through curved segments of maritime traffic routes. In constrained waters like those near major Baltic shipping lanes, vessels typically follow predefined paths to comply with traffic organization and collision avoidance regulations. The observed kinematic profile aligns with autopilot-assisted transit along a gently curving channel, where small, continuous course adjustments are made to stay on a fixed trajectory. This pattern rules out anchoring, maneuvering at port, or evasive actions, all of which would show speed fluctuations or abrupt heading changes. Given the proximity to structured shipping corridors and the consistency with regional routing practices, this behavior reflects routine compliance with maritime traffic management protocols rather than ad hoc navigation.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a stable speed while executing a gradual, consistent turn with minimal heading variation—is characteristic of standardized navigation through curved segments of maritime traffic routes. In constrained waters like those near major Baltic shipping lanes, vessels typically follow predefined paths to comply with traffic organization and collision avoidance regulations. The observed kinematic profile aligns with autopilot-assisted transit along a gently curving channel, where small, continuous course adjustments are made to stay on a fixed trajectory. This pattern rules out anchoring, maneuvering at port, or evasive actions, all of which would show speed fluctuations or abrupt heading changes. Given the proximity to structured shipping corridors and the consistency with regional routing practices, this behavior reflects routine compliance with maritime traffic management protocols rather than ad hoc navigation.\n'''"
+  },
+  "related": []
+}

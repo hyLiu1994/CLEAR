@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_111",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hou Lystbådehavn, Unnamed lane, Sejlklubben Mou Bro, Slip, Hou Bådelau, Nordmands Hage, Hals Jollehavn, Mou Bro",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_536_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_536_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_536_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_536_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5727262996856560043",
+      "type": "behavior",
+      "label": "Behavior 56560043",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4672870121823182234",
+      "type": "behavior",
+      "label": "Behavior 23182234",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_536_SEG_2",
+      "target": "A_111",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_536_SEG_4",
+      "target": "A_111",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5727262996856560043",
+      "target": "A_111",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4672870121823182234",
+      "target": "A_111",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-5727262996856560043",
+    "A_111",
+    "TRJ_536_SEG_2",
+    "B_vb_4672870121823182234",
+    "TRJ_536_SEG_4"
+  ],
+  "centerNodeId": "A_111",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

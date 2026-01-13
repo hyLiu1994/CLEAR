@@ -1,0 +1,216 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_7684367596296962146",
+      "type": "behavior",
+      "label": "Behavior 96962146",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_930_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_930_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1121_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_1121_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_6605653474471919766",
+      "type": "function",
+      "label": "Function 71919766",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5563798009818859396",
+      "type": "function",
+      "label": "Function 18859396",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_215",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Cuxhaven-Helgoland, Die Seenotretter DGzRS, Jachthafen, Alter Fischereihafen, Ritzebüttler Schleusenpriel, Amerikahafen, Unnamed lane, Hafenmeisterbüro, helgoline",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_417",
+      "type": "attribute",
+      "label": "width: [25, 30) m",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_930_SEG_9",
+      "target": "B_vb_7684367596296962146",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1121_SEG_8",
+      "target": "B_vb_7684367596296962146",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "F_vf_6605653474471919766",
+      "target": "B_vb_7684367596296962146",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_5563798009818859396",
+      "target": "B_vb_7684367596296962146",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_215",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7684367596296962146",
+      "target": "A_417",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_411",
+    "A_417",
+    "A_001",
+    "A_215",
+    "TRJ_930_SEG_9",
+    "F_vf_5563798009818859396",
+    "A_021",
+    "A_404",
+    "B_vb_7684367596296962146",
+    "A_415",
+    "F_vf_6605653474471919766",
+    "A_406",
+    "TRJ_1121_SEG_8",
+    "A_004",
+    "A_006"
+  ],
+  "centerNodeId": "B_vb_7684367596296962146",
+  "maxLevel": 1,
+  "totalNodes": 15,
+  "totalLinks": 14
+}

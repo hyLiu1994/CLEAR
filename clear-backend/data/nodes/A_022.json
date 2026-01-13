@@ -1,0 +1,15 @@
+{
+  "id": "A_022",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: HVDC Skagerak 3, HVDC Skagerak 2, HVDC Skagerrak 4, Hirtshals - Tórshavn, HVDC Skagerak 1, Unnamed lane",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: HVDC Skagerak 3, HVDC Skagerak 2, HVDC Skagerrak 4, Hirtshals - Tórshavn, HVDC Skagerak 1, Unnamed lane",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: HVDC Skagerak 3, HVDC Skagerak 2, HVDC Skagerrak 4, Hirtshals - Tórshavn, HVDC Skagerak 1, Unnamed lane",
+    "support": 1
+  },
+  "related": []
+}

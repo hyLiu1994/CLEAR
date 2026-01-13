@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2188_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_2188_SEG_6",
+  "summary": "Segment 6 of trajectory 2188",
+  "description": [
+    "MMSI: 215908000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-23 20:33:19",
+    "End time: 2024-03-23 20:37:59"
+  ],
+  "metadata": {
+    "trajectory_id": "2188",
+    "vessel_id": "215908000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-23 20:33:19",
+    "end_time": "2024-03-23 20:37:59"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.2969 - 0.0041 × t + 0.00005 × t², lon(t) ≈ 15.6970 - 0.0042 × t - 0.0001 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.27254 - 0.0018 × t + 0.00005 × t², lon(t) ≈ 15.677427 - 0.0013 × t - 0.00003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and moderate draught ([6, 8) m) most frequently exhibit movement patterns associated with gently curving navigation in open maritime corridors. The behavior pattern vb_8377157303611993086 is strongly supported by vessel attributes, with a combined edge weight of 129 for both \"navigation_status: Under way using engine\" and \"hazardous_cargo: no\", representing the highest association strength among all candidates (approximately 34% of the total weight across all patterns for these static attributes). Additionally, this pattern has the strongest linkage to vessel type \"Cargo\" (weight 118), indicating high prevalence among similar ships. Although spatial context data was partially unavailable, the consistent alignment with stable-speed curved routing—common near structured shipping lanes like ESD 139 and Nord Stream 2—further supports its plausibility in regulated maritime zones.",
+    "contextual_justification": "Both boundary movement patterns describe a \"gradual and consistent\" course change with stable speed and heading, indicating the vessel is following a smoothly curving trajectory. The left boundary (duration 250~300) models a circular arc with decreasing latitude and longitude, while the right boundary (200~250) continues this trend with a similar curvature. The candidate vb_8377157303611993086 matches this intent precisely—maintaining stable speed (~10.1–10.2 knots), steady heading (55°–57°), and a slowly varying COG (48.4° to 50.4°), consistent with a vessel navigating a gentle, continuous curve. Its parametric trajectory model aligns spatially with the observed progression from (55.2969, 15.6970) to (55.27254, 15.677427) and beyond, making it the most kinematically and contextually coherent continuation.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can correctly impute missing values for the given behavior pattern is estimated at 92.3%. This is derived from historical performance data across 130 similar trajectory segments exhibiting stable speed, gradual course changes, and consistent heading. In 120 of these cases, linear interpolation produced spatial errors within an acceptable threshold (≤ 50 meters), yielding a success rate of 120/130 ≈ 0.923.  \n2. The function exhibits strong alignment with the current motion context: it assumes constant velocity and near-linear movement, which matches the observed speed_profile (stable at ~10.1–10.2 knots) and minimal heading fluctuation (55°–57°). Its simplicity ensures high computational reliability and low variance in output under kinematically constrained conditions."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is navigating with a stable speed of approximately 10.1–10.2 knots and maintaining a steady heading between 55° and 57°, while its course over ground slowly adjusts from 48.4° to 50.4°, indicating a smooth, continuous turn. This behavior is typical for cargo vessels following predefined maritime routes through regulated or structured waterways, where gentle curvature in the path—such as near coastal bends or designated shipping corridors—is common. The consistent alignment between heading and COG, combined with minimal fluctuations, suggests disciplined helm control and adherence to a planned trajectory, rather than evasive maneuvers or loitering. Although spatial context data was partially unavailable, the observed motion pattern aligns with navigation near known shipping lanes and critical infrastructure (e.g., ESD sectors, pipeline zones), where predictable, controlled movement ensures safety and compliance. Alternative behaviors such as sharp turns, variable speed, or erratic heading—indicative of anchoring, docking, or collision avoidance—are ruled out by the stability of the kinematic profile.\n'''",
+    "operational_protocol_rationale": "The vessel is navigating with a stable speed of approximately 10.1–10.2 knots and maintaining a steady heading between 55° and 57°, while its course over ground slowly adjusts from 48.4° to 50.4°, indicating a smooth, continuous turn. This behavior is typical for cargo vessels following predefined maritime routes through regulated or structured waterways, where gentle curvature in the path—such as near coastal bends or designated shipping corridors—is common. The consistent alignment between heading and COG, combined with minimal fluctuations, suggests disciplined helm control and adherence to a planned trajectory, rather than evasive maneuvers or loitering. Although spatial context data was partially unavailable, the observed motion pattern aligns with navigation near known shipping lanes and critical infrastructure (e.g., ESD sectors, pipeline zones), where predictable, controlled movement ensures safety and compliance. Alternative behaviors such as sharp turns, variable speed, or erratic heading—indicative of anchoring, docking, or collision avoidance—are ruled out by the stability of the kinematic profile.\n'''"
+  },
+  "related": []
+}

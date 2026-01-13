@@ -1,0 +1,15 @@
+{
+  "id": "A_006",
+  "type": "attribute",
+  "label": "vessel_type: Cargo",
+  "summary": "vessel_type attribute: Cargo",
+  "description": [
+    "This attribute is associated with 171 behavior patterns"
+  ],
+  "metadata": {
+    "category": "vessel_type",
+    "attribute_name": "Cargo",
+    "support": 171
+  },
+  "related": []
+}

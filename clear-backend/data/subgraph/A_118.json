@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_118",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Schießgebiet Todendorf, Kolberger Heide, Fischschonbezirk Schönberger Au, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Nördlicher Gefahrenbereich, Kalifornien, Unnamed lane, Lotsenstation",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_566_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_566_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5727262996856560043",
+      "type": "behavior",
+      "label": "Behavior 56560043",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_566_SEG_7",
+      "target": "A_118",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5727262996856560043",
+      "target": "A_118",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_118",
+    "B_vb_-5727262996856560043",
+    "TRJ_566_SEG_7"
+  ],
+  "centerNodeId": "A_118",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

@@ -1,0 +1,15 @@
+{
+  "id": "A_063",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Odden - Aarhus, Odden - Ebeltoft, Aarhus-Kalundborg, EK R 11 Sjællands Odde W., Unnamed lane",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Odden - Aarhus, Odden - Ebeltoft, Aarhus-Kalundborg, EK R 11 Sjællands Odde W., Unnamed lane",
+  "description": [
+    "This attribute is associated with 4 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Odden - Aarhus, Odden - Ebeltoft, Aarhus-Kalundborg, EK R 11 Sjællands Odde W., Unnamed lane",
+    "support": 4
+  },
+  "related": []
+}

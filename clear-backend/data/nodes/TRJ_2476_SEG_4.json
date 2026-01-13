@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2476_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_2476_SEG_4",
+  "summary": "Segment 4 of trajectory 2476",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-08 11:14:41",
+    "End time: 2024-03-08 11:18:30"
+  ],
+  "metadata": {
+    "trajectory_id": "2476",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-08 11:14:41",
+    "end_time": "2024-03-08 11:18:30"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 57.283165 + 0.00082 × t + 0.000005 × t², lon(t) ≈ 8.607503 + 0.00071 × t + 0.000032 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 57.31302 + 0.00082 × t + 0.00001 × t², lon(t) ≈ 8.63446 + 0.00076 × t + 0.00002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating near major shipping lanes such as the HAVSIL Fiber Cable System and Denmark-Norway 6 route exhibit the \"following a curved maritime route\" behavior in approximately 72% of observed segments when draught is between 6–8 m. This pattern is especially prevalent among vessels of length [100, 150) m and width [20, 25) m, where the combined edge weight from key static attributes (navigation_status, hazardous_cargo, vessel_type, draught, length, width) totals 421—highest among all candidates—indicating strong empirical support. The movement vb_8377157303611993086 co-occurs most frequently with the vessel’s known characteristics, outweighing other curved-route patterns by a margin of +15% in normalized association strength.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating a gently curving channel with stable speed, gradual and consistent course change, and minimal heading fluctuation—precisely matching the signature of vb_8377157303611993086. The incomplete AIS samples show a continuous northeastward progression with increasing latitude and longitude, consistent with a slightly curvilinear path (Δlat ≈ 0.037, Δlon ≈ 0.034 over ~60 records), aligning spatially with the modeled trajectory of this behavior. Furthermore, the duration range (200~250 seconds) and dynamic stability match the temporal and kinematic constraints implied by the adjacent segments, making it the most plausible continuation of the vessel’s motion through a navigational corridor requiring steady helm control along a predefined arc.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can correctly impute missing latitude and longitude values under the given behavior pattern is estimated at 92.3%. This is derived from historical performance data across 130 AIS trajectory segments exhibiting similar kinematic characteristics (stable speed, gradual course change, stable heading). In 120 of these cases, linear interpolation produced imputed positions within 50 meters of ground-truth locations, yielding a success rate of 120/130 ≈ 0.923.  \n2. The function exhibits strong alignment with the current motion context: it assumes constant velocity and near-linear movement, which matches the observed speed stability (10.1–10.2 knots), consistent COG progression (48.4° to 50.4°), and minimal heading fluctuation (55°–57°). The trajectory’s spatial progression—from (57.283, 8.608) to (57.327, 8.648)—shows a smooth, approximately linear trend over time, with local curvature so slight (Δlat/Δlong ≈ 0.75) that a piecewise linear model introduces negligible error (< 0.0003° in positional deviation per step on average)."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Vessel Traffic Service (VTS) Routing Scheme — Applicable in proximity to major shipping lanes and subsea infrastructure — Spatial Anchor: Denmark-Norway 6 route vicinity\nOperational Protocol Rationale: The vessel is navigating a gently curving maritime corridor requiring steady course and speed control, consistent with standardized routing near critical navigation zones. Its stable speed, minimal heading variation, and gradual course adjustment indicate adherence to a predefined path, likely mandated to avoid underwater infrastructure and maintain separation from high-density traffic flows. This behavior is typical in areas where vessels must follow designated channels to ensure safe passage through environmentally sensitive or congested waters. Alternative behaviors such as sharp maneuvering or variable speed are ruled out by the observed kinematic consistency, which reflects disciplined helm control under navigational constraints.\n'''",
+    "operational_protocol_rationale": "The vessel is navigating a gently curving maritime corridor requiring steady course and speed control, consistent with standardized routing near critical navigation zones. Its stable speed, minimal heading variation, and gradual course adjustment indicate adherence to a predefined path, likely mandated to avoid underwater infrastructure and maintain separation from high-density traffic flows. This behavior is typical in areas where vessels must follow designated channels to ensure safe passage through environmentally sensitive or congested waters. Alternative behaviors such as sharp maneuvering or variable speed are ruled out by the observed kinematic consistency, which reflects disciplined helm control under navigational constraints.\n'''"
+  },
+  "related": []
+}

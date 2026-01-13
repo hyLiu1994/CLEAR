@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "A_172",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Bornholmsgat, C-Lion 1, Unnamed lane, Trelleborg (SE) - Klaipėda (LT), Travemünde (D) – Helsinki (FIN)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_817_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_817_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_817_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_817_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1429_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_1429_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1429_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_1429_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1429_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_1429_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1429_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_1429_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1429_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1429_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4927443205807001530",
+      "type": "behavior",
+      "label": "Behavior 07001530",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_817_SEG_0",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_817_SEG_2",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1429_SEG_0",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1429_SEG_1",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1429_SEG_4",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1429_SEG_2",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1429_SEG_3",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4927443205807001530",
+      "target": "A_172",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_817_SEG_2",
+    "TRJ_817_SEG_0",
+    "TRJ_1429_SEG_4",
+    "TRJ_1429_SEG_3",
+    "B_vb_8377157303611993086",
+    "TRJ_1429_SEG_0",
+    "A_172",
+    "TRJ_1429_SEG_1",
+    "B_vb_82841811344196675",
+    "TRJ_1429_SEG_2",
+    "B_vb_-4927443205807001530"
+  ],
+  "centerNodeId": "A_172",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

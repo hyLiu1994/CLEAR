@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_2184_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2184_SEG_5",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_2184",
+      "type": "trajectory",
+      "label": "Trajectory 215908000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3081913737957353482",
+      "type": "behavior",
+      "label": "Behavior 57353482",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_412",
+      "type": "attribute",
+      "label": "length: [50, 100) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_416",
+      "type": "attribute",
+      "label": "width: [10, 15) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "T_2184",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "B_vb_3081913737957353482",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "A_412",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "A_416",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2184_SEG_5",
+      "target": "F_vf_5240413252068673064",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_416",
+    "TRJ_2184_SEG_5",
+    "A_001",
+    "A_412",
+    "A_021",
+    "A_405",
+    "T_2184",
+    "B_vb_3081913737957353482",
+    "A_004",
+    "F_vf_5240413252068673064",
+    "A_006"
+  ],
+  "centerNodeId": "TRJ_2184_SEG_5",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

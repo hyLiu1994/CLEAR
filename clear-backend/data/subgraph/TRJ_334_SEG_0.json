@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_334_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_334_SEG_0",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_334",
+      "type": "trajectory",
+      "label": "Trajectory 209541000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5941906554066646579",
+      "type": "behavior",
+      "label": "Behavior 66646579",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_064",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Leuchtturm Bülk, Olympiahafen Schilksee, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fischschonbezirk Schönberger Au, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Lotsenstation, Leuchtturm Friedrichsort, Hafen Strande, Yachthafen Marina Wendtorf, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kolberger Heide",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-4224470278851982089",
+      "type": "function",
+      "label": "Function 51982089",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "T_334",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "B_vb_5941906554066646579",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "A_064",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_0",
+      "target": "F_vf_-4224470278851982089",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_410",
+    "A_001",
+    "TRJ_334_SEG_0",
+    "F_vf_-4224470278851982089",
+    "T_334",
+    "B_vb_5941906554066646579",
+    "A_064",
+    "A_415",
+    "A_406",
+    "A_004",
+    "A_006"
+  ],
+  "centerNodeId": "TRJ_334_SEG_0",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

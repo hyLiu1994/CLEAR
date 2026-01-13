@@ -1,0 +1,15 @@
+{
+  "id": "A_392",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: CANTAT 3 F7, NordLink",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: CANTAT 3 F7, NordLink",
+  "description": [
+    "This attribute is associated with 5 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: CANTAT 3 F7, NordLink",
+    "support": 5
+  },
+  "related": []
+}

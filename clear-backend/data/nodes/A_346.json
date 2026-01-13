@@ -1,0 +1,15 @@
+{
+  "id": "A_346",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: ESD 139, ESD 138, Nord Stream 2",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: ESD 139, ESD 138, Nord Stream 2",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: ESD 139, ESD 138, Nord Stream 2",
+    "support": 2
+  },
+  "related": []
+}

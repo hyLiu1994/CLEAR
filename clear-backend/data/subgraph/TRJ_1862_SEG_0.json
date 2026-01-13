@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_1862_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_1862_SEG_0",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_1862",
+      "type": "trajectory",
+      "label": "Trajectory 210568000",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1862_SEG_0",
+      "target": "T_1862",
+      "relation": "part_of",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1862_SEG_0",
+    "T_1862"
+  ],
+  "centerNodeId": "TRJ_1862_SEG_0",
+  "maxLevel": 1,
+  "totalNodes": 2,
+  "totalLinks": 1
+}

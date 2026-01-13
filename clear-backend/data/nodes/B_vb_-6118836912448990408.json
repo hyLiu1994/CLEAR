@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-6118836912448990408",
+  "type": "behavior",
+  "label": "Behavior 48990408",
+  "summary": "Vessel behavior pattern: following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: lat(t) ≈ 54.4227 + 0.0001 × sin(2πt), lon(t) ≈ 13.6763 + 0.00008 × cos(2πt), where t ∈ [0,1] represents normalized time over the loop; this reflects the vessel turning in place or adjusting position within a confined harbor area, likely during docking preparation or anchoring (the persistent low speed, combined with oscillating COG and stable heading, suggests the vessel is maneuvering in a tight space, possibly awaiting berth assignment or maintaining station despite current/wind effects)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a low and consistent speed between 0.1 and 0.6 knots, indicating minimal propulsion changes)",
+    "Course change: fluctuating (COG varies significantly from 1.4° to 348.2°, including sharp shifts near 90° and 209.2°, indicating frequent small adjustments in direction)",
+    "Heading fluctuation: stable (despite COG changes, heading remains within a narrow range of 52.0° to 91.0°, suggesting the vessel’s bow orientation is relatively steady)",
+    "Behavior intent: following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: lat(t) ≈ 54.4227 + 0.0001 × sin(2πt), lon(t) ≈ 13.6763 + 0.00008 × cos(2πt), where t ∈ [0,1] represents normalized time over the loop; this reflects the vessel turning in place or adjusting position within a confined harbor area, likely during docking preparation or anchoring (the persistent low speed, combined with oscillating COG and stable heading, suggests the vessel is maneuvering in a tight space, possibly awaiting berth assignment or maintaining station despite current/wind effects)",
+    "Duration: 7000~7050"
+  ],
+  "metadata": {
+    "original_id": "vb_-6118836912448990408",
+    "duration": "7000~7050",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "fluctuating",
+      "stable",
+      "following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: lat",
+      "7000~7050"
+    ]
+  },
+  "related": []
+}

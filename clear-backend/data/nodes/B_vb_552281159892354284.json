@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_552281159892354284",
+  "type": "behavior",
+  "label": "Behavior 92354284",
+  "summary": "Vessel behavior pattern: anchored or moored in a confined area (the vessel shows no movement in position over time—latitude and longitude remain nearly unchanged—and zero SOG confirms it is not under way; however, fluctuating COG with stable heading suggests the vessel is swinging at anchor due to wind or current while maintaining its heading reference; this behavior is typical of vessels at anchor in a sheltered harbor or mooring point, where position remains fixed within sensor precision: lat ≈ 56.15146 ± 0.000002, lon ≈ 10.236055 ± 0.000002)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a speed of 0.0 knots across all observations, indicating no movement)",
+    "Course change: fluctuating (the COG varies significantly from 146.5° to 201.1° and back, despite zero speed, suggesting the vessel is rotating in place or responding to environmental forces)",
+    "Heading fluctuation: stable (the heading remains constant at 41.0° throughout, indicating the vessel’s bow is fixed in direction despite changes in COG)",
+    "Behavior intent: anchored or moored in a confined area (the vessel shows no movement in position over time—latitude and longitude remain nearly unchanged—and zero SOG confirms it is not under way; however, fluctuating COG with stable heading suggests the vessel is swinging at anchor due to wind or current while maintaining its heading reference; this behavior is typical of vessels at anchor in a sheltered harbor or mooring point, where position remains fixed within sensor precision: lat ≈ 56.15146 ± 0.000002, lon ≈ 10.236055 ± 0.000002)",
+    "Duration: 300~350"
+  ],
+  "metadata": {
+    "original_id": "vb_552281159892354284",
+    "duration": "300~350",
+    "support": 15,
+    "pattern_key": [
+      "stable",
+      "fluctuating",
+      "stable",
+      "anchored or moored in a confined area",
+      "300~350"
+    ]
+  },
+  "related": []
+}

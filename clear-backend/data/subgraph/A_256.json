@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_256",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Klaipėda (LT) – Kiel (D), Arcadis Ost 1, Travemünde (D) – Liepāja (LV), C-Lion 1, Unnamed lane, Travemünde (D) – Helsinki (FIN)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1476_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_1476_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1476_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1476_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4584734299579856679",
+      "type": "behavior",
+      "label": "Behavior 79856679",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5117658009441012102",
+      "type": "behavior",
+      "label": "Behavior 41012102",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1476_SEG_4",
+      "target": "A_256",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1476_SEG_3",
+      "target": "A_256",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4584734299579856679",
+      "target": "A_256",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5117658009441012102",
+      "target": "A_256",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_256",
+    "B_vb_5117658009441012102",
+    "TRJ_1476_SEG_3",
+    "TRJ_1476_SEG_4",
+    "B_vb_4584734299579856679"
+  ],
+  "centerNodeId": "A_256",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

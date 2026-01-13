@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_402",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Liepāja (LV), Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2644_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2644_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2644_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2644_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2644_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2644_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1450693701513248396",
+      "type": "behavior",
+      "label": "Behavior 13248396",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2644_SEG_2",
+      "target": "A_402",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2644_SEG_5",
+      "target": "A_402",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2644_SEG_1",
+      "target": "A_402",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1450693701513248396",
+      "target": "A_402",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2644_SEG_1",
+    "A_402",
+    "TRJ_2644_SEG_2",
+    "B_vb_1450693701513248396",
+    "TRJ_2644_SEG_5"
+  ],
+  "centerNodeId": "A_402",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2564_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_2564_SEG_8",
+  "summary": "Segment 8 of trajectory 2564",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-21 11:55:19",
+    "End time: 2024-03-21 11:59:14"
+  ],
+  "metadata": {
+    "trajectory_id": "2564",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-21 11:55:19",
+    "end_time": "2024-03-21 11:59:14"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Atlantic Crossing 1 (AC1) Seg.A, Danger Area Nordsee, Unnamed lane",
+    "Draught: [6, 8) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-northwest, approximated by the parametric equations: lat(t) ≈ 55.113773 + 0.00086 × t, lon(t) ≈ 7.427357 - 0.00018 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1488_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_1488_SEG_4",
+  "summary": "Segment 4 of trajectory 1488",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-15 10:17:01",
+    "End time: 2024-03-15 10:29:02"
+  ],
+  "metadata": {
+    "trajectory_id": "1488",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-15 10:17:01",
+    "end_time": "2024-03-15 10:29:02"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 11.0–11.2 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG increases slowly from ~237.6° to ~239.9°, indicating a smooth, continuous turn to starboard over time)",
+      "heading_fluctuation": "stable (heading remains fixed at 234.0° or 235.0°, showing minimal variation despite slight COG changes, typical in calm sea conditions with autopilot engaged)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 55.9596 - 0.0042 × t - 0.0001 × t², lon(t) ≈ 16.1549 - 0.0188 × t - 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "850~900"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.9162 - 0.0108 × t, lon(t) ≈ 16.0291 - 0.0317 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "500~550"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions typical of medium-sized freighters (150–200 m length, 20–25 m width) navigating near major Baltic shipping lanes such as Aurora and HVDC NordBalt are observed to follow straight, fixed maritime routes in approximately 62% of cases when traversing open-sea segments. This pattern is most strongly associated with the vessel’s static attributes—particularly navigation status and vessel type—which link to this behavior with combined edge weights accounting for over 60% of the total support among all candidate patterns. The high edge weights from \"navigation_status: Under way using engine\" (w=102) and \"vessel_type: Cargo\" (w=73) indicate that this movement is highly representative of standard transit behavior for cargo ships in unrestricted waters along established traffic corridors.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~11.0–11.1 knots), consistent COG (237.0°–238.0°), fixed heading (234.0°), and intent to navigate a linear west-southwest trajectory. While the candidate movement vb_-4927443205807001530 describes a northeast-bound linear path, its core behavioral characteristics—stable speed, minimal heading fluctuation, gradual course consistency, and intent to follow a fixed route—are directly aligned with the boundary dynamics. The slight directional mismatch is outweighed by the strong kinematic coherence: both exhibit straight-line motion with engine-powered steady-state navigation. Given the absence of turning or maneuvering indicators in the boundary data, the most plausible continuation is a similarly stable, rectilinear movement, making vb_-4927443205807001530 the best match in terms of dynamic profile and navigational intent.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_-7663396197665720575` can correctly impute missing values for the given behavior pattern is 98.04%, calculated as follows: Among the two candidate functions linked to the behavior pattern `vb_-4927443205807001530`, the edge weights are 100 and 2, respectively. The normalized weight (interpreted as frequency of successful association in historical performance) for `vf_-7663396197665720575` is computed as 100 / (100 + 2) = 0.9804, or 98.04%. This indicates a strong statistical preference based on prior execution reliability under identical kinematic conditions.  \n\n2. This function is specifically designed for linear interpolation using time-proportional scaling with `max(Time_interval)` as the normalizing factor, which matches the observed temporal structure in the vessel’s motion—stable speed, consistent COG, and minimal heading fluctuation. In contrast, `vf_5240413252068673064` uses `Time_interval[-1]` for normalization, which assumes the last timestamp is the maximum, potentially introducing error if the interval is not pre-sorted or normalized. Given that the behavior pattern explicitly models position progression via parametric linear equations over a normalized time index from 0 to 1, `vf_-7663396197665720575`'s use of `max(Time_interval)` aligns more precisely with this mathematical formulation."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Baltic Sea region; spatial anchor near HVDC NordBalt and Aurora maritime corridors\nOperational Protocol Rationale: The vessel is a cargo ship operating under engine power with no hazardous cargo, navigating through a busy Baltic shipping corridor. In this context, vessels typically follow established straight routes to maintain safe separation and predictable traffic flow, as defined by regional TSS guidelines. The observed behavior—stable speed, minimal heading variation, and consistent course—aligns with standard autopilot-driven transit along fixed lanes. This pattern rules out maneuvering, anchoring, or coastal weaving, which would show variable speeds or erratic course changes. Given the proximity to major shipping routes and the absence of turning or deviation, the most logical interpretation is that the vessel is adhering to a predefined linear passage plan for efficient and safe navigation.\n'''",
+    "operational_protocol_rationale": "The vessel is a cargo ship operating under engine power with no hazardous cargo, navigating through a busy Baltic shipping corridor. In this context, vessels typically follow established straight routes to maintain safe separation and predictable traffic flow, as defined by regional TSS guidelines. The observed behavior—stable speed, minimal heading variation, and consistent course—aligns with standard autopilot-driven transit along fixed lanes. This pattern rules out maneuvering, anchoring, or coastal weaving, which would show variable speeds or erratic course changes. Given the proximity to major shipping routes and the absence of turning or deviation, the most logical interpretation is that the vessel is adhering to a predefined linear passage plan for efficient and safe navigation.\n'''"
+  },
+  "related": []
+}

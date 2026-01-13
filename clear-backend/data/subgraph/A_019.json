@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_019",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC Skagerak 2, HVDC Skagerrak 4, HVDC Skagerak 1, Unnamed lane, HAVSIL Fiber Cable System",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_46_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_46_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5494319611255614765",
+      "type": "behavior",
+      "label": "Behavior 55614765",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_46_SEG_4",
+      "target": "A_019",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5494319611255614765",
+      "target": "A_019",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_46_SEG_4",
+    "A_019",
+    "B_vb_5494319611255614765"
+  ],
+  "centerNodeId": "A_019",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_008",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TAT 10B EAST SECTION, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_19_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_19_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_19_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_19_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6613672576054589086",
+      "type": "behavior",
+      "label": "Behavior 54589086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_958456988662017709",
+      "type": "behavior",
+      "label": "Behavior 62017709",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_19_SEG_9",
+      "target": "A_008",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_19_SEG_8",
+      "target": "A_008",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6613672576054589086",
+      "target": "A_008",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_958456988662017709",
+      "target": "A_008",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_19_SEG_9",
+    "B_vb_958456988662017709",
+    "TRJ_19_SEG_8",
+    "A_008",
+    "B_vb_6613672576054589086"
+  ],
+  "centerNodeId": "A_008",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

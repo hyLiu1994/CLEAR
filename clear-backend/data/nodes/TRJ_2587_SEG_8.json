@@ -1,0 +1,49 @@
+{
+  "id": "TRJ_2587_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_2587_SEG_8",
+  "summary": "Segment 8 of trajectory 2587",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-25 20:40:09",
+    "End time: 2024-03-25 20:45:50"
+  ],
+  "metadata": {
+    "trajectory_id": "2587",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-25 20:40:09",
+    "end_time": "2024-03-25 20:45:50"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 57.7230 - 0.0064 × t, lon(t) ≈ 8.5420 - 0.0042 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 57.689885 - 0.0015 × t, lon(t) ≈ 8.52035 - 0.0021 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions typical of medium-sized freighters (100–150 m length, 20–25 m width, draught 8–10 m) are observed to follow straight, fixed maritime routes in 62% of cases when operating near shipping lanes. This pattern is especially prevalent for vessels transiting open coastal waters, where route predictability and alignment between COG and heading are prioritized. The behavior pattern vb_-4927443205807001530 receives the strongest combined support from vessel static attributes—particularly navigation status (weight 102), vessel type (73), and cargo type (102)—and ranks second highest in overall attribute alignment, indicating it is a statistically dominant movement mode for this class of vessel under these conditions.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~12 knots), consistent course (COG ~200°), and minimal heading fluctuation (198°–199°), all indicative of steady-state navigation along a linear trajectory. The position progression follows a south-southeast direction with a clear parametric trend, strongly suggesting continuation along a fixed route. Among the candidate patterns, only vb_-4927443205807001530 matches this intent of \"navigating along a fixed route\" with stable speed, gradual course consistency, and aligned COG-heading dynamics. Its modeled northeastward linear trajectory further confirms its applicability to sustained directional travel, making it the most plausible continuation of the observed boundary behavior across the gap.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is operating under normal propulsion with no hazardous cargo, following a stable and straight path consistent with standard maritime routing practices in busy or regulated waters. Its steady speed, minimal heading variation, and alignment between course over ground and heading indicate it is likely adhering to a predefined, linear route—typical behavior for medium-sized cargo vessels transiting near established shipping lanes where predictability and collision avoidance are prioritized. This pattern contrasts with more dynamic maneuvers such as anchoring, docking, or sharp turning. Given the lack of erratic motion or significant course adjustments, the most plausible explanation is that the vessel is continuing along a fixed corridor in accordance with regional traffic separation schemes, even though specific spatial context details are unavailable. Alternative behaviors involving curved trajectories or variable speed profiles are less consistent with the observed directional stability and uniform progression.\n'''",
+    "operational_protocol_rationale": "The vessel is operating under normal propulsion with no hazardous cargo, following a stable and straight path consistent with standard maritime routing practices in busy or regulated waters. Its steady speed, minimal heading variation, and alignment between course over ground and heading indicate it is likely adhering to a predefined, linear route—typical behavior for medium-sized cargo vessels transiting near established shipping lanes where predictability and collision avoidance are prioritized. This pattern contrasts with more dynamic maneuvers such as anchoring, docking, or sharp turning. Given the lack of erratic motion or significant course adjustments, the most plausible explanation is that the vessel is continuing along a fixed corridor in accordance with regional traffic separation schemes, even though specific spatial context details are unavailable. Alternative behaviors involving curved trajectories or variable speed profiles are less consistent with the observed directional stability and uniform progression.\n'''"
+  },
+  "related": []
+}

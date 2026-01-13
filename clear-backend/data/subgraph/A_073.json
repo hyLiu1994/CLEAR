@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_073",
+      "type": "attribute",
+      "label": "spatial_context: location: Göteborgs Stad, Västra Götaland County, Sweden; nearby_shipping_lanes: Query failed with status 429",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_351_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_351_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_351_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_351_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8219356608673346866",
+      "type": "behavior",
+      "label": "Behavior 73346866",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_351_SEG_1",
+      "target": "A_073",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_351_SEG_0",
+      "target": "A_073",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_073",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_073",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_073",
+    "TRJ_351_SEG_0",
+    "TRJ_351_SEG_1",
+    "B_vb_-8219356608673346866",
+    "B_vb_-4857314466243141680"
+  ],
+  "centerNodeId": "A_073",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

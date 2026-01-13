@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_387",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Atlantic Crossing 1 (AC1) Seg.A, Danger Area Nordsee, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2564_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2564_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1450693701513248396",
+      "type": "behavior",
+      "label": "Behavior 13248396",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2564_SEG_8",
+      "target": "A_387",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1450693701513248396",
+      "target": "A_387",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_1450693701513248396",
+    "A_387",
+    "TRJ_2564_SEG_8"
+  ],
+  "centerNodeId": "A_387",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

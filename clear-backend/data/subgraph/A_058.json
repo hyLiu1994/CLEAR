@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_058",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed lane, EK R 19 MULTEX",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_311_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_311_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5735201309241879777",
+      "type": "behavior",
+      "label": "Behavior 41879777",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_311_SEG_3",
+      "target": "A_058",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5735201309241879777",
+      "target": "A_058",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_058",
+    "B_vb_-5735201309241879777",
+    "TRJ_311_SEG_3"
+  ],
+  "centerNodeId": "A_058",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

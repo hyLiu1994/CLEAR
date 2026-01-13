@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_099",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: TSS South of Gedser, Travemünde (D) – Malmö (SE), Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), Unnamed lane, Kadetrinne, Travemünde (D) – Helsinki (FIN), Rostock (D) – Gedser (S), Travemünde (D) – Trelleborg (SE)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_413_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_413_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-425550717571341526",
+      "type": "behavior",
+      "label": "Behavior 71341526",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_413_SEG_2",
+      "target": "A_099",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-425550717571341526",
+      "target": "A_099",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-425550717571341526",
+    "A_099",
+    "TRJ_413_SEG_2"
+  ],
+  "centerNodeId": "A_099",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

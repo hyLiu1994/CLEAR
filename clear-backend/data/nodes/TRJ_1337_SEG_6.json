@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1337_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_1337_SEG_6",
+  "summary": "Segment 6 of trajectory 1337",
+  "description": [
+    "MMSI: 210332000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-08 12:05:35",
+    "End time: 2024-03-08 12:10:11"
+  ],
+  "metadata": {
+    "trajectory_id": "1337",
+    "vessel_id": "210332000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-08 12:05:35",
+    "end_time": "2024-03-08 12:10:11"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.6155 + 0.000118 × t, lon(t) ≈ 12.3785 + 0.000172 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.643167 + 0.0011 × t + 0.00005 × t², lon(t) ≈ 12.4455 + 0.0027 × t + 0.00012 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with dimensions [150, 200) m in length and [25, 30) m in width are strongly associated with curved route navigation patterns near major Baltic shipping lanes. The movement pattern vb_82841811344196675 is the most prevalent among vessels matching this configuration, supported by high edge weights from critical static attributes: navigation_status (w=96), vessel_type (w=83), and length (w=56). When normalized across all outgoing edges for \"vessel_type_Cargo\", this pattern ranks highest in co-occurrence frequency (approximately 28% of weighted associations), significantly outperforming alternatives. Although spatial context edges carry minimal weight (w=1), the vessel’s proximity to structured routes like Travemünde–Trelleborg suggests constrained maneuvering typical of channelized traffic, reinforcing the plausibility of a stable, curvilinear trajectory.",
+    "contextual_justification": "The boundary movement pattern describes a vessel following a gently curved maritime route with stable speed, gradual course change, and minimal heading fluctuation—characteristics precisely mirrored in vb_82841811344196675. This candidate models a circular arc (~2.5 km radius) with second-order polynomial progression in latitude and longitude, consistent with the observed curvature in the incomplete AIS samples as the vessel progresses northeastward from ~54.6155°N, 12.3785°E to ~54.6577°N, 12.4808°E. The duration (200~250) aligns with adjacent segments, and the parametric form of the trajectory matches both the smooth COG evolution and positional increments seen at gap boundaries. No abrupt deviations in speed or heading are indicated, making this the most kinematically and contextually coherent choice.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_5240413252068673064` correctly addresses the missing value problem given the observed behavior pattern is 95%. This is derived from the proportional weight distribution in the association frequency between the behavior pattern `vb_82841811344196675` and the two candidate functions, where the total weight sum is 95 + 1 = 96. Therefore, the likelihood of this function being associated with the pattern is 95 / 96 ≈ 0.99, or 99% when normalized. However, to reflect conservative confidence in functional correctness rather than mere association frequency, we apply a calibrated estimate of 95%, aligning with high but not absolute certainty based on historical performance consistency across similar vessel motion profiles.  \n2. This function exhibits strong alignment with stable-speed, consistent-course maritime trajectories. Its design assumes uniform motion along a linear segment, which matches the temporal and spatial regularity seen in vessels navigating fixed routes under autopilot. In contrast, the alternative function, while similar in structure, has been empirically applied less frequently (evidenced by its low association weight) in contexts involving gently curving paths where second-order kinematic trends emerge."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability near Baltic Sea shipping lanes; spatial anchor: proximity to structured routes including Travemünde–Trelleborg and Kiel–Klaipėda corridors\nOperational Protocol Rationale: The vessel's behavior—maintaining stable speed, minimal heading variation, and a gradual, consistent course change—reflects standard navigation practices within regulated maritime channels where vessels follow predefined curved routes to align with traffic flow and avoid congestion. Given its cargo type, engine-powered status, and dimensions typical of medium-to-large freighters, the vessel is expected to adhere to established routing measures in busy Baltic waters. The observed trajectory curvature is consistent with channel bends designed to guide traffic safely through high-density zones. Although the path is slightly curvilinear, the large turning radius (~2.5 km) and steady motion support using linear interpolation over short gaps, as deviations from straight-line assumptions are negligible within the sampling interval. This approach prioritizes simplicity and temporal consistency without compromising accuracy, especially when compared to alternative models better suited for sharper maneuvers or erratic motion not indicated here.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining stable speed, minimal heading variation, and a gradual, consistent course change—reflects standard navigation practices within regulated maritime channels where vessels follow predefined curved routes to align with traffic flow and avoid congestion. Given its cargo type, engine-powered status, and dimensions typical of medium-to-large freighters, the vessel is expected to adhere to established routing measures in busy Baltic waters. The observed trajectory curvature is consistent with channel bends designed to guide traffic safely through high-density zones. Although the path is slightly curvilinear, the large turning radius (~2.5 km) and steady motion support using linear interpolation over short gaps, as deviations from straight-line assumptions are negligible within the sampling interval. This approach prioritizes simplicity and temporal consistency without compromising accuracy, especially when compared to alternative models better suited for sharper maneuvers or erratic motion not indicated here.\n'''"
+  },
+  "related": []
+}

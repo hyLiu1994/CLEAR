@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_380_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_380_SEG_9",
+  "summary": "Segment 9 of trajectory 380",
+  "description": [
+    "MMSI: 209541000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-21 16:57:54",
+    "End time: 2024-03-21 17:01:20"
+  ],
+  "metadata": {
+    "trajectory_id": "380",
+    "vessel_id": "209541000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-21 16:57:54",
+    "end_time": "2024-03-21 17:01:20"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Aalborg, Aalborg Municipality, North Denmark Region, 9000, Denmark; nearby_shipping_lanes: Vestre Bådehavn, Vendsysselbanen, Sildekajen, Tunnelhavnen, Nørresundby Kirke, Limfjordsbroen, Nørresundby Lystbådehavn, Aalborgtårnet, Grønlandshavnen, Nørre Uttrup Lystbådehavn, Tunnelbassinet, Østre Havnebasin, Nybrogade, Unnamed lane, Sankt Mariæ Kirke, Vor Frelsers Kirke",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, decreasing only slightly from 4.7 to 0.9 knots, indicating controlled movement rather than random drifting)",
+      "course_change": "gradual and consistent (COG increases steadily from 280.8° to 281.4°, showing a smooth, progressive turn to the north)",
+      "heading_fluctuation": "stable (heading changes incrementally and monotonically from 286.0° to 358.0°, aligned with COG evolution, suggesting intentional steering)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 9.8 and 7.0 knots initially, then gradually decreases to around 4.8 knots, indicating controlled deceleration rather than abrupt changes)",
+      "course_change": "gradual and consistent (COG changes slowly from 302.1° to 278.9° over time, with a smooth progression suggesting intentional turning rather than erratic movement)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 277°–303°, with minor fluctuations around COG, indicating stabilized steering control)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "600~650"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

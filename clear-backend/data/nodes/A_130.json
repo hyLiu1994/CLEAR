@@ -1,0 +1,15 @@
+{
+  "id": "A_130",
+  "type": "attribute",
+  "label": "spatial_context: location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Kvickbron, Tibberup Mølle, Slip, Gedser Rev, DSRS Helsingør, Øresund, RHSS, TSS In the Sound, Scandinavian Ring North, København (DK) – Oslo (N), Unnamed lane, Helsingør (DK) - Helsingborg (SE), Råå - Bäckviken, Humlebæk Værft",
+  "summary": "spatial_context attribute: location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Kvickbron, Tibberup Mølle, Slip, Gedser Rev, DSRS Helsingør, Øresund, RHSS, TSS In the Sound, Scandinavian Ring North, København (DK) – Oslo (N), Unnamed lane, Helsingør (DK) - Helsingborg (SE), Råå - Bäckviken, Humlebæk Værft",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Kvickbron, Tibberup Mølle, Slip, Gedser Rev, DSRS Helsingør, Øresund, RHSS, TSS In the Sound, Scandinavian Ring North, København (DK) – Oslo (N), Unnamed lane, Helsingør (DK) - Helsingborg (SE), Råå - Bäckviken, Humlebæk Værft",
+    "support": 1
+  },
+  "related": []
+}

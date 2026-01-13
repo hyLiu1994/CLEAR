@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_2319_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_2319_SEG_5",
+  "summary": "Segment 5 of trajectory 2319",
+  "description": [
+    "MMSI: 215909000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-09 09:28:20",
+    "End time: 2024-03-09 09:34:21"
+  ],
+  "metadata": {
+    "trajectory_id": "2319",
+    "vessel_id": "215909000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-09 09:28:20",
+    "end_time": "2024-03-09 09:34:21"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: HVDC NordBalt, Aurora, Travemünde (D) – Helsinki (FIN)",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 8.5 and 9.0 knots, with minimal variation)",
+      "course_change": "gradual and consistent (COG changes slowly from 154.0° to 167.0° over time, increasing at a steady rate of approximately 1.3° per observation interval)",
+      "heading_fluctuation": "stable (heading remains close to 150° initially, then gradually increases to 163°, showing small, smooth adjustments without abrupt changes)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.9947 - 0.0062 × t + 0.0005 × t², lon(t) ≈ 16.2241 + 0.0092 × t + 0.0006 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 8.8 and 9.5 knots, with minor fluctuations likely due to sea conditions)",
+      "course_change": "gradual and consistent (COG decreases slowly and consistently from 174.0° to 154.0° over the sequence, indicating a smooth, intentional turn to the right)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 150–170°, showing controlled directional stability despite the course adjustment)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 56.0113 - 0.0084 × t + 0.0007 × t², lon(t) ≈ 16.2162 + 0.0028 × t + 0.0005 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 8.3 and 8.6 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG changes slowly from 167.0° to 169.0°, then back to 166.0°, indicating a smooth, controlled adjustment in direction over time)",
+      "heading_fluctuation": "stable (heading remains steady at 163.0° for most of the segment, with only minor adjustments down to 162.0°, suggesting minimal rudder input and stable steering)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 55.9808 − 0.0238 × t, lon(t) ≈ 16.2338 + 0.0085 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "1100~1150"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

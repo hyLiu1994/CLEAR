@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1298_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_1298_SEG_8",
+  "summary": "Segment 8 of trajectory 1298",
+  "description": [
+    "MMSI: 210195000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-30 23:26:48",
+    "End time: 2024-03-30 23:31:28"
+  ],
+  "metadata": {
+    "trajectory_id": "1298",
+    "vessel_id": "210195000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-30 23:26:48",
+    "end_time": "2024-03-30 23:31:28"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 57.780335 - 0.0015 × t, lon(t) ≈ 9.490853 - 0.0042 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 57.764383 - 0.00185 × t, lon(t) ≈ 9.43243 - 0.00412 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions typical of medium-sized freighters (150–200 m length, 25–30 m width, draught 8–10 m) are observed to follow straight, fixed maritime routes in open waters near major shipping lanes such as Kristiansand–Hirtshals in approximately 68% of comparable trajectory gaps. This pattern is strongly associated with vessels maintaining stable speed and heading alignment, particularly when traversing well-defined corridors in the North Sea and Skagerrak region. The vessel’s static attributes match this profile exactly, and the weighted co-occurrence frequency between these attributes and the \"navigating along a fixed route\" behavior (vb_-4927443205807001530) indicates it is the most statistically prevalent behavior under these conditions, accounting for over 70% of similar contextual matches in the knowledge graph.",
+    "contextual_justification": "The boundary movement pattern explicitly describes a linear west-southwest trajectory with stable speed, consistent course change, and minimal heading fluctuation—indicative of navigation along a fixed route. The candidate movement vb_-4927443205807001530 mirrors these dynamics precisely: it exhibits stable speed, gradual and consistent course evolution, and tightly aligned heading, all hallmarks of straight-line transit. Furthermore, the parametric model of position progression (linear in time) aligns geometrically with the boundary segment's trajectory trend. Given that the incomplete AIS samples show a continuous westward progression with minor latitude adjustments and stable SOG (~13 knots), this movement provides the most kinematically and contextually coherent interpolation across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 correctly addresses the missing value problem for this behavior pattern is 98.04%, calculated as 100 / (100 + 2) = 0.9804. This proportion reflects the relative confidence in this function compared to the alternative, based on the observed association strength between the behavior pattern and each candidate function. The high weight (100) assigned to this function indicates it has been historically selected far more frequently than the alternative (weight = 2) when dealing with vessels exhibiting stable speed, consistent course, and linear intent.  \n2. This function assumes a constant-velocity linear motion model, which aligns precisely with the kinematic characteristics of the vessel: stable speed profile, minimal heading fluctuation, and gradual, consistent course change indicating straight-line navigation. Its interpolation method scales position increments proportionally with time, ensuring temporal and spatial consistency across the gap. In contrast, the alternative function, while mathematically similar, has significantly less empirical support in comparable scenarios."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "IMO COLREGs Rule 10 (Traffic Separation Schemes) – Applicable in congested waters near major shipping lanes such as Kristiansand–Hirtshals, where vessels are expected to follow designated routes to minimize collision risk.\nOperational Protocol Rationale: Cargo vessels of this size and configuration, operating under engine with no hazardous cargo, typically maintain straight, predictable paths along established maritime corridors in the Skagerrak region. The observed stable speed, minimal heading variation, and consistent course indicate autopilot-assisted transit aligned with fixed routing protocols. This behavior is characteristic of open-water segments within traffic separation schemes, where deviations are rare and vessel motion is optimized for fuel efficiency and navigational safety. Alternative behaviors involving curved trajectories or speed fluctuations are less likely given the tight alignment between course over ground and heading, as well as the proximity to well-defined shipping lanes that favor linear navigation.\n'''",
+    "operational_protocol_rationale": "Cargo vessels of this size and configuration, operating under engine with no hazardous cargo, typically maintain straight, predictable paths along established maritime corridors in the Skagerrak region. The observed stable speed, minimal heading variation, and consistent course indicate autopilot-assisted transit aligned with fixed routing protocols. This behavior is characteristic of open-water segments within traffic separation schemes, where deviations are rare and vessel motion is optimized for fuel efficiency and navigational safety. Alternative behaviors involving curved trajectories or speed fluctuations are less likely given the tight alignment between course over ground and heading, as well as the proximity to well-defined shipping lanes that favor linear navigation.\n'''"
+  },
+  "related": []
+}

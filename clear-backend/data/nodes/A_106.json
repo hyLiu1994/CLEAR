@@ -1,0 +1,15 @@
+{
+  "id": "A_106",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Havnekontor, Grenå - Halmstad, Grenå Kystredningsstation, Unnamed lane, Anholtfærgen",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Havnekontor, Grenå - Halmstad, Grenå Kystredningsstation, Unnamed lane, Anholtfærgen",
+  "description": [
+    "This attribute is associated with 5 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Havnekontor, Grenå - Halmstad, Grenå Kystredningsstation, Unnamed lane, Anholtfærgen",
+    "support": 5
+  },
+  "related": []
+}

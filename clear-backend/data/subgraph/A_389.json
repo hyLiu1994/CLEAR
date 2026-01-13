@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_389",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed lane, Meerwind Süd | Ost, Nordsee Ost, Sylt A",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2561_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2561_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7135364367656623574",
+      "type": "behavior",
+      "label": "Behavior 56623574",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2561_SEG_4",
+      "target": "A_389",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7135364367656623574",
+      "target": "A_389",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2561_SEG_4",
+    "B_vb_7135364367656623574",
+    "A_389"
+  ],
+  "centerNodeId": "A_389",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1991_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_1991_SEG_6",
+  "summary": "Segment 6 of trajectory 1991",
+  "description": [
+    "MMSI: 211333700",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 06:10:56",
+    "End time: 2024-03-17 06:15:47"
+  ],
+  "metadata": {
+    "trajectory_id": "1991",
+    "vessel_id": "211333700",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-17 06:10:56",
+    "end_time": "2024-03-17 06:15:47"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Storebælt, Aarhus-Kalundborg, Ballen-Røsnæs, Unnamed lane, Slip, Great Belt 2",
+    "Draught: [2, 4) m",
+    "Length: [50, 100) m",
+    "Width: [10, 15) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving east-southeast, approximated by the parametric equations: lat(t) ≈ 55.69328 - 0.00176 × t, lon(t) ≈ 10.944347 + 0.00823 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving east-southeast, approximated by the parametric equations: lat(t) ≈ 55.688587 - 0.00256 × t, lon(t) ≈ 10.965885 + 0.01164 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

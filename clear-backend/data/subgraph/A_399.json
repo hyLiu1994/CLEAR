@@ -1,0 +1,258 @@
+{
+  "nodes": [
+    {
+      "id": "A_399",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Utklippans naturreservat, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2638_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2638_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2638_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2638_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2638_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2638_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6255190157237282313",
+      "type": "behavior",
+      "label": "Behavior 37282313",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2100548169559808147",
+      "type": "behavior",
+      "label": "Behavior 59808147",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1450693701513248396",
+      "type": "behavior",
+      "label": "Behavior 13248396",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3256118230624125506",
+      "type": "behavior",
+      "label": "Behavior 24125506",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7135364367656623574",
+      "type": "behavior",
+      "label": "Behavior 56623574",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-2305747525809879715",
+      "type": "behavior",
+      "label": "Behavior 09879715",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8222646369412021310",
+      "type": "behavior",
+      "label": "Behavior 12021310",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2638_SEG_3",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2638_SEG_1",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2638_SEG_0",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_0",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_3",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_2",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_6",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_7",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_4",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_5",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1450693701513248396",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3256118230624125506",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_7135364367656623574",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2305747525809879715",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8222646369412021310",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2641_SEG_4",
+    "TRJ_2641_SEG_7",
+    "B_vb_1450693701513248396",
+    "TRJ_2641_SEG_2",
+    "TRJ_2638_SEG_3",
+    "A_399",
+    "TRJ_2638_SEG_1",
+    "TRJ_2641_SEG_6",
+    "B_vb_-3256118230624125506",
+    "B_vb_7135364367656623574",
+    "B_vb_8222646369412021310",
+    "B_vb_-2305747525809879715",
+    "TRJ_2638_SEG_0",
+    "TRJ_2641_SEG_5",
+    "B_vb_-6255190157237282313",
+    "TRJ_2641_SEG_0",
+    "B_vb_2100548169559808147",
+    "TRJ_2641_SEG_3"
+  ],
+  "centerNodeId": "A_399",
+  "maxLevel": 1,
+  "totalNodes": 18,
+  "totalLinks": 17
+}

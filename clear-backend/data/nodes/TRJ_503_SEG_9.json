@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_503_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_503_SEG_9",
+  "summary": "Segment 9 of trajectory 503",
+  "description": [
+    "MMSI: 209672000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-09 06:42:53",
+    "End time: 2024-03-09 06:49:33"
+  ],
+  "metadata": {
+    "trajectory_id": "503",
+    "vessel_id": "209672000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-09 06:42:53",
+    "end_time": "2024-03-09 06:49:33"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: location: Denmark; nearby_shipping_lanes: Havnekontor, Grenå - Halmstad, Grenå Kystredningsstation, Unnamed lane, Anholtfærgen",
+    "Draught: [4, 6) m",
+    "Length: [50, 100) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a low and consistent speed, mostly between 0.0 and 0.4 knots, indicating minimal propulsion or drifting)",
+      "course_change": "gradual and consistent (COG changes smoothly from ~314° to ~360°/0°, then fluctuates around 0°–35° and later jumps to 198.9° and 320.5°, suggesting rotational maneuvering near a fixed point)",
+      "heading_fluctuation": "stable (heading remains nearly constant at 22°–24° despite COG variations, indicating rudder adjustments while main orientation stays fixed)",
+      "intent": "following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters: (lat(t), lon(t)) ≈ (56.4159 + 0.0001 × cos(2πt), 10.92815 + 0.00015 × sin(2πt)), where t ∈ [0,1] represents normalized time over the loop; this reflects the vessel turning in place or adjusting position within a confined harbor area, likely during docking preparation or anchoring",
+      "duration": "400~450"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 1.2 and 2.3 knots, with only minor fluctuations)",
+      "course_change": "gradual and consistent (COG increases steadily from 296.5° to 347.6°, then decreases slightly, indicating a smooth, continuous turn)",
+      "heading_fluctuation": "stable (heading changes incrementally from 330.0° to 36.0°, remaining closely aligned with COG, suggesting controlled steering without oscillation)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "400~450"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

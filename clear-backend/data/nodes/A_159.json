@@ -1,0 +1,15 @@
+{
+  "id": "A_159",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Kanalfähre Sehestedt, Kanalfähre Landwehr, Unnamed lane",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Kanalfähre Sehestedt, Kanalfähre Landwehr, Unnamed lane",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Kanalfähre Sehestedt, Kanalfähre Landwehr, Unnamed lane",
+    "support": 2
+  },
+  "related": []
+}

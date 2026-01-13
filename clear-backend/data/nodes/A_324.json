@@ -1,0 +1,15 @@
+{
+  "id": "A_324",
+  "type": "attribute",
+  "label": "spatial_context: location: Trelleborgs kommun, Skåne County, Sweden; nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, Køge - Rønne, Świnoujście (PL) - Trelleborg (SE), Travemünde (D) – Trelleborg (SE)",
+  "summary": "spatial_context attribute: location: Trelleborgs kommun, Skåne County, Sweden; nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, Køge - Rønne, Świnoujście (PL) - Trelleborg (SE), Travemünde (D) – Trelleborg (SE)",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Trelleborgs kommun, Skåne County, Sweden; nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), Rostock (D) - Trelleborg (SE), Rostock - Trelleborg, Køge - Rønne, Świnoujście (PL) - Trelleborg (SE), Travemünde (D) – Trelleborg (SE)",
+    "support": 1
+  },
+  "related": []
+}

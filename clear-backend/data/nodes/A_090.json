@@ -1,0 +1,15 @@
+{
+  "id": "A_090",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Tórshavn, Hirtshals - Stavanger, Unnamed lane",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Hirtshals - Tórshavn, Hirtshals - Stavanger, Unnamed lane",
+  "description": [
+    "This attribute is associated with 11 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Hirtshals - Tórshavn, Hirtshals - Stavanger, Unnamed lane",
+    "support": 11
+  },
+  "related": []
+}

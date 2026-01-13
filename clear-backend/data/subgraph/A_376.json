@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "A_376",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HAVSIL Fiber Cable System, Denmark-Norway 6, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2476_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2476_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2476_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2476_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2476_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2476_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2476_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2476_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6255190157237282313",
+      "type": "behavior",
+      "label": "Behavior 37282313",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2100548169559808147",
+      "type": "behavior",
+      "label": "Behavior 59808147",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2476_SEG_1",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2476_SEG_2",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2476_SEG_3",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2476_SEG_7",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_8",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_5",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_6",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2100548169559808147",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2534_SEG_8",
+    "A_376",
+    "B_vb_-6255190157237282313",
+    "TRJ_2534_SEG_6",
+    "TRJ_2476_SEG_3",
+    "TRJ_2534_SEG_5",
+    "TRJ_2476_SEG_1",
+    "B_vb_82841811344196675",
+    "TRJ_2476_SEG_7",
+    "B_vb_2100548169559808147",
+    "TRJ_2476_SEG_2"
+  ],
+  "centerNodeId": "A_376",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

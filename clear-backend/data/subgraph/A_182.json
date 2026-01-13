@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_182",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Kanalfähre Hohenhörn, Kanalfähre Hochdonn, Kanalfähre Burg (Dithmarschen)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_930_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_930_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1174115478586749533",
+      "type": "behavior",
+      "label": "Behavior 86749533",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_930_SEG_4",
+      "target": "A_182",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1174115478586749533",
+      "target": "A_182",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_930_SEG_4",
+    "B_vb_-1174115478586749533",
+    "A_182"
+  ],
+  "centerNodeId": "A_182",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

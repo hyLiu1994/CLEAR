@@ -1,0 +1,15 @@
+{
+  "id": "A_012",
+  "type": "attribute",
+  "label": "spatial_context: location: Kristiansand, Agder, 4611, Norway; nearby_shipping_lanes: Lahelle, Ronsbukta, Nodeviga (store), Hånesbukta, Otra (nedre), Kristiansand - Hirtshals, Hirtshals - Kristiansand, Kjøita, Otterdalen, Unnamed lane, ODIN 2, Terneviga, Kuholmen båthavn, Havfrue/AEC-2, Denmark-Norway 6, Kristiansand gjestehavn, HVDC Skagerrak 4, Prestviga, Auglandsbukta, Tresse, Christiansholm, HAVSIL Fiber Cable System",
+  "summary": "spatial_context attribute: location: Kristiansand, Agder, 4611, Norway; nearby_shipping_lanes: Lahelle, Ronsbukta, Nodeviga (store), Hånesbukta, Otra (nedre), Kristiansand - Hirtshals, Hirtshals - Kristiansand, Kjøita, Otterdalen, Unnamed lane, ODIN 2, Terneviga, Kuholmen båthavn, Havfrue/AEC-2, Denmark-Norway 6, Kristiansand gjestehavn, HVDC Skagerrak 4, Prestviga, Auglandsbukta, Tresse, Christiansholm, HAVSIL Fiber Cable System",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Kristiansand, Agder, 4611, Norway; nearby_shipping_lanes: Lahelle, Ronsbukta, Nodeviga (store), Hånesbukta, Otra (nedre), Kristiansand - Hirtshals, Hirtshals - Kristiansand, Kjøita, Otterdalen, Unnamed lane, ODIN 2, Terneviga, Kuholmen båthavn, Havfrue/AEC-2, Denmark-Norway 6, Kristiansand gjestehavn, HVDC Skagerrak 4, Prestviga, Auglandsbukta, Tresse, Christiansholm, HAVSIL Fiber Cable System",
+    "support": 1
+  },
+  "related": []
+}

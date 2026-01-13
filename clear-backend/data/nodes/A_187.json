@@ -1,0 +1,15 @@
+{
+  "id": "A_187",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Klaipėda (LT) – Kiel (D), Femern Fixed Link Holding Area North, Rødsand II Havmøllepark, Marienleuchte, Unnamed lane, Sperrgebiet Marienleuchte",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Die Seenotretter DGzRS, Klaipėda (LT) – Kiel (D), Femern Fixed Link Holding Area North, Rødsand II Havmøllepark, Marienleuchte, Unnamed lane, Sperrgebiet Marienleuchte",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Die Seenotretter DGzRS, Klaipėda (LT) – Kiel (D), Femern Fixed Link Holding Area North, Rødsand II Havmøllepark, Marienleuchte, Unnamed lane, Sperrgebiet Marienleuchte",
+    "support": 1
+  },
+  "related": []
+}

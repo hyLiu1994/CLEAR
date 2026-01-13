@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_2085_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_0",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_2085",
+      "type": "trajectory",
+      "label": "Trajectory 212660000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4174451906177415311",
+      "type": "behavior",
+      "label": "Behavior 77415311",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_332",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Europipe, Statpipe, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_408",
+      "type": "attribute",
+      "label": "draught: [12, +∞) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_413",
+      "type": "attribute",
+      "label": "length: [250, 300) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_418",
+      "type": "attribute",
+      "label": "width: [30, +∞) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "T_2085",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "B_vb_-4174451906177415311",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "A_332",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "A_408",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "A_413",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "A_418",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "F_vf_5240413252068673064",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-4174451906177415311",
+    "A_332",
+    "A_001",
+    "A_408",
+    "A_418",
+    "F_vf_5240413252068673064",
+    "A_005",
+    "T_2085",
+    "TRJ_2085_SEG_0",
+    "A_004",
+    "A_413"
+  ],
+  "centerNodeId": "TRJ_2085_SEG_0",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

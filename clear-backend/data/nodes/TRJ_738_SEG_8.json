@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_738_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_738_SEG_8",
+  "summary": "Segment 8 of trajectory 738",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 22:47:14",
+    "End time: 2024-03-27 22:51:03"
+  ],
+  "metadata": {
+    "trajectory_id": "738",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-27 22:47:14",
+    "end_time": "2024-03-27 22:51:03"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 56.2042 + 0.0010 × t + 0.00005 × t², lon(t) ≈ 7.6435 + 0.0004 × t + 0.00002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving northeast, approximated by the parametric equations: lat(t) ≈ 56.24017 + 0.00089 × t, lon(t) ≈ 7.65853 + 0.00034 × t, where t is a normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating near unnamed traffic separation schemes exhibit the \"navigating along a fixed route\" behavior in approximately 68% of comparable scenarios (derived from total edge weight support: 102/150 ≈ 68% across navigation_status, hazardous_cargo, and vessel_type). This pattern is strongly associated with vessels of length [100, 150) m and draught [6, 8) m navigating through structured maritime corridors, where straight-line trajectories are prioritized for collision avoidance and regulatory compliance. Among all candidate patterns, vb_-4927443205807001530 ranks highest in combined attribute alignment, particularly for navigation status and vessel type, which together account for over half of the total graph support.",
+    "contextual_justification": "The boundary movement pattern explicitly describes a linear northeast-bound trajectory with stable speed, consistent course, and tight COG-heading alignment—hallmarks of a fixed-route navigation. The parametric equations from the boundary segment (lat(t) ≈ 56.1858 + 0.0009×t, lon(t) ≈ 7.6360 + 0.00034×t) closely match those of vb_-4927443205807001530 (lat(t) ≈ 56.114153 + 0.00087×t, lon(t) ≈ 7.607993 + 0.00034×t), indicating spatial and kinematic continuity. While other candidates describe curved routes, only vb_-4927443205807001530 matches the intent of straight-line progression, making it the most plausible fit for a vessel continuing along a predefined maritime route through a traffic separation scheme.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 98.04%. This is derived from the proportional weight distribution observed in the relationship between the behavior pattern and candidate functions. Out of a total connection weight of 102 (100 + 2) associated with the behavior pattern vb_-4927443205807001530, the function vf_-7663396197665720575 accounts for 100 units, yielding a reliability proportion of 100 / 102 ≈ 0.9804 or 98.04%. This high proportion indicates strong empirical alignment between this function and the identified motion pattern under consistent operational conditions.  \n2. The function exhibits deterministic linearity with time-normalized scaling using max(Time_interval), ensuring uniform progression along the great-circle segment between start and end points. It matches the context precisely—stable speed (sog ~16–17 knots), consistent COG, and negligible heading fluctuation—indicating constant-velocity motion along a fixed maritime route. The parametric trajectory model lat(t) ≈ 56.114153 + 0.00087×t and lon(t) ≈ 7.607993 + 0.00034×t further validates the assumption of linear spatial evolution over normalized time, which this function directly implements."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) - Applicable to cargo vessels navigating near structured maritime corridors; spatial anchor: unnamed traffic separation scheme\nOperational Protocol Rationale: Cargo vessels operating in traffic separation schemes are expected to follow straight, predefined routes to maintain orderly flow and reduce collision risk. The observed stable speed, consistent course over ground, and tight alignment between heading and course indicate the vessel is adhering to a fixed route under autopilot, which is standard practice in regulated waterways. This behavior prioritizes navigational safety and compliance with international maritime regulations. Alternative behaviors involving curved trajectories or frequent course adjustments are less likely in this context, as they would suggest maneuvering within port areas or coastal zones rather than transit through a designated shipping lane.\n'''",
+    "operational_protocol_rationale": "Cargo vessels operating in traffic separation schemes are expected to follow straight, predefined routes to maintain orderly flow and reduce collision risk. The observed stable speed, consistent course over ground, and tight alignment between heading and course indicate the vessel is adhering to a fixed route under autopilot, which is standard practice in regulated waterways. This behavior prioritizes navigational safety and compliance with international maritime regulations. Alternative behaviors involving curved trajectories or frequent course adjustments are less likely in this context, as they would suggest maneuvering within port areas or coastal zones rather than transit through a designated shipping lane.\n'''"
+  },
+  "related": []
+}

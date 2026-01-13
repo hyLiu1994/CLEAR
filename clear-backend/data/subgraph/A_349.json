@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_349",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Klaipėda (LT) – Kiel (D), Nysted Havmøllepark (Rødsand 1), Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2223_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2223_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4927443205807001530",
+      "type": "behavior",
+      "label": "Behavior 07001530",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2223_SEG_9",
+      "target": "A_349",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4927443205807001530",
+      "target": "A_349",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-4927443205807001530",
+    "TRJ_2223_SEG_9",
+    "A_349"
+  ],
+  "centerNodeId": "A_349",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

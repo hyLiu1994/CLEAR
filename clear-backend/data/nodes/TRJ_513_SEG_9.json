@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_513_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_513_SEG_9",
+  "summary": "Segment 9 of trajectory 513",
+  "description": [
+    "MMSI: 209672000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-25 22:02:47",
+    "End time: 2024-03-25 22:13:29"
+  ],
+  "metadata": {
+    "trajectory_id": "513",
+    "vessel_id": "209672000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-25 22:02:47",
+    "end_time": "2024-03-25 22:13:29"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 10.9 and 11.1 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG changes slowly from 34.2° to 32.4° over time, indicating a smooth, continuous adjustment in direction)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 31.0°–34.0°, with minimal oscillation around COG)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 57.85245 + 0.0081 × t - 0.0003 × t², lon(t) ≈ 9.20195 + 0.0112 × t + 0.0002 × t², where t is a normalized time index from 0 to 1 over the observed segment)",
+      "duration": "500~550"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, tanker vessels 'under way using engine' with a draught between 6–8 meters navigating near major shipping lanes such as Kristiansand–Hirtshals exhibit the \"following a curved maritime route\" behavior in approximately 74% of observed segments (weight = 129 out of 177 total for navigation_status and hazardous_cargo matches). This pattern is strongly associated with vessels of length [50, 100) m and width [15, 20) m, and although the spatial context edge weight is low (w=1), the high consensus across dynamic attributes—especially stable speed and consistent course evolution—confirms its prevalence in constrained coastal corridors requiring gentle turns. Among all candidate patterns, this movement has the highest combined support from core vessel state attributes.",
+    "contextual_justification": "The boundary movement patterns both describe a \"following a curved maritime route\" intent with stable speed (~10.9–11.1 knots), gradual and consistent COG change (from 34.2° to 32.4°), and minimal heading fluctuation, indicating continuous navigation along a gently curving channel. The selected movement (vb_8377157303611993086) aligns with this trajectory logic: it exhibits stable speed (10.1–10.2 knots), gradual COG adjustment (48.4° to 50.4°), and steady heading (55°–57°), consistent with helm control during a mild turn. While the absolute bearings differ, the kinematic profile—stable propulsion, smooth course evolution, and tight heading-COG alignment—is fully consistent with the vessel continuing along a curved segment of a defined maritime route, bridging the gap in spatiotemporal continuity.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the observed behavior pattern is 92.3%. This is derived from historical performance data across 13 similar kinematic scenarios where the vessel exhibited stable speed (within ±0.3 knots), consistent COG progression (change rate < 0.1° per minute), and minimal heading fluctuation (< 3° peak-to-peak). In 12 out of these 13 cases, linear interpolation produced imputed positions within 50 meters of ground-truth AIS reports (based on post-imputation error analysis using Haversine distance), yielding a success rate of 12/13 ≈ 92.3%.\n\n2. The function implements constant-velocity linear interpolation between known start and end points, distributing intermediate coordinates proportionally based on time intervals. This matches the current context where the vessel maintains a nearly constant speed (SOG ~10.1–10.2 knots), shows no abrupt maneuvers, and follows a smooth trajectory with gradual course adjustment. The observed latitudinal and longitudinal increments are approximately proportional (Δlat / Δlong ≈ 0.75 in local Cartesian approximation), supporting linearity assumptions over short arcs. Although the intent suggests slight curvature, the radius of curvature is large enough (estimated > 5 km based on COG change rate and speed) that over a 200–250 second interval, the path deviation from linearity remains under 20 meters—well within acceptable imputation error margins for maritime tracking."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability: Vessels navigating near major shipping lanes, specifically in the Kristiansand–Hirtshals corridor, are required to follow designated curved routes to maintain safe separation from opposing traffic flows. This routing structure is formally established under international maritime regulations (SOLAS Chapter V / COLREGs Rule 10) and applies to all commercial vessels transiting this high-density area.\nOperational Protocol Rationale: The observed behavior—maintaining a stable speed of approximately 10.1–10.2 knots while executing a gradual, consistent turn with minimal heading fluctuation—is typical for tankers following a predefined curved route in a regulated shipping lane. This pattern reflects strict adherence to navigational protocols designed to ensure predictability and collision avoidance in confined coastal waters. The vessel’s dimensions and draught place it within the class of medium-sized tankers commonly operating in this region, where precise helm control and steady propulsion are standard during course adjustments along fixed channels. Alternative behaviors such as sharp maneuvers, speed variations, or erratic heading changes would indicate deviation from the intended route or response to emergencies, neither of which are present here. Instead, the smooth evolution of course over ground and tight alignment between heading and motion direction confirm intentional navigation along a known arc-shaped segment of the maritime traffic system.\n'''",
+    "operational_protocol_rationale": "The observed behavior—maintaining a stable speed of approximately 10.1–10.2 knots while executing a gradual, consistent turn with minimal heading fluctuation—is typical for tankers following a predefined curved route in a regulated shipping lane. This pattern reflects strict adherence to navigational protocols designed to ensure predictability and collision avoidance in confined coastal waters. The vessel’s dimensions and draught place it within the class of medium-sized tankers commonly operating in this region, where precise helm control and steady propulsion are standard during course adjustments along fixed channels. Alternative behaviors such as sharp maneuvers, speed variations, or erratic heading changes would indicate deviation from the intended route or response to emergencies, neither of which are present here. Instead, the smooth evolution of course over ground and tight alignment between heading and motion direction confirm intentional navigation along a known arc-shaped segment of the maritime traffic system.\n'''"
+  },
+  "related": []
+}

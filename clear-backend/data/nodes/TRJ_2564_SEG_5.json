@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_2564_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_2564_SEG_5",
+  "summary": "Segment 5 of trajectory 2564",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-21 11:43:13",
+    "End time: 2024-03-21 11:47:02"
+  ],
+  "metadata": {
+    "trajectory_id": "2564",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-21 11:43:13",
+    "end_time": "2024-03-21 11:47:02"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 504",
+    "Draught: [6, 8) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 15.0 and 15.6 knots with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 351.8° and 354.2°, showing a smooth, progressive change in direction over time)",
+      "heading_fluctuation": "gradual and consistent (heading remains constant at 356.0° throughout the trajectory, while COG slowly evolves, suggesting the vessel is compensating for environmental forces like wind or current)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 55.06246 + 0.0135 × t + 0.0001 × t², lon(t) ≈ 7.43779 - 0.0018 × t - 0.00002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-northwest, approximated by the parametric equations: lat(t) ≈ 55.04558 + 0.00083 × t, lon(t) ≈ 7.441253 - 0.00018 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 14.9 and 15.5 knots with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 351.4° and 354.3°, showing a slow, smooth evolution in direction rather than abrupt changes)",
+      "heading_fluctuation": "gradual and consistent (heading remains constant at 356.0° throughout the sequence, indicating stable rudder control and no significant yawing)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving north-northwest, approximated by the parametric equations: lat(t) ≈ 55.079393 + 0.00165 × t, lon(t) ≈ 7.434325 - 0.00018 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

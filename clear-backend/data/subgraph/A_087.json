@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "A_087",
+      "type": "attribute",
+      "label": "spatial_context: location: Aalborg, Aalborg Municipality, North Denmark Region, 9000, Denmark; nearby_shipping_lanes: Vestre Bådehavn, Vendsysselbanen, Sildekajen, Tunnelhavnen, Nørresundby Kirke, Limfjordsbroen, Aalborg Skudehavn, Nørresundby Lystbådehavn, Aalborgtårnet, Grønlandshavnen, Nørre Uttrup Lystbådehavn, Tunnelbassinet, Unnamed lane, Nybrogade, Østre Havnebasin, Sankt Mariæ Kirke, Vor Frelsers Kirke",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_383_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_383_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_383_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_383_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_383_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_383_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_383_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_383_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_383_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_383_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_383_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_383_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_383_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_383_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8350010603033461487",
+      "type": "behavior",
+      "label": "Behavior 33461487",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_9187148159000332043",
+      "type": "behavior",
+      "label": "Behavior 00332043",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6968704479486317731",
+      "type": "behavior",
+      "label": "Behavior 86317731",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8172434805359334265",
+      "type": "behavior",
+      "label": "Behavior 59334265",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6966875545805202659",
+      "type": "behavior",
+      "label": "Behavior 05202659",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4014051667411630102",
+      "type": "behavior",
+      "label": "Behavior 11630102",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_383_SEG_6",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_383_SEG_0",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_383_SEG_8",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_383_SEG_2",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_383_SEG_7",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_383_SEG_4",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_383_SEG_5",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8350010603033461487",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_9187148159000332043",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6968704479486317731",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8172434805359334265",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6966875545805202659",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4014051667411630102",
+      "target": "A_087",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_383_SEG_2",
+    "B_vb_6968704479486317731",
+    "B_vb_-8172434805359334265",
+    "B_vb_-8350010603033461487",
+    "TRJ_383_SEG_5",
+    "B_vb_-4014051667411630102",
+    "A_087",
+    "B_vb_9187148159000332043",
+    "TRJ_383_SEG_4",
+    "B_vb_-6966875545805202659",
+    "TRJ_383_SEG_0",
+    "TRJ_383_SEG_7",
+    "TRJ_383_SEG_6",
+    "TRJ_383_SEG_8"
+  ],
+  "centerNodeId": "A_087",
+  "maxLevel": 1,
+  "totalNodes": 14,
+  "totalLinks": 13
+}

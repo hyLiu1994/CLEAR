@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "F_vf_6605653474471919766",
+      "type": "function",
+      "label": "Function 71919766",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_930_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_930_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_7684367596296962146",
+      "type": "behavior",
+      "label": "Behavior 96962146",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_930_SEG_9",
+      "target": "F_vf_6605653474471919766",
+      "relation": "uses_function",
+      "level": 1
+    },
+    {
+      "source": "F_vf_6605653474471919766",
+      "target": "B_vb_7684367596296962146",
+      "relation": "implements",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_7684367596296962146",
+    "F_vf_6605653474471919766",
+    "TRJ_930_SEG_9"
+  ],
+  "centerNodeId": "F_vf_6605653474471919766",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

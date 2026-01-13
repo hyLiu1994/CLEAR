@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-425550717571341526",
+  "type": "behavior",
+  "label": "Behavior 71341526",
+  "summary": "Vessel behavior pattern: navigating along a fixed route",
+  "description": [
+    "Speed profile: stable (the vessel maintains a nearly constant speed between 15.7 and 16.1 knots with minimal variation)",
+    "Course change: gradual and consistent (COG fluctuates narrowly around 90°, showing small deviations between 89.7° and 90.7°, indicating a smooth, controlled course)",
+    "Heading fluctuation: stable (heading remains tightly clustered between 90.0° and 91.0°, suggesting precise directional control)",
+    "Behavior intent: navigating along a fixed route",
+    "Duration: 400~450"
+  ],
+  "metadata": {
+    "original_id": "vb_-425550717571341526",
+    "duration": "400~450",
+    "support": 13,
+    "pattern_key": [
+      "stable",
+      "gradual and consistent",
+      "stable",
+      "navigating along a fixed route",
+      "400~450"
+    ]
+  },
+  "related": []
+}

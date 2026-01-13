@@ -1,0 +1,104 @@
+{
+  "nodes": [
+    {
+      "id": "A_092",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Query failed with status 504",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_409_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_409_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_409_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_409_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_566_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_566_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8219356608673346866",
+      "type": "behavior",
+      "label": "Behavior 73346866",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_409_SEG_5",
+      "target": "A_092",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_409_SEG_6",
+      "target": "A_092",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_566_SEG_6",
+      "target": "A_092",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_092",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_092",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_092",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8377157303611993086",
+    "A_092",
+    "TRJ_409_SEG_5",
+    "B_vb_-8219356608673346866",
+    "TRJ_409_SEG_6",
+    "TRJ_566_SEG_6",
+    "B_vb_-4857314466243141680"
+  ],
+  "centerNodeId": "A_092",
+  "maxLevel": 1,
+  "totalNodes": 7,
+  "totalLinks": 6
+}

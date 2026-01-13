@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_081",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Nordmands Hage, Hals Jollehavn, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_380_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_380_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_536_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_536_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8219356608673346866",
+      "type": "behavior",
+      "label": "Behavior 73346866",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_380_SEG_0",
+      "target": "A_081",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_536_SEG_8",
+      "target": "A_081",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_081",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8219356608673346866",
+      "target": "A_081",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8377157303611993086",
+    "A_081",
+    "B_vb_-8219356608673346866",
+    "TRJ_536_SEG_8",
+    "TRJ_380_SEG_0"
+  ],
+  "centerNodeId": "A_081",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

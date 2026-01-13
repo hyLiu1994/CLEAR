@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_194",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed lane, Romsø Fyr, Storebælt, Great Belt 2",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_996_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_996_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_996_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_996_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4927443205807001530",
+      "type": "behavior",
+      "label": "Behavior 07001530",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_996_SEG_7",
+      "target": "A_194",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_996_SEG_4",
+      "target": "A_194",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_194",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4927443205807001530",
+      "target": "A_194",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_194",
+    "TRJ_996_SEG_4",
+    "TRJ_996_SEG_7",
+    "B_vb_3366872286460794881",
+    "B_vb_-4927443205807001530"
+  ],
+  "centerNodeId": "A_194",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

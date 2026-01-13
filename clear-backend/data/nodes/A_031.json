@@ -1,0 +1,15 @@
+{
+  "id": "A_031",
+  "type": "attribute",
+  "label": "spatial_context: location: Breiholz, Hohner Harde, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24797, Germany; nearby_shipping_lanes: Kanalfähre Breiholz, Kanalfähre Oldenbüttel, Gieselaukanal, Unnamed lane, Lotsenstation Rüsterbergen",
+  "summary": "spatial_context attribute: location: Breiholz, Hohner Harde, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24797, Germany; nearby_shipping_lanes: Kanalfähre Breiholz, Kanalfähre Oldenbüttel, Gieselaukanal, Unnamed lane, Lotsenstation Rüsterbergen",
+  "description": [
+    "This attribute is associated with 4 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Breiholz, Hohner Harde, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24797, Germany; nearby_shipping_lanes: Kanalfähre Breiholz, Kanalfähre Oldenbüttel, Gieselaukanal, Unnamed lane, Lotsenstation Rüsterbergen",
+    "support": 4
+  },
+  "related": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "A_079",
+  "type": "attribute",
+  "label": "spatial_context: location: Kungälvs kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Query failed with status 429",
+  "summary": "spatial_context attribute: location: Kungälvs kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Query failed with status 429",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Kungälvs kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Query failed with status 429",
+    "support": 1
+  },
+  "related": []
+}

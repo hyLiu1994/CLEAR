@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2109_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_2109_SEG_3",
+  "summary": "Segment 3 of trajectory 2109",
+  "description": [
+    "MMSI: 215903000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-14 03:50:51",
+    "End time: 2024-03-14 08:41:40"
+  ],
+  "metadata": {
+    "trajectory_id": "2109",
+    "vessel_id": "215903000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-14 03:50:51",
+    "end_time": "2024-03-14 08:41:40"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Die Seenotretter DGzRS, Binz - Sassnitz, Sassnitz - Rønne, Lauterbach - Baabe, Sassnitz - Kreideküste, Sellin - Göhren, Aurora, Unnamed lane, Sassnitz - Binz, Sassnitz - Sellin, Baabe - Lauterbach, Sellin - Binz",
+    "Draught: [6, 8) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'fluctuating'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "'following a curved maritime route forms a small elliptical pattern, approximated by a parametric equation of a circle with radius ~20 meters:, where t ∈ [0,1] represents normalized time over the loop; this reflects the vessel turning in place or adjusting position within a confined harbor area, likely during docking preparation or anchoring'",
+      "duration": "17400~17450"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains zero speed across all observations, indicating no movement)",
+      "course_change": "fluctuating (COG values vary significantly between 60° and 300° despite no motion, suggesting sensor noise or invalid updates while stationary)",
+      "heading_fluctuation": "stable (heading remains nearly constant around 214°–218°, indicating the vessel’s orientation is fixed despite COG fluctuations)",
+      "intent": "anchored or moored in a confined area (the persistent zero speed (SOG = 0.0) combined with stable heading and wildly fluctuating COG indicates the vessel is not moving but reporting inconsistent course data, typical of AIS transceivers on anchored vessels where COG becomes unreliable; position remains tightly clustered around latitude ≈54.42446, longitude ≈13.67338, with variation within ~0.00003 degrees, forming a near-point trajectory best modeled as a stationary location: lat(t) ≈ 54.42446, lon(t) ≈ 13.67338 for all t)",
+      "duration": "300~350"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

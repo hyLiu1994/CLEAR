@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_962_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_962_SEG_8",
+  "summary": "Segment 8 of trajectory 962",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-05 10:26:31",
+    "End time: 2024-03-05 10:30:19"
+  ],
+  "metadata": {
+    "trajectory_id": "962",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-05 10:26:31",
+    "end_time": "2024-03-05 10:30:19"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed around 15.7 knots with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly from 71.6° to 72.2° over the sequence, showing a smooth, progressive turn)",
+      "heading_fluctuation": "stable (heading remains consistently at 72.0° or close to it, with only minor deviations, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.7837 + 0.0028 × t + 0.00004 × t², lon(t) ≈ 12.9033 + 0.0052 × t + 0.0002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.7 and 15.9 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly from 71.3° to 72.5° over the sequence, then stabilizes around 72.0°, indicating a smooth, intentional turn or channel-following behavior)",
+      "heading_fluctuation": "stable (heading remains almost constant at 71.0° or 72.0°, with minimal variation, suggesting no abrupt rudder movements)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.7946 + 0.0031 × t + 0.0001 × t², lon(t) ≈ 12.9608 + 0.0054 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with lengths between 150–200 meters and draughts in the [6, 8) meter range are strongly associated with curved route-following behavior when navigating established shipping lanes such as Baltic 2 or Travemünde–Helsinki routes. This pattern (vb_82841811344196675) is linked to these vessel characteristics with high statistical prevalence: navigation status \"Under way using engine\" connects to this behavior in 96 out of 96 observed cases (100%), hazardous cargo \"no\" in 96/96 (100%), vessel type \"Cargo\" in 83/96 (~86%), and vessel dimensions contributing additional alignment (length: 56/96 ~58%, width: 30/96 ~31%). Although spatial context linkage is weaker due to data query issues, the consistent co-occurrence of stable speed, gradual course change, and steady heading across similar cargo vessels reinforces this movement’s dominance in maritime transit zones requiring controlled turns.",
+    "contextual_justification": "The boundary movement patterns before and after the gap both describe a vessel maintaining stable speed (~15.6–15.8 knots), executing a gradual and consistent COG change (from 70.4° to 72.2°), with minimal heading fluctuation—indicative of smooth, autopilot-assisted navigation along a gently curving channel. While the actual speed in the gap is lower (~10–11 knots based on positional progression), the core behavioral signature—stable propulsion, steady helm control, and intent to follow a curved maritime route modeled as a circular arc—aligns precisely with vb_82841811344196675. The parametric trajectory model in this candidate (lat(t), lon(t) with quadratic terms) matches the geographic curvature implied by the boundary segments, making it the most plausible continuation despite minor speed variation, likely due to localized hydrodynamic conditions or traffic separation requirements.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_5240413252068673064 is the correct function to impute the missing segment corresponding to behavior pattern vb_82841811344196675 is approximately 98.96%. This is derived from the relative weight distribution between the two candidate functions connected to the behavior pattern in the association graph. Specifically, the total weight sum for connections from vb_82841811344196675 to its linked functions is 95 + 1 = 96. The proportion of weight assigned to vf_5240413252068673064 is 95 / 96 ≈ 0.9896, or 98.96%. This high proportion indicates a strong empirical association between this function and the observed behavior pattern based on historical performance consistency.  \n2. Function vf_5240413252068673064 implements time-proportional linear interpolation using normalized time intervals (t / Time_interval[-1]), ensuring uniform spacing of imputed points along the trajectory. It assumes constant velocity motion, which aligns with the stable speed profile and consistent course change described in the behavior pattern. In contrast, vf_-7663396197665720575 uses max(Time_interval) for normalization—functionally equivalent under monotonic time—but lacks explicit emphasis on temporal uniformity in its description. Given the vessel’s minimal heading fluctuation and gradual COG evolution, the kinematic context favors a method emphasizing smooth, predictable progression, which vf_5240413252068673064 explicitly supports."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is a cargo ship operating under engine power, navigating through a region with established shipping lanes. It maintains a stable speed and follows a gently curving path with minimal heading variation, indicating it is likely following a predefined maritime route under autopilot. This behavior is typical in regulated transit zones where vessels must adhere to designated channels for safety and traffic separation. The consistent alignment between course over ground and heading, along with gradual directional changes, suggests the vessel is not engaged in maneuvering, anchoring, or port operations. Instead, it is progressing steadily along a curved segment of a shipping lane—common in coastal or congested waters—where controlled turns are required to remain within navigational boundaries. Although the exact curvature may vary slightly due to local conditions, the overall pattern reflects standard seafaring practice for large cargo vessels transiting structured waterways.\n'''",
+    "operational_protocol_rationale": "The vessel is a cargo ship operating under engine power, navigating through a region with established shipping lanes. It maintains a stable speed and follows a gently curving path with minimal heading variation, indicating it is likely following a predefined maritime route under autopilot. This behavior is typical in regulated transit zones where vessels must adhere to designated channels for safety and traffic separation. The consistent alignment between course over ground and heading, along with gradual directional changes, suggests the vessel is not engaged in maneuvering, anchoring, or port operations. Instead, it is progressing steadily along a curved segment of a shipping lane—common in coastal or congested waters—where controlled turns are required to remain within navigational boundaries. Although the exact curvature may vary slightly due to local conditions, the overall pattern reflects standard seafaring practice for large cargo vessels transiting structured waterways.\n'''"
+  },
+  "related": []
+}

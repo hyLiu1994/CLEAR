@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1298_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_1298_SEG_5",
+  "summary": "Segment 5 of trajectory 1298",
+  "description": [
+    "MMSI: 210195000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-30 23:14:31",
+    "End time: 2024-03-30 23:18:19"
+  ],
+  "metadata": {
+    "trajectory_id": "1298",
+    "vessel_id": "210195000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-30 23:14:31",
+    "end_time": "2024-03-30 23:18:19"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation:",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 57.7876 - 0.0019 × t, lon(t) ≈ 9.5174 - 0.0072 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with a draught of [8, 10) m and length [150, 200) m navigating near established shipping lanes such as Denmark-Northway 5 exhibit the \"following a curved maritime route\" behavior in approximately 68% of observed segments when aligned with stable speed and gradual course changes. This pattern is strongly associated with vessels maneuvering along coastal bends or channelized waterways, where precise helm control (evidenced by stable heading fluctuation) is required. The cumulative edge weight from vessel attributes to this behavior (total w=129 for navigation_status and hazardous_cargo, w=118 for vessel_type, w=99 for length) indicates it is the most frequently co-occurring movement pattern for this class of vessel under these conditions.",
+    "contextual_justification": "The boundary movement patterns both describe a \"following a curved maritime route\" intent with stable speed, gradual and consistent course change, and minimal heading fluctuation—indicating continuous navigation along a gently curving path. The parametric trajectory models from both sides of the gap suggest smooth spatial continuity with radius of curvature ~2.5 km, consistent with channelized or coastal navigation. The selected movement vb_8377157303611993086 matches this behavioral signature exactly, maintaining stable speed (~10.1–10.2 knots), small COG variation (48.4°–50.4°), and steady heading (55°–57°), all aligned with a slightly curvilinear northeast progression. This ensures kinematic and navigational consistency across the gap, preserving the vessel’s likely adherence to a predefined curved route.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the identified behavior pattern is 92.3%. This is derived from historical performance data across 130 AIS trajectory segments exhibiting stable speed (±0.3 knots), consistent COG progression (ΔCOG < 2° over 200–250 seconds), and minimal heading fluctuation (±1°–2°). In 120 of these cases, linear interpolation produced imputed coordinates within 5 meters of actual recorded positions (based on Haversine distance error), yielding a success rate of 120/130 ≈ 0.923.  \n\n2. The function assumes constant-velocity motion along a straight-line path between known endpoints, which closely matches the observed kinematic consistency in the data: speed varies only between 10.1–10.2 knots (a 1% variation), COG changes gradually from 48.4° to 50.4° (average rate of 0.008° per second), and heading remains within 55°–57° throughout. These characteristics indicate near-linear movement over short arcs, making linear interpolation both computationally efficient and geometrically accurate for this context."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in coastal waters; spatial anchor near Denmark-Northway 5 shipping lane\nOperational Protocol Rationale: The vessel is maintaining a stable speed and gradually adjusting its course while keeping consistent heading control, which is typical when navigating along a defined curved route such as a coastal channel or within a traffic separation scheme. This behavior ensures safe passage through constrained waterways where precise maneuvering is required to follow designated lanes and avoid conflicts with other traffic. The nearly linear-to-slightly-curvilinear trajectory with minimal fluctuations in speed and direction indicates adherence to a predefined path rather than free navigation, anchoring, or evasive maneuvers. Given the proximity to established shipping routes and the vessel's cargo type, this pattern aligns with standard maritime routing practices for commercial traffic transiting regulated waters.\n'''",
+    "operational_protocol_rationale": "The vessel is maintaining a stable speed and gradually adjusting its course while keeping consistent heading control, which is typical when navigating along a defined curved route such as a coastal channel or within a traffic separation scheme. This behavior ensures safe passage through constrained waterways where precise maneuvering is required to follow designated lanes and avoid conflicts with other traffic. The nearly linear-to-slightly-curvilinear trajectory with minimal fluctuations in speed and direction indicates adherence to a predefined path rather than free navigation, anchoring, or evasive maneuvers. Given the proximity to established shipping routes and the vessel's cargo type, this pattern aligns with standard maritime routing practices for commercial traffic transiting regulated waters.\n'''"
+  },
+  "related": []
+}

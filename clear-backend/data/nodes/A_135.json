@@ -1,0 +1,15 @@
+{
+  "id": "A_135",
+  "type": "attribute",
+  "label": "spatial_context: location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Kvickbron, Tibberup Mølle, Slip, Gedser Rev, DSRS Helsingør, Øresund, RHSS, TSS In the Sound, Scandinavian Ring North, Råå - Bäckviken, Unnamed lane, København (DK) - Hven (SE), København (DK) – Oslo (N), Helsingør (DK) - Helsingborg (SE), Landskrona - Bäckviken",
+  "summary": "spatial_context attribute: location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Kvickbron, Tibberup Mølle, Slip, Gedser Rev, DSRS Helsingør, Øresund, RHSS, TSS In the Sound, Scandinavian Ring North, Råå - Bäckviken, Unnamed lane, København (DK) - Hven (SE), København (DK) – Oslo (N), Helsingør (DK) - Helsingborg (SE), Landskrona - Bäckviken",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Helsingborg, Helsingborgs kommun, Skåne County, 252 68, Sweden; nearby_shipping_lanes: Helsingør (DK) - Helsingborg (S), Råå Jolleklubb, Kvickbron, Tibberup Mølle, Slip, Gedser Rev, DSRS Helsingør, Øresund, RHSS, TSS In the Sound, Scandinavian Ring North, Råå - Bäckviken, Unnamed lane, København (DK) - Hven (SE), København (DK) – Oslo (N), Helsingør (DK) - Helsingborg (SE), Landskrona - Bäckviken",
+    "support": 1
+  },
+  "related": []
+}

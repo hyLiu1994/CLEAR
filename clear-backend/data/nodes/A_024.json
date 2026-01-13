@@ -1,0 +1,15 @@
+{
+  "id": "A_024",
+  "type": "attribute",
+  "label": "spatial_context: location: Karlskrona kommun, Blekinge County, Sweden; nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Unnamed lane",
+  "summary": "spatial_context attribute: location: Karlskrona kommun, Blekinge County, Sweden; nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Unnamed lane",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Karlskrona kommun, Blekinge County, Sweden; nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Unnamed lane",
+    "support": 1
+  },
+  "related": []
+}

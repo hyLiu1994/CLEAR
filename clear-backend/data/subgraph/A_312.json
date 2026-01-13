@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_312",
+      "type": "attribute",
+      "label": "spatial_context: location: Küstengewässer einschließlich Anteil am Festlandsockel, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Travemünde (D) – Malmö (SE), Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), Unnamed lane, Kadetrinne, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Trelleborg (SE)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1796_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_1796_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1796_SEG_7",
+      "target": "A_312",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_312",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_312",
+    "B_vb_82841811344196675",
+    "TRJ_1796_SEG_7"
+  ],
+  "centerNodeId": "A_312",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

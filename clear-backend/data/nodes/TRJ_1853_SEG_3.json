@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1853_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_1853_SEG_3",
+  "summary": "Segment 3 of trajectory 1853",
+  "description": [
+    "MMSI: 210529000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-30 15:36:22",
+    "End time: 2024-03-30 15:40:49"
+  ],
+  "metadata": {
+    "trajectory_id": "1853",
+    "vessel_id": "210529000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-30 15:36:22",
+    "end_time": "2024-03-30 15:40:49"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving westward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.2404 + 0.0001 × t, lon(t) ≈ 13.1687 - 0.0018 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and moderate draught ([4, 6) m) navigating in Swedish coastal waters frequently exhibit curved route-following behavior when transiting near Trelleborg, a known maritime chokepoint. This pattern (vb_3081913737957353482) is strongly associated with such vessels, supported by high edge weights: 89% of similar vessels in this navigation status adopt this movement, and 63% of cargo-type vessels follow this trajectory. Among all candidate patterns, it ranks second in support from navigation status (w=89) and first in combined attribute coherence, particularly given the vessel’s length and width class, which are typical for regional cargo traffic adapting to curved coastal channels.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating a fixed westward route with slight northerly drift, consistent with an approach trajectory toward southern Sweden. The selected movement (vb_3081913737957353482) bridges this context by modeling a gently curving path—likely representing a controlled turn or channel negotiation—as would be expected when transitioning from open-water transit to a coastal corridor near Trelleborg. Its stable speed, gradual course change, and heading alignment match both the prior and subsequent segments’ dynamics, while the parametric trajectory (lat/lon quadratic model) plausibly interpolates the observed latitudinal stasis and longitudinal decrease in the gap. This ensures continuity in both kinematic behavior and spatial progression.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is approximately 98.9%, calculated as 88 / (88 + 1) ≈ 0.9888, derived from the relative frequency of association between the observed behavior pattern and the two candidate functions. This indicates a strong empirical preference for the quadratic interpolation model under the given kinematic context.  \n2. This function incorporates nonlinear trajectory modeling through parametric quadratic terms, which aligns with the vessel’s observed intent to follow a curved maritime route characterized by gradual and consistent course changes. In contrast, linear interpolation assumes constant bearing, which does not reflect the small but systematic curvature implied by the heading and COG dynamics. The inclusion of time-squared terms in both latitude and longitude components directly mirrors the documented parametric equation in the behavior pattern (lat(t) ≈ ... + 0.00005 × t², lon(t) ≈ ... + 0.00012 × t²), making it structurally consistent with the underlying motion model."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) approach in coastal Sweden; applicable to cargo vessels navigating near Trelleborg; spatial anchor: Trelleborgs kommun, Skåne County, Sweden\nOperational Protocol Rationale: The vessel is following a gently curving trajectory consistent with controlled navigation through a coastal maritime chokepoint, where stable speed and gradual course adjustments are standard for safe channel transit. This behavior aligns with expected practices near Trelleborg, a known hub for vessel traffic entering or exiting the Baltic Sea, where predefined curved routes help manage congestion and ensure separation from opposing flows. The use of a quadratic interpolation method reflects the physical reality of turning maneuvers, as linear models would inaccurately represent the vessel’s path during a turn. Alternative straight-line navigation is ruled out by the observed curvature in course over ground and heading alignment, which indicate intentional maneuvering rather than open-sea transit.\n'''",
+    "operational_protocol_rationale": "The vessel is following a gently curving trajectory consistent with controlled navigation through a coastal maritime chokepoint, where stable speed and gradual course adjustments are standard for safe channel transit. This behavior aligns with expected practices near Trelleborg, a known hub for vessel traffic entering or exiting the Baltic Sea, where predefined curved routes help manage congestion and ensure separation from opposing flows. The use of a quadratic interpolation method reflects the physical reality of turning maneuvers, as linear models would inaccurately represent the vessel’s path during a turn. Alternative straight-line navigation is ruled out by the observed curvature in course over ground and heading alignment, which indicate intentional maneuvering rather than open-sea transit.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "A_183",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Kanalfähre Hohenhörn, Kanalfähre Hochdonn, Kanalfähre Fischerhütte",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Kanalfähre Hohenhörn, Kanalfähre Hochdonn, Kanalfähre Fischerhütte",
+  "description": [
+    "This attribute is associated with 3 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Kanalfähre Hohenhörn, Kanalfähre Hochdonn, Kanalfähre Fischerhütte",
+    "support": 3
+  },
+  "related": []
+}

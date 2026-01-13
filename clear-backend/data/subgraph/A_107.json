@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_107",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Grenå - Halmstad, Anholtfærgen, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_503_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_503_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_503_SEG_2",
+      "target": "A_107",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_107",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-24485554849544898",
+    "A_107",
+    "TRJ_503_SEG_2"
+  ],
+  "centerNodeId": "A_107",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

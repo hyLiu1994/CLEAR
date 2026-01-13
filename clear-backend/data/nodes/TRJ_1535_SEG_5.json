@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1535_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_1535_SEG_5",
+  "summary": "Segment 5 of trajectory 1535",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-20 22:34:36",
+    "End time: 2024-03-20 22:40:37"
+  ],
+  "metadata": {
+    "trajectory_id": "1535",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-20 22:34:36",
+    "end_time": "2024-03-20 22:40:37"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Leuchtturm Bülk, Olympiahafen Schilksee, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Unnamed lane, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Fischschonbezirk Fuhlenau, Fischschonbezirk Schönberger Au, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Lotsenstation, Hafen Strande, Yachthafen Marina Wendtorf, Fischschonbezirk Strander Au, Kolberger Heide",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 10.8 and 12.9 knots with minimal fluctuation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases steadily from 47.4° to 63.7° over the sequence, showing a smooth and continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading remains close to COG with only minor deviations, varying from 45.0° to 61.0° in sync with COG, suggesting controlled steering without oscillation)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.4841 + 0.0015 × t + 0.0001 × t², lon(t) ≈ 10.2964 + 0.0022 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

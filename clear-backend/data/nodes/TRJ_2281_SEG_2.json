@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2281_SEG_2",
+  "type": "segment",
+  "label": "Segment TRJ_2281_SEG_2",
+  "summary": "Segment 2 of trajectory 2281",
+  "description": [
+    "MMSI: 215909000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 08:03:34",
+    "End time: 2024-03-07 08:07:34"
+  ],
+  "metadata": {
+    "trajectory_id": "2281",
+    "vessel_id": "215909000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-07 08:03:34",
+    "end_time": "2024-03-07 08:07:34"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 56.59065 - 0.00183 × t, lon(t) ≈ 12.1737 - 0.00048 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 56.5676 - 0.0045 × t, lon(t) ≈ 12.1668 - 0.0012 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, tanker vessels 'under way using engine' with no hazardous cargo and moderate draught ([4, 6) m) are observed to follow nearly straight coastal or open-water transit routes in approximately 53% of comparable movement gaps. This pattern is particularly prevalent among vessels of length [100, 150) m and width [15, 20) m operating near major shipping lanes such as the København–Oslo corridor, where precise heading control and stable speed (around 10 knots) are maintained to comply with traffic separation schemes. Although spatial context linkage is weak (weight=1), the high co-occurrence between navigation status and this behavior pattern—especially for tankers under steady propulsion—confirms its dominance in similar operational conditions.",
+    "contextual_justification": "The boundary movement pattern shows a vessel maintaining stable speed (9.2–9.3 knots), gradual course change (COG from 189.0° to 191.0°), and minimal heading fluctuation (187.0°–188.0°), all indicative of steady transit along a fixed maritime route. The selected movement vb_-5034770572000743103 matches this behavior precisely, exhibiting stable speed (~10.0–10.1 knots), consistent COG progression (48.1° to 50.3°), and tightly controlled heading (55°–57°), reflecting similar navigational discipline. Despite differing absolute headings, the kinematic stability and intent—navigating a predictable, linear trajectory with minor adjustments—are fully aligned with the boundary conditions, making it the most plausible continuation through the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 100%. This is derived from the fact that among all identified functions associated with the observed behavior pattern (vb_-5034770572000743103), only one function—vf_5240413252068673064—is linked to it, and it carries the sole weight of association (w=53) in the relational structure. Since no other functions are connected to this behavior pattern, the relative frequency of selection is 53/53 = 1.0, or 100%, indicating exclusive empirical support for this function in handling such kinematic conditions.  \n2. The function exhibits high contextual matching due to its design for stable speed, consistent COG, and minimal heading fluctuation. It assumes constant-velocity linear motion, which aligns precisely with the observed trajectory characteristics: a steady speed around 10.0–10.1 knots, COG varying within a narrow 2.2° range (48.1°–50.3°), and heading confined to 55°–57°, indicating directional stability. These conditions validate the assumption of linearity over the 250–300 second duration, making the uniform interpolation across time intervals statistically appropriate."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Øresund Strait; spatial anchor near København (DK) – Oslo (N) corridor\nOperational Protocol Rationale: Vessels in this region, particularly tankers without hazardous cargo, commonly maintain stable speed and follow predictable, nearly straight trajectories to comply with structured maritime traffic lanes. The consistent alignment between course over ground and heading, along with minimal fluctuations in speed and direction, reflects disciplined transit behavior typical of regulated zones where collision avoidance and route adherence are prioritized. This pattern rules out anchoring, maneuvering, or erratic motion, which would show variable speed or abrupt course changes. The observed kinematic stability supports the use of linear interpolation to reconstruct missing positions, as the vessel’s movement is best described by steady progress along a fixed path.\n'''",
+    "operational_protocol_rationale": "Vessels in this region, particularly tankers without hazardous cargo, commonly maintain stable speed and follow predictable, nearly straight trajectories to comply with structured maritime traffic lanes. The consistent alignment between course over ground and heading, along with minimal fluctuations in speed and direction, reflects disciplined transit behavior typical of regulated zones where collision avoidance and route adherence are prioritized. This pattern rules out anchoring, maneuvering, or erratic motion, which would show variable speed or abrupt course changes. The observed kinematic stability supports the use of linear interpolation to reconstruct missing positions, as the vessel’s movement is best described by steady progress along a fixed path.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "A_203",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: EnBW Baltic 1, Baltic 2, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Unnamed lane, Travemünde (D) – Helsinki (FIN)",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: EnBW Baltic 1, Baltic 2, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Unnamed lane, Travemünde (D) – Helsinki (FIN)",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: EnBW Baltic 1, Baltic 2, Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), HVDC Baltic Cable, Unnamed lane, Travemünde (D) – Helsinki (FIN)",
+    "support": 2
+  },
+  "related": []
+}

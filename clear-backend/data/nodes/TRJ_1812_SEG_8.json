@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_1812_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_1812_SEG_8",
+  "summary": "Segment 8 of trajectory 1812",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-29 13:15:07",
+    "End time: 2024-03-29 13:21:31"
+  ],
+  "metadata": {
+    "trajectory_id": "1812",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-29 13:15:07",
+    "end_time": "2024-03-29 13:21:31"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Passenger",
+    "Spatial Context: location: Küstengewässer einschließlich Anteil am Festlandsockel, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Sondergebiet Warnow, Kontek, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), Hafenmeister, C-Lion 1, Unnamed lane, Hotel Neptun, Rostock (D) – Gedser (S), Leuchtturm Warnemünde, Pagenwerder",
+    "Draught: [4, 6) m",
+    "Length: [150, 200) m",
+    "Width: [25, 30) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with SOG varying only between 13.4 and 15.4 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly but persistently from 342.2° to 7.5° over the sequence, reflecting a smooth, continuous turn to the right over time)",
+      "heading_fluctuation": "stable (heading remains tightly aligned with COG, fluctuating only between 340.0° and 7.0°, with minimal deviation, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.19597 + 0.0062 × t + 0.0004 × t², lon(t) ≈ 12.084457 - 0.0058 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with SOG varying only slightly from 7.4 to 13.2 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 340.3° to 342.5°, then stabilizes around 341.3°–341.6°, indicating a smooth, intentional turn or channel-following behavior)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 338.0° to 341.0°, deviating by no more than 3°, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.1761 + 0.0025 × t + 0.0001 × t², lon(t) ≈ 12.0958 − 0.0032 × t − 0.00015 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "500~550"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.5 and 15.9 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG increases slowly from 7.4° to 9.0° over the sequence, indicating a smooth, continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading remains within 4.0°–8.0°, with small stepwise changes, suggesting controlled rudder adjustments)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.223077 + 0.00084 × t + 0.00006 × t², lon(t) ≈ 12.079655 + 0.00018 × t + 0.00002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

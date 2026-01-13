@@ -1,0 +1,328 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_197249256460625639",
+      "type": "behavior",
+      "label": "Behavior 60625639",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1065_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_1065_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1063_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_1063_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1063_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_1063_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1063_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_1063_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1065_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1065_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1231_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_1231_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2375_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2375_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-2145520015292500943",
+      "type": "function",
+      "label": "Function 92500943",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_201",
+      "type": "attribute",
+      "label": "spatial_context: location: Aarhus, Aarhus Municipality, Central Denmark Region, 8000, Denmark; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_417",
+      "type": "attribute",
+      "label": "width: [25, 30) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_333",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Storebælt, Aarhus-Kalundborg, Ballen-Røsnæs, Unnamed lane, Slip, Great Belt 2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_414",
+      "type": "attribute",
+      "label": "width: [15, 20) m",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1065_SEG_5",
+      "target": "B_vb_197249256460625639",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1063_SEG_2",
+      "target": "B_vb_197249256460625639",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1063_SEG_9",
+      "target": "B_vb_197249256460625639",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1063_SEG_7",
+      "target": "B_vb_197249256460625639",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1065_SEG_3",
+      "target": "B_vb_197249256460625639",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1231_SEG_9",
+      "target": "B_vb_197249256460625639",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2375_SEG_5",
+      "target": "B_vb_197249256460625639",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-2145520015292500943",
+      "target": "B_vb_197249256460625639",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_201",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_417",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_333",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_197249256460625639",
+      "target": "A_414",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_333",
+    "TRJ_2375_SEG_5",
+    "A_414",
+    "B_vb_197249256460625639",
+    "A_021",
+    "A_004",
+    "A_406",
+    "A_006",
+    "TRJ_1063_SEG_2",
+    "TRJ_1231_SEG_9",
+    "A_410",
+    "A_001",
+    "TRJ_1065_SEG_3",
+    "A_405",
+    "A_411",
+    "A_417",
+    "TRJ_1063_SEG_9",
+    "F_vf_-2145520015292500943",
+    "TRJ_1063_SEG_7",
+    "A_005",
+    "A_404",
+    "TRJ_1065_SEG_5",
+    "A_201"
+  ],
+  "centerNodeId": "B_vb_197249256460625639",
+  "maxLevel": 1,
+  "totalNodes": 23,
+  "totalLinks": 22
+}

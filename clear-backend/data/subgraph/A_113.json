@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_113",
+      "type": "attribute",
+      "label": "spatial_context: location: Öckerö kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Query failed with status 504",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_516_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_516_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_516_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_516_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_516_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_516_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_516_SEG_0",
+      "target": "A_113",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_516_SEG_3",
+      "target": "A_113",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_516_SEG_5",
+      "target": "A_113",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_113",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_516_SEG_0",
+    "TRJ_516_SEG_5",
+    "B_vb_3366872286460794881",
+    "A_113",
+    "TRJ_516_SEG_3"
+  ],
+  "centerNodeId": "A_113",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

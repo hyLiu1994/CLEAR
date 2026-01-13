@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1464_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1464_SEG_9",
+  "summary": "Segment 9 of trajectory 1464",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 16:11:47",
+    "End time: 2024-03-11 16:16:07"
+  ],
+  "metadata": {
+    "trajectory_id": "1464",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 16:11:47",
+    "end_time": "2024-03-11 16:16:07"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Schießgebiet Todendorf, Klaipėda (LT) – Kiel (D), Nördlicher Gefahrenbereich, Unnamed lane, Kolberger Heide",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 11.7 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG decreases slowly and consistently from 70.1° to 63.6° over time, indicating a smooth turn to the right)",
+      "heading_fluctuation": "stable (heading remains fixed at 66.0° for most of the segment, with only minor adjustments later, suggesting autopilot or course-keeping system in use)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 54.5256 + 0.0025 × t + 0.0001 × t², lon(t) ≈ 10.4843 + 0.0087 × t + 0.0004 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

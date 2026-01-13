@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_2109_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2109_SEG_1",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_2109",
+      "type": "trajectory",
+      "label": "Trajectory 215903000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-7840120656972119524",
+      "type": "behavior",
+      "label": "Behavior 72119524",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_003",
+      "type": "attribute",
+      "label": "navigation_status: At anchor",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_337",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Binz - Sassnitz, Sassnitz - Rønne, Lauterbach - Baabe, Sassnitz - Kreideküste, Sellin - Göhren, Aurora, Unnamed lane, Sassnitz - Binz, Sassnitz - Sellin, Baabe - Lauterbach, Sellin - Binz",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_414",
+      "type": "attribute",
+      "label": "width: [15, 20) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "T_2109",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "B_vb_-7840120656972119524",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "A_003",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "A_337",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "A_414",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2109_SEG_1",
+      "target": "F_vf_5240413252068673064",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_410",
+    "A_414",
+    "A_004",
+    "B_vb_-7840120656972119524",
+    "A_005",
+    "A_405",
+    "A_337",
+    "A_003",
+    "T_2109",
+    "TRJ_2109_SEG_1",
+    "F_vf_5240413252068673064"
+  ],
+  "centerNodeId": "TRJ_2109_SEG_1",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

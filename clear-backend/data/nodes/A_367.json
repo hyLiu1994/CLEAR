@@ -1,0 +1,15 @@
+{
+  "id": "A_367",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Aabenraa Lystbådehavn, Sejlerstue, Hardeshøj Færgebro, Nordalsfærgen Bitten, Varnæs Vig Bro, Ballebro Jollehavn, Kalvø Havn, Mjelsvig Bådehavn, Unnamed lane, Dyvig Bådelaug Lystbådehavn, Barsøfærgen, Dyvig Bro",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Aabenraa Lystbådehavn, Sejlerstue, Hardeshøj Færgebro, Nordalsfærgen Bitten, Varnæs Vig Bro, Ballebro Jollehavn, Kalvø Havn, Mjelsvig Bådehavn, Unnamed lane, Dyvig Bådelaug Lystbådehavn, Barsøfærgen, Dyvig Bro",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Aabenraa Lystbådehavn, Sejlerstue, Hardeshøj Færgebro, Nordalsfærgen Bitten, Varnæs Vig Bro, Ballebro Jollehavn, Kalvø Havn, Mjelsvig Bådehavn, Unnamed lane, Dyvig Bådelaug Lystbådehavn, Barsøfærgen, Dyvig Bro",
+    "support": 1
+  },
+  "related": []
+}

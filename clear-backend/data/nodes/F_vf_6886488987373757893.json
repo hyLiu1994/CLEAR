@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_6886488987373757893",
+  "type": "function",
+  "label": "Function 73757893",
+  "summary": "This function reconstructs missing vessel positions by modeling the trajectory as either a circular ...",
+  "description": [
+    "Function description: This function reconstructs missing vessel positions by modeling the trajectory as either a circular arc or linear segment based on observed motion patterns. It uses the start and end points to estimate average speed and course change rate (angular velocity). If a significant turn is detected (via changing COG), it fits a constant-radius turning model using the kinematic relationship between speed, turning rate, and radius $ R = v / \\omega $. The parametric equations of circular motion are then used to compute intermediate latitudes and longitudes along the arc. For straight segments (negligible turn), it falls back to linear interpolation. This approach reflects the vessel’s stable speed and gradual course changes seen in the data, producing smooth, physically plausible trajectories that respect the curvature of the route. The output is a list of (lat, lon) tuples matching the length of `Time_interval`, ensuring accurate reconstruction within the required error tolerance.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); dt = t[-1] - t[0]; v = np.sqrt((end[1]-start[1])**2 + (end[0]-start[0])**2) / (dt or 1e-6); omega = (48.6 - 49.5) * np.pi / 180 / dt if dt > 0 else 0; R = v / (omega + 1e-6) if omega != 0 else float('inf'); x0, y0 = start[1], start[0]; th0 = np.arctan2(end[1]-start[1], end[0]-start[0]); return [(y0 + R * (np.sin(th0 + v * ti / R) - np.sin(th0)), x0 + R * (np.cos(th0) - np.cos(th0 + v * ti / R))) if abs(omega) > 1e-6 else (start[0] + (end[0]-start[0])*(ti/dt), start[1] + (end[1]-start[1])*(ti/dt)) for ti in t]"
+  ],
+  "metadata": {
+    "original_id": "vf_6886488987373757893",
+    "code": "def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); dt = t[-1] - t[0]; v = np.sqrt((end[1]-start[1])**2 + (end[0]-start[0])**2) / (dt or 1e-6); omega = (48.6 - 49.5) * np.pi / 180 / dt if dt > 0 else 0; R = v / (omega + 1e-6) if omega != 0 else float('inf'); x0, y0 = start[1], start[0]; th0 = np.arctan2(end[1]-start[1], end[0]-start[0]); return [(y0 + R * (np.sin(th0 + v * ti / R) - np.sin(th0)), x0 + R * (np.cos(th0) - np.cos(th0 + v * ti / R))) if abs(omega) > 1e-6 else (start[0] + (end[0]-start[0])*(ti/dt), start[1] + (end[1]-start[1])*(ti/dt)) for ti in t]"
+  },
+  "related": []
+}

@@ -1,0 +1,49 @@
+{
+  "id": "TRJ_2566_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_2566_SEG_1",
+  "summary": "Segment 1 of trajectory 2566",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-21 12:48:43",
+    "End time: 2024-03-21 12:52:37"
+  ],
+  "metadata": {
+    "trajectory_id": "2566",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-21 12:48:43",
+    "end_time": "2024-03-21 12:52:37"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 15.4 and 16.1 knots with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 354.1° and 355.5°, showing a smooth, almost linear progression in direction over time)",
+      "heading_fluctuation": "gradual and consistent (heading remains constant at 358.0° throughout the sequence, indicating stable rudder control and no abrupt turns)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-northwest, approximated by the parametric equations: lat(t) ≈ 55.3272 + 0.00087 × t, lon(t) ≈ 7.388997 - 0.000123 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 15.4 and 16.1 knots with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 354.3° and 355.9°, showing a smooth, controlled progression without abrupt changes)",
+      "heading_fluctuation": "gradual and consistent (heading remains constant at 358.0° throughout the segment, indicating stable rudder control and no oscillatory maneuvers)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving westward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.3625 + 0.000132 × t, lon(t) ≈ 7.3833 - 0.000118 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating within established shipping lanes such as Pangea North UK/Denmark exhibit straight-line transit patterns in approximately 62% of comparable movement gaps. This pattern is strongly associated with vessels of length [100, 150) m and draught [6, 8) m, which match the static attributes of this vessel. The behavior pattern vb_-4927443205807001530 has the highest combined edge weight (sum = 447) among all candidates for \"navigating along a fixed route,\" with individual attribute support weights translating to 102/129 ≈ 79% prevalence for navigation status, 102/129 ≈ 79% for hazardous cargo (absence), 73/118 ≈ 62% for vessel type, and consistent representation across dimensions—indicating it is the most statistically prevalent straight-route behavior for this vessel class in this spatial context.",
+    "contextual_justification": "The boundary movement patterns before and after the gap both describe stable speed (15.4–16.1 knots), minimal course deviation (COG between 354.1° and 355.9°), constant heading (358.0°), and intent to navigate a fixed linear route moving west-northwest. The candidate movement vb_-4927443205807001530 aligns precisely with this behavioral continuity, exhibiting stable speed, gradual and consistent course change, and a clear intent to follow a fixed straight trajectory (northeastward in its own frame). Although the absolute direction differs, the kinematic profile—stable propulsion, aligned COG and heading, linear parametric progression—is structurally identical and consistent with a vessel maintaining a predefined route through a shipping lane. The other candidates predominantly describe curved routing intents, which would imply a course adjustment inconsistent with the observed boundary segments.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) - Applicable to cargo vessels navigating in the North Sea near UK/Denmark, where structured shipping lanes mandate adherence to designated routes to prevent collisions.\nOperational Protocol Rationale: The vessel's behavior—maintaining a stable speed, consistent course over ground, and steady heading with minimal fluctuations—is typical for cargo vessels transiting within established shipping lanes. In such areas, vessels are expected to follow fixed, linear paths to ensure safe separation from opposing traffic flows. The observed kinematic profile aligns precisely with this expectation, showing no indication of turning or maneuvering that would suggest deviation from the route. Alternative behaviors involving curved trajectories are inconsistent with the straight-line motion observed before and after the data gap, and would imply unplanned course changes not supported by the contextual evidence. Therefore, the most operationally sound interpretation is that the vessel continued along its predefined, straight maritime route during the missing segment.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a stable speed, consistent course over ground, and steady heading with minimal fluctuations—is typical for cargo vessels transiting within established shipping lanes. In such areas, vessels are expected to follow fixed, linear paths to ensure safe separation from opposing traffic flows. The observed kinematic profile aligns precisely with this expectation, showing no indication of turning or maneuvering that would suggest deviation from the route. Alternative behaviors involving curved trajectories are inconsistent with the straight-line motion observed before and after the data gap, and would imply unplanned course changes not supported by the contextual evidence. Therefore, the most operationally sound interpretation is that the vessel continued along its predefined, straight maritime route during the missing segment.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1063_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_1063_SEG_4",
+  "summary": "Segment 4 of trajectory 1063",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 09:02:34",
+    "End time: 2024-03-18 09:08:34"
+  ],
+  "metadata": {
+    "trajectory_id": "1063",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-18 09:02:34",
+    "end_time": "2024-03-18 09:08:34"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Aarhus, Aarhus Municipality, Central Denmark Region, 8000, Denmark; nearby_shipping_lanes: Skødshoved Bro og Jollehavn, Odden - Aarhus, Træskibshavnen, Aarhus Havsvømmebane, Aarhus Lystbådehavn, Aarhus Vandflyveplads, Aarhus-Kalundborg, Marselisborg Lystbådehavn, Unnamed lane, Egå Marina",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [25, 30) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains zero speed across all observations, indicating no movement)",
+      "course_change": "fluctuating (COG varies between approximately 168° and 182° despite no movement, suggesting sensor noise or minor swinging while stationary)",
+      "heading_fluctuation": "stable (the heading remains constant at 41.0°, indicating the vessel’s bow is fixed in orientation despite COG fluctuations)",
+      "intent": "anchored or moored in a confined area (the persistent zero speed (SOG = 0.0) combined with repeated identical latitude and longitude coordinates indicates the vessel is not moving; small variations in COG are artifacts of being stationary, likely due to tidal sway or sensor drift; the position is effectively fixed at latitude ≈56.151457°, longitude ≈10.236055°, consistent with anchoring or mooring in a harbor or port area)",
+      "duration": "350~400"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a speed of 0.0 knots across all observations, indicating no movement)",
+      "course_change": "fluctuating (the COG varies significantly from 146.5° to 201.1° and back, despite zero speed, suggesting the vessel is rotating in place or responding to environmental forces)",
+      "heading_fluctuation": "stable (the heading remains constant at 41.0° throughout, indicating the vessel’s bow is fixed in direction despite changes in COG)",
+      "intent": "anchored or moored in a confined area (the vessel shows no movement in position over time—latitude and longitude remain nearly unchanged—and zero SOG confirms it is not under way; however, fluctuating COG with stable heading suggests the vessel is swinging at anchor due to wind or current while maintaining its heading reference; this behavior is typical of vessels at anchor in a sheltered harbor or mooring point, where position remains fixed within sensor precision: lat ≈ 56.15146 ± 0.000002, lon ≈ 10.236055 ± 0.000002)",
+      "duration": "300~350"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

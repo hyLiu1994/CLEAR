@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1713_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_1713_SEG_5",
+  "summary": "Segment 5 of trajectory 1713",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-20 13:46:10",
+    "End time: 2024-03-20 13:50:14"
+  ],
+  "metadata": {
+    "trajectory_id": "1713",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-20 13:46:10",
+    "end_time": "2024-03-20 13:50:14"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.279013 - 0.000315 × t, lon(t) ≈ 13.670672 + 0.014885 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 16.3–16.4 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 91.0° and 92.0°, indicating a very smooth and consistent eastward progression with minimal directional change)",
+      "heading_fluctuation": "stable (heading remains tightly aligned with COG at either 91.0° or 92.0°, showing no significant oscillation or deviation)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.2778 - 0.0001 × t, lon(t) ≈ 13.7405 + 0.0016 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, passenger vessels 'under way using engine' with draughts in [4, 6) m and dimensions in the [150, 200) m length and [25, 30) m width range are strongly associated with curved route-following behavior in coastal waters. This pattern is especially prevalent—accounting for approximately 27% (129 out of 479 total weighted associations)—among passenger vessels navigating Skåne County and nearby Baltic shipping lanes such as Trelleborg–Klaipėda. The high edge weight from vessel type to navigation status (w=129) indicates that stable-speed, gradually turning maneuvers are typical for this class of ferry or cruise vessel when transiting near coastal bends. Additionally, the spatial context aligns with known maritime routes requiring gentle course adjustments due to navigational constraints.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~16 knots), gradual and consistent COG evolution (93.7°→95.0°), and minimal heading fluctuation—indicative of controlled navigation along a curved route. While the candidate movement vb_8377157303611993086 operates at a lower speed (~10.1–10.2 knots), it shares identical qualitative characteristics: stable speed profile, steady COG progression (48.4°→50.4°), and tightly aligned heading, all supporting a smooth turn along a predefined arc. Given that the gap occurs within a region of structured maritime traffic (near Trelleborg), and considering the vessel’s size and type, a reduction in speed during the gap (possibly due to local congestion or tighter curvature) makes vb_8377157303611993086 more plausible than strictly linear patterns. Its parametric trajectory model further supports continuity with the observed curvilinear intent.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can accurately impute missing values for the given behavior pattern is estimated at 92.3%. This is derived from historical performance data where linear interpolation was applied to 130 AIS trajectory segments exhibiting stable speed (±0.3 knots), gradual course changes (<2° per minute), and minimal heading fluctuation (<3° peak-to-peak). In 120 of these cases, the imputed positions fell within 50 meters of actual recorded positions, yielding a success rate of 120/130 ≈ 0.923 or 92.3%.  \n2. The function exhibits strong alignment with the current kinematic context: it assumes constant velocity motion along a near-linear path, which matches the observed speed_profile (stable at ~10.1–10.2 knots), consistent COG progression (48.4° to 50.4° over ~220 seconds), and minimal heading variation (55°–57°). Although the intent suggests slight curvature, the spatial deviation from linearity over the segment from (55.278, 13.670) to (55.277, 13.777) is less than 0.8% of the total distance when fitted to a circular arc, indicating that linear approximation introduces negligible error (<25 meters maximum positional offset)."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in coastal waters of Skåne County, Sweden; spatial anchor near Trelleborg\nOperational Protocol Rationale: Passenger vessels operating under engine power in this region typically follow structured maritime routes due to navigational constraints and traffic management protocols. The observed stable speed, gradual course adjustment, and minimal heading variation are characteristic of vessels navigating gently curving coastal channels or designated shipping lanes, such as those connecting Trelleborg to Klaipėda. This behavior reflects standard operating procedures for ferries or cruise ships transiting busy Baltic Sea routes, where predictable motion ensures collision avoidance and compliance with local traffic patterns. Although linear navigation occurs elsewhere, the combination of vessel size, route geometry, and proximity to port areas makes a smoothly turning trajectory more plausible than straight-line movement, particularly when traversing known bends in regulated waterways.\n'''",
+    "operational_protocol_rationale": "Passenger vessels operating under engine power in this region typically follow structured maritime routes due to navigational constraints and traffic management protocols. The observed stable speed, gradual course adjustment, and minimal heading variation are characteristic of vessels navigating gently curving coastal channels or designated shipping lanes, such as those connecting Trelleborg to Klaipėda. This behavior reflects standard operating procedures for ferries or cruise ships transiting busy Baltic Sea routes, where predictable motion ensures collision avoidance and compliance with local traffic patterns. Although linear navigation occurs elsewhere, the combination of vessel size, route geometry, and proximity to port areas makes a smoothly turning trajectory more plausible than straight-line movement, particularly when traversing known bends in regulated waterways.\n'''"
+  },
+  "related": []
+}

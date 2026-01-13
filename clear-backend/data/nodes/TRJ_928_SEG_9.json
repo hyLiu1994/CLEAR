@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_928_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_928_SEG_9",
+  "summary": "Segment 9 of trajectory 928",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 03:42:02",
+    "End time: 2024-03-27 04:12:53"
+  ],
+  "metadata": {
+    "trajectory_id": "928",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-27 03:42:02",
+    "end_time": "2024-03-27 04:12:53"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Die Seenotretter DGzRS, Kanalfähre Brunsbüttel, Kanalfähre Kudensee, Nord-Ostsee-Kanal, Kanalfähre Ostermoor, Unnamed lane, Lotsenhaus, helgoline",
+    "Draught: [8, 10) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains zero speed across multiple observations, indicating no movement)",
+      "course_change": "fluctuating (COG varies significantly between 138.4°, 318.4°, 48.0°, and other values despite no motion, suggesting invalid or erratic reporting when stationary)",
+      "heading_fluctuation": "stable (heading remains around 48–49° with minimal variation, even as COG changes, indicating the vessel is not maneuvering but sensors report inconsistent COG)",
+      "intent": "anchored or moored in a confined area (the persistent zero speed (SOG = 0.0) combined with small oscillations in latitude and longitude around 53.89395–53.8940 and 9.14475–9.14476, respectively, indicates the vessel is stationary within a very tight geographic box; this behavior is typical of a vessel at anchor or moored, where GPS noise or minor drift causes negligible position shifts without actual navigation; position bounds: latitude ∈ [53.89395, 53.8940], longitude ∈ [9.14475, 9.14477])",
+      "duration": "1850~1900"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 53.889752 + 0.00042 × t + 0.000015 × t², lon(t) ≈ 9.136417 + 0.00145 × t + 0.00008 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "1050~1100"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "A_096",
+  "type": "attribute",
+  "label": "spatial_context: location: Lindau, Dänischer Wohld, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Kanalfähre Landwehr, Unnamed lane",
+  "summary": "spatial_context attribute: location: Lindau, Dänischer Wohld, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Kanalfähre Landwehr, Unnamed lane",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Lindau, Dänischer Wohld, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Kanalfähre Landwehr, Unnamed lane",
+    "support": 1
+  },
+  "related": []
+}

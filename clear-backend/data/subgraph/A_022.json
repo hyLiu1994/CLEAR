@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_022",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC Skagerak 3, HVDC Skagerak 2, HVDC Skagerrak 4, Hirtshals - Tórshavn, HVDC Skagerak 1, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_46_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_46_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4584734299579856679",
+      "type": "behavior",
+      "label": "Behavior 79856679",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_46_SEG_9",
+      "target": "A_022",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4584734299579856679",
+      "target": "A_022",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_022",
+    "TRJ_46_SEG_9",
+    "B_vb_4584734299579856679"
+  ],
+  "centerNodeId": "A_022",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

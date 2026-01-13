@@ -1,0 +1,39 @@
+{
+  "id": "TRJ_998_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_998_SEG_0",
+  "summary": "Segment 0 of trajectory 998",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 10:29:22",
+    "End time: 2024-03-11 10:33:41"
+  ],
+  "metadata": {
+    "trajectory_id": "998",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 10:29:22",
+    "end_time": "2024-03-11 10:33:41"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with a draught between 8–10 m and length 150–200 m are observed to follow gently curving maritime routes near structured shipping lanes such as Route T, Unnamed lane, and Samsø Bælt in approximately 83% of comparable trajectory gaps. The pattern vb_82841811344196675 is strongly associated with vessels of type Cargo (edge weight w=83), under way using engine (w=96), and operating within these spatial corridors, indicating high behavioral consistency in constrained waterways. Among all candidate patterns, this movement ranks highest in co-occurrence frequency with the vessel’s static attributes, particularly when navigating curved segments aligned with known coastal routing.",
+    "contextual_justification": "The boundary movement patterns show a continuous transition from a steady starboard turn (COG increasing from 20.5° to 39.2°) to a slight rightward adjustment (COG decreasing from 39.1° to 37.6°), indicating sustained navigation along a curved route. The selected pattern vb_82841811344196675 exhibits stable speed, gradual and consistent course change, and minimal heading fluctuation—perfectly bridging the kinematic continuity across the gap. Its intent of following a curved maritime route with a ~2.5 km radius arc aligns spatially and dynamically with both adjacent segments, ensuring smooth interpolation of position, COG, and heading without abrupt changes.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_5240413252068673064` correctly addresses the missing value problem given the observed behavior pattern is 98.96%. This is derived from the proportional weight distribution between the two candidate functions associated with the behavior pattern: `w = 95` for `vf_5240413252068673064` and `w = 1` for `vf_-7663396197665720575`, yielding a normalized likelihood of 95 / (95 + 1) = 95 / 96 ≈ 0.9896, or 98.96%. This indicates that, based on historical association frequencies under similar kinematic conditions, this function has been selected nearly 99 times out of 100 in comparable scenarios.  \n2. Function `vf_5240413252068673064` implements time-proportional linear interpolation using normalized time intervals (`t / Time_interval[-1]`), which ensures uniform progression along the trajectory. In contrast, `vf_-7663396197665720575` uses `max(Time_interval)` as the denominator, which may introduce distortion if `Time_interval` is not strictly increasing from zero. Given that the vessel exhibits stable speed and consistent course change, the use of relative time progression from the start of the interval (as in `vf_5240413252068673064`) provides higher temporal fidelity and aligns better with constant-velocity assumptions."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "IMO Routing Measures in the Baltic Sea – Applicable to cargo vessels navigating near structured shipping lanes including Route T and Samsø Bælt; these areas are governed by Traffic Separation Schemes (TSS) that prescribe designated routes for vessels under way using engine, particularly in constrained waterways with high traffic density.\nOperational Protocol Rationale: The vessel’s behavior—maintaining stable speed, gradual course adjustments, and minimal heading fluctuations—is typical when following a gently curving maritime route within regulated shipping corridors. This pattern reflects adherence to autopilot-assisted navigation along predefined channels, where vessels must smoothly transition between segments of a curved route while avoiding abrupt maneuvers. The consistent alignment between course over ground and heading indicates precise helm control, which is standard practice in busy or narrow passages to ensure predictability and collision avoidance. Alternative behaviors such as sharp turns, speed variations, or erratic headings are ruled out due to the vessel's steady propulsion and context within a structured traffic system, where deviations could compromise safety or compliance.\n'''",
+    "operational_protocol_rationale": "The vessel’s behavior—maintaining stable speed, gradual course adjustments, and minimal heading fluctuations—is typical when following a gently curving maritime route within regulated shipping corridors. This pattern reflects adherence to autopilot-assisted navigation along predefined channels, where vessels must smoothly transition between segments of a curved route while avoiding abrupt maneuvers. The consistent alignment between course over ground and heading indicates precise helm control, which is standard practice in busy or narrow passages to ensure predictability and collision avoidance. Alternative behaviors such as sharp turns, speed variations, or erratic headings are ruled out due to the vessel's steady propulsion and context within a structured traffic system, where deviations could compromise safety or compliance.\n'''"
+  },
+  "related": []
+}

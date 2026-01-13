@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_2319011027417710392",
+  "type": "behavior",
+  "label": "Behavior 17710392",
+  "summary": "Vessel behavior pattern: anchored or moored in a confined area (after initial movement with stable SOG and COG aligned with heading, the vessel comes to a complete stop (SOG = 0.0) while COG and heading diverge, followed by small oscillations in position—latitude varying within [56.158607, 56.158662], longitude within [14.816173, 14.816293]—indicating no active propulsion; this clustering of positions over time with zero speed and fluctuating heading reflects anchoring or mooring behavior in a tight geographic footprint, modeled as a stationary point with measurement noise or minor swinging due to wind/current)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a consistent speed between 8.9 and 10.4 knots, with minor gradual decrease before stopping)",
+    "Course change: gradual and consistent (COG remains nearly constant around 7.4°, indicating a steady direction with minimal deviation)",
+    "Heading fluctuation: gradual and consistent (heading is stable at 9.0°–193.0°, but shows a distinct shift from ~9° to ~192°, indicating a significant turn after motion ceases)",
+    "Behavior intent: anchored or moored in a confined area (after initial movement with stable SOG and COG aligned with heading, the vessel comes to a complete stop (SOG = 0.0) while COG and heading diverge, followed by small oscillations in position—latitude varying within [56.158607, 56.158662], longitude within [14.816173, 14.816293]—indicating no active propulsion; this clustering of positions over time with zero speed and fluctuating heading reflects anchoring or mooring behavior in a tight geographic footprint, modeled as a stationary point with measurement noise or minor swinging due to wind/current)",
+    "Duration: 26900~26950"
+  ],
+  "metadata": {
+    "original_id": "vb_2319011027417710392",
+    "duration": "26900~26950",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "gradual and consistent",
+      "gradual and consistent",
+      "anchored or moored in a confined area",
+      "26900~26950"
+    ]
+  },
+  "related": []
+}

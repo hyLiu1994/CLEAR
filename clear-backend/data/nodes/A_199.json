@@ -1,0 +1,15 @@
+{
+  "id": "A_199",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: DW Kattegat North, København (DK) – Oslo (N), Unnamed lane",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: DW Kattegat North, København (DK) – Oslo (N), Unnamed lane",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: DW Kattegat North, København (DK) – Oslo (N), Unnamed lane",
+    "support": 1
+  },
+  "related": []
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_397",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: CANTAT 3 F7, Unnamed lane, NordLink",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2602_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2602_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6301094688901729837",
+      "type": "behavior",
+      "label": "Behavior 01729837",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2602_SEG_1",
+      "target": "A_397",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6301094688901729837",
+      "target": "A_397",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2602_SEG_1",
+    "A_397",
+    "B_vb_-6301094688901729837"
+  ],
+  "centerNodeId": "A_397",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

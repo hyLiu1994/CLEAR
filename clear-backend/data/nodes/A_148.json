@@ -1,0 +1,15 @@
+{
+  "id": "A_148",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Mellembassinet, Bådklubben Sjællandsbroen, Skovshoved Havn, Fiskerhavnen, Kastrup Lystbådehavn - Gamle Havn, Langelinie Lystbådehavn, Teglværkshavnen, HDMS Peder Skram, Nyhavn - Flakfortet, Drogden, Kastrup Broforenings Bådehavn, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kastrup Lystbådehavn - Saltholm (Barakkebroen), Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Scanport Havn, Svanemøllehavnen A/S, Bådelaug Havnestad, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Bådteatret, Tuborg Havn, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Mellembassinet, Bådklubben Sjællandsbroen, Skovshoved Havn, Fiskerhavnen, Kastrup Lystbådehavn - Gamle Havn, Langelinie Lystbådehavn, Teglværkshavnen, HDMS Peder Skram, Nyhavn - Flakfortet, Drogden, Kastrup Broforenings Bådehavn, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kastrup Lystbådehavn - Saltholm (Barakkebroen), Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Scanport Havn, Svanemøllehavnen A/S, Bådelaug Havnestad, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Bådteatret, Tuborg Havn, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Mellembassinet, Bådklubben Sjællandsbroen, Skovshoved Havn, Fiskerhavnen, Kastrup Lystbådehavn - Gamle Havn, Langelinie Lystbådehavn, Teglværkshavnen, HDMS Peder Skram, Nyhavn - Flakfortet, Drogden, Kastrup Broforenings Bådehavn, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kastrup Lystbådehavn - Saltholm (Barakkebroen), Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Scanport Havn, Svanemøllehavnen A/S, Bådelaug Havnestad, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Bådteatret, Tuborg Havn, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+    "support": 2
+  },
+  "related": []
+}

@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_140",
+      "type": "attribute",
+      "label": "spatial_context: location: Oldenbüttel, Amt Mittelholstein, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, Germany; nearby_shipping_lanes: Kanalfähre Breiholz, Kanalfähre Oldenbüttel, Kanalfähre Fischerhütte, Gieselaukanal, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_674_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_674_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_674_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_674_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6715482940052673078",
+      "type": "behavior",
+      "label": "Behavior 52673078",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_674_SEG_0",
+      "target": "A_140",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_674_SEG_1",
+      "target": "A_140",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6715482940052673078",
+      "target": "A_140",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_140",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_140",
+    "TRJ_674_SEG_1",
+    "TRJ_674_SEG_0",
+    "B_vb_-24485554849544898",
+    "B_vb_-6715482940052673078"
+  ],
+  "centerNodeId": "A_140",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

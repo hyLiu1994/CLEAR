@@ -1,0 +1,15 @@
+{
+  "id": "A_003",
+  "type": "attribute",
+  "label": "navigation_status: At anchor",
+  "summary": "navigation_status attribute: At anchor",
+  "description": [
+    "This attribute is associated with 6 behavior patterns"
+  ],
+  "metadata": {
+    "category": "navigation_status",
+    "attribute_name": "At anchor",
+    "support": 6
+  },
+  "related": []
+}

@@ -1,0 +1,1014 @@
+{
+  "nodes": [
+    {
+      "id": "B_vb_-6255190157237282313",
+      "type": "behavior",
+      "label": "Behavior 37282313",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2483_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2483_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2483_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2483_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2480_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2480_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2483_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2483_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2483_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2483_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2483_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2483_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2483_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2483_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2483_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2483_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2483_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2483_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2487_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2487_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2499_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2499_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2487_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2487_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2499_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2499_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2499_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2499_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2499_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2499_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2549_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2549_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2534_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2534_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2559_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2559_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2561_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2561_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2579_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2579_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2579_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2579_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2579_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2579_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2579_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2579_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2579_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2579_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2566_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2566_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2579_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2579_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2579_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2579_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2595_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_2595_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2579_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2579_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2616_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2616_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2616_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2616_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2626_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2626_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2626_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2626_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2641_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2641_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-2730999286239322083",
+      "type": "function",
+      "label": "Function 39322083",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_3057269887211002483",
+      "type": "function",
+      "label": "Function 11002483",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5403177750896772097",
+      "type": "function",
+      "label": "Function 96772097",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_6702588538024933328",
+      "type": "function",
+      "label": "Function 24933328",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_378",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Skagen Fiber West, Hirtshals - Langesund",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_379",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Skagen Fiber West, Unnamed lane, Hirtshals - Langesund",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_091",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Denmark-Northway 5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_021",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_089",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Skagen Fiber West",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_377",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: København – Oslo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_406",
+      "type": "attribute",
+      "label": "draught: [8, 10) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_224",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Larvik, Denmark-Northway 5, Skagen Fiber West, Unnamed lane, Hirtshals - Langesund",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_225",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Larvik, Skagen Fiber West, Unnamed lane, Hirtshals - Langesund",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_376",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HAVSIL Fiber Cable System, Denmark-Norway 6, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_009",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_068",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Pangea North UK/Denmark, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_020",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC Skagerak 2, HVDC Skagerak 3, HVDC Skagerrak 4, HVDC Skagerak 1, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_392",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: CANTAT 3 F7, NordLink",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_395",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC Skagerak 2, HVDC Skagerak 3, HVDC Skagerak 1, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_077",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Thor Offshore Substation",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_090",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Hirtshals - Tórshavn, Hirtshals - Stavanger, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_007",
+      "type": "attribute",
+      "label": "vessel_type: Passenger",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_399",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Utklippans naturreservat, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_401",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Utklippans naturreservat",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2483_SEG_4",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2483_SEG_7",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2480_SEG_9",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2483_SEG_6",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2483_SEG_2",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2483_SEG_9",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2483_SEG_5",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2483_SEG_1",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2483_SEG_8",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2487_SEG_9",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_4",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2487_SEG_8",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_6",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_8",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2499_SEG_1",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_8",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2549_SEG_2",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2534_SEG_1",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2559_SEG_0",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2561_SEG_5",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2579_SEG_3",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2579_SEG_6",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2579_SEG_2",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2579_SEG_4",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2579_SEG_0",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_8",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2566_SEG_9",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2579_SEG_7",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2579_SEG_5",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2595_SEG_1",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2579_SEG_9",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2616_SEG_8",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2616_SEG_2",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2626_SEG_4",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2626_SEG_2",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_3",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_2",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2641_SEG_9",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "F_vf_5240413252068673064",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_-2730999286239322083",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_3057269887211002483",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_5403177750896772097",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "F_vf_6702588538024933328",
+      "target": "B_vb_-6255190157237282313",
+      "relation": "implements",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_378",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_379",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_091",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_021",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_089",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_377",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_406",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_224",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_225",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_376",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_009",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_068",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_020",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_392",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_395",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_077",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_090",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_007",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_399",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6255190157237282313",
+      "target": "A_401",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2566_SEG_9",
+    "TRJ_2483_SEG_5",
+    "A_091",
+    "TRJ_2641_SEG_9",
+    "TRJ_2641_SEG_2",
+    "TRJ_2579_SEG_2",
+    "A_021",
+    "A_009",
+    "TRJ_2480_SEG_9",
+    "TRJ_2499_SEG_8",
+    "TRJ_2579_SEG_3",
+    "TRJ_2534_SEG_8",
+    "A_004",
+    "A_006",
+    "A_406",
+    "TRJ_2499_SEG_1",
+    "A_224",
+    "TRJ_2483_SEG_6",
+    "TRJ_2483_SEG_9",
+    "TRJ_2487_SEG_9",
+    "TRJ_2595_SEG_1",
+    "TRJ_2579_SEG_9",
+    "A_376",
+    "TRJ_2487_SEG_8",
+    "A_089",
+    "TRJ_2499_SEG_6",
+    "B_vb_-6255190157237282313",
+    "A_225",
+    "F_vf_5240413252068673064",
+    "TRJ_2499_SEG_4",
+    "TRJ_2641_SEG_3",
+    "F_vf_5403177750896772097",
+    "F_vf_6702588538024933328",
+    "TRJ_2483_SEG_8",
+    "A_410",
+    "A_001",
+    "TRJ_2483_SEG_7",
+    "TRJ_2483_SEG_2",
+    "A_399",
+    "A_401",
+    "TRJ_2483_SEG_1",
+    "A_377",
+    "A_007",
+    "A_405",
+    "A_020",
+    "TRJ_2561_SEG_5",
+    "A_379",
+    "TRJ_2616_SEG_2",
+    "A_090",
+    "TRJ_2626_SEG_2",
+    "A_395",
+    "A_411",
+    "TRJ_2579_SEG_7",
+    "F_vf_3057269887211002483",
+    "TRJ_2483_SEG_4",
+    "TRJ_2549_SEG_2",
+    "A_378",
+    "A_077",
+    "TRJ_2579_SEG_4",
+    "A_392",
+    "F_vf_-2730999286239322083",
+    "TRJ_2579_SEG_5",
+    "TRJ_2579_SEG_0",
+    "A_404",
+    "A_415",
+    "TRJ_2534_SEG_1",
+    "TRJ_2566_SEG_8",
+    "TRJ_2616_SEG_8",
+    "TRJ_2626_SEG_4",
+    "TRJ_2559_SEG_0",
+    "A_068",
+    "TRJ_2579_SEG_6"
+  ],
+  "centerNodeId": "B_vb_-6255190157237282313",
+  "maxLevel": 1,
+  "totalNodes": 72,
+  "totalLinks": 71
+}

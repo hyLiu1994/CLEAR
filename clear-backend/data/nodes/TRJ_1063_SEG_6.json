@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1063_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_1063_SEG_6",
+  "summary": "Segment 6 of trajectory 1063",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 09:13:54",
+    "End time: 2024-03-18 09:18:24"
+  ],
+  "metadata": {
+    "trajectory_id": "1063",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-18 09:13:54",
+    "end_time": "2024-03-18 09:18:24"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Skødshoved Bro og Jollehavn, Odden - Aarhus, Træskibshavnen, Aarhus Havsvømmebane, Aarhus Lystbådehavn, Aarhus Vandflyveplads, Aarhus-Kalundborg, Marselisborg Lystbådehavn, Unnamed lane, Egå Marina",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [25, 30) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "fluctuating",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "'anchored or moored in a confined area'",
+      "duration": "250~300"
+    },
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains zero speed across all observations, indicating no movement)",
+      "course_change": "fluctuating (the COG varies between approximately 169° and 187°, showing inconsistent directional reporting despite no motion)",
+      "heading_fluctuation": "stable (the heading remains constant at 41.0°, suggesting the vessel’s bow orientation is fixed)",
+      "intent": "anchored or moored in a confined area (the persistent zero speed with fixed position coordinates—latitude: 56.151453, longitude: 10.236055—despite varying COG values, indicates the vessel is not underway but likely anchored or moored; the fluctuating COG may result from sensor noise or tidal swinging while stationary, modeled as a point estimate: lat(t) ≈ 56.151453, lon(t) ≈ 10.236055 for all t ∈ [0,1])",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

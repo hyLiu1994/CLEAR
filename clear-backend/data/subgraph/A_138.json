@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_138",
+      "type": "attribute",
+      "label": "spatial_context: location: Tackesdorf, Amt Mittelholstein, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, Germany; nearby_shipping_lanes: Kanalfähre Breiholz, Kanalfähre Oldenbüttel, Kanalfähre Fischerhütte, Gieselaukanal, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_674_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_674_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4584734299579856679",
+      "type": "behavior",
+      "label": "Behavior 79856679",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_674_SEG_2",
+      "target": "A_138",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4584734299579856679",
+      "target": "A_138",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_674_SEG_2",
+    "A_138",
+    "B_vb_4584734299579856679"
+  ],
+  "centerNodeId": "A_138",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

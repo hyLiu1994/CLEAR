@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_2290_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_2290_SEG_3",
+  "summary": "Segment 3 of trajectory 2290",
+  "description": [
+    "MMSI: 215909000",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 15:18:43",
+    "End time: 2024-03-07 15:23:14"
+  ],
+  "metadata": {
+    "trajectory_id": "2290",
+    "vessel_id": "215909000",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-07 15:18:43",
+    "end_time": "2024-03-07 15:23:14"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Mellembassinet, Skovshoved Havn, Langelinie Lystbådehavn, HDMS Peder Skram, Nyhavn - Flakfortet, Drogden, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kastrup Lystbådehavn - Saltholm (Barakkebroen), Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Svanemøllehavnen A/S, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Bådteatret, Tuborg Havn, Øresund, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 7.8 and 8.2 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG changes slowly from 179.0° to 180.0°, then gradually decreases to 173.0°, followed by a steady increase back toward 180.0°, indicating a smooth, continuous turn)",
+      "heading_fluctuation": "stable (heading remains close to COG with only minor deviations, varying from 180.0° down to 172.0° and returning, suggesting controlled steering without erratic behavior)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.73185 - 0.0042 × t + 0.0003 × t², lon(t) ≈ 12.678783 + 0.0001 × t + 0.0002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 55.7426 - 0.0013 × t, lon(t) ≈ 12.67865 + 0.00001 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 55.72145 - 0.00468 × t, lon(t) ≈ 12.67995 + 0.00003 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

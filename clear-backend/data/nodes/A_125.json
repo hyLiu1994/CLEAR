@@ -1,0 +1,15 @@
+{
+  "id": "A_125",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: EK R 12 Gniben, EK R 11 Sjællands Odde W., Unnamed lane, EK R 19 MULTEX, Hesselø Bugt",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: EK R 12 Gniben, EK R 11 Sjællands Odde W., Unnamed lane, EK R 19 MULTEX, Hesselø Bugt",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: EK R 12 Gniben, EK R 11 Sjællands Odde W., Unnamed lane, EK R 19 MULTEX, Hesselø Bugt",
+    "support": 1
+  },
+  "related": []
+}

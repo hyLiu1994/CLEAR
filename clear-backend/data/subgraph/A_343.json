@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_343",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Schießgebiet Arkona, BEI-Interkonnektor Bornholm-Deutschland, Aurora, Ostwind 3, Unnamed lane, Świnoujście (PL) - Trelleborg (SE), Ostwind 2, Sassnitz - Kreideküste",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2112_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2112_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5529242193679550801",
+      "type": "behavior",
+      "label": "Behavior 79550801",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2112_SEG_9",
+      "target": "A_343",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5529242193679550801",
+      "target": "A_343",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_343",
+    "B_vb_-5529242193679550801",
+    "TRJ_2112_SEG_9"
+  ],
+  "centerNodeId": "A_343",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

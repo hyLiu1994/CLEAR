@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_8826345280325842139",
+  "type": "function",
+  "label": "Function 25842139",
+  "summary": "This function reconstructs missing vessel positions along a gently curving maritime route by combini...",
+  "description": [
+    "Function description: This function reconstructs missing vessel positions along a gently curving maritime route by combining linear interpolation with a quadratic correction term derived from the observed trajectory pattern. It normalizes the time interval to a [0,1] scale and applies a parabolic adjustment that models the gradual course change consistent with a circular arc of approximately 2.5 km radius. The latitude is adjusted upward relative to linear interpolation (simulating a right-turning curve in the Northern Hemisphere), while longitude is adjusted downward to maintain alignment with the observed COG progression. The coefficients 0.0092 and -0.0084 are scaled by (t_norm - t_norm²) to ensure zero correction at endpoints and maximum effect at midpoint, preserving continuity with observed positions. This approach balances numerical stability with fidelity to the underlying motion dynamics, reducing positional error below the required threshold.",
+    "Code implementation: def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if len(t) > 1 else np.zeros_like(t); lat = start[0] + (end[0] - start[0]) * t_norm + 0.0092 * (t_norm - t_norm**2) * 0.5; lon = start[1] + (end[1] - start[1]) * t_norm - 0.0084 * (t_norm - t_norm**2) * 0.5; return np.stack((lat, lon), axis=-1).tolist()"
+  ],
+  "metadata": {
+    "original_id": "vf_8826345280325842139",
+    "code": "def spatial_function(start, end, Time_interval): \n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if len(t) > 1 else np.zeros_like(t); lat = start[0] + (end[0] - start[0]) * t_norm + 0.0092 * (t_norm - t_norm**2) * 0.5; lon = start[1] + (end[1] - start[1]) * t_norm - 0.0084 * (t_norm - t_norm**2) * 0.5; return np.stack((lat, lon), axis=-1).tolist()"
+  },
+  "related": []
+}

@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1991_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1991_SEG_9",
+  "summary": "Segment 9 of trajectory 1991",
+  "description": [
+    "MMSI: 211333700",
+    "Ship Type: Tanker",
+    "Number of data points: 20",
+    "Start time: 2024-03-17 06:25:47",
+    "End time: 2024-03-17 06:29:27"
+  ],
+  "metadata": {
+    "trajectory_id": "1991",
+    "vessel_id": "211333700",
+    "vessel_type": "Tanker",
+    "num_points": 20,
+    "start_time": "2024-03-17 06:25:47",
+    "end_time": "2024-03-17 06:29:27"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Tanker",
+    "Spatial Context: nearby_shipping_lanes: Storebælt, Aarhus-Kalundborg, Unnamed lane, Slip, Great Belt 2",
+    "Draught: [2, 4) m",
+    "Length: [50, 100) m",
+    "Width: [10, 15) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving east-southeast, approximated by the parametric equations: lat(t) ≈ 55.6796 - 0.00015 × t, lon(t) ≈ 11.0058 + 0.00064 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.6838 - 0.0018 × t + 0.00004 × t², lon(t) ≈ 10.9872 + 0.0078 × t + 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

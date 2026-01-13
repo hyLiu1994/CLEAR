@@ -1,0 +1,15 @@
+{
+  "id": "A_001",
+  "type": "attribute",
+  "label": "navigation_status: Under way using engine",
+  "summary": "navigation_status attribute: Under way using engine",
+  "description": [
+    "This attribute is associated with 203 behavior patterns"
+  ],
+  "metadata": {
+    "category": "navigation_status",
+    "attribute_name": "Under way using engine",
+    "support": 203
+  },
+  "related": []
+}

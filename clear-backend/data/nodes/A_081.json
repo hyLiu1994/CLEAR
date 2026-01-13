@@ -1,0 +1,15 @@
+{
+  "id": "A_081",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Nordmands Hage, Hals Jollehavn, Unnamed lane",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Nordmands Hage, Hals Jollehavn, Unnamed lane",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Nordmands Hage, Hals Jollehavn, Unnamed lane",
+    "support": 2
+  },
+  "related": []
+}

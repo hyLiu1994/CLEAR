@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_323",
+      "type": "attribute",
+      "label": "spatial_context: location: Trelleborgs kommun, Skåne County, Sweden; nearby_shipping_lanes: Query failed with status 504",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1853_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_1853_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8719866209839137937",
+      "type": "behavior",
+      "label": "Behavior 39137937",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1853_SEG_1",
+      "target": "A_323",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8719866209839137937",
+      "target": "A_323",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1853_SEG_1",
+    "A_323",
+    "B_vb_-8719866209839137937"
+  ],
+  "centerNodeId": "A_323",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

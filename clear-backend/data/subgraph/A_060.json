@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "id": "A_060",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Route T, Aarhus-Kalundborg, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_312_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_312_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_998_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_998_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_998_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_998_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_998_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_998_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_998_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_998_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-603126515245468748",
+      "type": "behavior",
+      "label": "Behavior 45468748",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_312_SEG_8",
+      "target": "A_060",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_998_SEG_5",
+      "target": "A_060",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_998_SEG_6",
+      "target": "A_060",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_998_SEG_7",
+      "target": "A_060",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_998_SEG_8",
+      "target": "A_060",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_060",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-603126515245468748",
+      "target": "A_060",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_060",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-603126515245468748",
+    "TRJ_998_SEG_5",
+    "TRJ_998_SEG_8",
+    "TRJ_312_SEG_8",
+    "TRJ_998_SEG_6",
+    "B_vb_8377157303611993086",
+    "A_060",
+    "B_vb_82841811344196675",
+    "TRJ_998_SEG_7"
+  ],
+  "centerNodeId": "A_060",
+  "maxLevel": 1,
+  "totalNodes": 9,
+  "totalLinks": 8
+}

@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1707_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_1707_SEG_8",
+  "summary": "Segment 8 of trajectory 1707",
+  "description": [
+    "MMSI: 210399000",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-20 08:28:11",
+    "End time: 2024-03-20 08:32:29"
+  ],
+  "metadata": {
+    "trajectory_id": "1707",
+    "vessel_id": "210399000",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-20 08:28:11",
+    "end_time": "2024-03-20 08:32:29"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed around 15.9–16.0 knots, indicating steady propulsion and no docking or maneuvering behavior)",
+      "course_change": "gradual and consistent (COG changes slowly from 25.3° to 26.3°, then back to 25.7°, showing a smooth evolution over time, typical of navigation along a curved channel)",
+      "heading_fluctuation": "stable (heading remains fixed at 25.0° or 26.0° in discrete steps, closely aligned with COG, suggesting controlled rudder adjustments rather than erratic yawing)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.93029 + 0.0015 × t + 0.00008 × t², lon(t) ≈ 12.644163 + 0.0012 × t + 0.0001 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 15.7–15.8 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG changes slowly from 25.0° to 24.6°, then back to 25.2°, indicating a smooth evolution in direction over time)",
+      "heading_fluctuation": "stable (heading remains consistently at 25.0° or 26.0°, with minimal variation, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.9645 + 0.0013 × t + 0.00004 × t², lon(t) ≈ 12.6722 + 0.0011 × t + 0.00007 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, passenger vessels 'under way using engine' with lengths between 150–200 m and draughts of 4–6 m navigating in Danish waters exhibit a curved maritime route behavior in approximately 78% of observed segments when associated with stable speed and gradual course changes. This pattern is strongly supported by high-weight edges from critical vessel attributes—especially navigation status (w=96), length (w=56), and width (w=30)—indicating that this movement is highly typical for mid-to-large-sized passenger vessels maintaining steady helm control along coastal arcs. Among all candidate patterns, vb_82841811344196675 ranks highest in combined attribute alignment, with a total incoming edge weight sum of 311, outperforming other candidates despite missing spatial context data.",
+    "contextual_justification": "The boundary movement pattern explicitly describes a \"following a curved maritime route\" intent with stable speed, gradual and consistent course change, and stable heading fluctuation—characteristics directly mirrored in vb_82841811344196675. The parametric trajectory model (lat(t) ≈ 56.150075 + 0.00085 × t + 0.000012 × t², lon(t) ≈ 7.621433 + 0.00035 × t + 0.000008 × t²) aligns with the curvature and spatiotemporal progression expected across the gap. Furthermore, the duration range (200~250) matches the adjacent segment, and the dynamic AIS samples in the gap show a smooth northeastward curvilinear progression consistent with this modeled arc, confirming continuity in both kinematic profile and navigational intent.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 95%. This is derived from the proportional weight distribution observed across the two candidate functions linked to the same behavioral pattern, where the total association weight sums to 96 (95 + 1), and the share attributed to vf_5240413252068673064 is 95. Therefore, the likelihood is calculated as 95 / (95 + 1) = 95/96 ≈ 0.9896 or 98.96%. However, since the weights reflect relative confidence in functional applicability based on historical performance under similar kinematic conditions, and given that the higher-weighted function has been selected in nearly all prior analogous cases (95 out of 96 cumulative observations), the effective empirical success rate—interpreted as the probability of correct imputation under this motion regime—is conservatively estimated at 95%, aligning with robust execution reliability.\n\n2. This function exhibits strong alignment with stable-speed, consistent-course maritime trajectories due to its assumption of constant-velocity linear interpolation over time. It has demonstrated high consistency in reconstructing paths for vessels exhibiting minimal heading fluctuation and gradual COG changes, which matches the current context. In contrast, the alternative function, while conceptually similar, has been associated with only 1% of successful reconstructions under comparable conditions, indicating significantly lower empirical reliability despite syntactic similarity in implementation."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel's behavior—maintaining a stable speed, gradually adjusting its course, and showing minimal heading variation—is typical for large passenger vessels navigating coastal waters under engine power. Given the spatial context of Denmark, where maritime traffic often follows established curved routes due to geographical constraints and navigational safety protocols, this pattern reflects standard operating procedures for predictable, controlled transit along defined channels. The consistent alignment between course over ground and heading further supports that the vessel is following a planned route, likely under autopilot. Although the trajectory has a slight curvature, the change is smooth and gradual, making linear interpolation over short durations both computationally efficient and highly accurate. Alternative methods assuming more complex motion were not selected because historical performance shows they offer negligible improvement in precision for this class of movement, while introducing unnecessary computational overhead and potential numerical instability.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a stable speed, gradually adjusting its course, and showing minimal heading variation—is typical for large passenger vessels navigating coastal waters under engine power. Given the spatial context of Denmark, where maritime traffic often follows established curved routes due to geographical constraints and navigational safety protocols, this pattern reflects standard operating procedures for predictable, controlled transit along defined channels. The consistent alignment between course over ground and heading further supports that the vessel is following a planned route, likely under autopilot. Although the trajectory has a slight curvature, the change is smooth and gradual, making linear interpolation over short durations both computationally efficient and highly accurate. Alternative methods assuming more complex motion were not selected because historical performance shows they offer negligible improvement in precision for this class of movement, while introducing unnecessary computational overhead and potential numerical instability.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-6762690291325060499",
+  "type": "behavior",
+  "label": "Behavior 25060499",
+  "summary": "Vessel behavior pattern: 'anchored or moored in a confined area'",
+  "description": [
+    "Speed profile: {'stable': True}",
+    "Course change: 'fluctuating'",
+    "Heading fluctuation: {'stable': True}",
+    "Behavior intent: 'anchored or moored in a confined area'",
+    "Duration: 250~300"
+  ],
+  "metadata": {
+    "original_id": "vb_-6762690291325060499",
+    "duration": "250~300",
+    "support": 9,
+    "pattern_key": [
+      "{'stable': True}",
+      "'fluctuating'",
+      "{'stable': True}",
+      "'anchored or moored in a confined area'",
+      "250~300"
+    ]
+  },
+  "related": []
+}

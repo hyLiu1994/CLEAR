@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_2644_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_2644_SEG_4",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_2644",
+      "type": "trajectory",
+      "label": "Trajectory 219000776",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2644_SEG_4",
+      "target": "T_2644",
+      "relation": "part_of",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "T_2644",
+    "TRJ_2644_SEG_4"
+  ],
+  "centerNodeId": "TRJ_2644_SEG_4",
+  "maxLevel": 1,
+  "totalNodes": 2,
+  "totalLinks": 1
+}

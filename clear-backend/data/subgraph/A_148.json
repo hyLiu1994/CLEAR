@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_148",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Mellembassinet, Bådklubben Sjællandsbroen, Skovshoved Havn, Fiskerhavnen, Kastrup Lystbådehavn - Gamle Havn, Langelinie Lystbådehavn, Teglværkshavnen, HDMS Peder Skram, Nyhavn - Flakfortet, Drogden, Kastrup Broforenings Bådehavn, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kastrup Lystbådehavn - Saltholm (Barakkebroen), Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Scanport Havn, Svanemøllehavnen A/S, Bådelaug Havnestad, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Bådteatret, Tuborg Havn, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_705_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_705_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_705_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_705_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-2047195025297448064",
+      "type": "behavior",
+      "label": "Behavior 97448064",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8994724557694790432",
+      "type": "behavior",
+      "label": "Behavior 94790432",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_705_SEG_2",
+      "target": "A_148",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_705_SEG_3",
+      "target": "A_148",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2047195025297448064",
+      "target": "A_148",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8994724557694790432",
+      "target": "A_148",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_705_SEG_2",
+    "TRJ_705_SEG_3",
+    "B_vb_-8994724557694790432",
+    "B_vb_-2047195025297448064",
+    "A_148"
+  ],
+  "centerNodeId": "A_148",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_677_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_677_SEG_3",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_677",
+      "type": "trajectory",
+      "label": "Trajectory 209715000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5778476742998890982",
+      "type": "behavior",
+      "label": "Behavior 98890982",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_030",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Query failed with status 429",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-2730999286239322083",
+      "type": "function",
+      "label": "Function 39322083",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "T_677",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "B_vb_-5778476742998890982",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "F_vf_-2730999286239322083",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_030",
+    "TRJ_677_SEG_3",
+    "A_001",
+    "A_410",
+    "F_vf_-2730999286239322083",
+    "A_404",
+    "T_677",
+    "A_415",
+    "A_004",
+    "A_006",
+    "B_vb_-5778476742998890982"
+  ],
+  "centerNodeId": "TRJ_677_SEG_3",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

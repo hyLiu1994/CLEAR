@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "A_170",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Klaipėda (LT) – Kiel (D), Travemünde (D) – Liepāja (LV), C-Lion 1, Świnoujście (PL) - Ystad (SE), Świnoujście (PL) - Ystad (S), Travemünde (D) – Helsinki (FIN)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_812_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_812_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_812_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_812_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3081913737957353482",
+      "type": "behavior",
+      "label": "Behavior 57353482",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_812_SEG_5",
+      "target": "A_170",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_812_SEG_4",
+      "target": "A_170",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3081913737957353482",
+      "target": "A_170",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_170",
+    "TRJ_812_SEG_5",
+    "B_vb_3081913737957353482",
+    "TRJ_812_SEG_4"
+  ],
+  "centerNodeId": "A_170",
+  "maxLevel": 1,
+  "totalNodes": 4,
+  "totalLinks": 3
+}

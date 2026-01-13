@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_-9020316996194250187",
+  "type": "function",
+  "label": "Function 94250187",
+  "summary": "This function reconstructs missing vessel positions along a curved trajectory using a power-scaled i...",
+  "description": [
+    "Function description: This function reconstructs missing vessel positions along a curved trajectory using a power-scaled interpolation model based on observed motion patterns. Instead of linear interpolation, it applies a non-linear time scaling with exponent 1.5 to better reflect the gradual course change and slight curvature seen in the vessel’s path. The latitude and longitude are interpolated as smooth functions of normalized time (relative to the total interval), capturing the deceleration-like behavior and turning intent where position changes accelerate slightly over time due to persistent COG evolution. This aligns with the observed pattern of stable speed, consistent heading, and progressive course alteration, modeling the vessel's movement along a predefined curved maritime route.",
+    "Code implementation: def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / Time_interval[-1])**1.5, start[1] + (end[1] - start[1]) * (t / Time_interval[-1])**1.5) for t in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_-9020316996194250187",
+    "code": "def spatial_function(start, end, Time_interval): return [(start[0] + (end[0] - start[0]) * (t / Time_interval[-1])**1.5, start[1] + (end[1] - start[1]) * (t / Time_interval[-1])**1.5) for t in Time_interval]"
+  },
+  "related": []
+}

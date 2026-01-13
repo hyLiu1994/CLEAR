@@ -1,0 +1,49 @@
+{
+  "id": "TRJ_996_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_996_SEG_8",
+  "summary": "Segment 8 of trajectory 996",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 09:40:25",
+    "End time: 2024-03-11 09:44:13"
+  ],
+  "metadata": {
+    "trajectory_id": "996",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 09:40:25",
+    "end_time": "2024-03-11 09:44:13"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.5825 + 0.0158 × t, lon(t) ≈ 10.8319 - 0.0062 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.2 and 15.5 knots, with minimal variation)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 339.1° to 342.1° over the sequence, indicating a smooth turn to starboard)",
+      "heading_fluctuation": "stable (heading remains steady at 341.0° for most of the segment, then increments slightly to 344.0°, showing minimal oscillation)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.6154 + 0.0081 × t + 0.0004 × t², lon(t) ≈ 10.8098 - 0.0068 × t - 0.0003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating through major Danish straits such as Storebælt and Great Belt exhibit straight-route behavior patterns in 68% of comparable movement gaps. The vessel’s static attributes—cargo type, dimensions [150–200 m length, 25–30 m width], draught [8–10 m], and active engine status—strongly associate with this pattern, evidenced by cumulative edge weights showing that 102 out of 129 (79%) of similar vessels in the same spatial context follow fixed linear trajectories. Furthermore, the co-occurrence frequency between \"navigating along a fixed route\" and vessels in the Great Belt region is significantly higher than for curved alternatives, reinforcing its prevalence in constrained maritime corridors.",
+    "contextual_justification": "The boundary movement patterns on both sides of the gap show stable speed, gradual and consistent course change, and minimal heading fluctuation—indicative of sustained directional control. The preceding segment moves west-southwest along a linear path, while the subsequent segment continues northeast on another linear trajectory. The selected movement vb_-4927443205807001530 represents a plausible transitional fixed-route segment aligned with these dynamics, maintaining parametric continuity in speed and heading stability. Its intent—\"navigating along a fixed route\"—matches the persistent COG-heading alignment observed at both boundaries, making it the most coherent interpolation within the geographic and behavioral context.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) in Danish Straits – Applicable in major maritime corridors such as Storebælt and Great Belt – Spatial Anchor: Nearby shipping lanes including Romsø Fyr and unnamed routes in the Great Belt region\nOperational Protocol Rationale: The selected behavior—navigating along a fixed, straight route—is typical in this area due to the presence of structured traffic lanes that require vessels to maintain steady course and speed for collision avoidance and navigational efficiency. Cargo vessels of this size and draught operating under engine power are expected to follow predefined linear paths within these constrained waterways, where sharp turns or erratic maneuvers are uncommon. This pattern aligns with the observed stable speed, consistent heading, and minimal deviation between course over ground and heading. Alternative behaviors involving curved trajectories are less likely here, as they typically occur in approach zones or coastal bends rather than within the core segments of major straits. The continuity of directional control before and after the data gap further supports a straight-route interpolation as the most operationally sound choice.\n'''",
+    "operational_protocol_rationale": "The selected behavior—navigating along a fixed, straight route—is typical in this area due to the presence of structured traffic lanes that require vessels to maintain steady course and speed for collision avoidance and navigational efficiency. Cargo vessels of this size and draught operating under engine power are expected to follow predefined linear paths within these constrained waterways, where sharp turns or erratic maneuvers are uncommon. This pattern aligns with the observed stable speed, consistent heading, and minimal deviation between course over ground and heading. Alternative behaviors involving curved trajectories are less likely here, as they typically occur in approach zones or coastal bends rather than within the core segments of major straits. The continuity of directional control before and after the data gap further supports a straight-route interpolation as the most operationally sound choice.\n'''"
+  },
+  "related": []
+}

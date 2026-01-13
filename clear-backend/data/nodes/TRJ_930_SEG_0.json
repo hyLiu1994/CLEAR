@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_930_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_930_SEG_0",
+  "summary": "Segment 0 of trajectory 930",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 05:56:24",
+    "End time: 2024-03-27 06:07:33"
+  ],
+  "metadata": {
+    "trajectory_id": "930",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-27 05:56:24",
+    "end_time": "2024-03-27 06:07:33"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Kanalfähre Kudensee, Kanalfähre Ostermoor, Kanalfähre Hochdonn, Kanalfähre Burg (Dithmarschen), Unnamed lane, helgoline",
+    "Draught: [8, 10) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 6.4 and 6.7 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG changes slowly from 39.0° to 35.9° over time, indicating a smooth, progressive turn to the right)",
+      "heading_fluctuation": "stable (heading remains close to 40.0°, with only minor adjustments, suggesting controlled rudder input)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 53.966752 + 0.00128 × t + 0.00004 × t², lon(t) ≈ 9.257525 + 0.00178 × t + 0.00012 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "650~700"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

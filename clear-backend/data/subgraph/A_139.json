@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_139",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Kanalfähre Breiholz, Kanalfähre Oldenbüttel, Kanalfähre Fischerhütte, Gieselaukanal, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_674_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_674_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2098588146856649649",
+      "type": "behavior",
+      "label": "Behavior 56649649",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_674_SEG_3",
+      "target": "A_139",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2098588146856649649",
+      "target": "A_139",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_139",
+    "TRJ_674_SEG_3",
+    "B_vb_2098588146856649649"
+  ],
+  "centerNodeId": "A_139",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

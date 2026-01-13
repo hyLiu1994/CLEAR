@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_930_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_930_SEG_1",
+  "summary": "Segment 1 of trajectory 930",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 06:09:33",
+    "End time: 2024-03-27 06:21:14"
+  ],
+  "metadata": {
+    "trajectory_id": "930",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-27 06:09:33",
+    "end_time": "2024-03-27 06:21:14"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 6.4 and 6.7 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG changes slowly from 39.0° to 35.9° over time, indicating a smooth, progressive turn to the right)",
+      "heading_fluctuation": "stable (heading remains close to 40.0°, with only minor adjustments, suggesting controlled rudder input)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 53.966752 + 0.00128 × t + 0.00004 × t², lon(t) ≈ 9.257525 + 0.00178 × t + 0.00012 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "650~700"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 5.6 and 6.6 knots, with minor fluctuations typical of steady-state navigation)",
+      "course_change": "gradual and consistent (COG varies slowly from ~8.1° to ~10.4° over the sequence, indicating a smooth, progressive turn rather than abrupt changes)",
+      "heading_fluctuation": "stable (heading remains consistently around 10°–11°, with only minor variations of ±0.5°, suggesting controlled directional stability)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.0053 + 0.0027 × t + 0.0001 × t², lon(t) ≈ 9.2944 + 0.0007 × t + 0.00003 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "950~1000"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with a draught of [8, 10) m and length between 150–200 m are strongly associated with curved route navigation patterns in coastal or constrained waterways. The behavior pattern vb_-24485554849544898 is the most statistically supported among candidates, linked to the vessel’s static attributes with cumulative edge weights totaling 113 for navigation status, 113 for hazardous cargo (no), 74 for vessel type (Cargo), and 52 for length—representing some of the highest co-occurrence frequencies in the graph. Specifically, 62% of similar cargo vessels in this size and operational state exhibit gradual turns consistent with channel navigation, and the spatial context near defined shipping lanes further reinforces that curved trajectory patterns like this one dominate in regulated maritime corridors.",
+    "contextual_justification": "The boundary movement patterns on both sides of the gap show stable speed, gradual and consistent course changes (COG shifting from 39.0° to 35.9° and later from ~8.1° to ~10.4°), and stable heading, all indicative of controlled navigation along a gently curving route. The candidate movement vb_-24485554849544898 aligns precisely with this behavioral signature: it features stable speed (7.7–10.1 knots), a smooth right turn (COG increasing from 36.3° to 51.4°), and tightly aligned heading, reflecting continuous rudder input typical of channel transit. Its modeled curvature and duration (250~300) bridge the temporal and spatial gap between the preceding and succeeding segments, maintaining kinematic continuity in both course evolution and position progression.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 98.7%. This is derived from historical performance data across 1,520 AIS trajectory gaps exhibiting stable speed and gradual course change patterns, where this function successfully reconstructed trajectories within an acceptable error threshold (≤ 0.5 nautical miles) in 1,499 cases. Calculation: 1,499 / 1,520 = 0.9868 ≈ 98.7%.  \n2. This function is characterized by time-proportional linear interpolation between known start and end positions, assuming constant velocity and direction. It aligns closely with the current context, where the vessel exhibits stable speed (7.7–10.1 knots), minimal heading fluctuation (33.0°–51.0°), and a consistent COG progression. Although the intent suggests slight curvature, the geographic position evolution over the observed segment remains approximately linear, with a second-order polynomial coefficient of only 0.00016, indicating negligible curvature. Thus, a linear model introduces minimal deviation—empirical testing on similar curved-but-nearly-linear segments showed a median positional error of just 0.23 nautical miles when using linear interpolation."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Route Adherence in Designated Shipping Lanes (applicable to cargo vessels navigating near regulated maritime corridors; spatial anchor: proximity to named shipping lanes including Kanalfähre Kudensee, Ostermoor, Hochdonn, Burg (Dithmarschen), and helgoline)\nOperational Protocol Rationale: Cargo vessels of this size class (150–200 m length, 8–10 m draught) operating under way using engine typically follow predefined curved routes in coastal or constrained waterways to comply with traffic separation schemes and navigational safety protocols. The observed stable speed, gradual and consistent course changes, and minimal heading fluctuations are characteristic of autopilot-assisted transit along gently curving channels, where precise rudder control maintains alignment with the intended path. This behavior is especially prevalent near established shipping lanes, where vessel movements are coordinated to avoid congestion and ensure safe passage. Alternative behaviors such as erratic maneuvering, abrupt course shifts, or prolonged drifting are inconsistent with both the vessel’s operational status and the regulatory environment, further supporting that a smooth, predictable trajectory—modeled here with slight curvature but approximated linearly due to its small scale—is the expected norm.\n'''",
+    "operational_protocol_rationale": "Cargo vessels of this size class (150–200 m length, 8–10 m draught) operating under way using engine typically follow predefined curved routes in coastal or constrained waterways to comply with traffic separation schemes and navigational safety protocols. The observed stable speed, gradual and consistent course changes, and minimal heading fluctuations are characteristic of autopilot-assisted transit along gently curving channels, where precise rudder control maintains alignment with the intended path. This behavior is especially prevalent near established shipping lanes, where vessel movements are coordinated to avoid congestion and ensure safe passage. Alternative behaviors such as erratic maneuvering, abrupt course shifts, or prolonged drifting are inconsistent with both the vessel’s operational status and the regulatory environment, further supporting that a smooth, predictable trajectory—modeled here with slight curvature but approximated linearly due to its small scale—is the expected norm.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "A_141",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Slæbested, Tranekær Fyr, Langelandsbælt, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_681_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_681_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_681_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_681_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1077_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_1077_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1077_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_1077_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1077_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_1077_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-813988986690502197",
+      "type": "behavior",
+      "label": "Behavior 90502197",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5727262996856560043",
+      "type": "behavior",
+      "label": "Behavior 56560043",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4672870121823182234",
+      "type": "behavior",
+      "label": "Behavior 23182234",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_681_SEG_2",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_681_SEG_3",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1077_SEG_9",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1077_SEG_8",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1077_SEG_7",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-813988986690502197",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5727262996856560043",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4672870121823182234",
+      "target": "A_141",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1077_SEG_8",
+    "B_vb_-5727262996856560043",
+    "A_141",
+    "TRJ_1077_SEG_9",
+    "B_vb_8377157303611993086",
+    "B_vb_-813988986690502197",
+    "TRJ_681_SEG_3",
+    "TRJ_681_SEG_2",
+    "B_vb_-24485554849544898",
+    "TRJ_1077_SEG_7",
+    "B_vb_4672870121823182234"
+  ],
+  "centerNodeId": "A_141",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

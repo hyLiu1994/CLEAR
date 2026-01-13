@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_409_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_409_SEG_7",
+  "summary": "Segment 7 of trajectory 409",
+  "description": [
+    "MMSI: 209541000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-28 19:28:31",
+    "End time: 2024-03-28 19:34:38"
+  ],
+  "metadata": {
+    "trajectory_id": "409",
+    "vessel_id": "209541000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-28 19:28:31",
+    "end_time": "2024-03-28 19:34:38"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Leuchtturm Bülk, Kolberger Heide, Olympiahafen Schilksee, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fischschonbezirk Schönberger Au, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Fischerei- und Yachthafen Möltenort / Heikendorf, Sporthafen Stickenhörn, Leuchtturm Friedrichsort, Hafen Strande, Yachthafen Marina Wendtorf, Fischschonbezirk Strander Au, Sperrgebiet magnetische Meßstelle Friedrichsort, Kiel Holtenau, Sportboothafen Plüschowbecken / Schwentineflotte e.V., Lotsenstation",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 13.0 and 17.2 knots with only minor, gradual decreases over time)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 33.0° to 36.3°, indicating a smooth turn or alignment with a curved channel)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 32.0°–33.0°, showing minimal oscillation despite slight COG changes)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "350~400"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, increasing only slightly from 15.3 to 17.1 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 28.8° to 30.6°, suggesting a smooth turn or alignment with a curved channel)",
+      "heading_fluctuation": "stable (heading remains around 26–28° with only minor fluctuations, indicating controlled steering without abrupt changes)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "300~350"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, decreasing only gradually from 12.5 to 7.2 knots over an extended period, indicating steady propulsion without abrupt changes)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 36.1° to 39.4°, then decreases slightly to 37.4°, reflecting a smooth evolution in direction rather than abrupt turns)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 33.0° to 36.0°, varying by only 3° over the entire sequence, indicating controlled steering)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "400~450"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

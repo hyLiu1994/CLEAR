@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_46_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_46_SEG_6",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_46",
+      "type": "trajectory",
+      "label": "Trajectory 209207000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5735201309241879777",
+      "type": "behavior",
+      "label": "Behavior 41879777",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_020",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: HVDC Skagerak 2, HVDC Skagerak 3, HVDC Skagerrak 4, HVDC Skagerak 1, Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_410",
+      "type": "attribute",
+      "label": "length: [100, 150) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_414",
+      "type": "attribute",
+      "label": "width: [15, 20) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-7663396197665720575",
+      "type": "function",
+      "label": "Function 65720575",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "T_46",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "B_vb_-5735201309241879777",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "A_020",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "A_410",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "A_414",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_46_SEG_6",
+      "target": "F_vf_-7663396197665720575",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_410",
+    "A_001",
+    "A_414",
+    "T_46",
+    "B_vb_-5735201309241879777",
+    "A_020",
+    "A_404",
+    "F_vf_-7663396197665720575",
+    "A_004",
+    "TRJ_46_SEG_6",
+    "A_006"
+  ],
+  "centerNodeId": "TRJ_46_SEG_6",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

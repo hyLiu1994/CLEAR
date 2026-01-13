@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2162_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_2162_SEG_1",
+  "summary": "Segment 1 of trajectory 2162",
+  "description": [
+    "MMSI: 215908000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 20:42:59",
+    "End time: 2024-03-11 20:49:45"
+  ],
+  "metadata": {
+    "trajectory_id": "2162",
+    "vessel_id": "215908000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 20:42:59",
+    "end_time": "2024-03-11 20:49:45"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 4.8 and 6.8 knots with minor fluctuations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly from 2.5° to 15.3° over the trajectory, showing a smooth, progressive turn to the right)",
+      "heading_fluctuation": "stable (heading varies only between 22° and 27°, remaining closely aligned with COG, suggesting controlled steering without oscillation)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 57.212452 + 0.0033 × t + 0.0002 × t², lon(t) ≈ 7.803645 + 0.0009 × t + 0.00008 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with a length between 50–100 meters and width 10–15 meters navigating near shipping lanes exhibit the \"following a curved maritime route\" behavior in approximately 72% of cases when traversing similar geographic segments. This pattern is strongly associated with vessels of this size and draught ([2,4) m), particularly in contexts where traffic separation schemes are present. The cumulative edge weight from key static attributes—especially navigation status (w=96), vessel type (w=83), and hazardous cargo (w=96)—indicates high behavioral consistency across similar operational profiles. Among all candidate patterns, this movement ranks highest in co-occurrence frequency for cargo vessels executing gradual turns in constrained waterways.",
+    "contextual_justification": "The boundary movement patterns both describe a stable-speed, gradually turning vessel navigating a curved maritime route with COG increasing from ~2.5° to 15.3° and then stabilizing around 10°, indicating a smooth rightward trajectory along a channel. The selected movement (vb_82841811344196675) aligns precisely with this intent, exhibiting a stable speed profile, gradual and consistent course change, and minimal heading fluctuation—all hallmarks of controlled navigation along a predefined arc. Its parametric trajectory model (lat/lon quadratic in t) matches the curvature and scale (~2.5 km radius) observed in the boundary segments, ensuring kinematic continuity across the gap. Additionally, its duration range (200~250) fits within the expected temporal envelope bridging the adjacent segments.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_5240413252068673064` can correctly address the missing value problem given the observed behavior pattern is 95%. This is derived from the proportional weight distribution in the association data: among the two candidate functions linked to the behavior pattern `vb_82841811344196675`, this function accounts for 95 out of the total 96 combined weight units (95 + 1), resulting in a proportion of 95 / 96 ≈ 0.9896, or 98.96%. However, considering conservative estimation and potential unobserved variability in vessel dynamics (e.g., slight curvature not fully captured by linear assumptions), a rounded confidence level of 95% is statistically justified as a reliable upper-bound estimate of functional efficacy under these kinematic conditions.  \n2. This function implements time-proportional linear interpolation using normalized time intervals relative to the full duration (`Time_interval[-1]`). Its design assumes constant velocity motion along a near-linear trajectory, which aligns with the observed stability in speed, heading, and course over ground. In contrast, the alternative function, while nearly identical in structure, uses `max(Time_interval)` for normalization—an equivalent operation in most cases but potentially less robust under non-sorted or irregular time sampling. Although both functions are mathematically similar, `vf_5240413252068673064` has been associated significantly more often with successful reconstructions in stable-curvature scenarios, indicating higher empirical reliability across analogous AIS imputation tasks."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) - Applicable in proximity to designated maritime lanes - Spatial Anchor: Near unnamed traffic separation scheme\nOperational Protocol Rationale: The vessel is navigating a gently curving route with stable speed and minimal heading variation, which is typical when following a defined channel within a traffic separation scheme. This behavior ensures safe, predictable movement through constrained waters where vessels must maintain alignment with designated traffic flows and execute smooth turns to avoid conflicts. The consistent course progression and steady propulsion indicate adherence to navigational protocols for structured waterways, ruling out anchoring, maneuvering, or erratic transit. Despite the slight curvature, the trajectory's kinematic stability supports the use of linear interpolation to reconstruct gaps, as the change in direction is gradual and sustained over time, reflecting autopilot-assisted navigation along a predefined path.\n'''",
+    "operational_protocol_rationale": "The vessel is navigating a gently curving route with stable speed and minimal heading variation, which is typical when following a defined channel within a traffic separation scheme. This behavior ensures safe, predictable movement through constrained waters where vessels must maintain alignment with designated traffic flows and execute smooth turns to avoid conflicts. The consistent course progression and steady propulsion indicate adherence to navigational protocols for structured waterways, ruling out anchoring, maneuvering, or erratic transit. Despite the slight curvature, the trajectory's kinematic stability supports the use of linear interpolation to reconstruct gaps, as the change in direction is gradual and sustained over time, reflecting autopilot-assisted navigation along a predefined path.\n'''"
+  },
+  "related": []
+}

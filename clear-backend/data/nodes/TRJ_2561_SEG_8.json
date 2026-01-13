@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2561_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_2561_SEG_8",
+  "summary": "Segment 8 of trajectory 2561",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-21 09:23:31",
+    "End time: 2024-03-21 09:27:19"
+  ],
+  "metadata": {
+    "trajectory_id": "2561",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-21 09:23:31",
+    "end_time": "2024-03-21 09:27:19"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 15.7 and 16.2 knots with minimal variation)",
+      "course_change": "gradual and consistent (COG varies slightly between 350.3° and 351.8°, showing a smooth, steady progression without abrupt changes)",
+      "heading_fluctuation": "gradual and consistent (heading remains constant at 353.0° throughout the trajectory, indicating stable rudder control and no oscillations)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-northwest, approximated by the parametric equations: lat(t) ≈ 54.44829 + 0.00082 × t, lon(t) ≈ 7.57062 - 0.00158 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 15.4 and 16.2 knots with minor fluctuations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slightly between 350.0° and 351.8°, showing a smooth, controlled progression without abrupt changes)",
+      "heading_fluctuation": "gradual and consistent (heading remains constant at 353.0° throughout the sequence, indicating stable rudder control and no significant yawing)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-northwest, approximated by the parametric equations: lat(t) ≈ 54.4854 + 0.00103 × t, lon(t) ≈ 7.5606 - 0.0023 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions typical of medium-sized freighters (100–150 m length, 20–25 m width) are observed to follow straight, predefined maritime routes in 63% of cases when operating near shipping lanes. This pattern is strongly associated with vessels maintaining stable speed and consistent heading alignment, as evidenced by the high cumulative edge weight (102/129 ≈ 79%) from navigation status and vessel type to this behavior. Among all candidate patterns, vb_-4927443205807001530 ranks highest in co-occurrence frequency with static attributes—particularly for draught [6,8) m (35/66 ≈ 53% relative support)—and shows consistent presence across similar operational profiles, reinforcing its statistical dominance in open-water transit scenarios.",
+    "contextual_justification": "The boundary movement pattern shows a vessel moving west-northwest with stable speed (15.7–16.1 knots), fixed heading (353.0°), and minimal course deviation, indicating straight-line navigation along a fixed route. Although the candidate movement vb_-4927443205807001530 describes northeastward motion, its core behavioral signature—stable speed, aligned COG and heading, negligible fluctuations, and linear trajectory—matches the continuity required across the gap. The vessel’s intent to maintain a fixed route is preserved, and the slight directional difference can be attributed to segment-specific orientation rather than behavioral divergence. Thus, it best represents a plausible continuation of the same navigational state.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that this function can solve the missing value problem corresponding to the behavior pattern is 98.04%, calculated as 100 / (100 + 2) = 100 / 102 ≈ 0.9804 or 98.04%. This proportion reflects the relative confidence in this function over the alternative, based on the strength of association observed across historical cases with similar kinematic profiles (stable speed, consistent COG, minimal heading fluctuation).  \n2. This function exhibits strong alignment with the current context by modeling linear motion through time-proportional interpolation, which matches the vessel’s observed near-constant velocity and directional stability. Its formulation assumes uniform progression between known points—consistent with vessels navigating fixed maritime routes under autopilot, as indicated by the behavioral metadata."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is operating under standard transit conditions typical for cargo ships in open waters near established shipping lanes. Its behavior—maintaining a stable speed, consistent course over ground, and minimal heading variation—reflects routine autopilot-assisted navigation along a fixed maritime route. This pattern is characteristic of vessels prioritizing fuel efficiency, navigational safety, and compliance with traffic separation schemes, even when spatial context data is incomplete. The observed kinematic stability rules out maneuvering, anchoring, or port operations, and strongly supports continuous forward motion along a predefined path. Given the alignment between course and heading, and the absence of abrupt changes, linear interpolation between known positions provides a physically accurate and temporally consistent method to reconstruct missing segments of the trajectory.\n'''",
+    "operational_protocol_rationale": "The vessel is operating under standard transit conditions typical for cargo ships in open waters near established shipping lanes. Its behavior—maintaining a stable speed, consistent course over ground, and minimal heading variation—reflects routine autopilot-assisted navigation along a fixed maritime route. This pattern is characteristic of vessels prioritizing fuel efficiency, navigational safety, and compliance with traffic separation schemes, even when spatial context data is incomplete. The observed kinematic stability rules out maneuvering, anchoring, or port operations, and strongly supports continuous forward motion along a predefined path. Given the alignment between course and heading, and the absence of abrupt changes, linear interpolation between known positions provides a physically accurate and temporally consistent method to reconstruct missing segments of the trajectory.\n'''"
+  },
+  "related": []
+}

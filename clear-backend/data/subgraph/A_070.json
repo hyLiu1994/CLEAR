@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_070",
+      "type": "attribute",
+      "label": "spatial_context: location: Steenfeld, Amt Mittelholstein, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, Germany; nearby_shipping_lanes: Gieselaukanal, Kanalfähre Fischerhütte, Kanalfähre Oldenbüttel, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_334_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_334_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8569484614080922781",
+      "type": "behavior",
+      "label": "Behavior 80922781",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_334_SEG_9",
+      "target": "A_070",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8569484614080922781",
+      "target": "A_070",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-8569484614080922781",
+    "A_070",
+    "TRJ_334_SEG_9"
+  ],
+  "centerNodeId": "A_070",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TRJ_2554_SEG_3",
+  "type": "segment",
+  "label": "Segment TRJ_2554_SEG_3",
+  "summary": "Segment 3 of trajectory 2554",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-18 07:20:05",
+    "End time: 2024-03-18 07:23:53"
+  ],
+  "metadata": {
+    "trajectory_id": "2554",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-18 07:20:05",
+    "end_time": "2024-03-18 07:23:53"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and dimensions typical of medium-sized freighters (100–150 m length, 20–25 m width) are observed to follow straight, fixed maritime routes near offshore infrastructure such as the Thor Offshore Substation in approximately 62% of comparable trajectory segments. This pattern is especially prevalent when vessels maintain stable speed and heading alignment, with edge weights from vessel attributes to this behavior pattern indicating strong association—particularly for navigation status (w=102), vessel type (w=73), and draught (w=39). Among all candidate patterns, vb_-4927443205807001530 ranks highest in cumulative support from static attributes, reflecting its frequent co-occurrence with vessels transiting open waters along defined shipping corridors under normal operating conditions.",
+    "contextual_justification": "The boundary movement pattern shows a vessel maintaining a stable speed (~14.6–14.7 knots), consistent course (COG 197.4°–199.6°), and fixed heading (196.0°), moving in a linear south-southeast direction—indicative of steady-state navigation along a fixed route. The selected movement vb_-4927443205807001530 matches this intent precisely, describing a \"navigating along a fixed route\" behavior with stable speed, gradual course evolution, and linear trajectory (northeast-bound). Although the absolute heading differs due to regional route orientation, the kinematic consistency—stable speed, minimal heading fluctuation, and persistent COG-heading alignment—is directly analogous. Given that the gap occurs within a known shipping lane context and the adjacent segments confirm sustained transit behavior, this pattern best preserves continuity in both motion dynamics and navigational intent.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to impute missing latitude and longitude for this behavior pattern is 98.04%, calculated as 100 / (100 + 2) = 100 / 102 ≈ 0.9804 or 98.04%. This proportion is derived from the relative association strength between the behavior pattern vb_-4927443205807001530 and the two candidate functions, where the sum of weights to all candidate functions is 102 (100 + 2), and the weight favoring vf_-7663396197665720575 is 100. This indicates a strong empirical preference for this function in similar historical contexts with stable motion patterns.  \n2. The function vf_-7663396197665720575 explicitly models linear spatial interpolation using time-proportional scaling, which aligns precisely with the observed kinematic stability—stable speed, consistent COG, and minimal heading fluctuation—indicating uniform motion along a fixed route. In contrast, vf_5240413252068673064, while conceptually similar, has significantly lower statistical support (1.96%) and lacks explicit directional alignment with the parametric trajectory model provided in the intent (lat(t) ≈ 56.114153 + 0.00087 × t, lon(t) ≈ 7.607993 + 0.00034 × t), reducing its contextual specificity."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Route Adherence in Designated Shipping Lanes (applicable to cargo vessels navigating near offshore infrastructure; spatial anchor: Thor Offshore Substation)\nOperational Protocol Rationale: Cargo vessels of this size and configuration, operating without hazardous cargo and maintaining engine propulsion, commonly follow predefined straight routes in open waters near critical maritime infrastructure. The observed stable speed, consistent course over ground, and tight alignment between heading and direction of travel indicate the vessel is under autopilot or bridge-controlled navigation adhering to a fixed corridor—typical behavior in regulated shipping lanes. This pattern reflects standard transit procedures designed to ensure predictability and collision avoidance. Alternative behaviors such as maneuvering, anchoring, or sharp course adjustments are inconsistent with the data, which shows no significant fluctuations in motion parameters. Given the proximity to a known offshore substation and the continuity of steady-state dynamics across adjacent segments, linear trajectory interpolation is both operationally justified and statistically well-supported.\n'''",
+    "operational_protocol_rationale": "Cargo vessels of this size and configuration, operating without hazardous cargo and maintaining engine propulsion, commonly follow predefined straight routes in open waters near critical maritime infrastructure. The observed stable speed, consistent course over ground, and tight alignment between heading and direction of travel indicate the vessel is under autopilot or bridge-controlled navigation adhering to a fixed corridor—typical behavior in regulated shipping lanes. This pattern reflects standard transit procedures designed to ensure predictability and collision avoidance. Alternative behaviors such as maneuvering, anchoring, or sharp course adjustments are inconsistent with the data, which shows no significant fluctuations in motion parameters. Given the proximity to a known offshore substation and the continuity of steady-state dynamics across adjacent segments, linear trajectory interpolation is both operationally justified and statistically well-supported.\n'''"
+  },
+  "related": []
+}

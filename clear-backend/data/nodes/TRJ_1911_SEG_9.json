@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1911_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1911_SEG_9",
+  "summary": "Segment 9 of trajectory 1911",
+  "description": [
+    "MMSI: 210568000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-31 06:28:18",
+    "End time: 2024-03-31 06:33:28"
+  ],
+  "metadata": {
+    "trajectory_id": "1911",
+    "vessel_id": "210568000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-31 06:28:18",
+    "end_time": "2024-03-31 06:33:28"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Strefa 6b okresowo zamykana dla żeglugi i rybołówstwa",
+    "Draught: [4, 6) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 54.6885 + 0.0021 × t + 0.00005 × t², lon(t) ≈ 16.1381 + 0.0062 × t + 0.0001 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

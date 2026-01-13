@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_399_SEG_5",
+  "type": "segment",
+  "label": "Segment TRJ_399_SEG_5",
+  "summary": "Segment 5 of trajectory 399",
+  "description": [
+    "MMSI: 209541000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-25 04:10:01",
+    "End time: 2024-03-25 04:16:37"
+  ],
+  "metadata": {
+    "trajectory_id": "399",
+    "vessel_id": "209541000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-25 04:10:01",
+    "end_time": "2024-03-25 04:16:37"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Hirtshals - Tórshavn, Hirtshals - Stavanger, HVDC Skagerak 3, Unnamed lane",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 14.7 and 15.2 knots with minimal variation)",
+      "course_change": "gradual and consistent (COG varies slightly between 214.6° and 217.5°, showing a slow, smooth evolution over time)",
+      "heading_fluctuation": "stable (heading remains tightly clustered around 216°–218°, with only minor oscillations)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "350~400"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed around 15.0 knots with minimal variation)",
+      "course_change": "gradual and consistent (COG varies slightly between 215.2° and 216.9°, showing a smooth evolution over time)",
+      "heading_fluctuation": "stable (heading remains almost constant at 217.0°, with only one minor deviation to 216.0°)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "300~350"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 15.0–15.2 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 214.9° and 217.1°, showing a slow, smooth evolution over time)",
+      "heading_fluctuation": "stable (heading remains almost fixed at 217.0°, with only one observation at 216.0°, indicating minimal yawing or rudder adjustments)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "350~400"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

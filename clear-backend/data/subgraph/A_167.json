@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_167",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: København – Oslo, Grenå - Halmstad",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_775_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_775_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1573339375762116078",
+      "type": "behavior",
+      "label": "Behavior 62116078",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_775_SEG_5",
+      "target": "A_167",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1573339375762116078",
+      "target": "A_167",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_775_SEG_5",
+    "B_vb_-1573339375762116078",
+    "A_167"
+  ],
+  "centerNodeId": "A_167",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

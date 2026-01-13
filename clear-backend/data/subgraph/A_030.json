@@ -1,0 +1,314 @@
+{
+  "nodes": [
+    {
+      "id": "A_030",
+      "type": "attribute",
+      "label": "spatial_context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Query failed with status 429",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_147_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_147_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_147_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_147_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_147_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_147_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_334_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_334_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_334_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_334_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_566_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_566_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_566_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_566_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_566_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_566_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_677_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_677_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_677_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_677_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_677_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_677_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6715482940052673078",
+      "type": "behavior",
+      "label": "Behavior 52673078",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4389644158351261855",
+      "type": "behavior",
+      "label": "Behavior 51261855",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4317838218391453589",
+      "type": "behavior",
+      "label": "Behavior 91453589",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-3813060913303659004",
+      "type": "behavior",
+      "label": "Behavior 03659004",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-24485554849544898",
+      "type": "behavior",
+      "label": "Behavior 49544898",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5735201309241879777",
+      "type": "behavior",
+      "label": "Behavior 41879777",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5941906554066646579",
+      "type": "behavior",
+      "label": "Behavior 66646579",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5778476742998890982",
+      "type": "behavior",
+      "label": "Behavior 98890982",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_147_SEG_2",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_147_SEG_0",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_147_SEG_6",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_4",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_334_SEG_2",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_566_SEG_5",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_566_SEG_4",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_566_SEG_3",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_0",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_6",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_677_SEG_3",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6715482940052673078",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4389644158351261855",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4317838218391453589",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-3813060913303659004",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-24485554849544898",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5735201309241879777",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5941906554066646579",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5778476742998890982",
+      "target": "A_030",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_147_SEG_0",
+    "TRJ_566_SEG_3",
+    "B_vb_4317838218391453589",
+    "B_vb_-3813060913303659004",
+    "TRJ_566_SEG_4",
+    "TRJ_677_SEG_3",
+    "TRJ_147_SEG_2",
+    "B_vb_8377157303611993086",
+    "TRJ_334_SEG_4",
+    "B_vb_-24485554849544898",
+    "B_vb_-6715482940052673078",
+    "TRJ_147_SEG_6",
+    "TRJ_566_SEG_5",
+    "B_vb_-5735201309241879777",
+    "TRJ_334_SEG_2",
+    "B_vb_-4857314466243141680",
+    "B_vb_-5778476742998890982",
+    "TRJ_677_SEG_6",
+    "A_030",
+    "B_vb_5941906554066646579",
+    "B_vb_-4389644158351261855",
+    "TRJ_677_SEG_0"
+  ],
+  "centerNodeId": "A_030",
+  "maxLevel": 1,
+  "totalNodes": 22,
+  "totalLinks": 21
+}

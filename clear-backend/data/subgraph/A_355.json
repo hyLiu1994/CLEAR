@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "A_355",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Trelleborg (SE) - Klaipėda (LT), Køge - Rønne, Świnoujście (PL) - Trelleborg (SE)",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2298_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2298_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2298_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2298_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2298_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2298_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2298_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_2298_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4927443205807001530",
+      "type": "behavior",
+      "label": "Behavior 07001530",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3081913737957353482",
+      "type": "behavior",
+      "label": "Behavior 57353482",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3436945641389082127",
+      "type": "behavior",
+      "label": "Behavior 89082127",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2298_SEG_3",
+      "target": "A_355",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2298_SEG_2",
+      "target": "A_355",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2298_SEG_5",
+      "target": "A_355",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2298_SEG_6",
+      "target": "A_355",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4927443205807001530",
+      "target": "A_355",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3081913737957353482",
+      "target": "A_355",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3436945641389082127",
+      "target": "A_355",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2298_SEG_2",
+    "TRJ_2298_SEG_5",
+    "B_vb_3436945641389082127",
+    "A_355",
+    "TRJ_2298_SEG_6",
+    "B_vb_3081913737957353482",
+    "B_vb_-4927443205807001530",
+    "TRJ_2298_SEG_3"
+  ],
+  "centerNodeId": "A_355",
+  "maxLevel": 1,
+  "totalNodes": 8,
+  "totalLinks": 7
+}

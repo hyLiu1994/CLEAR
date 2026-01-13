@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "A_069",
+      "type": "attribute",
+      "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Hirtshals - Tórshavn, Unnamed lane, Kristiansand - Hirtshals, Hirtshals - Kristiansand, Hirtshals - Stavanger",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_345_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_345_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_345_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_345_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4857314466243141680",
+      "type": "behavior",
+      "label": "Behavior 43141680",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_345_SEG_2",
+      "target": "A_069",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_345_SEG_1",
+      "target": "A_069",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4857314466243141680",
+      "target": "A_069",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_069",
+    "TRJ_345_SEG_2",
+    "B_vb_-4857314466243141680",
+    "TRJ_345_SEG_1"
+  ],
+  "centerNodeId": "A_069",
+  "maxLevel": 1,
+  "totalNodes": 4,
+  "totalLinks": 3
+}

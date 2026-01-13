@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_409_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_409_SEG_9",
+  "summary": "Segment 9 of trajectory 409",
+  "description": [
+    "MMSI: 209541000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-28 19:42:09",
+    "End time: 2024-03-28 19:48:40"
+  ],
+  "metadata": {
+    "trajectory_id": "409",
+    "vessel_id": "209541000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-28 19:42:09",
+    "end_time": "2024-03-28 19:48:40"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Leuchtturm Bülk, Olympiahafen Schilksee, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Bunkerstation Laboe, Hafenmeister, Yachthafen \"Baltic Bay\", Die Seenotretter DGzRS Station Schilksee, Unnamed lane, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Yachthafen Laboe, Fischschonbezirk Fuhlenau, Fischschonbezirk Schönberger Au, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Lotsenstation, Hafen Strande, Yachthafen Marina Wendtorf, Fischschonbezirk Strander Au, Kolberger Heide",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 6.2 and 8.5 knots with only minor fluctuations)",
+      "course_change": "gradual and consistent (COG increases steadily from 37.9° to 63.2°, indicating a smooth, continuous turn to the right)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 40°–61°, with minimal oscillation around a slowly increasing trend)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "350~400"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, decreasing only gradually from 12.5 to 7.2 knots over an extended period, indicating steady propulsion without abrupt changes)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 36.1° to 39.4°, then decreases slightly to 37.4°, reflecting a smooth evolution in direction rather than abrupt turns)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 33.0° to 36.0°, varying by only 3° over the entire sequence, indicating controlled steering)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "400~450"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

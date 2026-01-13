@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "A_010",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Pangea North UK/Denmark, TAT 10B EAST SECTION, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_19_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_19_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_19_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_19_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_19_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_19_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2434_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_2434_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-7223851643225560953",
+      "type": "behavior",
+      "label": "Behavior 25560953",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_1621199732389957009",
+      "type": "behavior",
+      "label": "Behavior 89957009",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5117658009441012102",
+      "type": "behavior",
+      "label": "Behavior 41012102",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_19_SEG_6",
+      "target": "A_010",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_19_SEG_7",
+      "target": "A_010",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_19_SEG_4",
+      "target": "A_010",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2434_SEG_9",
+      "target": "A_010",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-7223851643225560953",
+      "target": "A_010",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_1621199732389957009",
+      "target": "A_010",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5117658009441012102",
+      "target": "A_010",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_19_SEG_6",
+    "B_vb_-7223851643225560953",
+    "A_010",
+    "B_vb_5117658009441012102",
+    "B_vb_1621199732389957009",
+    "TRJ_19_SEG_7",
+    "TRJ_2434_SEG_9",
+    "TRJ_19_SEG_4"
+  ],
+  "centerNodeId": "A_010",
+  "maxLevel": 1,
+  "totalNodes": 8,
+  "totalLinks": 7
+}

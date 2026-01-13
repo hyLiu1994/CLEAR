@@ -1,0 +1,15 @@
+{
+  "id": "A_401",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Utklippans naturreservat",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Utklippans naturreservat",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Travemünde (D) – Helsinki (FIN), Utklippans naturreservat",
+    "support": 1
+  },
+  "related": []
+}

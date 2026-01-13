@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_7492618028034557460",
+  "type": "function",
+  "label": "Function 34557460",
+  "summary": "This function reconstructs missing vessel positions along a gently curving maritime trajectory by co...",
+  "description": [
+    "Function description: This function reconstructs missing vessel positions along a gently curving maritime trajectory by combining linear interpolation with a sinusoidal perturbation that models gradual course changes. The time intervals are normalized to [0,1] to enable smooth parametric modeling. A sine term with frequency 8 and amplitude decaying toward the end point is added to both latitude and longitude to simulate the observed gradual and consistent curvature in the vessel’s path, consistent with navigation along a curved channel. The decay factor `(1 - t_norm)` ensures the perturbation vanishes at the endpoints, preserving positional accuracy at known `start` and `end` points. This approach balances fidelity to the boundary conditions with realistic motion patterns derived from the stable speed and slowly varying COG/heading in the input data.\n\nThe resulting path approximates a smooth arc with localized curvature adjustments, reducing estimation error while maintaining numerical stability. The output is a list of `[lat, lon]` pairs with shape `(N, 2)` where `N = len(Time_interval)`, ensuring compatibility with downstream processing systems.",
+    "Code implementation: def spatial_function(start, end, Time_interval):\n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if len(t) > 1 else np.zeros_like(t); lat = start[0] + (end[0] - start[0]) * t_norm + 0.0005 * np.sin(8.0 * t_norm) * (1 - t_norm); lon = start[1] + (end[1] - start[1]) * t_norm + 0.0002 * np.sin(8.0 * t_norm) * (1 - t_norm); return np.column_stack((lat, lon)).tolist()"
+  ],
+  "metadata": {
+    "original_id": "vf_7492618028034557460",
+    "code": "def spatial_function(start, end, Time_interval):\n    import numpy as np; t = np.array(Time_interval); t_norm = (t - t[0]) / (t[-1] - t[0]) if len(t) > 1 else np.zeros_like(t); lat = start[0] + (end[0] - start[0]) * t_norm + 0.0005 * np.sin(8.0 * t_norm) * (1 - t_norm); lon = start[1] + (end[1] - start[1]) * t_norm + 0.0002 * np.sin(8.0 * t_norm) * (1 - t_norm); return np.column_stack((lat, lon)).tolist()"
+  },
+  "related": []
+}

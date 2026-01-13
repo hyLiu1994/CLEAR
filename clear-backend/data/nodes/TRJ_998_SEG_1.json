@@ -1,0 +1,43 @@
+{
+  "id": "TRJ_998_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_998_SEG_1",
+  "summary": "Segment 1 of trajectory 998",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 10:33:53",
+    "End time: 2024-03-11 10:37:41"
+  ],
+  "metadata": {
+    "trajectory_id": "998",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 10:33:53",
+    "end_time": "2024-03-11 10:37:41"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 13.7 and 14.2 knots, with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases steadily from 20.5° to 39.2° over the sequence, showing a smooth, continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading remains close to COG with only minor adjustments, varying from 23.0° to 39.0°, suggesting controlled directional changes without oscillation)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.8236 + 0.0014 × t + 0.00012 × t², lon(t) ≈ 10.8289 + 0.0011 × t + 0.00009 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with draughts between 8–10 m and dimensions in the 150–200 m length range are strongly associated with curved route-following behavior when navigating through structured shipping lanes such as Route T, Unnamed lane, and Samsø Bælt. This pattern is especially prevalent in transitional zones between coastal segments, where gradual course adjustments are required. The behavior pattern vb_82841811344196675 is linked to these vessel attributes with high statistical support: navigation status \"Under way using engine\" (w=96), vessel type \"Cargo\" (w=83), and length [150, 200) m (w=56)—translating to a combined contextual prevalence of approximately 72% relative to other candidate patterns. Additionally, this movement is consistently observed in spatial contexts involving multiple adjacent shipping lanes, reinforcing its plausibility in complex maritime corridors.",
+    "contextual_justification": "The boundary movement patterns show a continuous, smooth evolution of COG from 20.5° to 39.2° in the prior segment and then a slight rightward adjustment to 37.6° in the subsequent segment, indicating a vessel executing a prolonged, controlled turn along a curved channel. The selected movement vb_82841811344196675 exhibits a \"gradual and consistent\" course change with stable speed and heading, fully consistent with this turning trajectory. Its parametric model describes a gentle circular arc (radius ~2.5 km), which aligns geometrically with the curvature implied by the boundary segments. Furthermore, the gap occurs within a known network of regulated shipping lanes, and the incomplete AIS samples show a steady northeastward progression with increasing latitude and longitude—matching the spatiotemporal trend described in vb_82841811344196675. Thus, it bridges the kinematic and navigational context seamlessly.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Route Adherence in Structured Shipping Lanes – Applicable in transitional zones between coastal segments with adjacent regulated lanes (e.g., Route T, Unnamed lane, Samsø Bælt) – Spatial Anchor: Converging maritime corridors in Danish waters\nOperational Protocol Rationale: The selected behavior reflects a standard navigation practice for cargo vessels transiting through complex, interconnected shipping lanes where gradual course adjustments are required to follow predefined curved routes. Given the vessel’s operational state—under way using engine, with moderate draught and typical cargo dimensions—it is expected to maintain stable speed and heading while executing smooth turns aligned with charted channels. This pattern is consistent with autopilot-assisted passage along geometrically defined arcs in regulated traffic areas, ensuring collision avoidance and compliance with routing schemes. Alternative behaviors such as sharp maneuvers or straight-line trajectories are unlikely, as they would deviate from established lane geometries and disrupt traffic flow. The observed progression of course over ground, combined with minimal heading fluctuation, supports a controlled turn along a predictable path, characteristic of routine transit in these structured environments.\n'''",
+    "operational_protocol_rationale": "The selected behavior reflects a standard navigation practice for cargo vessels transiting through complex, interconnected shipping lanes where gradual course adjustments are required to follow predefined curved routes. Given the vessel’s operational state—under way using engine, with moderate draught and typical cargo dimensions—it is expected to maintain stable speed and heading while executing smooth turns aligned with charted channels. This pattern is consistent with autopilot-assisted passage along geometrically defined arcs in regulated traffic areas, ensuring collision avoidance and compliance with routing schemes. Alternative behaviors such as sharp maneuvers or straight-line trajectories are unlikely, as they would deviate from established lane geometries and disrupt traffic flow. The observed progression of course over ground, combined with minimal heading fluctuation, supports a controlled turn along a predictable path, characteristic of routine transit in these structured environments.\n'''"
+  },
+  "related": []
+}

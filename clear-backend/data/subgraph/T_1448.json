@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "T_1448",
+      "type": "trajectory",
+      "label": "Trajectory 210359000",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1448_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1448_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_1448_SEG_9",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1448_SEG_0",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_1",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_2",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_3",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_4",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_5",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_6",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_7",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_8",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1448_SEG_9",
+      "target": "T_1448",
+      "relation": "part_of",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_1448_SEG_8",
+    "TRJ_1448_SEG_1",
+    "TRJ_1448_SEG_7",
+    "TRJ_1448_SEG_3",
+    "TRJ_1448_SEG_6",
+    "TRJ_1448_SEG_4",
+    "TRJ_1448_SEG_2",
+    "TRJ_1448_SEG_5",
+    "T_1448",
+    "TRJ_1448_SEG_0",
+    "TRJ_1448_SEG_9"
+  ],
+  "centerNodeId": "T_1448",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

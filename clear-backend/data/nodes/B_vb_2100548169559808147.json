@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_2100548169559808147",
+  "type": "behavior",
+  "label": "Behavior 59808147",
+  "summary": "Vessel behavior pattern: following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 58.2884 + 0.00072 × t + 0.00001 × t², lon(t) ≈ 9.7048 + 0.00084 × t + 0.00002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a nearly constant speed of approximately 14.8–14.9 knots across the trajectory)",
+    "Course change: gradual and consistent (COG varies slightly between 29.7° and 31.5°, showing a smooth oscillation around a mean course of ~30.5°, indicating minor corrective steering or channel following)",
+    "Heading fluctuation: gradual and consistent (heading remains fixed at 32.0° throughout, suggesting autopilot mode with small rudder adjustments to maintain alignment with the desired track)",
+    "Behavior intent: following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: lat(t) ≈ 58.2884 + 0.00072 × t + 0.00001 × t², lon(t) ≈ 9.7048 + 0.00084 × t + 0.00002 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+    "Duration: 200~250"
+  ],
+  "metadata": {
+    "original_id": "vb_2100548169559808147",
+    "duration": "200~250",
+    "support": 24,
+    "pattern_key": [
+      "stable",
+      "gradual and consistent",
+      "gradual and consistent",
+      "following a curved maritime route",
+      "200~250"
+    ]
+  },
+  "related": []
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_075",
+      "type": "attribute",
+      "label": "spatial_context: location: Sehestedt, Hüttener Berge, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, 24814, Germany; nearby_shipping_lanes: Query failed with status 429",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_334_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_334_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-7501506743914594244",
+      "type": "behavior",
+      "label": "Behavior 14594244",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_334_SEG_7",
+      "target": "A_075",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-7501506743914594244",
+      "target": "A_075",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_075",
+    "B_vb_-7501506743914594244",
+    "TRJ_334_SEG_7"
+  ],
+  "centerNodeId": "A_075",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

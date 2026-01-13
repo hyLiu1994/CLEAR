@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_928_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_928_SEG_6",
+  "summary": "Segment 6 of trajectory 928",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 03:10:59",
+    "End time: 2024-03-27 03:16:43"
+  ],
+  "metadata": {
+    "trajectory_id": "928",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-27 03:10:59",
+    "end_time": "2024-03-27 03:16:43"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Die Seenotretter DGzRS, Kanalfähre Brunsbüttel, Kanalfähre Kudensee, Nord-Ostsee-Kanal, Kanalfähre Ostermoor, Unnamed lane, Lotsenhaus, helgoline",
+    "Draught: [8, 10) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel's speed over ground increases gradually but remains within a narrow range, indicating controlled acceleration typical in open channel navigation)",
+      "course_change": "gradual and consistent (COG changes from 66.9° to 80.5° over the sequence, showing a smooth, continuous turn to the east-northeast)",
+      "heading_fluctuation": "stable (heading varies only between 71° and 80°, with minimal oscillation, suggesting stabilized rudder control)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 53.88316 + 0.00032 × t + 0.00008 × t², lon(t) ≈ 9.099292 + 0.00142 × t + 0.00012 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "300~350"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 1.2 and 1.5 knots over multiple observations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases steadily from 1.9° to 63.0° over successive records, reflecting a smooth, continuous turn to the northeast)",
+      "heading_fluctuation": "stable (heading varies only slightly from 31.0° to 71.0°, closely aligned with COG changes, suggesting controlled rudder input without oscillation)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 53.8814 + 0.0002 × t + 0.00008 × t², lon(t) ≈ 9.0976 + 0.0012 × t + 0.00015 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "650~700"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, decreasing only slightly from 7.6 to 4.5 knots over the segment, indicating controlled movement without abrupt changes)",
+      "course_change": "gradual and consistent (COG decreases steadily from 80.2° to 49.4°, reflecting a smooth, continuous turn to the right over time)",
+      "heading_fluctuation": "stable (heading varies only between 79.0° and 51.0°, with small stepwise adjustments, suggesting deliberate rudder control rather than erratic behavior)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 53.886177 + 0.00032 × t + 0.00004 × t², lon(t) ≈ 9.119937 + 0.00118 × t + 0.00015 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "350~400"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

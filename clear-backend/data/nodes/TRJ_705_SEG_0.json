@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_705_SEG_0",
+  "type": "segment",
+  "label": "Segment TRJ_705_SEG_0",
+  "summary": "Segment 0 of trajectory 705",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-23 11:58:02",
+    "End time: 2024-03-23 12:35:17"
+  ],
+  "metadata": {
+    "trajectory_id": "705",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-23 11:58:02",
+    "end_time": "2024-03-23 12:35:17"
+  },
+  "static_attributes": [
+    "Navigation Status: Moored",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Copenhagen, Copenhagen Municipality, Capital Region of Denmark, 1357, Denmark; nearby_shipping_lanes: Mellembassinet, Bådklubben Sjællandsbroen, Skovshoved Havn, Fiskerhavnen, Kastrup Lystbådehavn - Gamle Havn, Langelinie Lystbådehavn, Teglværkshavnen, HDMS Peder Skram, Nyhavn - Flakfortet, Drogden, Kastrup Broforenings Bådehavn, København Vandflyveplads, Slip, Hellerup Havn, Orientbassinet, Kastrup Lystbådehavn - Saltholm (Barakkebroen), Kronløbsbassinet, P547 Sehested, Unnamed lane, Nyhavn - Middelgrundsfortet, Nordbjærgs Bådeværft, Scanport Havn, Svanemøllehavnen A/S, Bådelaug Havnestad, Flådens Leje, Lynettehavnen, Margretheholms Havn, Sejlklubben Triton, DSRS Station København, Færgehavn Nord - Erstatningshavn, Bådteatret, Tuborg Havn, København (DK) – Oslo (N), København (DK) - Hven (SE)",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains zero or near-zero speed across consecutive observations, indicating no significant movement)",
+      "course_change": "stable (COG remains nearly constant despite lack of movement, suggesting the vessel is not altering its intended direction)",
+      "heading_fluctuation": "stable (heading remains fixed at 110.0° throughout the sequence, indicating no active turning or yawing)",
+      "intent": "anchored or moored in a confined area (the combination of zero speed, fixed heading, and repeated identical latitude/longitude coordinates indicates the vessel is stationary; minor positional variations (~±0.0001° in lat/lon, ~10-meter range) are likely due to GPS noise or buoyancy effects while moored, forming a tight cluster around 55.71136°N, 12.60230°E)",
+      "duration": "2200~2250"
+    },
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "stable",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "'anchored or moored in a confined area'",
+      "duration": "2400~2450"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

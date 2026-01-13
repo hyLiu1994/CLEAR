@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_1535_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_1535_SEG_1",
+  "summary": "Segment 1 of trajectory 1535",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-20 22:15:40",
+    "End time: 2024-03-20 22:19:46"
+  ],
+  "metadata": {
+    "trajectory_id": "1535",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-20 22:15:40",
+    "end_time": "2024-03-20 22:19:46"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 429",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, increasing only slightly from 15.1 to 16.1 knots over the sequence, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly and uniformly between 28.8° and 36.3°, then stabilizes around 36°, reflecting a smooth turn or alignment with a curved channel)",
+      "heading_fluctuation": "stable (heading remains close to 35° throughout, with minor fluctuations between 30° and 36°, suggesting controlled directional stability)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.4360 + 0.0013 × t + 0.00008 × t², lon(t) ≈ 10.2324 + 0.0017 × t + 0.00012 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed with only gradual increases from 12.2 to 14.9 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG changes slowly from 31.5° to 30.5° over the sequence, showing a smooth, controlled evolution in direction)",
+      "heading_fluctuation": "stable (heading remains consistently at 30.0° or 31.0°, with minimal variation, suggesting precise rudder control)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.4225 + 0.0011 × t + 0.00005 × t², lon(t) ≈ 10.2185 + 0.0010 × t + 0.00004 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, decreasing only slightly from 16.1 to 11.8 knots over the segment, indicating steady propulsion without abrupt changes)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 36.3° to 36.7°, suggesting a smooth, intentional turn rather than random fluctuations)",
+      "heading_fluctuation": "stable (heading remains fixed at 35.0° for most of the segment, with only one minor change to 36.0°, indicating minimal rudder input and directional stability)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.4513 + 0.0013 × t + 0.00004 × t², lon(t) ≈ 10.2513 + 0.0017 × t + 0.00012 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

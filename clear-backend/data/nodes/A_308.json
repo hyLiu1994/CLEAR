@@ -1,0 +1,15 @@
+{
+  "id": "A_308",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Travemünde (D) – Malmö (SE), HVDC Baltic Cable, Klintholm Havn, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Travemünde (D) – Trelleborg (SE)",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Travemünde (D) – Malmö (SE), HVDC Baltic Cable, Klintholm Havn, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Travemünde (D) – Trelleborg (SE)",
+  "description": [
+    "This attribute is associated with 1 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Travemünde (D) – Malmö (SE), HVDC Baltic Cable, Klintholm Havn, Rostock - Trelleborg, Rostock (D) - Trelleborg (SE), C-Lion 1, Travemünde (D) – Trelleborg (SE)",
+    "support": 1
+  },
+  "related": []
+}

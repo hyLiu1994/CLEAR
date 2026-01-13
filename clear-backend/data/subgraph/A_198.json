@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_198",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Storebælt, Ballen-Røsnæs, Route T, Unnamed lane, Samsø Bælt",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_998_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_998_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8377157303611993086",
+      "type": "behavior",
+      "label": "Behavior 11993086",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_998_SEG_2",
+      "target": "A_198",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8377157303611993086",
+      "target": "A_198",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_8377157303611993086",
+    "TRJ_998_SEG_2",
+    "A_198"
+  ],
+  "centerNodeId": "A_198",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

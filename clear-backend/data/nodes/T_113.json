@@ -1,0 +1,17 @@
+{
+  "id": "T_113",
+  "type": "trajectory",
+  "label": "Trajectory 209276000",
+  "summary": "Complete trajectory of vessel 209276000",
+  "description": [
+    "MMSI: 209276000",
+    "Contains 10 segments",
+    "Total data points: 200"
+  ],
+  "metadata": {
+    "mmsi": "209276000",
+    "num_segments": 10,
+    "num_points": 200
+  },
+  "related": []
+}

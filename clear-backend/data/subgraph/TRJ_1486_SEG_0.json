@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_1486_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_1486_SEG_0",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_1486",
+      "type": "trajectory",
+      "label": "Trajectory 210359000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6819306279795601568",
+      "type": "behavior",
+      "label": "Behavior 95601568",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_006",
+      "type": "attribute",
+      "label": "vessel_type: Cargo",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_037",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Aurora, Travemünde (D) – Helsinki (FIN), Travemünde (D) – Liepāja (LV), Unnamed lane",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_404",
+      "type": "attribute",
+      "label": "draught: [6, 8) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_411",
+      "type": "attribute",
+      "label": "length: [150, 200) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_415",
+      "type": "attribute",
+      "label": "width: [20, 25) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_5240413252068673064",
+      "type": "function",
+      "label": "Function 68673064",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "T_1486",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "B_vb_6819306279795601568",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "A_006",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "A_037",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "A_404",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "A_411",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "A_415",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1486_SEG_0",
+      "target": "F_vf_5240413252068673064",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_411",
+    "A_001",
+    "A_037",
+    "B_vb_6819306279795601568",
+    "A_404",
+    "T_1486",
+    "A_415",
+    "A_004",
+    "F_vf_5240413252068673064",
+    "TRJ_1486_SEG_0",
+    "A_006"
+  ],
+  "centerNodeId": "TRJ_1486_SEG_0",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

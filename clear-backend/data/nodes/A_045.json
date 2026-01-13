@@ -1,0 +1,15 @@
+{
+  "id": "A_045",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Unnamed traffic separation scheme",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Unnamed traffic separation scheme",
+  "description": [
+    "This attribute is associated with 10 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Unnamed traffic separation scheme",
+    "support": 10
+  },
+  "related": []
+}

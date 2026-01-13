@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-8219356608673346866",
+  "type": "behavior",
+  "label": "Behavior 73346866",
+  "summary": "Vessel behavior pattern: following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+  "description": [
+    "Speed profile: stable (the vessel maintains a consistent speed between 10.2 and 10.5 knots with minimal variation)",
+    "Course change: gradual and consistent (COG varies slowly between 353.8° and 358.4°, indicating a smooth, continuous adjustment in direction over time)",
+    "Heading fluctuation: stable (heading remains nearly constant at 2–3°, suggesting the vessel is not making abrupt turns)",
+    "Behavior intent: following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+    "Duration: 350~400"
+  ],
+  "metadata": {
+    "original_id": "vb_-8219356608673346866",
+    "duration": "350~400",
+    "support": 37,
+    "pattern_key": [
+      "stable",
+      "gradual and consistent",
+      "stable",
+      "following a curved maritime route",
+      "350~400"
+    ]
+  },
+  "related": []
+}

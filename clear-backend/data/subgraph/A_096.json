@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_096",
+      "type": "attribute",
+      "label": "spatial_context: location: Lindau, Dänischer Wohld, Kreis Rendsburg-Eckernförde, Schleswig-Holstein, Germany; nearby_shipping_lanes: Kanalfähre Sehestedt, Kanalfähre Landwehr, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_409_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_409_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-2583742504898875238",
+      "type": "behavior",
+      "label": "Behavior 98875238",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_409_SEG_3",
+      "target": "A_096",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2583742504898875238",
+      "target": "A_096",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_096",
+    "B_vb_-2583742504898875238",
+    "TRJ_409_SEG_3"
+  ],
+  "centerNodeId": "A_096",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

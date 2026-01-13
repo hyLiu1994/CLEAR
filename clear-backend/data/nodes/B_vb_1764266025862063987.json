@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_1764266025862063987",
+  "type": "behavior",
+  "label": "Behavior 62063987",
+  "summary": "Vessel behavior pattern: navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 56.388915 - 0.00042 × t, lon(t) ≈ 16.859052 - 0.00024 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+  "description": [
+    "Speed profile: {'stable': True}",
+    "Course change: 'gradual and consistent'",
+    "Heading fluctuation: {'stable': True}",
+    "Behavior intent: navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 56.388915 - 0.00042 × t, lon(t) ≈ 16.859052 - 0.00024 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+    "Duration: 1500~1550"
+  ],
+  "metadata": {
+    "original_id": "vb_1764266025862063987",
+    "duration": "1500~1550",
+    "support": 8,
+    "pattern_key": [
+      "{'stable': True}",
+      "'gradual and consistent'",
+      "{'stable': True}",
+      "navigating along a fixed route",
+      "1500~1550"
+    ]
+  },
+  "related": []
+}

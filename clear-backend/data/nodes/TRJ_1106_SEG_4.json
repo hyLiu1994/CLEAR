@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_1106_SEG_4",
+  "type": "segment",
+  "label": "Segment TRJ_1106_SEG_4",
+  "summary": "Segment 4 of trajectory 1106",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-23 23:13:32",
+    "End time: 2024-03-23 23:17:48"
+  ],
+  "metadata": {
+    "trajectory_id": "1106",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-23 23:13:32",
+    "end_time": "2024-03-23 23:17:48"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'stable': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.0353 - 0.0018 × t, lon(t) ≈ 13.9653 - 0.0078 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.4 and 15.6 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly from 250.2° to 250.8°, then stabilizes around 250.3°–250.6°, showing a minor but smooth adjustment in direction)",
+      "heading_fluctuation": "stable (heading remains within 250.0°–251.0°, with only a 1° variation, indicating minimal rudder input and stable steering)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.022435 - 0.0027 × t, lon(t) ≈ 13.90419 - 0.0042 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with lengths between 150–200 m and draughts in [8, 10) m are strongly associated with behavior patterns involving stable speed and gradual course changes along curved maritime routes. This pattern (vb_82841811344196675) is the most frequently co-occurring with the vessel’s static attributes: it appears in 96% of cases for navigation status \"Under way using engine\", 83% for vessel type \"Cargo\", and 56% for length [150, 200) m—higher than any other candidate. The spatial context of being near shipping lanes further supports this selection, as such routes commonly involve controlled turns along predefined channels. Among all plausible patterns, this one shows the strongest weighted association across multiple static attributes, indicating high contextual prevalence.",
+    "contextual_justification": "The boundary movement pattern shows a stable speed (~15.4–15.5 knots), gradual and consistent COG increase (248.5° → 250.4°), and minimal heading fluctuation (250°–251°), indicating a smooth turn along a curved route. While vb_82841811344196675 has a slightly lower speed (~10.1–10.2 knots), its core behavioral signature—stable speed, steady heading, and gradual COG evolution along a modeled curvilinear trajectory—aligns closely with the boundary dynamics. The intent \"following a curved maritime route\" and parametric arc-based modeling match the structural continuity expected across the gap. Other candidates either imply straighter trajectories (e.g., fixed-route patterns) or exhibit less graph support despite similar kinematic profiles.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that function `vf_5240413252068673064` correctly addresses the missing value problem given the observed behavior pattern is 98.96%. This is derived from the proportional weight distribution between the two candidate functions in the context of the identified behavior pattern. Specifically, the total association weight for the behavior pattern `vb_82841811344196675` is the sum of its connections: 95 (to `vf_5240413252068673064`) + 1 (to `vf_-7663396197665720575`) = 96. Therefore, the likelihood that `vf_5240413252068673064` is the appropriate choice is 95 / 96 ≈ 0.9896, or 98.96%.  \n2. Function `vf_5240413252068673064` implements linear interpolation based on proportional time intervals and assumes constant velocity motion along a near-linear trajectory. It has been associated with stable speed profiles, consistent COG, and minimal heading fluctuations—characteristics directly matching the current vessel behavior. In contrast, `vf_-7663396197665720575`, while also performing linear interpolation, shows negligible statistical support (1.04%) in this behavioral context, indicating significantly lower empirical reliability for this specific kinematic pattern."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is a cargo ship operating under engine power, with dimensions and draft typical for large commercial vessels navigating structured waterways. It is moving steadily along a gently curving route, maintaining a consistent speed and heading with only minor, smooth adjustments to its course—indicative of autopilot-assisted navigation in a controlled maritime environment. This behavior aligns with standard operating procedures for vessels transiting near designated shipping lanes, where predictable, stable motion is required to ensure safe separation from other traffic and adherence to established routing schemes. Although the path has a slight curvature, the segment is short enough that the movement appears nearly linear locally, justifying the use of uniform interpolation between known positions. Alternative behaviors involving abrupt maneuvers or erratic speed changes are inconsistent with both the observed data and typical practices in such contexts, further supporting the interpretation of this as a routine transit along a predefined corridor.\n'''",
+    "operational_protocol_rationale": "The vessel is a cargo ship operating under engine power, with dimensions and draft typical for large commercial vessels navigating structured waterways. It is moving steadily along a gently curving route, maintaining a consistent speed and heading with only minor, smooth adjustments to its course—indicative of autopilot-assisted navigation in a controlled maritime environment. This behavior aligns with standard operating procedures for vessels transiting near designated shipping lanes, where predictable, stable motion is required to ensure safe separation from other traffic and adherence to established routing schemes. Although the path has a slight curvature, the segment is short enough that the movement appears nearly linear locally, justifying the use of uniform interpolation between known positions. Alternative behaviors involving abrupt maneuvers or erratic speed changes are inconsistent with both the observed data and typical practices in such contexts, further supporting the interpretation of this as a routine transit along a predefined corridor.\n'''"
+  },
+  "related": []
+}

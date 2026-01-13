@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-6825995882899042880",
+  "type": "behavior",
+  "label": "Behavior 99042880",
+  "summary": "Vessel behavior pattern: navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.0338 - 0.0061 × t, lon(t) ≈ 13.9258 - 0.0170 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a nearly constant speed between 13.3 and 13.7 knots, indicating steady propulsion)",
+    "Course change: gradual and consistent (COG remains stable at 247–248° across all observations, with only minor stepwise adjustments, indicating a smooth, intentional course)",
+    "Heading fluctuation: stable (heading is consistently 249° throughout the trajectory, showing no oscillation or instability in vessel orientation)",
+    "Behavior intent: navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 55.0338 - 0.0061 × t, lon(t) ≈ 13.9258 - 0.0170 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+    "Duration: 650~700"
+  ],
+  "metadata": {
+    "original_id": "vb_-6825995882899042880",
+    "duration": "650~700",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "gradual and consistent",
+      "stable",
+      "navigating along a fixed route",
+      "650~700"
+    ]
+  },
+  "related": []
+}

@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_6613672576054589086",
+  "type": "behavior",
+  "label": "Behavior 54589086",
+  "summary": "Vessel behavior pattern: navigating along a fixed route (the vessel is following a near-linear southwestward trajectory, likely on a designated shipping lane or transit corridor)",
+  "description": [
+    "Speed profile: stable (the vessel is maintaining a consistent speed, approximately 10.7–10.8 knots, with minimal variation)",
+    "Course change: stable (the course over ground fluctuates slightly between 191.6° and 196.5°, indicating a generally consistent direction)",
+    "Heading fluctuation: stable (the heading remains close to 198°, varying only between 196° and 199°, suggesting steady steering)",
+    "Behavior intent: navigating along a fixed route (the vessel is following a near-linear southwestward trajectory, likely on a designated shipping lane or transit corridor)",
+    "Duration: 250~300"
+  ],
+  "metadata": {
+    "original_id": "vb_6613672576054589086",
+    "duration": "250~300",
+    "support": 15,
+    "pattern_key": [
+      "stable",
+      "stable",
+      "stable",
+      "navigating along a fixed route",
+      "250~300"
+    ]
+  },
+  "related": []
+}

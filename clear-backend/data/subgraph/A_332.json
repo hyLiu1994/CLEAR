@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "A_332",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Europipe, Statpipe, Unnamed lane",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2085_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2085_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2085_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5034770572000743103",
+      "type": "behavior",
+      "label": "Behavior 00743103",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_5117658009441012102",
+      "type": "behavior",
+      "label": "Behavior 41012102",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1573339375762116078",
+      "type": "behavior",
+      "label": "Behavior 62116078",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2085_SEG_5",
+      "target": "A_332",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_3",
+      "target": "A_332",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_0",
+      "target": "A_332",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2085_SEG_2",
+      "target": "A_332",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-5034770572000743103",
+      "target": "A_332",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_5117658009441012102",
+      "target": "A_332",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1573339375762116078",
+      "target": "A_332",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-5034770572000743103",
+    "A_332",
+    "B_vb_5117658009441012102",
+    "TRJ_2085_SEG_5",
+    "TRJ_2085_SEG_2",
+    "TRJ_2085_SEG_0",
+    "B_vb_-1573339375762116078",
+    "TRJ_2085_SEG_3"
+  ],
+  "centerNodeId": "A_332",
+  "maxLevel": 1,
+  "totalNodes": 8,
+  "totalLinks": 7
+}

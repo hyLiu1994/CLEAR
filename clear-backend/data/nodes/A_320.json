@@ -1,0 +1,15 @@
+{
+  "id": "A_320",
+  "type": "attribute",
+  "label": "spatial_context: location: Rostock, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Sondergebiet Warnow, Kontek, Rostock - Trelleborg, Petribrücke, Rostock (D) - Trelleborg (SE), Hafenmeister, C-Lion 1, Unnamed lane, Hotel Neptun, Rostock (D) – Gedser (S), Leuchtturm Warnemünde, Pagenwerder",
+  "summary": "spatial_context attribute: location: Rostock, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Sondergebiet Warnow, Kontek, Rostock - Trelleborg, Petribrücke, Rostock (D) - Trelleborg (SE), Hafenmeister, C-Lion 1, Unnamed lane, Hotel Neptun, Rostock (D) – Gedser (S), Leuchtturm Warnemünde, Pagenwerder",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Rostock, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Sondergebiet Warnow, Kontek, Rostock - Trelleborg, Petribrücke, Rostock (D) - Trelleborg (SE), Hafenmeister, C-Lion 1, Unnamed lane, Hotel Neptun, Rostock (D) – Gedser (S), Leuchtturm Warnemünde, Pagenwerder",
+    "support": 2
+  },
+  "related": []
+}

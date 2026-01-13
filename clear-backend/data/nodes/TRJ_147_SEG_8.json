@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_147_SEG_8",
+  "type": "segment",
+  "label": "Segment TRJ_147_SEG_8",
+  "summary": "Segment 8 of trajectory 147",
+  "description": [
+    "MMSI: 209276000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-16 14:34:01",
+    "End time: 2024-03-16 14:37:50"
+  ],
+  "metadata": {
+    "trajectory_id": "147",
+    "vessel_id": "209276000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-16 14:34:01",
+    "end_time": "2024-03-16 14:37:50"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Schleswig-Holstein, Germany; nearby_shipping_lanes: Leuchtturm Bülk, Olympiahafen Schilksee, Fischschonbezirk Barsbeker Au, Klaipėda (LT) – Kiel (D), Unnamed lane, Naturschutzgebiet Bottsand, Marine-Ehrenmal Laboe, Schießgebiet Todendorf, Fischschonbezirk Fuhlenau, Fischschonbezirk Schönberger Au, Fördelinie, Fischschonbezirk Hagener Au, Kalifornien, Museumshafen Probstei, U-995, Lotsenstation, Hafen Strande, Yachthafen Marina Wendtorf, Fischschonbezirk Strander Au, Kolberger Heide",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed with only minor increases, ranging from 10.2 to 13.3 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 51.2° to 58.3°, reflecting a smooth, continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading varies slightly from 49.0° to 57.0°, changing in small increments, aligned with the COG trend, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial:",
+      "duration": "200~250"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 7.7 and 10.1 knots with minimal fluctuation)",
+      "course_change": "gradual and consistent (COG increases slowly and consistently from 36.3° to 51.4°, indicating a smooth turn to the right)",
+      "heading_fluctuation": "stable (heading varies only slightly between 33.0° and 51.0°, remaining closely aligned with COG)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: latitude ≈ 54.471 + 0.00016 × (longitude − 10.285)^2, where longitude ∈ [10.285, 10.300])",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed, with SOG increasing only slightly from 13.4 to 14.8 knots, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases steadily from 57.5° to 62.1°, showing a smooth, continuous turn to starboard over time)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 58.0° to 61.0°, with minimal variation, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: latitude ≈ 54.4879 + 0.0002*(t), longitude ≈ 10.3194 + 0.0003*(t) + 0.00001*(t)², where t is sequential observation index)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

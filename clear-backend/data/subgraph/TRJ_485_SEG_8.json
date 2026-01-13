@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_485_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_485_SEG_8",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_485",
+      "type": "trajectory",
+      "label": "Trajectory 209672000",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-5735201309241879777",
+      "type": "behavior",
+      "label": "Behavior 41879777",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_001",
+      "type": "attribute",
+      "label": "navigation_status: Under way using engine",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_004",
+      "type": "attribute",
+      "label": "hazardous_cargo: no",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_005",
+      "type": "attribute",
+      "label": "vessel_type: Tanker",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_009",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_405",
+      "type": "attribute",
+      "label": "draught: [4, 6) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_412",
+      "type": "attribute",
+      "label": "length: [50, 100) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "A_414",
+      "type": "attribute",
+      "label": "width: [15, 20) m",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "F_vf_-7663396197665720575",
+      "type": "function",
+      "label": "Function 65720575",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "T_485",
+      "relation": "part_of",
+      "level": 1
+    },
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "B_vb_-5735201309241879777",
+      "relation": "exhibits_behavior",
+      "level": 1
+    },
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "A_001",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "A_004",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "A_005",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "A_009",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "A_405",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "A_412",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "A_414",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_485_SEG_8",
+      "target": "F_vf_-7663396197665720575",
+      "relation": "uses_function",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "T_485",
+    "A_414",
+    "A_001",
+    "A_412",
+    "A_009",
+    "B_vb_-5735201309241879777",
+    "A_405",
+    "A_005",
+    "TRJ_485_SEG_8",
+    "F_vf_-7663396197665720575",
+    "A_004"
+  ],
+  "centerNodeId": "TRJ_485_SEG_8",
+  "maxLevel": 1,
+  "totalNodes": 11,
+  "totalLinks": 10
+}

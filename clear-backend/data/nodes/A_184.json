@@ -1,0 +1,15 @@
+{
+  "id": "A_184",
+  "type": "attribute",
+  "label": "spatial_context: nearby_shipping_lanes: Hafenmeisterbüro, Unnamed lane, helgoline",
+  "summary": "spatial_context attribute: nearby_shipping_lanes: Hafenmeisterbüro, Unnamed lane, helgoline",
+  "description": [
+    "This attribute is associated with 2 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "nearby_shipping_lanes: Hafenmeisterbüro, Unnamed lane, helgoline",
+    "support": 2
+  },
+  "related": []
+}

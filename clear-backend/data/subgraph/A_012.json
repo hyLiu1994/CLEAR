@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_012",
+      "type": "attribute",
+      "label": "spatial_context: location: Kristiansand, Agder, 4611, Norway; nearby_shipping_lanes: Lahelle, Ronsbukta, Nodeviga (store), Hånesbukta, Otra (nedre), Kristiansand - Hirtshals, Hirtshals - Kristiansand, Kjøita, Otterdalen, Unnamed lane, ODIN 2, Terneviga, Kuholmen båthavn, Havfrue/AEC-2, Denmark-Norway 6, Kristiansand gjestehavn, HVDC Skagerrak 4, Prestviga, Auglandsbukta, Tresse, Christiansholm, HAVSIL Fiber Cable System",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_19_SEG_1",
+      "type": "segment",
+      "label": "Segment TRJ_19_SEG_1",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8852213617362902720",
+      "type": "behavior",
+      "label": "Behavior 62902720",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_19_SEG_1",
+      "target": "A_012",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8852213617362902720",
+      "target": "A_012",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_012",
+    "B_vb_-8852213617362902720",
+    "TRJ_19_SEG_1"
+  ],
+  "centerNodeId": "A_012",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

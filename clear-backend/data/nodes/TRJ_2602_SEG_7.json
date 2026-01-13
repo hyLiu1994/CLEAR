@@ -1,0 +1,49 @@
+{
+  "id": "TRJ_2602_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_2602_SEG_7",
+  "summary": "Segment 7 of trajectory 2602",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-26 08:32:16",
+    "End time: 2024-03-26 08:36:45"
+  ],
+  "metadata": {
+    "trajectory_id": "2602",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-26 08:32:16",
+    "end_time": "2024-03-26 08:36:45"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 55.540982 - 0.00054 × t + 0.00003 × t², lon(t) ≈ 7.382777 + 0.00007 × t + 0.00001 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "1050~1100"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) ≈ 55.4698 - 0.0058 × t, lon(t) ≈ 7.3964 + 0.0012 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and operating near major shipping lanes (such as CANTAT 3 F7 and NordLink) most frequently exhibit behavior patterns consistent with following a gently curving maritime route. Among the candidate movements, vb_82841811344196675 is strongly supported by the vessel’s static attributes: navigation status (weight = 96), vessel type (weight = 83), and absence of hazardous cargo (weight = 96), which collectively account for approximately 68% of the total weighted evidence across all candidates. This pattern is particularly prevalent in vessels of similar dimensions (length [100, 150) m, width [20, 25) m, draught [8, 10) m) navigating constrained coastal waters where alignment with predefined curved routes is required. The high co-occurrence between \"Cargo\" type and this specific movement pattern suggests it represents a standard operational profile in such spatial contexts.",
+    "contextual_justification": "The boundary movement pattern describes a vessel following a curved maritime route with stable speed, gradual and consistent course change, and minimal heading fluctuation—indicative of controlled navigation along a circular arc (~2.5 km radius). The parametric trajectory model from the boundary segment (lat(t) ≈ 55.5896 - 0.0034 × t + 0.00012 × t², lon(t) ≈ 7.3746 + 0.0008 × t + 0.00004 × t²) aligns closely in form and scale with the mathematical model embedded in vb_82841811344196675 (lat(t) ≈ 56.150075 + 0.00085 × t + 0.000012 × t², lon(t) ≈ 7.621433 + 0.00035 × t + 0.000008 × t²), both representing second-order polynomial curves typical of smooth channel navigation. Furthermore, the duration range (200~250) matches the temporal expectations for such transitional segments, and the stable dynamics are consistent with the observed AIS samples showing steady SOG and progressive latitudinal decrease with slight longitudinal increase. Thus, vb_82841811344196675 best bridges the kinematic and geometric continuity across the gap.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Undetermined\nOperational Protocol Rationale: The vessel is navigating in a region near major shipping lanes, where structured routing is common to ensure safe separation of traffic. Given its cargo type, lack of hazardous materials, and steady movement characteristics—such as consistent speed, minimal heading variation, and a gradual, smooth course change—it is following a standard operational profile for non-hazardous cargo vessels transiting curved coastal channels or designated routes. This behavior reflects routine autopilot-assisted navigation along predefined paths, typical in constrained waters where predictable trajectories enhance collision avoidance. Alternative behaviors like sharp maneuvering or variable speed are unlikely, as they would deviate from efficient transit norms and increase navigational risk in high-traffic zones.\n'''",
+    "operational_protocol_rationale": "The vessel is navigating in a region near major shipping lanes, where structured routing is common to ensure safe separation of traffic. Given its cargo type, lack of hazardous materials, and steady movement characteristics—such as consistent speed, minimal heading variation, and a gradual, smooth course change—it is following a standard operational profile for non-hazardous cargo vessels transiting curved coastal channels or designated routes. This behavior reflects routine autopilot-assisted navigation along predefined paths, typical in constrained waters where predictable trajectories enhance collision avoidance. Alternative behaviors like sharp maneuvering or variable speed are unlikely, as they would deviate from efficient transit norms and increase navigational risk in high-traffic zones.\n'''"
+  },
+  "related": []
+}

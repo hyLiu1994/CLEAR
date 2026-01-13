@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_962_SEG_2",
+  "type": "segment",
+  "label": "Segment TRJ_962_SEG_2",
+  "summary": "Segment 2 of trajectory 962",
+  "description": [
+    "MMSI: 210028000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-05 10:02:19",
+    "End time: 2024-03-05 10:06:07"
+  ],
+  "metadata": {
+    "trajectory_id": "962",
+    "vessel_id": "210028000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-05 10:02:19",
+    "end_time": "2024-03-05 10:06:07"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed between 15.1 and 15.5 knots, with minimal variation, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG increases steadily from 54.7° to 69.9° over the sequence, showing a smooth, continuous turn to starboard)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 56.0° to 70.0°, closely aligned with COG, indicating controlled directional stability)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.74513 + 0.00085 × t + 0.00012 × t², lon(t) ≈ 12.729747 + 0.00215 × t + 0.00028 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 15.5–15.6 knots across all observations)",
+      "course_change": "gradual and consistent (COG varies slightly between 69.1° and 69.8°, showing a smooth, minor adjustment in direction over time)",
+      "heading_fluctuation": "stable (heading remains almost constant at 70.0° or 69.0°, with only a 1° fluctuation, indicating steady steering)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 54.76002 + 0.00033 × t, lon(t) ≈ 12.788507 + 0.00152 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with no hazardous cargo and typical dimensions ([150, 200) m length, [25, 30) m width, [6, 8) m draught) navigating near major Baltic shipping lanes such as Travemünde–Helsinki or Klaipėda–Kiel exhibit the \"following a curved maritime route\" behavior in approximately 78% of observed segments when aligned with stable speed and gradual course changes. This pattern is particularly prevalent (accounting for over 89% of weighted associations) among vessels maintaining consistent heading and COG alignment in confined or regulated waters, where trajectory curvature matches predefined channel geometries. The spatial context further reinforces this tendency, as curved routing is standard near coastal bends and traffic separation schemes in the southern Baltic Sea.",
+    "contextual_justification": "The boundary movement pattern shows a vessel maintaining stable speed (~15.5 knots), consistent heading (55°–56°), and a slowly evolving COG (54.3° to 55.3°), clearly indicating navigation along a gently curving route. Among the candidate movements, vb_3081913737957353482 best matches this behavioral signature—exhibiting stable speed, gradual and consistent course change, and a modeled circular arc trajectory with radius ~2.5 km, consistent with the same type of navigational context. Although its absolute speed (7.7–10.1 knots) is lower than the boundary segment, the kinematic *pattern* (stability, smooth evolution of COG, tight heading-COG alignment) and intent (\"following a curved maritime route\") are fully consistent with the vessel’s observed trajectory before and after the gap. The parametric latitude-longitude progression in vb_3081913737957353482 also reflects a similar second-order curvilinear motion as seen in the boundary model equation, supporting continuity across the missing block.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-3532178402678649056 correctly addresses the missing value problem given the observed behavior pattern is 98.9%, calculated as 88 / (88 + 1) ≈ 0.98875 ≈ 98.9%. This proportion reflects the relative confidence in this function over the alternative based on historical performance alignment with the identified motion characteristics.  \n2. This function incorporates quadratic trajectory modeling, which aligns with the vessel’s intent to follow a curved maritime route exhibiting stable speed and gradual course change. In contrast, linear interpolation methods have shown lower fidelity (approximately 1.1% support weight) when applied to trajectories with measurable curvature, particularly in coastal navigation scenarios where turning behavior is consistent but subtle. The parametric form used in this function mirrors empirically derived vessel movement models under similar navigational constraints."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in southern Baltic Sea shipping lanes; spatial anchor: proximity to established routes including Travemünde–Helsinki and Klaipėda–Kiel\nOperational Protocol Rationale: The vessel's behavior—maintaining stable speed, consistent heading, and a gradually changing course over ground—aligns with standard navigation procedures in regulated maritime corridors where curved routing is required to follow designated channels or avoid hazards. This pattern is typical in confined coastal waters of the southern Baltic Sea, where traffic flows are organized along predefined arcs to manage congestion and ensure safe separation between opposing lanes. The observed trajectory curvature reflects intentional path-following rather than maneuvering, as there are no abrupt changes in speed or direction. Linear motion models would not adequately capture the subtle turning behavior evident before and after the data gap, making quadratic interpolation more appropriate for preserving navigational continuity. Alternative behaviors such as anchoring, loitering, or sharp turning are inconsistent with both the vessel’s operational state (\"under way using engine\") and its alignment with major shipping routes.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining stable speed, consistent heading, and a gradually changing course over ground—aligns with standard navigation procedures in regulated maritime corridors where curved routing is required to follow designated channels or avoid hazards. This pattern is typical in confined coastal waters of the southern Baltic Sea, where traffic flows are organized along predefined arcs to manage congestion and ensure safe separation between opposing lanes. The observed trajectory curvature reflects intentional path-following rather than maneuvering, as there are no abrupt changes in speed or direction. Linear motion models would not adequately capture the subtle turning behavior evident before and after the data gap, making quadratic interpolation more appropriate for preserving navigational continuity. Alternative behaviors such as anchoring, loitering, or sharp turning are inconsistent with both the vessel’s operational state (\"under way using engine\") and its alignment with major shipping routes.\n'''"
+  },
+  "related": []
+}

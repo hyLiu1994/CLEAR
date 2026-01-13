@@ -1,0 +1,15 @@
+{
+  "id": "A_053",
+  "type": "attribute",
+  "label": "spatial_context: location: Denmark; nearby_shipping_lanes: Query failed with status 504",
+  "summary": "spatial_context attribute: location: Denmark; nearby_shipping_lanes: Query failed with status 504",
+  "description": [
+    "This attribute is associated with 8 behavior patterns"
+  ],
+  "metadata": {
+    "category": "spatial_context",
+    "attribute_name": "location: Denmark; nearby_shipping_lanes: Query failed with status 504",
+    "support": 8
+  },
+  "related": []
+}

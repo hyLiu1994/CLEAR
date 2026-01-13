@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-1960071432756735928",
+  "type": "behavior",
+  "label": "Behavior 56735928",
+  "summary": "Vessel behavior pattern: anchored or moored in a confined area (the combination of zero speed (SOG = 0.0), repeated small oscillations in position around latitude ~56.1586 and longitude ~14.8162, and stable heading/COD suggests the vessel is not underway; the position dispersion forms a tight cluster <20 meters in diameter, consistent with GPS noise or minor swinging at anchor; this pattern is used to impute position as the centroid: lat ≈ 56.15863, lon ≈ 14.81625 when SOG = 0 and COG/heading remain stable)",
+  "description": [
+    "Speed profile: stable (the vessel maintains zero speed across multiple observations, indicating no movement)",
+    "Course change: fluctuating (COG remains nearly constant at ~9.9° despite positional noise, but this is likely due to reporting artifacts when speed is zero)",
+    "Heading fluctuation: gradual and consistent (heading varies slightly between 193° and 194°, typical of a stationary vessel responding to wind or current without propulsion)",
+    "Behavior intent: anchored or moored in a confined area (the combination of zero speed (SOG = 0.0), repeated small oscillations in position around latitude ~56.1586 and longitude ~14.8162, and stable heading/COD suggests the vessel is not underway; the position dispersion forms a tight cluster <20 meters in diameter, consistent with GPS noise or minor swinging at anchor; this pattern is used to impute position as the centroid: lat ≈ 56.15863, lon ≈ 14.81625 when SOG = 0 and COG/heading remain stable)",
+    "Duration: 3550~3600"
+  ],
+  "metadata": {
+    "original_id": "vb_-1960071432756735928",
+    "duration": "3550~3600",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "fluctuating",
+      "gradual and consistent",
+      "anchored or moored in a confined area",
+      "3550~3600"
+    ]
+  },
+  "related": []
+}

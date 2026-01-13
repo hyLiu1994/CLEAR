@@ -1,0 +1,244 @@
+{
+  "nodes": [
+    {
+      "id": "A_180",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Die Seenotretter DGzRS, Kanalfähre Brunsbüttel, Kanalfähre Kudensee, Nord-Ostsee-Kanal, Kanalfähre Ostermoor, Unnamed lane, Lotsenhaus, helgoline",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_928_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_6",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_928_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_928_SEG_9",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_9",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_928_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_928_SEG_5",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_5",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_928_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_928_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_928_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_928_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-6715482940052673078",
+      "type": "behavior",
+      "label": "Behavior 52673078",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_6098075840337851105",
+      "type": "behavior",
+      "label": "Behavior 37851105",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8369218991226673352",
+      "type": "behavior",
+      "label": "Behavior 26673352",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-8450504998557012643",
+      "type": "behavior",
+      "label": "Behavior 57012643",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-606086328794905064",
+      "type": "behavior",
+      "label": "Behavior 94905064",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-1815710865747844675",
+      "type": "behavior",
+      "label": "Behavior 47844675",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4904133711518057670",
+      "type": "behavior",
+      "label": "Behavior 18057670",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_8759996375920822993",
+      "type": "behavior",
+      "label": "Behavior 20822993",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_928_SEG_6",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_928_SEG_2",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_928_SEG_9",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_928_SEG_8",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_928_SEG_5",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_928_SEG_7",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_928_SEG_3",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_928_SEG_4",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-6715482940052673078",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_6098075840337851105",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8369218991226673352",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-8450504998557012643",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-606086328794905064",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-1815710865747844675",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4904133711518057670",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_8759996375920822993",
+      "target": "A_180",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-4904133711518057670",
+    "TRJ_928_SEG_5",
+    "B_vb_8369218991226673352",
+    "TRJ_928_SEG_7",
+    "TRJ_928_SEG_9",
+    "B_vb_6098075840337851105",
+    "B_vb_-606086328794905064",
+    "B_vb_-8450504998557012643",
+    "B_vb_-1815710865747844675",
+    "TRJ_928_SEG_6",
+    "TRJ_928_SEG_8",
+    "TRJ_928_SEG_3",
+    "TRJ_928_SEG_4",
+    "TRJ_928_SEG_2",
+    "B_vb_8759996375920822993",
+    "A_180",
+    "B_vb_-6715482940052673078"
+  ],
+  "centerNodeId": "A_180",
+  "maxLevel": 1,
+  "totalNodes": 17,
+  "totalLinks": 16
+}

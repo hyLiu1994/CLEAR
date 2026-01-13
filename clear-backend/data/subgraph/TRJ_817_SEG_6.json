@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "TRJ_817_SEG_6",
+      "type": "segment",
+      "label": "Segment TRJ_817_SEG_6",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "T_817",
+      "type": "trajectory",
+      "label": "Trajectory 210017000",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_817_SEG_6",
+      "target": "T_817",
+      "relation": "part_of",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "T_817",
+    "TRJ_817_SEG_6"
+  ],
+  "centerNodeId": "TRJ_817_SEG_6",
+  "maxLevel": 1,
+  "totalNodes": 2,
+  "totalLinks": 1
+}

@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_383_SEG_1",
+  "type": "segment",
+  "label": "Segment TRJ_383_SEG_1",
+  "summary": "Segment 1 of trajectory 383",
+  "description": [
+    "MMSI: 209541000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-21 19:35:43",
+    "End time: 2024-03-21 19:43:04"
+  ],
+  "metadata": {
+    "trajectory_id": "383",
+    "vessel_id": "209541000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-21 19:35:43",
+    "end_time": "2024-03-21 19:43:04"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a speed of 0.0 knots across all observations, indicating it is stationary or drifting in place)",
+      "course_change": "stable (COG remains constant at approximately 111.6°, showing no meaningful change in direction despite minor position fluctuations)",
+      "heading_fluctuation": "stable (heading fluctuates slightly between 59.0° and 60.0°, remaining nearly constant, suggesting the vessel is not executing any significant rotational maneuver)",
+      "intent": "following a curved maritime route",
+      "duration": "400~450"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a speed of 0.0 knots across all observations, indicating it is stationary or drifting in place)",
+      "course_change": "stable (COG remains constant at 111.6°, showing no change in the direction of movement despite positional noise)",
+      "heading_fluctuation": "stable (heading oscillates slightly between 59.0° and 60.0°, within a 1° range, suggesting minimal yaw due to wind or current while moored or at anchor)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving east-southeast, approximated by the parametric equations: lat(t) ≈ 57.0475 + Δt·v·cos(θ), lon(t) ≈ 10.0544 + Δt·v·sin(θ), where v = 0 (stationary), θ = 111.6°, resulting in tightly clustered positions around (57.0475, 10.0544) due to GPS noise or buoyancy swing)",
+      "duration": "450~500"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating through confined waterways near port areas such as Aalborg—surrounded by structured shipping lanes like Sildekajen, Tunnelhavnen, and Østre Havnebasin—exhibit straight-route behavior in approximately 62% of observed segments when draught is between 8–10 meters. The high edge weights (w=102) from navigation_status and hazardous_cargo to this pattern indicate strong association with standard operational profiles for medium-sized cargo vessels in harbor-adjacent zones. Among all candidate patterns, vb_-4927443205807001530 ranks second highest in cumulative support from static attributes, particularly due to consistent linkage with vessel_type_Cargo (w=73) and spatial_context (implied via nearby lanes), suggesting it is a statistically prevalent mode of transit in constrained urban port environments where route adherence is prioritized over maneuverability.",
+    "contextual_justification": "The boundary movement patterns immediately before and after the gap show zero speed, stable COG at ~111.6°, and minimal heading fluctuation (~59°–60°), indicating the vessel was stationary or moored within a small radius around (57.04747, 10.0544). This suggests the gap corresponds to a brief anchorage or docking event. The selected movement vb_-4927443205807001530 describes a \"navigating along a fixed route\" intent with stable speed and linear northeast progression—consistent with resuming a predefined channel after departure. Given that the vessel is a cargo ship in a dense port network requiring precise routing, transitioning from a moored state back into a structured approach lane aligns with expected operational behavior, making this the most plausible continuation post-gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 can correctly impute missing values for this behavior pattern is 98.04%, calculated as 100 / (100 + 2) = 0.9804. This proportion reflects the relative confidence in this function compared to the alternative, based on the strength of association observed across historical performance in similar kinematic contexts. The high frequency of successful application under stable motion conditions supports its reliability.  \n2. This function assumes linear spatial progression with time-proportional interpolation, which aligns precisely with the observed trajectory's parametric form (lat(t) ≈ 56.114153 + 0.00087 × t, lon(t) ≈ 7.607993 + 0.00034 × t). Its internal logic models constant-velocity motion, matching the vessel’s stable speed, consistent COG, and minimal heading fluctuation—key indicators of straight-line navigation. In contrast, the alternative function, while structurally similar, has been associated with slightly lower consistency in preserving temporal alignment under identical conditions."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "VTS Aalborg Reporting Requirement (applicable to cargo vessels with draught 8–10 m transiting within designated shipping lanes; spatial anchor: Sildekajen to Østre Havnebasin corridor)\nOperational Protocol Rationale: In the confined and heavily trafficked waterways near Aalborg, medium-sized cargo vessels typically follow strictly defined routes to ensure navigational safety and compliance with local vessel traffic services. The observed behavior—resuming a straight, steady course after a stationary period—aligns with standard departure procedures from anchorage or docking areas, where vessels re-enter predefined channels with minimal maneuvering. This contrasts with more dynamic turning patterns seen in open waters or during approach phases, which are less likely in this dense network of named lanes. Given the stable speed, consistent heading, and alignment with fixed infrastructure, linear motion is the most operationally sound assumption, reflecting autopilot-assisted transit under regulatory supervision.\n'''",
+    "operational_protocol_rationale": "In the confined and heavily trafficked waterways near Aalborg, medium-sized cargo vessels typically follow strictly defined routes to ensure navigational safety and compliance with local vessel traffic services. The observed behavior—resuming a straight, steady course after a stationary period—aligns with standard departure procedures from anchorage or docking areas, where vessels re-enter predefined channels with minimal maneuvering. This contrasts with more dynamic turning patterns seen in open waters or during approach phases, which are less likely in this dense network of named lanes. Given the stable speed, consistent heading, and alignment with fixed infrastructure, linear motion is the most operationally sound assumption, reflecting autopilot-assisted transit under regulatory supervision.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "A_404",
+  "type": "attribute",
+  "label": "draught: [6, 8) m",
+  "summary": "draught attribute: [6, 8) m",
+  "description": [
+    "This attribute is associated with 110 behavior patterns"
+  ],
+  "metadata": {
+    "category": "draught",
+    "attribute_name": "[6, 8) m",
+    "support": 110
+  },
+  "related": []
+}

@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "A_110",
+      "type": "attribute",
+      "label": "spatial_context: location: Kungälvs kommun, Västra Götaland County, Sweden; nearby_shipping_lanes: Query failed with status 504",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_516_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_516_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_3366872286460794881",
+      "type": "behavior",
+      "label": "Behavior 60794881",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_516_SEG_8",
+      "target": "A_110",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_3366872286460794881",
+      "target": "A_110",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_516_SEG_8",
+    "A_110",
+    "B_vb_3366872286460794881"
+  ],
+  "centerNodeId": "A_110",
+  "maxLevel": 1,
+  "totalNodes": 3,
+  "totalLinks": 2
+}

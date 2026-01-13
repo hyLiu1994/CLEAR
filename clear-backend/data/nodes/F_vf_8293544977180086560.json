@@ -1,0 +1,15 @@
+{
+  "id": "F_vf_8293544977180086560",
+  "type": "function",
+  "label": "Function 80086560",
+  "summary": "This function assumes the vessel is anchored or moored in a confined area, as indicated by the patte...",
+  "description": [
+    "Function description: This function assumes the vessel is anchored or moored in a confined area, as indicated by the pattern (zero speed, stable heading, fluctuating COG). Therefore, despite minor course fluctuations, the vessel shows no significant movement. The spatial function holds the latitude and longitude constant at the starting position throughout the missing interval, reflecting minimal drift. This is appropriate when the vessel is stationary and observed variations are due to sensor noise or environmental oscillations rather than actual motion.",
+    "Code implementation: def spatial_function(start, end, Time_interval):\n    return [(start[0], start[1]) for _ in Time_interval]"
+  ],
+  "metadata": {
+    "original_id": "vf_8293544977180086560",
+    "code": "def spatial_function(start, end, Time_interval):\n    return [(start[0], start[1]) for _ in Time_interval]"
+  },
+  "related": []
+}

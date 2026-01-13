@@ -1,0 +1,51 @@
+{
+  "id": "TRJ_2644_SEG_6",
+  "type": "segment",
+  "label": "Segment TRJ_2644_SEG_6",
+  "summary": "Segment 6 of trajectory 2644",
+  "description": [
+    "MMSI: 219000776",
+    "Ship Type: Passenger",
+    "Number of data points: 20",
+    "Start time: 2024-03-07 22:22:44",
+    "End time: 2024-03-07 22:26:50"
+  ],
+  "metadata": {
+    "trajectory_id": "2644",
+    "vessel_id": "219000776",
+    "vessel_type": "Passenger",
+    "num_points": 20,
+    "start_time": "2024-03-07 22:22:44",
+    "end_time": "2024-03-07 22:26:50"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.8695 - 0.00012 × t, lon(t) ≈ 16.7055 + 0.00143 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "next_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving eastward with a slight northerly drift, approximated by the parametric equations: lat(t) ≈ 55.867163 - 0.00042 × t, lon(t) ≈ 16.774432 + 0.0152 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, passenger vessels 'under way using engine' with draughts in [4, 6) m and dimensions typical of medium-sized ferries (150–200 m length, 20–25 m width) are observed to follow straight, fixed maritime routes near major shipping lanes such as Travemünde–Liepāja and subsea infrastructure corridors (Nord Stream 1/2, C-Lion 1) in approximately 62% of cases when traversing the Baltic Sea. This pattern is especially prevalent—accounting for over 60% of all behavior instances—for vessels maintaining stable speed and heading alignment, where the persistent congruence between COG and heading indicates disciplined route-following behavior. The high edge weights (e.g., w=102 for navigation status and hazardous cargo; w=63 for vessel length) confirm that this movement is strongly associated with the vessel’s static attributes and operational context.",
+    "contextual_justification": "The boundary movement patterns both describe \"navigating along a fixed route\" with stable speed, gradual and consistent course changes, and minimal heading fluctuation—indicative of linear trajectory maintenance. The first boundary segment follows a parametric eastward drift (lat(t) ≈ 55.8695 - 0.00012×t, lon(t) ≈ 16.7055 + 0.00143×t), while the second continues eastward with increased longitudinal progression (lat(t) ≈ 55.867163 - 0.00042×t, lon(t) ≈ 16.774432 + 0.0152×t). The candidate movement vb_-4927443205807001530 describes a northeast-bound linear trajectory (lat(t) ≈ 56.114153 + 0.00087×t, lon(t) ≈ 7.607993 + 0.00034×t), which, although from a different geographic region, matches structurally in intent, stability, and kinematic profile. Given the continuity in speed stability, heading-COG alignment, and absence of abrupt maneuvers in the incomplete AIS samples—where latitude decreases slowly while longitude increases steadily—the most plausible interpolation is a fixed straight route consistent with vb_-4927443205807001530.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to impute missing latitude and longitude for the given behavior pattern is approximately 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the observed behavior pattern. Out of the total weight sum (100 + 2 = 102), vf_-7663396197665720575 holds a weight of 100, resulting in a proportion of 100 / 102 ≈ 0.9804 or 98.04%. This high proportion indicates strong empirical or historical alignment between this function and the kinematic pattern of stable motion along a fixed route.  \n2. The function vf_-7663396197665720575 explicitly models linear interpolation based on time-proportional increments, which matches the observed trajectory's parametric form (lat(t) ≈ 56.114153 + 0.00087 × t, lon(t) ≈ 7.607993 + 0.00034 × t). In contrast, vf_5240413252068673064, while similar in approach, has significantly less statistical association with the behavior pattern, suggesting lower reliability in this context despite functional similarity."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "SOLAS Chapter V / IMO Guidelines for Ship Reporting Systems – Applicable in designated shipping lanes and near critical subsea infrastructure (e.g., Nord Stream pipelines, C-Lion 1 cable) in the Baltic Sea – Spatial Anchor: Proximity to regulated maritime corridors between Travemünde (Germany) and Liepāja (Latvia)\nOperational Protocol Rationale: Passenger vessels of this size and configuration typically follow straight, predefined routes when transiting busy or sensitive areas, especially near major shipping lanes and subsea infrastructure zones. The observed stable speed, consistent course over ground, and tight alignment between heading and motion direction indicate disciplined autopilot-assisted navigation along a fixed corridor. This behavior is characteristic of scheduled ferry operations that prioritize predictable, safe passage through high-traffic or environmentally sensitive regions. Alternative behaviors such as anchoring, maneuvering, or deviating from the route are unlikely given the continuous engine use, absence of hazardous cargo, and lack of course fluctuations. The linear trajectory interpolation is therefore justified as it reflects standard operating procedures for passenger vessels in these regulated waters.\n'''",
+    "operational_protocol_rationale": "Passenger vessels of this size and configuration typically follow straight, predefined routes when transiting busy or sensitive areas, especially near major shipping lanes and subsea infrastructure zones. The observed stable speed, consistent course over ground, and tight alignment between heading and motion direction indicate disciplined autopilot-assisted navigation along a fixed corridor. This behavior is characteristic of scheduled ferry operations that prioritize predictable, safe passage through high-traffic or environmentally sensitive regions. Alternative behaviors such as anchoring, maneuvering, or deviating from the route are unlikely given the continuous engine use, absence of hazardous cargo, and lack of course fluctuations. The linear trajectory interpolation is therefore justified as it reflects standard operating procedures for passenger vessels in these regulated waters.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_608_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_608_SEG_9",
+  "summary": "Segment 9 of trajectory 608",
+  "description": [
+    "MMSI: 209715000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-10 17:55:18",
+    "End time: 2024-03-10 17:59:18"
+  ],
+  "metadata": {
+    "trajectory_id": "608",
+    "vessel_id": "209715000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-10 17:55:18",
+    "end_time": "2024-03-10 17:59:18"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: location: Denmark; nearby_shipping_lanes: Unnamed traffic separation scheme",
+    "Draught: [8, 10) m",
+    "Length: [100, 150) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 10.7 and 10.9 knots across the trajectory)",
+      "course_change": "gradual and consistent (COG varies slightly between 190.2° and 192.2°, showing a slow, steady change in direction)",
+      "heading_fluctuation": "stable (heading remains constant at 186.0° throughout, indicating no yawing or steering adjustments)",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving south-southeast, approximated by the parametric equations: lat(t) = 56.59537 - 0.00048 × t, lon(t) = 7.801153 - 0.00016 × t, where t is a normalized time index from 0 to 1 over the observed segment)",
+      "duration": "200~250"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

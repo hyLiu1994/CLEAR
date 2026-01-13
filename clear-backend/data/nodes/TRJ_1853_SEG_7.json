@@ -1,0 +1,37 @@
+{
+  "id": "TRJ_1853_SEG_7",
+  "type": "segment",
+  "label": "Segment TRJ_1853_SEG_7",
+  "summary": "Segment 7 of trajectory 1853",
+  "description": [
+    "MMSI: 210529000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-30 15:56:29",
+    "End time: 2024-03-30 16:01:02"
+  ],
+  "metadata": {
+    "trajectory_id": "1853",
+    "vessel_id": "210529000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-30 15:56:29",
+    "end_time": "2024-03-30 16:01:02"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with draughts between 4–6 meters navigating near Trelleborg, Sweden—specifically within dense shipping corridors such as Rostock (D) – Trelleborg (SE) and Travemünde (D) – Trelleborg (SE)—frequently exhibit curved route-following behavior during transit through coastal bends or approach channels. This pattern is strongly supported by the induced subgraph, where the movement vb_3081913737957353482 receives the highest cumulative edge weight from key static attributes: navigation_status (w=89), hazardous_cargo (w=89), vessel_type_Cargo (w=63), and spatial_context-aligned routing. When normalized across all outgoing edges from \"vessel_type_Cargo\", this behavior accounts for approximately 63% of observed patterns for cargo ships in similar contexts, significantly higher than alternative fixed-route behaviors. Additionally, the co-occurrence frequency between \"Under way using engine\" and this curved navigation intent ranks second highest among all candidate movements, indicating its prevalence in active transit scenarios requiring course adjustments.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating along a fixed westward route with slight northerly drift (lat(t) ≈ 55.24105 + 0.00015×t, lon(t) ≈ 13.145158 - 0.00214×t), exhibiting stable speed, consistent course change, and aligned COG-heading dynamics. While the immediate boundary suggests linearity, the incomplete AIS samples show a progressive westward trajectory with decreasing longitude (from ~13.116 to ~13.031) and slowly increasing latitude (from ~55.2418 to ~55.2443), indicating a subtle but persistent northerly component. This curvature—though mild—is more accurately captured by vb_3081913737957353482’s parametric model (lat(t) ≈ 54.949173 + 0.0006×t + 0.00005×t², lon(t) ≈ 13.67999 + 0.0028×t + 0.00012×t²), which reflects a gently turning vessel adjusting to maritime channel geometry near a busy port junction. Given that Trelleborg is a major ferry and cargo hub with curved approach lanes, the gradual turn implied by this pattern aligns better with expected maneuvering behavior than strictly linear trajectories, especially when transitioning between open water and terminal zones.\n'''"
+  },
+  "method_selector": {},
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) approach lane in Trelleborg, Sweden; applies to cargo vessels navigating within 5 nautical miles of Trelleborg harbor; spatial anchor: proximity to Rostock–Trelleborg and Travemünde–Trelleborg shipping lanes\nOperational Protocol Rationale: The selected behavior reflects a vessel making a gradual, controlled turn while maintaining steady speed and consistent heading, which is typical when maneuvering through curved coastal approach channels near major port areas. Given the dense maritime traffic and complex routing around Trelleborg—a key ferry and cargo hub—vessels frequently adjust course along predefined curved paths to align with terminal entries or navigational waypoints. This pattern is more appropriate than strictly linear navigation because the observed trajectory shows a persistent northerly drift during westward progression, indicating a turning motion better modeled by a curvilinear path. Linear route assumptions would fail to capture this subtle but operationally significant curvature, especially in transitional zones between open sea and harbor approaches.\n'''",
+    "operational_protocol_rationale": "The selected behavior reflects a vessel making a gradual, controlled turn while maintaining steady speed and consistent heading, which is typical when maneuvering through curved coastal approach channels near major port areas. Given the dense maritime traffic and complex routing around Trelleborg—a key ferry and cargo hub—vessels frequently adjust course along predefined curved paths to align with terminal entries or navigational waypoints. This pattern is more appropriate than strictly linear navigation because the observed trajectory shows a persistent northerly drift during westward progression, indicating a turning motion better modeled by a curvilinear path. Linear route assumptions would fail to capture this subtle but operationally significant curvature, especially in transitional zones between open sea and harbor approaches.\n'''"
+  },
+  "related": []
+}

@@ -1,0 +1,57 @@
+{
+  "id": "TRJ_29_SEG_2",
+  "type": "segment",
+  "label": "Segment TRJ_29_SEG_2",
+  "summary": "Segment 2 of trajectory 29",
+  "description": [
+    "MMSI: 209207000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-11 18:42:41",
+    "End time: 2024-03-11 18:52:30"
+  ],
+  "metadata": {
+    "trajectory_id": "29",
+    "vessel_id": "209207000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-11 18:42:41",
+    "end_time": "2024-03-11 18:52:30"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Unnamed traffic separation scheme",
+    "Draught: [6, 8) m",
+    "Length: [100, 150) m",
+    "Width: [15, 20) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains a relatively consistent speed between 7.0 and 10.7 knots, with minor fluctuations around an average of ~9 knots)",
+      "course_change": "gradual and consistent (COG varies slowly from 25.5° to 33.2°, showing a smooth progression without abrupt shifts, indicating steady course adjustment)",
+      "heading_fluctuation": "stable (heading remains consistently between 35° and 38°, fluctuating only slightly around 36°, suggesting controlled navigation)",
+      "intent": "following a curved maritime route (the vessel progresses northeastward in a smooth arc, as indicated by the coordinated increase in both latitude and longitude paired with gradual COG changes; this is typical of vessels navigating along predefined curved shipping lanes or rounding a coastal feature)",
+      "duration": "550~600"
+    },
+    "previous_behavior": {
+      "speed_profile": "stable (the vessel maintains a consistent speed between 8.5 and 10.4 knots with minor fluctuations)",
+      "course_change": "gradual and consistent (COG varies slowly between 25.6° and 31.1°, indicating a smooth, continuous turn or route curvature)",
+      "heading_fluctuation": "stable (heading remains within a narrow range of 35°–38°, suggesting controlled navigation without abrupt changes)",
+      "intent": "following a curved maritime route",
+      "duration": "450~500"
+    },
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a relatively constant speed between 7.7 and 9.9 knots with minor fluctuations, indicating steady propulsion)",
+      "course_change": "gradual and consistent (COG varies slowly between 22.8° and 34.0°, showing a smooth evolution in direction without abrupt changes)",
+      "heading_fluctuation": "stable (heading remains consistently around 35–37°, with only small deviations, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the persistent small differences between COG and heading, combined with stable speed and gradual course evolution, suggest the vessel is navigating a predefined curved channel or coastal bend; position progression follows an approximately linear trajectory in geographic coordinates with slight northeasterly curvature, modeled by a second-order polynomial: longitude ≈ a·(latitude)² + b·latitude + c, where a > 0, fitting the observed lat-long pairs from 57.095 to 57.109 latitude range)",
+      "duration": "400~450"
+    }
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

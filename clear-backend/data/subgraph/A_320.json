@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_320",
+      "type": "attribute",
+      "label": "spatial_context: location: Rostock, Mecklenburg-Vorpommern, Germany; nearby_shipping_lanes: Sondergebiet Warnow, Kontek, Rostock - Trelleborg, Petribrücke, Rostock (D) - Trelleborg (SE), Hafenmeister, C-Lion 1, Unnamed lane, Hotel Neptun, Rostock (D) – Gedser (S), Leuchtturm Warnemünde, Pagenwerder",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_1812_SEG_3",
+      "type": "segment",
+      "label": "Segment TRJ_1812_SEG_3",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_1812_SEG_4",
+      "type": "segment",
+      "label": "Segment TRJ_1812_SEG_4",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_4800817570071904230",
+      "type": "behavior",
+      "label": "Behavior 71904230",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-2476598569791458610",
+      "type": "behavior",
+      "label": "Behavior 91458610",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_1812_SEG_3",
+      "target": "A_320",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_1812_SEG_4",
+      "target": "A_320",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_4800817570071904230",
+      "target": "A_320",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-2476598569791458610",
+      "target": "A_320",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "A_320",
+    "B_vb_4800817570071904230",
+    "B_vb_-2476598569791458610",
+    "TRJ_1812_SEG_4",
+    "TRJ_1812_SEG_3"
+  ],
+  "centerNodeId": "A_320",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

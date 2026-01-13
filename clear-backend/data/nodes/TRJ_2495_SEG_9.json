@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_2495_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_2495_SEG_9",
+  "summary": "Segment 9 of trajectory 2495",
+  "description": [
+    "MMSI: 218098000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-12 03:10:35",
+    "End time: 2024-03-12 03:14:35"
+  ],
+  "metadata": {
+    "trajectory_id": "2495",
+    "vessel_id": "218098000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-12 03:10:35",
+    "end_time": "2024-03-12 03:14:35"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {
+      "speed_profile": "{'stable': True}",
+      "course_change": "'gradual and consistent'",
+      "heading_fluctuation": "{'gradual and consistent': True}",
+      "intent": "navigating along a fixed route (the persistent alignment between COG and heading, combined with stable speed and negligible course deviation, indicates the vessel is following a straight, predefined maritime route; the position progression follows a linear trajectory moving west-southwest, approximated by the parametric equations: lat(t) ≈ 57.7576 + 0.0003 × t, lon(t) ≈ 11.0755 - 0.0024 × t, where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    },
+    "next_behavior": {}
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' with a draught between 8–10 m are strongly associated with straight-route navigation patterns in open waters or designated shipping lanes, as evidenced by high-weight connections (navigation_status: w=102, vessel_type: w=73, draught: w=39) to this behavior. Although spatial context data is partially missing, the repeated co-occurrence of stable-speed, linear-trajectory patterns among similarly sized cargo vessels suggests that this movement accounts for approximately 62% of comparable navigational segments under similar static conditions. The pattern is further reinforced by consistent heading-COG alignment and minimal fluctuation, commonly observed in deep-water transit scenarios.",
+    "contextual_justification": "The boundary movement pattern describes a vessel navigating along a fixed, straight route with stable speed, gradual course change, and a linear west-southwest trajectory. While the immediate gap's incomplete samples show a consistent southwestward progression (from ~57.757°N, 11.075°E to ~57.772°N, 11.025°E), the overall directional trend aligns best with vb_-4927443205807001530’s northeast-linear intent when considering continuity in COG-heading alignment and stable dynamics. Among candidates, this pattern most closely matches the structural consistency of the boundary segment—particularly in its \"stable\" speed and heading profiles and \"gradual and consistent\" course evolution—supporting seamless interpolation across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 is the correct function to impute missing latitude and longitude for this behavior pattern is approximately 98.04%, calculated as 100 / (100 + 2) = 100/102 ≈ 0.9804. This proportion reflects the relative strength of association between the observed behavior pattern and the two candidate functions, where higher values indicate stronger empirical alignment based on historical performance in similar kinematic contexts.  \n2. This function exhibits strong consistency with stable-speed, linear-trajectory scenarios, as it assumes constant-velocity motion along a straight path derived from temporal interpolation. Its formulation directly incorporates time-proportional scaling using max(Time_interval), ensuring uniform distribution of interpolated points over time—this matches the vessel’s observed steady progression with minimal course deviation. In contrast, the alternative function, while structurally similar, lacks explicit normalization by the maximum time index, potentially introducing minor temporal misalignment under variable sampling rates."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "International Regulations for Preventing Collisions at Sea (COLREGs) Rule 8 - Action to Avoid Collision; applicable in open waters or designated shipping lanes; spatial anchor: nearby established shipping routes\nOperational Protocol Rationale: The vessel's behavior—maintaining a stable speed, consistent course over ground, and minimal heading fluctuations—aligns with standard operating procedures for cargo vessels transiting along fixed maritime corridors. This pattern reflects autopilot-assisted navigation typical of deep-water or lane-based transit, where predictable, linear motion reduces collision risk and ensures compliance with traffic separation schemes. The steady alignment between course and heading further supports intentional straight-path navigation, ruling out anchoring, maneuvering in congestion, or navigating through sharp turns. Despite incomplete spatial context data, the kinematic consistency strongly indicates adherence to structured routing rather than coastal weaving or port approach behaviors.\n'''",
+    "operational_protocol_rationale": "The vessel's behavior—maintaining a stable speed, consistent course over ground, and minimal heading fluctuations—aligns with standard operating procedures for cargo vessels transiting along fixed maritime corridors. This pattern reflects autopilot-assisted navigation typical of deep-water or lane-based transit, where predictable, linear motion reduces collision risk and ensures compliance with traffic separation schemes. The steady alignment between course and heading further supports intentional straight-path navigation, ruling out anchoring, maneuvering in congestion, or navigating through sharp turns. Despite incomplete spatial context data, the kinematic consistency strongly indicates adherence to structured routing rather than coastal weaving or port approach behaviors.\n'''"
+  },
+  "related": []
+}

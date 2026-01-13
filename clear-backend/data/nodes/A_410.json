@@ -1,0 +1,15 @@
+{
+  "id": "A_410",
+  "type": "attribute",
+  "label": "length: [100, 150) m",
+  "summary": "length attribute: [100, 150) m",
+  "description": [
+    "This attribute is associated with 149 behavior patterns"
+  ],
+  "metadata": {
+    "category": "length",
+    "attribute_name": "[100, 150) m",
+    "support": 149
+  },
+  "related": []
+}

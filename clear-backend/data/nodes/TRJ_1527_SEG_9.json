@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_1527_SEG_9",
+  "type": "segment",
+  "label": "Segment TRJ_1527_SEG_9",
+  "summary": "Segment 9 of trajectory 1527",
+  "description": [
+    "MMSI: 210359000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-16 18:47:49",
+    "End time: 2024-03-16 19:03:49"
+  ],
+  "metadata": {
+    "trajectory_id": "1527",
+    "vessel_id": "210359000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-16 18:47:49",
+    "end_time": "2024-03-16 19:03:49"
+  },
+  "static_attributes": [
+    "Navigation Status: Under way using engine",
+    "Hazardous Cargo: no",
+    "Vessel Type: Cargo",
+    "Spatial Context: nearby_shipping_lanes: Query failed with status 504",
+    "Draught: [6, 8) m",
+    "Length: [150, 200) m",
+    "Width: [20, 25) m"
+  ],
+  "context": {
+    "current_behavior": {
+      "speed_profile": "stable (the vessel maintains zero speed across all observations, indicating no forward motion)",
+      "course_change": "fluctuating (COG varies significantly between 288.9° and 350.1° despite no movement, reflecting sensor updates or rotational maneuvering while stationary)",
+      "heading_fluctuation": "stable (heading remains nearly constant at 281–282°, suggesting the vessel’s bow orientation is fixed despite COG fluctuations)",
+      "intent": "anchored or moored in a confined area (the persistent zero speed (SOG = 0.0) combined with minimal position variance—latitude oscillating within [54.366158, 54.366238] and longitude within [10.141997, 10.142038]—indicates the vessel is not underway; the varying COG values suggest dynamic positioning adjustments or tidal swinging around a fixed anchor point; the trajectory forms a tight cluster approximating a small circular or elliptical loiter pattern with radius <20 meters, modeled parametrically as: lat(t) ≈ 54.3662 + 0.00002 × sin(2πt), lon(t) ≈ 10.1420 + 0.00003 × cos(2πt), where t ∈ [0,1] represents normalized time over the observation period)",
+      "duration": "950~1000"
+    },
+    "previous_behavior": {},
+    "next_behavior": {}
+  },
+  "behavior_estimator": {},
+  "method_selector": {},
+  "explanation_composer": {},
+  "related": []
+}

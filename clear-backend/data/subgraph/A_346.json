@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_346",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: ESD 139, ESD 138, Nord Stream 2",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_2188_SEG_2",
+      "type": "segment",
+      "label": "Segment TRJ_2188_SEG_2",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2188_SEG_7",
+      "type": "segment",
+      "label": "Segment TRJ_2188_SEG_7",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_82841811344196675",
+      "type": "behavior",
+      "label": "Behavior 44196675",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-4927443205807001530",
+      "type": "behavior",
+      "label": "Behavior 07001530",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_2188_SEG_2",
+      "target": "A_346",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2188_SEG_7",
+      "target": "A_346",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_82841811344196675",
+      "target": "A_346",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-4927443205807001530",
+      "target": "A_346",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "TRJ_2188_SEG_7",
+    "B_vb_82841811344196675",
+    "B_vb_-4927443205807001530",
+    "TRJ_2188_SEG_2",
+    "A_346"
+  ],
+  "centerNodeId": "A_346",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TRJ_937_SEG_2",
+  "type": "segment",
+  "label": "Segment TRJ_937_SEG_2",
+  "summary": "Segment 2 of trajectory 937",
+  "description": [
+    "MMSI: 210017000",
+    "Ship Type: Cargo",
+    "Number of data points: 20",
+    "Start time: 2024-03-27 17:38:43",
+    "End time: 2024-03-27 17:42:21"
+  ],
+  "metadata": {
+    "trajectory_id": "937",
+    "vessel_id": "210017000",
+    "vessel_type": "Cargo",
+    "num_points": 20,
+    "start_time": "2024-03-27 17:38:43",
+    "end_time": "2024-03-27 17:42:21"
+  },
+  "static_attributes": [],
+  "context": {
+    "current_behavior": {},
+    "previous_behavior": {},
+    "next_behavior": {
+      "speed_profile": "stable (the vessel maintains a nearly constant speed of approximately 15.3–15.5 knots throughout the trajectory)",
+      "course_change": "gradual and consistent (COG changes slowly from ~111.1° to ~119.1°, indicating a smooth, continuous turn over time)",
+      "heading_fluctuation": "stable (heading remains close to 111° initially, then gradually adjusts from 111° to 119°, with minimal short-term variation, suggesting controlled steering)",
+      "intent": "following a curved maritime route (the combination of stable speed, small heading variations, and slowly changing COG indicates the vessel is navigating along a gently curving channel or coastal path; the trajectory approximates a circular arc with radius ~2.5 km, modeled by a parametric equation: lat(t) ≈ 54.5345 - 0.0018 × t + 0.0004 × t², lon(t) ≈ 11.2997 + 0.0052 × t + 0.0006 × t², where t is normalized time index from 0 to 1 over the observed segment)",
+      "duration": "250~300"
+    }
+  },
+  "behavior_estimator": {
+    "graph_support": "In historical AIS records, cargo vessels 'under way using engine' navigating through major Baltic shipping lanes such as the Fehmarn Belt and Femern Fixed Link Holding Area exhibit straight-route behavior patterns in approximately 72% of observed segments when connected to the same static attributes. Specifically, the vessel’s characteristics—cargo type, length [150, 200) m, width [20, 25) m, draught [8, 10) m—strongly associate with fixed-route navigation, as evidenced by high edge weights (e.g., w=102 for navigation status, w=73 for vessel type, w=63 for length), which cumulatively indicate this pattern is dominant among similar vessels in this corridor. The spatial context, including proximity to structured lanes and offshore infrastructure like Rødsand II Havmøllepark, further reinforces adherence to predefined routes.",
+    "contextual_justification": "The boundary movement patterns show a transition from a gently curving trajectory (COG 111.1° → 119.1°) to a nearly straight path (COG 119.6° → 120.3°), indicating the vessel is completing a turn and stabilizing onto a fixed heading. The selected movement (vb_-4927443205807001530) reflects a stable, linear northeast-bound trajectory with minimal course deviation and consistent speed—precisely matching the emerging trend in the downstream segment. Its intent of \"navigating along a fixed route\" aligns with the vessel's progression into a well-defined maritime traffic lane, ensuring continuity in both direction and operational behavior across the gap.\n'''"
+  },
+  "method_selector": {
+    "statistical_support": "1. The probability that vf_-7663396197665720575 can solve the missing value problem corresponding to the behavior pattern is 98.04%. This is derived from the relative weight distribution between the two candidate functions connected to the behavior pattern vb_-4927443205807001530. Specifically, the total weight sum is 100 (from vf_-7663396197665720575) + 2 (from vf_5240413252068673064) = 102. The proportion of support for vf_-7663396197665720575 is therefore 100 / 102 ≈ 0.9804, or 98.04%. This high proportion indicates strong empirical alignment between this function and the observed stable, linear motion pattern.  \n2. The function vf_-7663396197665720575 implements time-proportional linear interpolation using max(Time_interval) as the normalizing factor, ensuring consistent scaling across variable-length gaps. It has been repeatedly selected in historical cases involving stable speed, constant COG, and minimal heading fluctuation—conditions identical to the current context. In contrast, vf_5240413252068673064, while functionally similar, shows weaker statistical association with this class of motion due to its lower weight linkage (only 2 units), suggesting less proven reliability despite syntactic similarity."
+  },
+  "explanation_composer": {
+    "regulatory_rule_cue": "Traffic Separation Scheme (TSS) applicability in the Fehmarn Belt and Femern Fixed Link Holding Area North; spatial anchor confirmed via proximity to structured shipping lanes and offshore infrastructure.\nOperational Protocol Rationale: The vessel’s behavior—maintaining stable speed, minimal course deviation, and consistent heading—aligns with standard autopilot operation on a predefined maritime route. This pattern is typical in regulated traffic corridors where vessels follow fixed pathways to ensure navigational safety and deconfliction. The transition from a slight turn to a straight trajectory indicates the vessel has completed a maneuver and is now aligned with the designated lane. Alternative behaviors such as anchoring, drifting, or sharp turning are ruled out due to the continuous engine use, absence of speed fluctuations, and sustained directional stability. The presence of nearby shipping lanes and controlled zones reinforces adherence to linear routing, making straight-path navigation the expected operational norm.\n'''",
+    "operational_protocol_rationale": "The vessel’s behavior—maintaining stable speed, minimal course deviation, and consistent heading—aligns with standard autopilot operation on a predefined maritime route. This pattern is typical in regulated traffic corridors where vessels follow fixed pathways to ensure navigational safety and deconfliction. The transition from a slight turn to a straight trajectory indicates the vessel has completed a maneuver and is now aligned with the designated lane. Alternative behaviors such as anchoring, drifting, or sharp turning are ruled out due to the continuous engine use, absence of speed fluctuations, and sustained directional stability. The presence of nearby shipping lanes and controlled zones reinforces adherence to linear routing, making straight-path navigation the expected operational norm.\n'''"
+  },
+  "related": []
+}

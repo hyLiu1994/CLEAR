@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "A_095",
+      "type": "attribute",
+      "label": "spatial_context: nearby_shipping_lanes: Kristiansand - Hirtshals, Hirtshals - Kristiansand, Hirtshals - Stavanger, Hirtshals - Tórshavn",
+      "level": 0,
+      "isCenter": true
+    },
+    {
+      "id": "TRJ_399_SEG_0",
+      "type": "segment",
+      "label": "Segment TRJ_399_SEG_0",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "TRJ_2626_SEG_8",
+      "type": "segment",
+      "label": "Segment TRJ_2626_SEG_8",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_2955062882552878883",
+      "type": "behavior",
+      "label": "Behavior 52878883",
+      "level": 1,
+      "isCenter": false
+    },
+    {
+      "id": "B_vb_-7299443710176764989",
+      "type": "behavior",
+      "label": "Behavior 76764989",
+      "level": 1,
+      "isCenter": false
+    }
+  ],
+  "links": [
+    {
+      "source": "TRJ_399_SEG_0",
+      "target": "A_095",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "TRJ_2626_SEG_8",
+      "target": "A_095",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_2955062882552878883",
+      "target": "A_095",
+      "relation": "has_attribute",
+      "level": 1
+    },
+    {
+      "source": "B_vb_-7299443710176764989",
+      "target": "A_095",
+      "relation": "has_attribute",
+      "level": 1
+    }
+  ],
+  "allNodeIds": [
+    "B_vb_-7299443710176764989",
+    "A_095",
+    "TRJ_2626_SEG_8",
+    "B_vb_2955062882552878883",
+    "TRJ_399_SEG_0"
+  ],
+  "centerNodeId": "A_095",
+  "maxLevel": 1,
+  "totalNodes": 5,
+  "totalLinks": 4
+}

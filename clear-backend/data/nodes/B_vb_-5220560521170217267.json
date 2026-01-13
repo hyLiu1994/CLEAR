@@ -1,0 +1,26 @@
+{
+  "id": "B_vb_-5220560521170217267",
+  "type": "behavior",
+  "label": "Behavior 70217267",
+  "summary": "Vessel behavior pattern: anchored or moored in a confined area (the repeated position fixes at nearly identical latitude and longitude, combined with zero or near-zero SOG, indicate the vessel is not under way; the varying COG likely reflects sensor noise or minor swinging due to wind/tide while moored, typical of vessels at anchor in a harbor or berth)",
+  "description": [
+    "Speed profile: stable (the vessel maintains a near-zero speed across multiple observations, indicating no significant movement)",
+    "Course change: fluctuating (the COG values vary widely between 77.0° and 350.2°, showing inconsistent directional intent despite lack of motion)",
+    "Heading fluctuation: stable (the heading remains within a narrow range of 222.0° to 243.0°, suggesting the vessel is oriented in a fixed direction while stationary)",
+    "Behavior intent: anchored or moored in a confined area (the repeated position fixes at nearly identical latitude and longitude, combined with zero or near-zero SOG, indicate the vessel is not under way; the varying COG likely reflects sensor noise or minor swinging due to wind/tide while moored, typical of vessels at anchor in a harbor or berth)",
+    "Duration: 147700~147750"
+  ],
+  "metadata": {
+    "original_id": "vb_-5220560521170217267",
+    "duration": "147700~147750",
+    "support": 8,
+    "pattern_key": [
+      "stable",
+      "fluctuating",
+      "stable",
+      "anchored or moored in a confined area",
+      "147700~147750"
+    ]
+  },
+  "related": []
+}
