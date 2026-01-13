@@ -1216,7 +1216,7 @@ watch(() => filters.maxTimeGap, () => {
 
 .field-label {
   display: block;
-  font-size: 28px;
+  font-size: 14px;
   font-weight: 600;
   margin-bottom: 6px;
   color: #e5e7eb;
@@ -1240,7 +1240,7 @@ watch(() => filters.maxTimeGap, () => {
 }
 
 .sub-label {
-  font-size: 26px;
+  font-size: 12px;
   color: #9ca3af;
   margin-bottom: 3px;
 }
@@ -1252,7 +1252,7 @@ watch(() => filters.maxTimeGap, () => {
   border: 1px solid rgba(148, 163, 184, 0.7);
   background: rgba(15, 23, 42, 0.9);
   padding: 7px 9px;
-  font-size: 28px;
+  font-size: 14px;
   color: #e5e7eb;
   outline: none;
 }

@@ -1078,7 +1078,7 @@ function resetFilters() {
 
 .field-label {
   display: block;
-  font-size: 30px;
+  font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
   color: #e5e7eb;
@@ -1087,11 +1087,11 @@ function resetFilters() {
 .field-input {
   width: 100%;
   box-sizing: border-box;
-  border-radius: 9px;
+  border-radius: 6px;
   border: 1px solid rgba(148, 163, 184, 0.7);
   background: rgba(15, 23, 42, 0.9);
-  padding: 20px 12px;
-  font-size: 22px;
+  padding: 10px 12px;
+  font-size: 14px;
   color: #e5e7eb;
   outline: none;
   transition: all 0.2s ease;
@@ -1115,12 +1115,12 @@ function resetFilters() {
 
 .type-button {
   position: relative;
-  padding: 14px 54px;
+  padding: 8px 4px;
   border-radius: 8px;
   border: 1.5px solid rgba(148, 163, 184, 0.3);
   background: rgba(31, 41, 55, 0.8);
   color: #e5e7eb;
-  font-size: 26px;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
