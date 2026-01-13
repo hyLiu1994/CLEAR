@@ -162,22 +162,49 @@
                 </div>
               </div>
             </div>
-            <!-- Performance options 
-            <div class="field">
-              <label class="field-label">Performance Options</label>
-              <div class="performance-options">
-                <label class="checkbox-label">
-                  <input
-                    v-model="viewBasedLoading"
-                    type="checkbox"
-                    class="checkbox-input"
-                  />
-                  <span class="checkbox-text">Load visible area only</span>
-                </label>
+          </FloatingFilter>
+
+          <!-- right details sidebar -->
+          <div class="details-sidebar" :class="{ 'details-sidebar--visible': showDetailsSidebar }">
+            <div class="details-sidebar-header">
+              <h3 class="details-title">Segment Details</h3>
+              <button class="sidebar-close-btn" @click="closeDetailsSidebar">
+                <span>×</span>
+              </button>
+            </div>
+            
+            <div class="details-sidebar-content">
+              <div v-if="currentSegmentId" class="segment-details">
+                <div v-if="iframeLoading" class="iframe-loading-overlay">
+                  <div class="loading-spinner"></div>
+                  <p>Loading page...</p>
+                </div>
+
+                <iframe 
+                  :src="detailPageUrl"
+                  class="details-iframe"
+                  frameborder="0"
+                  @load="onIframeLoad"
+                  @error="onIframeError"
+                  :style="{ opacity: iframeLoading ? 0 : 1 }"
+                ></iframe>
+              </div>
+
+              <div v-else class="no-details">
+                Click on a trajectory segment to view details
               </div>
             </div>
-            -->
-          </FloatingFilter>
+
+            <div class="details-sidebar-footer">
+              <button 
+                class="open-full-btn"
+                @click="openDetailsInNewTab"
+                :disabled="!currentSegmentId"
+              >
+                Open in New Tab
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -199,19 +226,25 @@ const mapRef = ref(null)
 // Component state
 const showFilter = ref(false)
 const loading = ref(false)
-const simplifyData = ref(true) // Whether to simplify trajectory data
-const viewBasedLoading = ref(true) // Whether to load only visible area
+const simplifyData = ref(true)
+
+const showDetailsSidebar = ref(false)
+const currentSegmentId = ref(null)
+const iframeLoading = ref(false) 
+const detailError = ref(null)
+
+let iframeLoadTimeout = null
 
 // Filter criteria
 const filters = reactive({
-  maxTimeGap: null, // Maximum segment duration in seconds
-  mmsi: [], // Selected MMSI values
-  startTime: '', // Start time for time range filter
-  endTime: '', // End time for time range filter
-  minLon: '', // Minimum longitude for bounding box
-  maxLon: '', // Maximum longitude for bounding box
-  minLat: '', // Minimum latitude for bounding box
-  maxLat: '' // Maximum latitude for bounding box
+  maxTimeGap: null,
+  mmsi: [],
+  startTime: '',
+  endTime: '',
+  minLon: '',
+  maxLon: '',
+  minLat: '',
+  maxLat: ''
 })
 
 // Dropdown menu states
@@ -225,13 +258,13 @@ const searchQueries = reactive({
 })
 
 // Trajectory data
-const trajectories = ref([]) // Raw trajectory data from backend
-const allSegmentFeatures = ref([]) // All segment features for filtering
-const currentSegmentFeatures = ref([]) // Currently displayed segment features
+const trajectories = ref([])
+const allSegmentFeatures = ref([])
+const currentSegmentFeatures = ref([])
 
 // Map view state
-const currentBounds = ref(null) // Current map bounds
-const currentZoom = ref(0) // Current map zoom level
+const currentBounds = ref(null)
+const currentZoom = ref(0)
 
 // Hover state helpers
 let hoveredTrajectoryId = null
@@ -254,12 +287,11 @@ const availableMmsi = computed(() => {
   return Array.from(mmsiSet).sort()
 })
 
-/**
- * Check if segment total duration exceeds the specified threshold
- * @param {Object} segment - The segment object with start_ts and end_ts
- * @param {number} maxDurationSeconds - Maximum allowed segment duration in seconds
- * @returns {boolean} True if segment duration exceeds threshold
- */
+const detailPageUrl = computed(() => {
+  if (!currentSegmentId.value) return ''
+  return `/node/${currentSegmentId.value}`
+})
+
 function hasLargeTimeRange(segment, maxDurationSeconds) {
   if (!maxDurationSeconds || !segment.start_ts || !segment.end_ts) {
     return false
@@ -272,12 +304,6 @@ function hasLargeTimeRange(segment, maxDurationSeconds) {
   return totalDurationSeconds > maxDurationSeconds
 }
 
-/**
- * Simplify trajectory coordinates using Douglas-Peucker algorithm
- * @param {Array} coordinates - Array of [lon, lat] coordinates
- * @param {number} tolerance - Simplification tolerance
- * @returns {Array} Simplified coordinates
- */
 function simplifyTrajectory(coordinates, tolerance = 0.0001) {
   if (coordinates.length <= 2) return coordinates
   
@@ -343,11 +369,6 @@ function simplifyTrajectory(coordinates, tolerance = 0.0001) {
   return douglasPeucker(coordinates, tolerance)
 }
 
-/**
- * Get simplification tolerance based on zoom level
- * @param {number} zoom - Current map zoom level
- * @returns {number} Simplification tolerance value
- */
 function getSimplificationTolerance(zoom) {
   if (zoom < 5) return 0.01
   if (zoom < 8) return 0.001
@@ -355,24 +376,12 @@ function getSimplificationTolerance(zoom) {
   return 0.00001
 }
 
-/**
- * Check if a point is within the specified bounds
- * @param {Array} point - [lng, lat] coordinates
- * @param {Array} bounds - [[swLng, swLat], [neLng, neLat]] bounds
- * @returns {boolean} True if point is within bounds
- */
 function isPointInBounds(point, bounds) {
   const [lng, lat] = point
   const [[swLng, swLat], [neLng, neLat]] = bounds
   return lng >= swLng && lng <= neLng && lat >= swLat && lat <= neLat
 }
 
-/**
- * Check if a line has any points within the specified bounds
- * @param {Array} coordinates - Array of [lng, lat] coordinates
- * @param {Array} bounds - [[swLng, swLat], [neLng, neLat]] bounds
- * @returns {boolean} True if line intersects with bounds
- */
 function isLineInBounds(coordinates, bounds) {
   return coordinates.some(coord => isPointInBounds(coord, bounds))
 }
@@ -433,6 +442,86 @@ const clearAll = (type) => {
   filters[type] = []
 }
 
+const openDetailsSidebar = (segmentId) => {
+  console.log('Opening details sidebar for segment:', segmentId)
+
+  detailError.value = null
+  currentSegmentId.value = segmentId
+ 
+  if (iframeLoadTimeout) {
+    clearTimeout(iframeLoadTimeout)
+    iframeLoadTimeout = null
+  }
+
+  showDetailsSidebar.value = true
+
+  iframeLoading.value = true
+
+  iframeLoadTimeout = setTimeout(() => {
+    if (iframeLoading.value) {
+      console.warn('Iframe loading timeout for:', detailPageUrl.value)
+      detailError.value = 'Page loading timeout. The page may not exist or is taking too long to load.'
+      iframeLoading.value = false
+    }
+  }, 8000)
+}
+
+const closeDetailsSidebar = () => {
+  showDetailsSidebar.value = false
+  currentSegmentId.value = null
+  detailError.value = null
+  iframeLoading.value = false
+
+  if (iframeLoadTimeout) {
+    clearTimeout(iframeLoadTimeout)
+    iframeLoadTimeout = null
+  }
+}
+
+const openDetailsInNewTab = () => {
+  if (currentSegmentId.value) {
+    window.open(detailPageUrl.value, '_blank')
+  }
+}
+
+const onIframeLoad = (event) => {
+  console.log('Details page loaded successfully:', detailPageUrl.value)
+  iframeLoading.value = false
+  detailError.value = null
+
+  if (iframeLoadTimeout) {
+    clearTimeout(iframeLoadTimeout)
+    iframeLoadTimeout = null
+  }
+}
+
+const onIframeError = (event) => {
+  console.error('Failed to load details page:', detailPageUrl.value)
+  console.error('Iframe error event:', event)
+  detailError.value = `Failed to load page: ${detailPageUrl.value}`
+  iframeLoading.value = false
+
+  if (iframeLoadTimeout) {
+    clearTimeout(iframeLoadTimeout)
+    iframeLoadTimeout = null
+  }
+}
+
+watch(detailPageUrl, (newUrl, oldUrl) => {
+  console.log('Iframe URL changed:', oldUrl, '->', newUrl)
+  if (newUrl && newUrl !== oldUrl) {
+
+    iframeLoading.value = true
+  }
+})
+
+watch(showDetailsSidebar, (newValue) => {
+  if (!newValue) {
+
+    closeDetailsSidebar()
+  }
+})
+
 // Close dropdowns when clicking outside
 const handleClickOutside = (event) => {
   if (!event.target.closest('.multi-select-wrapper')) {
@@ -465,6 +554,10 @@ onBeforeUnmount(() => {
   if (mapRef.value) {
     mapRef.value.remove()
     mapRef.value = null
+  }
+
+  if (iframeLoadTimeout) {
+    clearTimeout(iframeLoadTimeout)
   }
 })
 
@@ -556,9 +649,7 @@ async function initMap() {
       moveEndTimeout = setTimeout(() => {
         currentBounds.value = map.getBounds().toArray()
         currentZoom.value = map.getZoom()
-        if (viewBasedLoading.value && trajectories.value.length > 0) {
-          updateMapData()
-        }
+        updateMapData()
       }, 200)
     })
 
@@ -581,19 +672,15 @@ async function loadInitialData() {
     const data = await res.json()
     trajectories.value = data || []
     
-    // ===Modification start: Automatically set map center and zoom level===
     if (trajectories.value.length > 0 && mapRef.value) {
-      // Directly use the first point of the first trajectory as the center
       const firstTraj = trajectories.value[0]
       if (firstTraj.segments?.[0]?.coordinates?.[0]) {
         const firstPoint = firstTraj.segments[0].coordinates[0]
         mapRef.value.setCenter(firstPoint)
-        mapRef.value.setZoom(5) // Set an appropriate zoom level
+        mapRef.value.setZoom(5)
       }
     }
-    // ==
 
-    // Build segment features for map display
     buildSegmentFeatures()
     updateMapData()
   } catch (err) {
@@ -612,7 +699,6 @@ function buildSegmentFeatures() {
   let featureIdCounter = 1
 
   trajectories.value.forEach(traj => {
-    // Sort segments by start time to ensure proper connection order
     const sortedSegments = [...traj.segments].sort((a, b) => {
       return new Date(a.start_ts) - new Date(b.start_ts)
     })
@@ -620,36 +706,35 @@ function buildSegmentFeatures() {
     let previousEndPoint = null
 
     sortedSegments.forEach(seg => {
+      // 检查segment是否有ID
+      if (!seg.id) {
+        seg.id = `segment_${featureIdCounter}`
+      }
+      
       // Apply time range filtering based on segment total duration
       if (filters.maxTimeGap !== null && filters.maxTimeGap !== undefined && filters.maxTimeGap >= 0) {
-        // Skip segment if its total duration exceeds the threshold
         if (hasLargeTimeRange(seg, filters.maxTimeGap)) {
-          previousEndPoint = null // Reset connection point when skipping a segment
+          previousEndPoint = null
           return
         }
       }
 
-      // Check for abnormal jumps in segment coordinates (max distance between points)
       if (hasLargeJumps(seg.coordinates)) {
         console.log(`Skipping segment ${seg.id} due to large coordinate jumps`)
-        previousEndPoint = null // Reset connection point when skipping a segment
+        previousEndPoint = null
         return
       }
 
-      // Apply trajectory simplification
       let coordinates = seg.coordinates || []
       if (simplifyData.value && coordinates.length > 10) {
         const tolerance = getSimplificationTolerance(currentZoom.value)
         coordinates = simplifyTrajectory(coordinates, tolerance)
       }
 
-      // Connect to previous segment if coordinates are available
       if (previousEndPoint && coordinates.length > 0) {
-        // Always connect to previous segment without distance checking
         coordinates = [previousEndPoint, ...coordinates]
       }
 
-      // Create segment feature with potentially connected coordinates
       allSegmentFeatures.value.push({
         type: 'Feature',
         id: featureIdCounter++,
@@ -672,7 +757,6 @@ function buildSegmentFeatures() {
         }
       })
 
-      // Update previous endpoint for next segment connection
       if (coordinates.length > 0) {
         previousEndPoint = coordinates[coordinates.length - 1]
       } else {
@@ -689,10 +773,10 @@ function buildSegmentFeatures() {
  */
 function hasLargeJumps(coordinates) {
   if (!coordinates || coordinates.length < 2) {
-    return false // Not enough points to check for jumps
+    return false
   }
 
-  const MAX_JUMP_DISTANCE_KM = 5 // Maximum allowed distance between consecutive points in km
+  const MAX_JUMP_DISTANCE_KM = 5
 
   for (let i = 1; i < coordinates.length; i++) {
     const [lon1, lat1] = coordinates[i - 1]
@@ -716,7 +800,7 @@ function hasLargeJumps(coordinates) {
 function calculateDistance(coord1, coord2) {
   const [lon1, lat1] = coord1
   const [lon2, lat2] = coord2
-  const R = 6371 // Earth's radius in kilometers
+  const R = 6371
   const dLat = (lat2 - lat1) * Math.PI / 180
   const dLon = (lon2 - lon1) * Math.PI / 180
   const a = 
@@ -734,11 +818,9 @@ function updateMapData() {
   const map = mapRef.value
   if (!map || !map.getSource('trajectory-segments')) return
 
-  // Filter features based on current criteria
   let filteredFeatures = filterFeatures(allSegmentFeatures.value)
 
-  // Apply view-based filtering
-  if (viewBasedLoading.value && currentBounds.value) {
+  if (currentBounds.value) {
     filteredFeatures = filteredFeatures.filter(feature => 
       isLineInBounds(feature.geometry.coordinates, currentBounds.value)
     )
@@ -751,10 +833,7 @@ function updateMapData() {
     features: currentSegmentFeatures.value
   }
 
-  // Update map source data
   map.getSource('trajectory-segments').setData(geojson)
-  
-  // Clear hover state after data update
   clearHoverState(map)
 }
 
@@ -784,14 +863,10 @@ function filterFeatures(features) {
   return features.filter(f => {
     const p = f.properties || {}
 
-    // Time range filtering is already handled in buildSegmentFeatures
-
-    // MMSI multi-select filter
     if (filters.mmsi.length > 0 && !filters.mmsi.includes(String(p.vessel_id))) {
       return false
     }
 
-    // Time range filter
     if (startMillis || endMillis) {
       const segStart = p.start_ts ? Date.parse(p.start_ts) : null
       const segEnd = p.end_ts ? Date.parse(p.end_ts) : null
@@ -800,7 +875,6 @@ function filterFeatures(features) {
       if (endMillis && segStart && segStart > endMillis) return false
     }
 
-    // Spatial bounding box filter
     if (
       filters.minLon !== '' ||
       filters.maxLon !== '' ||
@@ -837,7 +911,6 @@ function filterFeatures(features) {
 function setupMapInteractions(map) {
   if (!map) return
 
-  // Cursor styling
   map.on('mouseenter', 'trajectory-segments-line', () => {
     map.getCanvas().style.cursor = 'pointer'
   })
@@ -847,7 +920,6 @@ function setupMapInteractions(map) {
     clearHoverState(map)
   })
 
-  // Hover highlighting for entire trajectory and current segment
   map.on('mousemove', 'trajectory-segments-line', e => {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['trajectory-segments-line']
@@ -872,7 +944,6 @@ function setupMapInteractions(map) {
     hoveredTrajectoryId = trajId
     hoveredSegmentId = segId
 
-    // Set feature state for all segments in the same trajectory
     currentSegmentFeatures.value
       .filter(f => f.properties.trajectory_id === trajId)
       .forEach(f => {
@@ -885,7 +956,6 @@ function setupMapInteractions(map) {
             }
           )
         } catch (error) {
-          // Ignore feature state errors - features might not be loaded yet
           console.debug('Feature state error:', error)
         }
       })
@@ -910,14 +980,12 @@ function setupMapInteractions(map) {
 
     const type = extractFirstWord(summary)
 
-const html = `
+    const html = `
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; max-width: 280px; color: #374151; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-  <!-- Header -->
   <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 12px 16px;">
     <div style="font-size: 13px; font-weight: 700; color: white; letter-spacing: 0.3px;">Segment: ${segmentId}</div>
   </div>
 
-  <!-- Basic Info -->
   <div style="padding: 16px; background: #ffffff;">
     <div style="display: grid; gap: 10px;">
       <div style="display: flex; justify-content: space-between;">
@@ -929,12 +997,11 @@ const html = `
         <span style="font-weight: 600; font-size: 11px; color: #111827;">${vesselId}</span>
       </div>
       <div style="display: flex; justify-content: space-between;">
-        <span style="color: #6b7280; font-size: 11px; font-weight: 500;">Duration:</span>
+        <span style="color: #6b7280; font-size: 11px; font-weight=500;">Duration:</span>
         <span style="font-weight: 600; font-size: 11px; color: #111827;">${duration}</span>
       </div>
     </div>
     
-    <!-- Button -->
     <div style="margin-top: 16px;">
       <a href="/node/${segmentId}" 
         style="display: block; text-align: center;
@@ -954,10 +1021,18 @@ const html = `
   </div>
 </div>
 `
+
     new Popup({ closeButton: true, closeOnClick: true ,maxWidth: '500px',anchor: 'bottom' })
       .setLngLat(e.lngLat)
       .setHTML(html)
       .addTo(map)
+
+    if (segmentId && segmentId !== 'Unknown segment') {
+      console.log('Opening sidebar with segment ID:', segmentId)
+      openDetailsSidebar(segmentId)
+    } else {
+      console.warn('No valid segment ID found to open sidebar')
+    }
   })
 
   // Click on map background to close filter
@@ -970,6 +1045,7 @@ const html = `
     }
   })
 }
+
 function extractFirstWord(text) {
   if (!text || text === 'No summary available.') {
     return 'Unknown'
@@ -979,6 +1055,7 @@ function extractFirstWord(text) {
 
   return firstWord || 'Unknown'
 }
+
 /**
  * Clear hover state from all features
  * @param {Object} map - MapLibre map instance
@@ -993,7 +1070,6 @@ function clearHoverState(map) {
         { hoverTrajectory: false, hoverSegment: false }
       )
     } catch (error) {
-      // Ignore feature state errors - features might not be loaded yet
       console.debug('Feature state error on clear:', error)
     }
   })
@@ -1029,7 +1105,7 @@ function resetFilters() {
 }
 
 // Watch for performance option changes
-watch([simplifyData, viewBasedLoading], () => {
+watch([simplifyData], () => {
   if (mapRef.value && trajectories.value.length > 0) {
     buildSegmentFeatures()
     updateMapData()
@@ -1362,6 +1438,158 @@ watch(() => filters.maxTimeGap, () => {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+.details-sidebar {
+  position: absolute;
+  right: -400px; 
+  top: 0;
+  bottom: 0;
+  width: 400px;
+  background: white;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  border-left: 1px solid #e5e7eb;
+}
 
+.details-sidebar--visible {
+  right: 0;
+}
 
+.details-sidebar-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.sidebar-close-btn {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  font-size: 24px;
+  line-height: 1;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.sidebar-close-btn:hover {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.details-sidebar-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.segment-details {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.details-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+  flex: 1;
+  transition: opacity 0.3s ease;
+}
+
+.iframe-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 14px;
+  gap: 12px;
+  z-index: 10;
+}
+
+.iframe-loading-overlay .loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.iframe-loading-overlay p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.no-details {
+  padding: 40px 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+  font-style: italic;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.open-full-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.open-full-btn:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.open-full-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
 </style>

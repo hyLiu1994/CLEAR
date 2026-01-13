@@ -53,6 +53,53 @@
               </div>
             </div>
           </FloatingFilter>
+
+          <!-- right details sidebar -->
+          <div class="details-sidebar" :class="{ 'details-sidebar--visible': showDetailsSidebar }">
+            <div class="details-sidebar-header">
+              <h3 class="details-title">Node Details</h3>
+              <button class="sidebar-close-btn" @click="closeDetailsSidebar">
+                <span>×</span>
+              </button>
+            </div>
+            
+            <div class="details-sidebar-content">
+              <div v-if="showDebugInfo && currentNodeId" class="current-segment-info">
+                <p>Loading details for node: <strong>{{ currentNodeId }}</strong></p>
+                <p>URL: {{ detailPageUrl }}</p>
+              </div>
+              
+              <div v-if="currentNodeId" class="node-details">
+                <iframe 
+                  :src="detailPageUrl"
+                  class="details-iframe"
+                  frameborder="0"
+                  @load="onIframeLoad"
+                  @error="onIframeError"
+                  ref="detailsIframe"
+                ></iframe>
+
+                <div v-if="iframeLoading" class="iframe-loading-overlay">
+                  <span class="loading-spinner"></span>
+                  Loading page...
+                </div>
+              </div>
+
+              <div v-else class="no-details">
+                Drag a node to view details
+              </div>
+            </div>
+
+            <div class="details-sidebar-footer">
+              <button 
+                class="open-full-btn"
+                @click="openDetailsInNewTab"
+                :disabled="!currentNodeId"
+              >
+                Open in New Tab
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -60,7 +107,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, onBeforeUnmount, nextTick, computed } from 'vue'
+import { ref, reactive, onMounted, onBeforeUnmount, nextTick, computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import ForceGraphModule from 'force-graph'
 
@@ -71,6 +118,7 @@ const ForceGraph = ForceGraphModule.default || ForceGraphModule
 
 const graphEl = ref(null)
 const graphWrapper = ref(null)
+const detailsIframe = ref(null) 
 const router = useRouter()
 let fg = null
 
@@ -88,6 +136,13 @@ const isLoading = ref(false)
 const isDataLoaded = ref(false)
 const isGraphInitialized = ref(false)
 const isFirstLoad = ref(true)
+
+const showDetailsSidebar = ref(false)
+const currentNodeId = ref(null)
+const iframeLoading = ref(false) 
+const detailError = ref(null)
+const showDebugInfo = ref(false) 
+let loadTimeout = null 
 
 // Filter UI state
 const showFilter = ref(false)
@@ -130,13 +185,99 @@ const HIGHLIGHT_COLORS = {
   link: '#fbbf24'
 }
 
-// Computed properties: Available filter options (limited to 5 types)
+// Computed properties
 const availableNodeTypes = computed(() => {
   const types = new Set()
   rawGraphData.value.nodes?.forEach(n => {
     if (n.type) types.add(n.type)
   })
   return Array.from(types).sort().slice(0, 5)
+})
+
+const detailPageUrl = computed(() => {
+  if (!currentNodeId.value) return ''
+  return `/node/${currentNodeId.value}`
+})
+
+const openDetailsSidebar = (nodeId) => {
+  console.log('Opening details sidebar for node:', nodeId)
+
+  detailError.value = null
+  currentNodeId.value = nodeId
+
+  if (loadTimeout) {
+    clearTimeout(loadTimeout)
+    loadTimeout = null
+  }
+
+  showDetailsSidebar.value = true
+
+  nextTick(() => {
+
+    iframeLoading.value = true
+
+    loadTimeout = setTimeout(() => {
+      if (iframeLoading.value) {
+        console.warn('Iframe loading timeout for:', detailPageUrl.value)
+        detailError.value = 'Page loading timeout. The page may not exist or is taking too long to load.'
+        iframeLoading.value = false
+      }
+    }, 8000)
+  })
+}
+
+const closeDetailsSidebar = () => {
+  showDetailsSidebar.value = false
+  currentNodeId.value = null
+  detailError.value = null
+  iframeLoading.value = false
+
+  if (loadTimeout) {
+    clearTimeout(loadTimeout)
+    loadTimeout = null
+  }
+}
+
+const openDetailsInNewTab = () => {
+  if (currentNodeId.value) {
+    window.open(detailPageUrl.value, '_blank')
+  }
+}
+
+const onIframeLoad = (event) => {
+  console.log('Details page loaded successfully:', detailPageUrl.value)
+  iframeLoading.value = false
+  detailError.value = null
+
+  if (loadTimeout) {
+    clearTimeout(loadTimeout)
+    loadTimeout = null
+  }
+}
+
+const onIframeError = (event) => {
+  console.error('Failed to load details page:', detailPageUrl.value)
+  console.error('Iframe error event:', event)
+  detailError.value = `Failed to load page: ${detailPageUrl.value}`
+  iframeLoading.value = false
+
+  if (loadTimeout) {
+    clearTimeout(loadTimeout)
+    loadTimeout = null
+  }
+}
+
+watch(detailPageUrl, (newUrl, oldUrl) => {
+  console.log('Iframe URL changed:', oldUrl, '->', newUrl)
+  if (newUrl && newUrl !== oldUrl) {
+    iframeLoading.value = true
+  }
+})
+
+watch(showDetailsSidebar, (newValue) => {
+  if (!newValue) {
+    closeDetailsSidebar()
+  }
 })
 
 function debounce(func, wait) {
@@ -484,6 +625,7 @@ function initForceGraph(el) {
       }, 16)) 
       .onNodeDrag((node) => {
         highlightConnectedNodes(node)
+        openDetailsSidebar(node.id)
       })
       .onNodeDragEnd(() => {
         clearHighlight()
@@ -609,6 +751,10 @@ onBeforeUnmount(() => {
     
     fg.graphData({ nodes: [], links: [] })
     fg = null
+  }
+
+  if (loadTimeout) {
+    clearTimeout(loadTimeout)
   }
 })
 
@@ -765,6 +911,167 @@ function resetFilters() {
   left: 0;
 }
 
+.details-sidebar {
+  position: absolute;
+  right: -400px; 
+  top: 0;
+  bottom: 0;
+  width: 400px;
+  background: white;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  border-left: 1px solid #e5e7eb;
+}
+
+.details-sidebar--visible {
+  right: 0;
+}
+
+.details-sidebar-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.sidebar-close-btn {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  font-size: 24px;
+  line-height: 1;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.sidebar-close-btn:hover {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.details-sidebar-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.current-segment-info {
+  padding: 12px 20px;
+  background: #fef3c7;
+  border-bottom: 1px solid #fbbf24;
+  font-size: 12px;
+  color: #92400e;
+}
+
+.current-segment-info p {
+  margin: 4px 0;
+}
+
+.node-details {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.details-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+  flex: 1;
+}
+
+.iframe-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 14px;
+  gap: 12px;
+  z-index: 10;
+}
+
+.iframe-loading-overlay .loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.no-details {
+  padding: 40px 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+  font-style: italic;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.open-full-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.open-full-btn:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.open-full-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .field {
   margin-bottom: 16px;
 }
@@ -854,6 +1161,10 @@ function resetFilters() {
   letter-spacing: 0.02em;
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

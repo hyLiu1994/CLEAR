@@ -10,8 +10,9 @@
 
       <!-- Main content -->
       <section class="body">
+        <!-- Display for Function type nodes -->
         <div v-if="isFunctionType">
-          <!-- Function Description -->
+          <!-- Function Description section -->
           <div v-if="functionDescription" class="function-section">
             <h2 class="section-title">Function Description</h2>
             <div class="function-description-plain">
@@ -19,7 +20,7 @@
             </div>
           </div>
 
-          <!-- Code Implementation-->
+          <!-- Code Implementation section -->
           <div v-if="codeImplementation" class="code-section">
             <h2 class="section-title">Code Implementation</h2>
             <pre ref="codeBlock" class="code-plain">
@@ -30,78 +31,90 @@
           </div>
         </div>
 
+        <!-- Display for non-Function type nodes -->
         <template v-else>
-          <h2 class="section-title">Description</h2>
-          <!-- static attribute type special content -->
-          <div v-if="isAttributeType && node.description" class="attribute-header">
-            <div class="attribute-summary">
-              <div class="attribute-summary-item">
-                <strong>1. What is the definition of "Under way using engine"?</strong>
-                <p>{{ attributeDefinition }}</p>
+          <!-- Special display for Attribute type nodes -->
+          <div v-if="isAttributeType && node.description" class="attribute-content">
+            <!-- Definition section -->
+            <div class="definition-section">
+              <h2 class="section-title">Definition</h2>
+              <div class="definition-content">
+                {{ attributeDefinition }}
               </div>
-              <div class="attribute-summary-item">
-                <strong>2. What does the statistical information indicate?</strong>
-                <div class="statistics-content">
-                  <p>{{ attributeStatistics }}</p>
-                  <div class="behavior-associations" v-if="topBehavior">
-                    <div class="top-behavior">
-                      <span class="label">Most associated behavior:</span>
-                      <span class="value">{{ topBehavior.id }}</span>
-                    </div>
-                    <div class="association-count">
-                      <span class="label">Associated behavior patterns:</span>
-                      <span class="value">{{ behaviorAssociationCount }}</span>
-                    </div>
+            </div>
+
+            <!-- Statistical information section -->
+            <div class="statistics-section">
+              <h2 class="section-title">Statistical Information</h2>
+              <div class="statistics-content">
+                <!-- Dynamic statistical information showing behavior pattern associations -->
+                <p v-if="behaviorAssociationCount > 0">
+                  This attribute is associated with {{ behaviorAssociationCount }} behavior patterns.
+                </p>
+                <p v-else>
+                  No specific statistical information available for this attribute.
+                </p>
+                
+                <!-- Most associated behavior information -->
+                <div class="behavior-associations" v-if="topBehavior">
+                  <div class="top-behavior">
+                    <span class="label">Most associated behavior:</span>
+                    <span class="value">{{ topBehavior.id }}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           
-          <ul class="description-list">
-            <li 
-              v-for="(para, idx) in node.description" 
-              :key="'p-' + idx"
-              class="description-item"
-            >
-              <!-- main description content -->
-              <div class="main-description">
-                <template v-if="para.includes(':')">
-                  <strong>{{ getSimpleTitle(para) }}:</strong>
-                  <span class="description-text">
-                    {{ getSimpleContent(para) }}
-                  </span>
-                </template>
-                <template v-else>
-                  {{ para }}
-                </template>
-              </div>
-            </li>
-          </ul>
-
-          <!-- detailed descriptions -->
-          <div v-if="hasDetailedDescriptions" class="detailed-section">
-            <h2 class="section-title detailed-section-title">Detailed Explanations</h2>
-            <div class="detailed-descriptions-container">
-              <div 
-                v-for="(detail, idx) in detailedDescriptions" 
-                :key="'detail-' + idx"
-                class="detailed-description-item"
+          <!-- Display for other non-Function, non-Attribute type nodes (regular description) -->
+          <template v-if="!isAttributeType && node.description && node.description.length > 0">
+            <h2 class="section-title">Description</h2>
+            <ul class="description-list">
+              <li 
+                v-for="(para, idx) in node.description" 
+                :key="'p-' + idx"
+                class="description-item"
               >
-                <div class="detailed-item-header">
-                  <span class="detail-index">{{ idx + 1 }}.</span>
-                  <strong class="detailed-item-title">
-                    {{ detail.title || `Detail ${idx + 1}` }}
-                  </strong>
+                <!-- Main description content -->
+                <div class="main-description">
+                  <template v-if="para.includes(':')">
+                    <strong>{{ getSimpleTitle(para) }}:</strong>
+                    <span class="description-text">
+                      {{ getSimpleContent(para) }}
+                    </span>
+                  </template>
+                  <template v-else>
+                    {{ para }}
+                  </template>
                 </div>
-                <div class="detailed-item-content">
-                  <span class="detailed-text">{{ detail.content }}</span>
+              </li>
+            </ul>
+
+            <!-- Detailed descriptions for regular nodes -->
+            <div v-if="hasDetailedDescriptions" class="detailed-section">
+              <h2 class="section-title detailed-section-title">Detailed Explanations</h2>
+              <div class="detailed-descriptions-container">
+                <div 
+                  v-for="(detail, idx) in detailedDescriptions" 
+                  :key="'detail-' + idx"
+                  class="detailed-description-item"
+                >
+                  <div class="detailed-item-header">
+                    <span class="detail-index">{{ idx + 1 }}.</span>
+                    <strong class="detailed-item-title">
+                      {{ detail.title || `Detail ${idx + 1}` }}
+                    </strong>
+                  </div>
+                  <div class="detailed-item-content">
+                    <span class="detailed-text">{{ detail.content }}</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </template>
         </template>
 
+        <!-- Behavioral patterns section -->
         <template v-if="node.behavior && node.behavior.length">
           <h2 class="section-title">Behavioral patterns</h2>
           <ul class="bullet-list">
@@ -111,6 +124,7 @@
           </ul>
         </template>
 
+        <!-- Notes for analysts section -->
         <template v-if="node.notes && node.notes.length">
           <h2 class="section-title">Notes for analysts</h2>
           <ul class="bullet-list">
@@ -122,6 +136,7 @@
       </section>
     </div>
 
+    <!-- Graph sidebar section -->
     <div class="graph-sidebar" v-if="hasGraphData">
       <div class="graph-main-container">
         <section class="graph-section">
@@ -147,6 +162,7 @@
             </div>
           </div>
           
+          <!-- Graph legend -->
           <div class="graph-legend">
             <div class="legend-title">Node Types</div>
             <div class="legend-items">
@@ -160,6 +176,7 @@
       </div>
     </div>
 
+    <!-- Expanded graph modal -->
     <div v-if="isGraphExpanded" class="graph-modal" @click.self="closeExpandedGraph">
       <div class="graph-modal-content">
         <div class="graph-modal-header">
@@ -203,6 +220,7 @@ import 'highlight.js/styles/github.css'
 
 const ForceGraph = ForceGraphModule.default || ForceGraphModule
 
+// Component props
 const props = defineProps({
   nodeId: {
     type: String,
@@ -218,6 +236,7 @@ const props = defineProps({
   }
 })
 
+// Graph state variables
 const isGraphExpanded = ref(false)
 const expandedGraphEl = ref(null)
 let expandedFg = null
@@ -227,12 +246,15 @@ let expandedHighlightNodes = new Set()
 let expandedHighlightLinks = new Set()
 let expandedDraggedNode = null
 
+// Node type computed properties
 const isAttributeType = computed(() => props.node.type === 'attribute')
 const isFunctionType = computed(() => props.node.type === 'function')
 
+// Function type specific data extraction
 const functionDescription = computed(() => {
   if (!isFunctionType.value || !props.node.description) return ''
   
+  // Find the paragraph containing "Function Description"
   const descriptionPara = props.node.description.find(para => {
     const colonIndex = para.indexOf(':')
     if (colonIndex === -1) return false
@@ -250,6 +272,7 @@ const functionDescription = computed(() => {
 const codeImplementation = computed(() => {
   if (!isFunctionType.value || !props.node.description) return ''
   
+  // Find the paragraph containing "Code Implementation"
   const codePara = props.node.description.find(para => {
     const colonIndex = para.indexOf(':')
     if (colonIndex === -1) return false
@@ -260,23 +283,28 @@ const codeImplementation = computed(() => {
   if (codePara) {
     const colonIndex = codePara.indexOf(':')
     const codeContent = codePara.substring(colonIndex + 1).trim()
-
+    
+    // Format the code content: put the part before the first colon on a separate line
     const firstColonInCode = codeContent.indexOf(':')
     if (firstColonInCode !== -1) {
       const beforeColon = codeContent.substring(0, firstColonInCode + 1).trim()
       const afterColon = codeContent.substring(firstColonInCode + 1).trim()
-
+      
+      // Return formatted code with indentation
       return `                          ${beforeColon}\n${afterColon}`
     }
-
+    
+    // If no colon, return with leading space
     return ` ${codeContent}`
   }
   return ''
 })
 
+// Code language detection
 const detectedLanguage = ref('python')
 const codeBlock = ref(null)
 
+// Detect programming language from code content
 const detectLanguage = (code) => {
   if (!code) return 'python'
   
@@ -301,12 +329,13 @@ const detectLanguage = (code) => {
     return 'go'
   }
   
-  return 'python' 
+  return 'python' // Default
 }
 
+// Apply syntax highlighting to code blocks
 const applyHighlight = () => {
   nextTick(() => {
-
+    // Find all code blocks that need highlighting
     document.querySelectorAll('pre code').forEach((block) => {
       if (!block.classList.contains('hljs')) {
         const codeContent = block.textContent
@@ -317,7 +346,7 @@ const applyHighlight = () => {
           hljs.highlightElement(block)
         } catch (error) {
           console.warn('Code highlighting failed:', error)
-
+          // Keep original formatting if highlighting fails
           block.style.whiteSpace = 'pre-wrap'
           block.style.fontFamily = "'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace"
         }
@@ -326,17 +355,17 @@ const applyHighlight = () => {
   })
 }
 
-// Get the main title (remove the content in parentheses, but handle nested parentheses)
+// Extract main title from text (remove content in parentheses)
 const getSimpleTitle = (text) => {
   const colonIndex = text.indexOf(':')
   if (colonIndex === -1) return text.trim()
   
   const titlePart = text.substring(0, colonIndex).trim()
-  // Remove the entire content within parentheses (including nested ones)
+  // Remove content within parentheses (including nested ones)
   return titlePart.replace(/\([^()]*(?:\([^()]*\)[^()]*)*\)/g, '').trim()
 }
 
-// Extract the main content (remove the content in parentheses, but handle nested parentheses)
+// Extract main content from text (remove content in parentheses)
 const getSimpleContent = (text) => {
   const colonIndex = text.indexOf(':')
   
@@ -348,12 +377,12 @@ const getSimpleContent = (text) => {
   return contentPart.replace(/\([^()]*(?:\([^()]*\)[^()]*)*\)/g, '').trim()
 }
 
-// Extract the detailed description within the parentheses
+// Extract detailed description content within parentheses
 const getBracketContent = (text) => {
   const startBracket = text.indexOf('(')
   if (startBracket === -1) return null
   
-  // Using a stack to handle nested parentheses
+  // Use stack to handle nested parentheses
   let stack = 1
   let endBracket = -1
   
@@ -375,6 +404,7 @@ const getBracketContent = (text) => {
   return null
 }
 
+// Attribute type specific data extraction
 const attributeDefinition = computed(() => {
   if (props.node.description && props.node.description.length > 0) {
     const firstPara = props.node.description[0]
@@ -386,28 +416,45 @@ const attributeDefinition = computed(() => {
   return "This attribute describes the vessel's operational status when it is underway and actively using its engine for propulsion, typically indicating normal navigation in progress."
 })
 
+// Get top associated behavior (example implementation)
 const topBehavior = computed(() => {
   return {
     id: "behavior_28596560",
   }
 })
 
+// Get behavior association count from node data
 const behaviorAssociationCount = computed(() => {
-  return 12
-})
-
-const attributeStatistics = computed(() => {
-  if (topBehavior.value) {
-    return ``
+  // Extract from node metadata or description
+  if (props.node.behaviorAssociationCount) {
+    return props.node.behaviorAssociationCount
   }
-  return ``
+  
+  // Alternative: count from behavior patterns if available
+  if (props.node.behavior && Array.isArray(props.node.behavior)) {
+    return props.node.behavior.length
+  }
+  
+  // Alternative: extract from description
+  if (props.node.description) {
+    // Look for patterns like "associated with X behavior patterns"
+    const descText = props.node.description.join(' ')
+    const match = descText.match(/associated with (\d+) behavior patterns/i)
+    if (match) {
+      return parseInt(match[1])
+    }
+  }
+  
+  return 0
 })
 
+// Check if detailed descriptions exist
 const hasDetailedDescriptions = computed(() => {
   if (!props.node.description || isFunctionType.value) return false
   return props.node.description.some(para => getBracketContent(para))
 })
 
+// Extract detailed descriptions
 const detailedDescriptions = computed(() => {
   if (!props.node.description || isFunctionType.value) return []
   
@@ -433,6 +480,7 @@ const PERFORMANCE_CONFIG = {
   SIMULATION_QUALITY: 'medium'
 }
 
+// Animation configuration
 const ANIMATION_CONFIG = {
   ALPHA_MIN: 0.001,
   ALPHA_DECAY: 0.02,        
@@ -487,7 +535,7 @@ const nodeTypes = ref([
   { name: 'segment', label: 'Segment', color: '#06b6d4' },
 ])
 
-// Computed properties
+// Computed properties for graph data
 const availableLevels = computed(() => {
   if (!props.node.graph?.nodes) return [1]
   
@@ -597,7 +645,7 @@ const buildGraphData = (level = props.currentLevel) => {
   return { nodes: allNodes, links }
 }
 
-// Debounce function for performance
+// Debounce function for performance optimization
 function debounce(func, wait) {
   let timeout
   return function executedFunction(...args) {
@@ -610,6 +658,7 @@ function debounce(func, wait) {
   }
 }
 
+// Start pulse animation for central node
 function startPulseAnimation() {
   if (pulseAnimationId) {
     cancelAnimationFrame(pulseAnimationId)
@@ -624,6 +673,7 @@ function startPulseAnimation() {
   pulseAnimationId = requestAnimationFrame(animate)
 }
 
+// Stop pulse animation
 function stopPulseAnimation() {
   if (pulseAnimationId) {
     cancelAnimationFrame(pulseAnimationId)
@@ -631,6 +681,7 @@ function stopPulseAnimation() {
   }
 }
 
+// Get pulse effect values
 function getPulseEffect() {
   const pulse = Math.sin(pulseTime * 0.002) * 0.5 + 0.5
   return {
@@ -679,14 +730,14 @@ function highlightExpandedConnectedNodes(node) {
   expandedDraggedNode = node
 }
 
-// Reset highlight for main graph
+// Clear highlight for main graph
 function clearHighlight() {
   highlightNodes = new Set()
   highlightLinks = new Set()
   draggedNode = null
 }
 
-// Reset highlight for expanded graph
+// Clear highlight for expanded graph
 function clearExpandedHighlight() {
   expandedHighlightNodes = new Set()
   expandedHighlightLinks = new Set()
@@ -1086,9 +1137,9 @@ function initExpandedForceGraph() {
   }
 }
 
+// Configure physics forces for the graph
 function configureForces(graphInstance, settings) {
   try {
-
     const linkForce = graphInstance.d3Force('link')
     if (linkForce && typeof linkForce.distance === 'function') {
       linkForce.distance(settings.linkDistance)
@@ -1119,18 +1170,21 @@ function configureForces(graphInstance, settings) {
   }
 }
 
+// Update main graph size
 function updateGraphSize() {
   if (!graphEl.value || !fg) return
   const rect = graphEl.value.getBoundingClientRect()
   fg.width(rect.width).height(rect.height)
 }
 
+// Update expanded graph size
 function updateExpandedGraphSize() {
   if (!expandedGraphEl.value || !expandedFg) return
   const rect = expandedGraphEl.value.getBoundingClientRect()
   expandedFg.width(rect.width).height(rect.height)
 }
 
+// Resize handler with debouncing
 const resizeHandler = debounce(() => {
   updateGraphSize()
   if (isGraphExpanded.value) {
@@ -1181,22 +1235,25 @@ const refreshExpandedGraph = () => {
   }
 }
 
+// Component emits
 const emit = defineEmits(['open-node', 'switch-level'])
 
-// Lifecycle
+// Lifecycle hooks
 onMounted(async () => {
   await nextTick()
   
   if (graphEl.value && hasGraphData.value) {
     initForceGraph()
   }
-
+  
+  // Apply code highlighting
   applyHighlight()
   
   window.addEventListener('resize', resizeHandler)
 })
 
 onUpdated(() => {
+  // Re-apply code highlighting after component updates
   applyHighlight()
 })
 
@@ -1244,7 +1301,8 @@ watch(() => props.node, () => {
       }
     }, 100)
   }
-
+  
+  // Re-apply code highlighting when node data changes
   applyHighlight()
 })
 
@@ -1264,6 +1322,7 @@ watch(() => isGraphExpanded.value, (newVal) => {
   }
 })
 
+// Watch for codeImplementation changes to update language detection
 watch(() => codeImplementation.value, (newCode) => {
   if (newCode) {
     detectedLanguage.value = detectLanguage(newCode)
@@ -1329,47 +1388,28 @@ watch(() => codeImplementation.value, (newCode) => {
   color: #111827;
 }
 
+/* Function and Code sections */
 .function-section {
   margin-bottom: 24px;
 }
 
-.function-description-content {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 20px;
+.function-description-plain {
   margin: 12px 0;
   line-height: 1.6;
   font-size: 16px;
   color: #374151;
+  padding: 0;
+  background: none;
+  border: none;
 }
 
 .code-section {
   margin-bottom: 24px;
 }
 
-.code-highlight-wrapper {
-  margin-top: 8px;
-  position: relative;
-}
-
-.code-language-label {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: 12px;
-  color: #6b7280;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 3px 10px;
-  border-radius: 4px;
-  border: 1px solid #e5e7eb;
-  font-family: system-ui, -apple-system, sans-serif;
-  z-index: 2;
-}
-
-.code-block {
-  margin: 0;
-  padding: 20px;
+.code-plain {
+  margin: 12px 0 0 0;
+  padding: 16px;
   background: #f8fafc;
   border-radius: 8px;
   overflow-x: auto;
@@ -1377,16 +1417,88 @@ watch(() => codeImplementation.value, (newCode) => {
   font-size: 14px;
   line-height: 1.6;
   min-height: 60px;
-}
-
-.code-block code {
-  display: block;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
   color: #2d3748;
-  white-space: pre;
-  overflow-x: auto;
 }
 
+/* Attribute content styles */
+.attribute-content {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.definition-section,
+.statistics-section {
+  margin-bottom: 24px;
+}
+
+.definition-section:last-child,
+.statistics-section:last-child {
+  margin-bottom: 0;
+}
+
+.definition-content {
+  background: white;
+  border-radius: 6px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.statistics-content {
+  background: white;
+  border-radius: 6px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.statistics-content p {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.behavior-associations {
+  margin-top: 16px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.top-behavior {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.top-behavior .label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 13px;
+  min-width: 140px;
+}
+
+.top-behavior .value {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Description list for non-attribute nodes */
 .description-list {
   padding-left: 18px;
   margin: 8px 0 16px;
@@ -1399,7 +1511,6 @@ watch(() => codeImplementation.value, (newCode) => {
   list-style-type: disc;
 }
 
-/* main description */
 .main-description {
   margin-bottom: 4px;
   line-height: 1.5;
@@ -1418,6 +1529,7 @@ watch(() => codeImplementation.value, (newCode) => {
   line-height: 1.6;
 }
 
+/* Bullet list styles */
 .bullet-list {
   padding-left: 18px;
   margin: 4px 0 10px;
@@ -1429,6 +1541,7 @@ watch(() => codeImplementation.value, (newCode) => {
   margin-bottom: 4px;
 }
 
+/* Detailed descriptions */
 .detailed-section {
   margin: 24px 0 20px;
   padding-top: 20px;
@@ -1496,97 +1609,6 @@ watch(() => codeImplementation.value, (newCode) => {
   font-size: 14px;
   line-height: 1.6;
   color: #4b5563;
-}
-
-/* Attribute header styles */
-.attribute-header {
-  background: #f8fafc;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #1e40af; 
-}
-
-.attribute-summary {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.attribute-summary-item {
-  background: white;
-  border-radius: 6px;
-  padding: 16px;
-  border: 1px solid #e5e7eb;
-}
-
-.attribute-summary-item strong {
-  display: block;
-  margin-bottom: 8px;
-  color: #111827;
-  font-size: 15px;
-}
-
-.attribute-summary-item p {
-  margin: 0;
-  color: #4b5563;
-  line-height: 1.5;
-}
-
-.statistics-content {
-  margin-top: 8px;
-}
-
-.behavior-associations {
-  margin-top: 12px;
-  padding: 12px;
-  background: #f9fafb;
-  border-radius: 6px;
-  border: 1px solid #e5e7eb;
-}
-
-.top-behavior,
-.association-count {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.top-behavior:last-child,
-.association-count:last-child {
-  margin-bottom: 0;
-}
-
-.top-behavior .label,
-.association-count .label {
-  font-weight: 500;
-  color: #374151;
-  font-size: 13px;
-  min-width: 120px;
-}
-
-.top-behavior .value {
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  background: #f3f4f6;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 12px;
-  color: #111827;
-  font-weight: 600;
-}
-
-.top-behavior .description {
-  color: #6b7280;
-  font-size: 13px;
-  font-style: italic;
-}
-
-.association-count .value {
-  font-weight: 600;
-  color: #3b82f6;
-  font-size: 14px;
 }
 
 /* Graph section styles */
@@ -1686,14 +1708,6 @@ watch(() => codeImplementation.value, (newCode) => {
   border-color: #3b82f6;
 }
 
-.level-badge {
-  font-size: 11px;
-  padding: 1px 4px;
-  background: #ef4444;
-  color: white;
-  border-radius: 4px;
-}
-
 .graph-container {
   background: white;
   border-radius: 12px;
@@ -1763,6 +1777,7 @@ watch(() => codeImplementation.value, (newCode) => {
   font-weight: 500;
 }
 
+/* Graph modal styles */
 .graph-modal {
   position: fixed;
   top: 0;
@@ -1867,6 +1882,7 @@ watch(() => codeImplementation.value, (newCode) => {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
+/* Responsive design */
 @media (max-width: 1200px) {
   .page-container {
     flex-direction: column;
@@ -1918,19 +1934,13 @@ watch(() => codeImplementation.value, (newCode) => {
     padding: 10px 14px;
   }
   
-  .function-description-content {
-    padding: 16px;
+  .function-description-plain {
     font-size: 14px;
   }
   
-  .code-block {
-    padding: 16px;
+  .code-plain {
     font-size: 13px;
-  }
-  
-  .code-language-label {
-    font-size: 11px;
-    padding: 2px 8px;
+    padding: 12px;
   }
 }
 
@@ -1982,100 +1992,72 @@ watch(() => codeImplementation.value, (newCode) => {
     font-size: 13px;
   }
   
-  .function-description-content {
-    padding: 12px;
+  .function-description-plain {
     font-size: 14px;
   }
   
-  .code-block {
-    padding: 12px;
+  .code-plain {
     font-size: 12px;
-  }
-  
-  .code-language-label {
-    font-size: 10px;
-    padding: 1px 6px;
+    padding: 10px;
   }
 }
 
-/* Increase the font size of the entire page */
+/* Font size adjustments for better readability */
 .title {
   font-size: 30px;
 }
 
 .section-title {
-  font-size: 34px; /* Enlarge the subtitle to 22px */
+  font-size: 22px;
 }
 
 .description-list li,
 .bullet-list li {
-  font-size: 34px; /* Enlarge the main text to 16px */
+  font-size: 16px;
   line-height: 1.7;
 }
 
-.function-description-content {
-  font-size: 28px;
-  line-height: 1.6;
+/* Function and Code sections font size */
+.function-description-plain {
+  font-size: 16px;
 }
 
-.code-block {
-  font-size: 24px;
-  line-height: 1.6;
-  padding: 24px;
-}
-
-.code-language-label {
-  font-size: 20px;
-  padding: 6px 14px;
+.code-plain {
+  font-size: 14px;
 }
 
 .detailed-section-title {
-  font-size: 34px;
+  font-size: 22px;
 }
 
 .detailed-item-title {
-  font-size: 30px;
+  font-size: 16px;
 }
 
 .detailed-text {
-  font-size: 30px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
 .detail-index {
-  font-size: 28px;
+  font-size: 15px;
 }
 
-@media (min-width: 769px) {
-  .attribute-summary-item strong {
-    font-size: 30px;
-  }
-  
-  .attribute-summary-item p {
-    font-size: 28px;
-    line-height: 1.6;
-  }
-  
-  .top-behavior .label,
-  .association-count .label {
-    font-size: 26px;
-    min-width: 200px;
-  }
-  
-  .top-behavior .value {
-    font-size: 24px;
-    padding: 4px 10px;
-  }
-  
-  .top-behavior .description {
-    font-size: 24px;
-  }
-  
-  .association-count .value {
-    font-size: 26px;
-  }
+/* Attribute sections font size */
+.definition-content,
+.statistics-content p {
+  font-size: 16px;
 }
 
+.top-behavior .label {
+  font-size: 14px;
+}
+
+.top-behavior .value {
+  font-size: 13px;
+}
+
+/* Highlight.js style overrides */
 :deep(.hljs) {
   background: transparent !important;
 }
@@ -2120,31 +2102,5 @@ watch(() => codeImplementation.value, (newCode) => {
 
 :deep(.hljs-name) {
   color: #e36209 !important;
-}
-
-.function-description-plain {
-  margin: 12px 0;
-  line-height: 1.6;
-  font-size: 28px;
-  color: #374151;
-  padding: 0;
-  background: none;
-  border: none;
-}
-
-.code-plain {
-  margin: 12px 0 0 0;
-  padding: 16px;
-  background: #f8fafc;
-  border-radius: 8px;
-  overflow-x: auto;
-  border: 1px solid #e2e8f0;
-  font-size: 24px;
-  line-height: 1.6;
-  min-height: 60px;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  color: #2d3748;
 }
 </style>
