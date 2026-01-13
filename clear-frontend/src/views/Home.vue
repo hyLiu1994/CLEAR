@@ -1,73 +1,114 @@
 <template>
   <AppPageLayout>
-    <section class="panel">
-      <!-- Top title area -->
-      <header class="panel-header">
-        <div>
-          <h1 class="title">CLEAR: A Knowledge-Centric Vessel Trajectory Platform</h1>
-          <p class="subtitle">
-            CLEAR constructs a Structured Data-derived Knowledge Graph (SD-KG) from AIS records
-            and uses it to impute missing trajectory segments and support interactive vessel analysis.
-          </p>
-          <p class="subtitle secondary">
-            The <strong>Map</strong> view exposes enriched trajectories on a marine basemap, the
-            <strong>SD-KG</strong> view reveals the knowledge that drives imputations, and
-            <strong>Settings</strong> lets you choose datasets, processing pipelines, and
-            hyperparameters. Together they form a coherent, knowledge-centric analytics platform.
+    <!-- Main container with modern gradient background -->
+    <main class="home-container">
+      <!-- Hero section with title and description -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <!-- Decorative element -->
+          <div class="hero-decoration">
+            <div class="decoration-circle"></div>
+            <div class="decoration-circle"></div>
+            <div class="decoration-circle"></div>
+          </div>
+          
+          <!-- Main title with gradient -->
+          <h1 class="hero-title">
+            CLEAR: A Knowledge-Centric<br>
+            <span class="gradient-text">Vessel Trajectory Platform</span>
+          </h1>
+          
+          <!-- Description with improved readability -->
+          <p class="hero-description">
+            CLEAR constructs a <strong>Structured Data-derived Knowledge Graph (SD-KG)</strong> from AIS records 
+            and uses it to impute missing trajectory segments while supporting interactive vessel analysis.
           </p>
         </div>
-      </header>
+      </section>
 
-      <!-- Main entry area -->
-      <div class="panel-body">
-        <div class="entry-grid">
-          <!-- Map -->
-          <button class="entry-card" @click="go('/map')">
-            <div class="entry-chip">Map</div>
-            <h2 class="entry-title">Trajectory Map View</h2>
-            <p class="entry-text">
-              Visualize raw and imputed vessel trajectories on an interactive maritime map.
-              Zoom into individual segments, inspect gaps, and compare reconstructed tracks
-              with their original observations.
+      <!-- Feature cards section -->
+      <div class="features-grid">
+        <!-- Map feature card -->
+        <article class="feature-card" @click="go('/map')" role="button" tabindex="0">
+          <div class="card-header">
+            <div class="card-badge card-badge-map">Map</div>
+            <div class="card-icon">🌊</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Trajectory Map View</h3>
+            <p class="card-description">
+              Visualize raw and imputed vessel trajectories on an interactive maritime map. 
+              Zoom into individual segments, inspect gaps, and compare reconstructed tracks 
+              with original observations.
             </p>
-            <p class="entry-footer-link">View Map →</p>
-          </button>
+          </div>
+          <div class="card-footer">
+            <span class="card-link">View Map</span>
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="card-hover-effect"></div>
+        </article>
 
-          <!-- SD-KG -->
-          <button class="entry-card" @click="go('/sdkg')">
-            <div class="entry-chip">SD-KG</div>
-            <h2 class="entry-title">Knowledge Graph Viewer</h2>
-            <p class="entry-text">
-              Explore the Structured Data-derived Knowledge Graph that links static attributes,
-              behavior patterns, and imputation functions. Inspect how frequently patterns occur
-              and how they support specific reconstruction choices.
+        <!-- SD-KG feature card -->
+        <article class="feature-card" @click="go('/sdkg')" role="button" tabindex="0">
+          <div class="card-header">
+            <div class="card-badge card-badge-sdkg">SD-KG</div>
+            <div class="card-icon">🕸️</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Knowledge Graph Viewer</h3>
+            <p class="card-description">
+              Explore the Structured Data-derived Knowledge Graph that links static attributes, 
+              behavior patterns, and imputation functions. Inspect pattern frequencies and 
+              reconstruction choices.
             </p>
-            <p class="entry-footer-link">Browse SD-KG →</p>
-          </button>
+          </div>
+          <div class="card-footer">
+            <span class="card-link">Browse SD-KG</span>
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="card-hover-effect"></div>
+        </article>
 
-          <!-- Settings / Personalization -->
-          <button class="entry-card" @click="go('/settings')">
-            <div class="entry-chip">Settings</div>
-            <h2 class="entry-title">Personalized Configuration</h2>
-            <p class="entry-text">
-              Select example or custom AIS datasets, configure the processing pipeline, and
-              tune imputation hyperparameters. Use these settings to tailor CLEAR to different
-              scenarios or demonstration profiles.
+        <!-- Settings feature card -->
+        <article class="feature-card" @click="go('/settings')" role="button" tabindex="0">
+          <div class="card-header">
+            <div class="card-badge card-badge-settings">Settings</div>
+            <div class="card-icon">⚙️</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Personalized Configuration</h3>
+            <p class="card-description">
+              Select example or custom AIS datasets, configure processing pipelines, and 
+              tune imputation hyperparameters. Tailor CLEAR to different scenarios and 
+              demonstration profiles.
             </p>
-            <p class="entry-footer-link">Open Settings →</p>
-          </button>
-        </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-link">Open Settings</span>
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="card-hover-effect"></div>
+        </article>
       </div>
-    </section>
+    </main>
   </AppPageLayout>
 </template>
 
 <script setup>
+// Import Vue Router for navigation
 import { useRouter } from 'vue-router'
 import AppPageLayout from '../components/AppPageLayout.vue'
 
 const router = useRouter()
 
+// Navigation function with route validation
 const go = (path) => {
   if (router.currentRoute.value.path !== path) {
     router.push(path)
@@ -76,132 +117,303 @@ const go = (path) => {
 </script>
 
 <style scoped>
-/* Full-page panel: consistent with Settings / SD-KG style */
-.panel {
+/* Main container styles */
+.home-container {
   width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 0 0 1px #e5e5e5, 0 20px 40px rgba(15, 23, 42, 0.08);
-  display: flex;
-  flex-direction: column;
-}
-
-/* Top title area */
-.panel-header {
-  padding: 18px 22px 10px 22px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.title {
-  margin: 0 0 6px 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.subtitle {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 0;
   margin: 0;
-  font-size: 13px;
-  color: #4b5563;
-  max-width: 760px;
 }
 
-.subtitle.secondary {
-  margin-top: 4px;
-  color: #6b7280;
+/* Hero section styles */
+.hero-section {
+  padding: 4rem 2rem 3rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Main body */
-.panel-body {
-  flex: 1;
-  padding: 16px 22px 20px 22px;
-  box-sizing: border-box;
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
 
-/* Three entry cards */
-.entry-grid {
+.hero-decoration {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  z-index: 1;
+}
+
+.decoration-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.decoration-circle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  right: 50px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+}
+
+.decoration-circle:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  top: 100px;
+  right: 100px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-description strong {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Features grid - centered below hero */
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(280px, 360px));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
 }
 
-.entry-card {
-  text-align: left;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  background: #f9fafb;
-  padding: 16px 14px 12px 14px;
+/* Feature card styles */
+.feature-card {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
   cursor: pointer;
-  outline: none;
-
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
-  transition:
-    background 0.12s ease,
-    box-shadow 0.12s ease,
-    transform 0.12s ease,
-    border-color 0.12s ease;
+  min-height: 320px;
+  outline: none;
 }
 
-.entry-card:hover {
-  background: #ffffff;
-  border-color: #c4d2ff;
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.14);
-  transform: translateY(-1px);
+.feature-card:hover,
+.feature-card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  border-color: #3b82f6;
 }
 
-.entry-chip {
-  font-size: 11px;
+.feature-card:active {
+  transform: translateY(-2px);
+}
+
+.card-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .card-hover-effect {
+  transform: scaleX(1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.card-badge {
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #6b7280;
-  letter-spacing: 0.06em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-bottom: 6px;
 }
 
-.entry-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: #111827;
-  margin: 0 0 6px 0;
+.card-badge-map {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
-.entry-text {
-  margin: 0;
-  font-size: 12px;
-  color: #4b5563;
+.card-badge-sdkg {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.card-badge-settings {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.card-icon {
+  font-size: 1.75rem;
+  opacity: 0.8;
+}
+
+.card-content {
   flex: 1;
 }
 
-/* Bottom link style */
-.entry-footer-link {
-  margin: 10px 0 0 0;
-  font-size: 12px;
-  font-weight: 500;
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #475569;
+  margin: 0;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.card-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3b82f6;
+  transition: color 0.2s ease;
+}
+
+.feature-card:hover .card-link {
   color: #2563eb;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .entry-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  color: #3b82f6;
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    max-width: 800px;
+  }
+  
+  .hero-section {
+    padding: 3rem 1.5rem 2rem;
   }
 }
 
-@media (max-width: 640px) {
-  .panel-header {
-    padding: 14px 14px 8px 14px;
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
   }
-
-  .panel-body {
-    padding: 12px 14px 14px 14px;
+  
+  .hero-description {
+    font-size: 1.125rem;
   }
-
-  .entry-grid {
+  
+  .features-grid {
     grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .hero-section {
+    padding: 2.5rem 1rem 1.5rem;
+  }
+  
+  .feature-card {
+    min-height: 280px;
+    padding: 1.75rem;
+  }
+  
+  .card-title {
+    font-size: 1.125rem;
+  }
+  
+  .card-description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .features-grid {
+    gap: 1.25rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+    min-height: 260px;
   }
 }
 </style>
