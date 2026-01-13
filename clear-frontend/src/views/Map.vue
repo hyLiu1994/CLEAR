@@ -962,6 +962,7 @@ function setupMapInteractions(map) {
   })
 
   // Click segment to show popup with details
+  // Click segment to show popup with details
   map.on('click', 'trajectory-segments-line', e => {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['trajectory-segments-line']
@@ -981,48 +982,54 @@ function setupMapInteractions(map) {
     const type = extractFirstWord(summary)
 
     const html = `
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; max-width: 280px; color: #374151; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-  <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 12px 16px;">
-    <div style="font-size: 13px; font-weight: 700; color: white; letter-spacing: 0.3px;">Segment: ${segmentId}</div>
-  </div>
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; max-width: 280px; color: #374151; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+    <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 12px 16px;">
+      <div style="font-size: 13px; font-weight: 700; color: white; letter-spacing: 0.3px;">Segment: ${segmentId}</div>
+    </div>
 
-  <div style="padding: 16px; background: #ffffff;">
-    <div style="display: grid; gap: 10px;">
-      <div style="display: flex; justify-content: space-between;">
-        <span style="color: #6b7280; font-size: 11px; font-weight: 500;">Trajectory ID:</span>
-        <span style="font-weight: 600; font-size: 11px; color: #111827;">${trajectoryId}</span>
+    <div style="padding: 16px; background: #ffffff;">
+      <div style="display: grid; gap: 10px;">
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: #6b7280; font-size: 11px; font-weight: 500;">Trajectory ID:</span>
+          <span style="font-weight: 600; font-size: 11px; color: #111827;">${trajectoryId}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: #6b7280; font-size: 11px; font-weight: 500;">Vessel ID:</span>
+          <span style="font-weight: 600; font-size: 11px; color: #111827;">${vesselId}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: #6b7280; font-size: 11px; font-weight=500;">Duration:</span>
+          <span style="font-weight: 600; font-size: 11px; color: #111827;">${duration}</span>
+        </div>
       </div>
-      <div style="display: flex; justify-content: space-between;">
-        <span style="color: #6b7280; font-size: 11px; font-weight: 500;">Vessel ID:</span>
-        <span style="font-weight: 600; font-size: 11px; color: #111827;">${vesselId}</span>
-      </div>
-      <div style="display: flex; justify-content: space-between;">
-        <span style="color: #6b7280; font-size: 11px; font-weight=500;">Duration:</span>
-        <span style="font-weight: 600; font-size: 11px; color: #111827;">${duration}</span>
+      
+      <div style="margin-top: 16px;">
+        <a href="/node/${segmentId}" 
+          style="display: block; text-align: center;
+                  background: #3b82f6; 
+                  color: white; 
+                  padding: 8px 0; 
+                  border-radius: 6px; 
+                  text-decoration: none; 
+                  font-weight: 600;
+                  font-size: 11px;
+                  transition: background-color 0.2s;"
+          onmouseover="this.style.background='#2563eb';" 
+          onmouseout="this.style.background='#3b82f6';">
+          View Details
+        </a>
       </div>
     </div>
-    
-    <div style="margin-top: 16px;">
-      <a href="/node/${segmentId}" 
-        style="display: block; text-align: center;
-                background: #3b82f6; 
-                color: white; 
-                padding: 8px 0; 
-                border-radius: 6px; 
-                text-decoration: none; 
-                font-weight: 600;
-                font-size: 11px;
-                transition: background-color 0.2s;"
-        onmouseover="this.style.background='#2563eb';" 
-        onmouseout="this.style.background='#3b82f6';">
-        View Details
-      </a>
-    </div>
   </div>
-</div>
-`
+  `
 
-    new Popup({ closeButton: true, closeOnClick: true ,maxWidth: '500px',anchor: 'bottom' })
+    new Popup({ 
+      closeButton: true, 
+      closeOnClick: true,
+      maxWidth: '500px',
+      anchor: 'bottom',
+      className: 'no-border-popup' 
+    })
       .setLngLat(e.lngLat)
       .setHTML(html)
       .addTo(map)
@@ -1591,5 +1598,62 @@ watch(() => filters.maxTimeGap, () => {
   background: #cbd5e1;
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+:deep(.no-border-popup .maplibregl-popup-content) {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  position: relative;
+}
+
+:deep(.no-border-popup .maplibregl-popup-tip) {
+  display: none !important;
+}
+
+:deep(.no-border-popup .maplibregl-popup-content) {
+  position: relative;
+}
+
+:deep(.no-border-popup .maplibregl-popup-close-button) {
+  font-size: 18px !important;        
+  color: white !important;
+  background: none !important;       
+  border-radius: 0 !important;       
+  width: auto !important;           
+  height: auto !important;          
+  min-width: 20px !important;       
+  min-height: 20px !important;       
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  right:0px !important;             
+  top: 8px !important;               
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  transition: all 0.2s !important;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer !important;
+  z-index: 1000 !important;
+  font-weight: 300 !important;       
+  opacity: 0.9 !important;           
+}
+
+:deep(.no-border-popup .maplibregl-popup-close-button:hover) {
+  opacity: 1 !important;
+  transform: scale(1.2) !important;  
+  color: #f8fafc !important;        
+}
+
+:deep(.no-border-popup .maplibregl-popup-content) {
+  position: relative;
+}
+
+:deep(.no-border-popup .maplibregl-popup-content > div) {
+  padding-top: 8px; 
+  position: relative;
 }
 </style>
