@@ -10,75 +10,11 @@
       </header>
 
       <div class="panel-body">
-        <!-- Left: Mode + Hyperparameters -->
+        <!-- Left: VISTA CONFIGURATION Only -->
         <div class="left">
-          <!-- Dataset Selection -->
-          <section class="section">
-            <h2 class="section-title">Dataset</h2>
-            <p class="section-hint">
-              Select which AIS dataset CLEAR should use as input for SD-KG construction and imputation.
-            </p>
-            <div class="field-row">
-              <label class="field-label">Dataset</label>
-              <select v-model="form.dataset" class="field-input">
-                <option value="demo-dk">Demo · AIS-DK (subset)</option>
-                <option value="demo-us">Demo · AIS-US (subset)</option>
-                <option value="custom-dk">Custom · AIS-DK dataset</option>
-                <option value="custom-us">Custom · AIS-US dataset</option>
-              </select>
-            </div>
-            <!-- Information card -->
-            <div v-if="isCustomDataset" class="custom-dataset-card">
-              <div class="custom-dataset-header">
-                <div class="custom-dataset-title">Custom Dataset Settings</div>
-                <p class="custom-dataset-text">
-                  {{ dateRangeHint }}
-                </p>
-              </div>
-              <div class="field-row">
-                <label class="field-label">Start Date</label>
-                <input
-                  v-model="form.startDate"
-                  type="date"
-                  :min="dateRange.min"
-                  :max="dateRange.max"
-                  class="field-input"
-                />
-              </div>
-              <div class="field-row">
-                <label class="field-label">End Date</label>
-                <input
-                  v-model="form.endDate"
-                  type="date"
-                  :min="dateRange.min"
-                  :max="dateRange.max"
-                  class="field-input"
-                />
-              </div>
-              <div class="field-row">
-                <label class="field-label">Minimal time interval</label>
-                <input
-                  v-model.number="form.minTimeInterval"
-                  type="number"
-                  min="1"
-                  class="field-input"
-                />
-              </div>
-              <div class="field-row">
-                <label class="field-label">Maximal time interval</label>
-                <input
-                  v-model.number="form.maxTimeInterval"
-                  type="number"
-                  min="1"
-                  class="field-input"
-                />
-              </div>
-            </div>
-          </section>
-
           <!-- Expert Mode -->
           <section class="section">
-            <h2 class="section-title">VISTA configuration</h2>
+            <h2 class="section-title">VISTA CONFIGURATION</h2>
             <p class="section-hint">
               Configure construction and imputation hyperparameters directly.
             </p>
@@ -229,8 +165,72 @@
           </section>
         </div>
 
-        <!-- Right: Pipeline Control + Progress Bar -->
+        <!-- Right: Dataset + Pipeline Control -->
         <div class="right">
+          <!-- Dataset Selection -->
+          <section class="section">
+            <h2 class="section-title">Dataset</h2>
+            <p class="section-hint">
+              Select which AIS dataset CLEAR should use as input for SD-KG construction and imputation.
+            </p>
+            <div class="field-row">
+              <label class="field-label">Dataset</label>
+              <select v-model="form.dataset" class="field-input">
+                <option value="demo-dk">Demo · AIS-DK (subset)</option>
+                <option value="demo-us">Demo · AIS-US (subset)</option>
+                <option value="custom-dk">Custom · AIS-DK dataset</option>
+                <option value="custom-us">Custom · AIS-US dataset</option>
+              </select>
+            </div>
+            <!-- Information card -->
+            <div v-if="isCustomDataset" class="custom-dataset-card">
+              <div class="custom-dataset-header">
+                <div class="custom-dataset-title">Custom Dataset Settings</div>
+                <p class="custom-dataset-text">
+                  {{ dateRangeHint }}
+                </p>
+              </div>
+              <div class="field-row">
+                <label class="field-label">Start Date</label>
+                <input
+                  v-model="form.startDate"
+                  type="date"
+                  :min="dateRange.min"
+                  :max="dateRange.max"
+                  class="field-input"
+                />
+              </div>
+              <div class="field-row">
+                <label class="field-label">End Date</label>
+                <input
+                  v-model="form.endDate"
+                  type="date"
+                  :min="dateRange.min"
+                  :max="dateRange.max"
+                  class="field-input"
+                />
+              </div>
+              <div class="field-row">
+                <label class="field-label">Minimal time interval</label>
+                <input
+                  v-model.number="form.minTimeInterval"
+                  type="number"
+                  min="1"
+                  class="field-input"
+                />
+              </div>
+              <div class="field-row">
+                <label class="field-label">Maximal time interval</label>
+                <input
+                  v-model.number="form.maxTimeInterval"
+                  type="number"
+                  min="1"
+                  class="field-input"
+                />
+              </div>
+            </div>
+          </section>
+
           <section class="pipeline-section">
             <h2 class="section-title">Pipeline</h2>
             <p class="section-hint">
