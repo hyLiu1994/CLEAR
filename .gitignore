@@ -37,7 +37,6 @@ data/segments.json
 data/sdkg_index.json
 SAVE
 VISTA_partial
-clear-backend/data
 task_storage
 update_task_storage
 clear-backend/data copy
