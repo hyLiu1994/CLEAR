@@ -32,7 +32,7 @@
             <div class="expert-group">
               <div class="expert-group-title">Dataset config</div>
               <div class="field-row">
-                <label class="field-label">Trajectory number</label>
+                <label class="field-label">Number of trajectories</label>
                 <input
                   v-model.number="form.trajectoryNum"
                   type="number"
@@ -80,23 +80,25 @@
             </div>
 
             <div class="expert-group">
-              <div class="expert-group-title">Concurrent config</div>
+              <div class="expert-group-title">Parallel Processing</div>
               <div class="field-row">
-                <label class="field-label">Concurrent number</label>
+                <label class="field-label">Max parallel threads</label>
                 <input
                   v-model.number="form.concurrentNum"
                   type="number"
                   min="1"
                   class="field-input"
+                  title="Number of threads for SD-KG construction and imputation"
                 />
               </div>
               <div class="field-row">
-                <label class="field-label">Max retries</label>
+                <label class="field-label">Function generation retries</label>
                 <input
                   v-model.number="form.maxRetries"
                   type="number"
                   min="1"
                   class="field-input"
+                  title="Maximum retry attempts when generating imputation functions"
                 />
               </div>
             </div>
