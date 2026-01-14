@@ -1,5 +1,6 @@
 <template>
-  <AppPageLayout>
+  <!-- Check if the page is being viewed in an iframe (via embed query parameter) -->
+  <AppPageLayout v-if="!isIframeEmbed">
     <section class="panel panel--doc">
       <!-- Loading state -->
       <div v-if="loading" class="loading-state">
@@ -63,6 +64,72 @@
       </div>
     </section>
   </AppPageLayout>
+  
+  <!-- Iframe embedded view (no navigation, no layout, just content) -->
+  <div v-else class="iframe-embedded-view">
+    <section class="panel panel--doc">
+      <!-- Loading state -->
+      <div v-if="loading" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>{{ loadingMessage }}</p>
+      </div>
+
+      <!-- Error state -->
+      <div v-else-if="error" class="error-state">
+        <h3>Error Loading Node</h3>
+        <p>{{ error }}</p>
+        <button @click="retryLoading" class="retry-btn">Retry</button>
+      </div>
+
+      <!-- Normal display -->
+      <template v-else-if="node">
+        <!-- Top: Breadcrumbs, switch text based on type -->
+        <header class="panel-header doc-header">
+          <div class="breadcrumbs">
+            <span class="crumb" @click="goMap">Map</span>
+            <span class="crumb-sep">/</span>
+
+            <!-- Non-segment: SD-KG path; segment: Segment path -->
+            <template v-if="node.type === 'segment'">
+              <span class="crumb current">{{ nodeId }}</span>
+            </template>
+            <template v-else>
+              <span class="crumb" @click="goSDKG">SD-KG</span>
+              <span class="crumb-sep">/</span>
+              <span class="crumb current">{{ nodeId }}</span>
+            </template>
+          </div>
+
+          <span class="type-pill">
+            {{ typeLabel }}
+          </span>
+        </header>
+
+        <!-- Main area: Select layout component based on type -->
+        <div class="panel-body">
+          <div class="doc-inner">
+            <component
+              :is="activeComponent"
+              :node-id="nodeId"
+              :node="node"
+              :current-level="currentLevel"
+              :loading-level="loadingLevel"
+              @view-map="handleViewMap"
+              @open-node="handleOpenNode"
+              @switch-level="handleLoadLevel"
+            />
+          </div>
+        </div>
+      </template>
+
+      <!-- Empty data state -->
+      <div v-else class="empty-state">
+        <h3>Node Not Found</h3>
+        <p>The requested node could not be loaded.</p>
+        <button @click="goSDKG" class="back-btn">Back to SD-KG</button>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup>
@@ -73,22 +140,29 @@ import AppPageLayout from '../components/AppPageLayout.vue'
 import NodeDocSegment from '../components/node-doc/NodeDocSegment.vue'
 import NodeDocGeneric from '../components/node-doc/NodeDocGeneric.vue'
 
+// Get route and router instances for navigation and query parameters
 const route = useRoute()
 const router = useRouter()
 
-// Reactive data
+// Check if the page is being viewed in an iframe (via embed query parameter)
+const isIframeEmbed = computed(() => {
+  return route.query.embed === 'true'
+})
+
+// Reactive data for node state
 const node = ref(null)
 const loading = ref(false)
 const error = ref(null)
 const lastLoadedId = ref('')
-const currentLevel = ref(3) 
-const loadingLevel = ref(null) 
+const currentLevel = ref(3) // Default display level
+const loadingLevel = ref(null) // Track which level is currently loading
 
-let isLoading = false
+let isLoading = false // Flag to prevent duplicate loading
 
-// Current node ID
+// Current node ID from route parameters
 const nodeId = computed(() => (route.params.id ?? 'UNKNOWN').toString())
 
+// Loading message based on current state
 const loadingMessage = computed(() => {
   if (loadingLevel.value) {
     return `Loading level ${loadingLevel.value} relationships...`
@@ -96,7 +170,10 @@ const loadingMessage = computed(() => {
   return 'Loading node details...'
 })
 
-
+/**
+ * Load node data and subgraph data from API
+ * @param {string} id - Node ID to load
+ */
 async function loadNodeData(id) {
   if (isLoading || lastLoadedId.value === id) {
     console.log('Skipping duplicate load for:', id)
@@ -116,11 +193,13 @@ async function loadNodeData(id) {
 
     console.log(`Loading node data: ${id}`)
 
+    // Fetch node details and subgraph data in parallel
     const [nodeDetail, subgraphData] = await Promise.all([
       fetchNodeDetail(id),
       fetchSubgraphData(id)
     ])
 
+    // Combine node data with subgraph data
     const enhancedNode = {
       ...nodeDetail,
       graph: subgraphData,
@@ -140,6 +219,11 @@ async function loadNodeData(id) {
   }
 }
 
+/**
+ * Fetch node details from API
+ * @param {string} nodeId - Node ID to fetch
+ * @returns {Promise<Object>} Node details
+ */
 async function fetchNodeDetail(nodeId) {
   const nodeUrl = `http://localhost:8000/api/v1/sdkg/nodes/${nodeId}`
   const response = await fetch(nodeUrl)
@@ -154,6 +238,11 @@ async function fetchNodeDetail(nodeId) {
   return await response.json()
 }
 
+/**
+ * Fetch subgraph data for a node from API
+ * @param {string} nodeId - Node ID to fetch subgraph for
+ * @returns {Promise<Object>} Subgraph data
+ */
 async function fetchSubgraphData(nodeId) {
   const subgraphUrl = `http://localhost:8000/api/v1/sdkg/subgraph/${nodeId}`
   const response = await fetch(subgraphUrl)
@@ -168,12 +257,18 @@ async function fetchSubgraphData(nodeId) {
   return await response.json()
 }
 
+/**
+ * Handle level switching event from child components
+ * @param {number} level - New level to display
+ */
 const handleLoadLevel = (level) => {
   console.log('Switching to level:', level)
   currentLevel.value = level
 }
 
-// Retry loading
+/**
+ * Retry loading node data
+ */
 function retryLoading() {
   loadNodeData(nodeId.value)
 }
@@ -187,12 +282,12 @@ onMounted(() => {
 watch(nodeId, (newId, oldId) => {
   if (newId !== oldId) {
     console.log('Route changed from', oldId, 'to', newId)
-    currentLevel.value = 3 
+    currentLevel.value = 3 // Reset to default level
     loadNodeData(newId)
   }
 })
 
-// Type → Label
+// Convert node type to display label
 const typeLabel = computed(() => {
   if (!node.value) return 'Loading...'
   
@@ -212,7 +307,7 @@ const typeLabel = computed(() => {
   }
 })
 
-// Select specific layout component
+// Select specific layout component based on node type
 const activeComponent = computed(() => {
   if (!node.value) return null
   
@@ -224,7 +319,10 @@ const activeComponent = computed(() => {
 const goMap = () => router.push('/map')
 const goSDKG = () => router.push('/sdkg')
 
-// Handle "view-map" event emitted by child components
+/**
+ * Handle "view-map" event emitted by child components
+ * Navigates to map view with focus on current node/segment
+ */
 const handleViewMap = () => {
   if (!node.value) return
   
@@ -235,7 +333,10 @@ const handleViewMap = () => {
   }
 }
 
-// "open-node" event emitted by child components (related node click)
+/**
+ * Handle "open-node" event emitted by child components (related node click)
+ * @param {string} id - Node ID to open
+ */
 const handleOpenNode = (id) => {
   if (id && id !== nodeId.value) {
     console.log('Opening node:', id)
@@ -406,5 +507,38 @@ const handleOpenNode = (id) => {
 
 .back-btn:hover {
   background: #4b5563;
+}
+
+/* Styles for iframe embedded view */
+.iframe-embedded-view {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+
+.iframe-embedded-view .panel {
+  margin: 0;
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.iframe-embedded-view .panel-header {
+  padding: 10px 20px 8px 20px;
+}
+
+.iframe-embedded-view .panel-body {
+  padding: 12px 20px 14px 20px;
+}
+
+.iframe-embedded-view .breadcrumbs {
+  font-size: 11px;
+}
+
+.iframe-embedded-view .type-pill {
+  font-size: 10px;
+  padding: 3px 8px;
 }
 </style>

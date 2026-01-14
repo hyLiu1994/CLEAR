@@ -1,10 +1,23 @@
 <template>
   <AppPageLayout>
     <section class="panel panel--fill">
+      <!-- Enhanced header with decorative elements and gradient background -->
       <header class="panel-header">
-        <div>
-          <h2 class="section-title">Trajectory Visualization</h2>
+        <!-- Decorative background elements -->
+        <div class="header-decoration">
+          <div class="decoration-circle circle-1"></div>
+          <div class="decoration-circle circle-2"></div>
+          <div class="decoration-circle circle-3"></div>
         </div>
+        
+        <!-- Main title container -->
+        <div class="title-container">
+          <h1 class="title">
+            Trajectory <span class="gradient-text">Visualization</span>
+          </h1>
+        </div>
+        
+        <!-- Header controls (loading indicator) -->
         <div class="header-controls">
           <div class="loading-indicator" v-if="loading">
             <span class="loading-spinner"></span>
@@ -164,8 +177,32 @@
             </div>
           </FloatingFilter>
 
-          <!-- right details sidebar -->
-          <div class="details-sidebar" :class="{ 'details-sidebar--visible': showDetailsSidebar }">
+          <!-- Right details sidebar with resizable and draggable capabilities -->
+          <div 
+            ref="sidebarRef"
+            class="details-sidebar" 
+            :class="{ 'details-sidebar--visible': showDetailsSidebar }"
+            :style="sidebarStyle"
+            @mousedown="onSidebarDragStart"
+          >
+            <!-- Resize handle for left side -->
+            <div 
+              class="sidebar-resize-handle sidebar-resize-handle--left"
+              @mousedown.stop="onResizeStart('left', $event)"
+            ></div>
+            
+            <!-- Resize handle for top side -->
+            <div 
+              class="sidebar-resize-handle sidebar-resize-handle--top"
+              @mousedown.stop="onResizeStart('top', $event)"
+            ></div>
+            
+            <!-- Resize handle for top-left corner -->
+            <div 
+              class="sidebar-resize-handle sidebar-resize-handle--top-left"
+              @mousedown.stop="onResizeStart('top-left', $event)"
+            ></div>
+            
             <div class="details-sidebar-header">
               <h3 class="details-title">Segment Details</h3>
               <button class="sidebar-close-btn" @click="closeDetailsSidebar">
@@ -196,12 +233,13 @@
             </div>
 
             <div class="details-sidebar-footer">
+              <!-- Changed from "Open in New Tab" to "Open" and updated click handler -->
               <button 
                 class="open-full-btn"
-                @click="openDetailsInNewTab"
+                @click="openDetailsInCurrentTab"
                 :disabled="!currentSegmentId"
               >
-                Open in New Tab
+                Open
               </button>
             </div>
           </div>
@@ -222,6 +260,7 @@ import FloatingFilter from '../components/FloatingFilter.vue'
 // Template refs
 const mapContainer = ref(null)
 const mapRef = ref(null)
+const sidebarRef = ref(null)
 
 // Component state
 const showFilter = ref(false)
@@ -274,6 +313,56 @@ let hoveredSegmentId = null
 let filterTimeout = null
 let moveEndTimeout = null
 
+// Sidebar resize and drag state
+const sidebarPosition = reactive({
+  x: 0, // Horizontal position from right
+  y: 0, // Vertical position from top
+  width: 400, // Default width
+  height: '100%' // Default height (percentage or px)
+})
+
+// Store original sidebar position for resetting
+const originalSidebarPosition = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: '100%'
+}
+
+const isResizing = ref(false)
+const resizeDirection = ref(null)
+const isDragging = ref(false)
+const dragStartPos = reactive({ x: 0, y: 0 })
+
+// Computed property for sidebar style - FIXED
+const sidebarStyle = computed(() => {
+  if (!showDetailsSidebar.value) {
+    // When sidebar is hidden, position it completely off-screen
+    return {
+      right: '-1000px', // Move it far off-screen
+      transform: 'none',
+      width: '0',
+      height: '0',
+      opacity: '0',
+      visibility: 'hidden',
+      pointerEvents: 'none'
+    }
+  } else {
+    // When sidebar is visible, use its current position and size
+    const baseStyle = {
+      width: typeof sidebarPosition.width === 'number' ? `${sidebarPosition.width}px` : sidebarPosition.width,
+      height: sidebarPosition.height,
+      transform: `translate(${sidebarPosition.x}px, ${sidebarPosition.y}px)`,
+      right: '0',
+      opacity: '1',
+      visibility: 'visible',
+      pointerEvents: 'auto'
+    }
+    
+    return baseStyle
+  }
+})
+
 // Computed properties for filter options
 const availableMmsi = computed(() => {
   const mmsiSet = new Set()
@@ -289,9 +378,16 @@ const availableMmsi = computed(() => {
 
 const detailPageUrl = computed(() => {
   if (!currentSegmentId.value) return ''
-  return `/node/${currentSegmentId.value}`
+  // Add ?embed=true parameter to load the page without navigation bar
+  return `/node/${currentSegmentId.value}?embed=true`
 })
 
+/**
+ * Check if a segment has a time range larger than the specified maximum duration
+ * @param {Object} segment - Segment object
+ * @param {number} maxDurationSeconds - Maximum allowed duration in seconds
+ * @returns {boolean} True if segment duration exceeds the maximum
+ */
 function hasLargeTimeRange(segment, maxDurationSeconds) {
   if (!maxDurationSeconds || !segment.start_ts || !segment.end_ts) {
     return false
@@ -304,6 +400,12 @@ function hasLargeTimeRange(segment, maxDurationSeconds) {
   return totalDurationSeconds > maxDurationSeconds
 }
 
+/**
+ * Simplify trajectory coordinates using Douglas-Peucker algorithm
+ * @param {Array} coordinates - Array of [lon, lat] coordinates
+ * @param {number} tolerance - Simplification tolerance
+ * @returns {Array} Simplified coordinates
+ */
 function simplifyTrajectory(coordinates, tolerance = 0.0001) {
   if (coordinates.length <= 2) return coordinates
   
@@ -369,6 +471,11 @@ function simplifyTrajectory(coordinates, tolerance = 0.0001) {
   return douglasPeucker(coordinates, tolerance)
 }
 
+/**
+ * Get simplification tolerance based on current zoom level
+ * @param {number} zoom - Current map zoom level
+ * @returns {number} Simplification tolerance value
+ */
 function getSimplificationTolerance(zoom) {
   if (zoom < 5) return 0.01
   if (zoom < 8) return 0.001
@@ -376,12 +483,24 @@ function getSimplificationTolerance(zoom) {
   return 0.00001
 }
 
+/**
+ * Check if a point is within specified bounds
+ * @param {Array} point - [longitude, latitude] coordinates
+ * @param {Array} bounds - Bounding box [[swLng, swLat], [neLng, neLat]]
+ * @returns {boolean} True if point is within bounds
+ */
 function isPointInBounds(point, bounds) {
   const [lng, lat] = point
   const [[swLng, swLat], [neLng, neLat]] = bounds
   return lng >= swLng && lng <= neLng && lat >= swLat && lat <= neLat
 }
 
+/**
+ * Check if any point of a line is within specified bounds
+ * @param {Array} coordinates - Array of [lon, lat] coordinates
+ * @param {Array} bounds - Bounding box [[swLng, swLat], [neLng, neLat]]
+ * @returns {boolean} True if any point is within bounds
+ */
 function isLineInBounds(coordinates, bounds) {
   return coordinates.some(coord => isPointInBounds(coord, bounds))
 }
@@ -442,6 +561,10 @@ const clearAll = (type) => {
   filters[type] = []
 }
 
+/**
+ * Open the details sidebar for a specific segment
+ * @param {string} segmentId - ID of the segment to display
+ */
 const openDetailsSidebar = (segmentId) => {
   console.log('Opening details sidebar for segment:', segmentId)
 
@@ -451,6 +574,13 @@ const openDetailsSidebar = (segmentId) => {
   if (iframeLoadTimeout) {
     clearTimeout(iframeLoadTimeout)
     iframeLoadTimeout = null
+  }
+
+  // Reset sidebar position to default if it was previously moved/resized
+  if (sidebarPosition.x !== originalSidebarPosition.x || 
+      sidebarPosition.y !== originalSidebarPosition.y ||
+      sidebarPosition.width !== originalSidebarPosition.width) {
+    resetSidebarPosition()
   }
 
   showDetailsSidebar.value = true
@@ -466,11 +596,17 @@ const openDetailsSidebar = (segmentId) => {
   }, 8000)
 }
 
+/**
+ * Close the details sidebar and reset its position
+ */
 const closeDetailsSidebar = () => {
   showDetailsSidebar.value = false
   currentSegmentId.value = null
   detailError.value = null
   iframeLoading.value = false
+
+  // Reset sidebar position to default
+  resetSidebarPosition()
 
   if (iframeLoadTimeout) {
     clearTimeout(iframeLoadTimeout)
@@ -478,12 +614,31 @@ const closeDetailsSidebar = () => {
   }
 }
 
-const openDetailsInNewTab = () => {
+/**
+ * Reset sidebar position to its original/default values
+ */
+const resetSidebarPosition = () => {
+  sidebarPosition.x = originalSidebarPosition.x
+  sidebarPosition.y = originalSidebarPosition.y
+  sidebarPosition.width = originalSidebarPosition.width
+  sidebarPosition.height = originalSidebarPosition.height
+}
+
+/**
+ * Open the details page in the current browser tab (replaces iframe navigation)
+ */
+const openDetailsInCurrentTab = () => {
   if (currentSegmentId.value) {
-    window.open(detailPageUrl.value, '_blank')
+    // Navigate to the details page in the current tab
+    // Note: This will open the page without embed parameter, showing full navigation
+    window.location.href = `/node/${currentSegmentId.value}`
   }
 }
 
+/**
+ * Handle iframe load event
+ * @param {Event} event - Load event
+ */
 const onIframeLoad = (event) => {
   console.log('Details page loaded successfully:', detailPageUrl.value)
   iframeLoading.value = false
@@ -495,6 +650,10 @@ const onIframeLoad = (event) => {
   }
 }
 
+/**
+ * Handle iframe error event
+ * @param {Event} event - Error event
+ */
 const onIframeError = (event) => {
   console.error('Failed to load details page:', detailPageUrl.value)
   console.error('Iframe error event:', event)
@@ -507,18 +666,11 @@ const onIframeError = (event) => {
   }
 }
 
+// Watch for changes to the detail page URL
 watch(detailPageUrl, (newUrl, oldUrl) => {
   console.log('Iframe URL changed:', oldUrl, '->', newUrl)
   if (newUrl && newUrl !== oldUrl) {
-
     iframeLoading.value = true
-  }
-})
-
-watch(showDetailsSidebar, (newValue) => {
-  if (!newValue) {
-
-    closeDetailsSidebar()
   }
 })
 
@@ -539,6 +691,95 @@ const applyFiltersDebounced = () => {
   filterTimeout = setTimeout(() => {
     applyFilters()
   }, 300)
+}
+
+/**
+ * Start resizing the sidebar
+ * @param {string} direction - Resize direction (left, top, top-left)
+ * @param {MouseEvent} event - Mouse event
+ */
+const onResizeStart = (direction, event) => {
+  event.preventDefault()
+  isResizing.value = true
+  resizeDirection.value = direction
+  dragStartPos.x = event.clientX
+  dragStartPos.y = event.clientY
+  
+  const startWidth = sidebarPosition.width
+  const startHeight = sidebarPosition.height === '100%' 
+    ? sidebarRef.value.parentElement.clientHeight 
+    : parseInt(sidebarPosition.height)
+  const startX = sidebarPosition.x
+  const startY = sidebarPosition.y
+  
+  const handleMouseMove = (e) => {
+    if (!isResizing.value) return
+    
+    const dx = e.clientX - dragStartPos.x
+    const dy = e.clientY - dragStartPos.y
+    
+    if (direction.includes('left')) {
+      const newWidth = Math.max(300, Math.min(800, startWidth - dx))
+      sidebarPosition.width = newWidth
+    }
+    
+    if (direction.includes('top')) {
+      const newHeight = Math.max(200, Math.min(window.innerHeight - 100, startHeight - dy))
+      sidebarPosition.height = `${newHeight}px`
+      sidebarPosition.y = startY + dy
+    }
+  }
+  
+  const handleMouseUp = () => {
+    isResizing.value = false
+    resizeDirection.value = null
+    document.removeEventListener('mousemove', handleMouseMove)
+    document.removeEventListener('mouseup', handleMouseUp)
+  }
+  
+  document.addEventListener('mousemove', handleMouseMove)
+  document.addEventListener('mouseup', handleMouseUp)
+}
+
+/**
+ * Start dragging the sidebar
+ * @param {MouseEvent} event - Mouse event
+ */
+const onSidebarDragStart = (event) => {
+  // Only start drag if clicking on the header
+  if (!event.target.closest('.details-sidebar-header')) return
+  
+  event.preventDefault()
+  isDragging.value = true
+  dragStartPos.x = event.clientX - sidebarPosition.x
+  dragStartPos.y = event.clientY - sidebarPosition.y
+  
+  const handleMouseMove = (e) => {
+    if (!isDragging.value) return
+    
+    const mapWrapper = sidebarRef.value.parentElement
+    const maxX = mapWrapper.clientWidth - sidebarPosition.width
+    const maxY = mapWrapper.clientHeight - parseInt(sidebarPosition.height)
+    
+    let newX = e.clientX - dragStartPos.x
+    let newY = e.clientY - dragStartPos.y
+    
+    // Constrain to parent bounds
+    newX = Math.max(-sidebarPosition.width + 20, Math.min(maxX - 20, newX))
+    newY = Math.max(0, Math.min(maxY, newY))
+    
+    sidebarPosition.x = newX
+    sidebarPosition.y = newY
+  }
+  
+  const handleMouseUp = () => {
+    isDragging.value = false
+    document.removeEventListener('mousemove', handleMouseMove)
+    document.removeEventListener('mouseup', handleMouseUp)
+  }
+  
+  document.addEventListener('mousemove', handleMouseMove)
+  document.addEventListener('mouseup', handleMouseUp)
 }
 
 // Component lifecycle
@@ -608,6 +849,7 @@ async function initMap() {
     })
 
     // Add trajectory line layer
+    // Modified 2: Changed trajectory colors to blue scheme matching homepage
     map.addLayer({
       id: 'trajectory-segments-line',
       type: 'line',
@@ -632,10 +874,10 @@ async function initMap() {
         'line-color': [
           'case',
           ['boolean', ['feature-state', 'hoverSegment'], false],
-          '#ff4b3a',
+          '#3b82f6', // Bright blue for selected segment
           ['boolean', ['feature-state', 'hoverTrajectory'], false],
-          '#ff9b7a',
-          '#ffb199'
+          '#60a5fa', // Medium blue for hovered trajectory
+          '#93c5fd'  // Light blue for normal segments
         ]
       }
     })
@@ -706,7 +948,7 @@ function buildSegmentFeatures() {
     let previousEndPoint = null
 
     sortedSegments.forEach(seg => {
-      // 检查segment是否有ID
+      // Check if segment has ID
       if (!seg.id) {
         seg.id = `segment_${featureIdCounter}`
       }
@@ -962,7 +1204,6 @@ function setupMapInteractions(map) {
   })
 
   // Click segment to show popup with details
-  // Click segment to show popup with details
   map.on('click', 'trajectory-segments-line', e => {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['trajectory-segments-line']
@@ -1053,6 +1294,11 @@ function setupMapInteractions(map) {
   })
 }
 
+/**
+ * Extract the first word from text
+ * @param {string} text - Input text
+ * @returns {string} First word or 'Unknown'
+ */
 function extractFirstWord(text) {
   if (!text || text === 'No summary available.') {
     return 'Unknown'
@@ -1129,59 +1375,129 @@ watch(() => filters.maxTimeGap, () => {
 </script>
 
 <style scoped>
-/* Styles remain unchanged from original */
+/* Main panel container with improved visual hierarchy */
 .panel {
   width: 100%;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 0 0 1px #e5e5e5, 0 20px 40px rgba(15, 23, 42, 0.08);
+  border-radius: 16px; /* Modern rounded corners */
+  background: #ffffff; /* Clean white background */
+  box-shadow: 0 0 0 1px rgba(226, 232, 240, 0.8), 0 20px 40px rgba(15, 23, 42, 0.1); /* Softer shadow */
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* Ensure content stays within rounded corners */
 }
 
 .panel--fill {
   flex: 1;
 }
 
+/* Enhanced panel header with gradient background and decorative elements */
 .panel-header {
-  padding: 18px 22px 10px 22px;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 2.5rem 2rem 1.5rem 2rem; /* Generous padding */
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); /* Subtle gradient background */
+  border-bottom: 1px solid #e2e8f0; /* Soft border color */
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.section-title {
-  font-size: 30px;
-  font-weight: 600;
-  margin: 0 0 6px 0;
-  color: #0f172a;
+/* Decorative background elements for visual interest */
+.header-decoration {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  z-index: 1;
+  pointer-events: none;
 }
 
+.decoration-circle {
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.6;
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+  top: 0;
+  right: 0;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+  top: 40px;
+  right: 40px;
+}
+
+.circle-3 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  top: 80px;
+  right: 80px;
+}
+
+/* Title container with left-aligned text and improved typography */
+.title-container {
+  position: relative;
+  z-index: 2;
+  text-align: left; /* Ensure left alignment */
+  flex: 1; /* Take available space */
+}
+
+/* Main title with consistent font size and gradient effect */
+.title {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem; /* Consistent with other pages */
+  font-weight: 700; /* Bold weight */
+  line-height: 1.2;
+  color: #1e293b; /* Dark color for good contrast */
+  letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+}
+
+/* Gradient text effect matching homepage hero title */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700; /* Bold weight for gradient text */
+}
+
+/* Subtitle with improved readability */
 .subtitle {
   margin: 0;
-  font-size: 13px;
-  color: #4b5563;
+  font-size: 1.125rem; /* Larger for better readability */
+  line-height: 1.6;
+  color: #475569; /* Softer gray color */
+  max-width: 800px; /* Limit width for readability */
 }
 
 .header-controls {
   display: flex;
   align-items: center;
   gap: 12px;
+  position: relative;
+  z-index: 2;
 }
 
 .loading-indicator {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
-  color: #6b7280;
+  font-size: 0.875rem; /* Slightly larger for readability */
+  color: #64748b; /* Softer gray */
+  font-weight: 500;
 }
 
 .loading-spinner {
-  width: 12px;
-  height: 12px;
-  border: 2px solid #e5e7eb;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #e2e8f0;
   border-top: 2px solid #3b82f6;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -1194,26 +1510,26 @@ watch(() => filters.maxTimeGap, () => {
 
 .panel-body {
   flex: 1;
-  padding: 14px 22px 18px 22px;
+  padding: 1.5rem; /* Increased padding for better spacing */
   box-sizing: border-box;
-  background: #f9fafb;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); /* Gradient background matching homepage */
   display: flex;
 }
 
 .map-wrapper {
   position: relative;
   flex: 1;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  border-radius: 12px; /* Larger radius */
+  border: 1px solid #e2e8f0; /* Softer border */
+  background: #ffffff; /* Clean white background */
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06); /* Subtle shadow */
   overflow: hidden;
 }
 
 .map-container {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 12px; /* Match wrapper radius */
   overflow: hidden;
 }
 
@@ -1226,7 +1542,7 @@ watch(() => filters.maxTimeGap, () => {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 6px;
-  color: #e5e7eb;
+  color: #475569; /* Better contrast */
 }
 
 .field-row {
@@ -1248,32 +1564,33 @@ watch(() => filters.maxTimeGap, () => {
 
 .sub-label {
   font-size: 12px;
-  color: #9ca3af;
+  color: #64748b; /* Softer gray */
   margin-bottom: 3px;
 }
 
 .field-input {
   width: 100%;
   box-sizing: border-box;
-  border-radius: 9px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(15, 23, 42, 0.9);
-  padding: 7px 9px;
+  border-radius: 8px; /* Consistent rounded corners */
+  border: 1px solid #cbd5e1; /* Softer border */
+  background: #ffffff; /* White background */
+  padding: 8px 10px; /* Comfortable padding */
   font-size: 14px;
-  color: #e5e7eb;
+  color: #1e293b; /* Dark text for readability */
   outline: none;
+  transition: all 0.2s ease;
 }
 
 .field-input:focus {
   border-color: #3b82f6;
-  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .field-hint {
   font-size: 11px;
-  color: #9ca3af;
+  color: #64748b; /* Softer gray */
   margin-top: 4px;
-  font-style: italic;
+  font-style: normal; /* Remove italic for better readability */
 }
 
 .performance-options {
@@ -1288,7 +1605,7 @@ watch(() => filters.maxTimeGap, () => {
   gap: 6px;
   cursor: pointer;
   font-size: 12px;
-  color: #e5e7eb;
+  color: #475569; /* Better contrast */
 }
 
 .checkbox-input {
@@ -1307,27 +1624,27 @@ watch(() => filters.maxTimeGap, () => {
 
 .dropdown-trigger {
   width: 100%;
-  padding: 7px 9px;
+  padding: 8px 10px;
   max-width: 300px;
-  border-radius: 9px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(15, 23, 42, 0.9);
-  color: #e5e7eb;
+  border-radius: 8px; /* Consistent rounded corners */
+  border: 1px solid #cbd5e1; /* Softer border */
+  background: #ffffff; /* White background */
+  color: #1e293b; /* Dark text */
   font-size: 12px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .dropdown-trigger:hover {
-  border-color: rgba(148, 163, 184, 0.9);
+  border-color: #94a3b8;
 }
 
 .dropdown-trigger.dropdown-open {
   border-color: #3b82f6;
-  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .selected-text {
@@ -1340,6 +1657,7 @@ watch(() => filters.maxTimeGap, () => {
 .dropdown-arrow {
   font-size: 10px;
   transition: transform 0.2s;
+  color: #64748b; /* Subtle gray */
 }
 
 .dropdown-trigger.dropdown-open .dropdown-arrow {
@@ -1351,35 +1669,38 @@ watch(() => filters.maxTimeGap, () => {
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(15, 23, 42, 0.98);
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  border-radius: 9px;
+  background: #ffffff; /* White background */
+  border: 1px solid #cbd5e1; /* Softer border */
+  border-radius: 8px;
   margin-top: 4px;
   z-index: 1000;
   max-height: 200px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .search-box {
   padding: 8px;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  border-bottom: 1px solid #e2e8f0; /* Light border */
 }
 
 .search-input {
   width: 100%;
   padding: 6px 8px;
   border-radius: 6px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background: rgba(31, 41, 55, 0.8);
-  color: #e5e7eb;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
   font-size: 12px;
   outline: none;
+  transition: all 0.2s ease;
 }
 
 .search-input:focus {
   border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .options-list {
@@ -1396,18 +1717,20 @@ watch(() => filters.maxTimeGap, () => {
   gap: 8px;
   transition: background-color 0.2s;
   font-size: 12px;
+  color: #1e293b;
 }
 
 .option-item:hover {
-  background: rgba(37, 99, 235, 0.2);
+  background: #f1f5f9; /* Light gray hover */
 }
 
 .option-item.option-selected {
-  background: rgba(37, 99, 235, 0.3);
+  background: rgba(59, 130, 246, 0.1); /* Light blue background */
+  color: #1d4ed8; /* Darker blue text */
 }
 
 .checkmark {
-  color: #10b981;
+  color: #10b981; /* Green checkmark */
   font-weight: bold;
   width: 16px;
   display: flex;
@@ -1420,25 +1743,26 @@ watch(() => filters.maxTimeGap, () => {
 
 .dropdown-actions {
   padding: 8px;
-  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  border-top: 1px solid #e2e8f0;
   display: flex;
   gap: 8px;
 }
 
 .action-btn {
   flex: 1;
-  padding: 4px 8px;
+  padding: 6px 8px;
   border-radius: 6px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background: rgba(31, 41, 55, 0.8);
-  color: #e5e7eb;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
   font-size: 11px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .action-btn:hover {
-  background: rgba(55, 65, 81, 0.9);
+  background: #f1f5f9;
+  border-color: #94a3b8;
 }
 
 :deep(.maplibregl-control-container) {
@@ -1447,21 +1771,36 @@ watch(() => filters.maxTimeGap, () => {
 
 .details-sidebar {
   position: absolute;
-  right: -400px; 
   top: 0;
-  bottom: 0;
-  width: 400px;
   background: white;
   box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
   z-index: 100;
   display: flex;
   flex-direction: column;
-  transition: right 0.3s ease;
+  transition: all 0.3s ease;
   border-left: 1px solid #e5e7eb;
+  border-radius: 8px 0 0 8px;
+  cursor: default;
+  user-select: none;
+  will-change: transform, right, opacity, visibility;
+}
+
+/* IMPORTANT FIX: Make sure sidebar is completely hidden when not visible */
+.details-sidebar:not(.details-sidebar--visible) {
+  right: -1000px !important;
+  transform: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .details-sidebar--visible {
   right: 0;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .details-sidebar-header {
@@ -1471,6 +1810,8 @@ watch(() => filters.maxTimeGap, () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: move;
+  border-radius: 8px 0 0 0;
 }
 
 .details-title {
@@ -1495,6 +1836,7 @@ watch(() => filters.maxTimeGap, () => {
   line-height: 1;
   padding: 0;
   transition: all 0.2s;
+  flex-shrink: 0;
 }
 
 .sidebar-close-btn:hover {
@@ -1562,7 +1904,7 @@ watch(() => filters.maxTimeGap, () => {
   text-align: center;
   color: #94a3b8;
   font-size: 14px;
-  font-style: italic;
+  font-style: normal; /* Remove italic for better readability */
   flex: 1;
   display: flex;
   align-items: center;
@@ -1573,23 +1915,24 @@ watch(() => filters.maxTimeGap, () => {
   padding: 16px 20px;
   border-top: 1px solid #e5e7eb;
   background: #f8fafc;
+  border-radius: 0 0 0 8px;
 }
 
 .open-full-btn {
   width: 100%;
   padding: 10px 16px;
-  background: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Gradient button */
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .open-full-btn:hover:not(:disabled) {
-  background: #2563eb;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
@@ -1598,6 +1941,55 @@ watch(() => filters.maxTimeGap, () => {
   background: #cbd5e1;
   cursor: not-allowed;
   opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Resize handles */
+.sidebar-resize-handle {
+  position: absolute;
+  background: transparent;
+  z-index: 101;
+}
+
+.sidebar-resize-handle--left {
+  left: -4px;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  cursor: ew-resize;
+}
+
+.sidebar-resize-handle--top {
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  cursor: ns-resize;
+}
+
+.sidebar-resize-handle--top-left {
+  top: -8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+}
+
+/* Visual indicators for resize handles - only show when sidebar is visible */
+.details-sidebar--visible .sidebar-resize-handle--left:hover,
+.details-sidebar--visible .sidebar-resize-handle--left:active {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.details-sidebar--visible .sidebar-resize-handle--top:hover,
+.details-sidebar--visible .sidebar-resize-handle--top:active {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.details-sidebar--visible .sidebar-resize-handle--top-left:hover,
+.details-sidebar--visible .sidebar-resize-handle--top-left:active {
+  background: rgba(59, 130, 246, 0.3);
 }
 
 :deep(.no-border-popup .maplibregl-popup-content) {
@@ -1615,7 +2007,20 @@ watch(() => filters.maxTimeGap, () => {
 :deep(.no-border-popup .maplibregl-popup-content) {
   position: relative;
 }
-
+:deep(.no-border-popup .maplibregl-popup-content::after) {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white;
+  z-index: 1;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+}
 :deep(.no-border-popup .maplibregl-popup-close-button) {
   font-size: 18px !important;        
   color: white !important;
@@ -1655,5 +2060,102 @@ watch(() => filters.maxTimeGap, () => {
 :deep(.no-border-popup .maplibregl-popup-content > div) {
   padding-top: 8px; 
   position: relative;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2rem; /* Slightly smaller on tablets */
+  }
+  
+  .subtitle {
+    font-size: 1rem; /* Adjust subtitle size */
+  }
+  
+  .panel-header {
+    padding: 2rem 1.5rem 1.25rem 1.5rem; /* Adjust padding */
+  }
+  
+  .panel-body {
+    padding: 1.25rem; /* Adjust padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.75rem; /* Smaller for mobile */
+  }
+  
+  .subtitle {
+    font-size: 0.875rem; /* Smaller subtitle */
+  }
+  
+  .panel-header {
+    padding: 1.5rem 1rem 1rem 1rem; /* Compact padding */
+    flex-direction: column; /* Stack title and controls */
+    gap: 1rem;
+  }
+  
+  .title-container {
+    width: 100%;
+  }
+  
+  .header-controls {
+    align-self: flex-start; /* Align controls to left */
+  }
+  
+  /* Adjust decoration circles for mobile */
+  .header-decoration {
+    top: -80px;
+    right: -80px;
+  }
+  
+  .circle-1 {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .circle-2 {
+    width: 120px;
+    height: 120px;
+    top: 30px;
+    right: 30px;
+  }
+  
+  .circle-3 {
+    width: 80px;
+    height: 80px;
+    top: 60px;
+    right: 60px;
+  }
+  
+  .dropdown-trigger {
+    max-width: none; /* Full width on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem; /* Even smaller for very small screens */
+  }
+  
+  .subtitle {
+    font-size: 0.75rem; /* Very small subtitle */
+  }
+  
+  .panel {
+    border-radius: 12px; /* Smaller radius on mobile */
+  }
+  
+  .details-sidebar {
+    width: 100% !important;
+    height: 50% !important;
+    right: 0 !important;
+    top: auto !important;
+    bottom: 0 !important;
+    border-radius: 12px 12px 0 0;
+    border-left: none;
+    border-top: 1px solid #e2e8f0;
+  }
 }
 </style>

@@ -1,9 +1,20 @@
 <template>
   <AppPageLayout>
     <section class="panel">
+      <!-- Enhanced header with decorative elements and gradient background -->
       <header class="panel-header">
-        <div>
-          <h2 class="section-title">Structured Data-derived Knowledge Graph</h2>
+        <!-- Decorative background elements -->
+        <div class="header-decoration">
+          <div class="decoration-circle circle-1"></div>
+          <div class="decoration-circle circle-2"></div>
+          <div class="decoration-circle circle-3"></div>
+        </div>
+        
+        <div class="title-container">
+          <!-- Main title with gradient effect in a single line -->
+          <h1 class="title">
+            Structured Data-derived <span class="gradient-text">Knowledge Graph</span>
+          </h1>
         </div>
         <!-- Loading state indicator -->
         <div v-if="isLoading" class="loading-indicator">
@@ -54,8 +65,32 @@
             </div>
           </FloatingFilter>
 
-          <!-- right details sidebar -->
-          <div class="details-sidebar" :class="{ 'details-sidebar--visible': showDetailsSidebar }">
+          <!-- Right details sidebar with resizable and draggable capabilities -->
+          <div 
+            ref="sidebarRef"
+            class="details-sidebar" 
+            :class="{ 'details-sidebar--visible': showDetailsSidebar }"
+            :style="sidebarStyle"
+            @mousedown="onSidebarDragStart"
+          >
+            <!-- Resize handle for left side -->
+            <div 
+              class="sidebar-resize-handle sidebar-resize-handle--left"
+              @mousedown.stop="onResizeStart('left', $event)"
+            ></div>
+            
+            <!-- Resize handle for top side -->
+            <div 
+              class="sidebar-resize-handle sidebar-resize-handle--top"
+              @mousedown.stop="onResizeStart('top', $event)"
+            ></div>
+            
+            <!-- Resize handle for top-left corner -->
+            <div 
+              class="sidebar-resize-handle sidebar-resize-handle--top-left"
+              @mousedown.stop="onResizeStart('top-left', $event)"
+            ></div>
+            
             <div class="details-sidebar-header">
               <h3 class="details-title">Node Details</h3>
               <button class="sidebar-close-btn" @click="closeDetailsSidebar">
@@ -86,17 +121,18 @@
               </div>
 
               <div v-else class="no-details">
-                Drag a node to view details
+                Click a node to view details
               </div>
             </div>
 
             <div class="details-sidebar-footer">
+              <!-- Open full page button -->
               <button 
                 class="open-full-btn"
-                @click="openDetailsInNewTab"
+                @click="openDetailsInCurrentTab"
                 :disabled="!currentNodeId"
               >
-                Open in New Tab
+                Open
               </button>
             </div>
           </div>
@@ -119,6 +155,7 @@ const ForceGraph = ForceGraphModule.default || ForceGraphModule
 const graphEl = ref(null)
 const graphWrapper = ref(null)
 const detailsIframe = ref(null) 
+const sidebarRef = ref(null)
 const router = useRouter()
 let fg = null
 
@@ -153,6 +190,27 @@ const filters = reactive({
   nodeTypes: []
 })
 
+// Sidebar resize and drag state
+const sidebarPosition = reactive({
+  x: 0, // Horizontal position from right
+  y: 0, // Vertical position from top
+  width: 400, // Default width
+  height: '100%' // Default height (percentage or px)
+})
+
+// Store original sidebar position for resetting
+const originalSidebarPosition = {
+  x: 0,
+  y: 0,
+  width: 400,
+  height: '100%'
+}
+
+const isResizing = ref(false)
+const resizeDirection = ref(null)
+const isDragging = ref(false)
+const dragStartPos = reactive({ x: 0, y: 0 })
+
 // Optimized: Simplified data structure
 const rawGraphData = ref({
   nodes: [],
@@ -176,9 +234,19 @@ const TYPE_COLORS = {
   trajectory: '#8b5cf6',    
   default: '#64748b'        
 }
+
+// Enhanced link colors for better visual appeal
 const LINK_COLORS = {
-  default: 'rgba(59, 130, 246, 0.1)',
-  highlighted: '#fbbf24'
+  default: {
+    primary: 'rgba(59, 130, 246, 0.15)',
+    secondary: 'rgba(139, 92, 246, 0.1)',
+    accent: 'rgba(99, 102, 241, 0.08)'
+  },
+  highlighted: {
+    primary: '#3b82f6',
+    secondary: '#8b5cf6',
+    glow: 'rgba(59, 130, 246, 0.3)'
+  }
 }
 
 const HIGHLIGHT_COLORS = {
@@ -194,11 +262,42 @@ const availableNodeTypes = computed(() => {
   return Array.from(types).sort().slice(0, 5)
 })
 
-const detailPageUrl = computed(() => {
-  if (!currentNodeId.value) return ''
-  return `/node/${currentNodeId.value}`
+// Computed property for sidebar style - FIXED
+const sidebarStyle = computed(() => {
+  if (!showDetailsSidebar.value) {
+    // When sidebar is hidden, position it completely off-screen
+    return {
+      right: '-1000px', // Move it far off-screen
+      transform: 'none',
+      width: '0',
+      height: '0',
+      opacity: '0',
+      visibility: 'hidden'
+    }
+  } else {
+    // When sidebar is visible, use its current position and size
+    const baseStyle = {
+      width: typeof sidebarPosition.width === 'number' ? `${sidebarPosition.width}px` : sidebarPosition.width,
+      height: sidebarPosition.height,
+      transform: `translate(${sidebarPosition.x}px, ${sidebarPosition.y}px)`,
+      right: '0',
+      opacity: '1',
+      visibility: 'visible'
+    }
+    
+    return baseStyle
+  }
 })
 
+const detailPageUrl = computed(() => {
+  if (!currentNodeId.value) return ''
+  return `/node/${currentNodeId.value}?embed=true`
+})
+
+/**
+ * Open the details sidebar for a specific node
+ * @param {string} nodeId - ID of the node to display
+ */
 const openDetailsSidebar = (nodeId) => {
   console.log('Opening details sidebar for node:', nodeId)
 
@@ -210,12 +309,20 @@ const openDetailsSidebar = (nodeId) => {
     loadTimeout = null
   }
 
+  // Reset sidebar position to default if it was previously moved/resized
+  if (sidebarPosition.x !== originalSidebarPosition.x || 
+      sidebarPosition.y !== originalSidebarPosition.y ||
+      sidebarPosition.width !== originalSidebarPosition.width) {
+    resetSidebarPosition()
+  }
+
   showDetailsSidebar.value = true
 
   nextTick(() => {
-
+    // Show loading state for iframe
     iframeLoading.value = true
 
+    // Set timeout for iframe loading
     loadTimeout = setTimeout(() => {
       if (iframeLoading.value) {
         console.warn('Iframe loading timeout for:', detailPageUrl.value)
@@ -226,11 +333,17 @@ const openDetailsSidebar = (nodeId) => {
   })
 }
 
+/**
+ * Close the details sidebar and reset its position
+ */
 const closeDetailsSidebar = () => {
   showDetailsSidebar.value = false
   currentNodeId.value = null
   detailError.value = null
   iframeLoading.value = false
+
+  // Reset sidebar position to default
+  resetSidebarPosition()
 
   if (loadTimeout) {
     clearTimeout(loadTimeout)
@@ -238,12 +351,29 @@ const closeDetailsSidebar = () => {
   }
 }
 
-const openDetailsInNewTab = () => {
+/**
+ * Reset sidebar position to its original/default values
+ */
+const resetSidebarPosition = () => {
+  sidebarPosition.x = originalSidebarPosition.x
+  sidebarPosition.y = originalSidebarPosition.y
+  sidebarPosition.width = originalSidebarPosition.width
+  sidebarPosition.height = originalSidebarPosition.height
+}
+
+/**
+ * Open the details page in the current browser tab
+ */
+const openDetailsInCurrentTab = () => {
   if (currentNodeId.value) {
-    window.open(detailPageUrl.value, '_blank')
+    window.location.href = `/node/${currentNodeId.value}`
   }
 }
 
+/**
+ * Handle iframe load event
+ * @param {Event} event - Load event
+ */
 const onIframeLoad = (event) => {
   console.log('Details page loaded successfully:', detailPageUrl.value)
   iframeLoading.value = false
@@ -255,6 +385,10 @@ const onIframeLoad = (event) => {
   }
 }
 
+/**
+ * Handle iframe error event
+ * @param {Event} event - Error event
+ */
 const onIframeError = (event) => {
   console.error('Failed to load details page:', detailPageUrl.value)
   console.error('Iframe error event:', event)
@@ -267,6 +401,96 @@ const onIframeError = (event) => {
   }
 }
 
+/**
+ * Start resizing the sidebar
+ * @param {string} direction - Resize direction (left, top, top-left)
+ * @param {MouseEvent} event - Mouse event
+ */
+const onResizeStart = (direction, event) => {
+  event.preventDefault()
+  isResizing.value = true
+  resizeDirection.value = direction
+  dragStartPos.x = event.clientX
+  dragStartPos.y = event.clientY
+  
+  const startWidth = sidebarPosition.width
+  const startHeight = sidebarPosition.height === '100%' 
+    ? sidebarRef.value.parentElement.clientHeight 
+    : parseInt(sidebarPosition.height)
+  const startX = sidebarPosition.x
+  const startY = sidebarPosition.y
+  
+  const handleMouseMove = (e) => {
+    if (!isResizing.value) return
+    
+    const dx = e.clientX - dragStartPos.x
+    const dy = e.clientY - dragStartPos.y
+    
+    if (direction.includes('left')) {
+      const newWidth = Math.max(300, Math.min(800, startWidth - dx))
+      sidebarPosition.width = newWidth
+    }
+    
+    if (direction.includes('top')) {
+      const newHeight = Math.max(200, Math.min(window.innerHeight - 100, startHeight - dy))
+      sidebarPosition.height = `${newHeight}px`
+      sidebarPosition.y = startY + dy
+    }
+  }
+  
+  const handleMouseUp = () => {
+    isResizing.value = false
+    resizeDirection.value = null
+    document.removeEventListener('mousemove', handleMouseMove)
+    document.removeEventListener('mouseup', handleMouseUp)
+  }
+  
+  document.addEventListener('mousemove', handleMouseMove)
+  document.addEventListener('mouseup', handleMouseUp)
+}
+
+/**
+ * Start dragging the sidebar
+ * @param {MouseEvent} event - Mouse event
+ */
+const onSidebarDragStart = (event) => {
+  // Only start drag if clicking on the header
+  if (!event.target.closest('.details-sidebar-header')) return
+  
+  event.preventDefault()
+  isDragging.value = true
+  dragStartPos.x = event.clientX - sidebarPosition.x
+  dragStartPos.y = event.clientY - sidebarPosition.y
+  
+  const handleMouseMove = (e) => {
+    if (!isDragging.value) return
+    
+    const mapWrapper = sidebarRef.value.parentElement
+    const maxX = mapWrapper.clientWidth - sidebarPosition.width
+    const maxY = mapWrapper.clientHeight - parseInt(sidebarPosition.height)
+    
+    let newX = e.clientX - dragStartPos.x
+    let newY = e.clientY - dragStartPos.y
+    
+    // Constrain to parent bounds
+    newX = Math.max(-sidebarPosition.width + 20, Math.min(maxX - 20, newX))
+    newY = Math.max(0, Math.min(maxY, newY))
+    
+    sidebarPosition.x = newX
+    sidebarPosition.y = newY
+  }
+  
+  const handleMouseUp = () => {
+    isDragging.value = false
+    document.removeEventListener('mousemove', handleMouseMove)
+    document.removeEventListener('mouseup', handleMouseUp)
+  }
+  
+  document.addEventListener('mousemove', handleMouseMove)
+  document.addEventListener('mouseup', handleMouseUp)
+}
+
+// Watch for changes to the detail page URL
 watch(detailPageUrl, (newUrl, oldUrl) => {
   console.log('Iframe URL changed:', oldUrl, '->', newUrl)
   if (newUrl && newUrl !== oldUrl) {
@@ -274,12 +498,12 @@ watch(detailPageUrl, (newUrl, oldUrl) => {
   }
 })
 
-watch(showDetailsSidebar, (newValue) => {
-  if (!newValue) {
-    closeDetailsSidebar()
-  }
-})
-
+/**
+ * Debounce function to limit rate of function calls
+ * @param {Function} func - Function to debounce
+ * @param {number} wait - Wait time in milliseconds
+ * @returns {Function} Debounced function
+ */
 function debounce(func, wait) {
   let timeout
   return function executedFunction(...args) {
@@ -302,7 +526,10 @@ const toggleNodeType = (type) => {
   }
 }
 
-// Handle click outside to close filter
+/**
+ * Handle click on graph area to close filter
+ * @param {Event} event - Click event
+ */
 function onGraphAreaClick(event) {
   const isFilterElement = event.target.closest('.floating-filter') || 
                          event.target.closest('.filter-trigger') ||
@@ -314,12 +541,20 @@ function onGraphAreaClick(event) {
   }
 }
 
+/**
+ * Reset the graph view to fit all nodes
+ */
 function resetView() {
   if (!fg) return
   fg.zoomToFit(400, 50)
 }
 
-// Optimized: Simplified graph data construction
+/**
+ * Build graph data structure from raw nodes and links
+ * @param {Array} rawNodes - Array of raw node objects
+ * @param {Array} rawLinks - Array of raw link objects
+ * @returns {Object} Processed graph data with nodes and links
+ */
 function buildGraphData(rawNodes, rawLinks) {
   const nodes = rawNodes.map(n => ({
     id: n.id,
@@ -355,6 +590,11 @@ function buildGraphData(rawNodes, rawLinks) {
   return { nodes, links }
 }
 
+/**
+ * Optimize graph data for performance by limiting number of nodes and links
+ * @param {Object} graphData - Graph data object
+ * @returns {Object} Optimized graph data
+ */
 function optimizeGraphData(graphData) {
   console.log(`📊 Before optimization: ${graphData.nodes.length} nodes, ${graphData.links.length} links`)
   
@@ -373,6 +613,10 @@ function optimizeGraphData(graphData) {
   return graphData
 }
 
+/**
+ * Highlight nodes connected to the specified node
+ * @param {Object} node - Node to highlight connections for
+ */
 function highlightConnectedNodes(node) {
   if (!node) {
     highlightNodes = new Set()
@@ -391,13 +635,18 @@ function highlightConnectedNodes(node) {
   draggedNode = node
 }
 
-// Reset highlight
+/**
+ * Clear all highlight states
+ */
 function clearHighlight() {
   highlightNodes = new Set()
   highlightLinks = new Set()
   draggedNode = null
 }
 
+/**
+ * Component mounted lifecycle hook
+ */
 onMounted(async () => {
   await nextTick()
   
@@ -432,6 +681,9 @@ onMounted(async () => {
   initializeGraph()
 })
 
+/**
+ * Initialize the force graph visualization
+ */
 async function initializeGraph() {
   if (!isDataLoaded.value) {
     await loadGraphData()
@@ -445,7 +697,9 @@ async function initializeGraph() {
   isGraphInitialized.value = true
 }
 
-// Optimized: Separate data loading logic
+/**
+ * Load graph data from the API
+ */
 async function loadGraphData() {
   isLoading.value = true
   try {
@@ -485,7 +739,12 @@ async function loadGraphData() {
   }
 }
 
-// Load graph data by page
+/**
+ * Load a page of graph data from the API
+ * @param {number} page - Page number
+ * @param {number} size - Page size
+ * @returns {Promise<Object>} Graph data object
+ */
 async function loadGraphDataPage(page, size) {
   try {
     const url = `http://localhost:8000/api/v1/sdkg/index?page=${page}&size=${size}&ts=${Date.now()}`
@@ -497,6 +756,10 @@ async function loadGraphDataPage(page, size) {
   }
 }
 
+/**
+ * Initialize the ForceGraph instance
+ * @param {HTMLElement} el - DOM element to render graph in
+ */
 function initForceGraph(el) {
   if (fg) {
     fg.graphData({ nodes: [], links: [] })
@@ -516,7 +779,7 @@ function initForceGraph(el) {
   try {
     fg = ForceGraph()(el)
       .graphData(currentGraphData || { nodes: [], links: [] })
-      .backgroundColor('rgba(0,0,0,0)')
+      .backgroundColor('rgba(0,0,0,0)') // Transparent background
       .nodeId('id')
       .linkSource('source')
       .linkTarget('target')
@@ -526,13 +789,13 @@ function initForceGraph(el) {
       .cooldownTicks(100)
       .warmupTicks(20)
       .enableNodeDrag(true)
-      .linkColor(LINK_COLORS.default)
       .linkWidth(1.0)
       .nodeVal('degree')
       .nodeRelSize(0.5)
     
     configureForces(fg, settings)
 
+    // Configure node rendering
     fg.nodeCanvasObjectMode(() => 'replace')
       .nodeCanvasObject((node, ctx, globalScale) => {
         if (globalScale < 0.3) return 
@@ -550,11 +813,29 @@ function initForceGraph(el) {
         const nodeRadius = isHighlighted ? radius * 1.3 : radius
         const nodeColor = isHighlighted ? '#fbbf24' : baseColor
         
+        // Draw node with shadow for depth effect
+        ctx.shadowColor = isHighlighted ? nodeColor : 'rgba(0, 0, 0, 0.2)'
+        ctx.shadowBlur = isHighlighted ? 15 : 5
+        ctx.shadowOffsetX = 0
+        ctx.shadowOffsetY = 0
+        
         ctx.beginPath()
         ctx.arc(node.x, node.y, nodeRadius, 0, 2 * Math.PI, false)
         ctx.fillStyle = nodeColor
         ctx.fill()
+        
+        // Reset shadow
+        ctx.shadowBlur = 0
+        
+        // Add inner glow for highlighted nodes
+        if (isHighlighted) {
+          ctx.beginPath()
+          ctx.arc(node.x, node.y, nodeRadius * 0.6, 0, 2 * Math.PI, false)
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.3)'
+          ctx.fill()
+        }
 
+        // Render node label if zoomed in
         if (globalScale > 5) {
           const label = node.label || node.id
           const fontSize = Math.min(32, 28 / globalScale)
@@ -566,31 +847,101 @@ function initForceGraph(el) {
         }
       })
       .linkCanvasObjectMode(() => 'after')
-      .linkCanvasObject((link, ctx) => {
-        if (!fg || fg.zoom() < 0.5) return
+      .linkCanvasObject((link, ctx, globalScale) => {
+        if (!fg || globalScale < 0.3) return
         
         const isHighlighted = highlightLinks.has(link)
+        const sourceNode = link.source
+        const targetNode = link.target
         
-        ctx.beginPath()
-        ctx.moveTo(link.source.x, link.source.y)
-        ctx.lineTo(link.target.x, link.target.y)
+        // Skip if nodes are not properly positioned
+        if (!sourceNode || !targetNode || !sourceNode.x || !targetNode.x) return
         
+        // Calculate link properties
+        const dx = targetNode.x - sourceNode.x
+        const dy = targetNode.y - sourceNode.y
+        const length = Math.sqrt(dx * dx + dy * dy)
+        const unitX = dx / length
+        const unitY = dy / length
+        
+        // Enhanced link rendering with gradient and glow effects
         if (isHighlighted) {
-          ctx.strokeStyle = LINK_COLORS.highlighted
-          ctx.lineWidth = 2.0
-          ctx.setLineDash([])
+          // Create gradient for highlighted links
+          const gradient = ctx.createLinearGradient(
+            sourceNode.x, sourceNode.y,
+            targetNode.x, targetNode.y
+          )
+          gradient.addColorStop(0, LINK_COLORS.highlighted.primary)
+          gradient.addColorStop(0.5, LINK_COLORS.highlighted.secondary)
+          gradient.addColorStop(1, LINK_COLORS.highlighted.primary)
           
-          ctx.shadowBlur = 5
-          ctx.shadowColor = LINK_COLORS.highlighted
-        } else {
-          ctx.strokeStyle = LINK_COLORS.default
-          ctx.lineWidth = 0.8
-          ctx.setLineDash([])
+          // Draw outer glow
+          ctx.beginPath()
+          ctx.moveTo(sourceNode.x, sourceNode.y)
+          ctx.lineTo(targetNode.x, targetNode.y)
+          ctx.strokeStyle = LINK_COLORS.highlighted.glow
+          ctx.lineWidth = 6
+          ctx.lineCap = 'round'
+          ctx.shadowBlur = 10
+          ctx.shadowColor = LINK_COLORS.highlighted.primary
+          ctx.stroke()
+          
+          // Draw main link with gradient
+          ctx.beginPath()
+          ctx.moveTo(sourceNode.x, sourceNode.y)
+          ctx.lineTo(targetNode.x, targetNode.y)
+          ctx.strokeStyle = gradient
+          ctx.lineWidth = 3
+          ctx.lineCap = 'round'
+          ctx.shadowBlur = 8
+          ctx.stroke()
+          
+          // Reset shadow
           ctx.shadowBlur = 0
+          
+          // Add animated pulse effect for active links
+          if (globalScale > 1) {
+            const pulseSize = 4 * Math.sin(Date.now() * 0.005)
+            if (pulseSize > 0) {
+              // Draw pulse circle at midpoint
+              const midX = (sourceNode.x + targetNode.x) / 2
+              const midY = (sourceNode.y + targetNode.y) / 2
+              
+              ctx.beginPath()
+              ctx.arc(midX, midY, pulseSize, 0, 2 * Math.PI)
+              ctx.fillStyle = LINK_COLORS.highlighted.primary
+              ctx.fill()
+            }
+          }
+        } else {
+          // Create gradient for normal links
+          const gradient = ctx.createLinearGradient(
+            sourceNode.x, sourceNode.y,
+            targetNode.x, targetNode.y
+          )
+          gradient.addColorStop(0, LINK_COLORS.default.primary)
+          gradient.addColorStop(0.5, LINK_COLORS.default.secondary)
+          gradient.addColorStop(1, LINK_COLORS.default.accent)
+          
+          // Draw normal link with subtle gradient
+          ctx.beginPath()
+          ctx.moveTo(sourceNode.x, sourceNode.y)
+          ctx.lineTo(targetNode.x, targetNode.y)
+          ctx.strokeStyle = gradient
+          ctx.lineWidth = Math.max(0.5, Math.min(1.5, 1.5 / globalScale))
+          ctx.lineCap = 'round'
+          ctx.stroke()
+          
+          // Add subtle glow effect for normal links
+          if (globalScale > 2) {
+            ctx.beginPath()
+            ctx.moveTo(sourceNode.x, sourceNode.y)
+            ctx.lineTo(targetNode.x, targetNode.y)
+            ctx.strokeStyle = 'rgba(59, 130, 246, 0.05)'
+            ctx.lineWidth = Math.max(2, 4 / globalScale)
+            ctx.stroke()
+          }
         }
-        
-        ctx.stroke()
-        ctx.shadowBlur = 0
       })
       .nodePointerAreaPaint((node, color, ctx) => {
         const baseRadius = PERFORMANCE_CONFIG.NODE_RADIUS
@@ -624,14 +975,15 @@ function initForceGraph(el) {
         highlightLinks = newLinks
       }, 16)) 
       .onNodeDrag((node) => {
+        // Only highlight nodes during drag, do not open sidebar
         highlightConnectedNodes(node)
-        openDetailsSidebar(node.id)
       })
       .onNodeDragEnd(() => {
         clearHighlight()
       })
       .onNodeClick((node) => {
-        router.push(`/node/${node.id}`)
+        // On click, open the details sidebar instead of navigating to a new page
+        openDetailsSidebar(node.id)
       })
 
     let hasAutoZoomed = false
@@ -653,6 +1005,7 @@ function initForceGraph(el) {
       }
     })
 
+    // Set up responsive resizing
     let isUpdating = false
     let lastUpdateTime = 0
     let lastWidth = 0
@@ -712,6 +1065,11 @@ function initForceGraph(el) {
   }
 }
 
+/**
+ * Configure physics forces for the graph
+ * @param {Object} graphInstance - ForceGraph instance
+ * @param {Object} settings - Physics settings
+ */
 function configureForces(graphInstance, settings) {
   try {
     const linkForce = graphInstance.d3Force('link')
@@ -742,6 +1100,9 @@ function configureForces(graphInstance, settings) {
   }
 }
 
+/**
+ * Component before unmount lifecycle hook
+ */
 onBeforeUnmount(() => {
   if (fg) {
     if (fg._resizeObserver) {
@@ -759,6 +1120,10 @@ onBeforeUnmount(() => {
 })
 
 let filterTimeout = null
+
+/**
+ * Apply current filters to the graph
+ */
 function applyFilters() {
   if (filterTimeout) {
     clearTimeout(filterTimeout)
@@ -797,6 +1162,10 @@ function applyFilters() {
   }, 100)
 }
 
+/**
+ * Perform filtering based on current filter criteria
+ * @returns {Object} Filtered graph data
+ */
 function performFiltering() {
   const keyword = filters.keyword.trim().toLowerCase()
   const selectedNodeTypes = filters.nodeTypes
@@ -823,7 +1192,9 @@ function performFiltering() {
   return buildGraphData(filteredNodesRaw, filteredLinksRaw)
 }
 
-// Reset all filters
+/**
+ * Reset all filters to their default values
+ */
 function resetFilters() {
   filters.keyword = ''
   filters.nodeTypes = [...availableNodeTypes.value]
@@ -849,57 +1220,146 @@ function resetFilters() {
   margin-top: 4px;
 }
 
+/* Main panel container with improved visual hierarchy */
 .panel {
   flex: 1;
   flex-direction: column;
   width: 100%;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 0 0 1px #e5e5e5, 0 20px 40px rgba(15, 23, 42, 0.08);
+  border-radius: 16px; /* Modern rounded corners */
+  background: #ffffff; /* Clean white background */
+  box-shadow: 0 0 0 1px rgba(226, 232, 240, 0.8), 0 20px 40px rgba(15, 23, 42, 0.1); /* Softer shadow */
   display: flex;
+  overflow: hidden; /* Ensure content stays within rounded corners */
 }
 
+/* Enhanced panel header with gradient background and decorative elements */
 .panel-header {
-  padding: 18px 22px 10px 22px;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 2.5rem 2rem 1.5rem 2rem; /* Generous padding */
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); /* Subtle gradient background */
+  border-bottom: 1px solid #e2e8f0; /* Soft border color */
+  position: relative;
+  overflow: hidden;
 }
 
-.section-title {
-  font-size: 34px;
-  font-weight: 600;
-  margin: 0 0 6px 0;
-  color: #0f172a;
+/* Decorative background elements for visual interest */
+.header-decoration {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  z-index: 1;
+  pointer-events: none;
 }
 
+.decoration-circle {
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.6;
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+  top: 0;
+  right: 0;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+  top: 40px;
+  right: 40px;
+}
+
+.circle-3 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  top: 80px;
+  right: 80px;
+}
+
+/* Title container with left-aligned text and improved typography */
+.title-container {
+  position: relative;
+  z-index: 2;
+  text-align: left; /* Ensure left alignment */
+  width: 100%; /* Full width for left alignment */
+}
+
+/* Main title with consistent font size and gradient effect */
+.title {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem; /* Consistent with other pages */
+  font-weight: 700; /* Bold weight */
+  line-height: 1.2;
+  color: #1e293b; /* Dark color for good contrast */
+  letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+}
+
+/* Gradient text effect matching homepage hero title */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700; /* Bold weight for gradient text */
+}
+
+/* Subtitle with improved readability */
 .subtitle {
   margin: 0;
-  font-size: 13px;
-  color: #4b5563;
+  font-size: 1.125rem; /* Larger for better readability */
+  line-height: 1.6;
+  color: #475569; /* Softer gray color */
+  max-width: 800px; /* Limit width for readability */
 }
 
+/* MODIFIED: Enhanced panel body with better background */
 .panel-body {
   flex: 1;
   flex-direction: column;
-  padding: 3.5px 5.5px 4.5px 5.5px;
+  padding: 1.5rem; /* Increased padding for better spacing */
   box-sizing: border-box;
-  background: #f9fafb;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); /* Gradient background matching homepage */
   display: flex;
   min-height: 0;
   overflow: hidden;
 }
 
+/* MODIFIED: Enhanced graph wrapper with sophisticated background */
 .graph-wrapper {
   flex: 1;
   position: relative;
   display: flex;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  border-radius: 12px; /* Slightly larger radius */
+  border: 1px solid rgba(226, 232, 240, 0.8); /* Softer border */
+  background: linear-gradient(135deg, #e0f2fe 0%, #ede9fe 100%); /* Sophisticated gradient background */
+  box-shadow: 
+    0 4px 20px rgba(15, 23, 42, 0.08), /* Soft shadow */
+    inset 0 1px 2px rgba(255, 255, 255, 0.8); /* Inner light for depth */
   overflow: hidden;
-  min-height: 400px;
+  min-height: 500px; /* Increased minimum height */
   height: 100%;
   min-height: 0;
+}
+
+/* Add subtle pattern overlay for visual interest */
+.graph-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .graph-canvas {
@@ -909,34 +1369,54 @@ function resetFilters() {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1; /* Ensure canvas is above the background pattern */
 }
 
 .details-sidebar {
   position: absolute;
-  right: -400px; 
-  top: 0;
-  bottom: 0;
-  width: 400px;
+  top: 16px;
+  right: 16px;
+  bottom: 16px;
   background: white;
-  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
   z-index: 100;
   display: flex;
   flex-direction: column;
-  transition: right 0.3s ease;
-  border-left: 1px solid #e5e7eb;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother transition */
+  border-left: 1px solid #e2e8f0;
+  border-radius: 12px 0 0 12px; /* Larger radius */
+  cursor: default;
+  user-select: none;
+  will-change: transform, right, opacity, visibility;
+}
+
+/* IMPORTANT FIX: Make sure sidebar is completely hidden when not visible */
+.details-sidebar:not(.details-sidebar--visible) {
+  right: -1000px !important;
+  transform: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .details-sidebar--visible {
-  right: 0;
+  right: 16px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .details-sidebar-header {
-  padding: 16px 20px;
-  border-bottom: 1px solid #e5e7eb;
-  background: #f8fafc;
+  padding: 18px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: move;
+  border-radius: 12px 0 0 0;
 }
 
 .details-title {
@@ -951,7 +1431,7 @@ function resetFilters() {
   border: none;
   width: 32px;
   height: 32px;
-  border-radius: 6px;
+  border-radius: 8px; /* Larger radius */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -960,7 +1440,8 @@ function resetFilters() {
   font-size: 24px;
   line-height: 1;
   padding: 0;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .sidebar-close-btn:hover {
@@ -1001,6 +1482,7 @@ function resetFilters() {
   border: none;
   background: white;
   flex: 1;
+  border-radius: 0 0 0 12px; /* Rounded bottom corners */
 }
 
 .iframe-loading-overlay {
@@ -1009,7 +1491,7 @@ function resetFilters() {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1018,12 +1500,13 @@ function resetFilters() {
   font-size: 14px;
   gap: 12px;
   z-index: 10;
+  border-radius: 0 0 0 12px; /* Match iframe radius */
 }
 
 .iframe-loading-overlay .loading-spinner {
   width: 24px;
   height: 24px;
-  border: 3px solid #e5e7eb;
+  border: 3px solid #e2e8f0;
   border-top: 3px solid #3b82f6;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -1034,42 +1517,104 @@ function resetFilters() {
   text-align: center;
   color: #94a3b8;
   font-size: 14px;
-  font-style: italic;
+  font-style: normal;
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 12px;
+}
+
+.no-details::before {
+  content: '📊';
+  font-size: 32px;
+  opacity: 0.5;
 }
 
 .details-sidebar-footer {
-  padding: 16px 20px;
-  border-top: 1px solid #e5e7eb;
-  background: #f8fafc;
+  padding: 18px 20px;
+  border-top: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 0 0 0 12px;
 }
 
 .open-full-btn {
   width: 100%;
-  padding: 10px 16px;
-  background: #3b82f6;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Gradient button */
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
 }
 
 .open-full-btn:hover:not(:disabled) {
-  background: #2563eb;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.open-full-btn:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 .open-full-btn:disabled {
   background: #cbd5e1;
   cursor: not-allowed;
   opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Resize handles */
+.sidebar-resize-handle {
+  position: absolute;
+  background: transparent;
+  z-index: 101;
+}
+
+.sidebar-resize-handle--left {
+  left: -4px;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  cursor: ew-resize;
+}
+
+.sidebar-resize-handle--top {
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  cursor: ns-resize;
+}
+
+.sidebar-resize-handle--top-left {
+  top: -8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+}
+
+/* Visual indicators for resize handles - only show when sidebar is visible */
+.details-sidebar--visible .sidebar-resize-handle--left:hover,
+.details-sidebar--visible .sidebar-resize-handle--left:active {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.details-sidebar--visible .sidebar-resize-handle--top:hover,
+.details-sidebar--visible .sidebar-resize-handle--top:active {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.details-sidebar--visible .sidebar-resize-handle--top-left:hover,
+.details-sidebar--visible .sidebar-resize-handle--top-left:active {
+  background: rgba(59, 130, 246, 0.3);
 }
 
 .field {
@@ -1081,29 +1626,29 @@ function resetFilters() {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #e5e7eb;
+  color: #475569; /* Better contrast */
 }
 
 .field-input {
   width: 100%;
   box-sizing: border-box;
-  border-radius: 6px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(15, 23, 42, 0.9);
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
   padding: 10px 12px;
   font-size: 14px;
-  color: #e5e7eb;
+  color: #1e293b;
   outline: none;
   transition: all 0.2s ease;
 }
 
 .field-input::placeholder {
-  color: #6b7280;
+  color: #94a3b8;
 }
 
 .field-input:focus {
   border-color: #3b82f6;
-  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 /* Enhanced button group styles */
@@ -1115,11 +1660,11 @@ function resetFilters() {
 
 .type-button {
   position: relative;
-  padding: 8px 4px;
+  padding: 10px 6px;
   border-radius: 8px;
-  border: 1.5px solid rgba(148, 163, 184, 0.3);
-  background: rgba(31, 41, 55, 0.8);
-  color: #e5e7eb;
+  border: 1.5px solid rgba(203, 213, 225, 0.5);
+  background: rgba(255, 255, 255, 0.9);
+  color: #475569;
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
@@ -1134,26 +1679,27 @@ function resetFilters() {
   gap: 4px;
   min-height: 44px;
   justify-content: center;
+  backdrop-filter: blur(10px); /* Glass effect */
 }
 
 .type-button:hover {
-  background: rgba(55, 65, 81, 0.9);
-  border-color: rgba(148, 163, 184, 0.5);
+  background: rgba(241, 245, 249, 0.9);
+  border-color: #94a3b8;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .type-button-active {
-  background: rgba(37, 99, 235, 0.2);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
   border-color: var(--type-color, #3b82f6);
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  color: var(--type-color, #3b82f6);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
 }
 
 .type-button-active:hover {
-  background: rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(139, 92, 246, 0.2) 100%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
 }
 
 .button-text {
@@ -1167,6 +1713,24 @@ function resetFilters() {
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2rem; /* Slightly smaller on tablets */
+  }
+  
+  .subtitle {
+    font-size: 1rem; /* Adjust subtitle size */
+  }
+  
+  .graph-wrapper {
+    min-height: 400px; /* Adjust minimum height */
+  }
+  
+  .panel-header {
+    padding: 2rem 1.5rem 1.25rem 1.5rem; /* Adjust padding */
+  }
+}
+
 @media (max-width: 768px) {
   .button-group {
     grid-template-columns: repeat(3, 1fr);
@@ -1178,11 +1742,71 @@ function resetFilters() {
     min-height: 40px;
     font-size: 10px;
   }
+  
+  .title {
+    font-size: 1.75rem; /* Smaller for mobile */
+  }
+  
+  .subtitle {
+    font-size: 0.875rem; /* Smaller subtitle */
+  }
+  
+  .panel-header {
+    padding: 1.5rem 1rem 1rem 1rem; /* Compact padding */
+  }
+  
+  .panel-body {
+    padding: 1rem; /* Compact padding */
+  }
+  
+  /* Adjust decoration circles for mobile */
+  .header-decoration {
+    top: -80px;
+    right: -80px;
+  }
+  
+  .circle-1 {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .circle-2 {
+    width: 120px;
+    height: 120px;
+    top: 30px;
+    right: 30px;
+  }
+  
+  .circle-3 {
+    width: 80px;
+    height: 80px;
+    top: 60px;
+    right: 60px;
+  }
 }
 
 @media (max-width: 480px) {
   .button-group {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two columns on very small screens */
+  }
+  
+  .title {
+    font-size: 1.5rem; /* Even smaller for very small screens */
+  }
+  
+  .subtitle {
+    font-size: 0.75rem; /* Very small subtitle */
+  }
+  
+  .details-sidebar {
+    width: 100% !important;
+    height: 50% !important;
+    right: 0 !important;
+    top: auto !important;
+    bottom: 0 !important;
+    border-radius: 12px 12px 0 0;
+    border-left: none;
+    border-top: 1px solid #e2e8f0;
   }
 }
 </style>
