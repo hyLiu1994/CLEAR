@@ -194,7 +194,7 @@ const filters = reactive({
 const sidebarPosition = reactive({
   x: 0, // Horizontal position from right
   y: 0, // Vertical position from top
-  width: 400, // Default width
+  width: 800, // Default width
   height: '100%' // Default height (percentage or px)
 })
 
@@ -202,7 +202,7 @@ const sidebarPosition = reactive({
 const originalSidebarPosition = {
   x: 0,
   y: 0,
-  width: 400,
+  width: 800,
   height: '100%'
 }
 

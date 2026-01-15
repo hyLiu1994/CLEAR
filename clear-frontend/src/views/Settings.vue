@@ -777,6 +777,9 @@ onBeforeUnmount(() => {
   background: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+.section-hint, .field-label, .field-input {
+  font-size: 1rem !important; /* 放大正文 */
+}
 
 .section-title {
   font-size: 1.125rem;
@@ -796,7 +799,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.15rem;
 }
 
 .field-label {
@@ -840,7 +843,9 @@ onBeforeUnmount(() => {
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #e2e8f0;
 }
-
+.panel * {
+  line-height: 1.0 !important; /* 默认通常是1.5-1.8，调整为1.4或更小 */
+}
 /* Pipeline section with enhanced visual design */
 .pipeline-section {
   padding: 1.25rem;
@@ -850,13 +855,13 @@ onBeforeUnmount(() => {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   height: 100%;
   box-sizing: border-box;
-  max-height: 600px;
+  max-height: 675px;
   overflow-y: auto;
 }
 
 .pipeline-card {
   margin-top: 1rem;
-  padding: 1.25rem;
+  padding: 0.95rem;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
   background: #ffffff;

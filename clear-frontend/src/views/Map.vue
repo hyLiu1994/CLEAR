@@ -317,7 +317,7 @@ let moveEndTimeout = null
 const sidebarPosition = reactive({
   x: 0, // Horizontal position from right
   y: 0, // Vertical position from top
-  width: 400, // Default width
+  width: 800, // Default width
   height: '100%' // Default height (percentage or px)
 })
 
@@ -325,7 +325,7 @@ const sidebarPosition = reactive({
 const originalSidebarPosition = {
   x: 0,
   y: 0,
-  width: 400,
+  width: 800,
   height: '100%'
 }
 
@@ -829,8 +829,8 @@ async function initMap() {
         }
       ]
     },
-    center: [10, 56],
-    zoom: 5,
+    center: [10, 54.5],
+    zoom: 8,
     pitch: 0,
     bearing: 0
   })
@@ -914,14 +914,7 @@ async function loadInitialData() {
     const data = await res.json()
     trajectories.value = data || []
     
-    if (trajectories.value.length > 0 && mapRef.value) {
-      const firstTraj = trajectories.value[0]
-      if (firstTraj.segments?.[0]?.coordinates?.[0]) {
-        const firstPoint = firstTraj.segments[0].coordinates[0]
-        mapRef.value.setCenter(firstPoint)
-        mapRef.value.setZoom(5)
-      }
-    }
+
 
     buildSegmentFeatures()
     updateMapData()
