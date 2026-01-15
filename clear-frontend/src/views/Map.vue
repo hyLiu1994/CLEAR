@@ -829,8 +829,8 @@ async function initMap() {
         }
       ]
     },
-    center: [10, 54.5],
-    zoom: 8,
+    center: [9.7, 54.5],
+    zoom: 8.5,
     pitch: 0,
     bearing: 0
   })

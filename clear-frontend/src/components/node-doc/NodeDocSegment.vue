@@ -1,54 +1,233 @@
 <template>
-  <!-- Title & meta area -->
-  <header class="title-block">
-    <h1 class="title">
-      {{ node.title }}
-    </h1>
-    <!-- Meta information -->
-    <div class="meta-info">
-      
-      <!-- Current level information -->
-      <div class="meta-item" v-if="availableLevels.length > 1">
-        <span class="label">Current Level:</span>
-        <span class="value">Level {{ currentLevel }}</span>
-      </div>
-    </div>
-  </header>
+  <!-- Two-column layout container -->
+  <div class="page-container">
+    <!-- Left column: Main content area -->
+    <div class="main-content">
+      <!-- Title & meta information section -->
+      <header class="title-block">
+        <h1 class="title">
+          {{ node.title }}
+        </h1>
+        <!-- Meta information display -->
+        <div class="meta-info">
+          <!-- Current level indicator (if multiple levels available) -->
+          <div class="meta-item" v-if="availableLevels.length > 1">
+            <span class="label">Current Level:</span>
+            <span class="value">Level {{ currentLevel }}</span>
+          </div>
+        </div>
+      </header>
 
-  <!-- Main content-->
-  <section class="body">
-    <div class="graph-floating" v-if="hasGraphData">
-      <section class="graph-section">
-        <div class="graph-header">
-          <div class="graph-title-row">
-            <h3 class="graph-title">The Subgraph of SD-KG</h3>
-            <button class="expand-btn" @click="expandGraph" title="Expand graph">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
-              </svg>
-            </button>
-          </div>
-        
-        </div>
-        
-        <div class="graph-container">
-          <div class="graph-wrapper">
-            <div ref="graphEl" class="graph-canvas"></div>
-          </div>
-        </div>
+      <!-- Main content area -->
+      <section class="body">
+        <!-- Static Attributes section -->
+        <template v-if="filteredStaticAttributes.length">
+          <h2 class="section-title">Static Attributes</h2>
+          <ul class="bullet-list">
+            <li v-for="(item, idx) in filteredStaticAttributes" :key="'attr-' + idx">
+              <span v-html="formatStaticAttributeForDisplay(item)"></span>
+              <!-- Additional details for Spatial Context attributes -->
+              <template v-if="getStaticAttributeLabel(item) === 'Spatial context' && getStaticAttributeDetails(item)">
+                <div class="attribute-details">
+                  {{ getStaticAttributeDetails(item) }}
+                </div>
+              </template>
+            </li>
+          </ul>
+          <div class="section-divider"></div>
+        </template>
 
-        <div class="graph-legend">
-          <div class="legend-title">Node Types</div>
-          <div class="legend-items">
-            <div class="legend-item" v-for="type in nodeTypes" :key="type.name">
-              <div class="legend-color" :style="{backgroundColor: type.color}"></div>
-              <span class="legend-label">{{ type.label }}</span>
-            </div>
-          </div>
-        </div>
+        <!-- Behavior Pattern section -->
+        <template v-if="hasBehaviorData">
+          <h2 class="section-title">Behavior Pattern</h2>
+          
+          <ul class="bullet-list">
+            <!-- Context data (if available) -->
+            <template v-if="hasContextData">
+              <li><strong>Context:</strong></li>
+              <ul class="bullet-list nested-list">
+                <!-- Current Behavior -->
+                <template v-if="node.context?.current_behavior">
+                  <li>
+                    <strong>Current Behavior:</strong> 
+                    <span 
+                      class="clickable-behavior" 
+                      @click="highlightCurrentBehavior"
+                      :title="currentBehaviorTitle"
+                    >
+                      {{ currentBehaviorTitle }}
+                    </span>
+                  </li>
+                </template>
+
+                <!-- Previous Behavior -->
+                <template v-if="node.context?.previous_behavior && Object.keys(node.context.previous_behavior).length > 0">
+                  <li>
+                    <strong>Previous Behavior:</strong> {{ previousBehaviorTitle }}
+                  </li>
+                </template>
+
+                <!-- Next Behavior -->
+                <template v-if="node.context?.next_behavior && Object.keys(node.context.next_behavior).length > 0">
+                  <li>
+                    <strong>Next Behavior:</strong> {{ nextBehaviorTitle }}
+                  </li>
+                </template>
+              </ul>
+            </template>
+
+            <!-- Detailed Description Section -->
+            <template v-if="hasBehaviorDetails">
+              <li><strong>Detailed Description:</strong></li>
+              <ul class="bullet-list nested-list">
+                <!-- Current Behavior Details -->
+                <template v-if="currentBehaviorDescription">
+                  <li>
+                    <strong>Current Behavior:</strong> {{ currentBehaviorDescription }}
+                  </li>
+                </template>
+
+                <!-- Previous Behavior Details -->
+                <template v-if="previousBehaviorDescription">
+                  <li>
+                    <strong>Previous Behavior:</strong> {{ previousBehaviorDescription }}
+                  </li>
+                </template>
+
+                <!-- Next Behavior Details -->
+                <template v-if="nextBehaviorDescription">
+                  <li>
+                    <strong>Next Behavior:</strong> {{ nextBehaviorDescription }}
+                  </li>
+                </template>
+              </ul>
+            </template>
+
+            <!-- Explanation Section -->
+            <template v-if="hasExplanationData">
+              <li><strong>Explanation:</strong></li>
+              <ul class="bullet-list nested-list">
+                <!-- SD-KG Support - Display based on behavior_estimator.graph_support -->
+                <template v-if="hasSdkgSupport">
+                  <li>
+                    <strong class="sdkg-highlight">SD-KG Support:</strong> 
+                    <span class="sdkg-highlight">{{ sdkgSupportText }}</span>
+                  </li>
+                </template>
+
+                <!-- Contextual Justification - Always displayed -->
+                <li>
+                  <strong>Contextual Justification:</strong> {{ contextualJustificationText }}
+                </li>
+              </ul>
+            </template>
+          </ul>
+
+          <div class="section-divider"></div>
+        </template>
+
+        <!-- Underlying Cause section -->
+        <template v-if="hasUnderlyingCauseData">
+          <h2 class="section-title">Underlying Cause</h2>
+          <ul class="bullet-list">
+            <!-- Regulatory Rule Cue -->
+            <li>
+              <strong>Regulatory Rule Cue:</strong> {{ regulatoryRuleCueText }}
+            </li>
+
+            <!-- Operational protocols -->
+            <li>
+              <strong>Operational Protocols:</strong> {{ operationalProtocolsText }}
+            </li>
+          </ul>
+          <div class="section-divider"></div>
+        </template>
+
+        <!-- Imputation Function section -->
+        <template v-if="hasImputationFunctionData">
+          <h2 class="section-title">Imputation Function</h2>
+          <ul class="bullet-list">
+            <!-- Function Name -->
+            <li>
+              <strong>Function Name:</strong> 
+              <span 
+                class="clickable-function" 
+                @click="highlightImputationFunction"
+                :title="functionNameText"
+              >
+                {{ functionNameText }}
+              </span>
+            </li>
+
+            <!-- SD-KG Support for imputation -->
+            <template v-if="hasImputationSdkgSupport">
+              <li>
+                <strong class="sdkg-highlight">SD-KG Support:</strong> 
+                <span class="sdkg-highlight">{{ imputationSdkgSupportText }}</span>
+              </li>
+            </template>
+          </ul>
+        </template>
+
+        <!-- Relation to behaviors section -->
+        <template v-if="node.pattern && node.pattern.length">
+          <h2 class="section-title">Relation to behaviors</h2>
+          <ul class="bullet-list">
+            <li v-for="(item, idx) in node.pattern" :key="'pat-' + idx">
+              {{ item }}
+            </li>
+          </ul>
+          <div class="section-divider"></div>
+        </template>
+
+        <!-- Notes for analysts section -->
+        <template v-if="node.notes && node.notes.length">
+          <h2 class="section-title">Notes for analysts</h2>
+          <ul class="bullet-list">
+            <li v-for="(item, idx) in node.notes" :key="'note-' + idx">
+              {{ item }}
+            </li>
+          </ul>
+        </template>
       </section>
     </div>
 
+    <!-- Right column: Knowledge graph sidebar -->
+    <div class="graph-sidebar" v-if="hasGraphData">
+      <div class="graph-main-container">
+        <section class="graph-section">
+          <div class="graph-header">
+            <div class="graph-title-row">
+              <h3 class="graph-title">The Subgraph of SD-KG</h3>
+              <button class="expand-btn" @click="expandGraph" title="Expand graph">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="graph-container">
+            <div class="graph-wrapper">
+              <div ref="graphEl" class="graph-canvas"></div>
+            </div>
+          </div>
+
+          <!-- Graph legend -->
+          <div class="graph-legend">
+            <div class="legend-title">Node Types</div>
+            <div class="legend-items">
+              <div class="legend-item" v-for="type in nodeTypes" :key="type.name">
+                <div class="legend-color" :style="{backgroundColor: type.color}"></div>
+                <span class="legend-label">{{ type.label }}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Expanded graph modal (fullscreen view) -->
     <div v-if="isGraphExpanded" class="graph-modal" @click.self="closeExpandedGraph">
       <div class="graph-modal-content">
         <div class="graph-modal-header">
@@ -61,7 +240,6 @@
         </div>
         
         <div class="graph-modal-body">
-
           <div class="graph-modal-canvas-wrapper">
             <div ref="expandedGraphEl" class="graph-modal-canvas"></div>
           </div>
@@ -78,220 +256,69 @@
         </div>
       </div>
     </div>
-
-    <!-- Static Attributes -->
-    <template v-if="filteredStaticAttributes.length">
-      <h2 class="section-title">Static Attributes</h2>
-      <ul class="bullet-list">
-        <li v-for="(item, idx) in filteredStaticAttributes" :key="'attr-' + idx">
-          <span v-html="formatStaticAttributeForDisplay(item)"></span>
-          <template v-if="getStaticAttributeLabel(item) === 'Spatial context' && getStaticAttributeDetails(item)">
-            <div class="attribute-details" style="margin-left: 20px; margin-top: 4px; font-size: 0.9em; color: #666;">
-              {{ getStaticAttributeDetails(item) }}
-            </div>
-          </template>
-        </li>
-      </ul>
-      <div style="height: 1px; background: #e5e7eb; margin: 20px 0;"></div>
-    </template>
-
-    <!-- Behavior Pattern -->
-    <template v-if="hasBehaviorData">
-      <h2 class="section-title">Behavior Pattern</h2>
-      
-      <ul class="bullet-list">
-        <template v-if="hasContextData">
-          <li><strong>Context:</strong></li>
-          <ul class="bullet-list" style="margin-left: 20px;">
-            <!-- Current Behavior -->
-            <template v-if="node.context?.current_behavior">
-              <li>
-                <strong>Current Behavior:</strong> 
-                <span 
-                  class="clickable-behavior" 
-                  @click="highlightCurrentBehavior"
-                  :title="currentBehaviorTitle"
-                >
-                  {{ currentBehaviorTitle }}
-                </span>
-              </li>
-            </template>
-
-            <!-- Previous Behavior -->
-            <template v-if="node.context?.previous_behavior && Object.keys(node.context.previous_behavior).length > 0">
-              <li>
-                <strong>Previous Behavior:</strong> {{ previousBehaviorTitle }}
-              </li>
-            </template>
-
-            <!-- Next Behavior -->
-            <template v-if="node.context?.next_behavior && Object.keys(node.context.next_behavior).length > 0">
-              <li>
-                <strong>Next Behavior:</strong> {{ nextBehaviorTitle }}
-              </li>
-            </template>
-          </ul>
-        </template>
-
-        <!-- Detailed Description Section -->
-        <template v-if="hasBehaviorDetails">
-          <li><strong>Detailed Description:</strong></li>
-          <ul class="bullet-list" style="margin-left: 20px;">
-            <!-- Current Behavior Details -->
-            <template v-if="currentBehaviorDescription">
-              <li>
-                <strong>Current Behavior:</strong> {{ currentBehaviorDescription }}
-              </li>
-            </template>
-
-            <!-- Previous Behavior Details -->
-            <template v-if="previousBehaviorDescription">
-              <li>
-                <strong>Previous Behavior:</strong> {{ previousBehaviorDescription }}
-              </li>
-            </template>
-
-            <!-- Next Behavior Details -->
-            <template v-if="nextBehaviorDescription">
-              <li>
-                <strong>Next Behavior:</strong> {{ nextBehaviorDescription }}
-              </li>
-            </template>
-          </ul>
-        </template>
-
-        <!-- Explanation Section -->
-        <template v-if="hasExplanationData">
-          <li><strong>Explanation:</strong></li>
-          <ul class="bullet-list" style="margin-left: 20px;">
-            <!-- SD-KG Support - Display based on behavior_estimator.graph_support -->
-            <template v-if="hasSdkgSupport">
-              <li>
-                <strong style="color: #dc2626;">SD-KG Support:</strong> 
-                <span style="color: #dc2626;">{{ sdkgSupportText }}</span>
-              </li>
-            </template>
-
-            <!-- Contextual Justification - Always displayed, default content shown if no data -->
-            <li>
-              <strong>Contextual Justification:</strong> {{ contextualJustificationText }}
-            </li>
-          </ul>
-        </template>
-      </ul>
-
-      <!-- Add divider -->
-      <div style="height: 1px; background: #e5e7eb; margin: 20px 0;"></div>
-    </template>
-
-    <!-- Underlying Cause -->
-    <template v-if="hasUnderlyingCauseData">
-      <h2 class="section-title">Underlying Cause</h2>
-      <ul class="bullet-list">
-        <!-- Regulatory Rule Cue -->
-        <li>
-          <strong>Regulatory Rule Cue:</strong> {{ regulatoryRuleCueText }}
-        </li>
-
-        <!-- Operational protocols -->
-        <li>
-          <strong>Operational Protocols:</strong> {{ operationalProtocolsText }}
-        </li>
-      </ul>
-      <!-- Add divider -->
-      <div style="height: 1px; background: #e5e7eb; margin: 20px 0;"></div>
-    </template>
-
-    <!-- Imputation Function -->
-    <template v-if="hasImputationFunctionData">
-      <h2 class="section-title">Imputation Function</h2>
-      <ul class="bullet-list">
-        <!-- Function Name -->
-        <li>
-          <strong>Function Name:</strong> 
-          <span 
-            class="clickable-function" 
-            @click="highlightImputationFunction"
-            :title="functionNameText"
-          >
-            {{ functionNameText }}
-          </span>
-        </li>
-
-        <!-- SD-KG Support - Display based on method_selector.statistical_support -->
-        <template v-if="hasImputationSdkgSupport">
-          <li>
-            <strong style="color: #dc2626;">SD-KG Support:</strong> 
-            <span style="color: #dc2626;">{{ imputationSdkgSupportText }}</span>
-          </li>
-        </template>
-      </ul>
-    </template>
-
-    <template v-if="node.pattern && node.pattern.length">
-      <h2 class="section-title">Relation to behaviors</h2>
-      <ul class="bullet-list">
-        <li v-for="(item, idx) in node.pattern" :key="'pat-' + idx">
-          {{ item }}
-        </li>
-      </ul>
-      <!-- Add divider -->
-      
-    </template>
-
-    <template v-if="node.notes && node.notes.length">
-      <h2 class="section-title">Notes for analysts</h2>
-      <ul class="bullet-list">
-        <li v-for="(item, idx) in node.notes" :key="'note-' + idx">
-          {{ item }}
-        </li>
-      </ul>
-    </template>
-  </section>
+  </div>
 </template>
 
 <script setup>
+// Import Vue composition API and force-graph library
 import { ref, computed, onMounted, onBeforeUnmount, nextTick, watch } from 'vue'
 import ForceGraphModule from 'force-graph'
 
 const ForceGraph = ForceGraphModule.default || ForceGraphModule
 
+// Graph expansion state
 const isGraphExpanded = ref(false)
 const expandedGraphEl = ref(null)
 let expandedFg = null
-const expandedCurrentLevel = ref(2) 
+const expandedCurrentLevel = ref(2) // Default expanded view level
 
+// Highlight state for expanded graph
 let expandedHighlightNodes = new Set()
 let expandedHighlightLinks = new Set()
 let expandedDraggedNode = null
 
-// Track current highlighted node for clearing
+// Track current highlighted node
 const currentHighlightedNodeId = ref(null)
 
-// Imputation Function related
+// Component props definition
+const props = defineProps({
+  nodeId: {
+    type: String,
+    required: true
+  },
+  node: {
+    type: Object,
+    required: true
+  }
+})
+
+// Computed property: Check if imputation function data is available
 const hasImputationFunctionData = computed(() => {
-  return true // Function Name is always displayed, so this section is always shown
+  return true // Function Name is always displayed
 })
 
+// Computed property: Get imputation function name
 const functionNameText = computed(() => {
-  return "Linear interpolation" // Keep default content
+  return "Linear interpolation" // Default function name
 })
 
+// Computed property: Check if SD-KG support exists for imputation
 const hasImputationSdkgSupport = computed(() => {
   return props.node?.method_selector?.statistical_support && 
          props.node.method_selector.statistical_support.trim().length > 0
 })
 
+// Computed property: Get SD-KG support text for imputation
 const imputationSdkgSupportText = computed(() => {
-  // Use real data if method_selector.statistical_support exists
+  // Use real data if available
   if (props.node?.method_selector?.statistical_support) {
     return props.node.method_selector.statistical_support
   }
-  // Otherwise, use default content (even though it won't display, keep as fallback)
+  // Default fallback text
   return "Selected based on SD-KG pattern matching for vessels exhibiting stable navigation behavior in approach phases."
 })
 
-// Computed properties
+// Computed property: Check if SD-KG support exists for behavior
 const hasSdkgSupport = computed(() => {
   return props.node?.behavior_estimator?.graph_support && 
          props.node.behavior_estimator.graph_support.trim().length > 0
@@ -316,25 +343,7 @@ const formatStaticAttributeForDisplay = (item) => {
   return `<span class="clickable-attr" data-attr="${item}" data-value="${item}">${item}</span>`
 }
 
-// Original format function for other uses
-const formatStaticAttribute = (item) => {
-  const colonIndex = item.indexOf(':')
-  if (colonIndex !== -1) {
-    const label = item.substring(0, colonIndex)
-    const value = item.substring(colonIndex + 1)
-
-    if (label.toLowerCase().includes('spatial context')) {
-      const firstCommaIndex = value.indexOf(',')
-      if (firstCommaIndex !== -1) {
-        const firstPart = value.substring(0, firstCommaIndex)
-        return `<strong>${label}:</strong>${firstPart}`
-      }
-    }
-    return `<strong>${label}:</strong>${value}`
-  }
-  return item
-}
-
+// Get label from static attribute string
 const getStaticAttributeLabel = (item) => {
   const colonIndex = item.indexOf(':')
   if (colonIndex !== -1) {
@@ -343,6 +352,7 @@ const getStaticAttributeLabel = (item) => {
   return item
 }
 
+// Get additional details from static attribute (for Spatial Context)
 const getStaticAttributeDetails = (item) => {
   const colonIndex = item.indexOf(':')
   if (colonIndex !== -1) {
@@ -359,78 +369,75 @@ const getStaticAttributeDetails = (item) => {
   return null
 }
 
-// Underlying Cause related
+// Computed property: Check if underlying cause data exists
 const hasUnderlyingCauseData = computed(() => {
-  return true // Always display the Underlying Cause section
+  return true // Always display Underlying Cause section
 })
 
+// Computed property: Get regulatory rule cue text
 const regulatoryRuleCueText = computed(() => {
-  // Use real data if explanation_composer.regulatory_rule_cue exists
+  // Use real data if available
   if (props.node?.explanation_composer?.regulatory_rule_cue) {
     return props.node.explanation_composer.regulatory_rule_cue
   }
-  // Otherwise, use default content
+  // Default text
   return "Vessels must reduce speed before entering controlled harbor zones and adjust heading to merge into inbound traffic lanes."
 })
 
+// Computed property: Get operational protocols text
 const operationalProtocolsText = computed(() => {
-  // Use real data if explanation_composer.operational_protocol_rationale exists
+  // Use real data if available
   if (props.node?.explanation_composer?.operational_protocol_rationale) {
     return props.node.explanation_composer.operational_protocol_rationale
   }
-  // Otherwise, use default content
+  // Default text
   return "Large tankers often perform a smooth decelerate–align maneuver prior to pilot boarding to stabilize motion and ensure predictable handling."
 })
 
+// Computed property: Get SD-KG support text for behavior
 const sdkgSupportText = computed(() => {
-  // Use real data if behavior_estimator.graph_support exists
+  // Use real data if available
   if (props.node?.behavior_estimator?.graph_support) {
     return props.node.behavior_estimator.graph_support
   }
-  // Otherwise, use default content
+  // Default text
   return "Conditioned on Navigation status = Underway using engine and Vessel type = Tanker, the SD-KG estimates P(Port-Entry: Decelerate–Align) ≈ 0.58, which ranks 1st learned behavior patterns for this context."
 })
 
+// Computed property: Get contextual justification text
 const contextualJustificationText = computed(() => {
-  // Use real data if behavior_estimator.contextual_justification exists
+  // Use real data if available
   if (props.node?.behavior_estimator?.contextual_justification) {
     return props.node.behavior_estimator.contextual_justification
   }
-  // Otherwise, use default content
+  // Default text
   return "The segment occurs at the harbor entrance where inbound vessels are expected to slow down and align to the designated lane."
 })
 
+// Computed property: Check if explanation data exists
 const hasExplanationData = computed(() => {
-  // Display Explanation if either SD-KG Support or Contextual Justification has data
-  return hasSdkgSupport.value || true // Contextual Justification is always displayed, so this always returns true
+  return hasSdkgSupport.value || true // Contextual Justification is always displayed
 })
 
-const props = defineProps({
-  nodeId: {
-    type: String,
-    required: true
-  },
-  node: {
-    type: Object,
-    required: true
-  }
-})
-
+// Computed property: Filter static attributes
 const filteredStaticAttributes = computed(() => {
   if (!props.node?.static_attributes) return []
   return props.node.static_attributes
 })
 
+// Format key for display (convert snake_case to Title Case)
 const formatKey = (key) => {
   return key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
 }
 
+// Computed property: Get current behavior title
 const currentBehaviorTitle = computed(() => {
   const intent = props.node?.context?.current_behavior?.intent || "No intent data available"
   const bracketIndex = intent.indexOf('(')
   return bracketIndex !== -1 ? intent.substring(0, bracketIndex).trim() : intent
 })
 
+// Computed property: Get current behavior description
 const currentBehaviorDescription = computed(() => {
   const intent = props.node?.context?.current_behavior?.intent || ""
   const bracketIndex = intent.indexOf('(')
@@ -442,12 +449,14 @@ const currentBehaviorDescription = computed(() => {
   return ""
 })
 
+// Computed property: Get previous behavior title
 const previousBehaviorTitle = computed(() => {
   const intent = props.node?.context?.previous_behavior?.intent || "No intent data available"
   const bracketIndex = intent.indexOf('(')
   return bracketIndex !== -1 ? intent.substring(0, bracketIndex).trim() : intent
 })
 
+// Computed property: Get previous behavior description
 const previousBehaviorDescription = computed(() => {
   const intent = props.node?.context?.previous_behavior?.intent || ""
   const bracketIndex = intent.indexOf('(')
@@ -459,12 +468,14 @@ const previousBehaviorDescription = computed(() => {
   return ""
 })
 
+// Computed property: Get next behavior title
 const nextBehaviorTitle = computed(() => {
   const intent = props.node?.context?.next_behavior?.intent || "No intent data available"
   const bracketIndex = intent.indexOf('(')
   return bracketIndex !== -1 ? intent.substring(0, bracketIndex).trim() : intent
 })
 
+// Computed property: Get next behavior description
 const nextBehaviorDescription = computed(() => {
   const intent = props.node?.context?.next_behavior?.intent || ""
   const bracketIndex = intent.indexOf('(')
@@ -476,15 +487,17 @@ const nextBehaviorDescription = computed(() => {
   return ""
 })
 
+// Computed property: Check if behavior details exist
 const hasBehaviorDetails = computed(() => {
   return currentBehaviorDescription.value || previousBehaviorDescription.value || nextBehaviorDescription.value
 })
 
-// Computed properties
+// Computed property: Check if behavior data exists
 const hasBehaviorData = computed(() => {
   return hasContextData.value || hasExplanationData.value || hasBehaviorDetails.value
 })
 
+// Computed property: Check if context data exists
 const hasContextData = computed(() => {
   return props.node?.context && (
     (props.node.context.current_behavior && Object.keys(props.node.context.current_behavior).length > 0) ||
@@ -496,9 +509,9 @@ const hasContextData = computed(() => {
 // Graph references and state
 const graphEl = ref(null)
 let fg = null
-const currentLevel = ref(2) // Default to displaying level 2
+const currentLevel = ref(2) // Default display level
 
-// Performance configuration
+// Performance configuration for graph rendering
 const PERFORMANCE_CONFIG = {
   MAX_NODES: 1000,
   MAX_LINKS: 2000,
@@ -506,6 +519,7 @@ const PERFORMANCE_CONFIG = {
   SIMULATION_QUALITY: 'medium'
 }
 
+// Animation configuration for graph interactions
 const ANIMATION_CONFIG = {
   ALPHA_MIN: 0.001,
   ALPHA_DECAY: 0.02,
@@ -544,14 +558,14 @@ const TYPE_COLORS = {
   default: '#6b7280'
 }
 
-// Highlight colors
+// Highlight colors for interactive elements
 const HIGHLIGHT_COLORS = {
   link: '#fbbf24',
   node: '#fbbf24',
   pulse: '#f59e0b'
 }
 
-// Node type definitions for legend
+// Node type definitions for legend display
 const nodeTypes = ref([
   { name: 'behavior', label: 'Behavior', color: '#10b981' },
   { name: 'attribute', label: 'Attribute', color: '#f59e0b' },
@@ -560,7 +574,7 @@ const nodeTypes = ref([
   { name: 'segment', label: 'Segment', color: '#06b6d4' },
 ])
 
-// Computed properties
+// Computed property: Get available graph levels
 const availableLevels = computed(() => {
   if (!props.node.graph?.nodes) return [1]
   
@@ -575,10 +589,12 @@ const availableLevels = computed(() => {
   return sortedLevels.length > 0 ? sortedLevels : [1]
 })
 
+// Computed property: Check if graph data exists
 const hasGraphData = computed(() => {
   return props.node.graph?.nodes && props.node.graph.nodes.length > 1
 })
 
+// Computed property: Filter nodes by current level
 const filteredNodes = computed(() => {
   if (!hasGraphData.value) return []
   
@@ -586,12 +602,14 @@ const filteredNodes = computed(() => {
   return allNodes.filter(node => node.level <= currentLevel.value && node.level > 0)
 })
 
+// Computed property: Filter links by current level
 const filteredLinks = computed(() => {
   if (!props.node.graph?.links) return []
   
   return props.node.graph.links.filter(link => link.level <= currentLevel.value)
 })
 
+// Computed property: Filter nodes for expanded graph
 const expandedFilteredNodes = computed(() => {
   if (!hasGraphData.value) return []
   
@@ -599,19 +617,20 @@ const expandedFilteredNodes = computed(() => {
   return allNodes.filter(node => node.level <= expandedCurrentLevel.value && node.level > 0)
 })
 
+// Computed property: Filter links for expanded graph
 const expandedFilteredLinks = computed(() => {
   if (!props.node.graph?.links) return []
   
   return props.node.graph.links.filter(link => link.level <= expandedCurrentLevel.value)
 })
 
-// Build graph data for force-graph
+// Build graph data structure for force-graph library
 const buildGraphData = (isExpanded = false) => {
   if (!hasGraphData.value) {
     return { nodes: [], links: [] }
   }
 
-  // Create central node
+  // Create central node (current node)
   const centralNode = {
     id: props.nodeId,
     title: props.node.title,
@@ -626,7 +645,7 @@ const buildGraphData = (isExpanded = false) => {
     vessel_id: props.node.vessel_id
   }
 
-  // Create related nodes 
+  // Create related nodes based on level filtering
   const relatedNodes = (isExpanded ? expandedFilteredNodes.value : filteredNodes.value).map(node => ({
     id: node.id,
     title: node.title || node.label,
@@ -645,7 +664,7 @@ const buildGraphData = (isExpanded = false) => {
     nodeById.set(n.id, n)
   })
 
-  // Create links 
+  // Create links between nodes
   const links = (isExpanded ? expandedFilteredLinks.value : filteredLinks.value)
     .map(link => ({ 
       source: link.source, 
@@ -654,7 +673,7 @@ const buildGraphData = (isExpanded = false) => {
     }))
     .filter(link => nodeById.has(link.source) && nodeById.has(link.target))
 
-  // Build neighbor relationships
+  // Build neighbor relationships for highlighting
   links.forEach(link => {
     const sourceNode = nodeById.get(link.source)
     const targetNode = nodeById.get(link.target)
@@ -672,7 +691,7 @@ const buildGraphData = (isExpanded = false) => {
   return { nodes: allNodes, links }
 }
 
-// Debounce function
+// Debounce function for performance optimization
 function debounce(func, wait) {
   let timeout
   return function executedFunction(...args) {
@@ -685,6 +704,7 @@ function debounce(func, wait) {
   }
 }
 
+// Start pulse animation for highlighted nodes
 function startPulseAnimation() {
   if (pulseAnimationId) {
     cancelAnimationFrame(pulseAnimationId)
@@ -698,6 +718,7 @@ function startPulseAnimation() {
   pulseAnimationId = requestAnimationFrame(animate)
 }
 
+// Stop pulse animation
 function stopPulseAnimation() {
   if (pulseAnimationId) {
     cancelAnimationFrame(pulseAnimationId)
@@ -705,6 +726,7 @@ function stopPulseAnimation() {
   }
 }
 
+// Get current pulse effect values
 function getPulseEffect() {
   const pulse = Math.sin(pulseTime * 0.002) * 0.5 + 0.5
   return {
@@ -713,7 +735,7 @@ function getPulseEffect() {
   }
 }
 
-// Highlight connected nodes for main graph
+// Highlight connected nodes in main graph
 function highlightConnectedNodes(node) {
   if (!node) {
     highlightNodes = new Set()
@@ -734,11 +756,11 @@ function highlightConnectedNodes(node) {
   draggedNode = node
   currentHighlightedNodeId.value = node.id
   
-  // Add pulse animation
+  // Start pulse animation for visual feedback
   startPulseAnimation()
 }
 
-// Highlight connected nodes for expanded graph
+// Highlight connected nodes in expanded graph
 function highlightExpandedConnectedNodes(node) {
   if (!node) {
     expandedHighlightNodes = new Set()
@@ -759,11 +781,10 @@ function highlightExpandedConnectedNodes(node) {
   expandedDraggedNode = node
   currentHighlightedNodeId.value = node.id
   
-  // Add pulse animation
   startPulseAnimation()
 }
 
-// Reset highlight for main graph
+// Clear highlight in main graph
 function clearHighlight() {
   highlightNodes = new Set()
   highlightLinks = new Set()
@@ -771,7 +792,7 @@ function clearHighlight() {
   currentHighlightedNodeId.value = null
 }
 
-// Reset highlight for expanded graph
+// Clear highlight in expanded graph
 function clearExpandedHighlight() {
   expandedHighlightNodes = new Set()
   expandedHighlightLinks = new Set()
@@ -798,18 +819,18 @@ const highlightCurrentBehavior = () => {
   
   if (!behaviorTitle) return
   
-  // Find behavior node
+  // Find behavior node by title
   const node = findNodeByTitle(behaviorTitle, 'behavior')
   if (node) {
     highlightSpecificNode(node)
     
-    // Also highlight in expanded graph if it's open
+    // Also highlight in expanded graph if open
     if (isGraphExpanded.value && expandedFg) {
       highlightSpecificNode(node, true)
     }
   } else {
     console.warn(`Behavior node not found: ${behaviorTitle}`)
-    // Try to find any behavior node if exact match fails
+    // Try to find any behavior node
     const anyBehaviorNode = findAnyBehaviorNode()
     if (anyBehaviorNode) {
       highlightSpecificNode(anyBehaviorNode)
@@ -831,15 +852,15 @@ const highlightAttribute = (item) => {
   const value = item.substring(colonIndex + 1).trim()
   
   // Clean value (remove brackets and range markers)
-  let cleanValue = value.replace(/\[.*?\)/g, '').trim() // Remove range markers like [8, 10)
-  cleanValue = cleanValue.replace(/^location:\s*/i, '').trim() // Remove location prefix
-  cleanValue = cleanValue.split(',')[0].trim() // Take only the first part (for Spatial Context)
+  let cleanValue = value.replace(/\[.*?\)/g, '').trim()
+  cleanValue = cleanValue.replace(/^location:\s*/i, '').trim()
+  cleanValue = cleanValue.split(',')[0].trim()
   
-  // Determine node type and search strategy based on attribute type
+  // Determine node type and search strategy
   let nodeType = 'attribute'
   let searchTerms = []
   
-  // Build search terms for different attribute types
+  // Build search terms based on attribute type
   switch(label.toLowerCase()) {
     case 'navigation status':
       searchTerms = [cleanValue, 'navigation', 'status', 'underway', 'engine']
@@ -851,7 +872,7 @@ const highlightAttribute = (item) => {
       break
     case 'vessel type':
       searchTerms = [cleanValue, 'vessel', 'type', cleanValue.toLowerCase()]
-      nodeType = 'trajectory' // Vessel type might be related to trajectory node
+      nodeType = 'trajectory'
       break
     case 'spatial context':
       searchTerms = [cleanValue, 'location', 'spatial', 'context']
@@ -867,7 +888,7 @@ const highlightAttribute = (item) => {
       searchTerms = [cleanValue, label.toLowerCase()]
   }
   
-  // Try to find the node using multiple search strategies
+  // Try to find the node
   const node = findNodeBySearchTerms(searchTerms, nodeType, label, cleanValue)
   if (node) {
     highlightSpecificNode(node)
@@ -894,7 +915,7 @@ const highlightImputationFunction = () => {
       highlightSpecificNode(node, true)
     }
   } else {
-    // Try alternative search terms for interpolation
+    // Try alternative search terms
     const searchTerms = ['linear interpolation', 'interpolation', 'imputation', 'function']
     const altNode = findNodeBySearchTerms(searchTerms, 'function', 'Imputation Function', functionName)
     if (altNode) {
@@ -917,7 +938,7 @@ const findAnyBehaviorNode = () => {
   return allNodes.find(node => node.type === 'behavior')
 }
 
-// Find node by title with type filter
+// Find node by title with optional type filter
 const findNodeByTitle = (title, typeFilter = null) => {
   if (!hasGraphData.value) return null
   
@@ -939,7 +960,7 @@ const findNodeByTitle = (title, typeFilter = null) => {
   })
 }
 
-// Find node by multiple search terms
+// Find node by multiple search terms with scoring
 const findNodeBySearchTerms = (searchTerms, expectedType, attributeLabel, attributeValue) => {
   if (!hasGraphData.value) return null
   
@@ -1004,7 +1025,7 @@ const highlightSpecificNode = (nodeData, isExpanded = false) => {
       // Highlight the node and its connections
       highlightExpandedConnectedNodes(targetNode)
       
-      // Optional: auto-center on the node
+      // Auto-center on the node
       setTimeout(() => {
         if (expandedFg) {
           expandedFg.centerAt(targetNode.x, targetNode.y, 1000)
@@ -1043,6 +1064,7 @@ function initForceGraph() {
     fg = null
   }
 
+  // Physics simulation settings
   const settings = {
     alphaMin: ANIMATION_CONFIG.ALPHA_MIN,
     alphaDecay: ANIMATION_CONFIG.ALPHA_DECAY,
@@ -1078,6 +1100,8 @@ function initForceGraph() {
         const degree = node.degree || 1
         return baseSize + Math.log2(degree) * 0.5
       })
+    
+    // Configure physics forces
     configureForces(fg, settings)
 
     fg.nodeCanvasObjectMode(() => 'replace')
@@ -1094,6 +1118,7 @@ function initForceGraph() {
         const highlightScale = isHighlighted ? ANIMATION_CONFIG.NODE_HIGHLIGHT_SCALE : 1
         const finalRadius = radius * highlightScale
 
+        // Draw highlight background
         if (isHighlighted) {
           ctx.beginPath()
           ctx.arc(node.x, node.y, finalRadius + 3, 0, 2 * Math.PI, false)
@@ -1101,11 +1126,13 @@ function initForceGraph() {
           ctx.fill()
         }
 
+        // Draw main node
         ctx.beginPath()
         ctx.arc(node.x, node.y, finalRadius, 0, 2 * Math.PI, false)
         ctx.fillStyle = nodeColor
         ctx.fill()
 
+        // Draw labels at appropriate zoom levels
         if (globalScale > 1.5) {
           const fontSize = Math.min(12, 10 / globalScale)
           ctx.font = `${fontSize}px system-ui`
@@ -1236,7 +1263,6 @@ const setupAttributeClickListeners = () => {
       const attrLabel = e.target.getAttribute('data-attr')
       const attrValue = e.target.getAttribute('data-value')
       
-      // Find and highlight the corresponding node
       if (attrLabel && attrValue) {
         const item = `${attrLabel}: ${attrValue}`
         highlightAttribute(item)
@@ -1245,7 +1271,7 @@ const setupAttributeClickListeners = () => {
   })
 }
 
-// Initialize expanded force graph
+// Initialize expanded force graph for fullscreen view
 function initExpandedForceGraph() {
   if (!expandedGraphEl.value) return
 
@@ -1254,6 +1280,7 @@ function initExpandedForceGraph() {
     expandedFg = null
   }
 
+  // Enhanced settings for expanded view
   const settings = {
     alphaMin: ANIMATION_CONFIG.ALPHA_MIN,
     alphaDecay: ANIMATION_CONFIG.ALPHA_DECAY * 0.5,
@@ -1303,6 +1330,7 @@ function initExpandedForceGraph() {
         const highlightScale = isHighlighted ? ANIMATION_CONFIG.NODE_HIGHLIGHT_SCALE : 1
         const finalRadius = radius * highlightScale
 
+        // Draw highlight background
         if (isHighlighted) {
           ctx.beginPath()
           ctx.arc(node.x, node.y, finalRadius + 5, 0, 2 * Math.PI, false)
@@ -1310,10 +1338,13 @@ function initExpandedForceGraph() {
           ctx.fill()
         }
 
+        // Draw main node
         ctx.beginPath()
         ctx.arc(node.x, node.y, finalRadius, 0, 2 * Math.PI, false)
         ctx.fillStyle = nodeColor
         ctx.fill()
+        
+        // Draw pulse effect for center node
         if (isCenter) {
           const pulse = getPulseEffect()
           ctx.beginPath()
@@ -1323,6 +1354,7 @@ function initExpandedForceGraph() {
           ctx.stroke()
         }
 
+        // Draw labels (more detailed in expanded view)
         if (globalScale > 0.8) {
           const fontSize = Math.min(16, 14 / globalScale)
           ctx.font = `${fontSize}px system-ui`
@@ -1438,6 +1470,7 @@ function initExpandedForceGraph() {
   }
 }
 
+// Configure physics forces for graph simulation
 function configureForces(graphInstance, settings) {
   try {
     const linkForce = graphInstance.d3Force('link')
@@ -1470,18 +1503,21 @@ function configureForces(graphInstance, settings) {
   }
 }
 
+// Update main graph size based on container
 function updateGraphSize() {
   if (!graphEl.value || !fg) return
   const rect = graphEl.value.getBoundingClientRect()
   fg.width(rect.width).height(rect.height)
 }
 
+// Update expanded graph size
 function updateExpandedGraphSize() {
   if (!expandedGraphEl.value || !expandedFg) return
   const rect = expandedGraphEl.value.getBoundingClientRect()
   expandedFg.width(rect.width).height(rect.height)
 }
 
+// Resize handler with debouncing
 const resizeHandler = debounce(() => {
   updateGraphSize()
   if (isGraphExpanded.value) {
@@ -1489,7 +1525,7 @@ const resizeHandler = debounce(() => {
   }
 }, 200)
 
-// Event handlers
+// Event handlers for graph interactions
 const handleLevelClick = (level) => {
   currentLevel.value = level
   refreshGraph()
@@ -1546,6 +1582,7 @@ const refreshExpandedGraph = () => {
   }
 }
 
+// Get description for graph levels
 const getLevelDescription = (level) => {
   const descriptions = {
     1: 'Direct connections',
@@ -1554,9 +1591,10 @@ const getLevelDescription = (level) => {
   return descriptions[level] || `Level ${level}`
 }
 
+// Component emits definition
 const emit = defineEmits(['open-node'])
 
-// Lifecycle
+// Lifecycle hooks
 onMounted(async () => {
   await nextTick()
   
@@ -1585,7 +1623,7 @@ onBeforeUnmount(() => {
   }
 })
 
-// Watchers
+// Watchers for reactive updates
 watch(() => props.node, () => {
   if (hasGraphData.value) {
     refreshGraph()
@@ -1614,6 +1652,39 @@ watch(() => isGraphExpanded.value, (newVal) => {
 </script>
 
 <style scoped>
+/* Two-column layout container */
+.page-container {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Left column: Main content area */
+.main-content {
+  flex: 1;
+  min-width: 0; /* Prevent content overflow */
+}
+
+/* Right column: Knowledge graph sidebar */
+.graph-sidebar {
+  width: 400px;
+  min-width: 400px;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  margin-left: 20px;
+  margin-right: -200px;
+}
+
+.graph-main-container {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
 /* Title block styles */
 .title-block {
   margin-bottom: 14px;
@@ -1624,12 +1695,6 @@ watch(() => isGraphExpanded.value, (newVal) => {
   font-weight: 600;
   margin: 0 0 6px 0;
   color: #0f172a;
-}
-
-.summary {
-  font-size: 13px;
-  color: #4b5563;
-  margin: 0 0 10px 0;
 }
 
 .meta-info {
@@ -1661,62 +1726,78 @@ watch(() => isGraphExpanded.value, (newVal) => {
   font-weight: 600;
 }
 
-.mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
-}
-
-/* Main content */
+/* Main content area */
 .body {
   margin-top: 8px;
   padding-top: 12px;
   border-top: 1px solid #e5e7eb;
-  position: relative;
-  padding-right: 260px; 
 }
 
+/* Section styling */
 .section-title {
-  font-size: 13px;
-  font-weight: 600;
-  margin: 0 0 6px 0;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  margin: 24px 0 12px 0;
   color: #111827;
 }
 
-.body-paragraph {
-  font-size: 13px;
-  line-height: 1.6;
-  color: #374151;
-  margin: 0 0 8px 0;
-}
-
+/* Bullet list styling */
 .bullet-list {
   padding-left: 18px;
-  margin: 4px 0 10px;
-  font-size: 13px;
+  margin: 12px 0 20px;
+  font-size: 30px !important;
   color: #374151;
 }
 
 .bullet-list li {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  line-height: 1.6;
 }
 
-.graph-floating {
-  position: absolute;
-  right: -200px;
-  top: 20px;
-  width: 400px;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  z-index: 10;
+/* Nested bullet list for indented content */
+.nested-list {
+  margin-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+/* Section dividers */
+.section-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 20px 0;
+}
+
+/* Attribute details styling */
+.attribute-details {
+  margin-left: 20px;
+  margin-top: 4px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Clickable element styles */
+.clickable-behavior,
+.clickable-function {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #3b82f6 !important;
+}
+
+.clickable-behavior:hover,
+.clickable-function:hover {
+  text-decoration: underline;
+}
+
+/* SD-KG highlight styling */
+.sdkg-highlight {
+  color: #dc2626 !important;
 }
 
 /* Graph section styles */
 .graph-section {
   margin: 0;
-  padding: 0;
+  padding: 20px;
   border-top: none;
 }
 
@@ -1760,128 +1841,6 @@ watch(() => isGraphExpanded.value, (newVal) => {
   color: #111827;
 }
 
-.graph-controls {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 14px;
-  flex-wrap: wrap;
-}
-
-.control-group {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.control-label {
-  color: #6b7280;
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  padding-top: 4px;
-}
-
-.level-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.level-btn {
-  padding: 6px 12px;
-  border: 1px solid #d1d5db;
-  background: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.level-btn:hover {
-  background: #f8fafc;
-  border-color: #9ca3af;
-}
-
-.level-btn.active {
-  background: #3b82f6;
-  color: white;
-  border-color: #3b82f6;
-}
-
-.level-badge {
-  font-size: 11px;
-  padding: 1px 4px;
-  background: #ef4444;
-  color: white;
-  border-radius: 4px;
-}
-
-.layout-select {
-  padding: 6px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  background: white;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.reset-btn {
-  padding: 6px 12px;
-  border: 1px solid #d1d5db;
-  background: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: all 0.2s ease;
-}
-
-.reset-btn:hover {
-  background: #f8fafc;
-  border-color: #9ca3af;
-}
-
-.clear-highlight-btn {
-  padding: 6px 12px;
-  background: #f8fafc;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: all 0.2s ease;
-  color: #6b7280;
-}
-
-.clear-highlight-btn:hover {
-  background: #e5e7eb;
-  border-color: #9ca3af;
-  color: #111827;
-}
-
-.level-info {
-  color: #6b7280;
-  font-size: 13px;
-  font-weight: 500;
-  background: #f8fafc;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border-left: 3px solid #3b82f6;
-}
-
-.graph-description {
-  font-size: 14px;
-  color: #6b7280;
-  margin: 0 0 24px 0;
-  padding: 12px 16px;
-  background: #f8fafc;
-  border-radius: 8px;
-  border-left: 4px solid #10b981;
-  line-height: 1.5;
-}
-
 .graph-container {
   background: white;
   border: 1px solid #e2e8f0;
@@ -1889,13 +1848,6 @@ watch(() => isGraphExpanded.value, (newVal) => {
   padding: 20px;
   margin-bottom: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.subsection-title {
-  font-size: 12px;
-  font-weight: 600;
-  margin: 16px 0 8px 0;
-  color: #111827;
 }
 
 /* Graph wrapper styles */
@@ -1913,7 +1865,7 @@ watch(() => isGraphExpanded.value, (newVal) => {
   height: 100%;
 }
 
-/* Legend */
+/* Graph legend */
 .graph-legend {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
@@ -1960,6 +1912,7 @@ watch(() => isGraphExpanded.value, (newVal) => {
   font-weight: 500;
 }
 
+/* Expanded graph modal styles */
 .graph-modal {
   position: fixed;
   top: 0;
@@ -1997,7 +1950,7 @@ watch(() => isGraphExpanded.value, (newVal) => {
 }
 
 .graph-modal-title {
-  font-size: 50px;
+  font-size: 20px;
   font-weight: 700;
   color: #111827;
   margin: 0;
@@ -2030,10 +1983,6 @@ watch(() => isGraphExpanded.value, (newVal) => {
   overflow: hidden;
 }
 
-.graph-modal-controls {
-  margin-bottom: 20px;
-}
-
 .graph-modal-canvas-wrapper {
   flex: 1;
   border-radius: 12px;
@@ -2055,79 +2004,47 @@ watch(() => isGraphExpanded.value, (newVal) => {
   padding: 16px;
 }
 
-/* Clickable element styles */
-.clickable-behavior {
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: #3b82f6 !important; 
-}
-
-.clickable-behavior:hover {
-  text-decoration: underline; 
-}
-
-.clickable-function {
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: #3b82f6 !important; 
-}
-
-.clickable-function:hover {
-  text-decoration: underline;
-}
-
-/* CSS for clickable attributes (applied globally) */
+/* Global styles for clickable attributes */
 :global(.clickable-attr) {
   cursor: pointer;
   transition: all 0.2s ease;
-  color: #3b82f6 !important; 
+  color: #3b82f6 !important;
 }
 
 :global(.clickable-attr:hover) {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 /* Responsive design */
 @media (max-width: 1200px) {
-  .graph-floating {
-    position: static;
+  .page-container {
+    flex-direction: column;
+  }
+  
+  .graph-sidebar {
     width: 100%;
-    margin-top: 20px;
+    min-width: 100%;
+    position: static;
+    margin: 20px 0 0 0;
   }
   
-  .body {
-    padding-right: 0;
-  }
-}
-
-@media (max-width: 1024px) {
-  .graph-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  
-  .graph-controls {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  .graph-main-container {
+    margin-top: 0;
   }
 }
 
 @media (max-width: 768px) {
   .title {
-    font-size: 18px;
+    font-size: 24px;
   }
   
-  .meta-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+  .section-title {
+    font-size: 22px !important;
   }
   
-  .meta-item {
-    width: 100%;
-    justify-content: space-between;
+  .bullet-list,
+  .bullet-list li {
+    font-size: 18px !important;
   }
   
   .graph-wrapper {
@@ -2152,15 +2069,6 @@ watch(() => isGraphExpanded.value, (newVal) => {
   }
 }
 
-.subsubsection-title {
-  font-size: 11px;
-  font-weight: 600;
-  margin: 12px 0 6px 0;
-  color: #374151;
-  padding-left: 12px;
-  border-left: 2px solid #6b7280;
-}
-
 @media (max-width: 480px) {
   .graph-container {
     padding: 16px;
@@ -2170,41 +2078,21 @@ watch(() => isGraphExpanded.value, (newVal) => {
     height: 250px;
   }
   
-  .graph-controls {
-    gap: 8px;
-  }
-  
-  .control-group {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
   .legend-items {
     grid-template-columns: 1fr;
   }
   
   .graph-modal-title {
-    font-size: 16px;
+    font-size: 18px;
   }
-}
-
-/* Enlarge the titles of Static Attributes and Behavior Pattern */
-.section-title {
-  font-size: 30px !important;
-  font-weight: 700 !important;
-}
-
-/* Enlarge the text of these two sections */
-.bullet-list li,
-.bullet-list .bullet-list li {
-  font-size: 30px !important;
-}
-
-/* Style for attribute details */
-.attribute-details {
-  font-size: 0.9em;
-  color: #666;
-  margin-left: 20px;
-  margin-top: 4px;
+  
+  .section-title {
+    font-size: 20px !important;
+  }
+  
+  .bullet-list,
+  .bullet-list li {
+    font-size: 16px !important;
+  }
 }
 </style>
