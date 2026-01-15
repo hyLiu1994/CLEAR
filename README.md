@@ -200,4 +200,4 @@ For SD-KG construction and trajectory imputation details, see the [VISTA Pipelin
 
 ## 🙏 Acknowledgments
 
-This research is funded by the European Union's Horizon Europe programme through the [MobiSpaces](https://mobispaces.eu/) project (grant agreement no. 101070279).
+This research is funded by the European Union's Horizon Europe programme through the [MobiSpaces](https://mobispaces.eu/) project (grant agreement no. 101070279) and and [6G-XCEL](https://www.6g-xcel.eu) (grant agreement no. 101139194).
