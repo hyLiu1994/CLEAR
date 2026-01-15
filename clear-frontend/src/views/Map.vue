@@ -210,6 +210,73 @@
               </button>
             </div>
             
+            <!-- Segment summary section with modern card design -->
+            <div v-if="currentSegmentId" class="segment-summary-section">
+              <div class="segment-summary-card">
+                <div class="summary-header">
+                  <h4 class="summary-title">Segment Overview</h4>
+                  <div class="summary-badge">{{ formatSegmentId(currentSegmentSummary.segmentId) }}</div>
+                </div>
+                
+                <div class="summary-grid">
+                  <div class="summary-item">
+                    <div class="item-icon">
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 17L4 12L9 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 12H4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="item-content">
+                      <div class="item-label">Trajectory ID</div>
+                      <div class="item-value">{{ formatId(currentSegmentSummary.trajectoryId) }}</div>
+                    </div>
+                  </div>
+                  
+                  <div class="summary-item">
+                    <div class="item-icon">
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-width="2"/>
+                        <path d="M8 12H16" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 8L12 16" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="item-content">
+                      <div class="item-label">Segment ID</div>
+                      <div class="item-value">{{ formatId(currentSegmentSummary.segmentId) }}</div>
+                    </div>
+                  </div>
+                  
+                  <div class="summary-item">
+                    <div class="item-icon">
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18H19C20.1046 18 21 17.1046 21 16Z" stroke-width="2"/>
+                        <path d="M18 10H20" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M11 10H13" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M4 10H6" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="item-content">
+                      <div class="item-label">Vessel ID</div>
+                      <div class="item-value">{{ formatId(currentSegmentSummary.vesselId) }}</div>
+                    </div>
+                  </div>
+                  
+                  <div class="summary-item">
+                    <div class="item-icon">
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-width="2"/>
+                        <path d="M12 6V12L16 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="item-content">
+                      <div class="item-label">Duration</div>
+                      <div class="item-value">{{ formatDuration(currentSegmentSummary.duration) }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <div class="details-sidebar-content">
               <div v-if="currentSegmentId" class="segment-details">
                 <div v-if="iframeLoading" class="iframe-loading-overlay">
@@ -228,18 +295,35 @@
               </div>
 
               <div v-else class="no-details">
-                Click on a trajectory segment to view details
+                <div class="no-details-content">
+                  <div class="no-details-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18H19C20.1046 18 21 17.1046 21 16Z" stroke-width="2"/>
+                      <path d="M18 10H20" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M11 10H13" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M4 10H6" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <h4>No Segment Selected</h4>
+                  <p>Click on a trajectory segment to view details</p>
+                </div>
               </div>
             </div>
 
             <div class="details-sidebar-footer">
-              <!-- Changed from "Open in New Tab" to "Open" and updated click handler -->
               <button 
                 class="open-full-btn"
                 @click="openDetailsInCurrentTab"
                 :disabled="!currentSegmentId"
               >
-                Open
+                <span class="btn-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M18 13V19C18 20.1046 17.1046 21 16 21H5C3.89543 21 3 20.1046 3 19V8C3 6.89543 3.89543 6 5 6H11" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M15 3H21V9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 14L21 3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                Open Details Page
               </button>
             </div>
           </div>
@@ -251,7 +335,7 @@
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref, reactive, computed, watch } from 'vue'
-import { Map, NavigationControl, Popup } from 'maplibre-gl'
+import { Map, NavigationControl } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
 import AppPageLayout from '../components/AppPageLayout.vue'
@@ -271,6 +355,14 @@ const showDetailsSidebar = ref(false)
 const currentSegmentId = ref(null)
 const iframeLoading = ref(false) 
 const detailError = ref(null)
+
+// Store segment summary information for display in sidebar
+const currentSegmentSummary = reactive({
+  trajectoryId: '',
+  segmentId: '',
+  vesselId: '',
+  duration: ''
+})
 
 let iframeLoadTimeout = null
 
@@ -317,7 +409,7 @@ let moveEndTimeout = null
 const sidebarPosition = reactive({
   x: 0, // Horizontal position from right
   y: 0, // Vertical position from top
-  width: 800, // Default width
+  width: 500, // Default width
   height: '100%' // Default height (percentage or px)
 })
 
@@ -325,7 +417,7 @@ const sidebarPosition = reactive({
 const originalSidebarPosition = {
   x: 0,
   y: 0,
-  width: 800,
+  width:500,
   height: '100%'
 }
 
@@ -334,12 +426,12 @@ const resizeDirection = ref(null)
 const isDragging = ref(false)
 const dragStartPos = reactive({ x: 0, y: 0 })
 
-// Computed property for sidebar style - FIXED
+// Computed property for sidebar style
 const sidebarStyle = computed(() => {
   if (!showDetailsSidebar.value) {
     // When sidebar is hidden, position it completely off-screen
     return {
-      right: '-1000px', // Move it far off-screen
+      right: '-1000px',
       transform: 'none',
       width: '0',
       height: '0',
@@ -381,6 +473,50 @@ const detailPageUrl = computed(() => {
   // Add ?embed=true parameter to load the page without navigation bar
   return `/node/${currentSegmentId.value}?embed=true`
 })
+
+// Helper functions for formatting values
+/**
+ * Format segment ID for display
+ * @param {string} id - Segment ID
+ * @returns {string} Formatted ID
+ */
+const formatSegmentId = (id) => {
+  if (!id || id === 'Unknown') return 'Unknown'
+  // Truncate long IDs and add ellipsis
+  return id.length > 12 ? id.substring(0, 10) + '...' : id
+}
+
+/**
+ * Format any ID for display
+ * @param {string} id - ID to format
+ * @returns {string} Formatted ID
+ */
+const formatId = (id) => {
+  if (!id || id === 'Unknown') return 'Unknown'
+  return id
+}
+
+/**
+ * Format duration for display
+ * @param {string} duration - Duration string
+ * @returns {string} Formatted duration
+ */
+const formatDuration = (duration) => {
+  if (!duration || duration === 'Unknown') return 'Unknown'
+  if (duration.includes('seconds')) {
+    const seconds = parseInt(duration)
+    if (seconds >= 3600) {
+      const hours = Math.floor(seconds / 3600)
+      const minutes = Math.floor((seconds % 3600) / 60)
+      return `${hours}h ${minutes}m`
+    } else if (seconds >= 60) {
+      const minutes = Math.floor(seconds / 60)
+      const remainingSeconds = seconds % 60
+      return `${minutes}m ${remainingSeconds}s`
+    }
+  }
+  return duration
+}
 
 /**
  * Check if a segment has a time range larger than the specified maximum duration
@@ -562,14 +698,32 @@ const clearAll = (type) => {
 }
 
 /**
+ * Update segment summary information in the sidebar
+ * @param {Object} props - Segment properties from the clicked feature
+ */
+const updateSegmentSummary = (props) => {
+  currentSegmentSummary.trajectoryId = props.trajectory_id || 'Unknown'
+  currentSegmentSummary.segmentId = props.segment_id || 'Unknown'
+  currentSegmentSummary.vesselId = props.vessel_id || 'Unknown'
+  currentSegmentSummary.duration = props.duration_seconds ? 
+    `${Math.round(props.duration_seconds)} seconds` : 'Unknown'
+}
+
+/**
  * Open the details sidebar for a specific segment
  * @param {string} segmentId - ID of the segment to display
+ * @param {Object} segmentProps - Properties of the clicked segment
  */
-const openDetailsSidebar = (segmentId) => {
+const openDetailsSidebar = (segmentId, segmentProps) => {
   console.log('Opening details sidebar for segment:', segmentId)
 
   detailError.value = null
   currentSegmentId.value = segmentId
+  
+  // Update the segment summary information
+  if (segmentProps) {
+    updateSegmentSummary(segmentProps)
+  }
  
   if (iframeLoadTimeout) {
     clearTimeout(iframeLoadTimeout)
@@ -604,6 +758,12 @@ const closeDetailsSidebar = () => {
   currentSegmentId.value = null
   detailError.value = null
   iframeLoading.value = false
+  
+  // Clear segment summary
+  currentSegmentSummary.trajectoryId = ''
+  currentSegmentSummary.segmentId = ''
+  currentSegmentSummary.vesselId = ''
+  currentSegmentSummary.duration = ''
 
   // Reset sidebar position to default
   resetSidebarPosition()
@@ -625,12 +785,11 @@ const resetSidebarPosition = () => {
 }
 
 /**
- * Open the details page in the current browser tab (replaces iframe navigation)
+ * Open the details page in the current browser tab
  */
 const openDetailsInCurrentTab = () => {
   if (currentSegmentId.value) {
     // Navigate to the details page in the current tab
-    // Note: This will open the page without embed parameter, showing full navigation
     window.location.href = `/node/${currentSegmentId.value}`
   }
 }
@@ -849,7 +1008,6 @@ async function initMap() {
     })
 
     // Add trajectory line layer
-    // Modified 2: Changed trajectory colors to blue scheme matching homepage
     map.addLayer({
       id: 'trajectory-segments-line',
       type: 'line',
@@ -874,10 +1032,10 @@ async function initMap() {
         'line-color': [
           'case',
           ['boolean', ['feature-state', 'hoverSegment'], false],
-          '#3b82f6', // Bright blue for selected segment
+          '#3b82f6',
           ['boolean', ['feature-state', 'hoverTrajectory'], false],
-          '#60a5fa', // Medium blue for hovered trajectory
-          '#93c5fd'  // Light blue for normal segments
+          '#60a5fa',
+          '#93c5fd'
         ]
       }
     })
@@ -1196,7 +1354,7 @@ function setupMapInteractions(map) {
       })
   })
 
-  // Click segment to show popup with details
+  // Click segment to open sidebar directly (no popup)
   map.on('click', 'trajectory-segments-line', e => {
     const features = map.queryRenderedFeatures(e.point, {
       layers: ['trajectory-segments-line']
@@ -1206,71 +1364,12 @@ function setupMapInteractions(map) {
 
     const feature = features[0]
     const props = feature.properties || {}
-    const summary = props.summary || 'No summary available.'
-    const trajectoryId = props.trajectory_id || 'Unknown trajectory'
     const segmentId = props.segment_id || 'Unknown segment'
-    const vesselId = props.vessel_id || 'Unknown vessel'
-    const duration = props.duration_seconds ? 
-      `${Math.round(props.duration_seconds)} seconds` : ''
-
-    const type = extractFirstWord(summary)
-
-    const html = `
-  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; max-width: 280px; color: #374151; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-    <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 12px 16px;">
-      <div style="font-size: 13px; font-weight: 700; color: white; letter-spacing: 0.3px;">Segment: ${segmentId}</div>
-    </div>
-
-    <div style="padding: 16px; background: #ffffff;">
-      <div style="display: grid; gap: 10px;">
-        <div style="display: flex; justify-content: space-between;">
-          <span style="color: #6b7280; font-size: 11px; font-weight: 500;">Trajectory ID:</span>
-          <span style="font-weight: 600; font-size: 11px; color: #111827;">${trajectoryId}</span>
-        </div>
-        <div style="display: flex; justify-content: space-between;">
-          <span style="color: #6b7280; font-size: 11px; font-weight: 500;">Vessel ID:</span>
-          <span style="font-weight: 600; font-size: 11px; color: #111827;">${vesselId}</span>
-        </div>
-        <div style="display: flex; justify-content: space-between;">
-          <span style="color: #6b7280; font-size: 11px; font-weight=500;">Duration:</span>
-          <span style="font-weight: 600; font-size: 11px; color: #111827;">${duration}</span>
-        </div>
-      </div>
-      
-      <div style="margin-top: 16px;">
-        <a href="/node/${segmentId}" 
-          style="display: block; text-align: center;
-                  background: #3b82f6; 
-                  color: white; 
-                  padding: 8px 0; 
-                  border-radius: 6px; 
-                  text-decoration: none; 
-                  font-weight: 600;
-                  font-size: 11px;
-                  transition: background-color 0.2s;"
-          onmouseover="this.style.background='#2563eb';" 
-          onmouseout="this.style.background='#3b82f6';">
-          View Details
-        </a>
-      </div>
-    </div>
-  </div>
-  `
-
-    new Popup({ 
-      closeButton: true, 
-      closeOnClick: true,
-      maxWidth: '500px',
-      anchor: 'bottom',
-      className: 'no-border-popup' 
-    })
-      .setLngLat(e.lngLat)
-      .setHTML(html)
-      .addTo(map)
 
     if (segmentId && segmentId !== 'Unknown segment') {
       console.log('Opening sidebar with segment ID:', segmentId)
-      openDetailsSidebar(segmentId)
+      // Pass segment properties to update the summary section
+      openDetailsSidebar(segmentId, props)
     } else {
       console.warn('No valid segment ID found to open sidebar')
     }
@@ -1371,12 +1470,12 @@ watch(() => filters.maxTimeGap, () => {
 /* Main panel container with improved visual hierarchy */
 .panel {
   width: 100%;
-  border-radius: 16px; /* Modern rounded corners */
-  background: #ffffff; /* Clean white background */
-  box-shadow: 0 0 0 1px rgba(226, 232, 240, 0.8), 0 20px 40px rgba(15, 23, 42, 0.1); /* Softer shadow */
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(226, 232, 240, 0.8), 0 20px 40px rgba(15, 23, 42, 0.1);
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Ensure content stays within rounded corners */
+  overflow: hidden;
 }
 
 .panel--fill {
@@ -1385,9 +1484,9 @@ watch(() => filters.maxTimeGap, () => {
 
 /* Enhanced panel header with gradient background and decorative elements */
 .panel-header {
-  padding: 2.5rem 2rem 1.5rem 2rem; /* Generous padding */
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); /* Subtle gradient background */
-  border-bottom: 1px solid #e2e8f0; /* Soft border color */
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e2e8f0;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1438,18 +1537,18 @@ watch(() => filters.maxTimeGap, () => {
 .title-container {
   position: relative;
   z-index: 2;
-  text-align: left; /* Ensure left alignment */
-  flex: 1; /* Take available space */
+  text-align: left;
+  flex: 1;
 }
 
 /* Main title with consistent font size and gradient effect */
 .title {
   margin: 0 0 0.5rem 0;
-  font-size: 2.5rem; /* Consistent with other pages */
-  font-weight: 700; /* Bold weight */
+  font-size: 2.5rem;
+  font-weight: 700;
   line-height: 1.2;
-  color: #1e293b; /* Dark color for good contrast */
-  letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+  color: #1e293b;
+  letter-spacing: -0.5px;
 }
 
 /* Gradient text effect matching homepage hero title */
@@ -1458,16 +1557,16 @@ watch(() => filters.maxTimeGap, () => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 700; /* Bold weight for gradient text */
+  font-weight: 700;
 }
 
 /* Subtitle with improved readability */
 .subtitle {
   margin: 0;
-  font-size: 1.125rem; /* Larger for better readability */
+  font-size: 1.125rem;
   line-height: 1.6;
-  color: #475569; /* Softer gray color */
-  max-width: 800px; /* Limit width for readability */
+  color: #475569;
+  max-width: 800px;
 }
 
 .header-controls {
@@ -1482,8 +1581,8 @@ watch(() => filters.maxTimeGap, () => {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.875rem; /* Slightly larger for readability */
-  color: #64748b; /* Softer gray */
+  font-size: 0.875rem;
+  color: #64748b;
   font-weight: 500;
 }
 
@@ -1503,26 +1602,26 @@ watch(() => filters.maxTimeGap, () => {
 
 .panel-body {
   flex: 1;
-  padding: 1.5rem; /* Increased padding for better spacing */
+  padding: 1.5rem;
   box-sizing: border-box;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); /* Gradient background matching homepage */
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   display: flex;
 }
 
 .map-wrapper {
   position: relative;
   flex: 1;
-  border-radius: 12px; /* Larger radius */
-  border: 1px solid #e2e8f0; /* Softer border */
-  background: #ffffff; /* Clean white background */
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06); /* Subtle shadow */
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
   overflow: hidden;
 }
 
 .map-container {
   width: 100%;
   height: 100%;
-  border-radius: 12px; /* Match wrapper radius */
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -1535,7 +1634,7 @@ watch(() => filters.maxTimeGap, () => {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 6px;
-  color: #475569; /* Better contrast */
+  color: #475569;
 }
 
 .field-row {
@@ -1557,19 +1656,19 @@ watch(() => filters.maxTimeGap, () => {
 
 .sub-label {
   font-size: 12px;
-  color: #64748b; /* Softer gray */
+  color: #64748b;
   margin-bottom: 3px;
 }
 
 .field-input {
   width: 100%;
   box-sizing: border-box;
-  border-radius: 8px; /* Consistent rounded corners */
-  border: 1px solid #cbd5e1; /* Softer border */
-  background: #ffffff; /* White background */
-  padding: 8px 10px; /* Comfortable padding */
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  padding: 8px 10px;
   font-size: 14px;
-  color: #1e293b; /* Dark text for readability */
+  color: #1e293b;
   outline: none;
   transition: all 0.2s ease;
 }
@@ -1581,9 +1680,9 @@ watch(() => filters.maxTimeGap, () => {
 
 .field-hint {
   font-size: 11px;
-  color: #64748b; /* Softer gray */
+  color: #64748b;
   margin-top: 4px;
-  font-style: normal; /* Remove italic for better readability */
+  font-style: normal;
 }
 
 .performance-options {
@@ -1598,7 +1697,7 @@ watch(() => filters.maxTimeGap, () => {
   gap: 6px;
   cursor: pointer;
   font-size: 12px;
-  color: #475569; /* Better contrast */
+  color: #475569;
 }
 
 .checkbox-input {
@@ -1619,10 +1718,10 @@ watch(() => filters.maxTimeGap, () => {
   width: 100%;
   padding: 8px 10px;
   max-width: 300px;
-  border-radius: 8px; /* Consistent rounded corners */
-  border: 1px solid #cbd5e1; /* Softer border */
-  background: #ffffff; /* White background */
-  color: #1e293b; /* Dark text */
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
   font-size: 12px;
   cursor: pointer;
   display: flex;
@@ -1650,7 +1749,7 @@ watch(() => filters.maxTimeGap, () => {
 .dropdown-arrow {
   font-size: 10px;
   transition: transform 0.2s;
-  color: #64748b; /* Subtle gray */
+  color: #64748b;
 }
 
 .dropdown-trigger.dropdown-open .dropdown-arrow {
@@ -1662,8 +1761,8 @@ watch(() => filters.maxTimeGap, () => {
   top: 100%;
   left: 0;
   right: 0;
-  background: #ffffff; /* White background */
-  border: 1px solid #cbd5e1; /* Softer border */
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   margin-top: 4px;
   z-index: 1000;
@@ -1671,12 +1770,12 @@ watch(() => filters.maxTimeGap, () => {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .search-box {
   padding: 8px;
-  border-bottom: 1px solid #e2e8f0; /* Light border */
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .search-input {
@@ -1714,16 +1813,16 @@ watch(() => filters.maxTimeGap, () => {
 }
 
 .option-item:hover {
-  background: #f1f5f9; /* Light gray hover */
+  background: #f1f5f9;
 }
 
 .option-item.option-selected {
-  background: rgba(59, 130, 246, 0.1); /* Light blue background */
-  color: #1d4ed8; /* Darker blue text */
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
 }
 
 .checkmark {
-  color: #10b981; /* Green checkmark */
+  color: #10b981;
   font-weight: bold;
   width: 16px;
   display: flex;
@@ -1837,11 +1936,118 @@ watch(() => filters.maxTimeGap, () => {
   color: #475569;
 }
 
+/* Segment summary section with modern card design */
+.segment-summary-section {
+  padding: 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.segment-summary-card {
+  background: white;
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.summary-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-badge {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.summary-item:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.item-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+}
+
+.item-icon .icon {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.item-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+  word-break: break-word;
+  font-family: 'SF Mono', 'Roboto Mono', Consolas, monospace;
+}
+
 .details-sidebar-content {
   flex: 1;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: #f8fafc;
 }
 
 .segment-details {
@@ -1893,15 +2099,42 @@ watch(() => filters.maxTimeGap, () => {
 }
 
 .no-details {
-  padding: 40px 20px;
-  text-align: center;
-  color: #94a3b8;
-  font-size: 14px;
-  font-style: normal; /* Remove italic for better readability */
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 20px;
+}
+
+.no-details-content {
+  text-align: center;
+  color: #94a3b8;
+}
+
+.no-details-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  color: #cbd5e1;
+}
+
+.no-details-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.5;
+}
+
+.no-details h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.no-details p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .details-sidebar-footer {
@@ -1913,15 +2146,19 @@ watch(() => filters.maxTimeGap, () => {
 
 .open-full-btn {
   width: 100%;
-  padding: 10px 16px;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Gradient button */
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .open-full-btn:hover:not(:disabled) {
@@ -1936,6 +2173,20 @@ watch(() => filters.maxTimeGap, () => {
   opacity: 0.6;
   transform: none;
   box-shadow: none;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 2.5;
 }
 
 /* Resize handles */
@@ -1985,107 +2236,41 @@ watch(() => filters.maxTimeGap, () => {
   background: rgba(59, 130, 246, 0.3);
 }
 
-:deep(.no-border-popup .maplibregl-popup-content) {
-  padding: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  position: relative;
-}
-
-:deep(.no-border-popup .maplibregl-popup-tip) {
-  display: none !important;
-}
-
-:deep(.no-border-popup .maplibregl-popup-content) {
-  position: relative;
-}
-:deep(.no-border-popup .maplibregl-popup-content::after) {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid white;
-  z-index: 1;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
-}
-:deep(.no-border-popup .maplibregl-popup-close-button) {
-  font-size: 18px !important;        
-  color: white !important;
-  background: none !important;       
-  border-radius: 0 !important;       
-  width: auto !important;           
-  height: auto !important;          
-  min-width: 20px !important;       
-  min-height: 20px !important;       
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  right:0px !important;             
-  top: 8px !important;               
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: 1 !important;
-  transition: all 0.2s !important;
-  border: none !important;
-  outline: none !important;
-  cursor: pointer !important;
-  z-index: 1000 !important;
-  font-weight: 300 !important;       
-  opacity: 0.9 !important;           
-}
-
-:deep(.no-border-popup .maplibregl-popup-close-button:hover) {
-  opacity: 1 !important;
-  transform: scale(1.2) !important;  
-  color: #f8fafc !important;        
-}
-
-:deep(.no-border-popup .maplibregl-popup-content) {
-  position: relative;
-}
-
-:deep(.no-border-popup .maplibregl-popup-content > div) {
-  padding-top: 8px; 
-  position: relative;
-}
-
 /* Responsive design adjustments */
 @media (max-width: 1024px) {
   .title {
-    font-size: 2rem; /* Slightly smaller on tablets */
+    font-size: 2rem;
   }
   
   .subtitle {
-    font-size: 1rem; /* Adjust subtitle size */
+    font-size: 1rem;
   }
   
   .panel-header {
-    padding: 2rem 1.5rem 1.25rem 1.5rem; /* Adjust padding */
+    padding: 2rem 1.5rem 1.25rem 1.5rem;
   }
   
   .panel-body {
-    padding: 1.25rem; /* Adjust padding */
+    padding: 1.25rem;
+  }
+  
+  .summary-grid {
+    gap: 12px;
   }
 }
 
 @media (max-width: 768px) {
   .title {
-    font-size: 1.75rem; /* Smaller for mobile */
+    font-size: 1.75rem;
   }
   
   .subtitle {
-    font-size: 0.875rem; /* Smaller subtitle */
+    font-size: 0.875rem;
   }
   
   .panel-header {
-    padding: 1.5rem 1rem 1rem 1rem; /* Compact padding */
-    flex-direction: column; /* Stack title and controls */
+    padding: 1.5rem 1rem 1rem 1rem;
+    flex-direction: column;
     gap: 1rem;
   }
   
@@ -2094,7 +2279,7 @@ watch(() => filters.maxTimeGap, () => {
   }
   
   .header-controls {
-    align-self: flex-start; /* Align controls to left */
+    align-self: flex-start;
   }
   
   /* Adjust decoration circles for mobile */
@@ -2123,21 +2308,38 @@ watch(() => filters.maxTimeGap, () => {
   }
   
   .dropdown-trigger {
-    max-width: none; /* Full width on mobile */
+    max-width: none;
+  }
+  
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .summary-item {
+    padding: 10px;
+  }
+  
+  .item-label {
+    font-size: 10px;
+  }
+  
+  .item-value {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
   .title {
-    font-size: 1.5rem; /* Even smaller for very small screens */
+    font-size: 1.5rem;
   }
   
   .subtitle {
-    font-size: 0.75rem; /* Very small subtitle */
+    font-size: 0.75rem;
   }
   
   .panel {
-    border-radius: 12px; /* Smaller radius on mobile */
+    border-radius: 12px;
   }
   
   .details-sidebar {
@@ -2149,6 +2351,34 @@ watch(() => filters.maxTimeGap, () => {
     border-radius: 12px 12px 0 0;
     border-left: none;
     border-top: 1px solid #e2e8f0;
+  }
+  
+  .segment-summary-card {
+    padding: 16px;
+  }
+  
+  .summary-header {
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+  }
+  
+  .summary-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  
+  .summary-item {
+    padding: 8px;
+  }
+  
+  .item-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .item-icon .icon {
+    width: 16px;
+    height: 16px;
   }
 }
 </style>
