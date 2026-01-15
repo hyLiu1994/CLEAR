@@ -31,9 +31,6 @@ clear-backend/app/api/__pycache__
 clear-backend/app/core/__pycache__
 data_s/
 output/
-segments.json
-data/segments.json
-data/sdkg_index.json
 SAVE
 VISTA_partial
 task_storage
