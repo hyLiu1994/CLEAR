@@ -188,12 +188,12 @@ Access the platform at `http://localhost:5173` (Vite default port)
 ### Scenario III: Configure and Process Data
 
 1. **Open Settings**: Click the "Settings" button to configure data processing
-2. **Select Data Source**: Choose **AIS-DK** ([Denmark](http://aisdata.ais.dk/)) or **AIS-US** ([United States](https://coast.noaa.gov/htdata/CMSP/AISDataHandler/))
+2. **Select Data Source**: Choose **AIS-DK** ([Denmark](http://aisdata.ais.dk/)) or **AIS-US** ([United States](https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2024/index.html))
 3. **Configure Parameters**: Set date range, time intervals, and VISTA processing options
 4. **Execute Pipeline**: Click buttons to build SD-KG, run imputation, and generate reports
 5. **View Results**: Navigate to Map or SD-KG views to explore completed trajectories and knowledge graph
 
-For detailed data preparation instructions, see the [Data Guide](https://github.com/hyLiu1994/VISTA/src/data).
+For detailed data preparation instructions, see the [Data Guide](https://github.com/hyLiu1994/VISTA/tree/main/src/data).
 
 For SD-KG construction and trajectory imputation details, see the [VISTA Pipeline](https://github.com/hyLiu1994/VISTA).
 
